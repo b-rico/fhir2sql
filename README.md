@@ -179,6 +179,7 @@ This project is licensed under [Apache v2.0 2004](LICENSE)
 
 ## Disclaimer
 
+ ```bash
      __
     /  \
    /    \
@@ -189,6 +190,7 @@ This project is licensed under [Apache v2.0 2004](LICENSE)
     ---
    |   |
     ---
+```
 
 This repository is an MVP / reference. It does not address production concerns such as:
 **Security (e.g., encryption, secure credential management)**
@@ -196,6 +198,8 @@ This repository is an MVP / reference. It does not address production concerns s
 **Compliance with standards like HIPAA or GDPR when handling patient data**
 
 !!! Use caution and adapt to your organizational requirements before deploying in a production environment. !!!
+ 
+ ```bash
      __
     /  \
    /    \
@@ -206,3 +210,4 @@ This repository is an MVP / reference. It does not address production concerns s
     ---
    |   |
     ---
+```
