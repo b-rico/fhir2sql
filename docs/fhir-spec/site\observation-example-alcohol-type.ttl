@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/alcohol-type> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "alcohol-type"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: alcohol-type</p><p><b>status</b>: final</p><p><b>category</b>: Social History <span>(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'social-history' = 'Social History', given as 'Social History'})</span></p><p><b>code</b>: Type of alcohol consumed <span>(Details : {http://acme-rehab.org code 'alcohol-type' = 'alcohol-type', given as 'Type of alcohol consumed'})</span></p><p><b>subject</b>: <a>Peter James Chalmers</a></p><p><b>effective</b>: 11/12/2014 4:44:16 AM</p><blockquote><p><b>component</b></p><p><b>code</b>: alcohol-type <span>(Details : {http://acme-rehab.org code 'alcohol-type' = 'alcohol-type)</span></p><p><b>value</b>: Wine <span>(Details : {SNOMED CT code '35748005' = 'Wine', given as 'Wine (substance)'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: alcohol-type <span>(Details : {http://acme-rehab.org code 'alcohol-type' = 'alcohol-type)</span></p><p><b>value</b>: Beer <span>(Details : {SNOMED CT code '53410008' = 'Beer', given as 'Beer (substance)'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: alcohol-type <span>(Details : {http://acme-rehab.org code 'alcohol-type' = 'alcohol-type)</span></p><p><b>value</b>: Liquor <span>(Details : {SNOMED CT code '6524003' = 'Distilled spirits', given as ' Distilled spirits (substance)'})</span></p></blockquote></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+       fhir:Coding.code [ fhir:value "social-history" ];
+       fhir:Coding.display [ fhir:value "Social History" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Social History" ]
+  ];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://acme-rehab.org" ];
+       fhir:Coding.code [ fhir:value "alcohol-type" ];
+       fhir:Coding.display [ fhir:value "Type of alcohol consumed" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Type of alcohol consumed" ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:Observation.effectiveDateTime [ fhir:value "2014-12-11T04:44:16Z"^^xsd:dateTime];
+  fhir:Observation.component [
+     fhir:index 0;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://acme-rehab.org" ];
+         fhir:Coding.code [ fhir:value "alcohol-type" ]
+       ]
+     ];
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:35748005;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "35748005" ];
+         fhir:Coding.display [ fhir:value "Wine (substance)" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Wine" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://acme-rehab.org" ];
+         fhir:Coding.code [ fhir:value "alcohol-type" ]
+       ]
+     ];
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:53410008;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "53410008" ];
+         fhir:Coding.display [ fhir:value "Beer (substance)" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Beer" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://acme-rehab.org" ];
+         fhir:Coding.code [ fhir:value "alcohol-type" ]
+       ]
+     ];
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:6524003;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "6524003" ];
+         fhir:Coding.display [ fhir:value " Distilled spirits (substance)" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Liquor" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/alcohol-type.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/alcohol-type.ttl> .
+
+# -------------------------------------------------------------------------------------
+

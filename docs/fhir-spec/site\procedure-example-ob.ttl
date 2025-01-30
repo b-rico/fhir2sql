@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/ob> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ob"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Vaginal delivery of healthy male infant on June 2, 2012</div>"
+  ];
+  fhir:Procedure.status [ fhir:value "completed"];
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:386637004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "386637004" ];
+       fhir:Coding.display [ fhir:value "Obstetric procedure (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OB" ]
+  ];
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:22633006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "22633006" ];
+       fhir:Coding.display [ fhir:value "Vaginal delivery, medical personnel present (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Vaginal delivery" ]
+  ];
+  fhir:Procedure.subject [
+     fhir:Reference.display [ fhir:value "Jane Doe" ]
+  ];
+  fhir:Procedure.performedDateTime [ fhir:value "2012-06-02"^^xsd:date];
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:Reference.display [ fhir:value "Martha Midwife, RNP" ]
+     ]
+  ];
+  fhir:Procedure.location [
+     fhir:Reference.display [ fhir:value "Women’s Hospital" ]
+  ];
+  fhir:Procedure.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "term pregnancy, active labor" ]
+  ];
+  fhir:Procedure.outcome [
+     fhir:CodeableConcept.text [ fhir:value "delivery of healthy male infant" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/ob.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Procedure/ob.ttl> .
+
+# -------------------------------------------------------------------------------------
+

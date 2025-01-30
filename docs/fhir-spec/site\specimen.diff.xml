@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Specimen" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Specimen.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/specimen-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/specimen-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-min="0" old-min="1" path="Specimen.subject">
+         <removed-type name="Reference(Patient | Group | Device | Substance)"/>
+         <added-type name="Reference(Patient | Group | Device | Substance | Location)"/>
+      </element>
+      <element path="Specimen.request">
+         <removed-type name="Reference(ProcedureRequest)"/>
+         <added-type name="Reference(ServiceRequest)"/>
+      </element>
+      <element path="Specimen.collection.collector">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element path="Specimen.collection.duration" status="new"/>
+      <element path="Specimen.collection.fastingStatus[x]" status="new"/>
+      <element path="Specimen.condition" status="new"/>
+   </type>
+</difference>

@@ -1,0 +1,718 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/example-cardiology-os> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-cardiology-os"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-cardiology-os</p><p><b>contained</b>: , , , , , , , , , , , , </p><p><b>url</b>: <b>http://va.gov/kas/orderset/B5-Cardiology-ChestPainCAD-OS</b></p><p><b>identifier</b>: bb7ccea6-9744-4743-854a-bcffd87191f6 (OFFICIAL), CLIN0004AG, KP-914</p><p><b>version</b>: 0.1</p><p><b>name</b>: ChestPainCoronaryArteryDiseaseOrderSetKNART</p><p><b>title</b>: Chest Pain (CP) - Coronary Artery Disease (CAD) Order Set KNART</p><p><b>type</b>: Order Set <span>(Details : {http://terminology.hl7.org/CodeSystem/plan-definition-type code 'order-set' = 'Order Set', given as 'Order Set'})</span></p><p><b>status</b>: active</p><p><b>date</b>: 29/08/2017</p><p><b>publisher</b>: Department of Veterans Affairs</p><p><b>description</b>: The Cardiology chest pain (CP) and coronary artery disease (CAD) group of KNARTs are     intended to assist primary care providers in the management of adult patients with stable     chest pain (with or without known CAD); aid in determining when a cardiology consultation is     appropriate; provide guidance for initial noninvasive diagnostic orders (stress testing) and     provide a structured documentation template for the process. Stable patients with cardiac     chest pain require risk stratification, office-based workup, initiation of disease-specific     medications, and subspecialty referral to a cardiologist.</p><p><b>useContext</b>: </p><p><b>usage</b>: The Cardiology chest pain (CP) and coronary artery disease (CAD) group of KNARTs are intended to assist primary care providers in the management of adult patients with stable chest pain (with or without known CAD); aid in determining when a cardiology consultation is appropriate; provide guidance for initial noninvasive diagnostic orders (stress testing) and provide a structured documentation template for the process. Stable patients with cardiac chest pain require risk stratification, office-based workup, initiation of disease-specific medications, and subspecialty referral to a cardiologist. This context excludes emergent patients (new/ongoing/unstable pattern CP). Included are those patients with stable CP with or without known CAD, to be considered for evaluation by cardiology.</p><p><b>copyright</b>: © Copyright Cognitive Medical Systems, Inc. 9444 Waples Street Suite 300 San Diego, CA 92121</p><p><b>author</b>: , , </p><p><b>relatedArtifact</b>: , , , , , , , , , , , </p><p><b>library</b>: <a>#cardiology-chestPain-logic</a></p><blockquote><p><b>action</b></p><h3>Actions</h3><table><tr><td>-</td></tr><tr><td>*</td></tr><tr><td>*</td></tr></table></blockquote></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Library;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "cardiology-chestPain-logic" ];
+     fhir:Library.status [ fhir:value "active" ];
+     fhir:Library.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/library-type" ];
+         fhir:Coding.code [ fhir:value "logic-library" ];
+         fhir:Coding.display [ fhir:value "Logic Library" ]
+       ]
+     ];
+     fhir:Library.description [ fhir:value "Placeholder library" ]
+  ], [
+     a fhir:ActivityDefinition;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "referralToCardiologyConsult" ];
+     fhir:ActivityDefinition.status [ fhir:value "draft" ];
+     fhir:ActivityDefinition.description [ fhir:value "Consider other consult modalities which might be available (e.g., e-consult or other rapidly iterative consult method. A simple consult is included here as the overarching clinical intent." ];
+     fhir:ActivityDefinition.kind [ fhir:value "ServiceRequest" ];
+     fhir:ActivityDefinition.timingTiming [
+       fhir:Timing.event [
+         fhir:index 0;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-expression" ];
+           fhir:Extension.valueExpression [
+             fhir:Expression.language [ fhir:value "text/cql" ];
+             fhir:Expression.expression [ fhir:value "Now()" ]
+           ]
+         ]
+       ]
+     ];
+     fhir:ActivityDefinition.participant [
+       fhir:index 0;
+       fhir:ActivityDefinition.participant.type [ fhir:value "practitioner" ]
+     ]
+  ], [
+     a fhir:ActivityDefinition;
+     fhir:index 2;
+     fhir:Resource.id [ fhir:value "metoprololTartrate25Prescription" ];
+     fhir:ActivityDefinition.status [ fhir:value "draft" ];
+     fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest" ];
+     fhir:ActivityDefinition.productReference [
+       fhir:Reference.reference [ fhir:value "#metoprololTartrate25Medication" ]
+     ];
+     fhir:ActivityDefinition.dosage [
+       fhir:index 0;
+       fhir:Dosage.text [ fhir:value "1 tablet oral 2 time daily" ];
+       fhir:Dosage.timing [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.frequency [ fhir:value "2"^^xsd:positiveInteger ];
+           fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+           fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+         ]
+       ];
+       fhir:Dosage.route [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "26643006" ];
+           fhir:Coding.display [ fhir:value "Oral route (qualifier value)" ]
+         ];
+         fhir:CodeableConcept.text [ fhir:value "Oral route (qualifier value)" ]
+       ];
+       fhir:Dosage.doseAndRate [
+         fhir:index 0;
+         fhir:Dosage.doseAndRate.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/dose-rate-type" ];
+             fhir:Coding.code [ fhir:value "ordered" ];
+             fhir:Coding.display [ fhir:value "Ordered" ]
+           ]
+         ];
+         fhir:Dosage.doseAndRate.doseQuantity [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "{tbl}" ]
+         ]
+       ]
+     ];
+     fhir:ActivityDefinition.dynamicValue [
+       fhir:index 0;
+       fhir:ActivityDefinition.dynamicValue.path [ fhir:value "medicationRequest.priority" ];
+       fhir:ActivityDefinition.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "routine" ]
+       ]
+     ]
+  ], [
+     a fhir:Medication;
+     fhir:index 3;
+     fhir:Resource.id [ fhir:value "metoprololTartrate25Medication" ];
+     fhir:Medication.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "866426" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Metoprolol Tartrate 25 MG" ]
+     ];
+     fhir:Medication.form [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:385055001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "385055001" ];
+         fhir:Coding.display [ fhir:value "Tablet dose form" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Tablet dose form" ]
+     ];
+     fhir:Medication.ingredient [
+       fhir:index 0;
+       fhir:Medication.ingredient.itemReference [
+         fhir:Reference.reference [ fhir:value "#metoprololTartrate25Substance" ]
+       ];
+       fhir:Medication.ingredient.strength [
+         fhir:Ratio.numerator [
+           fhir:Quantity.value [ fhir:value "25"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "mg" ]
+         ];
+         fhir:Ratio.denominator [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "{tbl}" ]
+         ]
+       ]
+     ]
+  ], [
+     a fhir:Substance;
+     fhir:index 4;
+     fhir:Resource.id [ fhir:value "metoprololTartrate25Substance" ];
+     fhir:Substance.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "6918" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Metoprolol" ]
+     ]
+  ], [
+     a fhir:ActivityDefinition;
+     fhir:index 5;
+     fhir:Resource.id [ fhir:value "metoprololTartrate50Prescription" ];
+     fhir:ActivityDefinition.status [ fhir:value "draft" ];
+     fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest" ];
+     fhir:ActivityDefinition.productReference [
+       fhir:Reference.reference [ fhir:value "#metoprololTartrate50Medication" ]
+     ];
+     fhir:ActivityDefinition.dosage [
+       fhir:index 0;
+       fhir:Dosage.text [ fhir:value "1 tablet oral 2 time daily" ];
+       fhir:Dosage.timing [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.frequency [ fhir:value "2"^^xsd:positiveInteger ];
+           fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+           fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+         ]
+       ];
+       fhir:Dosage.route [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "26643006" ];
+           fhir:Coding.display [ fhir:value "Oral route (qualifier value)" ]
+         ];
+         fhir:CodeableConcept.text [ fhir:value "Oral route (qualifier value)" ]
+       ];
+       fhir:Dosage.doseAndRate [
+         fhir:index 0;
+         fhir:Dosage.doseAndRate.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/dose-rate-type" ];
+             fhir:Coding.code [ fhir:value "ordered" ];
+             fhir:Coding.display [ fhir:value "Ordered" ]
+           ]
+         ];
+         fhir:Dosage.doseAndRate.doseQuantity [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "{tbl}" ]
+         ]
+       ]
+     ];
+     fhir:ActivityDefinition.dynamicValue [
+       fhir:index 0;
+       fhir:ActivityDefinition.dynamicValue.path [ fhir:value "medicationRequest.priority" ];
+       fhir:ActivityDefinition.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "routine" ]
+       ]
+     ]
+  ], [
+     a fhir:Medication;
+     fhir:index 6;
+     fhir:Resource.id [ fhir:value "metoprololTartrate50Medication" ];
+     fhir:Medication.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "866435" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Metoprolol Tartrate 50 MG" ]
+     ];
+     fhir:Medication.form [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:385055001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "385055001" ];
+         fhir:Coding.display [ fhir:value "Tablet dose form" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Tablet dose form" ]
+     ];
+     fhir:Medication.ingredient [
+       fhir:index 0;
+       fhir:Medication.ingredient.itemReference [
+         fhir:Reference.reference [ fhir:value "#metoprololTartrate50Substance" ]
+       ];
+       fhir:Medication.ingredient.strength [
+         fhir:Ratio.numerator [
+           fhir:Quantity.value [ fhir:value "50"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "mg" ]
+         ];
+         fhir:Ratio.denominator [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "{tbl}" ]
+         ]
+       ]
+     ]
+  ], [
+     a fhir:Substance;
+     fhir:index 7;
+     fhir:Resource.id [ fhir:value "metoprololTartrate50Substance" ];
+     fhir:Substance.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "6918" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Metoprolol" ]
+     ]
+  ], [
+     a fhir:ActivityDefinition;
+     fhir:index 8;
+     fhir:Resource.id [ fhir:value "nitroglycerinPrescription" ];
+     fhir:ActivityDefinition.status [ fhir:value "draft" ];
+     fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest" ];
+     fhir:ActivityDefinition.productReference [
+       fhir:Reference.reference [ fhir:value "#nitroglycerinMedication" ]
+     ];
+     fhir:ActivityDefinition.dosage [
+       fhir:index 0;
+       fhir:Dosage.text [ fhir:value "nitroglycerin 0.4 mg tablet sub-lingual every 5 minutes as needed for chest pain; maximum 3 tablets" ];
+       fhir:Dosage.timing [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+           fhir:Timing.repeat.period [ fhir:value "5"^^xsd:decimal ];
+           fhir:Timing.repeat.periodUnit [ fhir:value "min" ]
+         ]
+       ];
+       fhir:Dosage.doseAndRate [
+         fhir:index 0;
+         fhir:Dosage.doseAndRate.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/dose-rate-type" ];
+             fhir:Coding.code [ fhir:value "ordered" ];
+             fhir:Coding.display [ fhir:value "Ordered" ]
+           ]
+         ];
+         fhir:Dosage.doseAndRate.doseQuantity [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "{tbl}" ]
+         ]
+       ];
+       fhir:Dosage.maxDosePerAdministration [
+         fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "{tbl}" ]
+       ]
+     ];
+     fhir:ActivityDefinition.dynamicValue [
+       fhir:index 0;
+       fhir:ActivityDefinition.dynamicValue.path [ fhir:value "medicationRequest.priority" ];
+       fhir:ActivityDefinition.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "routine" ]
+       ]
+     ]
+  ], [
+     a fhir:Medication;
+     fhir:index 9;
+     fhir:Resource.id [ fhir:value "nitroglycerinMedication" ];
+     fhir:Medication.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "316365" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Nitroglycerin 0.4 MG" ]
+     ];
+     fhir:Medication.form [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:385055001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "385055001" ];
+         fhir:Coding.display [ fhir:value "Tablet dose form" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Tablet dose form" ]
+     ];
+     fhir:Medication.ingredient [
+       fhir:index 0;
+       fhir:Medication.ingredient.itemReference [
+         fhir:Reference.reference [ fhir:value "#nitroglycerinSubstance" ]
+       ];
+       fhir:Medication.ingredient.strength [
+         fhir:Ratio.numerator [
+           fhir:Quantity.value [ fhir:value "0.4"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "mg" ]
+         ];
+         fhir:Ratio.denominator [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "{tbl}" ]
+         ]
+       ]
+     ]
+  ], [
+     a fhir:Substance;
+     fhir:index 10;
+     fhir:Resource.id [ fhir:value "nitroglycerinSubstance" ];
+     fhir:Substance.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "4917" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Nitroglycerin" ]
+     ]
+  ], [
+     a fhir:Questionnaire;
+     fhir:index 11;
+     fhir:Resource.id [ fhir:value "CollectReferralReason" ];
+     fhir:Questionnaire.status [ fhir:value "draft" ];
+     fhir:Questionnaire.item [
+       fhir:index 0;
+       fhir:Questionnaire.item.linkId [ fhir:value "1" ];
+       fhir:Questionnaire.item.text [ fhir:value "Reason for Cardiology Consult" ];
+       fhir:Questionnaire.item.type [ fhir:value "choice" ];
+       fhir:Questionnaire.item.required [ fhir:value "true"^^xsd:boolean ];
+       fhir:Questionnaire.item.repeats [ fhir:value "true"^^xsd:boolean ];
+       fhir:Questionnaire.item.answerValueSet [ fhir:value "#CardiologyReferralReasonValues" ]
+     ]
+  ], [
+     a fhir:Questionnaire;
+     fhir:index 12;
+     fhir:Resource.id [ fhir:value "CardiologyConsultationGoal" ];
+     fhir:Questionnaire.status [ fhir:value "draft" ];
+     fhir:Questionnaire.item [
+       fhir:index 0;
+       fhir:Questionnaire.item.linkId [ fhir:value "2" ];
+       fhir:Questionnaire.item.text [ fhir:value "Goal of cardiology consultation" ];
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ]
+  ];
+  fhir:PlanDefinition.url [ fhir:value "http://va.gov/kas/orderset/B5-Cardiology-ChestPainCAD-OS"];
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "urn:va.gov:kbs:knart:artifact:r1" ];
+     fhir:Identifier.value [ fhir:value "bb7ccea6-9744-4743-854a-bcffd87191f6" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.system [ fhir:value "urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" ];
+     fhir:Identifier.value [ fhir:value "CLIN0004AG" ]
+  ], [
+     fhir:index 2;
+     fhir:Identifier.system [ fhir:value "urn:cognitivemedicine.com:lab:jira" ];
+     fhir:Identifier.value [ fhir:value "KP-914" ]
+  ];
+  fhir:PlanDefinition.version [ fhir:value "0.1"];
+  fhir:PlanDefinition.name [ fhir:value "ChestPainCoronaryArteryDiseaseOrderSetKNART"];
+  fhir:PlanDefinition.title [ fhir:value "Chest Pain (CP) - Coronary Artery Disease (CAD) Order Set KNART"];
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "order-set" ];
+       fhir:Coding.display [ fhir:value "Order Set" ]
+     ]
+  ];
+  fhir:PlanDefinition.status [ fhir:value "active"];
+  fhir:PlanDefinition.date [ fhir:value "2017-08-29"^^xsd:date];
+  fhir:PlanDefinition.publisher [ fhir:value "Department of Veterans Affairs"];
+  fhir:PlanDefinition.description [ fhir:value "The Cardiology chest pain (CP) and coronary artery disease (CAD) group of KNARTs are     intended to assist primary care providers in the management of adult patients with stable     chest pain (with or without known CAD); aid in determining when a cardiology consultation is     appropriate; provide guidance for initial noninvasive diagnostic orders (stress testing) and     provide a structured documentation template for the process. Stable patients with cardiac     chest pain require risk stratification, office-based workup, initiation of disease-specific     medications, and subspecialty referral to a cardiologist."];
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:look up value;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "look up value" ];
+         fhir:Coding.display [ fhir:value "appropriate snomed condition" ]
+       ]
+     ]
+  ];
+  fhir:PlanDefinition.usage [ fhir:value "The Cardiology chest pain (CP) and coronary artery disease (CAD) group of KNARTs are intended to assist primary care providers in the management of adult patients with stable chest pain (with or without known CAD); aid in determining when a cardiology consultation is appropriate; provide guidance for initial noninvasive diagnostic orders (stress testing) and provide a structured documentation template for the process. Stable patients with cardiac chest pain require risk stratification, office-based workup, initiation of disease-specific medications, and subspecialty referral to a cardiologist. This context excludes emergent patients (new/ongoing/unstable pattern CP). Included are those patients with stable CP with or without known CAD, to be considered for evaluation by cardiology."];
+  fhir:PlanDefinition.copyright [ fhir:value "© Copyright Cognitive Medical Systems, Inc. 9444 Waples Street Suite 300 San Diego, CA 92121"];
+  fhir:PlanDefinition.author [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Bruce Bray MD" ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "Scott Wall MD" ]
+  ], [
+     fhir:index 2;
+     fhir:ContactDetail.name [ fhir:value "Aiden Abidov MD, PhD" ]
+  ];
+  fhir:PlanDefinition.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "derived-from" ];
+     fhir:RelatedArtifact.display [ fhir:value "Cardiology: Chest Pain (CP) / Coronary Artery Disease (CAD) Clinical Content White Paper" ];
+     fhir:RelatedArtifact.url [ fhir:value "NEED-A-URL-HERE" ]
+  ], [
+     fhir:index 1;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "Outcome CVD (coronary death, myocardial infarction, coronary insufficiency, angina, ischemic stroke, hemorrhagic stroke, transient ischemic attack, peripheral artery disease, heart failure)" ];
+     fhir:RelatedArtifact.citation [ fhir:value "Cardiovascular disease          (10-year risk) [Internet].: Framingham Heart Study; cited 2017]. Available from: https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php." ];
+     fhir:RelatedArtifact.url [ fhir:value "https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php" ]
+  ], [
+     fhir:index 2;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "General cardiovascular risk profile for use in primary care: the Framingham Heart Study" ];
+     fhir:RelatedArtifact.citation [ fhir:value "Cardiovascular disease          (10-year risk) [Internet].: Framingham Heart Study; cited 2017]. Available from: https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php." ];
+     fhir:RelatedArtifact.url [ fhir:value "https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php" ]
+  ], [
+     fhir:index 3;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "2014 ACC/AHA/AATS/PCNA/SCAI/STS focused update of the guideline for the diagnosis and management of patients with stable ischemic heart disease: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines, and the American Association for Thoracic Surgery, Preventive Cardiovascular Nurses Association, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons" ];
+     fhir:RelatedArtifact.citation [ fhir:value "Fihn SD, Blankenship JC, Alexander KP, Bittl JA, Byrne JG, Fletcher BJ, et al. 2014 ACC/AHA/AATS/PCNA/SCAI/STS focused update of the guideline for the diagnosis and management of patients with stable ischemic heart disease: A report of the american college of cardiology/american heart association task force on practice guidelines, and the american association for thoracic surgery, preventive cardiovascular nurses association, society for cardiovascular angiography and interventions, and society of thoracic surgeons. J Thorac Cardiovasc Surg. 2015 March 01;149(3):5." ];
+     fhir:RelatedArtifact.url [ fhir:value "NEED-A-URL-HERE" ]
+  ], [
+     fhir:index 4;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "ACC/AHA 2002 guideline update for exercise testing: summary article: A report of the American college of cardiology/American heart association task force on practice guidelines (committee to update the 1997 exercise testing guidelines)" ];
+     fhir:RelatedArtifact.citation [ fhir:value "Gibbons RJ, Balady GJ, Bricker JT, Chaitman BR, Fletcher GF, Froelicher VF, et al. ACC/AHA 2002 guideline update for exercise testing: Summary article: A report of the american college of cardiology/american heart association task force on practice guidelines (committee to update the 1997 exercise testing guidelines). Circulation. 2002 October 01;106(14):1883-92." ];
+     fhir:RelatedArtifact.url [ fhir:value "NEED-A-URL-HERE" ]
+  ], [
+     fhir:index 5;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "LABEL: ASPIRIN 81 MG- aspirin tablet, coated" ];
+     fhir:RelatedArtifact.citation [ fhir:value "Label: ASPIRIN 81 MG- aspirin tablet, coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3." ];
+     fhir:RelatedArtifact.url [ fhir:value "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3" ]
+  ], [
+     fhir:index 6;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "LABEL: CLOPIDOGREL- clopidogrel bisulfate tablet, film coated" ];
+     fhir:RelatedArtifact.citation [ fhir:value "LABEL: CLOPIDOGREL- clopidogrel bisulfate tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7." ];
+     fhir:RelatedArtifact.url [ fhir:value "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a" ]
+  ], [
+     fhir:index 7;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "LABEL: LIPITOR- atorvastatin calcium tablet, film coated" ];
+     fhir:RelatedArtifact.citation [ fhir:value "LABEL: LIPITOR- atorvastatin calcium tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a." ];
+     fhir:RelatedArtifact.url [ fhir:value "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a" ]
+  ], [
+     fhir:index 8;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "LABEL: METOPROLOL SUCCINATE EXTENDED-RELEASE - metoprolol succinate tablet, film coated, extended release" ];
+     fhir:RelatedArtifact.citation [ fhir:value "LABEL: LIPITOR- atorvastatin calcium tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a." ];
+     fhir:RelatedArtifact.url [ fhir:value "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2d948600-35d8-4490-983b-918bdce488c8" ]
+  ], [
+     fhir:index 9;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "LABEL: NITROGLYCERIN- nitroglycerin tablet" ];
+     fhir:RelatedArtifact.citation [ fhir:value "LABEL: NITROGLYCERIN- nitroglycerin tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=67bf2a15-b115-47ac-ae28-ce2dafd6b5c9." ];
+     fhir:RelatedArtifact.url [ fhir:value "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=67bf2a15-b115-47ac-ae28-ce2dafd6b5c9" ]
+  ], [
+     fhir:index 10;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "LABEL: SIMVASTATIN - simvastatin tablet" ];
+     fhir:RelatedArtifact.citation [ fhir:value "LABEL: SIMVASTATIN - simvastatin tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c1c694c-4b08-469e-b538-08e69df06146." ];
+     fhir:RelatedArtifact.url [ fhir:value "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c1c694c-4b08-469e-b538-08e69df06146" ]
+  ], [
+     fhir:index 11;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ];
+     fhir:RelatedArtifact.display [ fhir:value "Chest Pain Guideline Development Group. NICE guidance. Chest          pain of recent onset: assessment and diagnosis of recent onset chest pain or discomfort of suspected cardiac origin." ];
+     fhir:RelatedArtifact.citation [ fhir:value "Skinner JS, Smeeth L, Kendall JM, Adams PC, Timmis A, Chest Pain Guideline Development Group. NICE guidance. chest pain of recent onset: Assessment and diagnosis of recent onset chest pain or discomfort of suspected cardiac origin. Heart. 2010 June 01;96(12):974-8." ];
+     fhir:RelatedArtifact.url [ fhir:value "http://heart.bmj.com/content/96/12/974.long" ]
+  ];
+  fhir:PlanDefinition.library [
+     fhir:value "#cardiology-chestPain-logic";
+     fhir:index 0
+  ];
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:PlanDefinition.action.title [ fhir:value "Consults and Referrals" ];
+       fhir:PlanDefinition.action.groupingBehavior [ fhir:value "logical-group" ];
+       fhir:PlanDefinition.action.selectionBehavior [ fhir:value "any" ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.textEquivalent [ fhir:value "Referral to cardiology to evaluate chest pain (routine)" ];
+         fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#referralToCardiologyConsult" ];
+         fhir:PlanDefinition.action.dynamicValue [
+           fhir:index 0;
+           fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timing.event" ];
+           fhir:PlanDefinition.action.dynamicValue.expression [
+             fhir:Expression.language [ fhir:value "text/cql" ];
+             fhir:Expression.expression [ fhir:value "Now()" ]
+           ]
+         ], [
+           fhir:index 1;
+           fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "specialty" ];
+           fhir:PlanDefinition.action.dynamicValue.expression [
+             fhir:Expression.language [ fhir:value "text/cql" ];
+             fhir:Expression.expression [ fhir:value "Code '261QM0850X' from CardiologyChestPainLogic.\"NUCC Provider Taxonomy\" display 'Adult Mental Health'" ]
+           ]
+         ], [
+           fhir:index 2;
+           fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "occurrenceDateTime" ];
+           fhir:PlanDefinition.action.dynamicValue.expression [
+             fhir:Expression.language [ fhir:value "text/cql" ];
+             fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.ServiceRequestFulfillmentTime" ]
+           ]
+         ], [
+           fhir:index 3;
+           fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "subject" ];
+           fhir:PlanDefinition.action.dynamicValue.expression [
+             fhir:Expression.language [ fhir:value "text/cql" ];
+             fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Patient" ]
+           ]
+         ], [
+           fhir:index 4;
+           fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "requester.agent" ];
+           fhir:PlanDefinition.action.dynamicValue.expression [
+             fhir:Expression.language [ fhir:value "text/cql" ];
+             fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Practitioner" ]
+           ]
+         ], [
+           fhir:index 5;
+           fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "reasonCode" ];
+           fhir:PlanDefinition.action.dynamicValue.expression [
+             fhir:Expression.language [ fhir:value "text/cql" ];
+             fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.CardiologyReferralReason" ]
+           ]
+         ], [
+           fhir:index 6;
+           fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "reasonReference" ];
+           fhir:PlanDefinition.action.dynamicValue.expression [
+             fhir:Expression.language [ fhir:value "text/cql" ];
+             fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.RiskAssessment" ]
+           ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.title [ fhir:value "Reason for cardiology consultation" ];
+         fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#CollectReferralReason" ]
+       ], [
+         fhir:index 2;
+         fhir:PlanDefinition.action.title [ fhir:value "Goal of cardiology consultation" ];
+         fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#CardiologyConsultationGoal" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:PlanDefinition.action.title [ fhir:value "Medications" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Consider the following medications for stable patients to be initiated prior to the cardiology consultation." ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.groupingBehavior [ fhir:value "logical-group" ];
+         fhir:PlanDefinition.action.selectionBehavior [ fhir:value "at-most-one" ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.title [ fhir:value "Antianginal Therapy" ];
+         fhir:PlanDefinition.action.groupingBehavior [ fhir:value "logical-group" ];
+         fhir:PlanDefinition.action.selectionBehavior [ fhir:value "at-most-one" ];
+         fhir:PlanDefinition.action.action [
+           fhir:index 0;
+           fhir:PlanDefinition.action.textEquivalent [ fhir:value "metoprolol tartrate 25 mg tablet 1 tablet oral 2 time daily" ];
+           fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#metoprololTartrate25Prescription" ];
+           fhir:PlanDefinition.action.dynamicValue [
+             fhir:index 0;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "status" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "'draft'" ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "patient" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Patient" ]
+             ]
+           ], [
+             fhir:index 2;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "prescriber" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Practitioner" ]
+             ]
+           ]
+         ], [
+           fhir:index 1;
+           fhir:PlanDefinition.action.textEquivalent [ fhir:value "metoprolol tartrate 50 mg tablet 1 tablet oral 2 time daily" ];
+           fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#metoprololTartrate50Prescription" ];
+           fhir:PlanDefinition.action.dynamicValue [
+             fhir:index 0;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "status" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "'draft'" ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "patient" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Patient" ]
+             ]
+           ], [
+             fhir:index 2;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "prescriber" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Practitioner" ]
+             ]
+           ]
+         ], [
+           fhir:index 2;
+           fhir:PlanDefinition.action.textEquivalent [ fhir:value "amlodipine 5  tablet 1 tablet oral  daily" ];
+           fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#amlodipinePrescription" ];
+           fhir:PlanDefinition.action.dynamicValue [
+             fhir:index 0;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "status" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "'draft'" ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "patient" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Patient" ]
+             ]
+           ], [
+             fhir:index 2;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "prescriber" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Practitioner" ]
+             ]
+           ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:PlanDefinition.action.title [ fhir:value "Nitroglycerin" ];
+         fhir:PlanDefinition.action.groupingBehavior [ fhir:value "logical-group" ];
+         fhir:PlanDefinition.action.selectionBehavior [ fhir:value "at-most-one" ];
+         fhir:PlanDefinition.action.action [
+           fhir:index 0;
+           fhir:PlanDefinition.action.textEquivalent [ fhir:value "nitroglycerin 0.4 mg tablet sub-lingual every 5 minutes as needed for chest pain; maximum 3 tablets" ];
+           fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#nitroglycerinPrescription" ];
+           fhir:PlanDefinition.action.dynamicValue [
+             fhir:index 0;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "status" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "'draft'" ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "patient" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Patient" ]
+             ]
+           ], [
+             fhir:index 2;
+             fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "prescriber" ];
+             fhir:PlanDefinition.action.dynamicValue.expression [
+               fhir:Expression.language [ fhir:value "text/cql" ];
+               fhir:Expression.expression [ fhir:value "CardiologyChestPainLogic.Practitioner" ]
+             ]
+           ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/example-cardiology-os.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/PlanDefinition/example-cardiology-os.ttl> .
+
+# -------------------------------------------------------------------------------------
+

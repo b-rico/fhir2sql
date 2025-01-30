@@ -1,0 +1,174 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Medication {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  code: CodeableConcept
+  status: code  _status: ElementBase
+  manufacturer: Reference
+  form: CodeableConcept
+  amount: Ratio
+  ingredient: [MedicationIngredient]
+  batch: MedicationBatch
+}
+
+type MedicationIngredient {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemCodeableConcept: CodeableConcept
+  itemReference: Reference
+  isActive: Boolean  _isActive: ElementBase
+  strength: Ratio
+}
+
+type MedicationBatch {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  lotNumber: String  _lotNumber: ElementBase
+  expirationDate: dateTime  _expirationDate: ElementBase
+}
+
+input Medication {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  code: CodeableConcept
+  status: code  _status: ElementBase
+  manufacturer: Reference
+  form: CodeableConcept
+  amount: Ratio
+  ingredient: [MedicationIngredient]
+  batch: MedicationBatch
+}
+
+input MedicationIngredient {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemCodeableConcept: CodeableConcept
+  itemReference: Reference
+  isActive: Boolean  _isActive: ElementBase
+  strength: Ratio
+}
+
+input MedicationBatch {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  lotNumber: String  _lotNumber: ElementBase
+  expirationDate: dateTime  _expirationDate: ElementBase
+}
+
+type MedicationReadType {
+  Medication(id : ID!) : Medication
+}
+
+type MedicationListType {
+  MedicationList(_filter : String
+    code : [token]
+    expiration_date : [date]
+    form : [token]
+    identifier : [token]
+    ingredient : [reference]
+    ingredient_code : [token]
+    lot_number : [token]
+    manufacturer : [reference]
+    status : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Medication]
+}
+
+type MedicationConnectionType {
+  MedicationConection(_filter : String
+    code : [token]
+    expiration_date : [date]
+    form : [token]
+    identifier : [token]
+    ingredient : [reference]
+    ingredient_code : [token]
+    lot_number : [token]
+    manufacturer : [reference]
+    status : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicationConnection
+}
+
+type MedicationConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicationEdge]
+}
+
+type MedicationEdge {
+  mode : String
+  score : Float
+  resource : Medication
+}
+
+type MedicationCreateType {
+  MedicationCreate(resource : Medication) : MedicationCreation
+}
+
+type MedicationCreation {
+  location : String
+  resource : Medication
+  information : OperationOutcome
+}
+
+type MedicationUpdateType {
+  MedicationUpdate(id : IDresource : Medication) : MedicationUpdate
+}
+
+type MedicationUpdate {
+  resource : Medication
+  information : OperationOutcome
+}
+
+type MedicationDeleteType {
+  MedicationDelete(id : ID) : MedicationDelete
+}
+
+type MedicationDelete {
+  information : OperationOutcome
+}
+

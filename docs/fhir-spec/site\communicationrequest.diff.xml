@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="CommunicationRequest" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="CommunicationRequest.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/request-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/request-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="CommunicationRequest.statusReason" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="CommunicationRequest.priority">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/request-priority"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="CommunicationRequest.doNotPerform" status="new"/>
+      <element path="CommunicationRequest.about" status="new"/>
+      <element path="CommunicationRequest.encounter" status="new"/>
+      <element path="CommunicationRequest.requester">
+         <removed-type name="BackboneElement"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device)"/>
+      </element>
+      <element path="CommunicationRequest.recipient">
+         <removed-type name="Reference(Device | Organization | Patient | Practitioner | RelatedPerson | Group | CareTeam)"/>
+         <added-type name="Reference(Device | Organization | Patient | Practitioner | PractitionerRole | RelatedPerson | Group | CareTeam | HealthcareService)"/>
+      </element>
+      <element path="CommunicationRequest.sender">
+         <removed-type name="Reference(Device | Organization | Patient | Practitioner | RelatedPerson)"/>
+         <added-type name="Reference(Device | Organization | Patient | Practitioner | PractitionerRole | RelatedPerson | HealthcareService)"/>
+      </element>
+      <element path="CommunicationRequest.reasonReference">
+         <removed-type name="Reference(Condition | Observation)"/>
+         <added-type name="Reference(Condition | Observation | DiagnosticReport | DocumentReference)"/>
+      </element>
+      <element path="CommunicationRequest.topic" status="deleted"/>
+      <element path="CommunicationRequest.context" status="deleted"/>
+      <element path="CommunicationRequest.requester.agent" status="deleted"/>
+      <element path="CommunicationRequest.requester.onBehalfOf" status="deleted"/>
+   </type>
+</difference>

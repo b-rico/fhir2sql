@@ -1,0 +1,149 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/QuestionnaireResponse/3141> a fhir:QuestionnaireResponse;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "3141"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <pre>\n            Comorbidity? YES\n              Cardial Comorbidity? YES\n                Angina? YES\n                MI? NO\n              Vascular Comorbidity?\n                (no answers)\n              ...\n            Histopathology\n              Abdominal\n                pT category: 1a\n              ...\n          </pre>\n    </div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Patient;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "patsub" ];
+     fhir:Patient.identifier [
+       fhir:index 0;
+       fhir:Identifier.system [ fhir:value "http://cancer.questionnaire.org/systems/id/patientnr" ];
+       fhir:Identifier.value [ fhir:value "A34442332" ]
+     ], [
+       fhir:index 1;
+       fhir:Identifier.type [
+         fhir:CodeableConcept.text [ fhir:value "Dutch BSN" ]
+       ];
+       fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.2.4.6.3" ];
+       fhir:Identifier.value [ fhir:value "188912345" ]
+     ];
+     fhir:Patient.gender [ fhir:value "male" ];
+     fhir:Patient.birthDate [ fhir:value "1972-11-30"^^xsd:date ]
+  ], [
+     a fhir:ServiceRequest;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "order" ];
+     fhir:ServiceRequest.status [ fhir:value "unknown" ];
+     fhir:ServiceRequest.intent [ fhir:value "order" ];
+     fhir:ServiceRequest.subject [
+       fhir:Reference.reference [ fhir:value "#patsub" ]
+     ];
+     fhir:ServiceRequest.requester [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ], [
+     a fhir:Practitioner;
+     fhir:index 2;
+     fhir:Resource.id [ fhir:value "questauth" ];
+     fhir:Practitioner.identifier [
+       fhir:index 0;
+       fhir:Identifier.type [
+         fhir:CodeableConcept.text [ fhir:value "AUMC, Den Helder" ]
+       ];
+       fhir:Identifier.system [ fhir:value "http://cancer.questionnaire.org/systems/id/org" ];
+       fhir:Identifier.value [ fhir:value "AUMC" ]
+     ]
+  ];
+  fhir:QuestionnaireResponse.identifier [
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/questionnaire-ids" ];
+     fhir:Identifier.value [ fhir:value "Q12349876" ]
+  ];
+  fhir:QuestionnaireResponse.basedOn [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#order" ]
+  ];
+  fhir:QuestionnaireResponse.partOf [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Procedure/f201>;
+     fhir:Reference.reference [ fhir:value "Procedure/f201" ]
+  ];
+  fhir:QuestionnaireResponse.status [ fhir:value "completed"];
+  fhir:QuestionnaireResponse.subject [
+     fhir:Reference.reference [ fhir:value "#patsub" ]
+  ];
+  fhir:QuestionnaireResponse.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:QuestionnaireResponse.authored [ fhir:value "2013-02-19T14:15:00-05:00"^^xsd:dateTime];
+  fhir:QuestionnaireResponse.author [
+     fhir:Reference.reference [ fhir:value "#questauth" ]
+  ];
+  fhir:QuestionnaireResponse.item [
+     fhir:index 0;
+     fhir:QuestionnaireResponse.item.linkId [ fhir:value "1" ];
+     fhir:QuestionnaireResponse.item.item [
+       fhir:index 0;
+       fhir:QuestionnaireResponse.item.linkId [ fhir:value "1.1" ];
+       fhir:QuestionnaireResponse.item.answer [
+         fhir:index 0;
+         fhir:QuestionnaireResponse.item.answer.valueCoding [
+           fhir:Coding.system [ fhir:value "http://cancer.questionnaire.org/system/code/yesno" ];
+           fhir:Coding.code [ fhir:value "1" ];
+           fhir:Coding.display [ fhir:value "Yes" ]
+         ];
+         fhir:QuestionnaireResponse.item.answer.item [
+           fhir:index 0;
+           fhir:QuestionnaireResponse.item.linkId [ fhir:value "1.1.1" ];
+           fhir:QuestionnaireResponse.item.item [
+             fhir:index 0;
+             fhir:QuestionnaireResponse.item.linkId [ fhir:value "1.1.1.1" ];
+             fhir:QuestionnaireResponse.item.answer [
+               fhir:index 0;
+               fhir:QuestionnaireResponse.item.answer.valueCoding [
+                 fhir:Coding.system [ fhir:value "http://cancer.questionnaire.org/system/code/yesno" ];
+                 fhir:Coding.code [ fhir:value "1" ]
+               ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:QuestionnaireResponse.item.linkId [ fhir:value "1.1.1.2" ];
+             fhir:QuestionnaireResponse.item.answer [
+               fhir:index 0;
+               fhir:QuestionnaireResponse.item.answer.valueCoding [
+                 fhir:Coding.system [ fhir:value "http://cancer.questionnaire.org/system/code/yesno" ];
+                 fhir:Coding.code [ fhir:value "1" ]
+               ]
+             ]
+           ], [
+             fhir:index 2;
+             fhir:QuestionnaireResponse.item.linkId [ fhir:value "1.1.1.3" ];
+             fhir:QuestionnaireResponse.item.answer [
+               fhir:index 0;
+               fhir:QuestionnaireResponse.item.answer.valueCoding [
+                 fhir:Coding.system [ fhir:value "http://cancer.questionnaire.org/system/code/yesno" ];
+                 fhir:Coding.code [ fhir:value "0" ]
+               ]
+             ]
+           ]
+         ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Procedure/f201> a fhir:Procedure .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/QuestionnaireResponse/3141.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/QuestionnaireResponse/3141.ttl> .
+
+# -------------------------------------------------------------------------------------
+

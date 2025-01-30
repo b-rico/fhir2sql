@@ -1,0 +1,107 @@
+﻿{
+  "types": [
+    "DocumentReference"
+  ],
+  "DocumentReference": {
+    "elements": {
+      "DocumentReference.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/document-reference-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/document-reference-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "DocumentReference.docStatus": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/composition-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/composition-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "DocumentReference.type": {
+        "old-min": 1,
+        "new-min": 0
+      },
+      "DocumentReference.category": {
+        "old-name": "class",
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "DocumentReference.date": {
+        "status": "new"
+      },
+      "DocumentReference.author": {
+        "removed-types": [
+          "Reference(Practitioner | Organization | Device | Patient | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization | Device | Patient | RelatedPerson)"
+        ]
+      },
+      "DocumentReference.authenticator": {
+        "removed-types": [
+          "Reference(Practitioner | Organization)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "DocumentReference.relatesTo": {
+        "modifier": "removed"
+      },
+      "DocumentReference.relatesTo.code": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/document-relationship-type",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/document-relationship-type|4.0.1",
+          "strength": "required"
+        }
+      },
+      "DocumentReference.context.encounter": {
+        "old-max": "1",
+        "new-max": "*",
+        "removed-types": [
+          "Reference(Encounter)"
+        ],
+        "added-types": [
+          "Reference(Encounter | EpisodeOfCare)"
+        ]
+      },
+      "DocumentReference.context.related": {
+        "removed-types": [
+          "BackboneElement"
+        ],
+        "added-types": [
+          "Reference(Resource)"
+        ]
+      },
+      "DocumentReference.created": {
+        "status": "deleted"
+      },
+      "DocumentReference.indexed": {
+        "status": "deleted"
+      },
+      "DocumentReference.context.related.identifier": {
+        "status": "deleted"
+      },
+      "DocumentReference.context.related.ref": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

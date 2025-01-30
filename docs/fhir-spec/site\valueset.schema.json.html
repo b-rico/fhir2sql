@@ -1,0 +1,898 @@
+<!DOCTYPE HTML>
+  <!-- template-example-xml.html --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>ValueSet - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/valueset.schema.json.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="terminology-module.html"><img src="terminology.png"/> Terminology</a></li>        <li><a href="valueset.html">ValueSet</a></li>        <li><b>schema</b></li>          <!-- valueset.html / res-schema / ValueSet -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<h2 class="self-link-parent"><span class="sectioncount">4.9.19<a name="4.9.19"> </a></span> JSON Schema for ValueSet <a href="valueset.schema.json.html#4.9.19" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/Vocab/index.cfm">Vocabulary <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td>  <!-- !ns! --><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+<p>
+This is a representation of the json schema for ValueSet, which is just a part of the <a href="http://hl7.org/fhir/R4/fhir.schema.json.zip">full JSON Schema</a>.
+</p>
+
+
+<pre>
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "id": "http://hl7.org/fhir/json-schema/ValueSet",
+  "$ref": "#/definitions/ValueSet",
+  "description": "see http://hl7.org/fhir/json.html#schema for information about the FHIR Json Schemas",
+  "definitions": {
+    "ValueSet": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "resourceType": {
+          "description": "This is a ValueSet resource",
+          "const": "ValueSet"
+        },
+        "id": {
+          "description": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+          "$ref": "id.schema.json#/definitions/id"
+        },
+        "meta": {
+          "description": "The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.",
+          "$ref": "Meta.schema.json#/definitions/Meta"
+        },
+        "implicitRules": {
+          "description": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
+          "$ref": "#/definitions/uri"
+        },
+        "_implicitRules": {
+          "description": "Extensions for implicitRules",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "language": {
+          "description": "The base language in which the resource is written.",
+          "$ref": "#/definitions/code"
+        },
+        "_language": {
+          "description": "Extensions for language",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "text": {
+          "description": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+          "$ref": "Narrative.schema.json#/definitions/Narrative"
+        },
+        "contained": {
+          "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+          "items": {
+            "$ref": "ResourceList.schema.json#/definitions/ResourceList"
+          },
+          "type": "array"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "url": {
+          "description": "An absolute URI that is used to identify this value set when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this value set is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the value set is stored on different servers.",
+          "$ref": "#/definitions/uri"
+        },
+        "_url": {
+          "description": "Extensions for url",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "identifier": {
+          "description": "A formal identifier that is used to identify this value set when it is represented in other formats, or referenced in a specification, model, design or an instance.",
+          "items": {
+            "$ref": "Identifier.schema.json#/definitions/Identifier"
+          },
+          "type": "array"
+        },
+        "version": {
+          "description": "The identifier that is used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the value set author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.",
+          "$ref": "#/definitions/string"
+        },
+        "_version": {
+          "description": "Extensions for version",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "name": {
+          "description": "A natural language name identifying the value set. This name should be usable as an identifier for the module by machine processing applications such as code generation.",
+          "$ref": "#/definitions/string"
+        },
+        "_name": {
+          "description": "Extensions for name",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "title": {
+          "description": "A short, descriptive, user-friendly title for the value set.",
+          "$ref": "#/definitions/string"
+        },
+        "_title": {
+          "description": "Extensions for title",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "status": {
+          "description": "The status of this value set. Enables tracking the life-cycle of the content. The status of the value set applies to the value set definition (ValueSet.compose) and the associated ValueSet metadata. Expansions do not have a state.",
+          "enum": [
+            "draft",
+            "active",
+            "retired",
+            "unknown"
+          ]
+        },
+        "_status": {
+          "description": "Extensions for status",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "experimental": {
+          "description": "A Boolean value to indicate that this value set is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.",
+          "$ref": "#/definitions/boolean"
+        },
+        "_experimental": {
+          "description": "Extensions for experimental",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "date": {
+          "description": "The date (and optionally time) when the value set was created or revised (e.g. the \u0027content logical definition\u0027).",
+          "$ref": "#/definitions/dateTime"
+        },
+        "_date": {
+          "description": "Extensions for date",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "publisher": {
+          "description": "The name of the organization or individual that published the value set.",
+          "$ref": "#/definitions/string"
+        },
+        "_publisher": {
+          "description": "Extensions for publisher",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "contact": {
+          "description": "Contact details to assist a user in finding and communicating with the publisher.",
+          "items": {
+            "$ref": "ContactDetail.schema.json#/definitions/ContactDetail"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "A free text natural language description of the value set from a consumer\u0027s perspective. The textual description specifies the span of meanings for concepts to be included within the Value Set Expansion, and also may specify the intended use and limitations of the Value Set.",
+          "$ref": "#/definitions/markdown"
+        },
+        "_description": {
+          "description": "Extensions for description",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "useContext": {
+          "description": "The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate value set instances.",
+          "items": {
+            "$ref": "UsageContext.schema.json#/definitions/UsageContext"
+          },
+          "type": "array"
+        },
+        "jurisdiction": {
+          "description": "A legal or geographic region in which the value set is intended to be used.",
+          "items": {
+            "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+          },
+          "type": "array"
+        },
+        "immutable": {
+          "description": "If this is set to \u0027true\u0027, then no new versions of the content logical definition can be created.  Note: Other metadata might still change.",
+          "$ref": "#/definitions/boolean"
+        },
+        "_immutable": {
+          "description": "Extensions for immutable",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "purpose": {
+          "description": "Explanation of why this value set is needed and why it has been designed as it has.",
+          "$ref": "#/definitions/markdown"
+        },
+        "_purpose": {
+          "description": "Extensions for purpose",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "copyright": {
+          "description": "A copyright statement relating to the value set and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the value set.",
+          "$ref": "#/definitions/markdown"
+        },
+        "_copyright": {
+          "description": "Extensions for copyright",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "compose": {
+          "description": "A set of criteria that define the contents of the value set by including or excluding codes selected from the specified code system(s) that the value set draws from. This is also known as the Content Logical Definition (CLD).",
+          "$ref": "#/definitions/ValueSet_Compose"
+        },
+        "expansion": {
+          "description": "A value set can also be \"expanded\", where the value set is turned into a simple collection of enumerated codes. This element holds the expansion, if it has been performed.",
+          "$ref": "#/definitions/ValueSet_Expansion"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "resourceType"
+      ]
+    },
+    "ValueSet_Compose": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "lockedDate": {
+          "description": "The Locked Date is  the effective date that is used to determine the version of all referenced Code Systems and Value Set Definitions included in the compose that are not already tied to a specific version.",
+          "$ref": "#/definitions/date"
+        },
+        "_lockedDate": {
+          "description": "Extensions for lockedDate",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "inactive": {
+          "description": "Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive \u003d true, inactive codes are to be included in the expansion, if inactive \u003d false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable $expand parameters (but generally, inactive codes would be expected to be included).",
+          "$ref": "#/definitions/boolean"
+        },
+        "_inactive": {
+          "description": "Extensions for inactive",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "include": {
+          "description": "Include one or more codes from a code system or other value set(s).",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Include"
+          },
+          "type": "array"
+        },
+        "exclude": {
+          "description": "Exclude one or more codes from the value set based on code system filters and/or other value sets.",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Include"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "include"
+      ]
+    },
+    "ValueSet_Include": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "system": {
+          "description": "An absolute URI which is the code system from which the selected codes come from.",
+          "$ref": "#/definitions/uri"
+        },
+        "_system": {
+          "description": "Extensions for system",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "version": {
+          "description": "The version of the code system that the codes are selected from, or the special version \u0027*\u0027 for all versions.",
+          "$ref": "#/definitions/string"
+        },
+        "_version": {
+          "description": "Extensions for version",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "concept": {
+          "description": "Specifies a concept to be included or excluded.",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Concept"
+          },
+          "type": "array"
+        },
+        "filter": {
+          "description": "Select concepts by specify a matching criterion based on the properties (including relationships) defined by the system, or on filters defined by the system. If multiple filters are specified, they SHALL all be true.",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Filter"
+          },
+          "type": "array"
+        },
+        "valueSet": {
+          "description": "Selects the concepts found in this value set (based on its value set definition). This is an absolute URI that is a reference to ValueSet.url.  If multiple value sets are specified this includes the union of the contents of all of the referenced value sets.",
+          "items": {
+            "$ref": "canonical.schema.json#/definitions/canonical"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ValueSet_Concept": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "code": {
+          "description": "Specifies a code for the concept to be included or excluded.",
+          "$ref": "#/definitions/code"
+        },
+        "_code": {
+          "description": "Extensions for code",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "display": {
+          "description": "The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.",
+          "$ref": "#/definitions/string"
+        },
+        "_display": {
+          "description": "Extensions for display",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "designation": {
+          "description": "Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Designation"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ValueSet_Designation": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "language": {
+          "description": "The language this designation is defined for.",
+          "$ref": "#/definitions/code"
+        },
+        "_language": {
+          "description": "Extensions for language",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "use": {
+          "description": "A code that represents types of uses of designations.",
+          "$ref": "Coding.schema.json#/definitions/Coding"
+        },
+        "value": {
+          "description": "The text value for this designation.",
+          "$ref": "#/definitions/string"
+        },
+        "_value": {
+          "description": "Extensions for value",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ValueSet_Filter": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "property": {
+          "description": "A code that identifies a property or a filter defined in the code system.",
+          "$ref": "#/definitions/code"
+        },
+        "_property": {
+          "description": "Extensions for property",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "op": {
+          "description": "The kind of operation to perform as a part of the filter criteria.",
+          "enum": [
+            "\u003d",
+            "is-a",
+            "descendent-of",
+            "is-not-a",
+            "regex",
+            "in",
+            "not-in",
+            "generalizes",
+            "exists"
+          ]
+        },
+        "_op": {
+          "description": "Extensions for op",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "value": {
+          "description": "The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value  (if the filter represents a property defined in CodeSystem) or of the system filter value (if the filter represents a filter defined in CodeSystem) when the operation is \u0027regex\u0027, or one of the values (true and false), when the operation is \u0027exists\u0027.",
+          "$ref": "#/definitions/string"
+        },
+        "_value": {
+          "description": "Extensions for value",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ValueSet_Expansion": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "identifier": {
+          "description": "An identifier that uniquely identifies this expansion of the valueset, based on a unique combination of the provided parameters, the system default parameters, and the underlying system code system versions etc. Systems may re-use the same identifier as long as those factors remain the same, and the expansion is the same, but are not required to do so. This is a business identifier.",
+          "$ref": "#/definitions/uri"
+        },
+        "_identifier": {
+          "description": "Extensions for identifier",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "timestamp": {
+          "description": "The time at which the expansion was produced by the expanding system.",
+          "$ref": "#/definitions/dateTime"
+        },
+        "_timestamp": {
+          "description": "Extensions for timestamp",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "total": {
+          "description": "The total number of concepts in the expansion. If the number of concept nodes in this resource is less than the stated number, then the server can return more using the offset parameter.",
+          "$ref": "#/definitions/integer"
+        },
+        "_total": {
+          "description": "Extensions for total",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "offset": {
+          "description": "If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL NOT be present.",
+          "$ref": "#/definitions/integer"
+        },
+        "_offset": {
+          "description": "Extensions for offset",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "parameter": {
+          "description": "A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Parameter"
+          },
+          "type": "array"
+        },
+        "contains": {
+          "description": "The codes that are contained in the value set expansion.",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Contains"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ValueSet_Parameter": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "Name of the input parameter to the $expand operation; may be a server-assigned name for additional default or other server-supplied parameters used to control the expansion process.",
+          "$ref": "#/definitions/string"
+        },
+        "_name": {
+          "description": "Extensions for name",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueString": {
+          "description": "The value of the parameter.",
+          "pattern": "^[ \\r\\n\\t\\S]+$",
+          "type": "string"
+        },
+        "_valueString": {
+          "description": "Extensions for valueString",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueBoolean": {
+          "description": "The value of the parameter.",
+          "pattern": "^true|false$",
+          "type": "boolean"
+        },
+        "_valueBoolean": {
+          "description": "Extensions for valueBoolean",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueInteger": {
+          "description": "The value of the parameter.",
+          "pattern": "^-?([0]|([1-9][0-9]*))$",
+          "type": "number"
+        },
+        "_valueInteger": {
+          "description": "Extensions for valueInteger",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueDecimal": {
+          "description": "The value of the parameter.",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$",
+          "type": "number"
+        },
+        "_valueDecimal": {
+          "description": "Extensions for valueDecimal",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueUri": {
+          "description": "The value of the parameter.",
+          "pattern": "^\\S*$",
+          "type": "string"
+        },
+        "_valueUri": {
+          "description": "Extensions for valueUri",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueCode": {
+          "description": "The value of the parameter.",
+          "pattern": "^[^\\s]+(\\s[^\\s]+)*$",
+          "type": "string"
+        },
+        "_valueCode": {
+          "description": "Extensions for valueCode",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueDateTime": {
+          "description": "The value of the parameter.",
+          "pattern": "^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$",
+          "type": "string"
+        },
+        "_valueDateTime": {
+          "description": "Extensions for valueDateTime",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ValueSet_Contains": {
+      "description": "A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "system": {
+          "description": "An absolute URI which is the code system in which the code for this item in the expansion is defined.",
+          "$ref": "#/definitions/uri"
+        },
+        "_system": {
+          "description": "Extensions for system",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "abstract": {
+          "description": "If true, this entry is included in the expansion for navigational purposes, and the user cannot select the code directly as a proper value.",
+          "$ref": "#/definitions/boolean"
+        },
+        "_abstract": {
+          "description": "Extensions for abstract",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "inactive": {
+          "description": "If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).",
+          "$ref": "#/definitions/boolean"
+        },
+        "_inactive": {
+          "description": "Extensions for inactive",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "version": {
+          "description": "The version of the code system from this code was taken. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+          "$ref": "#/definitions/string"
+        },
+        "_version": {
+          "description": "Extensions for version",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "code": {
+          "description": "The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.",
+          "$ref": "#/definitions/code"
+        },
+        "_code": {
+          "description": "Extensions for code",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "display": {
+          "description": "The recommended display for this item in the expansion.",
+          "$ref": "#/definitions/string"
+        },
+        "_display": {
+          "description": "Extensions for display",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "designation": {
+          "description": "Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Designation"
+          },
+          "type": "array"
+        },
+        "contains": {
+          "description": "Other codes and entries contained under this entry in the hierarchy.",
+          "items": {
+            "$ref": "#/definitions/ValueSet_Contains"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
+</pre>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:32+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fvalueset.schema.json.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fvalueset.schema.json.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

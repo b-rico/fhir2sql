@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Composition/example-mixed> a fhir:Composition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-mixed"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-mixed</p><p><b>status</b>: final</p><p><b>type</b>: Neonatal perinatal medicine Discharge summary <span>(Details : {LOINC code '78418-1' = 'Neonatal perinatal medicine Discharge summary', given as 'Neonatal perinatal medicine Discharge summary'})</span></p><p><b>category</b>: Report <span>(Details : {LOINC code 'LP173421-1' = 'Report', given as 'Report'})</span></p><p><b>date</b>: 30/10/2018 4:56:04 PM</p><p><b>author</b>: <a>Harold Hippocrates, MD</a></p><p><b>title</b>: Discharge Summary (Neonatal Service)</p><p><b>confidentiality</b>: N</p><h3>Attesters</h3><table><tr><td>-</td><td><b>Mode</b></td><td><b>Time</b></td><td><b>Party</b></td></tr><tr><td>*</td><td>legal</td><td>04/01/2012 9:10:14 AM</td><td><a>Harold Hippocrates, MD</a></td></tr></table><p><b>custodian</b>: <a>Good Health Clinic</a></p></div>"
+  ];
+  fhir:Composition.status [ fhir:value "final"];
+  fhir:Composition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:78418-1;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "78418-1" ];
+       fhir:Coding.display [ fhir:value "Neonatal perinatal medicine Discharge summary" ]
+     ]
+  ];
+  fhir:Composition.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:LP173421-1;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "LP173421-1" ];
+       fhir:Coding.display [ fhir:value "Report" ]
+     ]
+  ];
+  fhir:Composition.subject [
+     fhir:link <http://hl7.org/fhir/Patient/newborn>;
+     fhir:Reference.reference [ fhir:value "Patient/newborn" ];
+     fhir:Reference.display [ fhir:value "Tahlia Smith" ]
+  ];
+  fhir:Composition.date [ fhir:value "2018-10-30T16:56:04+11:00"^^xsd:dateTime];
+  fhir:Composition.author [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/xcda-author>;
+     fhir:Reference.reference [ fhir:value "Practitioner/xcda-author" ];
+     fhir:Reference.display [ fhir:value "Harold Hippocrates, MD" ]
+  ];
+  fhir:Composition.title [ fhir:value "Discharge Summary (Neonatal Service)"];
+  fhir:Composition.confidentiality [ fhir:value "N"];
+  fhir:Composition.attester [
+     fhir:index 0;
+     fhir:Composition.attester.mode [ fhir:value "legal" ];
+     fhir:Composition.attester.time [ fhir:value "2012-01-04T09:10:14Z"^^xsd:dateTime ];
+     fhir:Composition.attester.party [
+       fhir:link <http://hl7.org/fhir/Practitioner/xcda-author>;
+       fhir:Reference.reference [ fhir:value "Practitioner/xcda-author" ];
+       fhir:Reference.display [ fhir:value "Harold Hippocrates, MD" ]
+     ]
+  ];
+  fhir:Composition.custodian [
+     fhir:link <http://hl7.org/fhir/Organization/2.16.840.1.113883.19.5>;
+     fhir:Reference.reference [ fhir:value "Organization/2.16.840.1.113883.19.5" ];
+     fhir:Reference.display [ fhir:value "Good Health Clinic" ]
+  ];
+  fhir:Composition.section [
+     fhir:index 0;
+     fhir:Composition.section.title [ fhir:value "Child's Details" ];
+     fhir:Composition.section.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://acme.org/codes/SectionType" ];
+         fhir:Coding.code [ fhir:value "newborn" ];
+         fhir:Coding.display [ fhir:value "New Born Details" ]
+       ]
+     ];
+     fhir:Composition.section.text [
+       fhir:Narrative.status [ fhir:value "generated" ];
+       fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n        (snip)\n			</div>"
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Composition.section.title [ fhir:value "Mpther's Details" ];
+     fhir:Composition.section.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://acme.org/codes/SectionType" ];
+         fhir:Coding.code [ fhir:value "mother" ];
+         fhir:Coding.display [ fhir:value "Mother's Details" ]
+       ]
+     ];
+     fhir:Composition.section.text [
+       fhir:Narrative.status [ fhir:value "generated" ];
+       fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n				(snip)\n			</div>"
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/newborn> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/xcda-author> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Organization/2.16.840.1.113883.19.5> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Composition/example-mixed.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Composition/example-mixed.ttl> .
+
+# -------------------------------------------------------------------------------------
+

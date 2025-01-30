@@ -1,0 +1,244 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ClaimResponse/UR3503> a fhir:ClaimResponse;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "UR3503"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A sample unsolicited pre-authorization response which authorizes basic dental services to be performed for a patient.</div>"
+  ];
+  fhir:ClaimResponse.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.SocialBenefitsInc.com/fhir/ClaimResponse" ];
+     fhir:Identifier.value [ fhir:value "UR3503" ]
+  ];
+  fhir:ClaimResponse.status [ fhir:value "active"];
+  fhir:ClaimResponse.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claim-type" ];
+       fhir:Coding.code [ fhir:value "oral" ]
+     ]
+  ];
+  fhir:ClaimResponse.use [ fhir:value "preauthorization"];
+  fhir:ClaimResponse.patient [
+     fhir:link <http://hl7.org/fhir/Patient/1>;
+     fhir:Reference.reference [ fhir:value "Patient/1" ]
+  ];
+  fhir:ClaimResponse.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:ClaimResponse.insurer [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://www.jurisdiction.org/insurers" ];
+       fhir:Identifier.value [ fhir:value "444123" ]
+     ]
+  ];
+  fhir:ClaimResponse.requestor [
+     fhir:link <http://hl7.org/fhir/Organization/1>;
+     fhir:Reference.reference [ fhir:value "Organization/1" ]
+  ];
+  fhir:ClaimResponse.outcome [ fhir:value "complete"];
+  fhir:ClaimResponse.disposition [ fhir:value "The enclosed services are authorized for your provision within 30 days of this notice."];
+  fhir:ClaimResponse.preAuthRef [ fhir:value "18SS12345"];
+  fhir:ClaimResponse.payeeType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/payeetype" ];
+       fhir:Coding.code [ fhir:value "provider" ]
+     ]
+  ];
+  fhir:ClaimResponse.addItem [
+     fhir:index 0;
+     fhir:ClaimResponse.addItem.itemSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:ClaimResponse.addItem.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/oralservicecodes" ];
+         fhir:Coding.code [ fhir:value "1101" ]
+       ]
+     ];
+     fhir:ClaimResponse.addItem.modifier [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/modifiers" ];
+         fhir:Coding.code [ fhir:value "x" ];
+         fhir:Coding.display [ fhir:value "None" ]
+       ]
+     ];
+     fhir:ClaimResponse.addItem.net [
+       fhir:Money.value [ fhir:value "250.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:ClaimResponse.addItem.noteNumber [
+       fhir:value "101"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:ClaimResponse.addItem.adjudication [
+       fhir:index 0;
+       fhir:ClaimResponse.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "eligible" ]
+         ]
+       ];
+       fhir:ClaimResponse.item.adjudication.amount [
+         fhir:Money.value [ fhir:value "250.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ClaimResponse.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "copay" ]
+         ]
+       ];
+       fhir:ClaimResponse.item.adjudication.amount [
+         fhir:Money.value [ fhir:value "10.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:ClaimResponse.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "eligpercent" ]
+         ]
+       ];
+       fhir:ClaimResponse.item.adjudication.value [ fhir:value "100.00"^^xsd:decimal ]
+     ], [
+       fhir:index 3;
+       fhir:ClaimResponse.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "benefit" ]
+         ]
+       ];
+       fhir:ClaimResponse.item.adjudication.amount [
+         fhir:Money.value [ fhir:value "240.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ClaimResponse.addItem.itemSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:ClaimResponse.addItem.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/oralservicecodes" ];
+         fhir:Coding.code [ fhir:value "2101" ];
+         fhir:Coding.display [ fhir:value "Radiograph, series (12)" ]
+       ]
+     ];
+     fhir:ClaimResponse.addItem.net [
+       fhir:Money.value [ fhir:value "800.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:ClaimResponse.addItem.adjudication [
+       fhir:index 0;
+       fhir:ClaimResponse.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "eligible" ]
+         ]
+       ];
+       fhir:ClaimResponse.item.adjudication.amount [
+         fhir:Money.value [ fhir:value "800.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ClaimResponse.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "eligpercent" ]
+         ]
+       ];
+       fhir:ClaimResponse.item.adjudication.value [ fhir:value "100.00"^^xsd:decimal ]
+     ], [
+       fhir:index 2;
+       fhir:ClaimResponse.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "benefit" ]
+         ]
+       ];
+       fhir:ClaimResponse.item.adjudication.amount [
+         fhir:Money.value [ fhir:value "800.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ]
+  ];
+  fhir:ClaimResponse.total [
+     fhir:index 0;
+     fhir:ClaimResponse.total.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "submitted" ]
+       ]
+     ];
+     fhir:ClaimResponse.total.amount [
+       fhir:Money.value [ fhir:value "1050.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ClaimResponse.total.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "benefit" ]
+       ]
+     ];
+     fhir:ClaimResponse.total.amount [
+       fhir:Money.value [ fhir:value "1040.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ]
+  ];
+  fhir:ClaimResponse.processNote [
+     fhir:index 0;
+     fhir:ClaimResponse.processNote.number [ fhir:value "101"^^xsd:positiveInteger ];
+     fhir:ClaimResponse.processNote.type [ fhir:value "print" ];
+     fhir:ClaimResponse.processNote.text [ fhir:value "Please submit a Pre-Authorization request if a more extensive examination or urgent services are required." ];
+     fhir:ClaimResponse.processNote.language [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "urn:ietf:bcp:47" ];
+         fhir:Coding.code [ fhir:value "en-CA" ]
+       ]
+     ]
+  ];
+  fhir:ClaimResponse.insurance [
+     fhir:index 0;
+     fhir:ClaimResponse.insurance.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:ClaimResponse.insurance.focal [ fhir:value "true"^^xsd:boolean ];
+     fhir:ClaimResponse.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/1> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/1> a fhir:Organization .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ClaimResponse/UR3503.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ClaimResponse/UR3503.ttl> .
+
+# -------------------------------------------------------------------------------------
+

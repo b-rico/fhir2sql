@@ -1,0 +1,61 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Condition/f205> a fhir:Condition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "f205"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: f205</p><p><b>clinicalStatus</b>: Active <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-clinical code 'active' = 'Active)</span></p><p><b>verificationStatus</b>: Differential <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-ver-status code 'differential' = 'Differential)</span></p><p><b>code</b>: Bacterial infectious disease <span>(Details : {SNOMED CT code '87628006' = 'Bacterial infectious disease', given as 'Bacterial infectious disease'})</span></p><p><b>subject</b>: <a>Roel</a></p><p><b>recordedDate</b>: 04/04/2013</p><p><b>asserter</b>: <a>Practitioner/f201</a></p></div>"
+  ];
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ];
+  fhir:Condition.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+       fhir:Coding.code [ fhir:value "differential" ]
+     ]
+  ];
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:87628006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "87628006" ];
+       fhir:Coding.display [ fhir:value "Bacterial infectious disease" ]
+     ]
+  ];
+  fhir:Condition.subject [
+     fhir:link <http://hl7.org/fhir/Patient/f201>;
+     fhir:Reference.reference [ fhir:value "Patient/f201" ];
+     fhir:Reference.display [ fhir:value "Roel" ]
+  ];
+  fhir:Condition.recordedDate [ fhir:value "2013-04-04"^^xsd:date];
+  fhir:Condition.asserter [
+     fhir:link <http://hl7.org/fhir/Practitioner/f201>;
+     fhir:Reference.reference [ fhir:value "Practitioner/f201" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f201> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/f201> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Condition/f205.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Condition/f205.ttl> .
+
+# -------------------------------------------------------------------------------------
+

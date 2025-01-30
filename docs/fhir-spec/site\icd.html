@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Icd - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/icd.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="terminology-module.html"><img src="terminology.png"/> Terminology</a></li>
+        <li><a href="terminologies-systems.html">Code Systems</a></li>
+        <li><b>ICD-X</b></li>          <!-- icd.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Using Codes</a></li><li><a href="terminologies-systems.html">Code Systems</a></li><li><a href="terminologies-valuesets.html">Value Sets</a></li><li><a href="terminologies-conceptmaps.html">Concept Maps</a></li><li><a href="identifier-registry.html">Identifier Systems</a></li></ul>
+
+
+<h2 class="self-link-parent"><span class="sectioncount">4.3.11<a name="4.3.11"> </a></span> Using ICD-[X] Codes with FHIR <a href="icd.html#4.3.11" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colstu"><tr><td id="wg"><a href="http://www.hl7.org/Special/committees/Vocab/index.cfm" _target="blank">Vocabulary <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: 2</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:  <!-- !ns! --><a href="versions.html#std-process">Trial Use</a></td></tr></table>
+
+<p>
+ICD is a family of code systems maintained by <a href="http://www.who.int/classifications/icd/en/">WHO <img src="external.png" style="text-align: baseline"/></a>, with many countries 
+publishing their own variants. 
+</p>
+<p>
+There are two principal revisions of ICD in use - ICD-10 and ICD-9 (note that while US usage has recently updated to ICD-10, there is still a lot of legacy data coded in ICD-9). Though these can be referred to as different versions of ICD, they are entirely distinct sets of codes, with significant differences in organization and coding rules.  Plus, if period ('.') characters are disregarded (as occurs in some systems), a few of the codes are overlapping between ICD-9 and ICD-10.  Given these considerations, ICD-9 and ICD-10 are represented as entirely separate code systems.  The next revision, ICD-11, is scheduled for release in 2017.
+</p>
+
+<h3 class="self-link-parent"><span class="sectioncount">4.3.11.1<a name="4.3.11.1"> </a></span> Summary <a href="icd.html#4.3.11.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<table class="grid">
+ <tr>
+   <td></td>
+   <td>ICD-10</td>
+   <td>ICD-9</td>
+ </tr>
+ <tr>
+   <td>Source</td>
+   <td><a href="http://www.who.int/classifications/icd/en/">WHO <img src="external.png" style="text-align: baseline"/></a> or see below</td>
+   <td>(<a href="http://www.cdc.gov/nchs/icd/icd9.htm">CDC <img src="external.png" style="text-align: baseline"/></a>)</td>
+ </tr>
+ <tr>
+   <td>System</td>
+   <td><code>http://hl7.org/fhir/sid/icd-10</code> and <br/>http://hl7.org/fhir/sid/icd-10-[x] (see below)</td>
+   <td>http://hl7.org/fhir/sid/icd-9-cm</td>
+ </tr>
+ <tr>
+   <td>OID</td>
+   <td>2.16.840.1.113883.6.3</td>
+   <td>2.16.840.1.113883.6.42</td>
+ </tr>
+ <tr>
+   <td>Version</td>
+   <td colspan="2">The versioning convention and frequency may vary between the various ICD revisions and variants.  WHO publishes a new version of ICD-10 annually in October (with minor updates annually, and major updates, if required, every 3 years - the versions are identified as 'YYYY', e.g. '2016').  The national variants (which in some cases are used multi-nationally) are also typically published on an annual basis (refer to the documentation for a particular variant for details).</td>
+ </tr>
+ <tr>
+   <td>Code</td>
+   <td colspan="2">Either an ICD-10 or ICD-9 code, or a dual (multiple) coding expression - see below. ICD codes SHALL be represented with the period included, e.g. 123.4</td>
+ </tr>
+ <tr>
+   <td>Display</td>
+   <td colspan="2">There are no specific conventions required or described for obtaining the complete display string for use for each code.</td>
+ </tr>
+ <tr>
+   <td>Inactive</td>
+   <td colspan="2">ICD-9 and ICD-10 do not have codes that are identified as inactive (although in some cases previously included codes may have been removed or changed in meaning in subsequent versions).</td>
+ </tr>
+ <tr>
+   <td>Hierarchy</td>
+   <td colspan="2">The tabular representations are organized with headings and multiple levels of codes (typically based on the numbers of digits contained in each code), but an explicit hierarchy is not defined.</td>
+ </tr>
+ <tr>
+   <td>Filter Properties</td>
+   <td colspan="2">None are described yet.</td>
+ </tr>
+</table>
+
+<a name="variants"></a>
+<h3 class="self-link-parent"><span class="sectioncount">4.3.11.2</span> ICD-10 variants <a href="icd.html#variants" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+Variants (other variants exist which are not listed here):
+</p>
+<table class="grid">
+ <tr>
+  <td>Germany</td>
+  <td><code>http://fhir.de/CodeSystem/dimdi/icd-10-gm</code></td>
+  <td>see <a href="http://wiki.hl7.de/index.php?title=Kodesysteme">HL7 Germany page <img src="external.png" style="text-align: baseline"/></a></td>
+ </tr>
+ <tr>
+  <td>Netherlands</td>
+  <td><code>http://hl7.org/fhir/sid/icd-10-nl</code></td>
+  <td>2.16.840.1.113883.6.3.2</td>
+ </tr>
+ <tr>
+  <td>United States</td>
+  <td><code>http://hl7.org/fhir/sid/icd-10-cm</code></td>
+  <td>2.16.840.1.113883.6.90</td>
+ </tr>
+</table>
+
+<a name="multiple-coding"></a>
+<h3 class="self-link-parent"><span class="sectioncount">4.3.11.3</span> Multiple Coding <a href="icd.html#multiple-coding" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<h4 class="self-link-parent"><span class="sectioncount">4.3.11.3.1<a name="4.3.11.3.1"> </a></span> Dual Coding (“dagger and asterisk” system) <a href="icd.html#4.3.11.3.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>
+For dual ("two code", “dagger and asterisk”) coding see volume 2 <a href="http://www.who.int/entity/classifications/icd/ICD-10_2nd_ed_volume2.pdf">ICD-10 Manual <img src="external.png" style="text-align: baseline"/></a>), section 3.1.3 <i>Two codes for certain conditions</i>.  In cases where two codes are required, the primary recommendation for representing this coding in FHIR (in Coding.code) is to simply use the two ICD-10 codes separated by a space, e.g. "J21.8 B95.6", as the code value (string).  This is a simple form of post-coordination syntax.  Alternatively, another possible syntax that may be used (which may be desirable or required in some situations) is to include the characters of the dagger (represented as † or +) for the primary code and the asterisk (*) for the secondary code as part of the post-coordinated code value, e.g. "J21.8+ B95.6*".  In either case, it is recommended that the primary (+) code for the underlying generalized disease is listed first, followed by the secondary (*) code for the specific manifestation in a particular organ or site.
+</p>
+
+<p>
+Dual coding in ICD-10 is used for the following (and potentially other) reasons:
+</p>
+<ul>
+ <li>Coding for diagnostic statements containing information about both (1) an underlying generalized disease and (2) a manifestation in a particular organ or site which is a clinical problem in its own right.  This is referred to as the "dagger and asterisk" system, as it marks the primary code for the underlying disease with a dagger (†) and an optional additional code for the manifestation with an asterisk (*).</li>
+ <li>Other optional dual coding (noted in the tabular representation as “Use additional code, if desired ...”)</li>
+ <ul>
+   <li>For local infections, classifiable to the “body systems” chapters, codes from Chapter I may be added to identify the infecting organism, where this information does not appear in the title of the rubric.</li>
+   <li>For neoplasms with functional activity. To the code from Chapter II may be added the appropriate code from Chapter IV to indicate the type of functional activity.</li>
+   <li>For neoplasms, the morphology code from Volume 1, although not part of the main ICD, may be added to the Chapter II code to identify the morphological type of the tumour.</li>
+   <li>For conditions classifiable to F00-F09 (Organic, including symptomatic, mental disorders) in Chapter V, where a code from another chapter may be added to indicate the cause, i.e. the underlying disease, injury or other insult to the brain.</li>
+   <li>Where a condition is caused by a toxic agent, a code from Chapter XX may be added to identify that agent.</li>
+   <li>Where two codes can be used to describe an injury, poisoning or other adverse effect: a code from Chapter XIX, which describes the nature of the injury, and a code from Chapter XX, which describes the cause.</li>
+ </ul>
+</ul>
+
+<p>
+Dual Coding Example: "Staph aureus bronchiolitis" is coded using ICD-10 codes J21.8 "Acute bronchiolitis due to other specified organisms" and B95.6 "Staphylococcus aureus as the cause of diseases classified to other chapters"
+as:
+<pre>
+  &lt;coding&gt;
+    &lt;system value="http://hl7.org/fhir/sid/icd-10"/&gt;
+    &lt;code value="J21.8 B95.6"/&gt;
+  &lt;/coding&gt;
+</pre>
+or, with the + and * characters included:
+<pre>
+  &lt;coding&gt;
+    &lt;system value="http://hl7.org/fhir/sid/icd-10"/&gt;
+    &lt;code value="J21.8+ B95.6*"/&gt;
+  &lt;/coding&gt;
+</pre>
+</p>
+
+<h4 class="self-link-parent"><span class="sectioncount">4.3.11.3.2<a name="4.3.11.3.2"> </a></span> Additional Characters <a href="icd.html#4.3.11.3.2" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>
+Some jurisdictions (e.g. Germany) have additional coding requirements that go beyond the dual coding “dagger and asterisk” coding approach (syntax).  In ICD-10-GM used in Germany the ! character is used to indicate a secondary diagnosis.
+</p>
+<p>
+    Primary diagnosis
+    <ul>
+    <li>S62.32 - Fracture of shaft of metacarpal bone</li>
+    </ul>
+</p>
+<p>
+    Secondary diagnosis
+    <ul>
+    <li>Z33! - Pregnancy as a secondary diagnosis</li>
+    </ul>
+</p>
+<p>
+The recommended syntax for representing these combinations of codes in FHIR (in Coding.code) is to include the additional (+*!) characters when they are present and to separate the code groups with a space, as:
+<pre>
+  &lt;coding&gt;
+    &lt;system value="http://fhir.de/CodeSystem/dimdi/icd-10-gm"/&gt;
+    &lt;version value="2017"/&gt;
+    &lt;code value="S62.32 Z33!"/&gt;
+  &lt;/coding&gt;
+</pre>
+</p>
+
+<h4 class="self-link-parent"><span class="sectioncount">4.3.11.3.3<a name="4.3.11.3.3"> </a></span> Three or More Codes <a href="icd.html#4.3.11.3.3" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The coding also may require three or sometimes more codes for a complete representation of the intended meaning.  A further German coding example (from the <i>Deutsche Kodierrichtlinien</i> manual) includes an additional secondary diagnosis and a monitoring code.
+</p>
+<p>
+Additional secondary diagnosis and monitoring codes
+<ul>
+<li>O09.1! - Duration of pregnancy between 5 and 13 weeks</li>
+<li>Z34 - Monitoring of a regular pregnancy</li>
+</ul>
+</p>
+<p>
+A proper interpretation of this extended example is: "A patient is admitted to hospital due to a fracture of the metacarpal shaft. Since she is six weeks pregnant, the pregnancy and the monitoring of the pregnancy are coded as secondary diagnoses."  The recommended FHIR representation is:
+<pre>
+  &lt;coding&gt;
+    &lt;system value="http://fhir.de/CodeSystem/dimdi/icd-10-gm"/&gt;
+    &lt;version value="2017"/&gt;
+    &lt;code value="S62.32 Z33! O09.1! Z34"/&gt;
+  &lt;/coding&gt;
+</pre>
+</p>
+<p>
+Other jurisdictions may have similar needs for multiple coding but with different specific coding requirements.  In those cases local coding manuals and authorities should be consulted to determine the recommended or expected syntax to use in a FHIR Coding instance. 
+</p>
+
+<h3 class="self-link-parent"><span class="sectioncount">4.3.11.4<a name="4.3.11.4"> </a></span> Copyright/License Issues <a href="icd.html#4.3.11.4" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+ICD-10 is &copy;Copyright World Health Organization (WHO).  WHO licenses its published material widely, in order to encourage maximum use and dissemination. See <a href="http://www.who.int/about/licensing/classifications/en/">Licensing WHO classifications <img src="external.png" style="text-align: baseline"/></a> for details.  The ICD variants have their own separate copyright and licensing (refer to the documentation for the particular variant for details).
+</p>
+
+<h3 class="self-link-parent"><span class="sectioncount">4.3.11.5<a name="4.3.11.5"> </a></span> ICD-X Filter Properties <a href="icd.html#4.3.11.5" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+
+<a name="filters"></a>
+<p>
+No need for filters identified yet.
+</p>
+
+
+<h3 class="self-link-parent"><span class="sectioncount">4.3.11.6<a name="4.3.11.6"> </a></span> Implicit Value Sets <a href="icd.html#4.3.11.6" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+No need for implicit value sets identified yet.
+</p>
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Ficd.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Ficd.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

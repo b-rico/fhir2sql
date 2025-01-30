@@ -1,0 +1,470 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type CapabilityStatement {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  url: uri  _url: ElementBase
+  version: String  _version: ElementBase
+  name: String  _name: ElementBase
+  title: String  _title: ElementBase
+  status: code  _status: ElementBase
+  experimental: Boolean  _experimental: ElementBase
+  date: dateTime  _date: ElementBase
+  publisher: String  _publisher: ElementBase
+  contact: [ContactDetail]
+  description: markdown  _description: ElementBase
+  useContext: [UsageContext]
+  jurisdiction: [CodeableConcept]
+  purpose: markdown  _purpose: ElementBase
+  copyright: markdown  _copyright: ElementBase
+  kind: code  _kind: ElementBase
+  instantiates: canonical  _instantiates: [ElementBase]
+  imports: canonical  _imports: [ElementBase]
+  software: CapabilityStatementSoftware
+  implementation: CapabilityStatementImplementation
+  fhirVersion: code  _fhirVersion: ElementBase
+  format: code  _format: [ElementBase]
+  patchFormat: code  _patchFormat: [ElementBase]
+  implementationGuide: canonical  _implementationGuide: [ElementBase]
+  rest: [CapabilityStatementRest]
+  messaging: [CapabilityStatementMessaging]
+  document: [CapabilityStatementDocument]
+}
+
+type CapabilityStatementSoftware {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  version: String  _version: ElementBase
+  releaseDate: dateTime  _releaseDate: ElementBase
+}
+
+type CapabilityStatementImplementation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  description: String  _description: ElementBase
+  url: url  _url: ElementBase
+  custodian: Reference
+}
+
+type CapabilityStatementRest {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  mode: code  _mode: ElementBase
+  documentation: markdown  _documentation: ElementBase
+  security: CapabilityStatementRestSecurity
+  resource: [CapabilityStatementRestResource]
+  interaction: [CapabilityStatementRestInteraction]
+  searchParam: [CapabilityStatementRestResourceSearchParam]
+  operation: [CapabilityStatementRestResourceOperation]
+  compartment: canonical  _compartment: [ElementBase]
+}
+
+type CapabilityStatementRestSecurity {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  cors: Boolean  _cors: ElementBase
+  service: [CodeableConcept]
+  description: markdown  _description: ElementBase
+}
+
+type CapabilityStatementRestResource {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: code  _type: ElementBase
+  profile: canonical  _profile: ElementBase
+  supportedProfile: canonical  _supportedProfile: [ElementBase]
+  documentation: markdown  _documentation: ElementBase
+  interaction: [CapabilityStatementRestResourceInteraction]
+  versioning: code  _versioning: ElementBase
+  readHistory: Boolean  _readHistory: ElementBase
+  updateCreate: Boolean  _updateCreate: ElementBase
+  conditionalCreate: Boolean  _conditionalCreate: ElementBase
+  conditionalRead: code  _conditionalRead: ElementBase
+  conditionalUpdate: Boolean  _conditionalUpdate: ElementBase
+  conditionalDelete: code  _conditionalDelete: ElementBase
+  referencePolicy: code  _referencePolicy: [ElementBase]
+  searchInclude: String  _searchInclude: [ElementBase]
+  searchRevInclude: String  _searchRevInclude: [ElementBase]
+  searchParam: [CapabilityStatementRestResourceSearchParam]
+  operation: [CapabilityStatementRestResourceOperation]
+}
+
+type CapabilityStatementRestResourceInteraction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: code  _code: ElementBase
+  documentation: markdown  _documentation: ElementBase
+}
+
+type CapabilityStatementRestResourceSearchParam {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  definition: canonical  _definition: ElementBase
+  type: code  _type: ElementBase
+  documentation: markdown  _documentation: ElementBase
+}
+
+type CapabilityStatementRestResourceOperation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  definition: canonical  _definition: ElementBase
+  documentation: markdown  _documentation: ElementBase
+}
+
+type CapabilityStatementRestInteraction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: code  _code: ElementBase
+  documentation: markdown  _documentation: ElementBase
+}
+
+type CapabilityStatementMessaging {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  endpoint: [CapabilityStatementMessagingEndpoint]
+  reliableCache: unsignedInt  _reliableCache: ElementBase
+  documentation: markdown  _documentation: ElementBase
+  supportedMessage: [CapabilityStatementMessagingSupportedMessage]
+}
+
+type CapabilityStatementMessagingEndpoint {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  protocol: Coding!
+  address: url  _address: ElementBase
+}
+
+type CapabilityStatementMessagingSupportedMessage {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  mode: code  _mode: ElementBase
+  definition: canonical  _definition: ElementBase
+}
+
+type CapabilityStatementDocument {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  mode: code  _mode: ElementBase
+  documentation: markdown  _documentation: ElementBase
+  profile: canonical  _profile: ElementBase
+}
+
+input CapabilityStatement {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  url: uri  _url: ElementBase
+  version: String  _version: ElementBase
+  name: String  _name: ElementBase
+  title: String  _title: ElementBase
+  status: code  _status: ElementBase
+  experimental: Boolean  _experimental: ElementBase
+  date: dateTime  _date: ElementBase
+  publisher: String  _publisher: ElementBase
+  contact: [ContactDetail]
+  description: markdown  _description: ElementBase
+  useContext: [UsageContext]
+  jurisdiction: [CodeableConcept]
+  purpose: markdown  _purpose: ElementBase
+  copyright: markdown  _copyright: ElementBase
+  kind: code  _kind: ElementBase
+  instantiates: canonical  _instantiates: [ElementBase]
+  imports: canonical  _imports: [ElementBase]
+  software: CapabilityStatementSoftware
+  implementation: CapabilityStatementImplementation
+  fhirVersion: code  _fhirVersion: ElementBase
+  format: code  _format: [ElementBase]
+  patchFormat: code  _patchFormat: [ElementBase]
+  implementationGuide: canonical  _implementationGuide: [ElementBase]
+  rest: [CapabilityStatementRest]
+  messaging: [CapabilityStatementMessaging]
+  document: [CapabilityStatementDocument]
+}
+
+input CapabilityStatementSoftware {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  version: String  _version: ElementBase
+  releaseDate: dateTime  _releaseDate: ElementBase
+}
+
+input CapabilityStatementImplementation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  description: String  _description: ElementBase
+  url: url  _url: ElementBase
+  custodian: Reference
+}
+
+input CapabilityStatementRest {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  mode: code  _mode: ElementBase
+  documentation: markdown  _documentation: ElementBase
+  security: CapabilityStatementRestSecurity
+  resource: [CapabilityStatementRestResource]
+  interaction: [CapabilityStatementRestInteraction]
+  searchParam: [CapabilityStatementRestResourceSearchParam]
+  operation: [CapabilityStatementRestResourceOperation]
+  compartment: canonical  _compartment: [ElementBase]
+}
+
+input CapabilityStatementRestSecurity {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  cors: Boolean  _cors: ElementBase
+  service: [CodeableConcept]
+  description: markdown  _description: ElementBase
+}
+
+input CapabilityStatementRestResource {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: code  _type: ElementBase
+  profile: canonical  _profile: ElementBase
+  supportedProfile: canonical  _supportedProfile: [ElementBase]
+  documentation: markdown  _documentation: ElementBase
+  interaction: [CapabilityStatementRestResourceInteraction]
+  versioning: code  _versioning: ElementBase
+  readHistory: Boolean  _readHistory: ElementBase
+  updateCreate: Boolean  _updateCreate: ElementBase
+  conditionalCreate: Boolean  _conditionalCreate: ElementBase
+  conditionalRead: code  _conditionalRead: ElementBase
+  conditionalUpdate: Boolean  _conditionalUpdate: ElementBase
+  conditionalDelete: code  _conditionalDelete: ElementBase
+  referencePolicy: code  _referencePolicy: [ElementBase]
+  searchInclude: String  _searchInclude: [ElementBase]
+  searchRevInclude: String  _searchRevInclude: [ElementBase]
+  searchParam: [CapabilityStatementRestResourceSearchParam]
+  operation: [CapabilityStatementRestResourceOperation]
+}
+
+input CapabilityStatementRestResourceInteraction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: code  _code: ElementBase
+  documentation: markdown  _documentation: ElementBase
+}
+
+input CapabilityStatementRestResourceSearchParam {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  definition: canonical  _definition: ElementBase
+  type: code  _type: ElementBase
+  documentation: markdown  _documentation: ElementBase
+}
+
+input CapabilityStatementRestResourceOperation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  definition: canonical  _definition: ElementBase
+  documentation: markdown  _documentation: ElementBase
+}
+
+input CapabilityStatementRestInteraction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: code  _code: ElementBase
+  documentation: markdown  _documentation: ElementBase
+}
+
+input CapabilityStatementMessaging {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  endpoint: [CapabilityStatementMessagingEndpoint]
+  reliableCache: unsignedInt  _reliableCache: ElementBase
+  documentation: markdown  _documentation: ElementBase
+  supportedMessage: [CapabilityStatementMessagingSupportedMessage]
+}
+
+input CapabilityStatementMessagingEndpoint {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  protocol: Coding!
+  address: url  _address: ElementBase
+}
+
+input CapabilityStatementMessagingSupportedMessage {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  mode: code  _mode: ElementBase
+  definition: canonical  _definition: ElementBase
+}
+
+input CapabilityStatementDocument {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  mode: code  _mode: ElementBase
+  documentation: markdown  _documentation: ElementBase
+  profile: canonical  _profile: ElementBase
+}
+
+type CapabilityStatementReadType {
+  CapabilityStatement(id : ID!) : CapabilityStatement
+}
+
+type CapabilityStatementListType {
+  CapabilityStatementList(_filter : String
+    context : [token]
+    context_quantity : [quantity]
+    context_type : [token]
+    context_type_quantity : [composite]
+    context_type_value : [composite]
+    date : [date]
+    description : [String]
+    fhirversion : [token]
+    format : [token]
+    guide : [reference]
+    jurisdiction : [token]
+    mode : [token]
+    name : [String]
+    publisher : [String]
+    resource : [token]
+    resource_profile : [reference]
+    security_service : [token]
+    software : [String]
+    status : [token]
+    supported_profile : [reference]
+    title : [String]
+    url : [uri]
+    version : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [CapabilityStatement]
+}
+
+type CapabilityStatementConnectionType {
+  CapabilityStatementConection(_filter : String
+    context : [token]
+    context_quantity : [quantity]
+    context_type : [token]
+    context_type_quantity : [composite]
+    context_type_value : [composite]
+    date : [date]
+    description : [String]
+    fhirversion : [token]
+    format : [token]
+    guide : [reference]
+    jurisdiction : [token]
+    mode : [token]
+    name : [String]
+    publisher : [String]
+    resource : [token]
+    resource_profile : [reference]
+    security_service : [token]
+    software : [String]
+    status : [token]
+    supported_profile : [reference]
+    title : [String]
+    url : [uri]
+    version : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : CapabilityStatementConnection
+}
+
+type CapabilityStatementConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [CapabilityStatementEdge]
+}
+
+type CapabilityStatementEdge {
+  mode : String
+  score : Float
+  resource : CapabilityStatement
+}
+
+type CapabilityStatementCreateType {
+  CapabilityStatementCreate(resource : CapabilityStatement) : CapabilityStatementCreation
+}
+
+type CapabilityStatementCreation {
+  location : String
+  resource : CapabilityStatement
+  information : OperationOutcome
+}
+
+type CapabilityStatementUpdateType {
+  CapabilityStatementUpdate(id : IDresource : CapabilityStatement) : CapabilityStatementUpdate
+}
+
+type CapabilityStatementUpdate {
+  resource : CapabilityStatement
+  information : OperationOutcome
+}
+
+type CapabilityStatementDeleteType {
+  CapabilityStatementDelete(id : ID) : CapabilityStatementDelete
+}
+
+type CapabilityStatementDelete {
+  information : OperationOutcome
+}
+

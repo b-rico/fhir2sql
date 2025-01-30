@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Storage - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/storage.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="exchange-module.html"><img src="exchange.png"/> Exchange</a></li>
+        <li><b>Persistent Storage</b></li>          <!-- storage.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<a name="identity"></a>
+<h2 class="self-link-parent"><span class="sectioncount">3.6<a name="3.6"> </a></span> Using FHIR in persistent stores <a href="storage.html#3.6" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsi"><tr><td id="wg"><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm" _target="blank">FHIR Infrastructure <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: n/a</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:  <!-- !ns! --><a href="versions.html#std-process">Informative</a></td></tr></table>
+
+<p>
+Applications can use the resources defined by FHIR by storing them natively 
+in a database or persistent store, where different applications or modules write 
+and read the resources as part of their implementation. This page describes 
+implementation issues encountered when storing resources natively in persistent
+stores.
+</p>
+<p>
+Note that almost all applications store the information found in resources 
+in some persistent store - usually a database. Most applications store 
+the information found in the resources in some internal format, and only
+use resources natively when exchanging with other applications. This page 
+concerns applications that store the FHIR resources natively.
+</p>
+
+<a name="choice"></a>
+<h3 class="self-link-parent"><span class="sectioncount">3.6.1</span> Applicability of storing resources natively <a href="storage.html#choice" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+In principle, resources are designed for exchange between systems, 
+rather than as a database storage format. One practical consequence 
+of this is that in some way, resources are highly denormalised, so 
+that granular exchanges are fairly stand alone. (Note that in some
+ways, resources are also highly normalised; e.g. Patient demographic
+details are only found in the Patient resource).
+</p>
+<p>
+To illustrate this, consider using an RxNorm code as a medication code. In a prescription resource (MedicationRequest), that will look like this:
+</p>
+<pre fragment="MedicationRequest" class="xml">
+&lt;MedicationRequest xmlns="http://hl7.org/fhir"&gt;
+  &lt;medicationCodeableConcept&gt;
+   &lt;coding&gt;
+     &lt;system value="http://www.nlm.nih.gov/research/umls/rxnorm"/&gt;
+     &lt;code value=""/&gt;
+   &lt;/coding&gt;
+  &lt;/medicationCodeableConcept&gt;
+&lt;/MedicationRequest&gt;
+</pre>
+<p>
+If the resource was designed to prioritize storage efficiency, it would be normalized 
+so that the code was just some primary key reference:
+</p>
+<pre class="xml">
+&lt;MedicationRequest xmlns="http://hl7.org/fhir"&gt;
+  &lt;code key="123431232"/&gt;
+&lt;/MedicationRequest&gt;
+</pre>
+<p>
+or something similar. Note: Whether to normalise or not is an engineering design 
+question that has multiple different considerations, and very often product
+designers change their decision about this for engineering reasons with no 
+associated change in functionality or requirements.
+</p>
+<p>
+Resources, on the other hand, are designed for robustness and stability over efficiency. 
+Using a key reference like the second example would require all the participants in an 
+exchange to synchronize the key for the code, which is often not possible, and rarely 
+stable. 
+</p>
+<p>
+In spite of this design criteria, it can still be useful and appropriate to store 
+resources directly in a persistent store or database. Whether to do so depends on an
+application's requirements. 
+</p>
+<p>
+If an application's information requirements are nailed down - that is, well 
+understood, clearly expressed, and not subject to uncontrolled change - then it is easy 
+to design a data storage schema that is completely fit for purpose and 
+highly efficient compared to storing FHIR resources. Classic Enterprise Information 
+Systems (EHRs) tend to behave like this.
+</p>
+<p>
+If, on the other hand, the application's information requirements are not at all 
+nailed down, and implementers have to deal with whatever data comes in an ongoing 
+basis, then resources are actually a very sound way to store an application's data. The 
+<a href="extensibility.html">extensibility approach</a> makes FHIR a particularly 
+robust choice as the primary data store. Clinical Data Repositories tend to behave 
+like this.
+</p>
+<p>
+Most information systems fall somewhere between these 2 extremes, and determining whether
+to store resources directly is not straight forward. Some applications take a 
+hybrid approach - storing FHIR resources natively, and storing a well-controlled 
+subset of information in some expressly designed persistent scheme. 
+The balance between these is driven by the stability of information requirements 
+for different parts of the system.
+</p>
+
+<a name="versions"></a>
+<h3 class="self-link-parent"><span class="sectioncount">3.6.2</span> Dealing with Multiple FHIR Versions <a href="storage.html#versions" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+Very often, applications storing FHIR resources natively must deal with 
+multiple different FHIR versions, since they are receiving information from 
+different systems with different timelines for adopting ongoing FHIR 
+releases.
+</p>
+<p>
+Typically, such systems have functional requirements that include some variation
+of these:
+</p>
+<ul>
+ <li>The system must be able to make resources available in their original form for integrity/audit reasons</li>
+ <li>The system must present some unified view/analysis/process based on a coherent view of the information from resources with different FHIR versions</li>
+</ul>
+<p>
+There is no single pattern to resolve these somewhat inconsistent requirements,
+but application designers can consider several different techniques for dealing
+with these kinds of requirements:
+</p>
+<ul>
+ <li>When storing resources, store the version of the resource alongside the resource</li>
+ <li>Maintain forward (and possibly backwards) conversions for the parts of resources that matter to the application (and see the <a href="r3maps.html">FHIR maintained version transforms</a>)</li>
+ <li>Store resources in both received and transformed state</li>
+ <li>Host multiple different end-points for different purposes</li>
+</ul>
+
+
+<a name="choice"></a>
+<h3 class="self-link-parent"><span class="sectioncount">3.6.3</span> Technology Choices <a href="storage.html#choice" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+A wide variety of technologies exist for storing resources natively, 
+including:
+</p>
+<ul>
+ <li>Classic SQL servers with JSON support (built in, or added on top by the application)</li>
+ <li>NoSQL servers (e.g. <a href="https://github.com/mongodb/mongo">Mongodb <img src="external.png" style="text-align: baseline"/></a>, <a href="http://couchdb.apache.org/">Couch <img src="external.png" style="text-align: baseline"/></a>,
+   <a href="http://hadoop.apache.org/">Hadoop <img src="external.png" style="text-align: baseline"/></a>, or <a href="https://cloud.google.com/bigquery/">Big Query <img src="external.png" style="text-align: baseline"/></a>)</li>
+ <li>Some <a href="rdf.html">RDF</a> based store using the RDF in the turtle format, or in some native triple story (e.g. <a href="https://jena.apache.org/">Jena <img src="external.png" style="text-align: baseline"/></a>)</li>
+</ul>
+<p>
+This specification does not recommend any particular approach. The rest of 
+this page describes general information management considerations that apply
+across all technologies.
+</p>
+
+<a name="joins"></a>
+<h3 class="self-link-parent"><span class="sectioncount">3.6.4</span> Managing Joins <a href="storage.html#joins" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+Most applications that store resources natively find the way references work in FHIR 
+deserves particular focus. <a href="references.html">References</a> can be absolute 
+or relative URLs, they can be version specific or not, they might or might not follow 
+FHIR's well-defined RESTful interface pattern, and they might or might not resolve 
+in the local system. In addition, given the requirements consideration above, it's 
+not always possible to enforce referential integrity when storing resources directly. 
+</p>
+<p>
+All the flexibility is required in various exchange scenarios, but it can present
+challenges for application design when building a coherent data store with resources.
+</p>
+<p>
+Applications that store resources natively may want to extend the storage 
+format with an element to capture the <code>resolved link</code> in addition 
+to the existing reference/identifier in the <a href="references.html">Reference</a> 
+and <a href="datatypes.html#canonical">canonical</a> data types. 
+</p>
+<p>
+The <a href="rdf.html">RDF format</a> does this explicitly for references and 
+codings (<a href="rdf.html#reference">fhir:reference</a> and <a href="rdf.html#concept">fhir:concept</a>).
+</p>
+<p>
+Applications that store JSON, will have to remove the extension for exchange, 
+unless a native FHIR extension is used, which might not be the most efficient way
+to store the resolved link.
+</p>
+
+<blockquote class="stu-note">
+<a name="cfc"></a>
+
+<p>
+<strong>Note to balloters:</strong> Is there enough interest to standardize an
+extension? Ballot comments are welcome.
+</p>
+
+</blockquote>
+</div>
+
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fstorage.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fstorage.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

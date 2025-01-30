@@ -1,0 +1,99 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/ambulation> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ambulation"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ambulation procedure was not done</div>"
+  ];
+  fhir:Procedure.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:Procedure.instantiatesUri [
+     fhir:value "http://example.org/protocol-for-hypertension-during-pregnancy";
+     fhir:index 0
+  ];
+  fhir:Procedure.basedOn [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/CarePlan/preg>;
+     fhir:Reference.reference [ fhir:value "CarePlan/preg" ];
+     fhir:Reference.display [ fhir:value "Maternity care plan" ]
+  ];
+  fhir:Procedure.status [ fhir:value "not-done"];
+  fhir:Procedure.statusReason [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:398254007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "398254007" ];
+       fhir:Coding.display [ fhir:value "  Pre-eclampsia (disorder)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Pre-eclampsia" ]
+  ];
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:62013009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "62013009" ];
+       fhir:Coding.display [ fhir:value "Ambulating patient (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Ambulation" ]
+  ];
+  fhir:Procedure.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/f204>;
+       fhir:Reference.reference [ fhir:value "Practitioner/f204" ];
+       fhir:Reference.display [ fhir:value "Carla Espinosa" ]
+     ];
+     fhir:Procedure.performer.onBehalfOf [
+       fhir:link <http://hl7.org/fhir/Organization/f001>;
+       fhir:Reference.reference [ fhir:value "Organization/f001" ];
+       fhir:Reference.display [ fhir:value "University Medical Hospital" ]
+     ]
+  ];
+  fhir:Procedure.location [
+     fhir:link <http://hl7.org/fhir/Location/1>;
+     fhir:Reference.reference [ fhir:value "Location/1" ];
+     fhir:Reference.display [ fhir:value "Burgers University Medical Center, South Wing, second floor" ]
+  ];
+  fhir:Procedure.reasonReference [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Observation/blood-pressure>;
+     fhir:Reference.reference [ fhir:value "Observation/blood-pressure" ];
+     fhir:Reference.display [ fhir:value "Blood Pressure" ]
+  ] .
+
+<http://hl7.org/fhir/CarePlan/preg> a fhir:CarePlan .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/f204> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Organization/f001> a fhir:Organization .
+
+<http://hl7.org/fhir/Location/1> a fhir:Location .
+
+<http://hl7.org/fhir/Observation/blood-pressure> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/ambulation.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Procedure/ambulation.ttl> .
+
+# -------------------------------------------------------------------------------------
+

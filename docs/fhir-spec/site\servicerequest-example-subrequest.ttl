@@ -1,0 +1,80 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/subrequest> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "subrequest"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: subrequest</p><p><b>basedOn</b>: Original Request</p><p><b>replaces</b>: Previous allergy test</p><p><b>requisition</b>: A13848392</p><p><b>status</b>: active</p><p><b>intent</b>: instance-order</p><p><b>priority</b>: routine</p><p><b>code</b>: Peanut IgG <span>(Details : {LOINC code '35542-0' = 'Peanut IgG Ab [Mass/volume] in Serum)</span></p><p><b>subject</b>: <a>Patient/dicom</a></p><p><b>occurrence</b>: 08/05/2013 9:33:27 AM</p><p><b>requester</b>: <a>Dr. Adam Careful</a></p><p><b>performerType</b>: Nurse <span>(Details : {[not stated] code 'null' = 'null', given as 'Qualified nurse'})</span></p><p><b>reasonCode</b>: Check for Peanut Allergy <span>(Details )</span></p><p><b>bodySite</b>: Right arm <span>(Details : {[not stated] code 'null' = 'null', given as 'Right arm'})</span></p></div>"
+  ];
+  fhir:ServiceRequest.basedOn [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Original Request" ]
+  ];
+  fhir:ServiceRequest.replaces [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Previous allergy test" ]
+  ];
+  fhir:ServiceRequest.requisition [
+     fhir:Identifier.value [ fhir:value "A13848392" ]
+  ];
+  fhir:ServiceRequest.status [ fhir:value "active"];
+  fhir:ServiceRequest.intent [ fhir:value "instance-order"];
+  fhir:ServiceRequest.priority [ fhir:value "routine"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:35542-0;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "35542-0" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Peanut IgG" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/dicom>;
+     fhir:Reference.reference [ fhir:value "Patient/dicom" ]
+  ];
+  fhir:ServiceRequest.occurrenceDateTime [ fhir:value "2013-05-08T09:33:27+07:00"^^xsd:dateTime];
+  fhir:ServiceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr. Adam Careful" ]
+  ];
+  fhir:ServiceRequest.performerType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.display [ fhir:value "Qualified nurse" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Nurse" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Check for Peanut Allergy" ]
+  ];
+  fhir:ServiceRequest.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.display [ fhir:value "Right arm" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Right arm" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/dicom> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/subrequest.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/subrequest.ttl> .
+
+# -------------------------------------------------------------------------------------
+

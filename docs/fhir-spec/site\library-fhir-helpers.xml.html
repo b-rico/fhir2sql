@@ -1,0 +1,599 @@
+<!DOCTYPE HTML>
+
+<!-- template-example-xml.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Library-fhir-helpers.xml - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/library-fhir-helpers.xml.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="clinicalreasoning-module.html"><img src="reasoning.png"/> Clinical Reasoning</a></li>        <li><a href="library.html">Library</a></li>        <li><b>Example Instance</b></li>        <!-- library-fhir-helpers.xml.html / resource-instance:Library / Example-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Library-fhir-helpers.xml</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/dss/index.cfm">Clinical Decision Support</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+<p>
+<a href="library-fhir-helpers.xml">Raw XML</a> (<a href="library-fhir-helpers.canonical.xml">canonical form</a> + also see <a href="xml.html">XML Format Specification</a>)
+</p>
+<p><a href="#DomainResource.text.div-end">Jump past Narrative</a></p>
+
+<div class="example">
+<p>FHIR Helpers (id = &quot;library-fhir-helpers&quot;)</p>
+<pre class="xml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+<span class="xmltag">&lt;<a href="library-definitions.html" class="xmltag">Library</a></span><span class="xmlattr"><a name="Library"> </a>xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;<a href="resource-definitions.html#Resource.id" class="xmltag">id</a></span><span class="xmlattr"><a name="Library.id"> </a>value="<span class="xmlattrvalue">library-fhir-helpers</span>"</span><span class="xmltag">/&gt;</span><a name="Library.id-end"> </a><b>
+  </b><span class="xmltag">&lt;<a href="domainresource-definitions.html#DomainResource.text" class="xmltag">text</a></span><span class="xmltag">&gt;</span><a name="Library.text"> </a><b>
+    </b><span class="xmltag">&lt;<a href="narrative-definitions.html#Narrative.status" class="xmltag">status</a></span><span class="xmlattr"><a name="DomainResource.text.status"> </a>value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><a name="DomainResource.text.status-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="narrative-definitions.html#Narrative.div" class="xmltag">div</a></span><span class="xmlattr"><a name="DomainResource.text.div"> </a>xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Id: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-left: 25px; padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>Library/library-fhir-helpers</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Identifier: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-left: 25px; padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>value: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>FHIRHelpers</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">/&gt;</span><a name="Narrative.div.p"> </a><a name="Narrative.div.p-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Version: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-left: 25px; padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>4.0.1</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">/&gt;</span><a name="Narrative.div.p"> </a><a name="Narrative.div.p-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Title: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-left: 25px; padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>FHIR Helpers</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">/&gt;</span><a name="Narrative.div.p"> </a><a name="Narrative.div.p-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Type: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>
+                        </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmlattr"><a name="Narrative.div.span"> </a>style="<span class="xmlattrvalue">padding-left: 25px;</span>"</span><span class="xmltag">&gt;</span><b>
+                           </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>code: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                           </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>logic-library</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                        </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                     </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                  </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">/&gt;</span><a name="Narrative.div.p"> </a><a name="Narrative.div.p-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Status: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-left: 25px; padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>active</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">/&gt;</span><a name="Narrative.div.p"> </a><a name="Narrative.div.p-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Description: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-left: 25px; padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>FHIR Helpers</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">/&gt;</span><a name="Narrative.div.p"> </a><a name="Narrative.div.p-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Topic: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmlattr"><a name="Narrative.div.span"> </a>style="<span class="xmlattrvalue">padding-left: 25px;</span>"</span><span class="xmltag">&gt;</span><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>text: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>FHIR Helpers</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                  </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">/&gt;</span><a name="Narrative.div.p"> </a><a name="Narrative.div.p-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Related: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmlattr"><a name="Narrative.div.tr"> </a>style="<span class="xmlattrvalue">vertical-align: top;</span>"</span><span class="xmltag">&gt;</span><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-left: 25px; padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmlattr"><a name="Narrative.div.p"> </a>style="<span class="xmlattrvalue">margin-bottom: 5px;</span>"</span><span class="xmltag">&gt;</span><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>type: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>depends-on</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                  </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmlattr"><a name="Narrative.div.p"> </a>style="<span class="xmlattrvalue">margin-bottom: 5px;</span>"</span><span class="xmltag">&gt;</span><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Resource: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">br</a></span><span class="xmltag">/&gt;</span><a name="Narrative.div.br"> </a><a name="Narrative.div.br-end"> </a><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>
+                        </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmlattr"><a name="Narrative.div.span"> </a>style="<span class="xmlattrvalue">padding-left: 25px;</span>"</span><span class="xmltag">&gt;</span><b>
+                           </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>reference: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                           </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>Library/fhir-model-definition</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                        </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                     </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                  </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">table</a></span><span class="xmlattr"><a name="Narrative.div.table"> </a>class="<span class="xmlattrvalue">grid dict</span>"</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.td"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Content: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+            </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">tr</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.tr"> </a><b>
+               </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">td</a></span><span class="xmlattr"><a name="Narrative.div.td"> </a>style="<span class="xmlattrvalue">padding-left: 25px; padding-right: 25px;</span>"</span><span class="xmltag">&gt;</span><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmlattr"><a name="Narrative.div.p"> </a>style="<span class="xmlattrvalue">margin-bottom: 5px;</span>"</span><span class="xmltag">&gt;</span><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>title: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>FHIR Helpers</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                  </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmlattr"><a name="Narrative.div.p"> </a>style="<span class="xmlattrvalue">margin-bottom: 5px;</span>"</span><span class="xmltag">&gt;</span><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>type: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>text/cql</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                  </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><b>
+                  </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmlattr"><a name="Narrative.div.p"> </a>style="<span class="xmlattrvalue">margin-bottom: 5px;</span>"</span><span class="xmltag">&gt;</span><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>url: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>
+                     </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>library-fhir-helpers-content.cql</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><b>
+                  </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><b>
+               </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">td</a>&gt;</span><a name="Narrative.div.td-end"> </a><b>
+            </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">tr</a>&gt;</span><a name="Narrative.div.tr-end"> </a><b>
+         </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">table</a>&gt;</span><a name="Narrative.div.table-end"> </a><b>
+      </b><span class="xmltag">&lt;/<a href="narrative-definitions.html#Narrative.div" class="xmltag">div</a>&gt;</span><a name="DomainResource.text.div-end"> </a><b>
+  </b><span class="xmltag">&lt;/<a href="domainresource-definitions.html#DomainResource.text" class="xmltag">text</a>&gt;</span><a name="Library.text-end"> </a><b>
+
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.identifier" class="xmltag">identifier</a></span><span class="xmltag">&gt;</span><a name="Library.identifier"> </a><b>
+    </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Identifier.use" class="xmltag">use</a></span><span class="xmlattr"><a name="Library.identifier.use"> </a>value="<span class="xmlattrvalue">official</span>"</span><span class="xmltag">/&gt;</span><a name="Library.identifier.use-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Identifier.value" class="xmltag">value</a></span><span class="xmlattr"><a name="Library.identifier.value"> </a>value="<span class="xmlattrvalue">FHIRHelpers</span>"</span><span class="xmltag">/&gt;</span><a name="Library.identifier.value-end"> </a><b>
+    </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.identifier" class="xmltag">identifier</a>&gt;</span><a name="Library.identifier-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.version" class="xmltag">version</a></span><span class="xmlattr"><a name="Library.version"> </a>value="<span class="xmlattrvalue">4.0.1</span>"</span><span class="xmltag">/&gt;</span><a name="Library.version-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.title" class="xmltag">title</a></span><span class="xmlattr"><a name="Library.title"> </a>value="<span class="xmlattrvalue">FHIR Helpers</span>"</span><span class="xmltag">/&gt;</span><a name="Library.title-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.status" class="xmltag">status</a></span><span class="xmlattr"><a name="Library.status"> </a>value="<span class="xmlattrvalue">active</span>"</span><span class="xmltag">/&gt;</span><a name="Library.status-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.experimental" class="xmltag">experimental</a></span><span class="xmlattr"><a name="Library.experimental"> </a>value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><a name="Library.experimental-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.type" class="xmltag">type</a></span><span class="xmltag">&gt;</span><a name="Library.type"> </a><b>
+      </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#CodeableConcept.coding" class="xmltag">coding</a></span><span class="xmltag">&gt;</span><a name="Library.type.coding"> </a><b>
+        </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.code" class="xmltag">code</a></span><span class="xmlattr"><a name="CodeableConcept.coding.code"> </a>value="<span class="xmlattrvalue">logic-library</span>"</span><span class="xmltag">/&gt;</span><a name="CodeableConcept.coding.code-end"> </a><b>
+      </b><span class="xmltag">&lt;/<a href="datatypes-definitions.html#CodeableConcept.coding" class="xmltag">coding</a>&gt;</span><a name="Library.type.coding-end"> </a><b>
+    </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.type" class="xmltag">type</a>&gt;</span><a name="Library.type-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.date" class="xmltag">date</a></span><span class="xmlattr"><a name="Library.date"> </a>value="<span class="xmlattrvalue">2018-11-10</span>"</span><span class="xmltag">/&gt;</span><a name="Library.date-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.description" class="xmltag">description</a></span><span class="xmlattr"><a name="Library.description"> </a>value="<span class="xmlattrvalue">FHIR Helpers</span>"</span><span class="xmltag">/&gt;</span><a name="Library.description-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.topic" class="xmltag">topic</a></span><span class="xmltag">&gt;</span><a name="Library.topic"> </a><b>
+    </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#CodeableConcept.text" class="xmltag">text</a></span><span class="xmlattr"><a name="Library.topic.text"> </a>value="<span class="xmlattrvalue">FHIR Helpers</span>"</span><span class="xmltag">/&gt;</span><a name="Library.topic.text-end"> </a><b>
+    </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.topic" class="xmltag">topic</a>&gt;</span><a name="Library.topic-end"> </a><b>
+
+  </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a></span><span class="xmltag">&gt;</span><a name="Library.relatedArtifact"> </a><b>
+    </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.type" class="xmltag">type</a></span><span class="xmlattr"><a name="Library.relatedArtifact.type"> </a>value="<span class="xmlattrvalue">depends-on</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.type-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.resource" class="xmltag">resource</a></span><span class="xmlattr"><a name="Library.relatedArtifact.resource"> </a>value="<span class="xmlattrvalue">Library/fhir-model-definition</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.resource-end"> </a><b>
+  </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a>&gt;</span><a name="Library.relatedArtifact-end"> </a><b>
+  
+  </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a></span><span class="xmltag">&gt;</span><a name="Library.relatedArtifact"> </a><b>
+    </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.type" class="xmltag">type</a></span><span class="xmlattr"><a name="Library.relatedArtifact.type"> </a>value="<span class="xmlattrvalue">predecessor</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.type-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.resource" class="xmltag">resource</a></span><span class="xmlattr"><a name="Library.relatedArtifact.resource"> </a>value="<span class="xmlattrvalue">library-fhir-helpers-predecessor</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.resource-end"> </a><b>
+  </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a>&gt;</span><a name="Library.relatedArtifact-end"> </a><b>
+
+  </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.content" class="xmltag">content</a></span><span class="xmltag">&gt;</span><a name="Library.content"> </a><b>
+    </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Attachment.contentType" class="xmltag">contentType</a></span><span class="xmlattr"><a name="Library.content.contentType"> </a>value="<span class="xmlattrvalue">text/cql</span>"</span><span class="xmltag">/&gt;</span><a name="Library.content.contentType-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Attachment.data" class="xmltag">data</a></span><span class="xmlattr"><a name="Library.content.data"> </a>value="<span class="xmlattrvalue">bGlicmFyeSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjAuMCcKCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjAnCgpkZWZpbmUgZnVu
+    Y3Rpb24gVG9JbnRlcnZhbChwZXJpb2QgRkhJUi5QZXJpb2QpOgogICAgSW50ZXJ2YWxbcGVyaW9kLiJzdGFydCIudmFsdWUsIHBlc
+    mlvZC4iZW5kIi52YWx1ZV0KCmRlZmluZSBmdW5jdGlvbiBUb1F1YW50aXR5KHF1YW50aXR5IEZISVIuUXVhbnRpdHkpOgogICAgU3
+    lzdGVtLlF1YW50aXR5IHsgdmFsdWU6IHF1YW50aXR5LnZhbHVlLnZhbHVlLCB1bml0OiBxdWFudGl0eS51bml0LnZhbHVlIH0KCmR
+    lZmluZSBmdW5jdGlvbiBUb0ludGVydmFsKHJhbmdlIEZISVIuUmFuZ2UpOgogICAgSW50ZXJ2YWxbVG9RdWFudGl0eShyYW5nZS5s
+    b3cpLCBUb1F1YW50aXR5KHJhbmdlLmhpZ2gpXQoKZGVmaW5lIGZ1bmN0aW9uIFRvQ29kZShjb2RpbmcgRkhJUi5Db2RpbmcpOgogI
+    CAgU3lzdGVtLkNvZGUgewogICAgICBjb2RlOiBjb2RpbmcuY29kZS52YWx1ZSwKICAgICAgc3lzdGVtOiBjb2Rpbmcuc3lzdGVtLn
+    ZhbHVlLAogICAgICB2ZXJzaW9uOiBjb2RpbmcudmVyc2lvbi52YWx1ZSwKICAgICAgZGlzcGxheTogY29kaW5nLmRpc3BsYXkudmF
+    sdWUKICAgIH0KCmRlZmluZSBmdW5jdGlvbiBUb0NvbmNlcHQoY29uY2VwdCBGSElSLkNvZGVhYmxlQ29uY2VwdCk6CiAgICBTeXN0
+    ZW0uQ29uY2VwdCB7CiAgICAgICAgY29kZXM6IGNvbmNlcHQuY29kaW5nIEMgcmV0dXJuIFRvQ29kZShDKSwKICAgICAgICBkaXNwb
+    GF5OiBjb25jZXB0LnRleHQudmFsdWUKICAgIH0KCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLnV1aWQpOiB2YW
+    x1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5UZXN0U2NyaXB0UmVxdWVzdE1ldGhvZENvZGUpOiB
+    2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5Tb3J0RGlyZWN0aW9uKTogdmFsdWUudmFsdWUK
+    ZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQmlvbG9naWNhbGx5RGVyaXZlZFByb2R1Y3RTdGF0dXMpOiB2YWx1Z
+    S52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5Vbml0c09mVGltZSk6IHZhbHVlLnZhbHVlCmRlZmluZS
+    BmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkFkZHJlc3NUeXBlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3R
+    yaW5nKHZhbHVlIEZISVIuQWxsZXJneUludG9sZXJhbmNlQ2F0ZWdvcnkpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9T
+    dHJpbmcodmFsdWUgRkhJUi5Jc3N1ZVNldmVyaXR5KTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlI
+    EZISVIuQ2FyZVRlYW1TdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5FbmNvdW
+    50ZXJTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5TdHJ1Y3R1cmVEZWZpbml
+    0aW9uS2luZCk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlB1YmxpY2F0aW9uU3RhdHVz
+    KTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuRkhJUlZlcnNpb24pOiB2YWx1ZS52YWx1Z
+    QpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5DYXJlUGxhbkFjdGl2aXR5S2luZCk6IHZhbHVlLnZhbHVlCmRlZm
+    luZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlN0cnVjdHVyZU1hcFNvdXJjZUxpc3RNb2RlKTogdmFsdWUudmFsdWUKZGV
+    maW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuUmVxdWVzdFN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlv
+    biBUb1N0cmluZyh2YWx1ZSBGSElSLnN0cmFuZFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsd
+    WUgRkhJUi5RdWVzdGlvbm5haXJlUmVzcG9uc2VTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodm
+    FsdWUgRkhJUi5TZWFyY2hDb21wYXJhdG9yKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVI
+    uQ2hhcmdlSXRlbVN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkFjdGlvblBh
+    cnRpY2lwYW50VHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkFsbGVyZ3lJbnRvb
+    GVyYW5jZVR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5DYXJlUGxhbkFjdGl2aX
+    R5U3RhdHVzKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuSW52b2ljZVN0YXR1cyk6IHZ
+    hbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNsYWltUHJvY2Vzc2luZ0NvZGVzKTogdmFsdWUu
+    dmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuUmVxdWVzdFJlc291cmNlVHlwZSk6IHZhbHVlLnZhbHVlC
+    mRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlBhcnRpY2lwYXRpb25TdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbm
+    UgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5EZXZpY2VOYW1lVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiB
+    Ub1N0cmluZyh2YWx1ZSBGSElSLkRvY3VtZW50TW9kZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1
+    ZSBGSElSLkFzc2VydGlvbk9wZXJhdG9yVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGS
+    ElSLkRheXNPZldlZWspOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5Jc3N1ZVR5cGUpOi
+    B2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5jYW5vbmljYWwpOiB2YWx1ZS52YWx1ZQpkZWZ
+    pbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5TdHJ1Y3R1cmVNYXBDb250ZXh0VHlwZSk6IHZhbHVlLnZhbHVlCmRlZmlu
+    ZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkZhbWlseUhpc3RvcnlTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY
+    3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5zdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdW
+    UgRkhJUi5FeHRlbnNpb25Db250ZXh0VHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSEl
+    SLkFzc2VydGlvblJlc3BvbnNlVHlwZXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5S
+    ZXF1ZXN0SW50ZW50KTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuc3RyaW5nKTogdmFsd
+    WUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQWN0aW9uUmVxdWlyZWRCZWhhdmlvcik6IHZhbHVlLn
+    ZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkdyYXBoQ29tcGFydG1lbnRVc2UpOiB2YWx1ZS52YWx1ZQp
+    kZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5vcmllbnRhdGlvblR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVu
+    Y3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5BY2NvdW50U3RhdHVzKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3Rya
+    W5nKHZhbHVlIEZISVIuSWRlbnRpZmllclVzZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSE
+    lSLlN0cnVjdHVyZU1hcFRhcmdldExpc3RNb2RlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZ
+    ISVIuRXhwb3N1cmVTdGF0ZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlRlc3RSZXBv
+    cnRQYXJ0aWNpcGFudFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5CaW5kaW5nU
+    3RyZW5ndGgpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5SZXF1ZXN0UHJpb3JpdHkpOi
+    B2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5QYXJ0aWNpcGFudFJlcXVpcmVkKTogdmFsdWU
+    udmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuWFBhdGhVc2FnZVR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZp
+    bmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5pZCk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2Y
+    Wx1ZSBGSElSLkZpbHRlck9wZXJhdG9yKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuTm
+    FtaW5nU3lzdGVtVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNvbnRyYWN0UmV
+    zb3VyY2VTdGF0dXNDb2Rlcyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlJlc2VhcmNo
+    U3ViamVjdFN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlN0cnVjdHVyZU1hc
+    FRyYW5zZm9ybSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlJlc3BvbnNlVHlwZSk6IH
+    ZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb0RlY2ltYWwodmFsdWUgRkhJUi5kZWNpbWFsKTogdmFsdWUudmFsdWUKZGVmaW5
+    lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQWdncmVnYXRpb25Nb2RlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9u
+    IFRvU3RyaW5nKHZhbHVlIEZISVIuc2VxdWVuY2VUeXBlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhb
+    HVlIEZISVIuU3lzdGVtUmVzdGZ1bEludGVyYWN0aW9uKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbH
+    VlIEZISVIuQWR2ZXJzZUV2ZW50QWN0dWFsaXR5KTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZ
+    ISVIuU3Vic2NyaXB0aW9uQ2hhbm5lbFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJ
+    Ui5Bc3NlcnRpb25EaXJlY3Rpb25UeXBlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQ
+    2FyZVBsYW5JbnRlbnQpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5BbGxlcmd5SW50b2
+    xlcmFuY2VDcml0aWNhbGl0eSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlByb3BlcnR
+    5UmVwcmVzZW50YXRpb24pOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5UcmlnZ2VyVHlw
+    ZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNvbXBvc2l0aW9uU3RhdHVzKTogdmFsd
+    WUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQXBwb2ludG1lbnRTdGF0dXMpOiB2YWx1ZS52YWx1ZQ
+    pkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5NZXNzYWdlU2lnbmlmaWNhbmNlQ2F0ZWdvcnkpOiB2YWx1ZS52YWx
+    1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5MaXN0TW9kZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlv
+    biBUb1N0cmluZyh2YWx1ZSBGSElSLlJlc2VhcmNoRWxlbWVudFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9Td
+    HJpbmcodmFsdWUgRkhJUi5PYnNlcnZhdGlvblN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YW
+    x1ZSBGSElSLlJlc291cmNlVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb0Jvb2xlYW4odmFsdWUgRkhJUi5ib29
+    sZWFuKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuU3RydWN0dXJlTWFwR3JvdXBUeXBl
+    TW9kZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlN1cHBseVJlcXVlc3RTdGF0dXMpO
+    iB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5FbmNvdW50ZXJMb2NhdGlvblN0YXR1cyk6IH
+    ZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNvbmRpdGlvbmFsRGVsZXRlU3RhdHVzKTogdmF
+    sdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIudXJsKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0
+    aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIudXJpKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZIS
+    VIuVXNlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIubWVkaWNhdGlvblJlcXVlc3RTdG
+    F0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5JZGVudGl0eUFzc3VyYW5jZUxldmV
+    sKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuRGV2aWNlTWV0cmljQ29sb3IpOiB2YWx1
+    ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9UaW1lKHZhbHVlIEZISVIudGltZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvb
+    iBUb1N0cmluZyh2YWx1ZSBGSElSLkNvbmRpdGlvbmFsUmVhZFN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1
+    N0cmluZyh2YWx1ZSBGSElSLkFsbGVyZ3lJbnRvbGVyYW5jZVNldmVyaXR5KTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFR
+    vU3RyaW5nKHZhbHVlIEZISVIuRmluYW5jaWFsUmVzb3VyY2VTdGF0dXNDb2Rlcyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlv
+    biBUb1N0cmluZyh2YWx1ZSBGSElSLk9wZXJhdGlvbktpbmQpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcod
+    mFsdWUgRkhJUi5TdWJzY3JpcHRpb25TdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRk
+    hJUi5Hb2FsTGlmZWN5Y2xlU3RhdHVzKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuT2J
+    zZXJ2YXRpb25EYXRhVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkRvY3VtZW50
+    UmVmZXJlbmNlU3RhdHVzKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIucmVwb3NpdG9ye
+    VR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5Mb2NhdGlvblN0YXR1cyk6IHZhbH
+    VlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLk5vdGVUeXBlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ
+    1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuVGVzdFJlcG9ydFN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBU
+    b1N0cmluZyh2YWx1ZSBGSElSLkNvZGVTeXN0ZW1Db250ZW50TW9kZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0c
+    mluZyh2YWx1ZSBGSElSLkZISVJEZXZpY2VTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdW
+    UgRkhJUi5Db250YWN0UG9pbnRTeXN0ZW0pOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5
+    TbG90U3RhdHVzKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuUHJvcGVydHlUeXBlKTog
+    dmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuVHlwZURlcml2YXRpb25SdWxlKTogdmFsdWUud
+    mFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuR3VpZGFuY2VSZXNwb25zZVN0YXR1cyk6IHZhbHVlLnZhbH
+    VlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlJlbGF0ZWRBcnRpZmFjdFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZ
+    pbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5vaWQpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmco
+    dmFsdWUgRkhJUi5Db21wYXJ0bWVudFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJU
+    i5tZWRpY2F0aW9ucmVxdWVzdFN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLk
+    ludm9pY2VQcmljZUNvbXBvbmVudFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5
+    EZXZpY2VNZXRyaWNDYWxpYnJhdGlvblN0YXRlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZI
+    SVIuR3JvdXBUeXBlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuRW5hYmxlV2hlbkJla
+    GF2aW9yKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuVGFza0ludGVudCk6IHZhbHVlLn
+    ZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkltbXVuaXphdGlvbkV2YWx1YXRpb25TdGF0dXNDb2Rlcyk
+    6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkV4YW1wbGVTY2VuYXJpb0FjdG9yVHlwZSk6
+    IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlByb3ZlbmFuY2VFbnRpdHlSb2xlKTogdmFsd
+    WUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuU3BlY2ltZW5TdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZW
+    ZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5SZXN0ZnVsQ2FwYWJpbGl0eU1vZGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmU
+    gZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5EZXRlY3RlZElzc3VlU2V2ZXJpdHkpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVu
+    Y3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5WaXNpb25FeWVzKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nK
+    HZhbHVlIEZISVIuQ29uc2VudERhdGFNZWFuaW5nKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE
+    ZISVIubWVzc2FnZWhlYWRlclJlc3BvbnNlUmVxdWVzdCk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx
+    1ZSBGSElSLkd1aWRlUGFnZUdlbmVyYXRpb24pOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJ
+    Ui5Eb2N1bWVudFJlbGF0aW9uc2hpcFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJU
+    i5WYXJpYWJsZVR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5UZXN0UmVwb3J0Um
+    VzdWx0KTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQ29uY2VwdE1hcEdyb3VwVW5tYXB
+    wZWRNb2RlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvRGF0ZVRpbWUodmFsdWUgRkhJUi5pbnN0YW50KTogdmFsdWUu
+    dmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvRGF0ZVRpbWUodmFsdWUgRkhJUi5kYXRlVGltZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmd
+    W5jdGlvbiBUb0RhdGUodmFsdWUgRkhJUi5kYXRlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvSW50ZWdlcih2YWx1ZS
+    BGSElSLnBvc2l0aXZlSW50KTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQ2xpbmljYWx
+    JbXByZXNzaW9uU3RhdHVzKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuRWxpZ2liaWxp
+    dHlSZXNwb25zZVB1cnBvc2UpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5OYXJyYXRpd
+    mVTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5JbWFnaW5nU3R1ZHlTdGF0dX
+    MpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5FbmRwb2ludFN0YXR1cyk6IHZhbHVlLnZ
+    hbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkJpb2xvZ2ljYWxseURlcml2ZWRQcm9kdWN0Q2F0ZWdvcnkp
+    OiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5SZXNvdXJjZVZlcnNpb25Qb2xpY3kpOiB2Y
+    Wx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5BY3Rpb25DYXJkaW5hbGl0eUJlaGF2aW9yKTogdm
+    FsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuR3JvdXBNZWFzdXJlKTogdmFsdWUudmFsdWUKZGV
+    maW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuTmFtaW5nU3lzdGVtSWRlbnRpZmllclR5cGUpOiB2YWx1ZS52YWx1ZQpk
+    ZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5JbW11bml6YXRpb25TdGF0dXNDb2Rlcyk6IHZhbHVlLnZhbHVlCmRlZ
+    mluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLk1lZGljYXRpb25TdGF0dXNDb2Rlcyk6IHZhbHVlLnZhbHVlCmRlZmluZS
+    BmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkRpc2NyaW1pbmF0b3JUeXBlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9
+    uIFRvU3RyaW5nKHZhbHVlIEZISVIuU3RydWN0dXJlTWFwSW5wdXRNb2RlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRv
+    U3RyaW5nKHZhbHVlIEZISVIuTGlua2FnZVR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgR
+    khJUi5SZWZlcmVuY2VIYW5kbGluZ1BvbGljeSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSE
+    lSLlJlc2VhcmNoU3R1ZHlTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5BdWR
+    pdEV2ZW50T3V0Y29tZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlNwZWNpbWVuQ29u
+    dGFpbmVkUHJlZmVyZW5jZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkFjdGlvblJlb
+    GF0aW9uc2hpcFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5Db25zdHJhaW50U2
+    V2ZXJpdHkpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5FdmVudENhcGFiaWxpdHlNb2R
+    lKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQ29kZVNlYXJjaFN1cHBvcnQpOiB2YWx1
+    ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5PYnNlcnZhdGlvblJhbmdlQ2F0ZWdvcnkpOiB2YWx1Z
+    S52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5VRElFbnRyeVR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbm
+    UgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5EZXZpY2VNZXRyaWNDYXRlZ29yeSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5
+    jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlRlc3RSZXBvcnRBY3Rpb25SZXN1bHQpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rp
+    b24gVG9TdHJpbmcodmFsdWUgRkhJUi5DYXBhYmlsaXR5U3RhdGVtZW50S2luZCk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvb
+    iBUb1N0cmluZyh2YWx1ZSBGSElSLkV2ZW50VGltaW5nKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbH
+    VlIEZISVIuU2VhcmNoUGFyYW1UeXBlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQWN
+    0aW9uR3JvdXBpbmdCZWhhdmlvcik6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlN0cnVj
+    dHVyZU1hcE1vZGVsTW9kZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlRhc2tTdGF0d
+    XMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5CaW9sb2dpY2FsbHlEZXJpdmVkUHJvZH
+    VjdFN0b3JhZ2VTY2FsZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkdyYXBoQ29tcGF
+    ydG1lbnRSdWxlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuU2xpY2luZ1J1bGVzKTog
+    dmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuRXhwbGFuYXRpb25PZkJlbmVmaXRTdGF0dXMpO
+    iB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5HdWlkZVBhcmFtZXRlckNvZGUpOiB2YWx1ZS
+    52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5DYXRhbG9nRW50cnlSZWxhdGlvblR5cGUpOiB2YWx1ZS5
+    2YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5MaW5rVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5j
+    dGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNvbmNlcHRNYXBFcXVpdmFsZW5jZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvb
+    iBUb1N0cmluZyh2YWx1ZSBGSElSLkF1ZGl0RXZlbnRBY3Rpb24pOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbm
+    codmFsdWUgRkhJUi5TZWFyY2hNb2RpZmllckNvZGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWU
+    gRkhJUi5FdmVudFN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLk9wZXJhdGlv
+    blBhcmFtZXRlclVzZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNvbnNlbnRQcm92a
+    XNpb25UeXBlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQWN0aW9uQ29uZGl0aW9uS2
+    luZCk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLnF1YWxpdHlUeXBlKTogdmFsdWUudmF
+    sdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQWRtaW5pc3RyYXRpdmVHZW5kZXIpOiB2YWx1ZS52YWx1ZQpk
+    ZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5RdWVzdGlvbm5haXJlSXRlbVR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpb
+    mUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5EZXZpY2VNZXRyaWNDYWxpYnJhdGlvblR5cGUpOiB2YWx1ZS52YWx1ZQpkZW
+    ZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5FdmlkZW5jZVZhcmlhYmxlVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSB
+    mdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLmNvZGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFs
+    dWUgRkhJUi5BY3Rpb25TZWxlY3Rpb25CZWhhdmlvcik6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1Z
+    SBGSElSLlN1cHBseURlbGl2ZXJ5U3RhdHVzKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISV
+    IuRGlhZ25vc3RpY1JlcG9ydFN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkZ
+    sYWdTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5TUERYTGljZW5zZSk6IHZh
+    bHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkxpc3RTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpb
+    mUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5iYXNlNjRCaW5hcnkpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG
+    9TdHJpbmcodmFsdWUgRkhJUi5EZXZpY2VVc2VTdGF0ZW1lbnRTdGF0dXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9
+    TdHJpbmcodmFsdWUgRkhJUi5BdWRpdEV2ZW50QWdlbnROZXR3b3JrVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBU
+    b1N0cmluZyh2YWx1ZSBGSElSLkV4cHJlc3Npb25MYW5ndWFnZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZ
+    yh2YWx1ZSBGSElSLkFkZHJlc3NVc2UpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5Db2
+    50YWN0UG9pbnRVc2UpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5EZXZpY2VNZXRyaWN
+    PcGVyYXRpb25hbFN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNvbnRyaWJ1
+    dG9yVHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlJlZmVyZW5jZVZlcnNpb25Sd
+    Wxlcyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLk1lYXN1cmVSZXBvcnRTdGF0dXMpOi
+    B2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5TZWFyY2hFbnRyeU1vZGUpOiB2YWx1ZS52YWx
+    1ZQpkZWZpbmUgZnVuY3Rpb24gVG9JbnRlZ2VyKHZhbHVlIEZISVIudW5zaWduZWRJbnQpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVu
+    Y3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5OYW1lVXNlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhb
+    HVlIEZISVIuTG9jYXRpb25Nb2RlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvSW50ZWdlcih2YWx1ZSBGSElSLmludG
+    VnZXIpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5GSElSU3Vic3RhbmNlU3RhdHVzKTo
+    gdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuUXVlc3Rpb25uYWlyZUl0ZW1PcGVyYXRvcik6
+    IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkhUVFBWZXJiKTogdmFsdWUudmFsdWUKZGVma
+    W5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuRXBpc29kZU9mQ2FyZVN0YXR1cyk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW
+    5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLlJlbWl0dGFuY2VPdXRjb21lKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFR
+    vU3RyaW5nKHZhbHVlIEZISVIubWFya2Rvd24pOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJ
+    Ui5FbGlnaWJpbGl0eVJlcXVlc3RQdXJwb3NlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZIS
+    VIuUXVhbnRpdHlDb21wYXJhdG9yKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuTWVhc3
+    VyZVJlcG9ydFR5cGUpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5BY3Rpb25QcmVjaGV
+    ja0JlaGF2aW9yKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuU2FtcGxlZERhdGFEYXRh
+    VHlwZSk6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNvbXBvc2l0aW9uQXR0ZXN0YXRpb
+    25Nb2RlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuVHlwZVJlc3RmdWxJbnRlcmFjdG
+    lvbik6IHZhbHVlLnZhbHVlCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSLkNvZGVTeXN0ZW1IaWVyYXJjaHlNZWF
+    uaW5nKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIudkNvbmZpZGVudGlhbGl0eUNsYXNz
+    aWZpY2F0aW9uKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQ29udHJhY3RSZXNvdXJjZ
+    VB1YmxpY2F0aW9uU3RhdHVzQ29kZXMpOiB2YWx1ZS52YWx1ZQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUi5WaX
+    Npb25CYXNlKTogdmFsdWUudmFsdWUKZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVIuQnVuZGxlVHlwZSk6IHZhbHV
+    lLnZhbHVlCg==</span>"</span><span class="xmltag">/&gt;</span><a name="Library.content.data-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Attachment.url" class="xmltag">url</a></span><span class="xmlattr"><a name="Library.content.url"> </a>value="<span class="xmlattrvalue">library-fhir-helpers-content.cql</span>"</span><span class="xmltag">/&gt;</span><a name="Library.content.url-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Attachment.title" class="xmltag">title</a></span><span class="xmlattr"><a name="Library.content.title"> </a>value="<span class="xmlattrvalue">FHIR Helpers</span>"</span><span class="xmltag">/&gt;</span><a name="Library.content.title-end"> </a><b>
+  </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.content" class="xmltag">content</a>&gt;</span><a name="Library.content-end"> </a><b>
+
+</b><span class="xmltag">&lt;/<a href="library-definitions.html" class="xmltag">Library</a>&gt;</span><a name="Library-end"> </a></pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the 
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Flibrary-fhir-helpers.xml.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Flibrary-fhir-helpers.xml.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

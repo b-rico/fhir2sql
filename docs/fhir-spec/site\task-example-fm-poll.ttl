@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Task/fm-example2> a fhir:Task;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "fm-example2"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<p>\n				<b> Generated Narrative with Details</b>\n			</p>\n		</div>"
+  ];
+  fhir:Task.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http:/happyvalley.com/task" ];
+     fhir:Identifier.value [ fhir:value "20181012-005" ]
+  ];
+  fhir:Task.status [ fhir:value "requested"];
+  fhir:Task.intent [ fhir:value "order"];
+  fhir:Task.priority [ fhir:value "stat"];
+  fhir:Task.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/financialtaskcode" ];
+       fhir:Coding.code [ fhir:value "poll" ]
+     ]
+  ];
+  fhir:Task.authoredOn [ fhir:value "2018-10-12T08:25:05+10:00"^^xsd:dateTime];
+  fhir:Task.lastModified [ fhir:value "2018-10-12T08:25:05+10:00"^^xsd:dateTime];
+  fhir:Task.requester [
+     fhir:link <http://hl7.org/fhir/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ];
+     fhir:Reference.display [ fhir:value "Happy Valley Clinic" ]
+  ];
+  fhir:Task.owner [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://nationalinsurers.com/identifiers" ];
+       fhir:Identifier.value [ fhir:value "12345" ]
+     ]
+  ];
+  fhir:Task.input [
+     fhir:index 0;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/financialtaskinputtype" ];
+         fhir:Coding.code [ fhir:value "include" ]
+       ]
+     ];
+     fhir:Task.input.valueCode [ fhir:value "ClaimResponse" ]
+  ], [
+     fhir:index 1;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/financialtaskinputtype" ];
+         fhir:Coding.code [ fhir:value "period" ]
+       ]
+     ];
+     fhir:Task.input.valuePeriod [
+       fhir:Period.start [ fhir:value "2018-10-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2018-10-12"^^xsd:date ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Organization/example> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Task/fm-example2.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Task/fm-example2.ttl> .
+
+# -------------------------------------------------------------------------------------
+

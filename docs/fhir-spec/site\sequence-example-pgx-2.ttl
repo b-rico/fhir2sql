@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MolecularSequence/example-pgx-2> a fhir:MolecularSequence;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-pgx-2"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-pgx-2</p><p><b>type</b>: dna</p><p><b>coordinateSystem</b>: 0</p><p><b>patient</b>: <a>Patient/example</a></p><h3>ReferenceSeqs</h3><table><tr><td>-</td><td><b>Orientation</b></td><td><b>ReferenceSeqId</b></td><td><b>Strand</b></td><td><b>WindowStart</b></td><td><b>WindowEnd</b></td></tr><tr><td>*</td><td>sense</td><td>NG_007726.3 <span>(Details : {http://www.ncbi.nlm.nih.gov/nuccore code 'NG_007726.3' = 'NG_007726.3)</span></td><td>watson</td><td>55227970</td><td>55227980</td></tr></table><h3>Variants</h3><table><tr><td>-</td><td><b>Start</b></td><td><b>End</b></td><td><b>ObservedAllele</b></td><td><b>ReferenceAllele</b></td><td><b>VariantPointer</b></td></tr><tr><td>*</td><td>55227978</td><td>55227979</td><td>G</td><td>T</td><td><a>Target Haplotype Observation</a></td></tr></table></div>"
+  ];
+  fhir:MolecularSequence.type [ fhir:value "dna"];
+  fhir:MolecularSequence.coordinateSystem [ fhir:value "0"^^xsd:integer];
+  fhir:MolecularSequence.patient [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:MolecularSequence.referenceSeq [
+     fhir:MolecularSequence.referenceSeq.orientation [ fhir:value "sense" ];
+     fhir:MolecularSequence.referenceSeq.referenceSeqId [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.ncbi.nlm.nih.gov/nuccore" ];
+         fhir:Coding.code [ fhir:value "NG_007726.3" ]
+       ]
+     ];
+     fhir:MolecularSequence.referenceSeq.strand [ fhir:value "watson" ];
+     fhir:MolecularSequence.referenceSeq.windowStart [ fhir:value "55227970"^^xsd:integer ];
+     fhir:MolecularSequence.referenceSeq.windowEnd [ fhir:value "55227980"^^xsd:integer ]
+  ];
+  fhir:MolecularSequence.variant [
+     fhir:index 0;
+     fhir:MolecularSequence.variant.start [ fhir:value "55227978"^^xsd:integer ];
+     fhir:MolecularSequence.variant.end [ fhir:value "55227979"^^xsd:integer ];
+     fhir:MolecularSequence.variant.observedAllele [ fhir:value "G" ];
+     fhir:MolecularSequence.variant.referenceAllele [ fhir:value "T" ];
+     fhir:MolecularSequence.variant.variantPointer [
+       fhir:link <http://hl7.org/fhir/Observation/example-haplotype2>;
+       fhir:Reference.reference [ fhir:value "Observation/example-haplotype2" ];
+       fhir:Reference.display [ fhir:value "Target Haplotype Observation" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Observation/example-haplotype2> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MolecularSequence/example-pgx-2.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MolecularSequence/example-pgx-2.ttl> .
+
+# -------------------------------------------------------------------------------------
+

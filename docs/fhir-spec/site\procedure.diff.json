@@ -1,0 +1,97 @@
+﻿{
+  "types": [
+    "Procedure"
+  ],
+  "Procedure": {
+    "elements": {
+      "Procedure.instantiatesCanonical": {
+        "status": "new"
+      },
+      "Procedure.instantiatesUri": {
+        "status": "new"
+      },
+      "Procedure.basedOn": {
+        "removed-types": [
+          "Reference(CarePlan | ProcedureRequest | ReferralRequest)"
+        ],
+        "added-types": [
+          "Reference(CarePlan | ServiceRequest)"
+        ]
+      },
+      "Procedure.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/event-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/event-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Procedure.statusReason": {
+        "status": "new"
+      },
+      "Procedure.encounter": {
+        "status": "new"
+      },
+      "Procedure.performed[x]": {
+        "added-types": [
+          "string",
+          "Age",
+          "Range"
+        ]
+      },
+      "Procedure.recorder": {
+        "status": "new"
+      },
+      "Procedure.asserter": {
+        "status": "new"
+      },
+      "Procedure.performer.function": {
+        "status": "new"
+      },
+      "Procedure.performer.actor": {
+        "removed-types": [
+          "Reference(Practitioner | Organization | Patient | RelatedPerson | Device)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device)"
+        ]
+      },
+      "Procedure.reasonReference": {
+        "removed-types": [
+          "Reference(Condition | Observation)"
+        ],
+        "added-types": [
+          "Reference(Condition | Observation | Procedure | DiagnosticReport | DocumentReference)"
+        ]
+      },
+      "Procedure.report": {
+        "removed-types": [
+          "Reference(DiagnosticReport)"
+        ],
+        "added-types": [
+          "Reference(DiagnosticReport | DocumentReference | Composition)"
+        ]
+      },
+      "Procedure.definition": {
+        "status": "deleted"
+      },
+      "Procedure.notDone": {
+        "status": "deleted"
+      },
+      "Procedure.notDoneReason": {
+        "status": "deleted"
+      },
+      "Procedure.context": {
+        "status": "deleted"
+      },
+      "Procedure.performer.role": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

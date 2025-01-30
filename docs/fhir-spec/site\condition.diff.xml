@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Condition" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Condition.clinicalStatus">
+         <removed-type name="code"/>
+         <added-type name="CodeableConcept"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/condition-clinical"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               default="removed"
+               old-default="&#34;unknown&#34;"
+               path="Condition.verificationStatus">
+         <removed-type name="code"/>
+         <added-type name="CodeableConcept"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/condition-ver-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/condition-ver-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="added" path="Condition.category">
+         <new-binding reference="http://hl7.org/fhir/ValueSet/condition-category"
+                      strength="extensible"/>
+      </element>
+      <element path="Condition.encounter" status="new"/>
+      <element path="Condition.abatement[x]">
+         <removed-type name="boolean"/>
+      </element>
+      <element old-name="assertedDate" path="Condition.recordedDate"/>
+      <element path="Condition.recorder" status="new"/>
+      <element path="Condition.asserter">
+         <removed-type name="Reference(Practitioner | Patient | RelatedPerson)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Patient | RelatedPerson)"/>
+      </element>
+      <element new-max="*" old-max="1" path="Condition.stage"/>
+      <element path="Condition.stage.type" status="new"/>
+      <element path="Condition.context" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,99 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Provenance/example> a fhir:Provenance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">procedure record authored on 27-June 2015 by Harold Hippocrates, MD Content extracted from XDS managed CDA Referral received 26-June as authorized by a referenced Consent.</div>"
+  ];
+  fhir:Provenance.target [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Procedure/example/_history/1>;
+     fhir:Reference.reference [ fhir:value "Procedure/example/_history/1" ]
+  ];
+  fhir:Provenance.occurredPeriod [
+     fhir:Period.start [ fhir:value "2015-06-27"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2015-06-28"^^xsd:date ]
+  ];
+  fhir:Provenance.recorded [ fhir:value "2015-06-27T08:39:24+10:00"^^xsd:dateTime];
+  fhir:Provenance.policy [
+     fhir:value "http://acme.com/fhir/Consent/25";
+     fhir:index 0
+  ];
+  fhir:Provenance.location [
+     fhir:link <http://hl7.org/fhir/Location/1>;
+     fhir:Reference.reference [ fhir:value "Location/1" ]
+  ];
+  fhir:Provenance.reason [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:3457005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "3457005" ];
+       fhir:Coding.display [ fhir:value "Referral" ]
+     ]
+  ];
+  fhir:Provenance.agent [
+     fhir:index 0;
+     fhir:Provenance.agent.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "AUT" ]
+       ]
+     ];
+     fhir:Provenance.agent.who [
+       fhir:link <http://hl7.org/fhir/Practitioner/xcda-author>;
+       fhir:Reference.reference [ fhir:value "Practitioner/xcda-author" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Element.id [ fhir:value "a1" ];
+     fhir:Provenance.agent.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "DEV" ]
+       ]
+     ];
+     fhir:Provenance.agent.who [
+       fhir:link <http://hl7.org/fhir/Device/software>;
+       fhir:Reference.reference [ fhir:value "Device/software" ]
+     ]
+  ];
+  fhir:Provenance.entity [
+     fhir:index 0;
+     fhir:Provenance.entity.role [ fhir:value "source" ];
+     fhir:Provenance.entity.what [
+       fhir:link <http://hl7.org/fhir/DocumentReference/example>;
+       fhir:Reference.reference [ fhir:value "DocumentReference/example" ];
+       fhir:Reference.display [ fhir:value "CDA Document in XDS repository" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Procedure/example/_history/1> a fhir:Procedure .
+
+<http://hl7.org/fhir/Location/1> a fhir:Location .
+
+<http://hl7.org/fhir/Practitioner/xcda-author> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Device/software> a fhir:Device .
+
+<http://hl7.org/fhir/DocumentReference/example> a fhir:DocumentReference .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Provenance/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Provenance/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,201 @@
+﻿{
+  "types": [
+    "Claim"
+  ],
+  "Claim": {
+    "elements": {
+      "Claim.status": {
+        "old-min": 0,
+        "new-min": 1,
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/fm-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/fm-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Claim.type": {
+        "old-min": 0,
+        "new-min": 1,
+        "binding-strength-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/claim-type",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/claim-type",
+          "strength": "extensible"
+        }
+      },
+      "Claim.subType": {
+        "old-max": "*",
+        "new-max": "1"
+      },
+      "Claim.use": {
+        "old-min": 0,
+        "new-min": 1,
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/claim-use",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/claim-use|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Claim.patient": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "Claim.created": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "Claim.enterer": {
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole)"
+        ]
+      },
+      "Claim.provider": {
+        "old-min": 0,
+        "new-min": 1,
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "Claim.priority": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "Claim.prescription": {
+        "removed-types": [
+          "Reference(MedicationRequest | VisionPrescription)"
+        ],
+        "added-types": [
+          "Reference(DeviceRequest | MedicationRequest | VisionPrescription)"
+        ]
+      },
+      "Claim.originalPrescription": {
+        "removed-types": [
+          "Reference(MedicationRequest)"
+        ],
+        "added-types": [
+          "Reference(DeviceRequest | MedicationRequest | VisionPrescription)"
+        ]
+      },
+      "Claim.payee.party": {
+        "removed-types": [
+          "Reference(Practitioner | Organization | Patient | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson)"
+        ]
+      },
+      "Claim.referral": {
+        "removed-types": [
+          "Reference(ReferralRequest)"
+        ],
+        "added-types": [
+          "Reference(ServiceRequest)"
+        ]
+      },
+      "Claim.careTeam.provider": {
+        "removed-types": [
+          "Reference(Practitioner | Organization)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "Claim.supportingInfo": {
+        "old-name": "information"
+      },
+      "Claim.supportingInfo.value[x]": {
+        "added-types": [
+          "boolean"
+        ]
+      },
+      "Claim.diagnosis.onAdmission": {
+        "status": "new"
+      },
+      "Claim.procedure.type": {
+        "status": "new"
+      },
+      "Claim.procedure.udi": {
+        "status": "new"
+      },
+      "Claim.insurance": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "Claim.insurance.identifier": {
+        "status": "new"
+      },
+      "Claim.accident.type": {
+        "binding-strength-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://terminology.hl7.org/ValueSet/v3-ActIncidentCode",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://terminology.hl7.org/ValueSet/v3-ActIncidentCode",
+          "strength": "extensible"
+        }
+      },
+      "Claim.item.careTeamSequence": {
+        "old-name": "careTeamLinkId"
+      },
+      "Claim.item.diagnosisSequence": {
+        "old-name": "diagnosisLinkId"
+      },
+      "Claim.item.procedureSequence": {
+        "old-name": "procedureLinkId"
+      },
+      "Claim.item.informationSequence": {
+        "old-name": "informationLinkId"
+      },
+      "Claim.item.productOrService": {
+        "old-name": "service",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "Claim.item.detail.productOrService": {
+        "old-name": "service",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "Claim.item.detail.subDetail.productOrService": {
+        "old-name": "service",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "Claim.organization": {
+        "status": "deleted"
+      },
+      "Claim.payee.resourceType": {
+        "status": "deleted"
+      },
+      "Claim.employmentImpacted": {
+        "status": "deleted"
+      },
+      "Claim.hospitalization": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

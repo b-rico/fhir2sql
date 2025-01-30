@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CarePlan/obesity-narrative> a fhir:CarePlan;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "obesity-narrative"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p> Care plan to address obesity.  Goal is a target weight of 160 to 180 lbs.  Activities include diet and exercise.</p>\n    </div>"
+  ];
+  fhir:CarePlan.status [ fhir:value "active"];
+  fhir:CarePlan.intent [ fhir:value "plan"];
+  fhir:CarePlan.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CarePlan/obesity-narrative.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CarePlan/obesity-narrative.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,146 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type GuidanceResponse {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  requestIdentifier: Identifier
+  identifier: [Identifier]
+  moduleUri: uri  _moduleUri: ElementBase
+  moduleCanonical: canonical  _moduleCanonical: ElementBase
+  moduleCodeableConcept: CodeableConcept
+  status: code  _status: ElementBase
+  subject: Reference
+  encounter: Reference
+  occurrenceDateTime: dateTime  _occurrenceDateTime: ElementBase
+  performer: Reference
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  note: [Annotation]
+  evaluationMessage: [Reference]
+  outputParameters: Reference
+  result: Reference
+  dataRequirement: [DataRequirement]
+}
+
+input GuidanceResponse {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  requestIdentifier: Identifier
+  identifier: [Identifier]
+  moduleUri: uri  _moduleUri: ElementBase
+  moduleCanonical: canonical  _moduleCanonical: ElementBase
+  moduleCodeableConcept: CodeableConcept
+  status: code  _status: ElementBase
+  subject: Reference
+  encounter: Reference
+  occurrenceDateTime: dateTime  _occurrenceDateTime: ElementBase
+  performer: Reference
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  note: [Annotation]
+  evaluationMessage: [Reference]
+  outputParameters: Reference
+  result: Reference
+  dataRequirement: [DataRequirement]
+}
+
+type GuidanceResponseReadType {
+  GuidanceResponse(id : ID!) : GuidanceResponse
+}
+
+type GuidanceResponseListType {
+  GuidanceResponseList(_filter : String
+    identifier : [token]
+    patient : [reference]
+    request : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [GuidanceResponse]
+}
+
+type GuidanceResponseConnectionType {
+  GuidanceResponseConection(_filter : String
+    identifier : [token]
+    patient : [reference]
+    request : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : GuidanceResponseConnection
+}
+
+type GuidanceResponseConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [GuidanceResponseEdge]
+}
+
+type GuidanceResponseEdge {
+  mode : String
+  score : Float
+  resource : GuidanceResponse
+}
+
+type GuidanceResponseCreateType {
+  GuidanceResponseCreate(resource : GuidanceResponse) : GuidanceResponseCreation
+}
+
+type GuidanceResponseCreation {
+  location : String
+  resource : GuidanceResponse
+  information : OperationOutcome
+}
+
+type GuidanceResponseUpdateType {
+  GuidanceResponseUpdate(id : IDresource : GuidanceResponse) : GuidanceResponseUpdate
+}
+
+type GuidanceResponseUpdate {
+  resource : GuidanceResponse
+  information : OperationOutcome
+}
+
+type GuidanceResponseDeleteType {
+  GuidanceResponseDelete(id : ID) : GuidanceResponseDelete
+}
+
+type GuidanceResponseDelete {
+  information : OperationOutcome
+}
+

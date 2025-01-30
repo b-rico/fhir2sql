@@ -1,0 +1,228 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type HealthcareService {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  active: Boolean  _active: ElementBase
+  providedBy: Reference
+  category: [CodeableConcept]
+  type: [CodeableConcept]
+  specialty: [CodeableConcept]
+  location: [Reference]
+  name: String  _name: ElementBase
+  comment: String  _comment: ElementBase
+  extraDetails: markdown  _extraDetails: ElementBase
+  photo: Attachment
+  telecom: [ContactPoint]
+  coverageArea: [Reference]
+  serviceProvisionCode: [CodeableConcept]
+  eligibility: [HealthcareServiceEligibility]
+  program: [CodeableConcept]
+  characteristic: [CodeableConcept]
+  communication: [CodeableConcept]
+  referralMethod: [CodeableConcept]
+  appointmentRequired: Boolean  _appointmentRequired: ElementBase
+  availableTime: [HealthcareServiceAvailableTime]
+  notAvailable: [HealthcareServiceNotAvailable]
+  availabilityExceptions: String  _availabilityExceptions: ElementBase
+  endpoint: [Reference]
+}
+
+type HealthcareServiceEligibility {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept
+  comment: markdown  _comment: ElementBase
+}
+
+type HealthcareServiceAvailableTime {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  daysOfWeek: code  _daysOfWeek: [ElementBase]
+  allDay: Boolean  _allDay: ElementBase
+  availableStartTime: time  _availableStartTime: ElementBase
+  availableEndTime: time  _availableEndTime: ElementBase
+}
+
+type HealthcareServiceNotAvailable {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  description: String  _description: ElementBase
+  during: Period
+}
+
+input HealthcareService {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  active: Boolean  _active: ElementBase
+  providedBy: Reference
+  category: [CodeableConcept]
+  type: [CodeableConcept]
+  specialty: [CodeableConcept]
+  location: [Reference]
+  name: String  _name: ElementBase
+  comment: String  _comment: ElementBase
+  extraDetails: markdown  _extraDetails: ElementBase
+  photo: Attachment
+  telecom: [ContactPoint]
+  coverageArea: [Reference]
+  serviceProvisionCode: [CodeableConcept]
+  eligibility: [HealthcareServiceEligibility]
+  program: [CodeableConcept]
+  characteristic: [CodeableConcept]
+  communication: [CodeableConcept]
+  referralMethod: [CodeableConcept]
+  appointmentRequired: Boolean  _appointmentRequired: ElementBase
+  availableTime: [HealthcareServiceAvailableTime]
+  notAvailable: [HealthcareServiceNotAvailable]
+  availabilityExceptions: String  _availabilityExceptions: ElementBase
+  endpoint: [Reference]
+}
+
+input HealthcareServiceEligibility {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept
+  comment: markdown  _comment: ElementBase
+}
+
+input HealthcareServiceAvailableTime {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  daysOfWeek: code  _daysOfWeek: [ElementBase]
+  allDay: Boolean  _allDay: ElementBase
+  availableStartTime: time  _availableStartTime: ElementBase
+  availableEndTime: time  _availableEndTime: ElementBase
+}
+
+input HealthcareServiceNotAvailable {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  description: String  _description: ElementBase
+  during: Period
+}
+
+type HealthcareServiceReadType {
+  HealthcareService(id : ID!) : HealthcareService
+}
+
+type HealthcareServiceListType {
+  HealthcareServiceList(_filter : String
+    active : [token]
+    characteristic : [token]
+    coverage_area : [reference]
+    endpoint : [reference]
+    identifier : [token]
+    location : [reference]
+    name : [String]
+    organization : [reference]
+    program : [token]
+    service_category : [token]
+    service_type : [token]
+    specialty : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [HealthcareService]
+}
+
+type HealthcareServiceConnectionType {
+  HealthcareServiceConection(_filter : String
+    active : [token]
+    characteristic : [token]
+    coverage_area : [reference]
+    endpoint : [reference]
+    identifier : [token]
+    location : [reference]
+    name : [String]
+    organization : [reference]
+    program : [token]
+    service_category : [token]
+    service_type : [token]
+    specialty : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : HealthcareServiceConnection
+}
+
+type HealthcareServiceConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [HealthcareServiceEdge]
+}
+
+type HealthcareServiceEdge {
+  mode : String
+  score : Float
+  resource : HealthcareService
+}
+
+type HealthcareServiceCreateType {
+  HealthcareServiceCreate(resource : HealthcareService) : HealthcareServiceCreation
+}
+
+type HealthcareServiceCreation {
+  location : String
+  resource : HealthcareService
+  information : OperationOutcome
+}
+
+type HealthcareServiceUpdateType {
+  HealthcareServiceUpdate(id : IDresource : HealthcareService) : HealthcareServiceUpdate
+}
+
+type HealthcareServiceUpdate {
+  resource : HealthcareService
+  information : OperationOutcome
+}
+
+type HealthcareServiceDeleteType {
+  HealthcareServiceDelete(id : ID) : HealthcareServiceDelete
+}
+
+type HealthcareServiceDelete {
+  information : OperationOutcome
+}
+

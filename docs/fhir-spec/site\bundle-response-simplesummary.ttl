@@ -1,0 +1,509 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Bundle/bundle-response-simplesummary> a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "bundle-response-simplesummary"];
+  fhir:Bundle.type [ fhir:value "batch-response"];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.resource [
+       a fhir:Patient;
+       fhir:Resource.id [ fhir:value "example" ];
+       fhir:Resource.meta [
+         fhir:Meta.versionId [ fhir:value "1" ];
+         fhir:Meta.lastUpdated [ fhir:value "2018-11-12T03:35:20.715Z"^^xsd:dateTime ]
+       ];
+       fhir:DomainResource.text [
+         fhir:Narrative.status [ fhir:value "generated" ];
+         fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n                        <table>\n                            <tbody>\n                                <tr>\n                                    <td>Name</td>\n                                    <td>Peter James \n                                        <b>Chalmers</b> (&quot;Jim&quot;)\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>Address</td>\n                                    <td>534 Erewhon, Pleasantville, Vic, 3999</td>\n                                </tr>\n                                <tr>\n                                    <td>Contacts</td>\n                                    <td>Home: unknown. Work: (03) 5555 6473</td>\n                                </tr>\n                                <tr>\n                                    <td>Id</td>\n                                    <td>MRN: 12345 (Acme Healthcare)</td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </div>"
+       ];
+       fhir:Patient.identifier [
+         fhir:index 0;
+         fhir:Identifier.use [ fhir:value "usual" ];
+         fhir:Identifier.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+             fhir:Coding.code [ fhir:value "MR" ]
+           ]
+         ];
+         fhir:Identifier.system [ fhir:value "urn:oid:1.2.36.146.595.217.0.1" ];
+         fhir:Identifier.value [ fhir:value "12345" ];
+         fhir:Identifier.period [
+           fhir:Period.start [ fhir:value "2001-05-06"^^xsd:date ]
+         ];
+         fhir:Identifier.assigner [
+           fhir:Reference.display [ fhir:value "Acme Healthcare" ]
+         ]
+       ];
+       fhir:Patient.active [ fhir:value "true"^^xsd:boolean ];
+       fhir:Patient.name [
+         fhir:index 0;
+         fhir:HumanName.use [ fhir:value "official" ];
+         fhir:HumanName.family [ fhir:value "Chalmers" ];
+         fhir:HumanName.given [
+           fhir:value "Peter";
+           fhir:index 0
+         ], [
+           fhir:value "James";
+           fhir:index 1
+         ]
+       ], [
+         fhir:index 1;
+         fhir:HumanName.use [ fhir:value "usual" ];
+         fhir:HumanName.given [
+           fhir:value "Jim";
+           fhir:index 0
+         ]
+       ], [
+         fhir:index 2;
+         fhir:HumanName.use [ fhir:value "maiden" ];
+         fhir:HumanName.family [ fhir:value "Windsor" ];
+         fhir:HumanName.given [
+           fhir:value "Peter";
+           fhir:index 0
+         ], [
+           fhir:value "James";
+           fhir:index 1
+         ];
+         fhir:HumanName.period [
+           fhir:Period.end [ fhir:value "2002"^^xsd:gYear ]
+         ]
+       ];
+       fhir:Patient.telecom [
+         fhir:index 0;
+         fhir:ContactPoint.use [ fhir:value "home" ]
+       ], [
+         fhir:index 1;
+         fhir:ContactPoint.system [ fhir:value "phone" ];
+         fhir:ContactPoint.value [ fhir:value "(03) 5555 6473" ];
+         fhir:ContactPoint.use [ fhir:value "work" ];
+         fhir:ContactPoint.rank [ fhir:value "1"^^xsd:positiveInteger ]
+       ], [
+         fhir:index 2;
+         fhir:ContactPoint.system [ fhir:value "phone" ];
+         fhir:ContactPoint.value [ fhir:value "(03) 3410 5613" ];
+         fhir:ContactPoint.use [ fhir:value "mobile" ];
+         fhir:ContactPoint.rank [ fhir:value "2"^^xsd:positiveInteger ]
+       ], [
+         fhir:index 3;
+         fhir:ContactPoint.system [ fhir:value "phone" ];
+         fhir:ContactPoint.value [ fhir:value "(03) 5555 8834" ];
+         fhir:ContactPoint.use [ fhir:value "old" ];
+         fhir:ContactPoint.period [
+           fhir:Period.end [ fhir:value "2014"^^xsd:gYear ]
+         ]
+       ];
+       fhir:Patient.gender [ fhir:value "male" ];
+       fhir:Patient.birthDate [
+         fhir:value "1974-12-25"^^xsd:date;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/patient-birthTime" ];
+           fhir:Extension.valueDateTime [ fhir:value "1974-12-25T14:35:45-05:00"^^xsd:dateTime ]
+         ]
+       ];
+       fhir:Patient.deceasedBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:Patient.address [
+         fhir:index 0;
+         fhir:Address.use [ fhir:value "home" ];
+         fhir:Address.type [ fhir:value "both" ];
+         fhir:Address.text [ fhir:value "534 Erewhon St PeasantVille, Rainbow, Vic  3999" ];
+         fhir:Address.line [
+           fhir:value "534 Erewhon St";
+           fhir:index 0
+         ];
+         fhir:Address.city [ fhir:value "PleasantVille" ];
+         fhir:Address.district [ fhir:value "Rainbow" ];
+         fhir:Address.state [ fhir:value "Vic" ];
+         fhir:Address.postalCode [ fhir:value "3999" ];
+         fhir:Address.period [
+           fhir:Period.start [ fhir:value "1974-12-25"^^xsd:date ]
+         ]
+       ];
+       fhir:Patient.contact [
+         fhir:index 0;
+         fhir:Patient.contact.relationship [
+           fhir:index 0;
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0131" ];
+             fhir:Coding.code [ fhir:value "N" ]
+           ]
+         ];
+         fhir:Patient.contact.name [
+           fhir:HumanName.family [
+             fhir:value "du Marché";
+             fhir:Element.extension [
+               fhir:index 0;
+               fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix" ];
+               fhir:Extension.valueString [ fhir:value "VV" ]
+             ]
+           ];
+           fhir:HumanName.given [
+             fhir:value "Bénédicte";
+             fhir:index 0
+           ]
+         ];
+         fhir:Patient.contact.telecom [
+           fhir:index 0;
+           fhir:ContactPoint.system [ fhir:value "phone" ];
+           fhir:ContactPoint.value [ fhir:value "+33 (237) 998327" ]
+         ];
+         fhir:Patient.contact.address [
+           fhir:Address.use [ fhir:value "home" ];
+           fhir:Address.type [ fhir:value "both" ];
+           fhir:Address.line [
+             fhir:value "534 Erewhon St";
+             fhir:index 0
+           ];
+           fhir:Address.city [ fhir:value "PleasantVille" ];
+           fhir:Address.district [ fhir:value "Rainbow" ];
+           fhir:Address.state [ fhir:value "Vic" ];
+           fhir:Address.postalCode [ fhir:value "3999" ];
+           fhir:Address.period [
+             fhir:Period.start [ fhir:value "1974-12-25"^^xsd:date ]
+           ]
+         ];
+         fhir:Patient.contact.gender [ fhir:value "female" ];
+         fhir:Patient.contact.period [
+           fhir:Period.start [ fhir:value "2012"^^xsd:gYear ]
+         ]
+       ];
+       fhir:Patient.managingOrganization [
+         fhir:link <http://hl7.org/fhir/Organization/1>;
+         fhir:Reference.reference [ fhir:value "Organization/1" ]
+       ]
+     ];
+     fhir:Bundle.entry.response [
+       fhir:Bundle.entry.response.status [ fhir:value "200" ];
+       fhir:Bundle.entry.response.etag [ fhir:value "W/1" ];
+       fhir:Bundle.entry.response.lastModified [ fhir:value "2018-11-12T03:35:20.717Z"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Bundle.entry.resource [
+       a fhir:Bundle;
+       fhir:Resource.id [ fhir:value "2c2fb771-6c4b-4df8-89b2-47a1178e7c" ];
+       fhir:Resource.meta [
+         fhir:Meta.lastUpdated [ fhir:value "2018-11-12T05:42:49.445Z"^^xsd:dateTime ]
+       ];
+       fhir:Bundle.type [ fhir:value "searchset" ];
+       fhir:Bundle.total [ fhir:value "4"^^xsd:nonNegativeInteger ];
+       fhir:Bundle.link [
+         fhir:index 0;
+         fhir:Bundle.link.relation [ fhir:value "self" ];
+         fhir:Bundle.link.url [ fhir:value "http://local.fhir.org:960/r4/Condition?_format=application/fhir+xml&search-id=36aac5c3-a9f6-4c3a-bf94-24d32ed604&&patient=example&_sort=_id" ]
+       ];
+       fhir:Bundle.entry [
+         fhir:index 0;
+         fhir:Bundle.entry.fullUrl [ fhir:value "http://local.fhir.org:960/r4/Condition/example" ];
+         fhir:Bundle.entry.resource <http://local.fhir.org:960/r4/Condition/example>;
+         fhir:Bundle.entry.search [
+           fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Bundle.entry.fullUrl [ fhir:value "http://local.fhir.org:960/r4/Condition/example2" ];
+         fhir:Bundle.entry.resource <http://local.fhir.org:960/r4/Condition/example2>;
+         fhir:Bundle.entry.search [
+           fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:Bundle.entry.fullUrl [ fhir:value "http://local.fhir.org:960/r4/Condition/family-history" ];
+         fhir:Bundle.entry.resource <http://local.fhir.org:960/r4/Condition/family-history>;
+         fhir:Bundle.entry.search [
+           fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+         ]
+       ], [
+         fhir:index 3;
+         fhir:Bundle.entry.fullUrl [ fhir:value "http://local.fhir.org:960/r4/Condition/stroke" ];
+         fhir:Bundle.entry.resource <http://local.fhir.org:960/r4/Condition/stroke>;
+         fhir:Bundle.entry.search [
+           fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+         ]
+       ]
+     ];
+     fhir:Bundle.entry.response [
+       fhir:Bundle.entry.response.status [ fhir:value "200" ];
+       fhir:Bundle.entry.response.etag [ fhir:value "W/1" ];
+       fhir:Bundle.entry.response.lastModified [ fhir:value "2018-11-12T03:35:20.717Z"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Bundle.entry.resource [
+       a fhir:Bundle;
+       fhir:Resource.id [ fhir:value "86846953-60dd-47ba-b37a-7e7d7e3312" ];
+       fhir:Resource.meta [
+         fhir:Meta.lastUpdated [ fhir:value "2018-11-12T05:42:49.476Z"^^xsd:dateTime ]
+       ];
+       fhir:Bundle.type [ fhir:value "searchset" ];
+       fhir:Bundle.total [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:Bundle.link [
+         fhir:index 0;
+         fhir:Bundle.link.relation [ fhir:value "self" ];
+         fhir:Bundle.link.url [ fhir:value "http://local.fhir.org:960/r4/MedicationStatement?_format=application/fhir+xml&search-id=0f08b401-5120-4444-9a83-3fd21d33df&&patient=example&_sort=_id" ]
+       ]
+     ];
+     fhir:Bundle.entry.response [
+       fhir:Bundle.entry.response.status [ fhir:value "200" ];
+       fhir:Bundle.entry.response.etag [ fhir:value "W/1" ];
+       fhir:Bundle.entry.response.lastModified [ fhir:value "2018-11-12T03:35:20.717Z"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:Bundle.entry.resource [
+       a fhir:Bundle;
+       fhir:Resource.id [ fhir:value "4bafe9c4-ba53-4d7b-89d0-d92ee0859a" ];
+       fhir:Resource.meta [
+         fhir:Meta.lastUpdated [ fhir:value "2018-11-12T05:42:49.498Z"^^xsd:dateTime ]
+       ];
+       fhir:Bundle.type [ fhir:value "searchset" ];
+       fhir:Bundle.total [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:Bundle.link [
+         fhir:index 0;
+         fhir:Bundle.link.relation [ fhir:value "self" ];
+         fhir:Bundle.link.url [ fhir:value "http://local.fhir.org:960/r4/Observation?_format=application/fhir+xml&search-id=50df0414-1375-48a4-ba1e-66f580360a&&patient=example&code=http%3A//loinc.org%7C55284%2D4&date=ge2015%2D01%2D01&_sort=_id" ]
+       ]
+     ];
+     fhir:Bundle.entry.response [
+       fhir:Bundle.entry.response.status [ fhir:value "200" ];
+       fhir:Bundle.entry.response.etag [ fhir:value "W/1" ];
+       fhir:Bundle.entry.response.lastModified [ fhir:value "2018-11-12T03:35:20.717Z"^^xsd:dateTime ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Organization/1> a fhir:Organization .
+
+<http://local.fhir.org:960/r4/Condition/example> a fhir:Condition;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2018-11-12T03:34:46.552Z"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Severe burn of left ear (Date: 24-May 2012)</div>"
+  ];
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ];
+  fhir:Condition.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+       fhir:Coding.code [ fhir:value "confirmed" ]
+     ]
+  ];
+  fhir:Condition.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-category" ];
+       fhir:Coding.code [ fhir:value "encounter-diagnosis" ];
+       fhir:Coding.display [ fhir:value "Encounter Diagnosis" ]
+     ], [
+       fhir:index 1;
+       a sct:439401001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "439401001" ];
+       fhir:Coding.display [ fhir:value "Diagnosis" ]
+     ]
+  ];
+  fhir:Condition.severity [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:24484000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "24484000" ];
+       fhir:Coding.display [ fhir:value "Severe" ]
+     ]
+  ];
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:39065001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "39065001" ];
+       fhir:Coding.display [ fhir:value "Burn of ear" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Burnt Ear" ]
+  ];
+  fhir:Condition.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:49521004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "49521004" ];
+       fhir:Coding.display [ fhir:value "Left external ear structure" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Left Ear" ]
+  ];
+  fhir:Condition.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Condition.onsetDateTime [ fhir:value "2012-05-24"^^xsd:date] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://local.fhir.org:960/r4/Condition/example2> a fhir:Condition;
+  fhir:Resource.id [ fhir:value "example2"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2018-11-12T03:34:46.626Z"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Mild Asthma (Date: 12-Nov 2012)</div>"
+  ];
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ];
+  fhir:Condition.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+       fhir:Coding.code [ fhir:value "confirmed" ]
+     ]
+  ];
+  fhir:Condition.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-category" ];
+       fhir:Coding.code [ fhir:value "problem-list-item" ];
+       fhir:Coding.display [ fhir:value "Problem List Item" ]
+     ]
+  ];
+  fhir:Condition.severity [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:255604002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "255604002" ];
+       fhir:Coding.display [ fhir:value "Mild" ]
+     ]
+  ];
+  fhir:Condition.code [
+     fhir:CodeableConcept.text [ fhir:value "Asthma" ]
+  ];
+  fhir:Condition.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Condition.onsetString [ fhir:value "approximately November 2012"] .
+
+<http://local.fhir.org:960/r4/Condition/family-history> a fhir:Condition;
+  fhir:Resource.id [ fhir:value "family-history"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2018-11-12T03:34:47.274Z"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Family history of cancer of colon</div>"
+  ];
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ];
+  fhir:Condition.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-category" ];
+       fhir:Coding.code [ fhir:value "problem-list-item" ];
+       fhir:Coding.display [ fhir:value "Problem List Item" ]
+     ]
+  ];
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:312824007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "312824007" ];
+       fhir:Coding.display [ fhir:value "Family history of cancer of colon" ]
+     ]
+  ];
+  fhir:Condition.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://local.fhir.org:960/r4/Condition/stroke> a fhir:Condition;
+  fhir:Resource.id [ fhir:value "stroke"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2018-11-12T03:34:47.337Z"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ischemic stroke, July 18, 2010</div>"
+  ];
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ];
+  fhir:Condition.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+       fhir:Coding.code [ fhir:value "confirmed" ]
+     ]
+  ];
+  fhir:Condition.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-category" ];
+       fhir:Coding.code [ fhir:value "encounter-diagnosis" ];
+       fhir:Coding.display [ fhir:value "Encounter Diagnosis" ]
+     ]
+  ];
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:422504002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "422504002" ];
+       fhir:Coding.display [ fhir:value "Ischemic stroke (disorder)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Stroke" ]
+  ];
+  fhir:Condition.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Condition.onsetDateTime [ fhir:value "2010-07-18"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Bundle/bundle-response-simplesummary.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Bundle/bundle-response-simplesummary.ttl> .
+
+# -------------------------------------------------------------------------------------
+

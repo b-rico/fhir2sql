@@ -1,0 +1,90 @@
+﻿{
+  "types": [
+    "CommunicationRequest"
+  ],
+  "CommunicationRequest": {
+    "elements": {
+      "CommunicationRequest.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/request-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/request-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "CommunicationRequest.statusReason": {
+        "status": "new"
+      },
+      "CommunicationRequest.priority": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/request-priority",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1",
+          "strength": "required"
+        }
+      },
+      "CommunicationRequest.doNotPerform": {
+        "status": "new"
+      },
+      "CommunicationRequest.about": {
+        "status": "new"
+      },
+      "CommunicationRequest.encounter": {
+        "status": "new"
+      },
+      "CommunicationRequest.requester": {
+        "removed-types": [
+          "BackboneElement"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device)"
+        ]
+      },
+      "CommunicationRequest.recipient": {
+        "removed-types": [
+          "Reference(Device | Organization | Patient | Practitioner | RelatedPerson | Group | CareTeam)"
+        ],
+        "added-types": [
+          "Reference(Device | Organization | Patient | Practitioner | PractitionerRole | RelatedPerson | Group | CareTeam | HealthcareService)"
+        ]
+      },
+      "CommunicationRequest.sender": {
+        "removed-types": [
+          "Reference(Device | Organization | Patient | Practitioner | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Device | Organization | Patient | Practitioner | PractitionerRole | RelatedPerson | HealthcareService)"
+        ]
+      },
+      "CommunicationRequest.reasonReference": {
+        "removed-types": [
+          "Reference(Condition | Observation)"
+        ],
+        "added-types": [
+          "Reference(Condition | Observation | DiagnosticReport | DocumentReference)"
+        ]
+      },
+      "CommunicationRequest.topic": {
+        "status": "deleted"
+      },
+      "CommunicationRequest.context": {
+        "status": "deleted"
+      },
+      "CommunicationRequest.requester.agent": {
+        "status": "deleted"
+      },
+      "CommunicationRequest.requester.onBehalfOf": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/SearchParameter/example-reference> a fhir:SearchParameter;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-reference"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-reference</p><p><b>url</b>: <b>http://hl7.org/fhir/SearchParameter/example-reference</b></p><p><b>name</b>: Example Search Parameter</p><p><b>status</b>: draft</p><p><b>experimental</b>: true</p><p><b>date</b>: 23/10/2013</p><p><b>publisher</b>: Health Level Seven International (FHIR Infrastructure)</p><p><b>contact</b>: </p><p><b>description</b>: Search by condition subject</p><p><b>purpose</b>: Need to search Condition by subject</p><p><b>code</b>: subject</p><p><b>base</b>: Condition</p><p><b>type</b>: reference</p><p><b>expression</b>: Condition.subject</p><p><b>xpathUsage</b>: normal</p><p><b>target</b>: Organization</p><p><b>modifier</b>: missing</p><p><b>chain</b>: name, identifier</p></div>"
+  ];
+  fhir:SearchParameter.url [ fhir:value "http://hl7.org/fhir/SearchParameter/example-reference"];
+  fhir:SearchParameter.name [ fhir:value "Example Search Parameter"];
+  fhir:SearchParameter.status [ fhir:value "draft"];
+  fhir:SearchParameter.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:SearchParameter.date [ fhir:value "2013-10-23"^^xsd:date];
+  fhir:SearchParameter.publisher [ fhir:value "Health Level Seven International (FHIR Infrastructure)"];
+  fhir:SearchParameter.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "[string]" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:SearchParameter.description [ fhir:value "Search by condition subject"];
+  fhir:SearchParameter.purpose [ fhir:value "Need to search Condition by subject"];
+  fhir:SearchParameter.code [ fhir:value "subject"];
+  fhir:SearchParameter.base [
+     fhir:value "Condition";
+     fhir:index 0
+  ];
+  fhir:SearchParameter.type [ fhir:value "reference"];
+  fhir:SearchParameter.expression [ fhir:value "Condition.subject"];
+  fhir:SearchParameter.xpathUsage [ fhir:value "normal"];
+  fhir:SearchParameter.target [
+     fhir:value "Organization";
+     fhir:index 0
+  ];
+  fhir:SearchParameter.modifier [
+     fhir:value "missing";
+     fhir:index 0
+  ];
+  fhir:SearchParameter.chain [
+     fhir:value "name";
+     fhir:index 0
+  ], [
+     fhir:value "identifier";
+     fhir:index 1
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/SearchParameter/example-reference.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/SearchParameter/example-reference.ttl> .
+
+# -------------------------------------------------------------------------------------
+

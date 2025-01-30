@@ -1,0 +1,33 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Organization/3> a fhir:Organization;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "3"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>Michigan Helth</p>\n    \n    </div>"
+  ];
+  fhir:Organization.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://michigan.gov/state-dept-ids" ];
+     fhir:Identifier.value [ fhir:value "25" ]
+  ];
+  fhir:Organization.name [ fhir:value "Michigan Health"];
+  fhir:Organization.alias [
+     fhir:value "Michigan State Department of Health";
+     fhir:index 0
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Organization/3.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Organization/3.ttl> .
+
+# -------------------------------------------------------------------------------------
+

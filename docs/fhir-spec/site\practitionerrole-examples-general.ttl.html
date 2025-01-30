@@ -1,0 +1,852 @@
+<!DOCTYPE HTML>
+
+<!-- template-example-ttl.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Practitionerrole-examples-general.ttl - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/practitionerrole-examples-general.ttl.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="administration-module.html"><img src="administration.jpg"/> Administration</a></li>        <li><a href="practitionerrole.html">PractitionerRole</a></li>        <li><b>Example Instance</b></li>        <!-- practitionerrole-examples-general.ttl.html / resource-instance:PractitionerRole / Example-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Practitionerrole-examples-general.ttl</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/pafm/index.cfm">Patient Administration</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-practitioner.html">Practitioner</a></td></tr></table>
+
+</tbody></table>
+<p>
+<a href="practitionerrole-examples-general.ttl">Raw Turtle</a> (+ also see <a href="rdf.html">Turtle/RDF Format Specification</a>)
+</p>
+
+<div class="example">
+<p>HL7 Defined Practitioner Role examples</p>
+<pre class="rdf">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sct: &lt;http://snomed.info/id/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/Bundle/3ad0687e-f477-468c-afd5-fcc2bf897808&gt; a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value &quot;3ad0687e-f477-468c-afd5-fcc2bf897808&quot;];
+  fhir:Bundle.type [ fhir:value &quot;collection&quot;];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f003-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f003-0&gt;
+  ], [
+     fhir:index 1;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/example-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/example-0&gt;
+  ], [
+     fhir:index 2;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/example-1&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/example-1&gt;
+  ], [
+     fhir:index 3;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/example-2&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/example-2&gt;
+  ], [
+     fhir:index 4;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f007-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f007-0&gt;
+  ], [
+     fhir:index 5;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f004-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f004-0&gt;
+  ], [
+     fhir:index 6;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/xcda1-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/xcda1-0&gt;
+  ], [
+     fhir:index 7;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f202-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f202-0&gt;
+  ], [
+     fhir:index 8;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f201-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f201-0&gt;
+  ], [
+     fhir:index 9;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f203-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f203-0&gt;
+  ], [
+     fhir:index 10;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f005-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f005-0&gt;
+  ], [
+     fhir:index 11;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f006-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f006-0&gt;
+  ], [
+     fhir:index 12;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f001-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f001-0&gt;
+  ], [
+     fhir:index 13;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f002-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f002-0&gt;
+  ], [
+     fhir:index 14;
+     fhir:Bundle.entry.fullUrl [ fhir:value &quot;http://hl7.org/fhir/PractitionerRole/f204-0&quot; ];
+     fhir:Bundle.entry.resource &lt;http://hl7.org/fhir/PractitionerRole/f204-0&gt;
+  ] .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f003-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f003-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Marc Versteegh&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; BMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Care role\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f003&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f003&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Marc Versteegh&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f001&quot; ];
+     fhir:Reference.display [ fhir:value &quot;BMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Arts&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;Care role&quot; ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.011&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Cardiothoracal surgery&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;specialization&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f003&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/Organization/f001&gt; a fhir:Organization .
+
+&lt;http://hl7.org/fhir/PractitionerRole/example-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;example-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Adam Careful&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;location:&lt;/span&gt; South Wing, second floor&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; RP&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;Email:&lt;/span&gt; dr.adam.careful@example.org&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;identifier:&lt;/span&gt; 52\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value &quot;http://example.org/role-identifier&quot; ];
+     fhir:Identifier.value [ fhir:value &quot;52&quot; ]
+  ];
+  fhir:PractitionerRole.period [
+     fhir:Period.start [ fhir:value &quot;2012-01-01&quot;^^xsd:date ];
+     fhir:Period.end [ fhir:value &quot;2012-03-31&quot;^^xsd:date ]
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/example&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/example&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Adam Careful&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f001&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;http://terminology.hl7.org/CodeSystem/v2-0286&quot; ];
+       fhir:Coding.code [ fhir:value &quot;RP&quot; ]
+     ]
+  ];
+  fhir:PractitionerRole.location [
+     fhir:index 0;
+     fhir:link &lt;http://hl7.org/fhir/Location/1&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Location/1&quot; ];
+     fhir:Reference.display [ fhir:value &quot;South Wing, second floor&quot; ]
+  ];
+  fhir:PractitionerRole.healthcareService [
+     fhir:index 0;
+     fhir:link &lt;http://hl7.org/fhir/HealthcareService/example&gt;;
+     fhir:Reference.reference [ fhir:value &quot;HealthcareService/example&quot; ]
+  ];
+  fhir:PractitionerRole.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value &quot;email&quot; ];
+     fhir:ContactPoint.value [ fhir:value &quot;dr.adam.careful@example.org&quot; ]
+  ];
+  fhir:PractitionerRole.endpoint [
+     fhir:index 0;
+     fhir:link &lt;http://hl7.org/fhir/Endpoint/example&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Endpoint/example&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/example&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/Location/1&gt; a fhir:Location .
+
+&lt;http://hl7.org/fhir/HealthcareService/example&gt; a fhir:HealthcareService .
+
+&lt;http://hl7.org/fhir/Endpoint/example&gt; a fhir:Endpoint .
+
+&lt;http://hl7.org/fhir/PractitionerRole/example-1&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;example-1&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Adam Careful&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; Good Health Clinic\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.period [
+     fhir:Period.start [ fhir:value &quot;2012-01-01&quot;^^xsd:date ]
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/example&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/example&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Adam Careful&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/2&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/2&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Good Health Clinic&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Organization/2&gt; a fhir:Organization .
+
+&lt;http://hl7.org/fhir/PractitionerRole/example-2&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;example-2&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Adam Careful&lt;br/&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; Good Health Clinic&lt;br/&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; On call physcologist\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.period [
+     fhir:Period.start [ fhir:value &quot;2016-07-01&quot;^^xsd:date ];
+     fhir:Period.end [ fhir:value &quot;2017-06-30&quot;^^xsd:date ]
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/example&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/example&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Adam Careful&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/2&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/2&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Good Health Clinic&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value &quot;On call physcologist&quot; ]
+  ];
+  fhir:PractitionerRole.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value &quot;phone&quot; ];
+     fhir:ContactPoint.value [ fhir:value &quot;555 123456&quot; ];
+     fhir:ContactPoint.use [ fhir:value &quot;mobile&quot; ]
+  ];
+  fhir:PractitionerRole.availableTime [
+     fhir:index 0;
+     fhir:PractitionerRole.availableTime.daysOfWeek [
+       fhir:value &quot;sat&quot;;
+       fhir:index 0
+     ], [
+       fhir:value &quot;sun&quot;;
+       fhir:index 1
+     ];
+     fhir:PractitionerRole.availableTime.allDay [ fhir:value &quot;true&quot;^^xsd:boolean ]
+  ];
+  fhir:PractitionerRole.availabilityExceptions [ fhir:value &quot;Public Holidays&quot;] .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f007-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f007-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Simone Heps&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; BMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Care role\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f007&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f007&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Simone Heps&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f001&quot; ];
+     fhir:Reference.display [ fhir:value &quot;BMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Arts&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;Care role&quot; ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.015&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Physician&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;specialization&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f007&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f004-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f004-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Ronald Briet&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; BMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Care role\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f004&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f004&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Ronald Briet&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f001&quot; ];
+     fhir:Reference.display [ fhir:value &quot;BMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Arts&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;Care role&quot; ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.018&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Ear-, Nose and Throat&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;specialization&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f004&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/xcda1-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;xcda1-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Sherry Dopplemeyer&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; Cleveland Clinic&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Primary Surgon\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/xcda1&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/xcda1&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Sherry Dopplemeyer&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:Reference.display [ fhir:value &quot;Cleveland Clinic&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value &quot;Primary Surgon&quot; ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value &quot;Orthopedic&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/xcda1&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f202-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f202-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Luigi Maas&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; AUMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Electronic laboratory reporting\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f202&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f202&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Luigi Maas&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f201&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f201&quot; ];
+     fhir:Reference.display [ fhir:value &quot;AUMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:33526004;
+       fhir:Coding.system [ fhir:value &quot;http://snomed.info/sct&quot; ];
+       fhir:Coding.code [ fhir:value &quot;33526004&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Electronic laboratory reporting&quot; ]
+     ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:159285000;
+       fhir:Coding.system [ fhir:value &quot;http://snomed.info/sct&quot; ];
+       fhir:Coding.code [ fhir:value &quot;159285000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Medical laboratory technician&quot; ]
+     ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f202&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/Organization/f201&gt; a fhir:Organization .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f201-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f201-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Dokter Bronsig&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; AUMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Implementation of planned interventions\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f201&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f201&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Dokter Bronsig&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f201&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f201&quot; ];
+     fhir:Reference.display [ fhir:value &quot;AUMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:225304007;
+       fhir:Coding.system [ fhir:value &quot;http://snomed.info/sct&quot; ];
+       fhir:Coding.code [ fhir:value &quot;225304007&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Implementation of planned interventions&quot; ]
+     ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:310512001;
+       fhir:Coding.system [ fhir:value &quot;http://snomed.info/sct&quot; ];
+       fhir:Coding.code [ fhir:value &quot;310512001&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Medical oncologist&quot; ]
+     ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f201&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f203-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f203-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Juri van Gelder&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; AUMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Physical therapist\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f203&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f203&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Juri van Gelder&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f201&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f201&quot; ];
+     fhir:Reference.display [ fhir:value &quot;AUMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:36682004;
+       fhir:Coding.system [ fhir:value &quot;http://snomed.info/sct&quot; ];
+       fhir:Coding.code [ fhir:value &quot;36682004&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Physical therapist&quot; ]
+     ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:410158009;
+       fhir:Coding.system [ fhir:value &quot;http://snomed.info/sct&quot; ];
+       fhir:Coding.code [ fhir:value &quot;410158009&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Assess physical therapist service&quot; ]
+     ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f203&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f005-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f005-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Langeveld Anne&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; BMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Care role\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f005&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f005&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Langeveld Anne&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f001&quot; ];
+     fhir:Reference.display [ fhir:value &quot;BMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Arts&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;Care role&quot; ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.018&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Keel- neus- en oorarts&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;specialization&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f005&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f006-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f006-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Rob van den Berk&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; BMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Care role\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f006&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f006&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Rob van den Berk&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f001&quot; ];
+     fhir:Reference.display [ fhir:value &quot;BMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Arts&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;Care role&quot; ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;17.000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Pharmacist&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;specialization&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f006&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f001-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f001-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Eric van den broek&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; BMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Care role\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f001&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Eric van den broek&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f001&quot; ];
+     fhir:Reference.display [ fhir:value &quot;BMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Arts&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;Care role&quot; ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.018&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Ear-, Nose and Throat&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;specialization&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f001&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f002-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f002-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Pieter Voigt&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; BMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Care role\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f002&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f002&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Pieter Voigt&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f001&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f001&quot; ];
+     fhir:Reference.display [ fhir:value &quot;BMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.000&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Arts&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;Care role&quot; ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value &quot;urn:oid:2.16.840.1.113883.2.4.15.111&quot; ];
+       fhir:Coding.code [ fhir:value &quot;01.011&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Cardiothoracal surgery&quot; ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value &quot;specialization&quot; ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f002&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/PractitionerRole/f204-0&gt; a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value &quot;f204-0&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n            &lt;span style=\&quot;color: gray;\&quot;&gt;practitioner:&lt;/span&gt; Carla Espinosa&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;organization:&lt;/span&gt; AUMC&lt;br/&gt;&lt;span style=\&quot;color: gray;\&quot;&gt;role:&lt;/span&gt; Renal nurse\n          &lt;/div&gt;&quot;
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link &lt;http://hl7.org/fhir/Practitioner/f204&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Practitioner/f204&quot; ];
+     fhir:Reference.display [ fhir:value &quot;Carla Espinosa&quot; ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link &lt;http://hl7.org/fhir/Organization/f201&gt;;
+     fhir:Reference.reference [ fhir:value &quot;Organization/f201&quot; ];
+     fhir:Reference.display [ fhir:value &quot;AUMC&quot; ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:224565004;
+       fhir:Coding.system [ fhir:value &quot;http://snomed.info/sct&quot; ];
+       fhir:Coding.code [ fhir:value &quot;224565004&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Renal nurse&quot; ]
+     ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:9632001;
+       fhir:Coding.system [ fhir:value &quot;http://snomed.info/sct&quot; ];
+       fhir:Coding.code [ fhir:value &quot;9632001&quot; ];
+       fhir:Coding.display [ fhir:value &quot;Nursing procedure&quot; ]
+     ]
+  ] .
+
+&lt;http://hl7.org/fhir/Practitioner/f204&gt; a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/Bundle/3ad0687e-f477-468c-afd5-fcc2bf897808.ttl&gt; a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI &lt;http://build.fhir.org/Bundle/3ad0687e-f477-468c-afd5-fcc2bf897808.ttl&gt; .
+
+# -------------------------------------------------------------------------------------
+
+
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:36+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fpractitionerrole-examples-general.ttl.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fpractitionerrole-examples-general.ttl.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

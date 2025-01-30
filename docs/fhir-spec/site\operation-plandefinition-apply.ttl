@@ -1,0 +1,144 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# - resource -------------------------------------------------------------------
+
+[] a fhir:OperationDefinition;
+  fhir:Resource.id [ fhir:value "PlanDefinition-apply"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" ];
+     fhir:Extension.value [ fhir:value "2" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status" ];
+     fhir:Extension.value [ fhir:value "trial-use" ]
+  ];
+  fhir:OperationDefinition.url [ fhir:value "http://hl7.org/fhir/OperationDefinition/PlanDefinition-apply"];
+  fhir:OperationDefinition.version [ fhir:value "4.0.1"];
+  fhir:OperationDefinition.name [ fhir:value "Apply"];
+  fhir:OperationDefinition.status [ fhir:value "draft"];
+  fhir:OperationDefinition.kind [ fhir:value "operation"];
+  fhir:OperationDefinition.date [ fhir:value "2019-11-01T09:29:23+11:00"];
+  fhir:OperationDefinition.publisher [ fhir:value "HL7 (FHIR Project)"];
+  fhir:OperationDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "fhir@lists.hl7.org" ]
+     ]
+  ];
+  fhir:OperationDefinition.description [ fhir:value "The apply operation applies a PlanDefinition to a given context"];
+  fhir:OperationDefinition.code [ fhir:value "apply"];
+  fhir:OperationDefinition.comment [ fhir:value "The result of this operation is a CarePlan resource with a single activity represented by a RequestGroup. The RequestGroup will have actions for each of the applicable actions in the plan based on evaluating the applicability condition in context. For each applicable action, the definition is applied as described in the $apply operation of the ActivityDefinition resource, and the resulting resource is added as an activity to the CarePlan. If the ActivityDefinition includes library references, those libraries will be available to the evaluated expressions. If those libraries have parameters, those parameters will be bound by name to the parameters given to the operation. In addition, parameters to the $apply operation are available within dynamicValue expressions as context variables, accessible by the name of the parameter, prefixed with a percent (%) symbol. For a more detailed description, refer to the PlanDefinition and ActivityDefinition resource documentation"];
+  fhir:OperationDefinition.resource [
+     fhir:value "PlanDefinition";
+     fhir:index 0
+  ];
+  fhir:OperationDefinition.system [ fhir:value "false"];
+  fhir:OperationDefinition.type [ fhir:value "true"];
+  fhir:OperationDefinition.instance [ fhir:value "true"];
+  fhir:OperationDefinition.parameter [
+     fhir:index 0;
+     fhir:OperationDefinition.name [ fhir:value "planDefinition" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The plan definition to be applied. If the operation is invoked at the instance level, this parameter is not allowed; if the operation is invoked at the type level, this parameter is required" ];
+     fhir:OperationDefinition.type [ fhir:value "PlanDefinition" ]
+  ], [
+     fhir:index 1;
+     fhir:OperationDefinition.name [ fhir:value "subject" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "1" ];
+     fhir:OperationDefinition.max [ fhir:value "*" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The subject(s) that is/are the target of the plan to be applied. The subject may be a Patient, Practitioner, Organization, Location, Device, or Group. Subjects provided in this parameter will be resolved as the subject of the PlanDefinition based on the type of the subject. If multiple subjects of the same type are provided, the behavior is implementation-defined" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ];
+     fhir:OperationDefinition.searchType [ fhir:value "reference" ]
+  ], [
+     fhir:index 2;
+     fhir:OperationDefinition.name [ fhir:value "encounter" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The encounter in context, if any" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ];
+     fhir:OperationDefinition.searchType [ fhir:value "reference" ]
+  ], [
+     fhir:index 3;
+     fhir:OperationDefinition.name [ fhir:value "practitioner" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The practitioner applying the plan definition" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ];
+     fhir:OperationDefinition.searchType [ fhir:value "reference" ]
+  ], [
+     fhir:index 4;
+     fhir:OperationDefinition.name [ fhir:value "organization" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The organization applying the plan definition" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ];
+     fhir:OperationDefinition.searchType [ fhir:value "reference" ]
+  ], [
+     fhir:index 5;
+     fhir:OperationDefinition.name [ fhir:value "userType" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The type of user initiating the request, e.g. patient, healthcare provider, or specific type of healthcare provider (physician, nurse, etc.)" ];
+     fhir:OperationDefinition.type [ fhir:value "CodeableConcept" ]
+  ], [
+     fhir:index 6;
+     fhir:OperationDefinition.name [ fhir:value "userLanguage" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "Preferred language of the person using the system" ];
+     fhir:OperationDefinition.type [ fhir:value "CodeableConcept" ]
+  ], [
+     fhir:index 7;
+     fhir:OperationDefinition.name [ fhir:value "userTaskContext" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The task the system user is performing, e.g. laboratory results review, medication list review, etc. This information can be used to tailor decision support outputs, such as recommended information resources" ];
+     fhir:OperationDefinition.type [ fhir:value "CodeableConcept" ]
+  ], [
+     fhir:index 8;
+     fhir:OperationDefinition.name [ fhir:value "setting" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The current setting of the request (inpatient, outpatient, etc.)" ];
+     fhir:OperationDefinition.type [ fhir:value "CodeableConcept" ]
+  ], [
+     fhir:index 9;
+     fhir:OperationDefinition.name [ fhir:value "settingContext" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "Additional detail about the setting of the request, if any" ];
+     fhir:OperationDefinition.type [ fhir:value "CodeableConcept" ]
+  ], [
+     fhir:index 10;
+     fhir:OperationDefinition.name [ fhir:value "return" ];
+     fhir:OperationDefinition.use [ fhir:value "out" ];
+     fhir:OperationDefinition.min [ fhir:value "1" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The CarePlan that is the result of applying the plan definition" ];
+     fhir:OperationDefinition.type [ fhir:value "CarePlan" ]
+  ] .
+
+# -------------------------------------------------------------------------------------
+

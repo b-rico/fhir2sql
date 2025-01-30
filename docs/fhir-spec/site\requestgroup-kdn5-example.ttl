@@ -1,0 +1,219 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/RequestGroup/kdn5-example> a fhir:RequestGroup;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "kdn5-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Administer gemcitabine and carboplatin.</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:MedicationRequest;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "1111" ];
+     fhir:MedicationRequest.status [ fhir:value "unknown" ];
+     fhir:MedicationRequest.intent [ fhir:value "proposal" ];
+     fhir:MedicationRequest.medicationCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "12574" ];
+         fhir:Coding.display [ fhir:value "gemcitabine" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "gemcitabine" ]
+     ];
+     fhir:MedicationRequest.subject [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ]
+     ];
+     fhir:MedicationRequest.dosageInstruction [
+       fhir:index 0;
+       fhir:Dosage.text [ fhir:value "1250 mg/m² IV over 30 minutes" ];
+       fhir:Dosage.timing [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.duration [ fhir:value "30"^^xsd:decimal ];
+           fhir:Timing.repeat.durationUnit [ fhir:value "min" ]
+         ]
+       ];
+       fhir:Dosage.route [
+         fhir:CodeableConcept.text [ fhir:value "IV" ]
+       ];
+       fhir:Dosage.doseAndRate [
+         fhir:index 0;
+         fhir:Dosage.doseAndRate.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/dose-rate-type" ];
+             fhir:Coding.code [ fhir:value "ordered" ];
+             fhir:Coding.display [ fhir:value "Ordered" ]
+           ]
+         ];
+         fhir:Dosage.doseAndRate.doseQuantity [
+           fhir:Quantity.value [ fhir:value "1250"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "mg/m²" ]
+         ]
+       ]
+     ]
+  ], [
+     a fhir:MedicationRequest;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "2222" ];
+     fhir:MedicationRequest.status [ fhir:value "unknown" ];
+     fhir:MedicationRequest.intent [ fhir:value "proposal" ];
+     fhir:MedicationRequest.medicationCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "40048" ];
+         fhir:Coding.display [ fhir:value "Carboplatin" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "CARBOplatin" ]
+     ];
+     fhir:MedicationRequest.subject [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ]
+     ];
+     fhir:MedicationRequest.dosageInstruction [
+       fhir:index 0;
+       fhir:Dosage.text [ fhir:value "AUC 5 IV over 30 minutes" ];
+       fhir:Dosage.timing [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.duration [ fhir:value "30"^^xsd:decimal ];
+           fhir:Timing.repeat.durationUnit [ fhir:value "min" ]
+         ]
+       ];
+       fhir:Dosage.route [
+         fhir:CodeableConcept.text [ fhir:value "IV" ]
+       ];
+       fhir:Dosage.doseAndRate [
+         fhir:index 0;
+         fhir:Dosage.doseAndRate.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/dose-rate-type" ];
+             fhir:Coding.code [ fhir:value "ordered" ];
+             fhir:Coding.display [ fhir:value "Ordered" ]
+           ]
+         ];
+         fhir:Dosage.doseAndRate.doseQuantity [
+           fhir:Element.extension [
+             fhir:index 0;
+             fhir:Extension.url [ fhir:value "http://example.org/fhir/AUC-dose" ];
+             fhir:Extension.valueInteger [ fhir:value "5"^^xsd:integer ]
+           ]
+         ]
+       ]
+     ]
+  ];
+  fhir:RequestGroup.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "requestgroup-kdn5" ]
+  ];
+  fhir:RequestGroup.instantiatesCanonical [
+     fhir:value "PlanDefinition/KDN5";
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/PlanDefinition/KDN5>
+  ];
+  fhir:RequestGroup.status [ fhir:value "draft"];
+  fhir:RequestGroup.intent [ fhir:value "plan"];
+  fhir:RequestGroup.priority [ fhir:value "routine"];
+  fhir:RequestGroup.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:RequestGroup.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:RequestGroup.authoredOn [ fhir:value "2017-03-06T17:31:00Z"^^xsd:dateTime];
+  fhir:RequestGroup.author [
+     fhir:link <http://hl7.org/fhir/Practitioner/1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/1" ]
+  ];
+  fhir:RequestGroup.action [
+     fhir:index 0;
+     fhir:RequestGroup.action.selectionBehavior [ fhir:value "exactly-one" ];
+     fhir:RequestGroup.action.action [
+       fhir:index 0;
+       fhir:RequestGroup.action.selectionBehavior [ fhir:value "all" ];
+       fhir:RequestGroup.action.action [
+         fhir:index 0;
+         fhir:RequestGroup.action.groupingBehavior [ fhir:value "sentence-group" ];
+         fhir:RequestGroup.action.selectionBehavior [ fhir:value "exactly-one" ];
+         fhir:RequestGroup.action.action [
+           fhir:index 0;
+           fhir:Element.id [ fhir:value "cycle-definition-1" ];
+           fhir:RequestGroup.action.textEquivalent [ fhir:value "21-day cycle for 6 cycles" ];
+           fhir:RequestGroup.action.timingTiming [
+             fhir:Timing.repeat [
+               fhir:Timing.repeat.count [ fhir:value "6"^^xsd:positiveInteger ];
+               fhir:Timing.repeat.duration [ fhir:value "21"^^xsd:decimal ];
+               fhir:Timing.repeat.durationUnit [ fhir:value "d" ]
+             ]
+           ];
+           fhir:RequestGroup.action.action [
+             fhir:index 0;
+             fhir:Element.id [ fhir:value "action-1" ];
+             fhir:Element.extension [
+               fhir:index 0;
+               fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/timing-daysOfCycle" ];
+               fhir:Element.extension [
+                 fhir:index 0;
+                 fhir:Extension.url [ fhir:value "day" ];
+                 fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+               ], [
+                 fhir:index 1;
+                 fhir:Extension.url [ fhir:value "day" ];
+                 fhir:Extension.valueInteger [ fhir:value "8"^^xsd:integer ]
+               ]
+             ];
+             fhir:RequestGroup.action.textEquivalent [ fhir:value "Gemcitabine 1250 mg/m² IV over 30 minutes on days 1 and 8" ];
+             fhir:RequestGroup.action.resource [
+               fhir:Reference.reference [ fhir:value "#1111" ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:Element.id [ fhir:value "action-2" ];
+             fhir:Element.extension [
+               fhir:index 0;
+               fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/timing-daysOfCycle" ];
+               fhir:Element.extension [
+                 fhir:index 0;
+                 fhir:Extension.url [ fhir:value "day" ];
+                 fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+               ]
+             ];
+             fhir:RequestGroup.action.textEquivalent [ fhir:value "CARBOplatin AUC 5 IV over 30 minutes on Day 1" ];
+             fhir:RequestGroup.action.relatedAction [
+               fhir:index 0;
+               fhir:RequestGroup.action.relatedAction.actionId [ fhir:value "action-1" ];
+               fhir:RequestGroup.action.relatedAction.relationship [ fhir:value "concurrent-with-start" ]
+             ];
+             fhir:RequestGroup.action.resource [
+               fhir:Reference.reference [ fhir:value "#2222" ]
+             ]
+           ]
+         ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+<http://hl7.org/fhir/Practitioner/1> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/RequestGroup/kdn5-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/RequestGroup/kdn5-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Immunization" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Immunization.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/immunization-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element modifier="removed"
+               new-min="0"
+               old-min="1"
+               old-name="notGiven"
+               path="Immunization.statusReason">
+         <removed-type name="boolean"/>
+         <added-type name="CodeableConcept"/>
+      </element>
+      <element new-min="1"
+               old-min="0"
+               old-name="date"
+               path="Immunization.occurrence[x]">
+         <added-type name="string"/>
+      </element>
+      <element path="Immunization.recorded" status="new"/>
+      <element new-min="0" old-min="1" path="Immunization.primarySource"/>
+      <element old-name="practitioner" path="Immunization.performer"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               old-name="role"
+               path="Immunization.performer.function">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/immunization-role"
+                      strength="extensible"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/immunization-function"
+                      strength="extensible"/>
+      </element>
+      <element path="Immunization.performer.actor">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element old-name="reason" path="Immunization.reasonCode"/>
+      <element path="Immunization.reasonReference" status="new"/>
+      <element path="Immunization.isSubpotent" status="new"/>
+      <element path="Immunization.subpotentReason" status="new"/>
+      <element path="Immunization.education" status="new"/>
+      <element path="Immunization.education.documentType" status="new"/>
+      <element path="Immunization.education.reference" status="new"/>
+      <element path="Immunization.education.publicationDate" status="new"/>
+      <element path="Immunization.education.presentationDate" status="new"/>
+      <element path="Immunization.programEligibility" status="new"/>
+      <element path="Immunization.fundingSource" status="new"/>
+      <element old-name="vaccinationProtocol" path="Immunization.protocolApplied"/>
+      <element new-min="0"
+               old-min="1"
+               path="Immunization.protocolApplied.targetDisease"/>
+      <element new-min="1"
+               old-min="0"
+               old-name="doseSequence"
+               path="Immunization.protocolApplied.doseNumber[x]">
+         <added-type name="string"/>
+      </element>
+      <element old-name="seriesDoses"
+               path="Immunization.protocolApplied.seriesDoses[x]">
+         <added-type name="string"/>
+      </element>
+      <element path="Immunization.explanation" status="deleted"/>
+      <element path="Immunization.vaccinationProtocol.description" status="deleted"/>
+      <element path="Immunization.vaccinationProtocol.doseStatus" status="deleted"/>
+      <element path="Immunization.vaccinationProtocol.doseStatusReason"
+               status="deleted"/>
+   </type>
+</difference>

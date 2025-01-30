@@ -1,0 +1,320 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Observation {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  basedOn: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  category: [CodeableConcept]
+  code: CodeableConcept!
+  subject: Reference
+  focus: [Reference]
+  encounter: Reference
+  effectiveDateTime: dateTime  _effectiveDateTime: ElementBase
+  effectivePeriod: Period
+  effectiveTiming: Timing
+  effectiveInstant: instant  _effectiveInstant: ElementBase
+  issued: instant  _issued: ElementBase
+  performer: [Reference]
+  valueQuantity: Quantity
+  valueCodeableConcept: CodeableConcept
+  valueString: String  _valueString: ElementBase
+  valueBoolean: Boolean  _valueBoolean: ElementBase
+  valueInteger: Int  _valueInteger: ElementBase
+  valueRange: Range
+  valueRatio: Ratio
+  valueSampledData: SampledData
+  valueTime: time  _valueTime: ElementBase
+  valueDateTime: dateTime  _valueDateTime: ElementBase
+  valuePeriod: Period
+  dataAbsentReason: CodeableConcept
+  interpretation: [CodeableConcept]
+  note: [Annotation]
+  bodySite: CodeableConcept
+  method: CodeableConcept
+  specimen: Reference
+  device: Reference
+  referenceRange: [ObservationReferenceRange]
+  hasMember: [Reference]
+  derivedFrom: [Reference]
+  component: [ObservationComponent]
+}
+
+type ObservationReferenceRange {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  low: Quantity
+  high: Quantity
+  type: CodeableConcept
+  appliesTo: [CodeableConcept]
+  age: Range
+  text: String  _text: ElementBase
+}
+
+type ObservationComponent {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  valueQuantity: Quantity
+  valueCodeableConcept: CodeableConcept
+  valueString: String  _valueString: ElementBase
+  valueBoolean: Boolean  _valueBoolean: ElementBase
+  valueInteger: Int  _valueInteger: ElementBase
+  valueRange: Range
+  valueRatio: Ratio
+  valueSampledData: SampledData
+  valueTime: time  _valueTime: ElementBase
+  valueDateTime: dateTime  _valueDateTime: ElementBase
+  valuePeriod: Period
+  dataAbsentReason: CodeableConcept
+  interpretation: [CodeableConcept]
+  referenceRange: [ObservationReferenceRange]
+}
+
+input Observation {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  basedOn: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  category: [CodeableConcept]
+  code: CodeableConcept!
+  subject: Reference
+  focus: [Reference]
+  encounter: Reference
+  effectiveDateTime: dateTime  _effectiveDateTime: ElementBase
+  effectivePeriod: Period
+  effectiveTiming: Timing
+  effectiveInstant: instant  _effectiveInstant: ElementBase
+  issued: instant  _issued: ElementBase
+  performer: [Reference]
+  valueQuantity: Quantity
+  valueCodeableConcept: CodeableConcept
+  valueString: String  _valueString: ElementBase
+  valueBoolean: Boolean  _valueBoolean: ElementBase
+  valueInteger: Int  _valueInteger: ElementBase
+  valueRange: Range
+  valueRatio: Ratio
+  valueSampledData: SampledData
+  valueTime: time  _valueTime: ElementBase
+  valueDateTime: dateTime  _valueDateTime: ElementBase
+  valuePeriod: Period
+  dataAbsentReason: CodeableConcept
+  interpretation: [CodeableConcept]
+  note: [Annotation]
+  bodySite: CodeableConcept
+  method: CodeableConcept
+  specimen: Reference
+  device: Reference
+  referenceRange: [ObservationReferenceRange]
+  hasMember: [Reference]
+  derivedFrom: [Reference]
+  component: [ObservationComponent]
+}
+
+input ObservationReferenceRange {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  low: Quantity
+  high: Quantity
+  type: CodeableConcept
+  appliesTo: [CodeableConcept]
+  age: Range
+  text: String  _text: ElementBase
+}
+
+input ObservationComponent {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  valueQuantity: Quantity
+  valueCodeableConcept: CodeableConcept
+  valueString: String  _valueString: ElementBase
+  valueBoolean: Boolean  _valueBoolean: ElementBase
+  valueInteger: Int  _valueInteger: ElementBase
+  valueRange: Range
+  valueRatio: Ratio
+  valueSampledData: SampledData
+  valueTime: time  _valueTime: ElementBase
+  valueDateTime: dateTime  _valueDateTime: ElementBase
+  valuePeriod: Period
+  dataAbsentReason: CodeableConcept
+  interpretation: [CodeableConcept]
+  referenceRange: [ObservationReferenceRange]
+}
+
+type ObservationReadType {
+  Observation(id : ID!) : Observation
+}
+
+type ObservationListType {
+  ObservationList(_filter : String
+    based_on : [reference]
+    category : [token]
+    code : [token]
+    code_value_concept : [composite]
+    code_value_date : [composite]
+    code_value_quantity : [composite]
+    code_value_string : [composite]
+    combo_code : [token]
+    combo_code_value_concept : [composite]
+    combo_code_value_quantity : [composite]
+    combo_data_absent_reason : [token]
+    combo_value_concept : [token]
+    combo_value_quantity : [quantity]
+    component_code : [token]
+    component_code_value_concept : [composite]
+    component_code_value_quantity : [composite]
+    component_data_absent_reason : [token]
+    component_value_concept : [token]
+    component_value_quantity : [quantity]
+    data_absent_reason : [token]
+    date : [date]
+    derived_from : [reference]
+    device : [reference]
+    encounter : [reference]
+    focus : [reference]
+    has_member : [reference]
+    identifier : [token]
+    method : [token]
+    part_of : [reference]
+    patient : [reference]
+    performer : [reference]
+    specimen : [reference]
+    status : [token]
+    subject : [reference]
+    value_concept : [token]
+    value_date : [date]
+    value_quantity : [quantity]
+    value_string : [String]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Observation]
+}
+
+type ObservationConnectionType {
+  ObservationConection(_filter : String
+    based_on : [reference]
+    category : [token]
+    code : [token]
+    code_value_concept : [composite]
+    code_value_date : [composite]
+    code_value_quantity : [composite]
+    code_value_string : [composite]
+    combo_code : [token]
+    combo_code_value_concept : [composite]
+    combo_code_value_quantity : [composite]
+    combo_data_absent_reason : [token]
+    combo_value_concept : [token]
+    combo_value_quantity : [quantity]
+    component_code : [token]
+    component_code_value_concept : [composite]
+    component_code_value_quantity : [composite]
+    component_data_absent_reason : [token]
+    component_value_concept : [token]
+    component_value_quantity : [quantity]
+    data_absent_reason : [token]
+    date : [date]
+    derived_from : [reference]
+    device : [reference]
+    encounter : [reference]
+    focus : [reference]
+    has_member : [reference]
+    identifier : [token]
+    method : [token]
+    part_of : [reference]
+    patient : [reference]
+    performer : [reference]
+    specimen : [reference]
+    status : [token]
+    subject : [reference]
+    value_concept : [token]
+    value_date : [date]
+    value_quantity : [quantity]
+    value_string : [String]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : ObservationConnection
+}
+
+type ObservationConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [ObservationEdge]
+}
+
+type ObservationEdge {
+  mode : String
+  score : Float
+  resource : Observation
+}
+
+type ObservationCreateType {
+  ObservationCreate(resource : Observation) : ObservationCreation
+}
+
+type ObservationCreation {
+  location : String
+  resource : Observation
+  information : OperationOutcome
+}
+
+type ObservationUpdateType {
+  ObservationUpdate(id : IDresource : Observation) : ObservationUpdate
+}
+
+type ObservationUpdate {
+  resource : Observation
+  information : OperationOutcome
+}
+
+type ObservationDeleteType {
+  ObservationDelete(id : ID) : ObservationDelete
+}
+
+type ObservationDelete {
+  information : OperationOutcome
+}
+

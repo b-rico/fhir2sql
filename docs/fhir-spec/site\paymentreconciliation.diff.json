@@ -1,0 +1,126 @@
+﻿{
+  "types": [
+    "PaymentReconciliation"
+  ],
+  "PaymentReconciliation": {
+    "elements": {
+      "PaymentReconciliation.status": {
+        "old-min": 0,
+        "new-min": 1,
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/fm-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/fm-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "PaymentReconciliation.created": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "PaymentReconciliation.paymentIssuer": {
+        "old-name": "organization"
+      },
+      "PaymentReconciliation.request": {
+        "removed-types": [
+          "Reference(ProcessRequest)"
+        ],
+        "added-types": [
+          "Reference(Task)"
+        ]
+      },
+      "PaymentReconciliation.requestor": {
+        "old-name": "requestOrganization",
+        "removed-types": [
+          "Reference(Organization)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "PaymentReconciliation.outcome": {
+        "removed-types": [
+          "CodeableConcept"
+        ],
+        "added-types": [
+          "code"
+        ],
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/remittance-outcome",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/remittance-outcome|4.0.1",
+          "strength": "required"
+        }
+      },
+      "PaymentReconciliation.paymentDate": {
+        "status": "new"
+      },
+      "PaymentReconciliation.paymentAmount": {
+        "old-name": "total",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "PaymentReconciliation.paymentIdentifier": {
+        "status": "new"
+      },
+      "PaymentReconciliation.detail.identifier": {
+        "status": "new"
+      },
+      "PaymentReconciliation.detail.predecessor": {
+        "status": "new"
+      },
+      "PaymentReconciliation.detail.submitter": {
+        "removed-types": [
+          "Reference(Organization)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "PaymentReconciliation.detail.responsible": {
+        "status": "new"
+      },
+      "PaymentReconciliation.detail.payee": {
+        "removed-types": [
+          "Reference(Organization)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "PaymentReconciliation.formCode": {
+        "old-name": "form"
+      },
+      "PaymentReconciliation.processNote.type": {
+        "removed-types": [
+          "CodeableConcept"
+        ],
+        "added-types": [
+          "code"
+        ],
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/note-type",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/note-type|4.0.1",
+          "strength": "required"
+        }
+      },
+      "PaymentReconciliation.requestProvider": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

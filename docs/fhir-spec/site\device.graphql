@@ -1,0 +1,272 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Device {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  definition: Reference
+  udiCarrier: [DeviceUdiCarrier]
+  status: code  _status: ElementBase
+  statusReason: [CodeableConcept]
+  distinctIdentifier: String  _distinctIdentifier: ElementBase
+  manufacturer: String  _manufacturer: ElementBase
+  manufactureDate: dateTime  _manufactureDate: ElementBase
+  expirationDate: dateTime  _expirationDate: ElementBase
+  lotNumber: String  _lotNumber: ElementBase
+  serialNumber: String  _serialNumber: ElementBase
+  deviceName: [DeviceDeviceName]
+  modelNumber: String  _modelNumber: ElementBase
+  partNumber: String  _partNumber: ElementBase
+  type: CodeableConcept
+  specialization: [DeviceSpecialization]
+  version: [DeviceVersion]
+  property: [DeviceProperty]
+  patient: Reference
+  owner: Reference
+  contact: [ContactPoint]
+  location: Reference
+  url: uri  _url: ElementBase
+  note: [Annotation]
+  safety: [CodeableConcept]
+  parent: Reference
+}
+
+type DeviceUdiCarrier {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  deviceIdentifier: String  _deviceIdentifier: ElementBase
+  issuer: uri  _issuer: ElementBase
+  jurisdiction: uri  _jurisdiction: ElementBase
+  carrierAIDC: base64Binary  _carrierAIDC: ElementBase
+  carrierHRF: String  _carrierHRF: ElementBase
+  entryType: code  _entryType: ElementBase
+}
+
+type DeviceDeviceName {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  type: code  _type: ElementBase
+}
+
+type DeviceSpecialization {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  systemType: CodeableConcept!
+  version: String  _version: ElementBase
+}
+
+type DeviceVersion {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  component: Identifier
+  value: String  _value: ElementBase
+}
+
+type DeviceProperty {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  valueQuantity: [Quantity]
+  valueCode: [CodeableConcept]
+}
+
+input Device {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  definition: Reference
+  udiCarrier: [DeviceUdiCarrier]
+  status: code  _status: ElementBase
+  statusReason: [CodeableConcept]
+  distinctIdentifier: String  _distinctIdentifier: ElementBase
+  manufacturer: String  _manufacturer: ElementBase
+  manufactureDate: dateTime  _manufactureDate: ElementBase
+  expirationDate: dateTime  _expirationDate: ElementBase
+  lotNumber: String  _lotNumber: ElementBase
+  serialNumber: String  _serialNumber: ElementBase
+  deviceName: [DeviceDeviceName]
+  modelNumber: String  _modelNumber: ElementBase
+  partNumber: String  _partNumber: ElementBase
+  type: CodeableConcept
+  specialization: [DeviceSpecialization]
+  version: [DeviceVersion]
+  property: [DeviceProperty]
+  patient: Reference
+  owner: Reference
+  contact: [ContactPoint]
+  location: Reference
+  url: uri  _url: ElementBase
+  note: [Annotation]
+  safety: [CodeableConcept]
+  parent: Reference
+}
+
+input DeviceUdiCarrier {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  deviceIdentifier: String  _deviceIdentifier: ElementBase
+  issuer: uri  _issuer: ElementBase
+  jurisdiction: uri  _jurisdiction: ElementBase
+  carrierAIDC: base64Binary  _carrierAIDC: ElementBase
+  carrierHRF: String  _carrierHRF: ElementBase
+  entryType: code  _entryType: ElementBase
+}
+
+input DeviceDeviceName {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  type: code  _type: ElementBase
+}
+
+input DeviceSpecialization {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  systemType: CodeableConcept!
+  version: String  _version: ElementBase
+}
+
+input DeviceVersion {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  component: Identifier
+  value: String  _value: ElementBase
+}
+
+input DeviceProperty {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  valueQuantity: [Quantity]
+  valueCode: [CodeableConcept]
+}
+
+type DeviceReadType {
+  Device(id : ID!) : Device
+}
+
+type DeviceListType {
+  DeviceList(_filter : String
+    device_name : [String]
+    identifier : [token]
+    location : [reference]
+    manufacturer : [String]
+    model : [String]
+    organization : [reference]
+    patient : [reference]
+    status : [token]
+    type : [token]
+    udi_carrier : [String]
+    udi_di : [String]
+    url : [uri]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Device]
+}
+
+type DeviceConnectionType {
+  DeviceConection(_filter : String
+    device_name : [String]
+    identifier : [token]
+    location : [reference]
+    manufacturer : [String]
+    model : [String]
+    organization : [reference]
+    patient : [reference]
+    status : [token]
+    type : [token]
+    udi_carrier : [String]
+    udi_di : [String]
+    url : [uri]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : DeviceConnection
+}
+
+type DeviceConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [DeviceEdge]
+}
+
+type DeviceEdge {
+  mode : String
+  score : Float
+  resource : Device
+}
+
+type DeviceCreateType {
+  DeviceCreate(resource : Device) : DeviceCreation
+}
+
+type DeviceCreation {
+  location : String
+  resource : Device
+  information : OperationOutcome
+}
+
+type DeviceUpdateType {
+  DeviceUpdate(id : IDresource : Device) : DeviceUpdate
+}
+
+type DeviceUpdate {
+  resource : Device
+  information : OperationOutcome
+}
+
+type DeviceDeleteType {
+  DeviceDelete(id : ID) : DeviceDelete
+}
+
+type DeviceDelete {
+  information : OperationOutcome
+}
+

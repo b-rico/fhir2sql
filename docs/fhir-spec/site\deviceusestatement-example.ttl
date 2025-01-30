@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceUseStatement/example> a fhir:DeviceUseStatement;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>identifier</b>: 51ebb7a9-4e3a-4360-9a05-0cc2d869086f</p><p><b>status</b>: active</p><p><b>subject</b>: <a>Patient/example</a></p><p><b>device</b>: <a>Device/example</a></p><p><b>reasonReference</b>: <a>Appendectomy (surgery)</a></p></div>"
+  ];
+  fhir:DeviceUseStatement.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http:goodhealth.org/identifiers" ];
+     fhir:Identifier.value [ fhir:value "51ebb7a9-4e3a-4360-9a05-0cc2d869086f" ]
+  ];
+  fhir:DeviceUseStatement.status [ fhir:value "active"];
+  fhir:DeviceUseStatement.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:DeviceUseStatement.device [
+     fhir:link <http://hl7.org/fhir/Device/example>;
+     fhir:Reference.reference [ fhir:value "Device/example" ]
+  ];
+  fhir:DeviceUseStatement.reasonReference [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Procedure/example>;
+     fhir:Reference.reference [ fhir:value "Procedure/example" ];
+     fhir:Reference.display [ fhir:value "Appendectomy (surgery)" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Device/example> a fhir:Device .
+
+<http://hl7.org/fhir/Procedure/example> a fhir:Procedure .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceUseStatement/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/DeviceUseStatement/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

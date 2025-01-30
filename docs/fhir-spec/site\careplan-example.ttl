@@ -1,0 +1,181 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CarePlan/example> a fhir:CarePlan;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.</p>\n    </div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Condition;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "p1" ];
+     fhir:Condition.clinicalStatus [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+         fhir:Coding.code [ fhir:value "active" ]
+       ]
+     ];
+     fhir:Condition.verificationStatus [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+         fhir:Coding.code [ fhir:value "confirmed" ]
+       ]
+     ];
+     fhir:Condition.code [
+       fhir:CodeableConcept.text [ fhir:value "Obesity" ]
+     ];
+     fhir:Condition.subject [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+     ]
+  ];
+  fhir:CarePlan.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:CarePlan.instantiatesUri [
+     fhir:value "http://example.org/protocol-for-obesity";
+     fhir:index 0
+  ];
+  fhir:CarePlan.basedOn [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Management of Type 2 Diabetes" ]
+  ];
+  fhir:CarePlan.replaces [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Plan from urgent care clinic" ]
+  ];
+  fhir:CarePlan.partOf [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Overall wellness plan" ]
+  ];
+  fhir:CarePlan.status [ fhir:value "active"];
+  fhir:CarePlan.intent [ fhir:value "plan"];
+  fhir:CarePlan.category [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Weight management plan" ]
+  ];
+  fhir:CarePlan.description [ fhir:value "Manage obesity and weight loss"];
+  fhir:CarePlan.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:CarePlan.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/home>;
+     fhir:Reference.reference [ fhir:value "Encounter/home" ]
+  ];
+  fhir:CarePlan.period [
+     fhir:Period.end [ fhir:value "2017-06-01"^^xsd:date ]
+  ];
+  fhir:CarePlan.created [ fhir:value "2016-01-01"^^xsd:date];
+  fhir:CarePlan.author [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+  ];
+  fhir:CarePlan.careTeam [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/CareTeam/example>;
+     fhir:Reference.reference [ fhir:value "CareTeam/example" ]
+  ];
+  fhir:CarePlan.addresses [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#p1" ];
+     fhir:Reference.display [ fhir:value "obesity" ]
+  ];
+  fhir:CarePlan.goal [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Goal/example>;
+     fhir:Reference.reference [ fhir:value "Goal/example" ]
+  ];
+  fhir:CarePlan.activity [
+     fhir:index 0;
+     fhir:CarePlan.activity.outcomeCodeableConcept [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:161832001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "161832001" ];
+         fhir:Coding.display [ fhir:value "Progressive weight loss" ]
+       ]
+     ];
+     fhir:CarePlan.activity.outcomeReference [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/Observation/example>;
+       fhir:Reference.reference [ fhir:value "Observation/example" ];
+       fhir:Reference.display [ fhir:value "Weight Measured" ]
+     ];
+     fhir:CarePlan.activity.detail [
+       fhir:CarePlan.activity.detail.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a loinc:3141-9;
+           fhir:Coding.system [ fhir:value "http://loinc.org" ];
+           fhir:Coding.code [ fhir:value "3141-9" ];
+           fhir:Coding.display [ fhir:value "Weight Measured" ]
+         ], [
+           fhir:index 1;
+           a sct:27113001;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "27113001" ];
+           fhir:Coding.display [ fhir:value "Body weight" ]
+         ]
+       ];
+       fhir:CarePlan.activity.detail.status [ fhir:value "completed" ];
+       fhir:CarePlan.activity.detail.statusReason [
+         fhir:CodeableConcept.text [ fhir:value "Achieved weight loss to mitigate diabetes risk." ]
+       ];
+       fhir:CarePlan.activity.detail.doNotPerform [ fhir:value "false"^^xsd:boolean ];
+       fhir:CarePlan.activity.detail.scheduledTiming [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+           fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+           fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+         ]
+       ];
+       fhir:CarePlan.activity.detail.location [
+         fhir:Reference.display [ fhir:value "Patient's home" ]
+       ];
+       fhir:CarePlan.activity.detail.performer [
+         fhir:index 0;
+         fhir:link <http://hl7.org/fhir/Patient/example>;
+         fhir:Reference.reference [ fhir:value "Patient/example" ];
+         fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/home> a fhir:Encounter .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/CareTeam/example> a fhir:CareTeam .
+
+<http://hl7.org/fhir/Goal/example> a fhir:Goal .
+
+<http://hl7.org/fhir/Observation/example> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CarePlan/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CarePlan/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="AppointmentResponse" status="changed">
+      <element path="AppointmentResponse.actor">
+         <removed-type name="Reference(Patient | Practitioner | RelatedPerson | Device | HealthcareService | Location)"/>
+         <added-type name="Reference(Patient | Practitioner | PractitionerRole | RelatedPerson | Device | HealthcareService | Location)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AppointmentResponse.participantStatus">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/participationstatus"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/participationstatus|4.0.1"
+                      strength="required"/>
+      </element>
+   </type>
+</difference>

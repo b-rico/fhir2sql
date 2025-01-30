@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ChargeItemDefinition/ebm> a fhir:ChargeItemDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ebm"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: ebm</p><p><b>url</b>: <b>http://fhir.de/ChargeItemDefinition/kbv/ebm-30110</b></p><p><b>version</b>: 2-2018</p><p><b>status</b>: active</p><p><b>description</b>: Allergologisch-diagnostischer Komplex zur Diagnostik und/oder zum Ausschluss einer (Kontakt-)Allergie vom Spättyp (Typ IV), einschl. Kosten</p><p><b>effectivePeriod</b>: 01/04/2018 --&gt; 30/06/2018</p><p><b>code</b>: Allergologiediagnostik I <span>(Details : {http://fhir.de/CodingSystem/kbv/ebm code '30110' = '30110', given as 'Allergologiediagnostik I'})</span></p><blockquote><p><b>applicability</b></p><p><b>description</b>: Excludes billing code 13250 for same Encounter</p><p><b>language</b>: text/cql</p><p><b>expression</b>: [some CQL expression]</p></blockquote><blockquote><p><b>applicability</b></p><p><b>description</b>: Applies only once per Encounter</p><p><b>language</b>: text/CQL</p><p><b>expression</b>: [some CQL expression]</p></blockquote><blockquote><p><b>propertyGroup</b></p><blockquote><p><b>priceComponent</b></p><p><b>type</b>: base</p><p><b>code</b>: Gesamt (Euro) <span>(Details : {http://fhir.de/CodeSystem/kbv/ebm-attribute code 'gesamt-euro' = 'gesamt-euro', given as 'Gesamt (Euro)'})</span></p><p><b>amount</b>: </p></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: informational</p><p><b>code</b>: Gesamt (Punkte) <span>(Details : {http://fhir.de/CodeSystem/kbv/ebm-attribute code 'gesamt-punkte' = 'gesamt-punkte', given as 'Gesamt (Punkte)'})</span></p><p><b>factor</b>: 633</p></blockquote></blockquote></div>"
+  ];
+  fhir:ChargeItemDefinition.url [ fhir:value "http://fhir.de/ChargeItemDefinition/kbv/ebm-30110"];
+  fhir:ChargeItemDefinition.version [ fhir:value "2-2018"];
+  fhir:ChargeItemDefinition.status [ fhir:value "active"];
+  fhir:ChargeItemDefinition.description [ fhir:value "Allergologisch-diagnostischer Komplex zur Diagnostik und/oder zum Ausschluss einer (Kontakt-)Allergie vom Spättyp (Typ IV), einschl. Kosten"];
+  fhir:ChargeItemDefinition.effectivePeriod [
+     fhir:Period.start [ fhir:value "2018-04-01"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2018-06-30"^^xsd:date ]
+  ];
+  fhir:ChargeItemDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodingSystem/kbv/ebm" ];
+       fhir:Coding.code [ fhir:value "30110" ];
+       fhir:Coding.display [ fhir:value "Allergologiediagnostik I" ]
+     ]
+  ];
+  fhir:ChargeItemDefinition.applicability [
+     fhir:index 0;
+     fhir:ChargeItemDefinition.applicability.description [ fhir:value "Excludes billing code 13250 for same Encounter" ];
+     fhir:ChargeItemDefinition.applicability.language [ fhir:value "text/cql" ];
+     fhir:ChargeItemDefinition.applicability.expression [ fhir:value "[some CQL expression]" ]
+  ], [
+     fhir:index 1;
+     fhir:ChargeItemDefinition.applicability.description [ fhir:value "Applies only once per Encounter" ];
+     fhir:ChargeItemDefinition.applicability.language [ fhir:value "text/CQL" ];
+     fhir:ChargeItemDefinition.applicability.expression [ fhir:value "[some CQL expression]" ]
+  ];
+  fhir:ChargeItemDefinition.propertyGroup [
+     fhir:index 0;
+     fhir:ChargeItemDefinition.propertyGroup.priceComponent [
+       fhir:index 0;
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.type [ fhir:value "base" ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/kbv/ebm-attribute" ];
+           fhir:Coding.code [ fhir:value "gesamt-euro" ];
+           fhir:Coding.display [ fhir:value "Gesamt (Euro)" ]
+         ]
+       ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.amount [
+         fhir:Money.value [ fhir:value "67.44"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "EUR" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.type [ fhir:value "informational" ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/kbv/ebm-attribute" ];
+           fhir:Coding.code [ fhir:value "gesamt-punkte" ];
+           fhir:Coding.display [ fhir:value "Gesamt (Punkte)" ]
+         ]
+       ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.factor [ fhir:value "633"^^xsd:decimal ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ChargeItemDefinition/ebm.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ChargeItemDefinition/ebm.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,155 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Encounter/emerg> a fhir:Encounter;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "emerg"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Emergency visit that escalated into inpatient patient @example</div>"
+  ];
+  fhir:Encounter.status [ fhir:value "in-progress"];
+  fhir:Encounter.statusHistory [
+     fhir:index 0;
+     fhir:Encounter.statusHistory.status [ fhir:value "arrived" ];
+     fhir:Encounter.statusHistory.period [
+       fhir:Period.start [ fhir:value "2017-02-01T07:15:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T07:35:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Encounter.statusHistory.status [ fhir:value "triaged" ];
+     fhir:Encounter.statusHistory.period [
+       fhir:Period.start [ fhir:value "2017-02-01T07:35:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T08:45:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Encounter.statusHistory.status [ fhir:value "in-progress" ];
+     fhir:Encounter.statusHistory.period [
+       fhir:Period.start [ fhir:value "2017-02-01T08:45:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T12:15:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:Encounter.statusHistory.status [ fhir:value "onleave" ];
+     fhir:Encounter.statusHistory.period [
+       fhir:Period.start [ fhir:value "2017-02-01T12:15:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T12:45:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:Encounter.statusHistory.status [ fhir:value "in-progress" ];
+     fhir:Encounter.statusHistory.period [
+       fhir:Period.start [ fhir:value "2017-02-01T12:45:00+10:00"^^xsd:dateTime ]
+     ]
+  ];
+  fhir:Encounter.class [
+     fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+     fhir:Coding.code [ fhir:value "IMP" ];
+     fhir:Coding.display [ fhir:value "inpatient encounter" ]
+  ];
+  fhir:Encounter.classHistory [
+     fhir:index 0;
+     fhir:Encounter.classHistory.class [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "EMER" ];
+       fhir:Coding.display [ fhir:value "emergency" ]
+     ];
+     fhir:Encounter.classHistory.period [
+       fhir:Period.start [ fhir:value "2017-02-01T07:15:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T09:27:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Encounter.classHistory.class [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "IMP" ];
+       fhir:Coding.display [ fhir:value "inpatient encounter" ]
+     ];
+     fhir:Encounter.classHistory.period [
+       fhir:Period.start [ fhir:value "2017-02-01T09:27:00+10:00"^^xsd:dateTime ]
+     ]
+  ];
+  fhir:Encounter.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Encounter.period [
+     fhir:Period.start [ fhir:value "2017-02-01T07:15:00+10:00"^^xsd:dateTime ]
+  ];
+  fhir:Encounter.hospitalization [
+     fhir:Encounter.hospitalization.admitSource [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/admit-source" ];
+         fhir:Coding.code [ fhir:value "emd" ];
+         fhir:Coding.display [ fhir:value "From accident/emergency department" ]
+       ]
+     ]
+  ];
+  fhir:Encounter.location [
+     fhir:index 0;
+     fhir:Encounter.location.location [
+       fhir:Reference.display [ fhir:value "Emergency Waiting Room" ]
+     ];
+     fhir:Encounter.location.status [ fhir:value "active" ];
+     fhir:Encounter.location.period [
+       fhir:Period.start [ fhir:value "2017-02-01T07:15:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T08:45:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Encounter.location.location [
+       fhir:Reference.display [ fhir:value "Emergency" ]
+     ];
+     fhir:Encounter.location.status [ fhir:value "active" ];
+     fhir:Encounter.location.period [
+       fhir:Period.start [ fhir:value "2017-02-01T08:45:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T09:27:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Encounter.location.location [
+       fhir:Reference.display [ fhir:value "Ward 1, Room 42, Bed 1" ]
+     ];
+     fhir:Encounter.location.status [ fhir:value "active" ];
+     fhir:Encounter.location.period [
+       fhir:Period.start [ fhir:value "2017-02-01T09:27:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T12:15:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:Encounter.location.location [
+       fhir:Reference.display [ fhir:value "Ward 1, Room 42, Bed 1" ]
+     ];
+     fhir:Encounter.location.status [ fhir:value "reserved" ];
+     fhir:Encounter.location.period [
+       fhir:Period.start [ fhir:value "2017-02-01T12:15:00+10:00"^^xsd:dateTime ];
+       fhir:Period.end [ fhir:value "2017-02-01T12:45:00+10:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:Encounter.location.location [
+       fhir:Reference.display [ fhir:value "Ward 1, Room 42, Bed 1" ]
+     ];
+     fhir:Encounter.location.status [ fhir:value "active" ];
+     fhir:Encounter.location.period [
+       fhir:Period.start [ fhir:value "2017-02-01T12:45:00+10:00"^^xsd:dateTime ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Encounter/emerg.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Encounter/emerg.ttl> .
+
+# -------------------------------------------------------------------------------------
+

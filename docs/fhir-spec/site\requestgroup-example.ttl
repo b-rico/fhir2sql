@@ -1,0 +1,142 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/RequestGroup/example> a fhir:RequestGroup;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Example RequestGroup illustrating related actions to administer medications in sequence with time delay.</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:MedicationRequest;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "medicationrequest-1" ];
+     fhir:MedicationRequest.status [ fhir:value "unknown" ];
+     fhir:MedicationRequest.intent [ fhir:value "proposal" ];
+     fhir:MedicationRequest.medicationCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Medication 1" ]
+     ];
+     fhir:MedicationRequest.subject [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ]
+     ]
+  ], [
+     a fhir:MedicationRequest;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "medicationrequest-2" ];
+     fhir:MedicationRequest.status [ fhir:value "unknown" ];
+     fhir:MedicationRequest.intent [ fhir:value "proposal" ];
+     fhir:MedicationRequest.medicationCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Medication 2" ]
+     ];
+     fhir:MedicationRequest.subject [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ]
+     ]
+  ];
+  fhir:RequestGroup.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "requestgroup-1" ]
+  ];
+  fhir:RequestGroup.groupIdentifier [
+     fhir:Identifier.system [ fhir:value "http://example.org/treatment-group" ];
+     fhir:Identifier.value [ fhir:value "00001" ]
+  ];
+  fhir:RequestGroup.status [ fhir:value "draft"];
+  fhir:RequestGroup.intent [ fhir:value "plan"];
+  fhir:RequestGroup.priority [ fhir:value "routine"];
+  fhir:RequestGroup.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:RequestGroup.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:RequestGroup.authoredOn [ fhir:value "2017-03-06T17:31:00Z"^^xsd:dateTime];
+  fhir:RequestGroup.author [
+     fhir:link <http://hl7.org/fhir/Practitioner/1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/1" ]
+  ];
+  fhir:RequestGroup.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Treatment" ]
+  ];
+  fhir:RequestGroup.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "Additional notes about the request group" ]
+  ];
+  fhir:RequestGroup.action [
+     fhir:index 0;
+     fhir:RequestGroup.action.prefix [ fhir:value "1" ];
+     fhir:RequestGroup.action.title [ fhir:value "Administer Medications" ];
+     fhir:RequestGroup.action.description [ fhir:value "Administer medications at the appropriate time" ];
+     fhir:RequestGroup.action.textEquivalent [ fhir:value "Administer medication 1, followed an hour later by medication 2" ];
+     fhir:RequestGroup.action.timingDateTime [ fhir:value "2017-03-06T19:00:00Z"^^xsd:dateTime ];
+     fhir:RequestGroup.action.participant [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/Practitioner/1>;
+       fhir:Reference.reference [ fhir:value "Practitioner/1" ]
+     ];
+     fhir:RequestGroup.action.groupingBehavior [ fhir:value "logical-group" ];
+     fhir:RequestGroup.action.selectionBehavior [ fhir:value "all" ];
+     fhir:RequestGroup.action.requiredBehavior [ fhir:value "must" ];
+     fhir:RequestGroup.action.precheckBehavior [ fhir:value "yes" ];
+     fhir:RequestGroup.action.cardinalityBehavior [ fhir:value "single" ];
+     fhir:RequestGroup.action.action [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "medication-action-1" ];
+       fhir:RequestGroup.action.description [ fhir:value "Administer medication 1" ];
+       fhir:RequestGroup.action.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "create" ]
+         ]
+       ];
+       fhir:RequestGroup.action.resource [
+         fhir:Reference.reference [ fhir:value "#medicationrequest-1" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "medication-action-2" ];
+       fhir:RequestGroup.action.description [ fhir:value "Administer medication 2" ];
+       fhir:RequestGroup.action.relatedAction [
+         fhir:index 0;
+         fhir:RequestGroup.action.relatedAction.actionId [ fhir:value "medication-action-1" ];
+         fhir:RequestGroup.action.relatedAction.relationship [ fhir:value "after-end" ];
+         fhir:RequestGroup.action.relatedAction.offsetDuration [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "h" ]
+         ]
+       ];
+       fhir:RequestGroup.action.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "create" ]
+         ]
+       ];
+       fhir:RequestGroup.action.resource [
+         fhir:Reference.reference [ fhir:value "#medicationrequest-2" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+<http://hl7.org/fhir/Practitioner/1> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/RequestGroup/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/RequestGroup/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

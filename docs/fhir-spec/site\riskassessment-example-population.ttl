@@ -1,0 +1,34 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/RiskAssessment/population> a fhir:RiskAssessment;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "population"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>Todo - e.g. probable number of infections in a given region over a time period for a given disease based on vaccination rates and other factors</p>\n    </div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Group;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "group1" ];
+     fhir:Group.type [ fhir:value "person" ];
+     fhir:Group.actual [ fhir:value "false"^^xsd:boolean ]
+  ];
+  fhir:RiskAssessment.status [ fhir:value "final"];
+  fhir:RiskAssessment.subject [
+     fhir:Reference.reference [ fhir:value "#group1" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/RiskAssessment/population.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/RiskAssessment/population.ttl> .
+
+# -------------------------------------------------------------------------------------
+

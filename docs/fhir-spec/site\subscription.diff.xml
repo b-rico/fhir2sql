@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Subscription" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Subscription.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/subscription-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/subscription-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Subscription.channel.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/subscription-channel-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/subscription-channel-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Subscription.channel.endpoint">
+         <removed-type name="uri"/>
+         <added-type name="url"/>
+      </element>
+      <element binding-status="added" path="Subscription.channel.payload">
+         <removed-type name="string"/>
+         <added-type name="code"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/mimetypes|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Subscription.tag" status="deleted"/>
+   </type>
+</difference>

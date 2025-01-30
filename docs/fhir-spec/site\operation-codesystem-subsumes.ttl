@@ -1,0 +1,115 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# - resource -------------------------------------------------------------------
+
+[] a fhir:OperationDefinition;
+  fhir:Resource.id [ fhir:value "CodeSystem-subsumes"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" ];
+     fhir:Extension.value [ fhir:value "5" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status" ];
+     fhir:Extension.value [ fhir:value "normative" ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version" ];
+     fhir:Extension.value [ fhir:value "4.0.1" ]
+  ];
+  fhir:OperationDefinition.url [ fhir:value "http://hl7.org/fhir/OperationDefinition/CodeSystem-subsumes"];
+  fhir:OperationDefinition.version [ fhir:value "4.0.1"];
+  fhir:OperationDefinition.name [ fhir:value "Subsumption Testing"];
+  fhir:OperationDefinition.status [ fhir:value "draft"];
+  fhir:OperationDefinition.kind [ fhir:value "operation"];
+  fhir:OperationDefinition.date [ fhir:value "2019-11-01T09:29:23+11:00"];
+  fhir:OperationDefinition.publisher [ fhir:value "HL7 (FHIR Project)"];
+  fhir:OperationDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "fhir@lists.hl7.org" ]
+     ]
+  ];
+  fhir:OperationDefinition.description [ fhir:value "Test the subsumption relationship between code/Coding A and code/Coding B given the semantics of subsumption in the underlying code system (see [hierarchyMeaning](codesystem-definitions.html#CodeSystem.hierarchyMeaning)).\n\nWhen invoking this operation, a client SHALL provide both a and codes, either as code or Coding parameters. The system parameter is required unless the operation is invoked on an instance of a code system resource. Other parameters are optional"];
+  fhir:OperationDefinition.code [ fhir:value "subsumes"];
+  fhir:OperationDefinition.resource [
+     fhir:value "CodeSystem";
+     fhir:index 0
+  ];
+  fhir:OperationDefinition.system [ fhir:value "false"];
+  fhir:OperationDefinition.type [ fhir:value "true"];
+  fhir:OperationDefinition.instance [ fhir:value "true"];
+  fhir:OperationDefinition.parameter [
+     fhir:index 0;
+     fhir:OperationDefinition.name [ fhir:value "codeA" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The \"A\" code that is to be tested. If a code is provided, a system must be provided" ];
+     fhir:OperationDefinition.type [ fhir:value "code" ]
+  ], [
+     fhir:index 1;
+     fhir:OperationDefinition.name [ fhir:value "codeB" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The \"B\" code that is to be tested. If a code is provided, a system must be provided" ];
+     fhir:OperationDefinition.type [ fhir:value "code" ]
+  ], [
+     fhir:index 2;
+     fhir:OperationDefinition.name [ fhir:value "system" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The code system in which subsumption testing is to be performed. This must be provided unless the operation is invoked on a code system instance" ];
+     fhir:OperationDefinition.type [ fhir:value "uri" ]
+  ], [
+     fhir:index 3;
+     fhir:OperationDefinition.name [ fhir:value "version" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The version of the code system, if one was provided in the source data" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ]
+  ], [
+     fhir:index 4;
+     fhir:OperationDefinition.name [ fhir:value "codingA" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The \"A\" Coding that is to be tested. The code system does not have to match the specified subsumption code system, but the relationships between the code systems must be well established" ];
+     fhir:OperationDefinition.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 5;
+     fhir:OperationDefinition.name [ fhir:value "codingB" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The \"B\" Coding that is to be tested. The code system does not have to match the specified subsumption code system, but the relationships between the code systems must be well established" ];
+     fhir:OperationDefinition.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 6;
+     fhir:OperationDefinition.name [ fhir:value "outcome" ];
+     fhir:OperationDefinition.use [ fhir:value "out" ];
+     fhir:OperationDefinition.min [ fhir:value "1" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The subsumption relationship between code/Coding \"A\" and code/Coding \"B\". There are 4 possible codes to be returned (equivalent, subsumes, subsumed-by, and not-subsumed) as defined in the concept-subsumption-outcome value set.  If the server is unable to determine the relationship between the codes/Codings, then it returns an error response with an OperationOutcome." ];
+     fhir:OperationDefinition.type [ fhir:value "code" ];
+     fhir:OperationDefinition.binding [
+       fhir:OperationDefinition.strength [ fhir:value "required" ];
+       fhir:OperationDefinition.valueSet [ fhir:value "http://hl7.org/fhir/ValueSet/concept-subsumption-outcome|4.0.1" ]
+     ]
+  ] .
+
+# -------------------------------------------------------------------------------------
+

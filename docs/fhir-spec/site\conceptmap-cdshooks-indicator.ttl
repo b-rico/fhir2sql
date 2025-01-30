@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ConceptMap/cdshooks-indicator> a fhir:ConceptMap;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "cdshooks-indicator"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <h2>IndicatorToRequestPriority (http://cds-hooks.hl7.org/ConceptMap/indicator-to-request-priority)</h2>\n      <p>Mapping from http://cds-hooks.hl7.org/ValueSet/indicator to \n        <a href=\"valueset-request-priority.html\">http://hl7.org/fhir/ValueSet/request-priority</a>\n      </p>\n      <p>DRAFT. Published on ?? by null. </p>\n      <div>\n        <p>This concept map defines a mapping from CDS Hooks indicator to request priority.</p>\n\n      </div>\n      <br/>\n      <table class=\"grid\">\n        <tr>\n          <td>\n            <b>Source Code</b>\n          </td>\n          <td>\n            <b>Equivalence</b>\n          </td>\n          <td>\n            <b>Destination Code</b>\n          </td>\n        </tr>\n        <tr>\n          <td>info</td>\n          <td>equal</td>\n          <td>routine</td>\n        </tr>\n        <tr>\n          <td>warning</td>\n          <td>equal</td>\n          <td>urgent</td>\n        </tr>\n        <tr>\n          <td>critical</td>\n          <td>equal</td>\n          <td>stat</td>\n        </tr>\n      </table>\n    </div>"
+  ];
+  fhir:ConceptMap.url [ fhir:value "http://cds-hooks.hl7.org/ConceptMap/indicator-to-request-priority"];
+  fhir:ConceptMap.name [ fhir:value "IndicatorToRequestPriority"];
+  fhir:ConceptMap.status [ fhir:value "draft"];
+  fhir:ConceptMap.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:ConceptMap.description [ fhir:value "This concept map defines a mapping from CDS Hooks indicator to request priority."];
+  fhir:ConceptMap.sourceCanonical [
+     fhir:value "http://cds-hooks.hl7.org/ValueSet/indicator";
+     fhir:link <http://cds-hooks.hl7.org/ValueSet/indicator>
+  ];
+  fhir:ConceptMap.targetCanonical [
+     fhir:value "http://hl7.org/fhir/ValueSet/request-priority";
+     fhir:link <http://hl7.org/fhir/ValueSet/request-priority>
+  ];
+  fhir:ConceptMap.group [
+     fhir:index 0;
+     fhir:ConceptMap.group.element [
+       fhir:index 0;
+       fhir:ConceptMap.group.element.code [ fhir:value "info" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "routine" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ConceptMap.group.element.code [ fhir:value "warning" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "urgent" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:ConceptMap.group.element.code [ fhir:value "critical" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "stat" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ConceptMap/cdshooks-indicator.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ConceptMap/cdshooks-indicator.ttl> .
+
+# -------------------------------------------------------------------------------------
+

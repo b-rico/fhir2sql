@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="EnrollmentResponse" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="EnrollmentResponse.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/fm-status" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/fm-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="EnrollmentResponse.outcome">
+         <removed-type name="CodeableConcept"/>
+         <added-type name="code"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/remittance-outcome"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/remittance-outcome|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="EnrollmentResponse.requestProvider">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element path="EnrollmentResponse.requestOrganization" status="deleted"/>
+   </type>
+</difference>

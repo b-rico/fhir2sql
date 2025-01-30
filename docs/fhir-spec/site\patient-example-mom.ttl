@@ -1,0 +1,80 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/mom> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "mom"];
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value "2012-05-29T23:45:32Z"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: mom</p><p><b>meta</b>: </p><p><b>identifier</b>: Social Security number = 444222222</p><p><b>active</b>: true</p><p><b>name</b>: Eve Everywoman (OFFICIAL)</p><p><b>telecom</b>: ph: 555-555-2003(WORK)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 31/05/1973</p><p><b>address</b>: 2222 Home Street (HOME)</p><p><b>managingOrganization</b>: <a>Organization/hl7</a></p><h3>Links</h3><table><tr><td>-</td><td><b>Other</b></td><td><b>Type</b></td></tr><tr><td>*</td><td><a>RelatedPerson/newborn-mom</a></td><td>seealso</td></tr></table></div>"
+  ];
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "SS" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/sid/us-ssn" ];
+     fhir:Identifier.value [ fhir:value "444222222" ]
+  ];
+  fhir:Patient.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.family [ fhir:value "Everywoman" ];
+     fhir:HumanName.given [
+       fhir:value "Eve";
+       fhir:index 0
+     ]
+  ];
+  fhir:Patient.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "555-555-2003" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ];
+  fhir:Patient.gender [ fhir:value "female"];
+  fhir:Patient.birthDate [ fhir:value "1973-05-31"^^xsd:date];
+  fhir:Patient.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "home" ];
+     fhir:Address.line [
+       fhir:value "2222 Home Street";
+       fhir:index 0
+     ]
+  ];
+  fhir:Patient.managingOrganization [
+     fhir:link <http://hl7.org/fhir/Organization/hl7>;
+     fhir:Reference.reference [ fhir:value "Organization/hl7" ]
+  ];
+  fhir:Patient.link [
+     fhir:index 0;
+     fhir:Patient.link.other [
+       fhir:link <http://hl7.org/fhir/RelatedPerson/newborn-mom>;
+       fhir:Reference.reference [ fhir:value "RelatedPerson/newborn-mom" ]
+     ];
+     fhir:Patient.link.type [ fhir:value "seealso" ]
+  ] .
+
+<http://hl7.org/fhir/Organization/hl7> a fhir:Organization .
+
+<http://hl7.org/fhir/RelatedPerson/newborn-mom> a fhir:RelatedPerson .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/mom.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Patient/mom.ttl> .
+
+# -------------------------------------------------------------------------------------
+

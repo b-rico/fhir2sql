@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/abdo-tender> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "abdo-tender"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: abdo-tender</p><p><b>status</b>: final</p><p><b>category</b>: Exam <span>(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'exam' = 'Exam', given as 'Exam'})</span></p><p><b>code</b>: Abdominal tenderness <span>(Details : {SNOMED CT code '43478001' = 'Abdominal tenderness', given as 'Abdominal tenderness (finding)'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>encounter</b>: <a>Encounter/example</a></p><p><b>effective</b>: 02/04/2018 10:30:10 AM --&gt; (ongoing)</p><p><b>issued</b>: 03/04/2018 3:30:10 PM</p><p><b>value</b>: true</p><p><b>interpretation</b>: Abnormal <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'A' = 'Abnormal', given as 'Abnormal'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+       fhir:Coding.code [ fhir:value "exam" ];
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:43478001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "43478001" ];
+       fhir:Coding.display [ fhir:value "Abdominal tenderness (finding)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Abdominal tenderness" ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Observation.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:Observation.effectivePeriod [
+     fhir:Period.start [ fhir:value "2018-04-02T10:30:10+01:00"^^xsd:dateTime ]
+  ];
+  fhir:Observation.issued [ fhir:value "2018-04-03T15:30:10+01:00"^^xsd:dateTime];
+  fhir:Observation.valueBoolean [ fhir:value "true"^^xsd:boolean];
+  fhir:Observation.interpretation [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation" ];
+       fhir:Coding.code [ fhir:value "A" ];
+       fhir:Coding.display [ fhir:value "Abnormal" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Abnormal" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/abdo-tender.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/abdo-tender.ttl> .
+
+# -------------------------------------------------------------------------------------
+

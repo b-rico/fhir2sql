@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/656> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "656"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: 656</p><p><b>identifier</b>: patientId-urn:oid:1.2.4~0000000000000000~152584~20170503155426~820</p><p><b>status</b>: final</p><p><b>code</b>: MDC_FLOW_AWAY_EXP_FORCED_PEAK <span>(Details : {urn:iso:std:iso:11073:10101 code '152584' = '152584', given as 'MDC_FLOW_AWAY_EXP_FORCED_PEAK'})</span></p><p><b>subject</b>: <a>Patient/PatientId-patientId</a></p><p><b>effective</b>: 03/05/2017 3:54:26 PM</p><p><b>performer</b>: <a>Patient/PatientId-patientId</a></p><p><b>value</b>: 820 cL/s<span> (Details: urn:iso:std:iso:11073:10101 code 265201 = '265201')</span></p></div>"
+  ];
+  fhir:Observation.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "patientId-urn:oid:1.2.4~0000000000000000~152584~20170503155426~820" ]
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ];
+       fhir:Coding.code [ fhir:value "152584" ];
+       fhir:Coding.display [ fhir:value "MDC_FLOW_AWAY_EXP_FORCED_PEAK" ]
+     ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/PatientId-patientId>;
+     fhir:Reference.reference [ fhir:value "Patient/PatientId-patientId" ]
+  ];
+  fhir:Observation.effectiveDateTime [ fhir:value "2017-05-03T15:54:26-04:00"^^xsd:dateTime];
+  fhir:Observation.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Patient/PatientId-patientId>;
+     fhir:Reference.reference [ fhir:value "Patient/PatientId-patientId" ]
+  ];
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "820"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "cL/s" ];
+     fhir:Quantity.system [ fhir:value "urn:iso:std:iso:11073:10101" ];
+     fhir:Quantity.code [ fhir:value "265201" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/PatientId-patientId> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/656.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/656.ttl> .
+
+# -------------------------------------------------------------------------------------
+

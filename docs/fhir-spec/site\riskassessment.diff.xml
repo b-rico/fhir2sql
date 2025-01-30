@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="RiskAssessment" status="changed">
+      <element new-max="*" old-max="1" path="RiskAssessment.identifier"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="RiskAssessment.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/observation-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/observation-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-min="1" old-min="0" path="RiskAssessment.subject"/>
+      <element path="RiskAssessment.encounter" status="new"/>
+      <element path="RiskAssessment.performer">
+         <removed-type name="Reference(Practitioner | Device)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Device)"/>
+      </element>
+      <element path="RiskAssessment.reasonCode" status="new"/>
+      <element path="RiskAssessment.reasonReference" status="new"/>
+      <element new-min="0" old-min="1" path="RiskAssessment.prediction.outcome"/>
+      <element new-max="*"
+               old-max="1"
+               old-name="comment"
+               path="RiskAssessment.note">
+         <removed-type name="string"/>
+         <added-type name="Annotation"/>
+      </element>
+      <element path="RiskAssessment.context" status="deleted"/>
+      <element path="RiskAssessment.reason[x]" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Invoice/example> a fhir:Invoice;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Example of Invoice</div>"
+  ];
+  fhir:Invoice.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://myHospital.org/Invoices" ];
+     fhir:Identifier.value [ fhir:value "654321" ]
+  ];
+  fhir:Invoice.status [ fhir:value "issued"];
+  fhir:Invoice.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Invoice.date [ fhir:value "2017-01-25T08:00:00+01:00"^^xsd:dateTime];
+  fhir:Invoice.participant [
+     fhir:index 0;
+     fhir:Invoice.participant.role [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:17561000;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "17561000" ];
+         fhir:Coding.display [ fhir:value "Cardiologist" ]
+       ]
+     ];
+     fhir:Invoice.participant.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:Invoice.issuer [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://myhospital/NamingSystem/departments" ];
+       fhir:Identifier.value [ fhir:value "CARD_INTERMEDIATE_CARE" ]
+     ]
+  ];
+  fhir:Invoice.account [
+     fhir:link <http://hl7.org/fhir/Account/example>;
+     fhir:Reference.reference [ fhir:value "Account/example" ]
+  ];
+  fhir:Invoice.totalNet [
+     fhir:Money.value [ fhir:value "40"^^xsd:decimal ];
+     fhir:Money.currency [ fhir:value "EUR" ]
+  ];
+  fhir:Invoice.totalGross [
+     fhir:Money.value [ fhir:value "48"^^xsd:decimal ];
+     fhir:Money.currency [ fhir:value "EUR" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Account/example> a fhir:Account .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Invoice/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Invoice/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

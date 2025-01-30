@@ -1,0 +1,224 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Claim/960151> a fhir:Claim;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "960151"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the Claim</div>"
+  ];
+  fhir:Claim.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://happyhospital.com/claim" ];
+     fhir:Identifier.value [ fhir:value "96123451" ]
+  ];
+  fhir:Claim.status [ fhir:value "active"];
+  fhir:Claim.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claim-type" ];
+       fhir:Coding.code [ fhir:value "institutional" ]
+     ]
+  ];
+  fhir:Claim.use [ fhir:value "claim"];
+  fhir:Claim.patient [
+     fhir:link <http://hl7.org/fhir/Patient/1>;
+     fhir:Reference.reference [ fhir:value "Patient/1" ]
+  ];
+  fhir:Claim.billablePeriod [
+     fhir:Period.start [ fhir:value "2014-08-15"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2014-08-16"^^xsd:date ]
+  ];
+  fhir:Claim.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:Claim.enterer [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://jurisdiction.org/facilities/HOSP1234/users" ];
+       fhir:Identifier.value [ fhir:value "UC1234" ]
+     ]
+  ];
+  fhir:Claim.insurer [
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:Claim.provider [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://npid.org/providerid" ];
+       fhir:Identifier.value [ fhir:value "NJ12345" ]
+     ]
+  ];
+  fhir:Claim.priority [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "normal" ]
+     ]
+  ];
+  fhir:Claim.payee [
+     fhir:Claim.payee.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "provider" ]
+       ]
+     ]
+  ];
+  fhir:Claim.facility [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://jurisdiction.org/facilities" ];
+       fhir:Identifier.value [ fhir:value "HOSP1234" ]
+     ]
+  ];
+  fhir:Claim.careTeam [
+     fhir:index 0;
+     fhir:Claim.careTeam.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.careTeam.provider [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ];
+     fhir:Claim.careTeam.responsible [ fhir:value "true"^^xsd:boolean ];
+     fhir:Claim.careTeam.role [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/claim-careteamrole" ];
+         fhir:Coding.code [ fhir:value "primary" ]
+       ]
+     ];
+     fhir:Claim.careTeam.qualification [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/provider-qualification" ];
+         fhir:Coding.code [ fhir:value "physician" ]
+       ]
+     ]
+  ];
+  fhir:Claim.supportingInfo [
+     fhir:index 0;
+     fhir:Claim.supportingInfo.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.supportingInfo.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claiminformationcategory" ];
+         fhir:Coding.code [ fhir:value "employmentimpacted" ]
+       ]
+     ];
+     fhir:Claim.supportingInfo.timingPeriod [
+       fhir:Period.start [ fhir:value "2014-08-16"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2014-08-16"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Claim.supportingInfo.sequence [ fhir:value "2"^^xsd:positiveInteger ];
+     fhir:Claim.supportingInfo.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claiminformationcategory" ];
+         fhir:Coding.code [ fhir:value "hospitalized" ]
+       ]
+     ];
+     fhir:Claim.supportingInfo.timingPeriod [
+       fhir:Period.start [ fhir:value "2014-08-15"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2014-08-16"^^xsd:date ]
+     ]
+  ];
+  fhir:Claim.diagnosis [
+     fhir:index 0;
+     fhir:Claim.diagnosis.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.diagnosis.diagnosisCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "654456" ]
+       ]
+     ];
+     fhir:Claim.diagnosis.type [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-diagnosistype" ];
+         fhir:Coding.code [ fhir:value "admitting" ]
+       ]
+     ];
+     fhir:Claim.diagnosis.packageCode [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup" ];
+         fhir:Coding.code [ fhir:value "400" ];
+         fhir:Coding.display [ fhir:value "Head trauma - concussion" ]
+       ]
+     ]
+  ];
+  fhir:Claim.insurance [
+     fhir:index 0;
+     fhir:Claim.insurance.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.insurance.focal [ fhir:value "true"^^xsd:boolean ];
+     fhir:Claim.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ];
+     fhir:Claim.insurance.businessArrangement [ fhir:value "BA987123" ];
+     fhir:Claim.insurance.preAuthRef [
+       fhir:value "PA2014G56473";
+       fhir:index 0
+     ]
+  ];
+  fhir:Claim.accident [
+     fhir:Claim.accident.date [ fhir:value "2014-07-09"^^xsd:date ];
+     fhir:Claim.accident.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActIncidentCode" ];
+         fhir:Coding.code [ fhir:value "SPT" ];
+         fhir:Coding.display [ fhir:value "Sporting Accident" ]
+       ]
+     ];
+     fhir:Claim.accident.locationAddress [
+       fhir:Address.text [ fhir:value "Grouse Mountain Ski Hill" ]
+     ]
+  ];
+  fhir:Claim.item [
+     fhir:index 0;
+     fhir:Claim.item.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.item.careTeamSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:Claim.item.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ex-serviceproduct" ];
+         fhir:Coding.code [ fhir:value "exam" ]
+       ]
+     ];
+     fhir:Claim.item.servicedDate [ fhir:value "2014-08-16"^^xsd:date ];
+     fhir:Claim.item.unitPrice [
+       fhir:Money.value [ fhir:value "125.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.net [
+       fhir:Money.value [ fhir:value "125.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ]
+  ];
+  fhir:Claim.total [
+     fhir:Money.value [ fhir:value "125.00"^^xsd:decimal ];
+     fhir:Money.currency [ fhir:value "USD" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/1> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Claim/960151.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Claim/960151.ttl> .
+
+# -------------------------------------------------------------------------------------
+

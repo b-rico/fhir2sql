@@ -1,0 +1,43 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Group/example-patientlist> a fhir:Group;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-patientlist"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>All patients primarily attributed to Practitioner 123</p>\n    </div>"
+  ];
+  fhir:Group.type [ fhir:value "person"];
+  fhir:Group.actual [ fhir:value "true"^^xsd:boolean];
+  fhir:Group.characteristic [
+     fhir:index 0;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org" ];
+         fhir:Coding.code [ fhir:value "attributed-to" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Patients primarily attributed to" ]
+     ];
+     fhir:Group.characteristic.valueReference [
+       fhir:link <http://hl7.org/fhir/Practitioner/123>;
+       fhir:Reference.reference [ fhir:value "Practitioner/123" ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ] .
+
+<http://hl7.org/fhir/Practitioner/123> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Group/example-patientlist.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Group/example-patientlist.ttl> .
+
+# -------------------------------------------------------------------------------------
+

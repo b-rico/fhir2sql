@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/StructureMap/example> a fhir:StructureMap;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>url</b>: <b>http://hl7.org/fhir/StructureMap/example</b></p><p><b>identifier</b>: urn:oid:37843577-95fb-4adb-84c0-8837188a7bf3</p><p><b>version</b>: 0.1</p><p><b>name</b>: ExampleMap</p><p><b>title</b>: Example Map</p><p><b>status</b>: draft</p><p><b>date</b>: 09/03/2017</p><p><b>publisher</b>: HL7 FHIR Standard</p><p><b>contact</b>: </p><p><b>description</b>: Example Structure Map</p><p><b>jurisdiction</b>: Oceania <span>(Details : {http://unstats.un.org/unsd/methods/m49/m49.htm code '009' = 'Oceania', given as 'Oceania'})</span></p><blockquote><p><b>group</b></p><p><b>name</b>: Examples</p><p><b>typeMode</b>: none</p><p><b>documentation</b>: test -&gt; testValue</p><h3>Inputs</h3><table><tr><td>-</td><td><b>Name</b></td><td><b>Mode</b></td></tr><tr><td>*</td><td>test</td><td>source</td></tr></table><blockquote><p><b>rule</b></p><p><b>name</b>: rule1</p><h3>Sources</h3><table><tr><td>-</td><td><b>Context</b></td><td><b>Type</b></td><td><b>Element</b></td><td><b>Variable</b></td></tr><tr><td>*</td><td>Source</td><td>SourceClassA</td><td>test</td><td>t</td></tr></table><h3>Targets</h3><table><tr><td>-</td><td><b>Context</b></td><td><b>ContextType</b></td><td><b>Element</b></td><td><b>Transform</b></td></tr><tr><td>*</td><td>Destination</td><td>variable</td><td>testValue</td><td>copy</td></tr></table></blockquote></blockquote></div>"
+  ];
+  fhir:StructureMap.url [ fhir:value "http://hl7.org/fhir/StructureMap/example"];
+  fhir:StructureMap.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "urn:oid:37843577-95fb-4adb-84c0-8837188a7bf3" ]
+  ];
+  fhir:StructureMap.version [ fhir:value "0.1"];
+  fhir:StructureMap.name [ fhir:value "ExampleMap"];
+  fhir:StructureMap.title [ fhir:value "Example Map"];
+  fhir:StructureMap.status [ fhir:value "draft"];
+  fhir:StructureMap.date [ fhir:value "2017-03-09"^^xsd:date];
+  fhir:StructureMap.publisher [ fhir:value "HL7 FHIR Standard"];
+  fhir:StructureMap.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:StructureMap.description [ fhir:value "Example Structure Map"];
+  fhir:StructureMap.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "009" ];
+       fhir:Coding.display [ fhir:value "Oceania" ]
+     ]
+  ];
+  fhir:StructureMap.group [
+     fhir:index 0;
+     fhir:StructureMap.group.name [ fhir:value "Examples" ];
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ];
+     fhir:StructureMap.group.documentation [ fhir:value "test -> testValue" ];
+     fhir:StructureMap.group.input [
+       fhir:index 0;
+       fhir:StructureMap.group.input.name [ fhir:value "test" ];
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ];
+     fhir:StructureMap.group.rule [
+       fhir:index 0;
+       fhir:StructureMap.group.rule.name [ fhir:value "rule1" ];
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "Source" ];
+         fhir:StructureMap.group.rule.source.type [ fhir:value "SourceClassA" ];
+         fhir:StructureMap.group.rule.source.element [ fhir:value "test" ];
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "t" ]
+       ];
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "Destination" ];
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ];
+         fhir:StructureMap.group.rule.target.element [ fhir:value "testValue" ];
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/StructureMap/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/StructureMap/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

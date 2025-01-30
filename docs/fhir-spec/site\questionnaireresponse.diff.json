@@ -1,0 +1,66 @@
+﻿{
+  "types": [
+    "QuestionnaireResponse"
+  ],
+  "QuestionnaireResponse": {
+    "elements": {
+      "QuestionnaireResponse.basedOn": {
+        "removed-types": [
+          "Reference(ReferralRequest | CarePlan | ProcedureRequest)"
+        ],
+        "added-types": [
+          "Reference(CarePlan | ServiceRequest)"
+        ]
+      },
+      "QuestionnaireResponse.partOf": {
+        "old-name": "parent"
+      },
+      "QuestionnaireResponse.questionnaire": {
+        "removed-types": [
+          "Reference(Questionnaire)"
+        ],
+        "added-types": [
+          "canonical(Questionnaire)"
+        ]
+      },
+      "QuestionnaireResponse.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/questionnaire-answers-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/questionnaire-answers-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "QuestionnaireResponse.encounter": {
+        "status": "new"
+      },
+      "QuestionnaireResponse.author": {
+        "removed-types": [
+          "Reference(Device | Practitioner | Patient | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Device | Practitioner | PractitionerRole | Patient | RelatedPerson | Organization)"
+        ]
+      },
+      "QuestionnaireResponse.source": {
+        "removed-types": [
+          "Reference(Patient | Practitioner | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Patient | Practitioner | PractitionerRole | RelatedPerson)"
+        ]
+      },
+      "QuestionnaireResponse.context": {
+        "status": "deleted"
+      },
+      "QuestionnaireResponse.item.subject": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

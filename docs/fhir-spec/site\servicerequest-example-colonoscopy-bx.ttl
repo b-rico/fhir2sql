@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/colon-biopsy> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "colon-biopsy"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: colon-biopsy</p><p><b>identifier</b>: 12345</p><p><b>requisition</b>: req12345</p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>code</b>: Biopsy of colon <span>(Details : {SNOMED CT code '76164006' = 'Biopsy of colon', given as 'Biopsy of colon (procedure)'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>authoredOn</b>: 05/03/2017</p><p><b>requester</b>: <a>Dr. Beverly Crusher</a></p><p><b>performer</b>: <a>Dr Adam Careful</a></p></div>"
+  ];
+  fhir:ServiceRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:ServiceRequest.requisition [
+     fhir:Identifier.system [ fhir:value "http://bumc.org/requisitions" ];
+     fhir:Identifier.value [ fhir:value "req12345" ]
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:76164006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "76164006" ];
+       fhir:Coding.display [ fhir:value "Biopsy of colon (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Biopsy of colon" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2017-03-05"^^xsd:date];
+  fhir:ServiceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809>;
+     fhir:Reference.reference [ fhir:value "Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809" ];
+     fhir:Reference.display [ fhir:value "Dr. Beverly Crusher" ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/colon-biopsy.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/colon-biopsy.ttl> .
+
+# -------------------------------------------------------------------------------------
+

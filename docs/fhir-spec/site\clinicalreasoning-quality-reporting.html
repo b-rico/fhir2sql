@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Clinicalreasoning-quality-reporting - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/clinicalreasoning-quality-reporting.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body> 
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="clinicalreasoning-module.html"><img src="reasoning.png"/> Clinical Reasoning</a></li>
+        <li><b>Quality Reporting</b></li>          <!-- clinicalreasoning-quality-reporting.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<table class="cols"><tbody><tr><td id="wg">Work Group <a href="http://www.hl7.org/Special/committees/cqi/index.cfm" _target="blank">Clinical Quality Information <img src="external.png" style="text-align: baseline"/></a></td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: 2</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:    <!-- !ns! --><a href="versions.html#std-process">Trial Use</a></td></tr></tbody></table>
+
+<a name="quality-reporting"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">14.6<a name="14.6"> </a></span> Quality Reporting <a href="clinicalreasoning-quality-reporting.html#14.6" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<a name="representing-quality-measures"> </a>
+<h4 class="self-link-parent"><span class="sectioncount">14.6.1</span> Representing Quality Measures <a href="clinicalreasoning-quality-reporting.html#representing-quality-measures" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+
+<p>The <a href="measure.html">Measure</a> resource builds on the general approach to representing knowledge artifacts and adds the metadata and structure information that is specific to quality measures:</p>
+
+<img src="clinicalreasoning-measure-structure.png" alt="Measure Structure" style="width:600px;height:400px"/>
+
+<p>Quality measures follow a generally hierarchical structure that defines:</p>
+
+<ul>
+	<li><p><b>Population Groups:</b> Groups of population criteria that define a particular area of measurement. A given measure may include any number of population groups, each with different criteria for the various measure components.</p>
+		<ul>
+			<li><b>Populations:</b> Within each population group, a measure defines criteria appropriate to the type of measure being calculated. Each population type identifies a specific component of the calculation such as the <i>numerator</i>, <i>denominator</i>, and <i>initial population</i>.</li>
+			<li><b>Stratifiers:</b> Additional criteria used to calculate the measure along different dimensions within the population such as age or gender. A measure may define any number of stratifiers for each population group.</li>
+		</ul>
+	</li>
+	<li><b>Supplemental Data:</b> Additional information that should be included with the calculated results of the measure such as individual age or gender. A measure may define any number of supplemental data elements.</li>
+</ul>
+
+<p>Population Quality Measures are often focused on evaluating from a patient perspective, but this is not always the case. The <code>subject</code> element of the Measure indicates the intended subjects of a measure. If no <code>subject</code> is specified, the measure subject is Patient, but Practitioners, Organizations, Locations, or even Devices can also be the subject of a measure.</p>
+
+<a name="measure-metadata"> </a>
+<h5 class="self-link-parent"><span class="sectioncount">14.6.1.1</span> Measure Metadata <a href="clinicalreasoning-quality-reporting.html#measure-metadata" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h5>
+
+<p>The following table provides a requirements mapping from the content of an <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=97">eMeasure <img src="external.png" style="text-align: baseline"/></a> to the elements defined in the <a href="measure.html">Measure</a> resource:</p>
+
+<table class="grid">
+	<thead>
+		<tr><th>eMeasure</th><th>Cardinality</th><th>Element</th><th>Notes</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>Title</td><td>0..1</td><td>Measure.title</td><td></td></tr>
+		<tr><td>Identifier</td><td>0..1</td><td>Measure.identifier</td><td>identifier type code as http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms</td></tr>
+		<tr><td>Version Number</td><td>0..1</td><td>Measure.version</td><td></td></tr>
+		<tr><td>NQF Number</td><td>0..1</td><td>Measure.identifier</td><td>identifier type code as http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/nqf</td></tr>
+		<tr><td>GUID</td><td>0..1</td><td>Measure.identifier</td><td>identifier type code as http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid</td></tr>
+		<tr><td>Measure Steward</td><td>0..1</td><td>Measure.publisher</td><td></td></tr>
+		<tr><td>Measure Developer</td><td>0..1</td><td>Measure.contributor</td><td>type.code of author</td></tr>
+		<tr><td>Endorser</td><td>0..1</td><td>Measure.contributor</td><td>type.code of endorser</td></tr>
+		<tr><td>Description</td><td>0..1</td><td>Measure.description</td><td></td></tr>
+		<tr><td>Copyright</td><td>0..1</td><td>Measure.copyright</td><td></td></tr>
+		<tr><td>Reference</td><td>0..*</td><td>Measure.relatedArtifact</td><td>type.code of citation</td></tr>
+		<tr><td>Disclaimer</td><td>0..1</td><td>disclaimer</td><td>String (containing Markdown)</td></tr>
+		<tr><td>Measure Scoring</td><td>0..1</td><td>scoring</td><td>Code, e.g. proportion, CV</td></tr>
+		<tr><td>Measure Type</td><td>0..1</td><td>type</td><td>Code, e.g. process, outcome</td></tr>
+		<tr><td>Risk Adjustment</td><td>0..1</td><td>riskAdjustment</td><td>String</td></tr>
+		<tr><td>Rate Aggregation</td><td>0..1</td><td>rateAggregation</td><td>String</td></tr>
+		<tr><td>Rationale</td><td>0..1</td><td>rationale</td><td>String (containing Markdown)</td></tr>
+		<tr><td>Clinical Recommendation Statement</td><td>0..1</td><td>clinicalRecommendationStatement</td><td>String (containing Markdown)</td></tr>
+		<tr><td>Improvement Notation</td><td>0..1</td><td>improvementNotation</td><td>String, e.g. Higher score indicates better quality</td></tr>
+		<tr><td>Definition</td><td>0..1</td><td>definition</td><td>String (containing Markdown)</td></tr>
+		<tr><td>Guidance</td><td>0..1</td><td>guidance</td><td>String (containing Markdown)</td></tr>
+	</tbody>
+</table>
+
+<a name="measure-logic"> </a>
+<h5 class="self-link-parent"><span class="sectioncount">14.6.1.2</span> Measure Logic <a href="clinicalreasoning-quality-reporting.html#measure-logic" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h5>
+
+<p>As with other knowledge artifacts, logic is included by referencing a <a href="library.html">Library</a> resource. Although the base resource allows for the measure to reference any number of libraries, for simplicity of managing sharing, measures should reference only one Library, the <i>primary measure library</i>, and that library should contain all the named expressions required to define the measure structure.</p>
+
+<p>Note that this approach does not preclude sharing of logic between measures, it only requires that that sharing be explicitly done as dependencies within the referenced libraries, rather than allowing a measure to reference multiple libraries directly.</p>
+
+<a name="specifying-population-criteria"> </a>
+<h6 class="self-link-parent"><span class="sectioncount">14.6.1.2.1</span> Specifying Population Criteria <a href="clinicalreasoning-quality-reporting.html#specifying-population-criteria" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h6>
+
+<p>A measure can specify various types of populations, depending on the type of measure scoring being used. The following table shows which population criteria types are required (R), optional (O), or not permitted (NP) for proportion, ratio, and continuous variable measures. This table is adapted from Table 1 from the <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=97">HQMF Release 1 Normative <img src="external.png" style="text-align: baseline"/></a> specification, and Table 2.1 from the <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=346">QDM-based HQMF IG <img src="external.png" style="text-align: baseline"/></a>.</p>
+
+<table class="grid">
+	<thead>
+		<tr><th>MeasureType</th><th>Initial Population</th><th>Denominator</th><th>Denominator Exclusion</th><th>Denominator Exception</th><th>Numerator</th><th>Numerator Exclusion</th><th>Measure Population</th><th>Measure Population Exclusion</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>Proportion</td><td>R</td><td>R</td><td>O</td><td>O</td><td>R</td><td>O</td><td>NP</td><td>NP</td></tr>
+		<tr><td>Ratio</td><td>R</td><td>R</td><td>O</td><td>NP</td><td>R</td><td>O</td><td>NP</td><td>NP</td></tr>
+		<tr><td>Continuous Variable</td><td>R</td><td>NP</td><td>NP</td><td>NP</td><td>NP</td><td>NP</td><td>R</td><td>O</td></tr>
+		<tr><td>Cohort</td><td>R</td><td>NP</td><td>NP</td><td>NP</td><td>NP</td><td>NP</td><td>NP</td><td>NP</td></tr>
+	</tbody>
+</table>
+
+<p>The Measure resource then identifies specific named expressions within the referenced primary measure library that define the criteria for each population. For example, the following fragment illustrates the population criteria definitions for the CMS146 measure example:</p>
+
+<pre><code>&lt;group id="CMS146-group-1"&gt;
+  &lt;population&gt;
+    &lt;code&gt;
+      &lt;coding&gt;
+        &lt;code value="initial-population"/&gt;
+      &lt;/coding&gt;
+    &lt;/code&gt;
+    &lt;criteria value="CMS146.InInitialPopulation"/&gt;
+  &lt;/population&gt;
+  &lt;population&gt;
+    &lt;code&gt;
+      &lt;coding&gt;
+        &lt;code value="numerator"/&gt;
+      &lt;/coding&gt;
+    &lt;/code&gt;
+    &lt;criteria value="CMS146.InNumerator"/&gt;
+  &lt;/population&gt;
+  &lt;population&gt;
+    &lt;code&gt;
+      &lt;coding&gt;
+        &lt;code value="denominator"/&gt;
+      &lt;/coding&gt;
+    &lt;/code&gt;
+    &lt;criteria value="CMS146.InDenominator"/&gt;
+  &lt;/population&gt;
+  &lt;population&gt;
+    &lt;code&gt;
+      &lt;coding&gt;
+        &lt;code value="denominator-exclusion"/&gt;
+      &lt;/coding&gt;
+    &lt;/code&gt;
+    &lt;criteria value="CMS146.InDenominatorExclusions"/&gt;
+  &lt;/population&gt;
+&lt;/group&gt;
+</code></pre>
+
+<a name="multiple-populations"> </a>
+<h6 class="self-link-parent"><span class="sectioncount">14.6.1.2.2</span> Measures with Multiple Populations <a href="clinicalreasoning-quality-reporting.html#multiple-populations" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h6>
+
+<p>Quality measures often specify multiple rates, with different population crtiteria for each rate. This is different than stratifying the scores for the same population. For quality measures that contain multiple rates, the Measure will contain multiple group elements, where the criteria are specified once for each group. The <code>id</code> attribute of the <code>group</code> element is used to uniquely identify the group within the measure, as well as within the quality reporting results.</p>
+
+<a name="continuous-variable-measures"> </a>
+<h6 class="self-link-parent"><span class="sectioncount">14.6.1.2.3</span> Continuous Variable Measures <a href="clinicalreasoning-quality-reporting.html#continuous-variable-measures" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h6>
+
+<p>Continuous variable measures may include a measure observation section. This section defines variables (for example, time from check-in to time of antibiotic administration) used to measure particular aspects of a process or outcome. Note that measure observations are not population criteria in that they do not filter the population in any way. Rather, measure observations are data elements, to be collected from each subject that satisfies the population criteria, which are used to calculate the results for each member of the population.</p>
+
+<a name="stratification-and-supplemental-data"> </a>
+<h5 class="self-link-parent"><span class="sectioncount">14.6.1.3</span> Stratification and Supplemental Data <a href="clinicalreasoning-quality-reporting.html#stratification-and-supplemental-data" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h5>
+
+<p>Stratifiers and supplemental data are specified using the <code>stratifier</code> and <code>supplementalData</code> elements of the <a href="measure.html">Measure</a> resource. Stratification criteria are specified either as a reference to a CQL named expression within a Library (e.g. <code>CMS146.AgesUpToNine</code>), or as FHIR resource paths (e.g. <code>Patient.gender</code>). When the stratification criteria is an expression, the stratification will yield as many result groups as the expression returns. For example, if the expression returns a boolean, then there would be two stratification groups: true and false. When the stratification criteria is a FHIR resource path, there will be as many stratification groups as possible values for the resource path. For example, specifying Patient.gender will yield four stratification groups since FHIR has four gender codes: male, female, other, and unknown.</p>
+
+<p>Supplemental data elements are also specified using FHIR resource paths, however, supplemental data only results in groups in the summary measure report. For individual-level reports, supplemental data elements are reported as Observation resources and included by reference in the evaluateResource for the individual-level report.</p>
+
+<p>The CMS146 example measure illustrates the stratification and supplemental data described above:</p>
+
+<ul>
+  <li><b>Measure:</b> <a href="measure-cms146-example.html">measure-cms146-example</a></li>
+  <li><b>MeasureReport:</b> <a href="measurereport-cms146-cat3-example.html">measurereport-cms146-cat3-example</a></li>
+</ul>
+
+<a name="Data Criteria"> </a>
+<h6 class="self-link-parent"><span class="sectioncount">14.6.1.3.1</span> Data Criteria <a href="clinicalreasoning-quality-reporting.html#Data Criteria" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h6>
+
+<p>The data criteria for the primary library defines the data of interest in the measure as a set of <a href="metadatatypes.html#DataRequirement">DataRequirement</a> elements. Each data requirement identifies specific types of data along with constraints that the data must meet. For example, one data requirement for <a href="library-cms146-example.xml.html">CMS 146</a> identifies FHIR Condition resources that represent confirmed diagnoses of acute pharyngitis. Other data requirements for this measure include Encounters, DiagnosticReports and other FHIR resources representing specific data that is used to calculate the measure.</p>
+
+<p>Specifying the data criteria in this way enables the following use cases:</p>
+
+<ul>
+	<li>Determining the set of data used by a particular eCQM.</li>
+	<li>Limited "scoop-and-filter" for creation of population reports.</li>
+	<li>Limited backwards compatibility with existing implementations of previous eCQM IGs.</li>
+</ul>
+
+<p>Data criteria can be specified statically, or they can be <i>inferred</i> from the expressions referenced by the measure. The <code>$data-requirements</code> operation can be invoked to retrieve the aggregate data requirements for the measure. This approach has two advantages:</p>
+
+<ul>
+	<li>When the data requirements for the expression contain dynamic criteria (such as date ranges relative to today), the results returned are based on the evaluation request time.</li>
+	<li>When the expressions involve multiple libraries, rather than having to retrieve and deal with the requirements for each library, the $data-requirements operation can aggregate the requirements and return them as a single <code>module-definition</code> library.</li>
+</ul>
+
+<a name="invoking-measures"> </a>
+<h4 class="self-link-parent"><span class="sectioncount">14.6.2</span> Invoking Measures <a href="clinicalreasoning-quality-reporting.html#invoking-measures" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+
+<p>The Health Quality Measure Format (HQMF) defines the electronic representation of an eMeasure but does not define a mechanism for invoking an eMeasure. FHIR defines both the representation of resources and a general mechanism for interacting with them via the <a href="operationdefinition.html">OperationDefinition</a> resource. Prior sections of this specification described the Measure representation of an eMeasure, this section describes the <code>$evaluate-measure</code> operation that is used to invoke an eMeasure and obtain the results.</p>
+
+<a name="operation-definition"> </a>
+<h5 class="self-link-parent"><span class="sectioncount">14.6.2.1</span> Operation Definition <a href="clinicalreasoning-quality-reporting.html#operation-definition" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h5>
+
+<p>FHIR defines a standard set of common interactions that include read, update, delete and search. In addition, FHIR defines a standard set of extended operations that can be performed on resources, resource types and system wide. The standard operations include profile validation, concept translation and value set expansion. FHIR also supports custom operations via the FHIR <a href="operationdefinition.html">OperationDefinition</a> resource. This resource offers a means to create a formal definition of a custom operation that can be performed on a FHIR server. For the purposes of measure evaluation we define a new custom operation with a code of <a href="operation-measure-evaluate-measure.html">$evaluate-measure</a>.</p>
+
+<p>The $evaluate-measure operation has the following properties:</p>
+
+<ul>
+<li><b>Idempotent</b> The operation may be invoked multiple times without side effects. Note that the result of invoking the operation may vary over time if clinical data used in the eMeasure changes between invocations. Note also that the parameters supplied with the operation invocation can affect the results. 
+</li>
+<li><b>InvocationTarget</b> The operation can be invoked on instances of the MeasureArtifact resource that represent a particular eMeasure or on the type of the resource with a parameter that specifies the eMeasure to calculate.
+</li>
+</ul>
+
+<p>The effect of invoking the $evaluate-measure operation is to calculate the quality measure according to the supplied parameters and to return a <a href="measurereport.html">MeasureReport</a> resource through which the results will be made available. Note that because measure calculation might not be instantaneous, the MeasureReport resource provides a mechanism to handle long running calculations.</p>
+
+<a name="operation-examples"> </a>
+<h5 class="self-link-parent"><span class="sectioncount">14.6.2.2</span> Examples <a href="clinicalreasoning-quality-reporting.html#operation-examples" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h5>
+
+<pre><code>GET [base]/Measure/$evaluate-measure?measure=CMS146&amp;periodStart=2014&amp;periodEnd=2014</code></pre>
+
+<pre><code>GET [base]/Measure/CMS146/$evaluate-measure?periodStart=2014&amp;periodEnd=2014</code></pre>
+
+<p>
+The above examples show how to obtain the results of evaluating the eMeasure with id "CMS146" for all patients over a measurement period that consists of all of 2014. Some items of note:
+</p>
+
+<ul>
+<li>the first variant evaluates the operation on <code>[base]/Measure</code> which is the type of resource and specifies the eMeasure to evaluate using a parameter </li>
+<li>the second variant evaluates the operation on <code>[base]/Measure/CMS146</code> which is the Measure instance that represents that measure so there's no need to also include a reference to the eMeasure in the operation parameters</li>
+<li>the <code>HTTP GET</code> method is used since the <code>$evaluate-measure</code> operation is idempotent</li>
+<li><code>[base]</code> is used as a shortcut for the base URI of the FHIR server</li> 
+<li>the period start and end values are both specified to a granularity of a year, the description of the parameters above explains why this results in a measure period that spans the entire year</li>
+</ul>
+
+<p>
+The next example demonstrates how to obtain the results of evaluating the eMeasure with id "CMS146" for the patient with id "124" over a measurement period that consists of the first three months of 2014.</p>
+
+<pre><code>GET [base]/Basic/CMS146/$evaluate-measure?subject=124&amp;periodStart=2014-01&amp;periodEnd=2014-03</code></pre>
+
+<a name="measure-report"> </a>
+<h4 class="self-link-parent"><span class="sectioncount">14.6.3</span> Measure Report <a href="clinicalreasoning-quality-reporting.html#measure-report" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+
+<p>When eCQMs are represented with the Health Quality Measure Format (HQMF), a single HQMF document represents both the measure itself and the request. Meanwhile, the responses are represented as Quality Reporting Document Architecture (QRDA) documents. QRDA documents come in two flavors: <a href="https://confluence.hl7.org/display/CQIWC/Quality+Reporting+Document+Architecture+Category+1">Category I <img src="external.png" style="text-align: baseline"/></a> for individual patient reports and <a href="https://confluence.hl7.org/display/CQIWC/Quality+Reporting+Document+Architecture+Category+3">Category III <img src="external.png" style="text-align: baseline"/></a> for population reports.</p>
+
+<p>When eCQMs are represented with FHIR resources, the measure is represented as a <a href="measure.html">Measure</a> resource, and the request is an <code>HTTP GET</code> conforming to the <a href="operationdefinition.html">OperationDefinition</a> described above. Meanwhile, the responses are represented as <a href="measurereport.html">MeasureReport</a> resources. Like QRDA, the MeasureReport allows for Category I (individual), Category II (subject-list), and Category III (population) reports.</p>
+
+<a name="reporting-population-data"> </a>
+<h5 class="self-link-parent"><span class="sectioncount">14.6.3.1</span> Reporting Population Data <a href="clinicalreasoning-quality-reporting.html#reporting-population-data" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h5>
+
+<p>A <a href="measurereport.html">MeasureReport</a> will contain one group of data for each group specified in the corresponding <a href="measure.html">Measure</a>, consisting of a set of population elements, one for each criteria defined in each group.</p>
+
+<img src="clinicalreasoning-measure-report-population.png" alt="Population Measure Report"/>
+
+<p>In addition, each group will contain stratifiers with a value stratum for each value defined by the stratifier criteria, for each criteria defined in the measure.</p>
+
+<a name="reporting-individual-data"> </a>
+<h5 class="self-link-parent"><span class="sectioncount">14.6.3.2</span> Reporting Individual Data <a href="clinicalreasoning-quality-reporting.html#reporting-individual-data" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h5>
+
+<p>When using a MeasureReport resource to represent the results of an individual calculation, the MeasureReport SHALL have a type-code of "individual" and SHALL have a reference to the subject of the report. In addition, the result SHOULD include a reference to a Bundle containing the subject-specific resources that were used to calculate the result.</p>
+
+<img src="clinicalreasoning-measure-report-individual.png" alt="Individual Measure Report"/>
+
+<p>See the MeasureReport <a href="measurereport-examples.html">examples</a> for a detailed illustration of how the data elements involved in the calculation of the measure are communicated through the <code>evaluatedResources</code> element.</p>
+
+<a name="reporting-subject-list-data"> </a>
+<h5 class="self-link-parent"><span class="sectioncount">14.6.3.3</span> Subject-List Reports <a href="clinicalreasoning-quality-reporting.html#reporting-subject-list-data" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h5>
+
+<p>When using a MeasureReport resource to represent a subject-list, the MeasureReport SHALL have a type-code of "subject-list" and if a subject reference is present, it SHALL be a reference to a Group. In addition, the resource SHALL include for each population a reference to a List resource that references individual level MeasureReport resources for the same measure, one for each subject in the overall population.</p>
+
+<img src="clinicalreasoning-measure-report-patient-list.png" alt="Subject-List Measure Report" style="width:650px;height:550px"/>
+
+<p>For example, the initial population report, in addition to providing the count, provides a reference to a List resource that identifies each of the subjects that make up that population. For each of those subjects, the List will contain a reference to an individual-level report for that subject. Note that for very large populations, implementations MAY decide to limit the size of the result, either by returning an error indicating the request is too costly, or by returning a partial result, so long as there is an indication that the report is only a partial response. In addition, we are actively seeking feedback on how best to approach evaluation of quality measures on large populations, including the use of <a href="formats.html#bulk">bulk data</a> formats.</p>
+
+<p>In addition, implementations may return a MeasureReport with a status of pending, indicating that the evaluation is in progress. In this case, clients can request the MeasureReport resource until the status changes to complete.</p>
+
+<a name="references"> </a>
+<h4 class="self-link-parent"><span class="sectioncount">14.6.4</span> References <a href="clinicalreasoning-quality-reporting.html#references" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+
+<ol>
+	<li>
+		<a name="bibitem-cql"> </a>
+		<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=400">HL7 Standard: Clinical Quality Language Specification, Release 1 (Standard for Trial Use, Release 2). <img src="external.png" style="text-align: baseline"/></a>
+	</li>
+	<li>
+		<a name="bibitem-qicore"> </a>
+		<a href="http://hl7.org/fhir/us/qicore">Quality Improvement Core (QICore) FHIR Implementation Guide. <img src="external.png" style="text-align: baseline"/></a>
+	</li>
+	<li>
+		<a name="bibitem-hqmf"> </a>
+		<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=97">Representation of the Health Quality Measures Format (eMeasure) Release 1 Normative. <img src="external.png" style="text-align: baseline"/></a>
+	</li>
+	<li>
+		<a name="bibitem-qdmhqmf1"> </a>
+		<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=346">HL7 Version 3 Implementation Guide: Quality Data Model (QDM)-based Health Quality Measure Format (HQMF), R1 - US Realm, Volume 1 (Draft Standard for Trial Use) <img src="external.png" style="text-align: baseline"/></a>
+	</li>
+	<li>
+		<a name="bibitem-qdmhqmf2"> </a>
+		<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=346">HL7 Version 3 Implementation Guide: Quality Data Model (QDM)-based Health Quality Measure Format (HQMF), R1 - US Realm, Volume 2 (Draft Standard for Trial Use) <img src="external.png" style="text-align: baseline"/></a>
+	</li>
+  <li>
+    <a name="bibitem-cqlhqmf"> </a>
+    <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=405">HL7 Version 3 Implementation Guide: Clinical Quality Language (CQL)-based Health Quality Measure Format (HQMF), Release 1 - US Realm (Standard for Trial Use) <img src="external.png" style="text-align: baseline"/></a>
+  </li>
+	<li>
+		<a name="bibitem-qdm"> </a>
+		<a href="https://ecqi.healthit.gov/system/files/qdm_4_2.pdf">Quality Data Model, Version 4.2 <img src="external.png" style="text-align: baseline"/></a>
+	</li>
+	<li>
+		<a name="bibitem-qrda"> </a>
+		<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=35">HL7 CDA R2 Implementation Guide: Quality Reporting Document Architecture - Category I (QRDA I) DSTU Release 3 (US Realm) <img src="external.png" style="text-align: baseline"/></a>
+	</li>
+</ol>
+
+</div>
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fclinicalreasoning-quality-reporting.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fclinicalreasoning-quality-reporting.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

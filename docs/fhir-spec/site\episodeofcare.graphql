@@ -1,0 +1,180 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type EpisodeOfCare {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  statusHistory: [EpisodeOfCareStatusHistory]
+  type: [CodeableConcept]
+  diagnosis: [EpisodeOfCareDiagnosis]
+  patient: Reference!
+  managingOrganization: Reference
+  period: Period
+  referralRequest: [Reference]
+  careManager: Reference
+  team: [Reference]
+  account: [Reference]
+}
+
+type EpisodeOfCareStatusHistory {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  status: code  _status: ElementBase
+  period: Period!
+}
+
+type EpisodeOfCareDiagnosis {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  condition: Reference!
+  role: CodeableConcept
+  rank: positiveInt  _rank: ElementBase
+}
+
+input EpisodeOfCare {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  statusHistory: [EpisodeOfCareStatusHistory]
+  type: [CodeableConcept]
+  diagnosis: [EpisodeOfCareDiagnosis]
+  patient: Reference!
+  managingOrganization: Reference
+  period: Period
+  referralRequest: [Reference]
+  careManager: Reference
+  team: [Reference]
+  account: [Reference]
+}
+
+input EpisodeOfCareStatusHistory {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  status: code  _status: ElementBase
+  period: Period!
+}
+
+input EpisodeOfCareDiagnosis {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  condition: Reference!
+  role: CodeableConcept
+  rank: positiveInt  _rank: ElementBase
+}
+
+type EpisodeOfCareReadType {
+  EpisodeOfCare(id : ID!) : EpisodeOfCare
+}
+
+type EpisodeOfCareListType {
+  EpisodeOfCareList(_filter : String
+    care_manager : [reference]
+    condition : [reference]
+    date : [date]
+    identifier : [token]
+    incoming_referral : [reference]
+    organization : [reference]
+    patient : [reference]
+    status : [token]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [EpisodeOfCare]
+}
+
+type EpisodeOfCareConnectionType {
+  EpisodeOfCareConection(_filter : String
+    care_manager : [reference]
+    condition : [reference]
+    date : [date]
+    identifier : [token]
+    incoming_referral : [reference]
+    organization : [reference]
+    patient : [reference]
+    status : [token]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : EpisodeOfCareConnection
+}
+
+type EpisodeOfCareConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [EpisodeOfCareEdge]
+}
+
+type EpisodeOfCareEdge {
+  mode : String
+  score : Float
+  resource : EpisodeOfCare
+}
+
+type EpisodeOfCareCreateType {
+  EpisodeOfCareCreate(resource : EpisodeOfCare) : EpisodeOfCareCreation
+}
+
+type EpisodeOfCareCreation {
+  location : String
+  resource : EpisodeOfCare
+  information : OperationOutcome
+}
+
+type EpisodeOfCareUpdateType {
+  EpisodeOfCareUpdate(id : IDresource : EpisodeOfCare) : EpisodeOfCareUpdate
+}
+
+type EpisodeOfCareUpdate {
+  resource : EpisodeOfCare
+  information : OperationOutcome
+}
+
+type EpisodeOfCareDeleteType {
+  EpisodeOfCareDelete(id : ID) : EpisodeOfCareDelete
+}
+
+type EpisodeOfCareDelete {
+  information : OperationOutcome
+}
+

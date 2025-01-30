@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/RelatedPerson/newborn-mom> a fhir:RelatedPerson;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "newborn-mom"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: newborn-mom</p><p><b>identifier</b>: Social Security number = 444222222</p><p><b>active</b>: true</p><p><b>patient</b>: <a>Patient/newborn</a></p><p><b>relationship</b>: Natural Mother <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'NMTH' = 'natural mother', given as 'natural mother'})</span></p><p><b>name</b>: Eve Everywoman (OFFICIAL)</p><p><b>telecom</b>: ph: 555-555-2003(WORK)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 31/05/1973</p><p><b>address</b>: 2222 Home Street (HOME)</p></div>"
+  ];
+  fhir:RelatedPerson.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "SS" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/sid/us-ssn" ];
+     fhir:Identifier.value [ fhir:value "444222222" ]
+  ];
+  fhir:RelatedPerson.active [ fhir:value "true"^^xsd:boolean];
+  fhir:RelatedPerson.patient [
+     fhir:link <http://hl7.org/fhir/Patient/newborn>;
+     fhir:Reference.reference [ fhir:value "Patient/newborn" ]
+  ];
+  fhir:RelatedPerson.relationship [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+       fhir:Coding.code [ fhir:value "NMTH" ];
+       fhir:Coding.display [ fhir:value "natural mother" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Natural Mother" ]
+  ];
+  fhir:RelatedPerson.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.family [ fhir:value "Everywoman" ];
+     fhir:HumanName.given [
+       fhir:value "Eve";
+       fhir:index 0
+     ]
+  ];
+  fhir:RelatedPerson.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "555-555-2003" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ];
+  fhir:RelatedPerson.gender [ fhir:value "female"];
+  fhir:RelatedPerson.birthDate [ fhir:value "1973-05-31"^^xsd:date];
+  fhir:RelatedPerson.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "home" ];
+     fhir:Address.line [
+       fhir:value "2222 Home Street";
+       fhir:index 0
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/newborn> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/RelatedPerson/newborn-mom.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/RelatedPerson/newborn-mom.ttl> .
+
+# -------------------------------------------------------------------------------------
+

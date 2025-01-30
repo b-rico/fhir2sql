@@ -1,0 +1,290 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# - resource -------------------------------------------------------------------
+
+[] a fhir:OperationDefinition;
+  fhir:Resource.id [ fhir:value "CodeSystem-lookup"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" ];
+     fhir:Extension.value [ fhir:value "5" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status" ];
+     fhir:Extension.value [ fhir:value "normative" ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version" ];
+     fhir:Extension.value [ fhir:value "4.0.1" ]
+  ];
+  fhir:OperationDefinition.url [ fhir:value "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"];
+  fhir:OperationDefinition.version [ fhir:value "4.0.1"];
+  fhir:OperationDefinition.name [ fhir:value "Concept Look Up & Decomposition"];
+  fhir:OperationDefinition.status [ fhir:value "draft"];
+  fhir:OperationDefinition.kind [ fhir:value "operation"];
+  fhir:OperationDefinition.date [ fhir:value "2019-11-01T09:29:23+11:00"];
+  fhir:OperationDefinition.publisher [ fhir:value "HL7 (FHIR Project)"];
+  fhir:OperationDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "fhir@lists.hl7.org" ]
+     ]
+  ];
+  fhir:OperationDefinition.description [ fhir:value "Given a code/system, or a Coding, get additional details about the concept, including definition, status, designations, and properties. One of the products of this operation is a full decomposition of a code from a structured terminology.\n\nWhen invoking this operation, a client SHALL provide both a system and a code, either using the system+code parameters, or in the coding parameter. Other parameters are optional"];
+  fhir:OperationDefinition.code [ fhir:value "lookup"];
+  fhir:OperationDefinition.comment [ fhir:value "Note that the $lookup operation is more than just a code system search  - the server finds the concept, and gathers the return information from the underlying code system definitions."];
+  fhir:OperationDefinition.resource [
+     fhir:value "CodeSystem";
+     fhir:index 0
+  ];
+  fhir:OperationDefinition.system [ fhir:value "false"];
+  fhir:OperationDefinition.type [ fhir:value "true"];
+  fhir:OperationDefinition.instance [ fhir:value "false"];
+  fhir:OperationDefinition.parameter [
+     fhir:index 0;
+     fhir:OperationDefinition.name [ fhir:value "code" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The code that is to be located. If a code is provided, a system must be provided" ];
+     fhir:OperationDefinition.type [ fhir:value "code" ]
+  ], [
+     fhir:index 1;
+     fhir:OperationDefinition.name [ fhir:value "system" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The system for the code that is to be located" ];
+     fhir:OperationDefinition.type [ fhir:value "uri" ]
+  ], [
+     fhir:index 2;
+     fhir:OperationDefinition.name [ fhir:value "version" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The version of the system, if one was provided in the source data" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ]
+  ], [
+     fhir:index 3;
+     fhir:OperationDefinition.name [ fhir:value "coding" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "A coding to look up" ];
+     fhir:OperationDefinition.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 4;
+     fhir:OperationDefinition.name [ fhir:value "date" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The date for which the information should be returned. Normally, this is the current conditions (which is the default value) but under some circumstances, systems need to acccess this information as it would have been in the past. A typical example of this would be where code selection is constrained to the set of codes that were available when the patient was treated, not when the record is being edited. Note that which date is appropriate is a matter for implementation policy." ];
+     fhir:OperationDefinition.type [ fhir:value "dateTime" ]
+  ], [
+     fhir:index 5;
+     fhir:OperationDefinition.name [ fhir:value "displayLanguage" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The requested language for display (see $expand.displayLanguage)" ];
+     fhir:OperationDefinition.type [ fhir:value "code" ]
+  ], [
+     fhir:index 6;
+     fhir:OperationDefinition.name [ fhir:value "property" ];
+     fhir:OperationDefinition.use [ fhir:value "in" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "*" ];
+     fhir:OperationDefinition.documentation [ fhir:value "A property that the client wishes to be returned in the output. If no properties are specified, the server chooses what to return. The following properties are defined for all code systems: url, name, version (code system info) and code information: display, definition, designation, parent and child, and for designations, lang.X where X is a designation language code. Some of the properties are returned explicit in named parameters (when the names match), and the rest (except for lang.X) in the property parameter group" ];
+     fhir:OperationDefinition.type [ fhir:value "code" ]
+  ], [
+     fhir:index 7;
+     fhir:OperationDefinition.name [ fhir:value "name" ];
+     fhir:OperationDefinition.use [ fhir:value "out" ];
+     fhir:OperationDefinition.min [ fhir:value "1" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "A display name for the code system" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ]
+  ], [
+     fhir:index 8;
+     fhir:OperationDefinition.name [ fhir:value "version" ];
+     fhir:OperationDefinition.use [ fhir:value "out" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The version that these details are based on" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ]
+  ], [
+     fhir:index 9;
+     fhir:OperationDefinition.name [ fhir:value "display" ];
+     fhir:OperationDefinition.use [ fhir:value "out" ];
+     fhir:OperationDefinition.min [ fhir:value "1" ];
+     fhir:OperationDefinition.max [ fhir:value "1" ];
+     fhir:OperationDefinition.documentation [ fhir:value "The preferred display for this concept" ];
+     fhir:OperationDefinition.type [ fhir:value "string" ]
+  ], [
+     fhir:index 10;
+     fhir:OperationDefinition.name [ fhir:value "designation" ];
+     fhir:OperationDefinition.use [ fhir:value "out" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "*" ];
+     fhir:OperationDefinition.documentation [ fhir:value "Additional representations for this concept" ];
+     fhir:OperationDefinition.part [
+       fhir:index 0;
+       fhir:OperationDefinition.name [ fhir:value "language" ];
+       fhir:OperationDefinition.use [ fhir:value "out" ];
+       fhir:OperationDefinition.min [ fhir:value "0" ];
+       fhir:OperationDefinition.max [ fhir:value "1" ];
+       fhir:OperationDefinition.documentation [ fhir:value "The language this designation is defined for" ];
+       fhir:OperationDefinition.type [ fhir:value "code" ]
+     ], [
+       fhir:index 1;
+       fhir:OperationDefinition.name [ fhir:value "use" ];
+       fhir:OperationDefinition.use [ fhir:value "out" ];
+       fhir:OperationDefinition.min [ fhir:value "0" ];
+       fhir:OperationDefinition.max [ fhir:value "1" ];
+       fhir:OperationDefinition.documentation [ fhir:value "A code that details how this designation would be used" ];
+       fhir:OperationDefinition.type [ fhir:value "Coding" ]
+     ], [
+       fhir:index 2;
+       fhir:OperationDefinition.name [ fhir:value "value" ];
+       fhir:OperationDefinition.use [ fhir:value "out" ];
+       fhir:OperationDefinition.min [ fhir:value "1" ];
+       fhir:OperationDefinition.max [ fhir:value "1" ];
+       fhir:OperationDefinition.documentation [ fhir:value "The text value for this designation" ];
+       fhir:OperationDefinition.type [ fhir:value "string" ]
+     ]
+  ], [
+     fhir:index 11;
+     fhir:OperationDefinition.name [ fhir:value "property" ];
+     fhir:OperationDefinition.use [ fhir:value "out" ];
+     fhir:OperationDefinition.min [ fhir:value "0" ];
+     fhir:OperationDefinition.max [ fhir:value "*" ];
+     fhir:OperationDefinition.documentation [ fhir:value "One or more properties that contain additional information about the code, including status. For complex terminologies (e.g. SNOMED CT, LOINC, medications), these properties serve to decompose the code" ];
+     fhir:OperationDefinition.part [
+       fhir:index 0;
+       fhir:OperationDefinition.name [ fhir:value "code" ];
+       fhir:OperationDefinition.use [ fhir:value "out" ];
+       fhir:OperationDefinition.min [ fhir:value "1" ];
+       fhir:OperationDefinition.max [ fhir:value "1" ];
+       fhir:OperationDefinition.documentation [ fhir:value "Identifies the property returned" ];
+       fhir:OperationDefinition.type [ fhir:value "code" ]
+     ], [
+       fhir:index 1;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+         fhir:Extension.value [ fhir:value "code" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+         fhir:Extension.value [ fhir:value "Coding" ]
+       ], [
+         fhir:index 2;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+         fhir:Extension.value [ fhir:value "string" ]
+       ], [
+         fhir:index 3;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+         fhir:Extension.value [ fhir:value "integer" ]
+       ], [
+         fhir:index 4;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+         fhir:Extension.value [ fhir:value "boolean" ]
+       ], [
+         fhir:index 5;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+         fhir:Extension.value [ fhir:value "dateTime" ]
+       ], [
+         fhir:index 6;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+         fhir:Extension.value [ fhir:value "decimal" ]
+       ];
+       fhir:OperationDefinition.name [ fhir:value "value" ];
+       fhir:OperationDefinition.use [ fhir:value "out" ];
+       fhir:OperationDefinition.min [ fhir:value "0" ];
+       fhir:OperationDefinition.max [ fhir:value "1" ];
+       fhir:OperationDefinition.documentation [ fhir:value "The value of the property returned" ];
+       fhir:OperationDefinition.type [ fhir:value "Element" ]
+     ], [
+       fhir:index 2;
+       fhir:OperationDefinition.name [ fhir:value "description" ];
+       fhir:OperationDefinition.use [ fhir:value "out" ];
+       fhir:OperationDefinition.min [ fhir:value "0" ];
+       fhir:OperationDefinition.max [ fhir:value "1" ];
+       fhir:OperationDefinition.documentation [ fhir:value "Human Readable representation of the property value (e.g. display for a code)" ];
+       fhir:OperationDefinition.type [ fhir:value "string" ]
+     ], [
+       fhir:index 3;
+       fhir:OperationDefinition.name [ fhir:value "subproperty" ];
+       fhir:OperationDefinition.use [ fhir:value "out" ];
+       fhir:OperationDefinition.min [ fhir:value "0" ];
+       fhir:OperationDefinition.max [ fhir:value "*" ];
+       fhir:OperationDefinition.documentation [ fhir:value "Nested Properties (mainly used for SNOMED CT decomposition, for relationship Groups)" ];
+       fhir:OperationDefinition.part [
+         fhir:index 0;
+         fhir:OperationDefinition.name [ fhir:value "code" ];
+         fhir:OperationDefinition.use [ fhir:value "out" ];
+         fhir:OperationDefinition.min [ fhir:value "1" ];
+         fhir:OperationDefinition.max [ fhir:value "1" ];
+         fhir:OperationDefinition.documentation [ fhir:value "Identifies the sub-property returned" ];
+         fhir:OperationDefinition.type [ fhir:value "code" ]
+       ], [
+         fhir:index 1;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+           fhir:Extension.value [ fhir:value "code" ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+           fhir:Extension.value [ fhir:value "Coding" ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+           fhir:Extension.value [ fhir:value "string" ]
+         ], [
+           fhir:index 3;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+           fhir:Extension.value [ fhir:value "integer" ]
+         ], [
+           fhir:index 4;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+           fhir:Extension.value [ fhir:value "boolean" ]
+         ], [
+           fhir:index 5;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+           fhir:Extension.value [ fhir:value "dateTime" ]
+         ], [
+           fhir:index 6;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type" ];
+           fhir:Extension.value [ fhir:value "decimal" ]
+         ];
+         fhir:OperationDefinition.name [ fhir:value "value" ];
+         fhir:OperationDefinition.use [ fhir:value "out" ];
+         fhir:OperationDefinition.min [ fhir:value "1" ];
+         fhir:OperationDefinition.max [ fhir:value "1" ];
+         fhir:OperationDefinition.documentation [ fhir:value "The value of the sub-property returned" ];
+         fhir:OperationDefinition.type [ fhir:value "Element" ]
+       ], [
+         fhir:index 2;
+         fhir:OperationDefinition.name [ fhir:value "description" ];
+         fhir:OperationDefinition.use [ fhir:value "out" ];
+         fhir:OperationDefinition.min [ fhir:value "0" ];
+         fhir:OperationDefinition.max [ fhir:value "1" ];
+         fhir:OperationDefinition.documentation [ fhir:value "Human Readable representation of the property value (e.g. display for a code)" ];
+         fhir:OperationDefinition.type [ fhir:value "string" ]
+       ]
+     ]
+  ] .
+
+# -------------------------------------------------------------------------------------
+

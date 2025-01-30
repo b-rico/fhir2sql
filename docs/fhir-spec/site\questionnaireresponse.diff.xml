@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="QuestionnaireResponse" status="changed">
+      <element path="QuestionnaireResponse.basedOn">
+         <removed-type name="Reference(ReferralRequest | CarePlan | ProcedureRequest)"/>
+         <added-type name="Reference(CarePlan | ServiceRequest)"/>
+      </element>
+      <element old-name="parent" path="QuestionnaireResponse.partOf"/>
+      <element path="QuestionnaireResponse.questionnaire">
+         <removed-type name="Reference(Questionnaire)"/>
+         <added-type name="canonical(Questionnaire)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="QuestionnaireResponse.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/questionnaire-answers-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/questionnaire-answers-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="QuestionnaireResponse.encounter" status="new"/>
+      <element path="QuestionnaireResponse.author">
+         <removed-type name="Reference(Device | Practitioner | Patient | RelatedPerson)"/>
+         <added-type name="Reference(Device | Practitioner | PractitionerRole | Patient | RelatedPerson | Organization)"/>
+      </element>
+      <element path="QuestionnaireResponse.source">
+         <removed-type name="Reference(Patient | Practitioner | RelatedPerson)"/>
+         <added-type name="Reference(Patient | Practitioner | PractitionerRole | RelatedPerson)"/>
+      </element>
+      <element path="QuestionnaireResponse.context" status="deleted"/>
+      <element path="QuestionnaireResponse.item.subject" status="deleted"/>
+   </type>
+</difference>

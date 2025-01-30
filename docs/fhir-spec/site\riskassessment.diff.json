@@ -1,0 +1,68 @@
+﻿{
+  "types": [
+    "RiskAssessment"
+  ],
+  "RiskAssessment": {
+    "elements": {
+      "RiskAssessment.identifier": {
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "RiskAssessment.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/observation-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/observation-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "RiskAssessment.subject": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "RiskAssessment.encounter": {
+        "status": "new"
+      },
+      "RiskAssessment.performer": {
+        "removed-types": [
+          "Reference(Practitioner | Device)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Device)"
+        ]
+      },
+      "RiskAssessment.reasonCode": {
+        "status": "new"
+      },
+      "RiskAssessment.reasonReference": {
+        "status": "new"
+      },
+      "RiskAssessment.prediction.outcome": {
+        "old-min": 1,
+        "new-min": 0
+      },
+      "RiskAssessment.note": {
+        "old-name": "comment",
+        "old-max": "1",
+        "new-max": "*",
+        "removed-types": [
+          "string"
+        ],
+        "added-types": [
+          "Annotation"
+        ]
+      },
+      "RiskAssessment.context": {
+        "status": "deleted"
+      },
+      "RiskAssessment.reason[x]": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

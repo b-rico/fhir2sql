@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/SupplyRequest/simpleorder> a fhir:SupplyRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "simpleorder"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: simpleorder</p><p><b>identifier</b>: Order10284</p><p><b>status</b>: active</p><p><b>category</b>: Central Stock Resupply <span>(Details : {[not stated] code 'central' = 'central', given as 'Central Stock Resupply'})</span></p><p><b>priority</b>: asap</p><p><b>item</b>: Blood collect tubes blue cap <span>(Details : {[not stated] code 'BlueTubes' = 'BlueTubes', given as 'Blood collect tubes blue cap'})</span></p><p><b>quantity</b>: 10</p><p><b>occurrence</b>: 31/12/2016</p><p><b>authoredOn</b>: 31/12/2016</p><p><b>requester</b>: Henry Seven</p><p><b>supplier</b>: Vendor1</p><p><b>reasonCode</b>: Refill due to low stock <span>(Details : {[not stated] code 'stock_low' = 'stock_low', given as 'Refill due to low stock'})</span></p><p><b>deliverFrom</b>: Location 1</p><p><b>deliverTo</b>: GoodHealth Clinic Receiving</p></div>"
+  ];
+  fhir:SupplyRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "Order10284" ]
+  ];
+  fhir:SupplyRequest.status [ fhir:value "active"];
+  fhir:SupplyRequest.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "central" ];
+       fhir:Coding.display [ fhir:value "Central Stock Resupply" ]
+     ]
+  ];
+  fhir:SupplyRequest.priority [ fhir:value "asap"];
+  fhir:SupplyRequest.itemCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "BlueTubes" ];
+       fhir:Coding.display [ fhir:value "Blood collect tubes blue cap" ]
+     ]
+  ];
+  fhir:SupplyRequest.quantity [
+     fhir:Quantity.value [ fhir:value "10"^^xsd:decimal ]
+  ];
+  fhir:SupplyRequest.occurrenceDateTime [ fhir:value "2016-12-31"^^xsd:date];
+  fhir:SupplyRequest.authoredOn [ fhir:value "2016-12-31"^^xsd:date];
+  fhir:SupplyRequest.requester [
+     fhir:Reference.display [ fhir:value "Henry Seven" ]
+  ];
+  fhir:SupplyRequest.supplier [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Vendor1" ]
+  ];
+  fhir:SupplyRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "stock_low" ];
+       fhir:Coding.display [ fhir:value "Refill due to low stock" ]
+     ]
+  ];
+  fhir:SupplyRequest.deliverFrom [
+     fhir:Reference.display [ fhir:value "Location 1" ]
+  ];
+  fhir:SupplyRequest.deliverTo [
+     fhir:Reference.display [ fhir:value "GoodHealth Clinic Receiving" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/SupplyRequest/simpleorder.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/SupplyRequest/simpleorder.ttl> .
+
+# -------------------------------------------------------------------------------------
+

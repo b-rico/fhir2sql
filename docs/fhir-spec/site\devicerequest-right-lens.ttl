@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceRequest/right-lens> a fhir:DeviceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "right-lens"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: right-lens</p><p><b>identifier</b>: 15013R</p><p><b>groupIdentifier</b>: 15013</p><p><b>status</b>: completed</p><p><b>intent</b>: original-order</p><p><b>code</b>: Lens <span>(Details : {http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct code 'lens' = 'Lens)</span></p><blockquote><p><b>parameter</b></p><p><b>code</b>: sphere, right lens <span>(Details : {LOINC code '28826-6' = 'Sphere distance Glasses prescription.lens - right', given as 'Sphere distance Glasses prescription.lens - right'})</span></p><p><b>value</b>: -2.00 Diopter<span> (Details: UCUM code [diop] = 'diop')</span></p></blockquote><blockquote><p><b>parameter</b></p><p><b>code</b>: prisms, right lens <span>(Details : {LOINC code '28829-0' = 'Prism base distance Glasses prescription.lens - right', given as 'Prism base distance Glasses prescription.lens - right'})</span></p><p><b>value</b>: -2.00 Diopter<span> (Details: UCUM code [diop] = 'diop')</span></p></blockquote><blockquote><p><b>parameter</b></p><p><b>code</b>: add, right lens <span>(Details : {LOINC code '28810-0' = 'Add 1 LM glasses lens - right', given as 'Add 1 LM glasses lens - right'})</span></p><p><b>value</b>: 2.00 Diopter<span> (Details: UCUM code [diop] = 'diop')</span></p></blockquote><p><b>subject</b>: <a>Patient/example</a></p><p><b>occurrence</b>: 15/06/2014</p><p><b>requester</b>: <a>Practitioner/example</a></p></div>"
+  ];
+  fhir:DeviceRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.happysight.com/prescription" ];
+     fhir:Identifier.value [ fhir:value "15013R" ]
+  ];
+  fhir:DeviceRequest.groupIdentifier [
+     fhir:Identifier.system [ fhir:value "http://acme.org" ];
+     fhir:Identifier.value [ fhir:value "15013" ]
+  ];
+  fhir:DeviceRequest.status [ fhir:value "completed"];
+  fhir:DeviceRequest.intent [ fhir:value "original-order"];
+  fhir:DeviceRequest.codeCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct" ];
+       fhir:Coding.code [ fhir:value "lens" ]
+     ]
+  ];
+  fhir:DeviceRequest.parameter [
+     fhir:index 0;
+     fhir:DeviceRequest.parameter.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a loinc:28826-6;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ];
+         fhir:Coding.code [ fhir:value "28826-6" ];
+         fhir:Coding.display [ fhir:value "Sphere distance Glasses prescription.lens - right" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "sphere, right lens" ]
+     ];
+     fhir:DeviceRequest.parameter.valueQuantity [
+       fhir:Quantity.value [ fhir:value "-2.00"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "Diopter" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "[diop]" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:DeviceRequest.parameter.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a loinc:28829-0;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ];
+         fhir:Coding.code [ fhir:value "28829-0" ];
+         fhir:Coding.display [ fhir:value "Prism base distance Glasses prescription.lens - right" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "prisms, right lens" ]
+     ];
+     fhir:DeviceRequest.parameter.valueQuantity [
+       fhir:Quantity.value [ fhir:value "-2.00"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "Diopter" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "[diop]" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:DeviceRequest.parameter.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a loinc:28810-0;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ];
+         fhir:Coding.code [ fhir:value "28810-0" ];
+         fhir:Coding.display [ fhir:value "Add 1 LM glasses lens - right" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "add, right lens" ]
+     ];
+     fhir:DeviceRequest.parameter.valueQuantity [
+       fhir:Quantity.value [ fhir:value "2.00"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "Diopter" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "[diop]" ]
+     ]
+  ];
+  fhir:DeviceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:DeviceRequest.occurrenceDateTime [ fhir:value "2014-06-15"^^xsd:date];
+  fhir:DeviceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceRequest/right-lens.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/DeviceRequest/right-lens.ttl> .
+
+# -------------------------------------------------------------------------------------
+

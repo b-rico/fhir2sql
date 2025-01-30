@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceMetric/example> a fhir:DeviceMetric;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>identifier</b>: 345675</p><p><b>type</b>: MDC_PULS_OXIM_SAT_O2 <span>(Details : {urn:iso:std:iso:11073:10101 code '150456' = '150456', given as 'MDC_PULS_OXIM_SAT_O2'})</span></p><p><b>unit</b>: MDC_DIM_PERCENT <span>(Details : {urn:iso:std:iso:11073:10101 code '262688' = '262688', given as 'MDC_DIM_PERCENT'})</span></p><p><b>source</b>: <a>Device/dev1</a></p><p><b>parent</b>: <a>DeviceDefinition/dc102</a></p><p><b>operationalStatus</b>: on</p><p><b>color</b>: blue</p><p><b>category</b>: measurement</p><p><b>measurementPeriod</b>: Do Once per 1 seconds</p><h3>Calibrations</h3><table><tr><td>-</td><td><b>Type</b></td><td><b>State</b></td><td><b>Time</b></td></tr><tr><td>*</td><td>two-point</td><td>calibrated</td><td>28/12/2016 9:03:04 AM</td></tr></table></div>"
+  ];
+  fhir:DeviceMetric.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://goodcare.org/devicemetric/id" ];
+     fhir:Identifier.value [ fhir:value "345675" ]
+  ];
+  fhir:DeviceMetric.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ];
+       fhir:Coding.code [ fhir:value "150456" ];
+       fhir:Coding.display [ fhir:value "MDC_PULS_OXIM_SAT_O2" ]
+     ]
+  ];
+  fhir:DeviceMetric.unit [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ];
+       fhir:Coding.code [ fhir:value "262688" ];
+       fhir:Coding.display [ fhir:value "MDC_DIM_PERCENT" ]
+     ]
+  ];
+  fhir:DeviceMetric.source [
+     fhir:link <http://hl7.org/fhir/Device/dev1>;
+     fhir:Reference.reference [ fhir:value "Device/dev1" ]
+  ];
+  fhir:DeviceMetric.parent [
+     fhir:link <http://hl7.org/fhir/DeviceDefinition/dc102>;
+     fhir:Reference.reference [ fhir:value "DeviceDefinition/dc102" ]
+  ];
+  fhir:DeviceMetric.operationalStatus [ fhir:value "on"];
+  fhir:DeviceMetric.color [ fhir:value "blue"];
+  fhir:DeviceMetric.category [ fhir:value "measurement"];
+  fhir:DeviceMetric.measurementPeriod [
+     fhir:Timing.repeat [
+       fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+       fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+       fhir:Timing.repeat.periodUnit [ fhir:value "s" ]
+     ]
+  ];
+  fhir:DeviceMetric.calibration [
+     fhir:index 0;
+     fhir:DeviceMetric.calibration.type [ fhir:value "two-point" ];
+     fhir:DeviceMetric.calibration.state [ fhir:value "calibrated" ];
+     fhir:DeviceMetric.calibration.time [ fhir:value "2016-12-28T09:03:04-05:00"^^xsd:dateTime ]
+  ] .
+
+<http://hl7.org/fhir/Device/dev1> a fhir:Device .
+
+<http://hl7.org/fhir/DeviceDefinition/dc102> a fhir:DeviceDefinition .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceMetric/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/DeviceMetric/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

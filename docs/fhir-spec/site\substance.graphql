@@ -1,0 +1,170 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Substance {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  category: [CodeableConcept]
+  code: CodeableConcept!
+  description: String  _description: ElementBase
+  instance: [SubstanceInstance]
+  ingredient: [SubstanceIngredient]
+}
+
+type SubstanceInstance {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  expiry: dateTime  _expiry: ElementBase
+  quantity: Quantity
+}
+
+type SubstanceIngredient {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  quantity: Ratio
+  substanceCodeableConcept: CodeableConcept
+  substanceReference: Reference
+}
+
+input Substance {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  category: [CodeableConcept]
+  code: CodeableConcept!
+  description: String  _description: ElementBase
+  instance: [SubstanceInstance]
+  ingredient: [SubstanceIngredient]
+}
+
+input SubstanceInstance {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  expiry: dateTime  _expiry: ElementBase
+  quantity: Quantity
+}
+
+input SubstanceIngredient {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  quantity: Ratio
+  substanceCodeableConcept: CodeableConcept
+  substanceReference: Reference
+}
+
+type SubstanceReadType {
+  Substance(id : ID!) : Substance
+}
+
+type SubstanceListType {
+  SubstanceList(_filter : String
+    category : [token]
+    code : [token]
+    container_identifier : [token]
+    expiry : [date]
+    identifier : [token]
+    quantity : [quantity]
+    status : [token]
+    substance_reference : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Substance]
+}
+
+type SubstanceConnectionType {
+  SubstanceConection(_filter : String
+    category : [token]
+    code : [token]
+    container_identifier : [token]
+    expiry : [date]
+    identifier : [token]
+    quantity : [quantity]
+    status : [token]
+    substance_reference : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : SubstanceConnection
+}
+
+type SubstanceConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [SubstanceEdge]
+}
+
+type SubstanceEdge {
+  mode : String
+  score : Float
+  resource : Substance
+}
+
+type SubstanceCreateType {
+  SubstanceCreate(resource : Substance) : SubstanceCreation
+}
+
+type SubstanceCreation {
+  location : String
+  resource : Substance
+  information : OperationOutcome
+}
+
+type SubstanceUpdateType {
+  SubstanceUpdate(id : IDresource : Substance) : SubstanceUpdate
+}
+
+type SubstanceUpdate {
+  resource : Substance
+  information : OperationOutcome
+}
+
+type SubstanceDeleteType {
+  SubstanceDelete(id : ID) : SubstanceDelete
+}
+
+type SubstanceDelete {
+  information : OperationOutcome
+}
+

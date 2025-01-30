@@ -1,0 +1,154 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ImplementationGuide/example> a fhir:ImplementationGuide;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>url</b>: <b>http://hl7.org/fhir/us/daf</b></p><p><b>version</b>: 0</p><p><b>name</b>: Data Access Framework (DAF)</p><p><b>status</b>: draft</p><p><b>experimental</b>: false</p><p><b>date</b>: 01/01/2015</p><p><b>publisher</b>: ONC / HL7 Joint project</p><p><b>contact</b>: , </p><p><b>description</b>: The Data Access Framework (DAF) Initiative leverages the HL7 FHIR standards to standardize access to Meaningful Use Stage 2 structured information both within the organization and from external organizations</p><p><b>jurisdiction</b>: United States of America <span>(Details : {urn:iso:std:iso:3166 code 'US' = 'United States of America)</span></p><p><b>copyright</b>: Published by ONC under the standard FHIR license (CC0)</p><p><b>packageId</b>: hl7.fhir.us.daf</p><p><b>license</b>: CC0-1.0</p><p><b>fhirVersion</b>: 4.0.1</p><h3>DependsOns</h3><table><tr><td>-</td><td><b>Uri</b></td></tr><tr><td>*</td><td><a>http://hl7.org/fhir/ImplementationGuide/uscore</a></td></tr></table><h3>Globals</h3><table><tr><td>-</td><td><b>Type</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>Patient</td><td><a>http://hl7.org/fhir/us/core/StructureDefinition/patient</a></td></tr></table><blockquote><p><b>definition</b></p><h3>Groupings</h3><table><tr><td>-</td><td><b>Name</b></td><td><b>Description</b></td></tr><tr><td>*</td><td>test</td><td>Base package (not broken up into multiple packages)</td></tr></table><h3>Resources</h3><table><tr><td>-</td><td><b>Reference</b></td><td><b>Name</b></td><td><b>Description</b></td><td><b>Example[x]</b></td></tr><tr><td>*</td><td><a>Patient/test</a></td><td>Test Example</td><td>A test example to show how an implementation guide works</td><td><a>http://hl7.org/fhir/us/core/StructureDefinition/patient</a></td></tr></table><blockquote><p><b>page</b></p><p><b>name</b>: <a>patient-example.html</a></p><p><b>title</b>: Example Patient Page</p><p><b>generation</b>: html</p><h3>Pages</h3><table><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote><h3>Parameters</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Value</b></td></tr><tr><td>*</td><td>apply</td><td>version</td></tr></table></blockquote><blockquote><p><b>manifest</b></p><p><b>rendering</b>: <a>http://hl7.org/fhir/us/daf</a></p><h3>Resources</h3><table><tr><td>-</td><td><b>Reference</b></td><td><b>Example[x]</b></td><td><b>RelativePath</b></td></tr><tr><td>*</td><td><a>Patient/test</a></td><td><a>http://hl7.org/fhir/us/core/StructureDefinition/patient</a></td><td><a>patient-test.html#patient-test</a></td></tr></table><h3>Pages</h3><table><tr><td>-</td><td><b>Name</b></td><td><b>Title</b></td><td><b>Anchor</b></td></tr><tr><td>*</td><td>patient-test.html</td><td>Test Patient Example</td><td>patient-test</td></tr></table><p><b>image</b>: fhir.png</p><p><b>other</b>: fhir.css</p></blockquote></div>"
+  ];
+  fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/daf"];
+  fhir:ImplementationGuide.version [ fhir:value "0"];
+  fhir:ImplementationGuide.name [ fhir:value "Data Access Framework (DAF)"];
+  fhir:ImplementationGuide.status [ fhir:value "draft"];
+  fhir:ImplementationGuide.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:ImplementationGuide.date [ fhir:value "2015-01-01"^^xsd:date];
+  fhir:ImplementationGuide.publisher [ fhir:value "ONC / HL7 Joint project"];
+  fhir:ImplementationGuide.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "ONC" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://www.healthit.gov" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "HL7" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:ImplementationGuide.description [ fhir:value "The Data Access Framework (DAF) Initiative leverages the HL7 FHIR standards to standardize access to Meaningful Use Stage 2 structured information both within the organization and from external organizations"];
+  fhir:ImplementationGuide.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ]
+     ]
+  ];
+  fhir:ImplementationGuide.copyright [ fhir:value "Published by ONC under the standard FHIR license (CC0)"];
+  fhir:ImplementationGuide.packageId [ fhir:value "hl7.fhir.us.daf"];
+  fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
+  fhir:ImplementationGuide.fhirVersion [
+     fhir:value "4.0.1";
+     fhir:index 0
+  ];
+  fhir:ImplementationGuide.dependsOn [
+     fhir:index 0;
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "http://hl7.org/fhir/ImplementationGuide/uscore";
+       fhir:link <http://hl7.org/fhir/ImplementationGuide/uscore>
+     ]
+  ];
+  fhir:ImplementationGuide.global [
+     fhir:index 0;
+     fhir:ImplementationGuide.global.type [ fhir:value "Patient" ];
+     fhir:ImplementationGuide.global.profile [
+       fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/patient";
+       fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/patient>
+     ]
+  ];
+  fhir:ImplementationGuide.definition [
+     fhir:ImplementationGuide.definition.grouping [
+       fhir:index 0;
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "test" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Base package (not broken up into multiple packages)" ]
+     ];
+     fhir:ImplementationGuide.definition.resource [
+       fhir:index 0;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/Patient/test>;
+         fhir:Reference.reference [ fhir:value "Patient/test" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Test Example" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A test example to show how an implementation guide works" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/patient";
+         fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/patient>
+       ]
+     ];
+     fhir:ImplementationGuide.definition.page [
+       fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "patient-example.html" ];
+       fhir:ImplementationGuide.definition.page.title [ fhir:value "Example Patient Page" ];
+       fhir:ImplementationGuide.definition.page.generation [ fhir:value "html" ];
+       fhir:ImplementationGuide.definition.page.page [
+         fhir:index 0;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "list.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Value Set Page" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "html" ]
+       ]
+     ];
+     fhir:ImplementationGuide.definition.parameter [
+       fhir:index 0;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "apply" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "version" ]
+     ]
+  ];
+  fhir:ImplementationGuide.manifest [
+     fhir:ImplementationGuide.manifest.rendering [ fhir:value "http://hl7.org/fhir/us/daf" ];
+     fhir:ImplementationGuide.manifest.resource [
+       fhir:index 0;
+       fhir:ImplementationGuide.manifest.resource.reference [
+         fhir:link <http://hl7.org/fhir/Patient/test>;
+         fhir:Reference.reference [ fhir:value "Patient/test" ]
+       ];
+       fhir:ImplementationGuide.manifest.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/patient";
+         fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/patient>
+       ];
+       fhir:ImplementationGuide.manifest.resource.relativePath [ fhir:value "patient-test.html#patient-test" ]
+     ];
+     fhir:ImplementationGuide.manifest.page [
+       fhir:index 0;
+       fhir:ImplementationGuide.manifest.page.name [ fhir:value "patient-test.html" ];
+       fhir:ImplementationGuide.manifest.page.title [ fhir:value "Test Patient Example" ];
+       fhir:ImplementationGuide.manifest.page.anchor [
+         fhir:value "patient-test";
+         fhir:index 0
+       ], [
+         fhir:value "tx";
+         fhir:index 1
+       ], [
+         fhir:value "uml";
+         fhir:index 2
+       ]
+     ];
+     fhir:ImplementationGuide.manifest.image [
+       fhir:value "fhir.png";
+       fhir:index 0
+     ];
+     fhir:ImplementationGuide.manifest.other [
+       fhir:value "fhir.css";
+       fhir:index 0
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/test> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ImplementationGuide/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ImplementationGuide/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

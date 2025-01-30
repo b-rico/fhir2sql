@@ -1,0 +1,204 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type AdverseEvent {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  actuality: code  _actuality: ElementBase
+  category: [CodeableConcept]
+  event: CodeableConcept
+  subject: Reference!
+  encounter: Reference
+  date: dateTime  _date: ElementBase
+  detected: dateTime  _detected: ElementBase
+  recordedDate: dateTime  _recordedDate: ElementBase
+  resultingCondition: [Reference]
+  location: Reference
+  seriousness: CodeableConcept
+  severity: CodeableConcept
+  outcome: CodeableConcept
+  recorder: Reference
+  contributor: [Reference]
+  suspectEntity: [AdverseEventSuspectEntity]
+  subjectMedicalHistory: [Reference]
+  referenceDocument: [Reference]
+  study: [Reference]
+}
+
+type AdverseEventSuspectEntity {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  instance: Reference!
+  causality: [AdverseEventSuspectEntityCausality]
+}
+
+type AdverseEventSuspectEntityCausality {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  assessment: CodeableConcept
+  productRelatedness: String  _productRelatedness: ElementBase
+  author: Reference
+  method: CodeableConcept
+}
+
+input AdverseEvent {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  actuality: code  _actuality: ElementBase
+  category: [CodeableConcept]
+  event: CodeableConcept
+  subject: Reference!
+  encounter: Reference
+  date: dateTime  _date: ElementBase
+  detected: dateTime  _detected: ElementBase
+  recordedDate: dateTime  _recordedDate: ElementBase
+  resultingCondition: [Reference]
+  location: Reference
+  seriousness: CodeableConcept
+  severity: CodeableConcept
+  outcome: CodeableConcept
+  recorder: Reference
+  contributor: [Reference]
+  suspectEntity: [AdverseEventSuspectEntity]
+  subjectMedicalHistory: [Reference]
+  referenceDocument: [Reference]
+  study: [Reference]
+}
+
+input AdverseEventSuspectEntity {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  instance: Reference!
+  causality: [AdverseEventSuspectEntityCausality]
+}
+
+input AdverseEventSuspectEntityCausality {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  assessment: CodeableConcept
+  productRelatedness: String  _productRelatedness: ElementBase
+  author: Reference
+  method: CodeableConcept
+}
+
+type AdverseEventReadType {
+  AdverseEvent(id : ID!) : AdverseEvent
+}
+
+type AdverseEventListType {
+  AdverseEventList(_filter : String
+    actuality : [token]
+    category : [token]
+    date : [date]
+    event : [token]
+    location : [reference]
+    recorder : [reference]
+    resultingcondition : [reference]
+    seriousness : [token]
+    severity : [token]
+    study : [reference]
+    subject : [reference]
+    substance : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [AdverseEvent]
+}
+
+type AdverseEventConnectionType {
+  AdverseEventConection(_filter : String
+    actuality : [token]
+    category : [token]
+    date : [date]
+    event : [token]
+    location : [reference]
+    recorder : [reference]
+    resultingcondition : [reference]
+    seriousness : [token]
+    severity : [token]
+    study : [reference]
+    subject : [reference]
+    substance : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : AdverseEventConnection
+}
+
+type AdverseEventConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [AdverseEventEdge]
+}
+
+type AdverseEventEdge {
+  mode : String
+  score : Float
+  resource : AdverseEvent
+}
+
+type AdverseEventCreateType {
+  AdverseEventCreate(resource : AdverseEvent) : AdverseEventCreation
+}
+
+type AdverseEventCreation {
+  location : String
+  resource : AdverseEvent
+  information : OperationOutcome
+}
+
+type AdverseEventUpdateType {
+  AdverseEventUpdate(id : IDresource : AdverseEvent) : AdverseEventUpdate
+}
+
+type AdverseEventUpdate {
+  resource : AdverseEvent
+  information : OperationOutcome
+}
+
+type AdverseEventDeleteType {
+  AdverseEventDelete(id : ID) : AdverseEventDelete
+}
+
+type AdverseEventDelete {
+  information : OperationOutcome
+}
+

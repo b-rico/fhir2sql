@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Composition" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Composition.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/composition-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/composition-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-max="*"
+               old-max="1"
+               old-name="class"
+               path="Composition.category"/>
+      <element new-min="0" old-min="1" path="Composition.subject"/>
+      <element path="Composition.author">
+         <removed-type name="Reference(Practitioner | Device | Patient | RelatedPerson)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Device | Patient | RelatedPerson | Organization)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               modifier="removed"
+               path="Composition.confidentiality">
+         <old-binding reference="http://terminology.hl7.org/ValueSet/v3-ConfidentialityClassification"
+                      strength="required"/>
+         <new-binding reference="http://terminology.hl7.org/ValueSet/v3-ConfidentialityClassification|2014-03-26"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               new-max="1"
+               old-max="*"
+               path="Composition.attester.mode">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/composition-attestation-mode"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/composition-attestation-mode|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Composition.attester.party">
+         <removed-type name="Reference(Patient | Practitioner | Organization)"/>
+         <added-type name="Reference(Patient | RelatedPerson | Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Composition.relatesTo.code">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/document-relationship-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/document-relationship-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Composition.section.author" status="new"/>
+      <element path="Composition.section.focus" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               modifier="removed"
+               path="Composition.section.mode">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/list-mode" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/list-mode|4.0.1"
+                      strength="required"/>
+      </element>
+   </type>
+</difference>

@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/ambulation> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ambulation"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: ambulation</p><p><b>identifier</b>: 45678</p><p><b>basedOn</b>: <a>Maternity care plan</a></p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>code</b>: Ambulation <span>(Details : {SNOMED CT code '62013009' = 'Ambulating patient', given as 'Ambulating patient (procedure)'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>authoredOn</b>: 05/03/2017</p><p><b>requester</b>: <a>Dr. Beverly Crusher</a></p><p><b>reasonReference</b>: <a>Blood Pressure</a></p></div>"
+  ];
+  fhir:ServiceRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "45678" ]
+  ];
+  fhir:ServiceRequest.basedOn [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/CarePlan/preg>;
+     fhir:Reference.reference [ fhir:value "CarePlan/preg" ];
+     fhir:Reference.display [ fhir:value "Maternity care plan" ]
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:62013009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "62013009" ];
+       fhir:Coding.display [ fhir:value "Ambulating patient (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Ambulation" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2017-03-05"^^xsd:date];
+  fhir:ServiceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809>;
+     fhir:Reference.reference [ fhir:value "Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809" ];
+     fhir:Reference.display [ fhir:value "Dr. Beverly Crusher" ]
+  ];
+  fhir:ServiceRequest.reasonReference [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Observation/blood-pressure>;
+     fhir:Reference.reference [ fhir:value "Observation/blood-pressure" ];
+     fhir:Reference.display [ fhir:value "Blood Pressure" ]
+  ] .
+
+<http://hl7.org/fhir/CarePlan/preg> a fhir:CarePlan .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Observation/blood-pressure> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/ambulation.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/ambulation.ttl> .
+
+# -------------------------------------------------------------------------------------
+

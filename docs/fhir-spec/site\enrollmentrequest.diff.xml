@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="EnrollmentRequest" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="EnrollmentRequest.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/fm-status" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/fm-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="EnrollmentRequest.provider">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element old-name="subject" path="EnrollmentRequest.candidate"/>
+      <element path="EnrollmentRequest.organization" status="deleted"/>
+   </type>
+</difference>

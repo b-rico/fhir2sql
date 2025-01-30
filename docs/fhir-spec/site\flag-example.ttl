@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Flag/example> a fhir:Flag;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Large Dog warning for Peter Patient</div>"
+  ];
+  fhir:Flag.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:Flag.status [ fhir:value "inactive"];
+  fhir:Flag.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/flag-category" ];
+       fhir:Coding.code [ fhir:value "safety" ];
+       fhir:Coding.display [ fhir:value "Safety" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Safety" ]
+  ];
+  fhir:Flag.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://example.org/local" ];
+       fhir:Coding.code [ fhir:value "bigdog" ];
+       fhir:Coding.display [ fhir:value "Big dog" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Patient has a big dog at his home. Always always wear a suit of armor or take other active counter-measures" ]
+  ];
+  fhir:Flag.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter Patient" ]
+  ];
+  fhir:Flag.period [
+     fhir:Period.start [ fhir:value "2015-01-17"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2016-12-01"^^xsd:date ]
+  ];
+  fhir:Flag.author [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Nancy Nurse" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Flag/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Flag/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

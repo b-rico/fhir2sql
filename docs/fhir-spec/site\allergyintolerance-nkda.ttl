@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/AllergyIntolerance/nkda> a fhir:AllergyIntolerance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "nkda"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>No Known Drug Allergy</p>\n      <p>recordedDate:2015-08-06</p>\n    </div>"
+  ];
+  fhir:AllergyIntolerance.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical" ];
+       fhir:Coding.code [ fhir:value "active" ];
+       fhir:Coding.display [ fhir:value "Active" ]
+     ]
+  ];
+  fhir:AllergyIntolerance.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification" ];
+       fhir:Coding.code [ fhir:value "confirmed" ];
+       fhir:Coding.display [ fhir:value "Confirmed" ]
+     ]
+  ];
+  fhir:AllergyIntolerance.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:409137002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "409137002" ];
+       fhir:Coding.display [ fhir:value "No Known Drug Allergy (situation)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "NKDA" ]
+  ];
+  fhir:AllergyIntolerance.patient [
+     fhir:link <http://hl7.org/fhir/Patient/mom>;
+     fhir:Reference.reference [ fhir:value "Patient/mom" ]
+  ];
+  fhir:AllergyIntolerance.recordedDate [ fhir:value "2015-08-06T15:37:31-06:00"^^xsd:dateTime];
+  fhir:AllergyIntolerance.recorder [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/mom> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/AllergyIntolerance/nkda.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/AllergyIntolerance/nkda.ttl> .
+
+# -------------------------------------------------------------------------------------
+

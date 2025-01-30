@@ -1,0 +1,48 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Immunization/notGiven> a fhir:Immunization;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "notGiven"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: notGiven</p><p><b>status</b>: not-done</p><p><b>statusReason</b>: medical precaution <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ActReason code 'MEDPREC' = 'medical precaution', given as 'medical precaution'})</span></p><p><b>vaccineCode</b>: DTP <span>(Details : {http://hl7.org/fhir/sid/cvx code '01' = 'DTP', given as 'DTP'})</span></p><p><b>patient</b>: <a>Patient/example</a></p><p><b>occurrence</b>: 10/01/2013</p><p><b>primarySource</b>: true</p></div>"
+  ];
+  fhir:Immunization.status [ fhir:value "not-done"];
+  fhir:Immunization.statusReason [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ];
+       fhir:Coding.code [ fhir:value "MEDPREC" ];
+       fhir:Coding.display [ fhir:value "medical precaution" ]
+     ]
+  ];
+  fhir:Immunization.vaccineCode [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/cvx" ];
+       fhir:Coding.code [ fhir:value "01" ];
+       fhir:Coding.display [ fhir:value "DTP" ]
+     ]
+  ];
+  fhir:Immunization.patient [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Immunization.occurrenceDateTime [ fhir:value "2013-01-10"^^xsd:date];
+  fhir:Immunization.primarySource [ fhir:value "true"^^xsd:boolean] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Immunization/notGiven.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Immunization/notGiven.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Questionnaire" status="changed">
+      <element path="Questionnaire.derivedFrom" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Questionnaire.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/publication-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/publication-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element modifier="removed" path="Questionnaire.experimental"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Questionnaire.subjectType">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/resource-types"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/resource-types|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Questionnaire.item.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/item-type" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/item-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Questionnaire.item.enableWhen.operator" status="new"/>
+      <element new-min="1"
+               old-min="0"
+               path="Questionnaire.item.enableWhen.answer[x]">
+         <removed-type name="uri"/>
+         <removed-type name="Attachment"/>
+      </element>
+      <element path="Questionnaire.item.enableBehavior" status="new"/>
+      <element default="removed"
+               old-default="&#34;false&#34;"
+               path="Questionnaire.item.required"/>
+      <element default="removed"
+               old-default="&#34;false&#34;"
+               path="Questionnaire.item.repeats"/>
+      <element old-name="options" path="Questionnaire.item.answerValueSet">
+         <removed-type name="Reference(ValueSet)"/>
+         <added-type name="canonical(ValueSet)"/>
+      </element>
+      <element old-name="option" path="Questionnaire.item.answerOption"/>
+      <element path="Questionnaire.item.answerOption.value[x]">
+         <added-type name="Reference(Resource)"/>
+      </element>
+      <element path="Questionnaire.item.answerOption.initialSelected" status="new"/>
+      <element new-max="*"
+               old-max="1"
+               old-name="initial[x]"
+               path="Questionnaire.item.initial">
+         <removed-type name="boolean"/>
+         <removed-type name="decimal"/>
+         <removed-type name="integer"/>
+         <removed-type name="date"/>
+         <removed-type name="dateTime"/>
+         <removed-type name="time"/>
+         <removed-type name="string"/>
+         <removed-type name="uri"/>
+         <removed-type name="Attachment"/>
+         <removed-type name="Coding"/>
+         <removed-type name="Quantity"/>
+         <removed-type name="Reference(Resource)"/>
+      </element>
+      <element path="Questionnaire.item.initial.value[x]" status="new"/>
+      <element path="Questionnaire.item.enableWhen.hasAnswer" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,2485 @@
+<!DOCTYPE HTML>
+<!-- template-example-json.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Graphdefinition.profile.json - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/graphdefinition.profile.json.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="conformance-module.html"><img src="conformance.jpg"/> Conformance</a></li>          <li><a href="graphdefinition.html">GraphDefinition</a></li>        <li><b>Profile Instance</b></li>        <!-- graphdefinition.profile.json.html / profile-instance:resource:GraphDefinition / Profile-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Graphdefinition.profile.json</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+<p>
+<a href="graphdefinition.profile.json">Raw JSON</a> (<a href="graphdefinition.profile.canonical.json">canonical form</a> + also see <a href="json.html">JSON Format Specification</a>)
+</p>
+
+<div class="example">
+<p>StructureDefinition for graphdefinition</p>
+<pre class="json">
+{
+  &quot;resourceType&quot; : &quot;StructureDefinition&quot;,
+  &quot;id&quot; : &quot;GraphDefinition&quot;,
+  &quot;meta&quot; : {
+    &quot;lastUpdated&quot; : &quot;2019-11-01T09:29:23.356+11:00&quot;
+  },
+  &quot;text&quot; : {
+    &quot;status&quot; : &quot;generated&quot;,
+    &quot;div&quot; : &quot;&lt;div&gt;!-- Snipped for Brevity --&gt;&lt;/div&gt;&quot;
+  },
+  &quot;extension&quot; : [{
+    &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-category&quot;,
+    &quot;valueString&quot; : &quot;Foundation.Conformance&quot;
+  },
+  {
+    &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot;,
+    &quot;valueCode&quot; : &quot;trial-use&quot;
+  },
+  {
+    &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot;,
+    &quot;valueInteger&quot; : 1
+  },
+  {
+    &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category&quot;,
+    &quot;valueCode&quot; : &quot;anonymous&quot;
+  },
+  {
+    &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot;,
+    &quot;valueCode&quot; : &quot;fhir&quot;
+  }],
+  &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/GraphDefinition&quot;,
+  &quot;version&quot; : &quot;4.0.1&quot;,
+  &quot;name&quot; : &quot;GraphDefinition&quot;,
+  &quot;status&quot; : &quot;draft&quot;,
+  &quot;date&quot; : &quot;2019-11-01T09:29:23+11:00&quot;,
+  &quot;publisher&quot; : &quot;Health Level Seven International (FHIR Infrastructure)&quot;,
+  &quot;contact&quot; : [{
+    &quot;telecom&quot; : [{
+      &quot;system&quot; : &quot;url&quot;,
+      &quot;value&quot; : &quot;http://hl7.org/fhir&quot;
+    }]
+  },
+  {
+    &quot;telecom&quot; : [{
+      &quot;system&quot; : &quot;url&quot;,
+      &quot;value&quot; : &quot;http://www.hl7.org/Special/committees/fiwg/index.cfm&quot;
+    }]
+  }],
+  &quot;description&quot; : &quot;A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.&quot;,
+  &quot;fhirVersion&quot; : &quot;4.0.1&quot;,
+  &quot;mapping&quot; : [{
+    &quot;identity&quot; : &quot;rim&quot;,
+    &quot;uri&quot; : &quot;http://hl7.org/v3&quot;,
+    &quot;name&quot; : &quot;RIM Mapping&quot;
+  },
+  {
+    &quot;identity&quot; : &quot;workflow&quot;,
+    &quot;uri&quot; : &quot;http://hl7.org/fhir/workflow&quot;,
+    &quot;name&quot; : &quot;Workflow Pattern&quot;
+  },
+  {
+    &quot;identity&quot; : &quot;w5&quot;,
+    &quot;uri&quot; : &quot;http://hl7.org/fhir/fivews&quot;,
+    &quot;name&quot; : &quot;FiveWs Pattern Mapping&quot;
+  },
+  {
+    &quot;identity&quot; : &quot;objimpl&quot;,
+    &quot;uri&quot; : &quot;http://hl7.org/fhir/object-implementation&quot;,
+    &quot;name&quot; : &quot;Object Implementation Information&quot;
+  }],
+  &quot;kind&quot; : &quot;resource&quot;,
+  &quot;abstract&quot; : false,
+  &quot;type&quot; : &quot;GraphDefinition&quot;,
+  &quot;baseDefinition&quot; : &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot;,
+  &quot;_baseDefinition&quot; : {
+    &quot;extension&quot; : [{
+      &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-codegen-super&quot;,
+      &quot;valueString&quot; : &quot;MetadataResource&quot;
+    }]
+  },
+  &quot;derivation&quot; : &quot;specialization&quot;,
+  &quot;snapshot&quot; : {
+    &quot;element&quot; : [{
+      &quot;id&quot; : &quot;GraphDefinition&quot;,
+      &quot;path&quot; : &quot;GraphDefinition&quot;,
+      &quot;short&quot; : &quot;Definition of a graph of resources&quot;,
+      &quot;definition&quot; : &quot;A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;dom-2&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;If the resource is contained in another resource, it SHALL NOT contain nested Resources&quot;,
+        &quot;expression&quot; : &quot;contained.contained.empty()&quot;,
+        &quot;xpath&quot; : &quot;not(parent::f:contained and f:contained)&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot;
+      },
+      {
+        &quot;key&quot; : &quot;dom-3&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource&quot;,
+        &quot;expression&quot; : &quot;contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()&quot;,
+        &quot;xpath&quot; : &quot;not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot;
+      },
+      {
+        &quot;key&quot; : &quot;dom-4&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated&quot;,
+        &quot;expression&quot; : &quot;contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()&quot;,
+        &quot;xpath&quot; : &quot;not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot;
+      },
+      {
+        &quot;key&quot; : &quot;dom-5&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;If a resource is contained in another resource, it SHALL NOT have a security label&quot;,
+        &quot;expression&quot; : &quot;contained.meta.security.empty()&quot;,
+        &quot;xpath&quot; : &quot;not(exists(f:contained/*/f:meta/f:security))&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice&quot;,
+          &quot;valueBoolean&quot; : true
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation&quot;,
+          &quot;valueMarkdown&quot; : &quot;When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time.&quot;
+        }],
+        &quot;key&quot; : &quot;dom-6&quot;,
+        &quot;severity&quot; : &quot;warning&quot;,
+        &quot;human&quot; : &quot;A resource should have narrative for robust management&quot;,
+        &quot;expression&quot; : &quot;text.`div`.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:text/h:div)&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot;
+      },
+      {
+        &quot;key&quot; : &quot;gdf-0&quot;,
+        &quot;severity&quot; : &quot;warning&quot;,
+        &quot;human&quot; : &quot;Name should be usable as an identifier for the module by machine processing applications such as code generation&quot;,
+        &quot;expression&quot; : &quot;name.matches('[A-Z]([A-Za-z0-9_]){0,254}')&quot;,
+        &quot;xpath&quot; : &quot;not(exists(f:name/@value)) or matches(f:name/@value, '[A-Z]([A-Za-z0-9_]){0,254}')&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;Entity. Role, or Act&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;n/a&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.id&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.id&quot;,
+      &quot;short&quot; : &quot;Logical id of this artifact&quot;,
+      &quot;definition&quot; : &quot;The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.&quot;,
+      &quot;comment&quot; : &quot;The only time that a resource does not have an id is when it is being submitted to the server using a create operation.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Resource.id&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot;,
+          &quot;valueUrl&quot; : &quot;string&quot;
+        }],
+        &quot;code&quot; : &quot;http://hl7.org/fhirpath/System.String&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.meta&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.meta&quot;,
+      &quot;short&quot; : &quot;Metadata about the resource&quot;,
+      &quot;definition&quot; : &quot;The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Resource.meta&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Meta&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.implicitRules&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.implicitRules&quot;,
+      &quot;short&quot; : &quot;A set of rules under which this content was created&quot;,
+      &quot;definition&quot; : &quot;A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.&quot;,
+      &quot;comment&quot; : &quot;Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Resource.implicitRules&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;uri&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : true,
+      &quot;isModifierReason&quot; : &quot;This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation&quot;,
+      &quot;isSummary&quot; : true
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.language&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.language&quot;,
+      &quot;short&quot; : &quot;Language of the resource content&quot;,
+      &quot;definition&quot; : &quot;The base language in which the resource is written.&quot;,
+      &quot;comment&quot; : &quot;Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Resource.language&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet&quot;,
+          &quot;valueCanonical&quot; : &quot;http://hl7.org/fhir/ValueSet/all-languages&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;Language&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;preferred&quot;,
+        &quot;description&quot; : &quot;A human language.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/languages&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.text&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.text&quot;,
+      &quot;short&quot; : &quot;Text summary of the resource, for human interpretation&quot;,
+      &quot;definition&quot; : &quot;A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \&quot;clinically safe\&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.&quot;,
+      &quot;comment&quot; : &quot;Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a \&quot;text blob\&quot; or where text is additionally entered raw or narrated and encoded information is added later.&quot;,
+      &quot;alias&quot; : [&quot;narrative&quot;,
+      &quot;html&quot;,
+      &quot;xhtml&quot;,
+      &quot;display&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;DomainResource.text&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Narrative&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;Act.text?&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.contained&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.contained&quot;,
+      &quot;short&quot; : &quot;Contained, inline Resources&quot;,
+      &quot;definition&quot; : &quot;These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.&quot;,
+      &quot;comment&quot; : &quot;This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.&quot;,
+      &quot;alias&quot; : [&quot;inline resources&quot;,
+      &quot;anonymous resources&quot;,
+      &quot;contained resources&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;DomainResource.contained&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Resource&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;N/A&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.extension&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.extension&quot;,
+      &quot;short&quot; : &quot;Additional content defined by implementations&quot;,
+      &quot;definition&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+      &quot;comment&quot; : &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+      &quot;alias&quot; : [&quot;extensions&quot;,
+      &quot;user content&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;DomainResource.extension&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Extension&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      },
+      {
+        &quot;key&quot; : &quot;ext-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;Must have either extensions or value[x], not both&quot;,
+        &quot;expression&quot; : &quot;extension.exists() != value.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;N/A&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.modifierExtension&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.modifierExtension&quot;,
+      &quot;short&quot; : &quot;Extensions that cannot be ignored&quot;,
+      &quot;definition&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot;,
+      &quot;comment&quot; : &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+      &quot;requirements&quot; : &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot;,
+      &quot;alias&quot; : [&quot;extensions&quot;,
+      &quot;user content&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;DomainResource.modifierExtension&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Extension&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      },
+      {
+        &quot;key&quot; : &quot;ext-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;Must have either extensions or value[x], not both&quot;,
+        &quot;expression&quot; : &quot;extension.exists() != value.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot;
+      }],
+      &quot;isModifier&quot; : true,
+      &quot;isModifierReason&quot; : &quot;Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them&quot;,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;N/A&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.url&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.url&quot;,
+      &quot;short&quot; : &quot;Canonical identifier for this graph definition, represented as a URI (globally unique)&quot;,
+      &quot;definition&quot; : &quot;An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this graph definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the graph definition is stored on different servers.&quot;,
+      &quot;comment&quot; : &quot;Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.\n\nThe determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). \n\nIn some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the [meta.source](resource.html#meta) element to indicate where the current master source of the resource can be found.&quot;,
+      &quot;requirements&quot; : &quot;Allows the graph definition to be referenced by a single globally unique identifier.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.url&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;uri&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.url&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.identifier&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.version&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.version&quot;,
+      &quot;short&quot; : &quot;Business version of the graph definition&quot;,
+      &quot;definition&quot; : &quot;The identifier that is used to identify this version of the graph definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the graph definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.&quot;,
+      &quot;comment&quot; : &quot;There may be different graph definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the graph definition with the format [url]|[version].&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.version&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.version&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.version&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.name&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.name&quot;,
+      &quot;short&quot; : &quot;Name for this graph definition (computer friendly)&quot;,
+      &quot;definition&quot; : &quot;A natural language name identifying the graph definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.&quot;,
+      &quot;comment&quot; : &quot;The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.&quot;,
+      &quot;requirements&quot; : &quot;Support human navigation and code generation.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.name&quot;,
+        &quot;min&quot; : 1,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;condition&quot; : [&quot;inv-0&quot;],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.status&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.status&quot;,
+      &quot;short&quot; : &quot;draft | active | retired | unknown&quot;,
+      &quot;definition&quot; : &quot;The status of this graph definition. Enables tracking the life-cycle of the content.&quot;,
+      &quot;comment&quot; : &quot;Allows filtering of graph definitions that are appropriate for use versus not.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.status&quot;,
+        &quot;min&quot; : 1,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : true,
+      &quot;isModifierReason&quot; : &quot;This is labeled as \&quot;Is Modifier\&quot; because applications should not use a retired {{title}} without due consideration&quot;,
+      &quot;isSummary&quot; : true,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;PublicationStatus&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;The lifecycle status of an artifact.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/publication-status|4.0.1&quot;
+      },
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.status&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.status&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.experimental&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.experimental&quot;,
+      &quot;short&quot; : &quot;For testing purposes, not real usage&quot;,
+      &quot;definition&quot; : &quot;A Boolean value to indicate that this graph definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.&quot;,
+      &quot;comment&quot; : &quot;Allows filtering of graph definitions that are appropriate for use versus not.&quot;,
+      &quot;requirements&quot; : &quot;Enables experimental content to be developed following the same lifecycle that would be used for a production-level graph definition.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.experimental&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;boolean&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.experimental&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.class&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.date&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.date&quot;,
+      &quot;short&quot; : &quot;Date last changed&quot;,
+      &quot;definition&quot; : &quot;The date  (and optionally time) when the graph definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the graph definition changes.&quot;,
+      &quot;comment&quot; : &quot;Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the graph definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.&quot;,
+      &quot;alias&quot; : [&quot;Revision Date&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.date&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;dateTime&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.date&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.recorded&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.publisher&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.publisher&quot;,
+      &quot;short&quot; : &quot;Name of the publisher (organization or individual)&quot;,
+      &quot;definition&quot; : &quot;The name of the organization or individual that published the graph definition.&quot;,
+      &quot;comment&quot; : &quot;Usually an organization but may be an individual. The publisher (or steward) of the graph definition is the organization or individual primarily responsible for the maintenance and upkeep of the graph definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the graph definition. This item SHOULD be populated unless the information is available from context.&quot;,
+      &quot;requirements&quot; : &quot;Helps establish the \&quot;authority/credibility\&quot; of the graph definition.  May also allow for contact.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.publisher&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.publisher&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.witness&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.contact&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.contact&quot;,
+      &quot;short&quot; : &quot;Contact details for the publisher&quot;,
+      &quot;definition&quot; : &quot;Contact details to assist a user in finding and communicating with the publisher.&quot;,
+      &quot;comment&quot; : &quot;May be a web site, an email address, a telephone number, etc.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.contact&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;ContactDetail&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.contact&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.description&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.description&quot;,
+      &quot;short&quot; : &quot;Natural language description of the graph definition&quot;,
+      &quot;definition&quot; : &quot;A free text natural language description of the graph definition from a consumer's perspective.&quot;,
+      &quot;comment&quot; : &quot;This description can be used to capture details such as why the graph definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the graph definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the graph definition is presumed to be the predominant language in the place the graph definition was created).&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.description&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;markdown&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.description&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.useContext&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.useContext&quot;,
+      &quot;short&quot; : &quot;The context that the content is intended to support&quot;,
+      &quot;definition&quot; : &quot;The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate graph definition instances.&quot;,
+      &quot;comment&quot; : &quot;When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.&quot;,
+      &quot;requirements&quot; : &quot;Assist in searching for appropriate content.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.useContext&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;UsageContext&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.useContext&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.jurisdiction&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.jurisdiction&quot;,
+      &quot;short&quot; : &quot;Intended jurisdiction for graph definition (if applicable)&quot;,
+      &quot;definition&quot; : &quot;A legal or geographic region in which the graph definition is intended to be used.&quot;,
+      &quot;comment&quot; : &quot;It may be possible for the graph definition to be used in jurisdictions other than those for which it was originally designed or intended.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.jurisdiction&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;CodeableConcept&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;Jurisdiction&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;extensible&quot;,
+        &quot;description&quot; : &quot;Countries and regions within which this artifact is targeted for use.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/jurisdiction&quot;
+      },
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.jurisdiction&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.purpose&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.purpose&quot;,
+      &quot;short&quot; : &quot;Why this graph definition is defined&quot;,
+      &quot;definition&quot; : &quot;Explanation of why this graph definition is needed and why it has been designed as it has.&quot;,
+      &quot;comment&quot; : &quot;This element does not describe the usage of the graph definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this graph definition.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.purpose&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;markdown&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.purpose&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.why[x]&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;objimpl&quot;,
+        &quot;map&quot; : &quot;no-gen-base&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.start&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.start&quot;,
+      &quot;short&quot; : &quot;Type of resource at which the graph starts&quot;,
+      &quot;definition&quot; : &quot;The type of FHIR resource at which instances of this graph start.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.start&quot;,
+        &quot;min&quot; : 1,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : true,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;ResourceType&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;One of the resource types defined as part of this version of FHIR.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/resource-types|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.profile&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.profile&quot;,
+      &quot;short&quot; : &quot;Profile on base resource&quot;,
+      &quot;definition&quot; : &quot;The profile that describes the use of the base resource.&quot;,
+      &quot;comment&quot; : &quot;The code does not include the '$' prefix that is always included in the URL when the operation is invoked.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.profile&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;canonical&quot;,
+        &quot;targetProfile&quot; : [&quot;http://hl7.org/fhir/StructureDefinition/StructureDefinition&quot;]
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link&quot;,
+      &quot;short&quot; : &quot;Links this graph makes rules about&quot;,
+      &quot;definition&quot; : &quot;Links this graph makes rules about.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;BackboneElement&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.id&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.id&quot;,
+      &quot;representation&quot; : [&quot;xmlAttr&quot;],
+      &quot;short&quot; : &quot;Unique id for inter-element referencing&quot;,
+      &quot;definition&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Element.id&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot;,
+          &quot;valueUrl&quot; : &quot;string&quot;
+        }],
+        &quot;code&quot; : &quot;http://hl7.org/fhirpath/System.String&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;n/a&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.extension&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.extension&quot;,
+      &quot;short&quot; : &quot;Additional content defined by implementations&quot;,
+      &quot;definition&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+      &quot;comment&quot; : &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+      &quot;alias&quot; : [&quot;extensions&quot;,
+      &quot;user content&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Element.extension&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Extension&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      },
+      {
+        &quot;key&quot; : &quot;ext-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;Must have either extensions or value[x], not both&quot;,
+        &quot;expression&quot; : &quot;extension.exists() != value.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;n/a&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.modifierExtension&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.modifierExtension&quot;,
+      &quot;short&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+      &quot;definition&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot;,
+      &quot;comment&quot; : &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+      &quot;requirements&quot; : &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot;,
+      &quot;alias&quot; : [&quot;extensions&quot;,
+      &quot;user content&quot;,
+      &quot;modifiers&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;BackboneElement.modifierExtension&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Extension&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      },
+      {
+        &quot;key&quot; : &quot;ext-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;Must have either extensions or value[x], not both&quot;,
+        &quot;expression&quot; : &quot;extension.exists() != value.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot;
+      }],
+      &quot;isModifier&quot; : true,
+      &quot;isModifierReason&quot; : &quot;Modifier extensions are expected to modify the meaning or interpretation of the element that contains them&quot;,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;N/A&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.path&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.path&quot;,
+      &quot;short&quot; : &quot;Path in the resource that contains the link&quot;,
+      &quot;definition&quot; : &quot;A FHIR expression that identifies one of FHIR References to other resources.&quot;,
+      &quot;comment&quot; : &quot;The path expression cannot contain a resolve() function. If there is no path, the link is a reverse lookup, using target.params. If the path is \&quot;*\&quot; then this means all references in the resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.path&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.sliceName&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.sliceName&quot;,
+      &quot;short&quot; : &quot;Which slice (if profiled)&quot;,
+      &quot;definition&quot; : &quot;Which slice (if profiled).&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.sliceName&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.min&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.min&quot;,
+      &quot;short&quot; : &quot;Minimum occurrences for this link&quot;,
+      &quot;definition&quot; : &quot;Minimum occurrences for this link.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.min&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;integer&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.max&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.max&quot;,
+      &quot;short&quot; : &quot;Maximum occurrences for this link&quot;,
+      &quot;definition&quot; : &quot;Maximum occurrences for this link.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.max&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.description&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.description&quot;,
+      &quot;short&quot; : &quot;Why this link is specified&quot;,
+      &quot;definition&quot; : &quot;Information about why this link is of interest in this graph definition.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.description&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target&quot;,
+      &quot;short&quot; : &quot;Potential target for the link&quot;,
+      &quot;definition&quot; : &quot;Potential target for the link.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;BackboneElement&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.id&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.id&quot;,
+      &quot;representation&quot; : [&quot;xmlAttr&quot;],
+      &quot;short&quot; : &quot;Unique id for inter-element referencing&quot;,
+      &quot;definition&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Element.id&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot;,
+          &quot;valueUrl&quot; : &quot;string&quot;
+        }],
+        &quot;code&quot; : &quot;http://hl7.org/fhirpath/System.String&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;n/a&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.extension&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.extension&quot;,
+      &quot;short&quot; : &quot;Additional content defined by implementations&quot;,
+      &quot;definition&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+      &quot;comment&quot; : &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+      &quot;alias&quot; : [&quot;extensions&quot;,
+      &quot;user content&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Element.extension&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Extension&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      },
+      {
+        &quot;key&quot; : &quot;ext-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;Must have either extensions or value[x], not both&quot;,
+        &quot;expression&quot; : &quot;extension.exists() != value.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;n/a&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.modifierExtension&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.modifierExtension&quot;,
+      &quot;short&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+      &quot;definition&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot;,
+      &quot;comment&quot; : &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+      &quot;requirements&quot; : &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot;,
+      &quot;alias&quot; : [&quot;extensions&quot;,
+      &quot;user content&quot;,
+      &quot;modifiers&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;BackboneElement.modifierExtension&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Extension&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      },
+      {
+        &quot;key&quot; : &quot;ext-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;Must have either extensions or value[x], not both&quot;,
+        &quot;expression&quot; : &quot;extension.exists() != value.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot;
+      }],
+      &quot;isModifier&quot; : true,
+      &quot;isModifierReason&quot; : &quot;Modifier extensions are expected to modify the meaning or interpretation of the element that contains them&quot;,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;N/A&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.type&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.type&quot;,
+      &quot;short&quot; : &quot;Type of resource this link refers to&quot;,
+      &quot;definition&quot; : &quot;Type of resource this link refers to.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.type&quot;,
+        &quot;min&quot; : 1,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;ResourceType&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;One of the resource types defined as part of this version of FHIR.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/resource-types|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.params&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.params&quot;,
+      &quot;short&quot; : &quot;Criteria for reverse lookup&quot;,
+      &quot;definition&quot; : &quot;A set of parameters to look up.&quot;,
+      &quot;comment&quot; : &quot;At least one of the parameters must have the value {ref} which identifies the focus resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.params&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.profile&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.profile&quot;,
+      &quot;short&quot; : &quot;Profile for the target resource&quot;,
+      &quot;definition&quot; : &quot;Profile for the target resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.profile&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;canonical&quot;,
+        &quot;targetProfile&quot; : [&quot;http://hl7.org/fhir/StructureDefinition/StructureDefinition&quot;]
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment&quot;,
+      &quot;short&quot; : &quot;Compartment Consistency Rules&quot;,
+      &quot;definition&quot; : &quot;Compartment Consistency Rules.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.compartment&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;BackboneElement&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.id&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.id&quot;,
+      &quot;representation&quot; : [&quot;xmlAttr&quot;],
+      &quot;short&quot; : &quot;Unique id for inter-element referencing&quot;,
+      &quot;definition&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Element.id&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot;,
+          &quot;valueUrl&quot; : &quot;string&quot;
+        }],
+        &quot;code&quot; : &quot;http://hl7.org/fhirpath/System.String&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;n/a&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.extension&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.extension&quot;,
+      &quot;short&quot; : &quot;Additional content defined by implementations&quot;,
+      &quot;definition&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+      &quot;comment&quot; : &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+      &quot;alias&quot; : [&quot;extensions&quot;,
+      &quot;user content&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;Element.extension&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Extension&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      },
+      {
+        &quot;key&quot; : &quot;ext-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;Must have either extensions or value[x], not both&quot;,
+        &quot;expression&quot; : &quot;extension.exists() != value.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;n/a&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.modifierExtension&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.modifierExtension&quot;,
+      &quot;short&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+      &quot;definition&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot;,
+      &quot;comment&quot; : &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+      &quot;requirements&quot; : &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot;,
+      &quot;alias&quot; : [&quot;extensions&quot;,
+      &quot;user content&quot;,
+      &quot;modifiers&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;BackboneElement.modifierExtension&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;Extension&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      },
+      {
+        &quot;key&quot; : &quot;ext-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;Must have either extensions or value[x], not both&quot;,
+        &quot;expression&quot; : &quot;extension.exists() != value.exists()&quot;,
+        &quot;xpath&quot; : &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot;
+      }],
+      &quot;isModifier&quot; : true,
+      &quot;isModifierReason&quot; : &quot;Modifier extensions are expected to modify the meaning or interpretation of the element that contains them&quot;,
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;N/A&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.use&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.use&quot;,
+      &quot;short&quot; : &quot;condition | requirement&quot;,
+      &quot;definition&quot; : &quot;Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.&quot;,
+      &quot;comment&quot; : &quot;All conditional rules are evaluated; if they are true, then the rules are evaluated.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.use&quot;,
+        &quot;min&quot; : 1,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;GraphCompartmentUse&quot;
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;Defines how a compartment rule is used.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/graph-compartment-use|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.code&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.code&quot;,
+      &quot;short&quot; : &quot;Patient | Encounter | RelatedPerson | Practitioner | Device&quot;,
+      &quot;definition&quot; : &quot;Identifies the compartment.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.code&quot;,
+        &quot;min&quot; : 1,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;CompartmentCode&quot;
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;Identifies a compartment.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/compartment-type|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.rule&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.rule&quot;,
+      &quot;short&quot; : &quot;identical | matching | different | custom&quot;,
+      &quot;definition&quot; : &quot;identical | matching | different | no-rule | custom.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.rule&quot;,
+        &quot;min&quot; : 1,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;GraphCompartmentRule&quot;
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;How a compartment must be linked.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/graph-compartment-rule|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.expression&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.expression&quot;,
+      &quot;short&quot; : &quot;Custom rule, as a FHIRPath expression&quot;,
+      &quot;definition&quot; : &quot;Custom rule, as a FHIRPath expression.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.expression&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.description&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.description&quot;,
+      &quot;short&quot; : &quot;Documentation for FHIRPath expression&quot;,
+      &quot;definition&quot; : &quot;Documentation for FHIRPath expression.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.description&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;1&quot;
+      },
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.link&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.link&quot;,
+      &quot;short&quot; : &quot;Additional links from target resource&quot;,
+      &quot;definition&quot; : &quot;Additional links from target resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;base&quot; : {
+        &quot;path&quot; : &quot;GraphDefinition.link.target.link&quot;,
+        &quot;min&quot; : 0,
+        &quot;max&quot; : &quot;*&quot;
+      },
+      &quot;contentReference&quot; : &quot;#GraphDefinition.link&quot;,
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;ele-1&quot;,
+        &quot;severity&quot; : &quot;error&quot;,
+        &quot;human&quot; : &quot;All FHIR elements must have a @value or children&quot;,
+        &quot;expression&quot; : &quot;hasValue() or (children().count() &gt; id.count())&quot;,
+        &quot;xpath&quot; : &quot;@value|f:*|h:div&quot;,
+        &quot;source&quot; : &quot;http://hl7.org/fhir/StructureDefinition/Element&quot;
+      }],
+      &quot;isModifier&quot; : false,
+      &quot;isSummary&quot; : false
+    }]
+  },
+  &quot;differential&quot; : {
+    &quot;element&quot; : [{
+      &quot;id&quot; : &quot;GraphDefinition&quot;,
+      &quot;path&quot; : &quot;GraphDefinition&quot;,
+      &quot;short&quot; : &quot;Definition of a graph of resources&quot;,
+      &quot;definition&quot; : &quot;A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;constraint&quot; : [{
+        &quot;key&quot; : &quot;gdf-0&quot;,
+        &quot;severity&quot; : &quot;warning&quot;,
+        &quot;human&quot; : &quot;Name should be usable as an identifier for the module by machine processing applications such as code generation&quot;,
+        &quot;expression&quot; : &quot;name.matches('[A-Z]([A-Za-z0-9_]){0,254}')&quot;,
+        &quot;xpath&quot; : &quot;not(exists(f:name/@value)) or matches(f:name/@value, '[A-Z]([A-Za-z0-9_]){0,254}')&quot;
+      }],
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;rim&quot;,
+        &quot;map&quot; : &quot;n/a&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.url&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.url&quot;,
+      &quot;short&quot; : &quot;Canonical identifier for this graph definition, represented as a URI (globally unique)&quot;,
+      &quot;definition&quot; : &quot;An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this graph definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the graph definition is stored on different servers.&quot;,
+      &quot;comment&quot; : &quot;Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.\n\nThe determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). \n\nIn some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the [meta.source](resource.html#meta) element to indicate where the current master source of the resource can be found.&quot;,
+      &quot;requirements&quot; : &quot;Allows the graph definition to be referenced by a single globally unique identifier.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;uri&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.url&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.identifier&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.version&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.version&quot;,
+      &quot;short&quot; : &quot;Business version of the graph definition&quot;,
+      &quot;definition&quot; : &quot;The identifier that is used to identify this version of the graph definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the graph definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.&quot;,
+      &quot;comment&quot; : &quot;There may be different graph definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the graph definition with the format [url]|[version].&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.version&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.version&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.name&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.name&quot;,
+      &quot;short&quot; : &quot;Name for this graph definition (computer friendly)&quot;,
+      &quot;definition&quot; : &quot;A natural language name identifying the graph definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.&quot;,
+      &quot;comment&quot; : &quot;The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.&quot;,
+      &quot;requirements&quot; : &quot;Support human navigation and code generation.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;condition&quot; : [&quot;inv-0&quot;],
+      &quot;isSummary&quot; : true
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.status&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.status&quot;,
+      &quot;short&quot; : &quot;draft | active | retired | unknown&quot;,
+      &quot;definition&quot; : &quot;The status of this graph definition. Enables tracking the life-cycle of the content.&quot;,
+      &quot;comment&quot; : &quot;Allows filtering of graph definitions that are appropriate for use versus not.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;isModifier&quot; : true,
+      &quot;isModifierReason&quot; : &quot;This is labeled as \&quot;Is Modifier\&quot; because applications should not use a retired {{title}} without due consideration&quot;,
+      &quot;isSummary&quot; : true,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;PublicationStatus&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;The lifecycle status of an artifact.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/publication-status|4.0.1&quot;
+      },
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.status&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.status&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.experimental&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.experimental&quot;,
+      &quot;short&quot; : &quot;For testing purposes, not real usage&quot;,
+      &quot;definition&quot; : &quot;A Boolean value to indicate that this graph definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.&quot;,
+      &quot;comment&quot; : &quot;Allows filtering of graph definitions that are appropriate for use versus not.&quot;,
+      &quot;requirements&quot; : &quot;Enables experimental content to be developed following the same lifecycle that would be used for a production-level graph definition.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;boolean&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.experimental&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.class&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.date&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.date&quot;,
+      &quot;short&quot; : &quot;Date last changed&quot;,
+      &quot;definition&quot; : &quot;The date  (and optionally time) when the graph definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the graph definition changes.&quot;,
+      &quot;comment&quot; : &quot;Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the graph definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.&quot;,
+      &quot;alias&quot; : [&quot;Revision Date&quot;],
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;dateTime&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.date&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.recorded&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.publisher&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.publisher&quot;,
+      &quot;short&quot; : &quot;Name of the publisher (organization or individual)&quot;,
+      &quot;definition&quot; : &quot;The name of the organization or individual that published the graph definition.&quot;,
+      &quot;comment&quot; : &quot;Usually an organization but may be an individual. The publisher (or steward) of the graph definition is the organization or individual primarily responsible for the maintenance and upkeep of the graph definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the graph definition. This item SHOULD be populated unless the information is available from context.&quot;,
+      &quot;requirements&quot; : &quot;Helps establish the \&quot;authority/credibility\&quot; of the graph definition.  May also allow for contact.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.publisher&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.witness&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.contact&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.contact&quot;,
+      &quot;short&quot; : &quot;Contact details for the publisher&quot;,
+      &quot;definition&quot; : &quot;Contact details to assist a user in finding and communicating with the publisher.&quot;,
+      &quot;comment&quot; : &quot;May be a web site, an email address, a telephone number, etc.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;ContactDetail&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.contact&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.description&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.description&quot;,
+      &quot;short&quot; : &quot;Natural language description of the graph definition&quot;,
+      &quot;definition&quot; : &quot;A free text natural language description of the graph definition from a consumer's perspective.&quot;,
+      &quot;comment&quot; : &quot;This description can be used to capture details such as why the graph definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the graph definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the graph definition is presumed to be the predominant language in the place the graph definition was created).&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;markdown&quot;
+      }],
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.description&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.useContext&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.useContext&quot;,
+      &quot;short&quot; : &quot;The context that the content is intended to support&quot;,
+      &quot;definition&quot; : &quot;The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate graph definition instances.&quot;,
+      &quot;comment&quot; : &quot;When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.&quot;,
+      &quot;requirements&quot; : &quot;Assist in searching for appropriate content.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;UsageContext&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.useContext&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.jurisdiction&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.jurisdiction&quot;,
+      &quot;short&quot; : &quot;Intended jurisdiction for graph definition (if applicable)&quot;,
+      &quot;definition&quot; : &quot;A legal or geographic region in which the graph definition is intended to be used.&quot;,
+      &quot;comment&quot; : &quot;It may be possible for the graph definition to be used in jurisdictions other than those for which it was originally designed or intended.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;CodeableConcept&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;Jurisdiction&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;extensible&quot;,
+        &quot;description&quot; : &quot;Countries and regions within which this artifact is targeted for use.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/jurisdiction&quot;
+      },
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.jurisdiction&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.purpose&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.purpose&quot;,
+      &quot;short&quot; : &quot;Why this graph definition is defined&quot;,
+      &quot;definition&quot; : &quot;Explanation of why this graph definition is needed and why it has been designed as it has.&quot;,
+      &quot;comment&quot; : &quot;This element does not describe the usage of the graph definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this graph definition.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;markdown&quot;
+      }],
+      &quot;mapping&quot; : [{
+        &quot;identity&quot; : &quot;workflow&quot;,
+        &quot;map&quot; : &quot;Definition.purpose&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;w5&quot;,
+        &quot;map&quot; : &quot;FiveWs.why[x]&quot;
+      },
+      {
+        &quot;identity&quot; : &quot;objimpl&quot;,
+        &quot;map&quot; : &quot;no-gen-base&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.start&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.start&quot;,
+      &quot;short&quot; : &quot;Type of resource at which the graph starts&quot;,
+      &quot;definition&quot; : &quot;The type of FHIR resource at which instances of this graph start.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;isSummary&quot; : true,
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;ResourceType&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;One of the resource types defined as part of this version of FHIR.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/resource-types|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.profile&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.profile&quot;,
+      &quot;short&quot; : &quot;Profile on base resource&quot;,
+      &quot;definition&quot; : &quot;The profile that describes the use of the base resource.&quot;,
+      &quot;comment&quot; : &quot;The code does not include the '$' prefix that is always included in the URL when the operation is invoked.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;canonical&quot;,
+        &quot;targetProfile&quot; : [&quot;http://hl7.org/fhir/StructureDefinition/StructureDefinition&quot;]
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link&quot;,
+      &quot;short&quot; : &quot;Links this graph makes rules about&quot;,
+      &quot;definition&quot; : &quot;Links this graph makes rules about.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;BackboneElement&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.path&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.path&quot;,
+      &quot;short&quot; : &quot;Path in the resource that contains the link&quot;,
+      &quot;definition&quot; : &quot;A FHIR expression that identifies one of FHIR References to other resources.&quot;,
+      &quot;comment&quot; : &quot;The path expression cannot contain a resolve() function. If there is no path, the link is a reverse lookup, using target.params. If the path is \&quot;*\&quot; then this means all references in the resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.sliceName&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.sliceName&quot;,
+      &quot;short&quot; : &quot;Which slice (if profiled)&quot;,
+      &quot;definition&quot; : &quot;Which slice (if profiled).&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.min&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.min&quot;,
+      &quot;short&quot; : &quot;Minimum occurrences for this link&quot;,
+      &quot;definition&quot; : &quot;Minimum occurrences for this link.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;integer&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.max&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.max&quot;,
+      &quot;short&quot; : &quot;Maximum occurrences for this link&quot;,
+      &quot;definition&quot; : &quot;Maximum occurrences for this link.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.description&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.description&quot;,
+      &quot;short&quot; : &quot;Why this link is specified&quot;,
+      &quot;definition&quot; : &quot;Information about why this link is of interest in this graph definition.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target&quot;,
+      &quot;short&quot; : &quot;Potential target for the link&quot;,
+      &quot;definition&quot; : &quot;Potential target for the link.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;BackboneElement&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.type&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.type&quot;,
+      &quot;short&quot; : &quot;Type of resource this link refers to&quot;,
+      &quot;definition&quot; : &quot;Type of resource this link refers to.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;ResourceType&quot;
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot;,
+          &quot;valueBoolean&quot; : true
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;One of the resource types defined as part of this version of FHIR.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/resource-types|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.params&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.params&quot;,
+      &quot;short&quot; : &quot;Criteria for reverse lookup&quot;,
+      &quot;definition&quot; : &quot;A set of parameters to look up.&quot;,
+      &quot;comment&quot; : &quot;At least one of the parameters must have the value {ref} which identifies the focus resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.profile&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.profile&quot;,
+      &quot;short&quot; : &quot;Profile for the target resource&quot;,
+      &quot;definition&quot; : &quot;Profile for the target resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;canonical&quot;,
+        &quot;targetProfile&quot; : [&quot;http://hl7.org/fhir/StructureDefinition/StructureDefinition&quot;]
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment&quot;,
+      &quot;short&quot; : &quot;Compartment Consistency Rules&quot;,
+      &quot;definition&quot; : &quot;Compartment Consistency Rules.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;BackboneElement&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.use&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.use&quot;,
+      &quot;short&quot; : &quot;condition | requirement&quot;,
+      &quot;definition&quot; : &quot;Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.&quot;,
+      &quot;comment&quot; : &quot;All conditional rules are evaluated; if they are true, then the rules are evaluated.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;GraphCompartmentUse&quot;
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;Defines how a compartment rule is used.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/graph-compartment-use|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.code&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.code&quot;,
+      &quot;short&quot; : &quot;Patient | Encounter | RelatedPerson | Practitioner | Device&quot;,
+      &quot;definition&quot; : &quot;Identifies the compartment.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;CompartmentCode&quot;
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;Identifies a compartment.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/compartment-type|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.rule&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.rule&quot;,
+      &quot;short&quot; : &quot;identical | matching | different | custom&quot;,
+      &quot;definition&quot; : &quot;identical | matching | different | no-rule | custom.&quot;,
+      &quot;min&quot; : 1,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;code&quot;
+      }],
+      &quot;binding&quot; : {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot;,
+          &quot;valueString&quot; : &quot;GraphCompartmentRule&quot;
+        }],
+        &quot;strength&quot; : &quot;required&quot;,
+        &quot;description&quot; : &quot;How a compartment must be linked.&quot;,
+        &quot;valueSet&quot; : &quot;http://hl7.org/fhir/ValueSet/graph-compartment-rule|4.0.1&quot;
+      }
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.expression&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.expression&quot;,
+      &quot;short&quot; : &quot;Custom rule, as a FHIRPath expression&quot;,
+      &quot;definition&quot; : &quot;Custom rule, as a FHIRPath expression.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.compartment.description&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.compartment.description&quot;,
+      &quot;short&quot; : &quot;Documentation for FHIRPath expression&quot;,
+      &quot;definition&quot; : &quot;Documentation for FHIRPath expression.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;1&quot;,
+      &quot;type&quot; : [{
+        &quot;code&quot; : &quot;string&quot;
+      }]
+    },
+    {
+      &quot;id&quot; : &quot;GraphDefinition.link.target.link&quot;,
+      &quot;path&quot; : &quot;GraphDefinition.link.target.link&quot;,
+      &quot;short&quot; : &quot;Additional links from target resource&quot;,
+      &quot;definition&quot; : &quot;Additional links from target resource.&quot;,
+      &quot;min&quot; : 0,
+      &quot;max&quot; : &quot;*&quot;,
+      &quot;contentReference&quot; : &quot;#GraphDefinition.link&quot;
+    }]
+  }
+}
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fgraphdefinition.profile.json.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fgraphdefinition.profile.json.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

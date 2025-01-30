@@ -1,0 +1,244 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type DocumentReference {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  masterIdentifier: Identifier
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  docStatus: code  _docStatus: ElementBase
+  type: CodeableConcept
+  category: [CodeableConcept]
+  subject: Reference
+  date: instant  _date: ElementBase
+  author: [Reference]
+  authenticator: Reference
+  custodian: Reference
+  relatesTo: [DocumentReferenceRelatesTo]
+  description: String  _description: ElementBase
+  securityLabel: [CodeableConcept]
+  content: [DocumentReferenceContent]!
+  context: DocumentReferenceContext
+}
+
+type DocumentReferenceRelatesTo {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: code  _code: ElementBase
+  target: Reference!
+}
+
+type DocumentReferenceContent {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  attachment: Attachment!
+  format: Coding
+}
+
+type DocumentReferenceContext {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  encounter: [Reference]
+  event: [CodeableConcept]
+  period: Period
+  facilityType: CodeableConcept
+  practiceSetting: CodeableConcept
+  sourcePatientInfo: Reference
+  related: [Reference]
+}
+
+input DocumentReference {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  masterIdentifier: Identifier
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  docStatus: code  _docStatus: ElementBase
+  type: CodeableConcept
+  category: [CodeableConcept]
+  subject: Reference
+  date: instant  _date: ElementBase
+  author: [Reference]
+  authenticator: Reference
+  custodian: Reference
+  relatesTo: [DocumentReferenceRelatesTo]
+  description: String  _description: ElementBase
+  securityLabel: [CodeableConcept]
+  content: [DocumentReferenceContent]!
+  context: DocumentReferenceContext
+}
+
+input DocumentReferenceRelatesTo {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: code  _code: ElementBase
+  target: Reference!
+}
+
+input DocumentReferenceContent {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  attachment: Attachment!
+  format: Coding
+}
+
+input DocumentReferenceContext {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  encounter: [Reference]
+  event: [CodeableConcept]
+  period: Period
+  facilityType: CodeableConcept
+  practiceSetting: CodeableConcept
+  sourcePatientInfo: Reference
+  related: [Reference]
+}
+
+type DocumentReferenceReadType {
+  DocumentReference(id : ID!) : DocumentReference
+}
+
+type DocumentReferenceListType {
+  DocumentReferenceList(_filter : String
+    authenticator : [reference]
+    author : [reference]
+    category : [token]
+    contenttype : [token]
+    custodian : [reference]
+    date : [date]
+    description : [String]
+    encounter : [reference]
+    event : [token]
+    facility : [token]
+    format : [token]
+    identifier : [token]
+    language : [token]
+    location : [uri]
+    patient : [reference]
+    period : [date]
+    related : [reference]
+    relatesto : [reference]
+    relation : [token]
+    relationship : [composite]
+    security_label : [token]
+    setting : [token]
+    status : [token]
+    subject : [reference]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [DocumentReference]
+}
+
+type DocumentReferenceConnectionType {
+  DocumentReferenceConection(_filter : String
+    authenticator : [reference]
+    author : [reference]
+    category : [token]
+    contenttype : [token]
+    custodian : [reference]
+    date : [date]
+    description : [String]
+    encounter : [reference]
+    event : [token]
+    facility : [token]
+    format : [token]
+    identifier : [token]
+    language : [token]
+    location : [uri]
+    patient : [reference]
+    period : [date]
+    related : [reference]
+    relatesto : [reference]
+    relation : [token]
+    relationship : [composite]
+    security_label : [token]
+    setting : [token]
+    status : [token]
+    subject : [reference]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : DocumentReferenceConnection
+}
+
+type DocumentReferenceConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [DocumentReferenceEdge]
+}
+
+type DocumentReferenceEdge {
+  mode : String
+  score : Float
+  resource : DocumentReference
+}
+
+type DocumentReferenceCreateType {
+  DocumentReferenceCreate(resource : DocumentReference) : DocumentReferenceCreation
+}
+
+type DocumentReferenceCreation {
+  location : String
+  resource : DocumentReference
+  information : OperationOutcome
+}
+
+type DocumentReferenceUpdateType {
+  DocumentReferenceUpdate(id : IDresource : DocumentReference) : DocumentReferenceUpdate
+}
+
+type DocumentReferenceUpdate {
+  resource : DocumentReference
+  information : OperationOutcome
+}
+
+type DocumentReferenceDeleteType {
+  DocumentReferenceDelete(id : ID) : DocumentReferenceDelete
+}
+
+type DocumentReferenceDelete {
+  information : OperationOutcome
+}
+

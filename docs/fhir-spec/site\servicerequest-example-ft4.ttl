@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/ft4> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ft4"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: ft4</p><p><b>status</b>: active</p><p><b>intent</b>: reflex-order</p><p><b>code</b>: Free T4 <span>(Details : {LOINC code '3024-7' = 'Thyroxine (T4) free [Mass/volume] in Serum or Plasma', given as 'Thyroxine (T4) free [Mass/​volume] in Serum or Plasma'})</span></p><p><b>subject</b>: <a>Patient/pat2</a></p><p><b>occurrence</b>: 27/08/2015 9:33:27 AM</p><p><b>requester</b>: <a>Practitioner/example</a></p></div>"
+  ];
+  fhir:ServiceRequest.status [ fhir:value "active"];
+  fhir:ServiceRequest.intent [ fhir:value "reflex-order"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:3024-7;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "3024-7" ];
+       fhir:Coding.display [ fhir:value "Thyroxine (T4) free [Mass/​volume] in Serum or Plasma" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Free T4" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/pat2>;
+     fhir:Reference.reference [ fhir:value "Patient/pat2" ]
+  ];
+  fhir:ServiceRequest.occurrenceDateTime [ fhir:value "2015-08-27T09:33:27+07:00"^^xsd:dateTime];
+  fhir:ServiceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/pat2> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/ft4.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/ft4.ttl> .
+
+# -------------------------------------------------------------------------------------
+

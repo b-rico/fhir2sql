@@ -1,0 +1,131 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Condition/f201> a fhir:Condition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "f201"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: f201</p><p><b>identifier</b>: 12345</p><p><b>clinicalStatus</b>: Resolved <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-clinical code 'resolved' = 'Resolved)</span></p><p><b>verificationStatus</b>: Confirmed <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-ver-status code 'confirmed' = 'Confirmed)</span></p><p><b>category</b>: Problem <span>(Details : {SNOMED CT code '55607006' = 'Problem', given as 'Problem'}; {http://terminology.hl7.org/CodeSystem/condition-category code 'problem-list-item' = 'Problem List Item)</span></p><p><b>severity</b>: Mild <span>(Details : {SNOMED CT code '255604002' = 'Mild', given as 'Mild'})</span></p><p><b>code</b>: Fever <span>(Details : {SNOMED CT code '386661006' = 'Fever', given as 'Fever'})</span></p><p><b>bodySite</b>: Entire body as a whole <span>(Details : {SNOMED CT code '38266002' = 'Body as a whole', given as 'Entire body as a whole'})</span></p><p><b>subject</b>: <a>Roel</a></p><p><b>encounter</b>: <a>Encounter/f201</a></p><p><b>onset</b>: 02/04/2013</p><p><b>abatement</b>: around April 9, 2013</p><p><b>recordedDate</b>: 04/04/2013</p><p><b>recorder</b>: <a>Practitioner/f201</a></p><p><b>asserter</b>: <a>Practitioner/f201</a></p><h3>Evidences</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Detail</b></td></tr><tr><td>*</td><td>degrees C <span>(Details : {SNOMED CT code '258710007' = 'degrees C', given as 'degrees C'})</span></td><td><a>Temperature</a></td></tr></table></div>"
+  ];
+  fhir:Condition.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:Coding.code [ fhir:value "resolved" ]
+     ]
+  ];
+  fhir:Condition.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+       fhir:Coding.code [ fhir:value "confirmed" ]
+     ]
+  ];
+  fhir:Condition.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:55607006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "55607006" ];
+       fhir:Coding.display [ fhir:value "Problem" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-category" ];
+       fhir:Coding.code [ fhir:value "problem-list-item" ]
+     ]
+  ];
+  fhir:Condition.severity [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:255604002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "255604002" ];
+       fhir:Coding.display [ fhir:value "Mild" ]
+     ]
+  ];
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:386661006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "386661006" ];
+       fhir:Coding.display [ fhir:value "Fever" ]
+     ]
+  ];
+  fhir:Condition.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:38266002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "38266002" ];
+       fhir:Coding.display [ fhir:value "Entire body as a whole" ]
+     ]
+  ];
+  fhir:Condition.subject [
+     fhir:link <http://hl7.org/fhir/Patient/f201>;
+     fhir:Reference.reference [ fhir:value "Patient/f201" ];
+     fhir:Reference.display [ fhir:value "Roel" ]
+  ];
+  fhir:Condition.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/f201>;
+     fhir:Reference.reference [ fhir:value "Encounter/f201" ]
+  ];
+  fhir:Condition.onsetDateTime [ fhir:value "2013-04-02"^^xsd:date];
+  fhir:Condition.abatementString [ fhir:value "around April 9, 2013"];
+  fhir:Condition.recordedDate [ fhir:value "2013-04-04"^^xsd:date];
+  fhir:Condition.recorder [
+     fhir:link <http://hl7.org/fhir/Practitioner/f201>;
+     fhir:Reference.reference [ fhir:value "Practitioner/f201" ]
+  ];
+  fhir:Condition.asserter [
+     fhir:link <http://hl7.org/fhir/Practitioner/f201>;
+     fhir:Reference.reference [ fhir:value "Practitioner/f201" ]
+  ];
+  fhir:Condition.evidence [
+     fhir:index 0;
+     fhir:Condition.evidence.code [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:258710007;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "258710007" ];
+         fhir:Coding.display [ fhir:value "degrees C" ]
+       ]
+     ];
+     fhir:Condition.evidence.detail [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/Observation/f202>;
+       fhir:Reference.reference [ fhir:value "Observation/f202" ];
+       fhir:Reference.display [ fhir:value "Temperature" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f201> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/f201> a fhir:Encounter .
+
+<http://hl7.org/fhir/Practitioner/f201> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Observation/f202> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Condition/f201.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Condition/f201.ttl> .
+
+# -------------------------------------------------------------------------------------
+

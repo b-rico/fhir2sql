@@ -1,0 +1,113 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Appointment/2docs> a fhir:Appointment;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "2docs"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Brian MRI results discussion</div>"
+  ];
+  fhir:Appointment.status [ fhir:value "booked"];
+  fhir:Appointment.serviceCategory [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://example.org/service-category" ];
+       fhir:Coding.code [ fhir:value "gp" ];
+       fhir:Coding.display [ fhir:value "General Practice" ]
+     ]
+  ];
+  fhir:Appointment.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "52" ];
+       fhir:Coding.display [ fhir:value "General Discussion" ]
+     ]
+  ];
+  fhir:Appointment.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:394814009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "394814009" ];
+       fhir:Coding.display [ fhir:value "General practice" ]
+     ]
+  ];
+  fhir:Appointment.appointmentType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0276" ];
+       fhir:Coding.code [ fhir:value "WALKIN" ];
+       fhir:Coding.display [ fhir:value "A previously unscheduled walk-in visit" ]
+     ]
+  ];
+  fhir:Appointment.priority [ fhir:value "5"^^xsd:nonNegativeInteger];
+  fhir:Appointment.description [ fhir:value "Discussion about Peter Chalmers MRI results"];
+  fhir:Appointment.supportingInformation [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/DiagnosticReport/ultrasound>;
+     fhir:Reference.reference [ fhir:value "DiagnosticReport/ultrasound" ]
+  ];
+  fhir:Appointment.start [ fhir:value "2013-12-09T09:00:00Z"^^xsd:dateTime];
+  fhir:Appointment.end [ fhir:value "2013-12-09T11:00:00Z"^^xsd:dateTime];
+  fhir:Appointment.comment [ fhir:value "Clarify the results of the MRI to ensure context of test was correct"];
+  fhir:Appointment.participant [
+     fhir:index 0;
+     fhir:Appointment.participant.actor [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "information-only" ];
+     fhir:Appointment.participant.status [ fhir:value "accepted" ]
+  ], [
+     fhir:index 1;
+     fhir:Appointment.participant.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+       fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "accepted" ]
+  ], [
+     fhir:index 2;
+     fhir:Appointment.participant.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/f202>;
+       fhir:Reference.reference [ fhir:value "Practitioner/f202" ];
+       fhir:Reference.display [ fhir:value "Luigi Maas" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "accepted" ]
+  ], [
+     fhir:index 3;
+     fhir:Appointment.participant.actor [
+       fhir:Reference.display [ fhir:value "Phone Call" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "information-only" ];
+     fhir:Appointment.participant.status [ fhir:value "accepted" ]
+  ] .
+
+<http://hl7.org/fhir/DiagnosticReport/ultrasound> a fhir:DiagnosticReport .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Practitioner/f202> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Appointment/2docs.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Appointment/2docs.ttl> .
+
+# -------------------------------------------------------------------------------------
+

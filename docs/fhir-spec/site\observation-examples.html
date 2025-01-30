@@ -1,0 +1,452 @@
+<!DOCTYPE HTML>
+  <!-- template-examples.html --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Observation - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/observation-examples.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="diagnostics-module.html"><img src="diagnostics.jpg"/> Diagnostics</a></li>        <li><a href="observation.html">Observation</a></li>        <li><b>Examples</b></li>          <!-- observation.html / res-Examples / Resource &lt;%xtitle%&gt; - Examples -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<ul class="nav nav-tabs"><li><a href="observation.html">Content</a></li><li class="active"><a href="#">Examples</a></li><li><a href="observation-definitions.html">Detailed Descriptions</a></li><li><a href="observation-mappings.html">Mappings</a></li><li><a href="observation-profiles.html">Profiles &amp; Extensions</a></li><li><a href="observation-operations.html">Operations</a></li><li><a href="observation-version-maps.html">R3 Conversions</a></li></ul>
+
+<h2 class="self-link-parent"><span class="sectioncount">10.1.7<a name="10.1.7"> </a></span> Resource Observation - Examples <a href="observation-examples.html#10.1.7" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/orders/index.cfm">Orders and Observations <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><td><a href="security.html#SecPrivConsiderations">Security Category</a>: Patient</td>  <!-- !ns! --><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-device.html">Device</a>, <a href="compartmentdefinition-encounter.html">Encounter</a>, <a href="compartmentdefinition-patient.html">Patient</a>, <a href="compartmentdefinition-practitioner.html">Practitioner</a>, <a href="compartmentdefinition-relatedperson.html">RelatedPerson</a></td></tr></table>
+
+<h3 class="self-link-parent"><span class="sectioncount">10.1.7.1<a name="10.1.7.1"> </a></span> Laboratory Results <a href="observation-examples.html#10.1.7.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of laboratory observations:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-f001-glucose.html">Real-world patient - glucose</a>
+		</li>
+		<li>
+			<a href="observation-example-f004-erythrocyte.html">Real-world patient - erythrocyte</a>
+		</li>
+		<li>
+			<a href="observation-example-f005-hemoglobin.html">Real-world patient - hemoglobin</a>
+		</li>
+		<li>
+			<a href="observation-example-f002-excess.html">Real-world patient -base excess</a>
+		</li>
+		<li>
+			<a href="observation-example-f003-co2.html">Real-world patient - CO2</a>
+		</li>
+		<li>
+			<a href="observation-example-f204-creatinine.html">Real-world patient - creatinine</a>
+		</li>
+		<li>
+			<a href="observation-example-f205-egfr.html">Real-world patient - estimated gfr</a>
+		</li>
+		<li>
+			<a href="observation-example-f206-staphylococcus.html">Real-world patient - staphylococcus</a>
+		</li>
+		<li>
+			<a href="observation-example-unsat.html">Specimen Reject Example</a>
+		</li>
+		<li>
+			<a href="observation-example-date-lastmp.html">An "ask at order" response using the datetime datetype for the result value</a>
+		</li>
+		<li>
+			<p>Simple blood typing example:</p>
+
+				<ul>
+				<li>
+					<a href="observation-example-bgpanel.html">A simple blood typing panel.</a>
+				</li>
+				<li>
+					<a href="observation-example-bloodgroup.html"> An example of a  blood group (ABO) measurement.</a>
+				</li>
+				<li>
+					<a href="observation-example-rhstatus.html"> An example of a blood Rh antigen measurement.</a>
+				</li>
+			</ul>
+
+		</li>
+
+	</ul>
+
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.2<a name="10.1.7.2"> </a></span> Exam Findings and Simple Assessments <a href="observation-examples.html#10.1.7.2" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations shows examples of physical exams finding and simple assessments:
+    </p>
+	<ul>
+    <li>
+      <a href="observation-example-abdo-tender.html"> An exam finding of abdominal tenderness .</a>Note that this example uses the pattern 3 described in the "Using Codes in Observation" Section.
+    </li>
+		<li>
+			<a href="observation-example-trachcare.html"> Observation to capture whether the mother is trained to change her child's tracheostomy tube.</a> Note that in this example, the child is the patient of record and the mother is the focus.
+		</li>
+	</ul>
+		<h3 class="self-link-parent"><span class="sectioncount">10.1.7.3<a name="10.1.7.3"> </a></span> Imaging Studies <a href="observation-examples.html#10.1.7.3" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of imaging results:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-bmd.html">Example of an encoded BMD measurements of left femur</a>
+		</li>
+	</ul>
+
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.4<a name="10.1.7.4"> </a></span> Genomics <a href="observation-examples.html#10.1.7.4" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of genomics observations:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-genetics-1.html">Genetics example 1</a>
+		</li>
+		<li>
+			<a href="observation-example-genetics-2.html">Genetics example 2</a>
+		</li>
+		<li>
+			<a href="observation-example-genetics-3.html">Genetics example 3</a>
+		</li>
+		<li>
+			<a href="observation-example-genetics-4.html">Genetics example 4</a>
+		</li>
+		<li>
+			<a href="observation-example-genetics-5.html">Genetics example 5</a>
+		</li>
+		<li>
+			<a href="observation-example-diplotype1.html">Example of diplotype data (with haplotypes observation as reference)</a>
+		</li>
+		<li>
+			<a href="observation-example-haplotype1.html">Example of haplotype data that is basis of a diplotype data</a>
+		</li>
+		<li>
+			<a href="observation-example-haplotype2.html">Example of another haplotype data that is basis of a diplotype data</a>
+		</li>
+		<li>
+			<a href="observation-example-phenotype.html">Example of phenotype data</a>
+		</li>
+		<li>
+			<a href="observation-example-TPMT-diplotype.html">Example of a TPMT diplotype that link to two TPMT haplotype observations</a>
+		</li>
+		<li>
+			<a href="observation-example-TPMT-haplotype-one.html">Example of a TPMT haplotype observation </a>
+		</li>
+		<li>
+			<a href="observation-example-TPMT-haplotype-two.html">Example of another TPMT haplotype observation </a>
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.5<a name="10.1.7.5"> </a></span> Observations where subject is a Location <a href="observation-examples.html#10.1.7.5" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of observations about a location:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-vp-oyster.html">Example of an Observations made about a location - an oyster farm</a>
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.6<a name="10.1.7.6"> </a></span> Observations where subject is a Group <a href="observation-examples.html#10.1.7.6" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of observations about a group:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-herd1.html"> An example of a herd screening ELISA assay for Mycoplasmal Pneumonia in Pigs
+</a>
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.7<a name="10.1.7.7"> </a></span> Physical Traits <a href="observation-examples.html#10.1.7.7" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of physical trait observation:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-eye-color.html">Example of a very simple personal characteristic observation</a>
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.8<a name="10.1.7.8"> </a></span> Assessment Tools Scores <a href="observation-examples.html#10.1.7.8" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of assessment tool scores:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-glasgow.html">Clinical assessment tool example - GCS with individual score as components
+</a>
+		</li>
+		<li>
+			<a href="observation-example-glasgow-qa.html">Clinical assessment tool example - GCS with individual scores as related QuestionnaireAnswer
+</a>
+		</li>
+		<li>
+			<a href="observation-example-1minute-apgar-score.html">Example of a 1 minute Apgar score with individual score as components</a>
+		</li>
+		<li>
+			<a href="observation-example-2minute-apgar-score.html">Example of a 2 minute Apgar score with individual score as components</a>
+		</li>
+		<li>
+			<a href="observation-example-5minute-apgar-score.html">Example of a 5 minute Apgar score with individual score as components</a>
+		</li>
+		<li>
+			<a href="observation-example-10minute-apgar-score.html">Example of a 10 minute Apgar score with individual score as components</a>
+		</li>
+		<li>
+			<a href="observation-example-20minute-apgar-score.html">Example of a 20 minute Apgar score with individual score as components</a>
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.9<a name="10.1.7.9"> </a></span> Device Generated Data <a href="observation-examples.html#10.1.7.9" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of observations generated by a device:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-sample-data.html">EKG Example using SampledData data type</a>
+		</li>
+		<li>
+			<a href="observation-example-satO2.html">Oxygen Saturation by Pulse Oximetry Example (DeviceMetricObservation profile)</a>
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.10<a name="10.1.7.10"> </a></span> PHD Generated Data <a href="observation-examples.html#10.1.7.10" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of observations generated by a personal healthcare device:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-spirometry.html">Spirometry Example referencing DeviceComponent</a>
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.11<a name="10.1.7.11"> </a></span> Social History Observations <a href="observation-examples.html#10.1.7.11" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of social history observations:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-secondsmoke.html"> An example of a finding of second hand smoke exposure</a>
+		</li>
+	</ul>
+	<ul>
+		<li>
+			<a href="observation-example-alcohol-type.html">Type of alcohol consumed</a>
+		</li>
+	</ul>
+	<ul>
+		<li>
+			<a href="observation-example-clinical-gender.html">Clinical gender observation.</a> For a discussion of representing patient gender see the <a href="patient.html#gender">Patient</a> resource.
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.12<a name="10.1.7.12"> </a></span> Signs and Symptoms <a href="observation-examples.html#10.1.7.12" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of findings of signs and symptoms:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-vomiting.html">An example of a finding of vomiting</a>
+		</li>
+	</ul>
+	<h3 class="self-link-parent"><span class="sectioncount">10.1.7.13<a name="10.1.7.13"> </a></span> Vital Signs <a href="observation-examples.html#10.1.7.13" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+	<p>The following Observations show examples of vital signs measurements:
+    </p>
+	<ul>
+		<li>
+			<a href="observation-example-f202-temperature.html">Real-world patient - temperature</a>
+		</li>
+		<li>
+			<a href="observation-example.html">Simple Weight Example</a>
+		</li>
+		<li>
+			<a href="observation-example-respiratory-rate.html">Simple Respiratory Rate Example</a>
+		</li>
+		<li>
+			<a href="observation-example-heart-rate.html">Simple Heart Rate Example</a>
+		</li>
+		<li>
+			<a href="observation-example-body-temperature.html">Simple Body Temperature Example</a>
+		</li>
+		<li>
+			<a href="observation-example-body-height.html">Simple Body Height Example</a>
+		</li>
+		
+		<li>
+			<a href="observation-example-body-length.html">Simple Body Length Example</a> This example demonstrates the use of a code translation to allow the observation to be interpreted as Body Length  ( typically used for infants).
+		</li>
+
+		<li>
+			<a href="observation-example-head-circumference.html">Simple Head Circumference Example</a>
+		</li>
+		<li>
+			<a href="observation-example-bmi.html">Simple BMI Example</a>
+		</li>
+		<li>
+			<a href="observation-example-bmi-using-related.html">BMI with links to Height and Weight</a>
+		</li>
+		<li>
+			<a href="observation-example-satO2.html">Oxygen Saturation by Pulse Oximetry Example (DeviceMetricObservation profile)</a>
+		</li>
+		<li>
+			<a href="observation-example-bloodpressure.html">Blood Pressure Measurement</a>
+		</li>
+		<li>
+			<a href="observation-example-bloodpressure-dar.html">Blood Pressure Measurement with an absent Diastolic measurement</a>
+		</li>
+		<li>
+			<a href="observation-example-mbp.html">Simple Mean Arterial Blood Pressure Example</a>
+		</li>
+		<li>
+			<a href="observation-example-vitals-panel.html">Simple Panel of Heart Rate, Repiratory Rate. Blood Pressure and Body Temperature</a>
+		</li>
+		<li>
+			<a href="observation-example-bloodpressure-cancel.html">Blood Pressure Measurement cancelled</a>
+		</li>
+    <li>
+      <a href="observation-example-map-sitting.html">An example to demonstrate the bodyPosition and delta extensions</a>
+    </li>
+	</ul>
+	<br/>
+
+<table class="list">
+<tr><td><b>Example Name</b></td><td><b>id</b></td><td colspan="4"><b>Format</b></td></tr>
+<tr><td><a href="observation-example.html">Simple Weight Example</a></td><td>example</td><td><a href="observation-example.xml.html">XML</a></td><td><a href="observation-example.json.html">JSON</a></td><td><a href="observation-example.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-respiratory-rate.html">Simple Respiratory Rate Example</a></td><td>respiratory-rate</td><td><a href="observation-example-respiratory-rate.xml.html">XML</a></td><td><a href="observation-example-respiratory-rate.json.html">JSON</a></td><td><a href="observation-example-respiratory-rate.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-heart-rate.html">Simple Heart Rate Example</a></td><td>heart-rate</td><td><a href="observation-example-heart-rate.xml.html">XML</a></td><td><a href="observation-example-heart-rate.json.html">JSON</a></td><td><a href="observation-example-heart-rate.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-body-temperature.html">Simple Body Temperature Example</a></td><td>body-temperature</td><td><a href="observation-example-body-temperature.xml.html">XML</a></td><td><a href="observation-example-body-temperature.json.html">JSON</a></td><td><a href="observation-example-body-temperature.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-body-height.html">Simple Body Height Example</a></td><td>body-height</td><td><a href="observation-example-body-height.xml.html">XML</a></td><td><a href="observation-example-body-height.json.html">JSON</a></td><td><a href="observation-example-body-height.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-body-length.html">Simple Body Length Example</a></td><td>body-length</td><td><a href="observation-example-body-length.xml.html">XML</a></td><td><a href="observation-example-body-length.json.html">JSON</a></td><td><a href="observation-example-body-length.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-head-circumference.html">Simple Head Circumference Example</a></td><td>head-circumference</td><td><a href="observation-example-head-circumference.xml.html">XML</a></td><td><a href="observation-example-head-circumference.json.html">JSON</a></td><td><a href="observation-example-head-circumference.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-bmi.html">Simple BMI Example</a></td><td>bmi</td><td><a href="observation-example-bmi.xml.html">XML</a></td><td><a href="observation-example-bmi.json.html">JSON</a></td><td><a href="observation-example-bmi.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-bmi-using-related.html">BMI with links to Height and Weight</a></td><td>bmi-using-related</td><td><a href="observation-example-bmi-using-related.xml.html">XML</a></td><td><a href="observation-example-bmi-using-related.json.html">JSON</a></td><td><a href="observation-example-bmi-using-related.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-satO2.html">Oxygen Saturation by Pulse Oximetry Example (DeviceMetricObservation profile)</a></td><td>satO2</td><td><a href="observation-example-satO2.xml.html">XML</a></td><td><a href="observation-example-satO2.json.html">JSON</a></td><td><a href="observation-example-satO2.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-bloodpressure.html">Blood Pressure Measurement</a></td><td>blood-pressure</td><td><a href="observation-example-bloodpressure.xml.html">XML</a></td><td><a href="observation-example-bloodpressure.json.html">JSON</a></td><td><a href="observation-example-bloodpressure.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-bloodpressure-dar.html">Blood Pressure Measurement with an absent Diastolic measurement</a></td><td>blood-pressure-dar</td><td><a href="observation-example-bloodpressure-dar.xml.html">XML</a></td><td><a href="observation-example-bloodpressure-dar.json.html">JSON</a></td><td><a href="observation-example-bloodpressure-dar.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-mbp.html">Simple Mean Arterial Blood Pressure Example</a></td><td>mbp</td><td><a href="observation-example-mbp.xml.html">XML</a></td><td><a href="observation-example-mbp.json.html">JSON</a></td><td><a href="observation-example-mbp.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-vitals-panel.html">Simple Panel of Heart Rate, Repiratory Rate. Blood Pressure and Body Temperature</a></td><td>vitals-panel</td><td><a href="observation-example-vitals-panel.xml.html">XML</a></td><td><a href="observation-example-vitals-panel.json.html">JSON</a></td><td><a href="observation-example-vitals-panel.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-bloodpressure-cancel.html">Blood Pressure Measurement cancelled</a></td><td>blood-pressure-cancel</td><td><a href="observation-example-bloodpressure-cancel.xml.html">XML</a></td><td><a href="observation-example-bloodpressure-cancel.json.html">JSON</a></td><td><a href="observation-example-bloodpressure-cancel.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f001-glucose.html">Real-world patient - glucose</a></td><td>f001</td><td><a href="observation-example-f001-glucose.xml.html">XML</a></td><td><a href="observation-example-f001-glucose.json.html">JSON</a></td><td><a href="observation-example-f001-glucose.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-unsat.html">Specimen Reject Example</a></td><td>unsat</td><td><a href="observation-example-unsat.xml.html">XML</a></td><td><a href="observation-example-unsat.json.html">JSON</a></td><td><a href="observation-example-unsat.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f002-excess.html">Real-world patient -base excess</a></td><td>f002</td><td><a href="observation-example-f002-excess.xml.html">XML</a></td><td><a href="observation-example-f002-excess.json.html">JSON</a></td><td><a href="observation-example-f002-excess.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f003-co2.html">Real-world patient - CO2</a></td><td>f003</td><td><a href="observation-example-f003-co2.xml.html">XML</a></td><td><a href="observation-example-f003-co2.json.html">JSON</a></td><td><a href="observation-example-f003-co2.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f004-erythrocyte.html">Real-world patient - erythrocyte</a></td><td>f004</td><td><a href="observation-example-f004-erythrocyte.xml.html">XML</a></td><td><a href="observation-example-f004-erythrocyte.json.html">JSON</a></td><td><a href="observation-example-f004-erythrocyte.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f005-hemoglobin.html">Real-world patient - hemoglobin</a></td><td>f005</td><td><a href="observation-example-f005-hemoglobin.xml.html">XML</a></td><td><a href="observation-example-f005-hemoglobin.json.html">JSON</a></td><td><a href="observation-example-f005-hemoglobin.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-date-lastmp.html">An "ask at order" response using the datetime datetype for the result value</a></td><td>date-lastmp</td><td><a href="observation-example-date-lastmp.xml.html">XML</a></td><td><a href="observation-example-date-lastmp.json.html">JSON</a></td><td><a href="observation-example-date-lastmp.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f202-temperature.html">Real-world patient - temperature</a></td><td>f202</td><td><a href="observation-example-f202-temperature.xml.html">XML</a></td><td><a href="observation-example-f202-temperature.json.html">JSON</a></td><td><a href="observation-example-f202-temperature.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f203-bicarbonate.html">Real-world patient - CO2</a></td><td>f203</td><td><a href="observation-example-f203-bicarbonate.xml.html">XML</a></td><td><a href="observation-example-f203-bicarbonate.json.html">JSON</a></td><td><a href="observation-example-f203-bicarbonate.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f204-creatinine.html">Real-world patient - creatinine</a></td><td>f204</td><td><a href="observation-example-f204-creatinine.xml.html">XML</a></td><td><a href="observation-example-f204-creatinine.json.html">JSON</a></td><td><a href="observation-example-f204-creatinine.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f205-egfr.html">Real-world patient - estimated gfr</a></td><td>f205</td><td><a href="observation-example-f205-egfr.xml.html">XML</a></td><td><a href="observation-example-f205-egfr.json.html">JSON</a></td><td><a href="observation-example-f205-egfr.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-f206-staphylococcus.html">Real-world patient - staphylococcus</a></td><td>f206</td><td><a href="observation-example-f206-staphylococcus.xml.html">XML</a></td><td><a href="observation-example-f206-staphylococcus.json.html">JSON</a></td><td><a href="observation-example-f206-staphylococcus.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-sample-data.html">EKG Example using SampledData data type</a></td><td>ekg</td><td><a href="observation-example-sample-data.xml.html">XML</a></td><td><a href="observation-example-sample-data.json.html">JSON</a></td><td><a href="observation-example-sample-data.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-glasgow.html">Clinical assessment tool example - GCS with individual score as components</a></td><td>glasgow</td><td><a href="observation-example-glasgow.xml.html">XML</a></td><td><a href="observation-example-glasgow.json.html">JSON</a></td><td><a href="observation-example-glasgow.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-glasgow-qa.html">Clinical assessment tool example - GCS with individual scores as related QuestionnaireAnswer</a></td><td>gcs-qa</td><td><a href="observation-example-glasgow-qa.xml.html">XML</a></td><td><a href="observation-example-glasgow-qa.json.html">JSON</a></td><td><a href="observation-example-glasgow-qa.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-1minute-apgar-score.html">Example of a 1 minute Apgar score with individual score as components</a></td><td>1minute-apgar-score</td><td><a href="observation-example-1minute-apgar-score.xml.html">XML</a></td><td><a href="observation-example-1minute-apgar-score.json.html">JSON</a></td><td><a href="observation-example-1minute-apgar-score.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-2minute-apgar-score.html">Example of a 2 minute Apgar score with individual score as components</a></td><td>2minute-apgar-score</td><td><a href="observation-example-2minute-apgar-score.xml.html">XML</a></td><td><a href="observation-example-2minute-apgar-score.json.html">JSON</a></td><td><a href="observation-example-2minute-apgar-score.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-5minute-apgar-score.html">Example of a 5 minute Apgar score with individual score as components</a></td><td>5minute-apgar-score</td><td><a href="observation-example-5minute-apgar-score.xml.html">XML</a></td><td><a href="observation-example-5minute-apgar-score.json.html">JSON</a></td><td><a href="observation-example-5minute-apgar-score.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-10minute-apgar-score.html">Example of a 10 minute Apgar score with individual score as components</a></td><td>10minute-apgar-score</td><td><a href="observation-example-10minute-apgar-score.xml.html">XML</a></td><td><a href="observation-example-10minute-apgar-score.json.html">JSON</a></td><td><a href="observation-example-10minute-apgar-score.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-20minute-apgar-score.html">Example of a 20 minute Apgar score with individual score as components</a></td><td>20minute-apgar-score</td><td><a href="observation-example-20minute-apgar-score.xml.html">XML</a></td><td><a href="observation-example-20minute-apgar-score.json.html">JSON</a></td><td><a href="observation-example-20minute-apgar-score.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-clinical-gender.html">Example of a clinical gender observation.  For a discussion on representing a patient's gender the Patient Resource.</a></td><td>clinical-gender</td><td><a href="observation-example-clinical-gender.xml.html">XML</a></td><td><a href="observation-example-clinical-gender.json.html">JSON</a></td><td><a href="observation-example-clinical-gender.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-eye-color.html">Example of a very simple personal characteristic observation</a></td><td>eye-color</td><td><a href="observation-example-eye-color.xml.html">XML</a></td><td><a href="observation-example-eye-color.json.html">JSON</a></td><td><a href="observation-example-eye-color.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-bmd.html">Example of an encoded BMD measurements of left femur</a></td><td>bmd</td><td><a href="observation-example-bmd.xml.html">XML</a></td><td><a href="observation-example-bmd.json.html">JSON</a></td><td><a href="observation-example-bmd.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-spirometry.html">Spirometry Example referencing DeviceComponent</a></td><td>656</td><td><a href="observation-example-spirometry.xml.html">XML</a></td><td><a href="observation-example-spirometry.json.html">JSON</a></td><td><a href="observation-example-spirometry.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-alcohol-type.html">Example of a multi-select values/answers Observation with individual answers/values as components</a></td><td>alcohol-type</td><td><a href="observation-example-alcohol-type.xml.html">XML</a></td><td><a href="observation-example-alcohol-type.json.html">JSON</a></td><td><a href="observation-example-alcohol-type.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-vp-oyster.html">Example of an Observations made about a location - an oyster farm</a></td><td>vp-oyster</td><td><a href="observation-example-vp-oyster.xml.html">XML</a></td><td><a href="observation-example-vp-oyster.json.html">JSON</a></td><td><a href="observation-example-vp-oyster.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-herd1.html">An example of a herd screening ELISA assay for Mycoplasmal Pneumonia in Pigs.</a></td><td>herd1</td><td><a href="observation-example-herd1.xml.html">XML</a></td><td><a href="observation-example-herd1.json.html">JSON</a></td><td><a href="observation-example-herd1.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-vomiting.html">An example of a finding of vomiting</a></td><td>vomiting</td><td><a href="observation-example-vomiting.xml.html">XML</a></td><td><a href="observation-example-vomiting.json.html">JSON</a></td><td><a href="observation-example-vomiting.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-secondsmoke.html">An example of a finding of second hand smoke exposure</a></td><td>secondsmoke</td><td><a href="observation-example-secondsmoke.xml.html">XML</a></td><td><a href="observation-example-secondsmoke.json.html">JSON</a></td><td><a href="observation-example-secondsmoke.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-trachcare.html">An example of capturing whether the mother is trained to change her child's tracheostomy tube. In this example, the child is the patient of record and the mother is the focus.</a></td><td>trachcare</td><td><a href="observation-example-trachcare.xml.html">XML</a></td><td><a href="observation-example-trachcare.json.html">JSON</a></td><td><a href="observation-example-trachcare.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-bgpanel.html">An example of a simple blood typing panel.</a></td><td>bgpanel</td><td><a href="observation-example-bgpanel.xml.html">XML</a></td><td><a href="observation-example-bgpanel.json.html">JSON</a></td><td><a href="observation-example-bgpanel.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-bloodgroup.html">An example of a  blood group (ABO) measurement.</a></td><td>bloodgroup</td><td><a href="observation-example-bloodgroup.xml.html">XML</a></td><td><a href="observation-example-bloodgroup.json.html">JSON</a></td><td><a href="observation-example-bloodgroup.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-rhstatus.html">An example of a blood Rh antigen measurement.</a></td><td>rhstatus</td><td><a href="observation-example-rhstatus.xml.html">XML</a></td><td><a href="observation-example-rhstatus.json.html">JSON</a></td><td><a href="observation-example-rhstatus.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-decimal.html">Explores the edge cases of the decimal data type</a></td><td>decimal</td><td><a href="observation-decimal.xml.html">XML</a></td><td><a href="observation-decimal.json.html">JSON</a></td><td><a href="observation-decimal.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-map-sitting.html">An example to demonstrate using the bodyPosition and delta extensions</a></td><td>map-sitting</td><td><a href="observation-example-map-sitting.xml.html">XML</a></td><td><a href="observation-example-map-sitting.json.html">JSON</a></td><td><a href="observation-example-map-sitting.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-abdo-tender.html">An exam finding using pattern 3 described in the "Using Codes in Observation" Section</a></td><td>abdo-tender</td><td><a href="observation-example-abdo-tender.xml.html">XML</a></td><td><a href="observation-example-abdo-tender.json.html">JSON</a></td><td><a href="observation-example-abdo-tender.ttl.html">Turtle</a></td><td></td></tr><tr><td><a href="observation-example-genetics-1.html">Genetics example 1</a></td><td>example-genetics-1</td><td><a href="observation-example-genetics-1.xml.html">XML</a></td><td><a href="observation-example-genetics-1.json.html">JSON</a></td><td><a href="observation-example-genetics-1.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-genetics-2.html">Genetics example 2</a></td><td>example-genetics-2</td><td><a href="observation-example-genetics-2.xml.html">XML</a></td><td><a href="observation-example-genetics-2.json.html">JSON</a></td><td><a href="observation-example-genetics-2.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-genetics-3.html">Genetics example 3</a></td><td>example-genetics-3</td><td><a href="observation-example-genetics-3.xml.html">XML</a></td><td><a href="observation-example-genetics-3.json.html">JSON</a></td><td><a href="observation-example-genetics-3.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-genetics-4.html">Genetics example 4</a></td><td>example-genetics-4</td><td><a href="observation-example-genetics-4.xml.html">XML</a></td><td><a href="observation-example-genetics-4.json.html">JSON</a></td><td><a href="observation-example-genetics-4.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-genetics-5.html">Genetics example 5</a></td><td>example-genetics-5</td><td><a href="observation-example-genetics-5.xml.html">XML</a></td><td><a href="observation-example-genetics-5.json.html">JSON</a></td><td><a href="observation-example-genetics-5.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-diplotype1.html">Example of diplotype data (with haplotypes observation as reference)</a></td><td>example-diplotype1</td><td><a href="observation-example-diplotype1.xml.html">XML</a></td><td><a href="observation-example-diplotype1.json.html">JSON</a></td><td><a href="observation-example-diplotype1.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-haplotype1.html">Example of haplotype data that is basis of a diplotype data</a></td><td>example-haplotype1</td><td><a href="observation-example-haplotype1.xml.html">XML</a></td><td><a href="observation-example-haplotype1.json.html">JSON</a></td><td><a href="observation-example-haplotype1.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-haplotype2.html">Example of another haplotype data that is basis of a diplotype data</a></td><td>example-haplotype2</td><td><a href="observation-example-haplotype2.xml.html">XML</a></td><td><a href="observation-example-haplotype2.json.html">JSON</a></td><td><a href="observation-example-haplotype2.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-phenotype.html">Example of phenotype data</a></td><td>example-phenotype</td><td><a href="observation-example-phenotype.xml.html">XML</a></td><td><a href="observation-example-phenotype.json.html">JSON</a></td><td><a href="observation-example-phenotype.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-TPMT-diplotype.html">Example of a TPMT diplotype that link to two TPMT haplotype observations</a></td><td>example-TPMT-diplotype</td><td><a href="observation-example-TPMT-diplotype.xml.html">XML</a></td><td><a href="observation-example-TPMT-diplotype.json.html">JSON</a></td><td><a href="observation-example-TPMT-diplotype.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-TPMT-haplotype-one.html">Example of a TPMT haplotype observation</a></td><td>example-TPMT-haplotype-one</td><td><a href="observation-example-TPMT-haplotype-one.xml.html">XML</a></td><td><a href="observation-example-TPMT-haplotype-one.json.html">JSON</a></td><td><a href="observation-example-TPMT-haplotype-one.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-TPMT-haplotype-two.html">Example of another TPMT haplotype observation</a></td><td>example-TPMT-haplotype-two</td><td><a href="observation-example-TPMT-haplotype-two.xml.html">XML</a></td><td><a href="observation-example-TPMT-haplotype-two.json.html">JSON</a></td><td><a href="observation-example-TPMT-haplotype-two.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td><a href="observation-example-genetics-brcapat.html">Example of breast cancer genetic observation</a></td><td>example-genetics-brcapat</td><td><a href="observation-example-genetics-brcapat.xml.html">XML</a></td><td><a href="observation-example-genetics-brcapat.json.html">JSON</a></td><td><a href="observation-example-genetics-brcapat.ttl.html">Turtle</a></td><td>for Profile <a href="observation-genetic.html">Observation-genetics</a></td></tr><tr><td colspan="4">&nbsp;</td></tr></table>
+
+
+
+
+<p>
+Usage note: every effort has been made to ensure that the 
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:36+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fobservation-examples.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fobservation-examples.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

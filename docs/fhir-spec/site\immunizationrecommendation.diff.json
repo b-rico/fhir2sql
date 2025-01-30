@@ -1,0 +1,54 @@
+﻿{
+  "types": [
+    "ImmunizationRecommendation"
+  ],
+  "ImmunizationRecommendation": {
+    "elements": {
+      "ImmunizationRecommendation.recommendation.vaccineCode": {
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode": {
+        "status": "new"
+      },
+      "ImmunizationRecommendation.recommendation.forecastStatus": {
+        "modifier": "added"
+      },
+      "ImmunizationRecommendation.recommendation.forecastReason": {
+        "status": "new"
+      },
+      "ImmunizationRecommendation.recommendation.doseNumber[x]": {
+        "old-name": "doseNumber",
+        "added-types": [
+          "string"
+        ]
+      },
+      "ImmunizationRecommendation.recommendation.seriesDoses[x]": {
+        "old-name": "doseSequence",
+        "added-types": [
+          "string"
+        ]
+      },
+      "ImmunizationRecommendation.recommendation.supportingImmunization": {
+        "removed-types": [
+          "Reference(Immunization)"
+        ],
+        "added-types": [
+          "Reference(Immunization | ImmunizationEvaluation)"
+        ]
+      },
+      "ImmunizationRecommendation.recommendation.supportingPatientInformation": {
+        "removed-types": [
+          "Reference(Observation | AllergyIntolerance)"
+        ],
+        "added-types": [
+          "Reference(Resource)"
+        ]
+      },
+      "ImmunizationRecommendation.recommendation.protocol": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

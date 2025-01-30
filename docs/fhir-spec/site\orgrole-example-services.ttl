@@ -1,0 +1,113 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/OrganizationAffiliation/orgrole1> a fhir:OrganizationAffiliation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "orgrole1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: orgrole1</p><p><b>identifier</b>: service002 (SECONDARY)</p><p><b>active</b>: true</p><p><b>period</b>: 09/02/2018 --&gt; 01/02/2022</p><p><b>organization</b>: <a>Founding Fathers Memorial Hospital</a></p><p><b>participatingOrganization</b>: <a>Independence Rehabilitation Services, Inc.</a></p><p><b>network</b>: <a>Patriot Preferred Provider Network</a></p><p><b>code</b>: Provider of rehabilitation services <span>(Details : {http://hl7.org/fhir/organization-role code 'provider' = 'Provider', given as 'Provider'})</span></p><p><b>specialty</b>: Rehabilitation <span>(Details : {SNOMED CT code '394602003' = 'Rehabilitation - speciality', given as 'Rehabilitation - specialty'})</span></p><p><b>location</b>: <a>Founding Fathers Memorial Hospital</a></p><p><b>healthcareService</b>: </p><ul><li><a>Inpatient rehabilitation services</a></li><li><a>Outpatient rehabilitation services</a></li></ul><p><b>telecom</b>: ph: 202-109-8765(WORK)</p></div>"
+  ];
+  fhir:OrganizationAffiliation.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "secondary" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/www.foundingfathersmemorial.com" ];
+     fhir:Identifier.value [ fhir:value "service002" ];
+     fhir:Identifier.assigner [
+       fhir:link <http://hl7.org/fhir/ig/vhdir/Organization/foundingfathers>;
+       fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/ig/vhdir/Organization/foundingfathers" ];
+       fhir:Reference.display [ fhir:value "Founding Fathers Memorial Hospital" ]
+     ]
+  ];
+  fhir:OrganizationAffiliation.active [ fhir:value "true"^^xsd:boolean];
+  fhir:OrganizationAffiliation.period [
+     fhir:Period.start [ fhir:value "2018-02-09"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2022-02-01"^^xsd:date ]
+  ];
+  fhir:OrganizationAffiliation.organization [
+     fhir:link <http://hl7.org/fhir/ig/vhdir/Organization/foundingfathers>;
+     fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/ig/vhdir/Organization/foundingfathers" ];
+     fhir:Reference.display [ fhir:value "Founding Fathers Memorial Hospital" ]
+  ];
+  fhir:OrganizationAffiliation.participatingOrganization [
+     fhir:link <http://hl7.org/fhir/ig/vhdir/Organization/independencerehab>;
+     fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/ig/vhdir/Organization/independencerehab" ];
+     fhir:Reference.display [ fhir:value "Independence Rehabilitation Services, Inc." ]
+  ];
+  fhir:OrganizationAffiliation.network [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ig/vhdir/Network/patriotppo>;
+     fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/ig/vhdir/Network/patriotppo" ];
+     fhir:Reference.display [ fhir:value "Patriot Preferred Provider Network" ]
+  ];
+  fhir:OrganizationAffiliation.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/organization-role" ];
+       fhir:Coding.code [ fhir:value "provider" ];
+       fhir:Coding.display [ fhir:value "Provider" ];
+       fhir:Coding.userSelected [ fhir:value "true"^^xsd:boolean ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Provider of rehabilitation services" ]
+  ];
+  fhir:OrganizationAffiliation.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:394602003;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "394602003" ];
+       fhir:Coding.display [ fhir:value "Rehabilitation - specialty" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Rehabilitation" ]
+  ];
+  fhir:OrganizationAffiliation.location [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ig/vhdir/Location/foundingfathers1>;
+     fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/ig/vhdir/Location/foundingfathers1" ];
+     fhir:Reference.display [ fhir:value "Founding Fathers Memorial Hospital" ]
+  ];
+  fhir:OrganizationAffiliation.healthcareService [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ig/vhdir/HealthcareService/independencerehab1>;
+     fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/ig/vhdir/HealthcareService/independencerehab1" ];
+     fhir:Reference.display [ fhir:value "Inpatient rehabilitation services" ]
+  ], [
+     fhir:index 1;
+     fhir:link <http://hl7.org/fhir/ig/vhdir/HealthcareService/independencerehab2>;
+     fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/ig/vhdir/HealthcareService/independencerehab2" ];
+     fhir:Reference.display [ fhir:value "Outpatient rehabilitation services" ]
+  ];
+  fhir:OrganizationAffiliation.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "202-109-8765" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ] .
+
+<http://hl7.org/fhir/ig/vhdir/Organization/foundingfathers> a fhir:ig .
+
+<http://hl7.org/fhir/ig/vhdir/Organization/independencerehab> a fhir:ig .
+
+<http://hl7.org/fhir/ig/vhdir/Network/patriotppo> a fhir:ig .
+
+<http://hl7.org/fhir/ig/vhdir/Location/foundingfathers1> a fhir:ig .
+
+<http://hl7.org/fhir/ig/vhdir/HealthcareService/independencerehab1> a fhir:ig .
+
+<http://hl7.org/fhir/ig/vhdir/HealthcareService/independencerehab2> a fhir:ig .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/OrganizationAffiliation/orgrole1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/OrganizationAffiliation/orgrole1.ttl> .
+
+# -------------------------------------------------------------------------------------
+

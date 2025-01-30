@@ -1,0 +1,99 @@
+﻿{
+  "types": [
+    "Media"
+  ],
+  "Media": {
+    "elements": {
+      "Media.basedOn": {
+        "removed-types": [
+          "Reference(ProcedureRequest)"
+        ],
+        "added-types": [
+          "Reference(ServiceRequest | CarePlan)"
+        ]
+      },
+      "Media.partOf": {
+        "status": "new"
+      },
+      "Media.status": {
+        "status": "new"
+      },
+      "Media.type": {
+        "old-min": 1,
+        "new-min": 0,
+        "removed-types": [
+          "code"
+        ],
+        "added-types": [
+          "CodeableConcept"
+        ],
+        "binding-strength-changed": true,
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/digital-media-type",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/media-type",
+          "strength": "extensible"
+        }
+      },
+      "Media.modality": {
+        "old-name": "subtype"
+      },
+      "Media.subject": {
+        "removed-types": [
+          "Reference(Patient | Practitioner | Group | Device | Specimen)"
+        ],
+        "added-types": [
+          "Reference(Patient | Practitioner | PractitionerRole | Group | Device | Specimen | Location)"
+        ]
+      },
+      "Media.encounter": {
+        "status": "new"
+      },
+      "Media.created[x]": {
+        "old-name": "occurrence[x]"
+      },
+      "Media.issued": {
+        "status": "new"
+      },
+      "Media.operator": {
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization | CareTeam | Patient | Device | RelatedPerson)"
+        ]
+      },
+      "Media.deviceName": {
+        "status": "new"
+      },
+      "Media.device": {
+        "removed-types": [
+          "Reference(Device | DeviceMetric)"
+        ],
+        "added-types": [
+          "Reference(Device | DeviceMetric | Device)"
+        ]
+      },
+      "Media.frames": {
+        "default": "removed",
+        "old-default": "\"1\""
+      },
+      "Media.duration": {
+        "removed-types": [
+          "unsignedInt"
+        ],
+        "added-types": [
+          "decimal"
+        ]
+      },
+      "Media.context": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

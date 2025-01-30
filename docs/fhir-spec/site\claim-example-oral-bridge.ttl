@@ -1,0 +1,339 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Claim/100156> a fhir:Claim;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "100156"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the Oral Health Claim</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Device;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "device-bridge" ]
+  ], [
+     a fhir:ServiceRequest;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "referral" ];
+     fhir:ServiceRequest.status [ fhir:value "active" ];
+     fhir:ServiceRequest.intent [ fhir:value "order" ];
+     fhir:ServiceRequest.subject [
+       fhir:link <http://hl7.org/fhir/Patient/1>;
+       fhir:Reference.reference [ fhir:value "Patient/1" ]
+     ]
+  ];
+  fhir:Claim.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://happyvalley.com/claim" ];
+     fhir:Identifier.value [ fhir:value "123466" ]
+  ];
+  fhir:Claim.status [ fhir:value "active"];
+  fhir:Claim.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claim-type" ];
+       fhir:Coding.code [ fhir:value "oral" ]
+     ]
+  ];
+  fhir:Claim.use [ fhir:value "claim"];
+  fhir:Claim.patient [
+     fhir:link <http://hl7.org/fhir/Patient/1>;
+     fhir:Reference.reference [ fhir:value "Patient/1" ]
+  ];
+  fhir:Claim.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:Claim.insurer [
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:Claim.provider [
+     fhir:link <http://hl7.org/fhir/Organization/1>;
+     fhir:Reference.reference [ fhir:value "Organization/1" ]
+  ];
+  fhir:Claim.priority [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "normal" ]
+     ]
+  ];
+  fhir:Claim.related [
+     fhir:index 0;
+     fhir:Claim.related.claim [
+       fhir:link <http://hl7.org/fhir/Claim/100151>;
+       fhir:Reference.reference [ fhir:value "Claim/100151" ]
+     ];
+     fhir:Claim.related.relationship [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship" ];
+         fhir:Coding.code [ fhir:value "associated" ]
+       ]
+     ];
+     fhir:Claim.related.reference [
+       fhir:Identifier.value [ fhir:value "CASE156746B" ]
+     ]
+  ];
+  fhir:Claim.payee [
+     fhir:Claim.payee.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/payeetype" ];
+         fhir:Coding.code [ fhir:value "other" ]
+       ]
+     ];
+     fhir:Claim.payee.party [
+       fhir:link <http://hl7.org/fhir/RelatedPerson/peter>;
+       fhir:Reference.reference [ fhir:value "RelatedPerson/peter" ]
+     ]
+  ];
+  fhir:Claim.referral [
+     fhir:Reference.reference [ fhir:value "#referral" ]
+  ];
+  fhir:Claim.careTeam [
+     fhir:index 0;
+     fhir:Claim.careTeam.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.careTeam.provider [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:Claim.supportingInfo [
+     fhir:index 0;
+     fhir:Claim.supportingInfo.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.supportingInfo.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claiminformationcategory" ];
+         fhir:Coding.code [ fhir:value "prosthesis" ]
+       ]
+     ];
+     fhir:Claim.supportingInfo.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ex-oralprostho" ];
+         fhir:Coding.code [ fhir:value "2" ];
+         fhir:Coding.display [ fhir:value "Maryland Bridge" ]
+       ]
+     ];
+     fhir:Claim.supportingInfo.timingDate [ fhir:value "2001-04-07"^^xsd:date ]
+  ];
+  fhir:Claim.procedure [
+     fhir:index 0;
+     fhir:Claim.procedure.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.procedure.date [ fhir:value "2014-07-04"^^xsd:date ];
+     fhir:Claim.procedure.procedureCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Resection of gum to increase exposed tooth." ]
+     ]
+  ];
+  fhir:Claim.insurance [
+     fhir:index 0;
+     fhir:Claim.insurance.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.insurance.focal [ fhir:value "true"^^xsd:boolean ];
+     fhir:Claim.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ]
+  ];
+  fhir:Claim.item [
+     fhir:index 0;
+     fhir:Claim.item.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.item.careTeamSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:Claim.item.informationSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:Claim.item.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/oralservicecodes" ];
+         fhir:Coding.code [ fhir:value "67221" ];
+         fhir:Coding.display [ fhir:value "Maryland Bridge" ]
+       ]
+     ];
+     fhir:Claim.item.servicedDate [ fhir:value "2014-08-16"^^xsd:date ];
+     fhir:Claim.item.locationCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-serviceplace" ];
+         fhir:Coding.code [ fhir:value "11" ]
+       ]
+     ];
+     fhir:Claim.item.unitPrice [
+       fhir:Money.value [ fhir:value "1400.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.factor [ fhir:value "0.75"^^xsd:decimal ];
+     fhir:Claim.item.net [
+       fhir:Money.value [ fhir:value "1050.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.udi [
+       fhir:index 0;
+       fhir:Reference.reference [ fhir:value "#device-bridge" ]
+     ];
+     fhir:Claim.item.bodySite [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fdi.org/fhir/oraltoothcodes" ];
+         fhir:Coding.code [ fhir:value "01" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Claim.item.sequence [ fhir:value "2"^^xsd:positiveInteger ];
+     fhir:Claim.item.careTeamSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:Claim.item.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/oralservicecodes" ];
+         fhir:Coding.code [ fhir:value "21211" ]
+       ]
+     ];
+     fhir:Claim.item.servicedDate [ fhir:value "2014-08-16"^^xsd:date ];
+     fhir:Claim.item.locationCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-serviceplace" ];
+         fhir:Coding.code [ fhir:value "11" ]
+       ]
+     ];
+     fhir:Claim.item.unitPrice [
+       fhir:Money.value [ fhir:value "105.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.net [
+       fhir:Money.value [ fhir:value "105.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.bodySite [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fdi.org/fhir/oraltoothcodes" ];
+         fhir:Coding.code [ fhir:value "21" ]
+       ]
+     ];
+     fhir:Claim.item.subSite [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fdi.org/fhir/oralsurfacecodes" ];
+         fhir:Coding.code [ fhir:value "L" ]
+       ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Claim.item.sequence [ fhir:value "3"^^xsd:positiveInteger ];
+     fhir:Claim.item.careTeamSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:Claim.item.procedureSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:Claim.item.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/oralservicecodes" ];
+         fhir:Coding.code [ fhir:value "27211" ]
+       ]
+     ];
+     fhir:Claim.item.servicedDate [ fhir:value "2014-08-16"^^xsd:date ];
+     fhir:Claim.item.locationCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-serviceplace" ];
+         fhir:Coding.code [ fhir:value "11" ]
+       ]
+     ];
+     fhir:Claim.item.unitPrice [
+       fhir:Money.value [ fhir:value "1100.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.net [
+       fhir:Money.value [ fhir:value "1100.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.bodySite [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fdi.org/fhir/oraltoothcodes" ];
+         fhir:Coding.code [ fhir:value "24" ]
+       ]
+     ];
+     fhir:Claim.item.detail [
+       fhir:index 0;
+       fhir:Claim.item.detail.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+       fhir:Claim.item.detail.productOrService [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/fhir/oralservicecodes" ];
+           fhir:Coding.code [ fhir:value "27211" ]
+         ]
+       ];
+       fhir:Claim.item.detail.unitPrice [
+         fhir:Money.value [ fhir:value "1000.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.factor [ fhir:value "0.75"^^xsd:decimal ];
+       fhir:Claim.item.detail.net [
+         fhir:Money.value [ fhir:value "750.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Claim.item.detail.sequence [ fhir:value "2"^^xsd:positiveInteger ];
+       fhir:Claim.item.detail.productOrService [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/fhir/oralservicecodes" ];
+           fhir:Coding.code [ fhir:value "lab" ]
+         ]
+       ];
+       fhir:Claim.item.detail.unitPrice [
+         fhir:Money.value [ fhir:value "350.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.net [
+         fhir:Money.value [ fhir:value "350.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ]
+  ];
+  fhir:Claim.total [
+     fhir:Money.value [ fhir:value "2255.00"^^xsd:decimal ];
+     fhir:Money.currency [ fhir:value "USD" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/1> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Organization/1> a fhir:Organization .
+
+<http://hl7.org/fhir/Claim/100151> a fhir:Claim .
+
+<http://hl7.org/fhir/RelatedPerson/peter> a fhir:RelatedPerson .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Claim/100156.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Claim/100156.ttl> .
+
+# -------------------------------------------------------------------------------------
+

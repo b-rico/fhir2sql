@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Linkage" status="changed">
+      <element default="removed" old-default="&#34;true&#34;" path="Linkage.active"/>
+      <element path="Linkage.author">
+         <removed-type name="Reference(Practitioner | Organization)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Linkage.item.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/linkage-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/linkage-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Linkage.item.resource">
+         <removed-type name="Reference"/>
+         <added-type name="Reference(Resource)"/>
+      </element>
+   </type>
+</difference>

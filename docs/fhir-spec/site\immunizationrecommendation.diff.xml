@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="ImmunizationRecommendation" status="changed">
+      <element new-max="*"
+               old-max="1"
+               path="ImmunizationRecommendation.recommendation.vaccineCode"/>
+      <element path="ImmunizationRecommendation.recommendation.contraindicatedVaccineCode"
+               status="new"/>
+      <element modifier="added"
+               path="ImmunizationRecommendation.recommendation.forecastStatus"/>
+      <element path="ImmunizationRecommendation.recommendation.forecastReason"
+               status="new"/>
+      <element old-name="doseNumber"
+               path="ImmunizationRecommendation.recommendation.doseNumber[x]">
+         <added-type name="string"/>
+      </element>
+      <element old-name="doseSequence"
+               path="ImmunizationRecommendation.recommendation.seriesDoses[x]">
+         <added-type name="string"/>
+      </element>
+      <element path="ImmunizationRecommendation.recommendation.supportingImmunization">
+         <removed-type name="Reference(Immunization)"/>
+         <added-type name="Reference(Immunization | ImmunizationEvaluation)"/>
+      </element>
+      <element path="ImmunizationRecommendation.recommendation.supportingPatientInformation">
+         <removed-type name="Reference(Observation | AllergyIntolerance)"/>
+         <added-type name="Reference(Resource)"/>
+      </element>
+      <element path="ImmunizationRecommendation.recommendation.protocol"
+               status="deleted"/>
+   </type>
+</difference>

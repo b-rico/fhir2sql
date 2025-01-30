@@ -1,0 +1,42 @@
+﻿{
+  "types": [
+    "Linkage"
+  ],
+  "Linkage": {
+    "elements": {
+      "Linkage.active": {
+        "default": "removed",
+        "old-default": "\"true\""
+      },
+      "Linkage.author": {
+        "removed-types": [
+          "Reference(Practitioner | Organization)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "Linkage.item.type": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/linkage-type",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/linkage-type|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Linkage.item.resource": {
+        "removed-types": [
+          "Reference"
+        ],
+        "added-types": [
+          "Reference(Resource)"
+        ]
+      }
+    },
+    "status": "changed"
+  }
+}

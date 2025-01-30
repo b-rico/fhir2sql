@@ -1,0 +1,137 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Coverage/7546D> a fhir:Coverage;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "7546D"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the coverage</div>"
+  ];
+  fhir:Coverage.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://xyz.com/codes/identifier" ];
+     fhir:Identifier.value [ fhir:value "AB98761" ]
+  ];
+  fhir:Coverage.status [ fhir:value "active"];
+  fhir:Coverage.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "EHCPOL" ];
+       fhir:Coding.display [ fhir:value "extended healthcare" ]
+     ]
+  ];
+  fhir:Coverage.subscriber [
+     fhir:link <http://hl7.org/fhir/Patient/5>;
+     fhir:Reference.reference [ fhir:value "Patient/5" ]
+  ];
+  fhir:Coverage.subscriberId [ fhir:value "AB9876"];
+  fhir:Coverage.beneficiary [
+     fhir:link <http://hl7.org/fhir/Patient/5>;
+     fhir:Reference.reference [ fhir:value "Patient/5" ]
+  ];
+  fhir:Coverage.dependent [ fhir:value "1"];
+  fhir:Coverage.relationship [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "self" ]
+     ]
+  ];
+  fhir:Coverage.period [
+     fhir:Period.start [ fhir:value "2011-03-17"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2012-03-17"^^xsd:date ]
+  ];
+  fhir:Coverage.payor [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:Coverage.class [
+     fhir:index 0;
+     fhir:Coverage.class.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/coverage-class" ];
+         fhir:Coding.code [ fhir:value "group" ]
+       ]
+     ];
+     fhir:Coverage.class.value [ fhir:value "WESTAIR" ];
+     fhir:Coverage.class.name [ fhir:value "Western Airlines" ]
+  ], [
+     fhir:index 1;
+     fhir:Coverage.class.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/coverage-class" ];
+         fhir:Coding.code [ fhir:value "plan" ]
+       ]
+     ];
+     fhir:Coverage.class.value [ fhir:value "BG4352" ];
+     fhir:Coverage.class.name [ fhir:value "Full Coverage: Medical, Dental, Pharmacy, Vision, EHC" ]
+  ], [
+     fhir:index 2;
+     fhir:Coverage.class.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/coverage-class" ];
+         fhir:Coding.code [ fhir:value "subplan" ]
+       ]
+     ];
+     fhir:Coverage.class.value [ fhir:value "D15C9" ];
+     fhir:Coverage.class.name [ fhir:value "Platinum" ]
+  ];
+  fhir:Coverage.order [ fhir:value "2"^^xsd:positiveInteger];
+  fhir:Coverage.network [ fhir:value "5"];
+  fhir:Coverage.costToBeneficiary [
+     fhir:index 0;
+     fhir:Coverage.costToBeneficiary.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/coverage-copay-type" ];
+         fhir:Coding.code [ fhir:value "gpvisit" ]
+       ]
+     ];
+     fhir:Coverage.costToBeneficiary.valueMoney [
+       fhir:Money.value [ fhir:value "20.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Coverage.costToBeneficiary.exception [
+       fhir:index 0;
+       fhir:Coverage.costToBeneficiary.exception.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception" ];
+           fhir:Coding.code [ fhir:value "retired" ]
+         ]
+       ];
+       fhir:Coverage.costToBeneficiary.exception.period [
+         fhir:Period.start [ fhir:value "2018-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2018-12-31"^^xsd:date ]
+       ]
+     ]
+  ];
+  fhir:Coverage.contract [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Contract/INS-101>;
+     fhir:Reference.reference [ fhir:value "Contract/INS-101" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/5> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Contract/INS-101> a fhir:Contract .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Coverage/7546D.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Coverage/7546D.ttl> .
+
+# -------------------------------------------------------------------------------------
+

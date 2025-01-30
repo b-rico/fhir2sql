@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Patient" status="changed">
+      <element default="removed" old-default="&#34;true&#34;" path="Patient.active"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Patient.gender">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/administrative-gender"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Patient.contact.relationship">
+         <old-binding reference="http://terminology.hl7.org/ValueSet/v2-0131"
+                      strength="extensible"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/patient-contactrelationship"
+                      strength="extensible"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Patient.contact.gender">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/administrative-gender"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-strength-changed="true"
+               path="Patient.communication.language">
+         <old-binding max="http://hl7.org/fhir/ValueSet/all-languages"
+                      reference="http://hl7.org/fhir/ValueSet/languages"
+                      strength="extensible"/>
+         <new-binding max="http://hl7.org/fhir/ValueSet/all-languages"
+                      reference="http://hl7.org/fhir/ValueSet/languages"
+                      strength="preferred"/>
+      </element>
+      <element path="Patient.generalPractitioner">
+         <removed-type name="Reference(Organization | Practitioner)"/>
+         <added-type name="Reference(Organization | Practitioner | PractitionerRole)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Patient.link.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/link-type" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/link-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Patient.animal" status="deleted"/>
+   </type>
+</difference>

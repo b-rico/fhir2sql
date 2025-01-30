@@ -1,0 +1,52 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Measure/composite-example> a fhir:Measure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "composite-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Behavioral Assessment Composite Measure\n    <p>This measure example is used to illustrate how a composite measure can be constructured. This measure is a composite measure of the Screening for Alcohol Misuse and Screening for Depression measures.</p></div>"
+  ];
+  fhir:Measure.title [ fhir:value "Behavioral Assessment Composite Measure"];
+  fhir:Measure.status [ fhir:value "draft"];
+  fhir:Measure.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "composed-of" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "Measure/component-a-example";
+       fhir:link <http://hl7.org/fhir/Measure/component-a-example>
+     ]
+  ], [
+     fhir:index 1;
+     fhir:RelatedArtifact.type [ fhir:value "composed-of" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "Measure/component-b-example";
+       fhir:link <http://hl7.org/fhir/Measure/component-b-example>
+     ]
+  ];
+  fhir:Measure.scoring [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "proportion" ]
+     ]
+  ];
+  fhir:Measure.compositeScoring [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "opportunity" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Measure/composite-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Measure/composite-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

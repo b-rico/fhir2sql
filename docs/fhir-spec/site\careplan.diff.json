@@ -1,0 +1,137 @@
+﻿{
+  "types": [
+    "CarePlan"
+  ],
+  "CarePlan": {
+    "elements": {
+      "CarePlan.instantiatesCanonical": {
+        "status": "new"
+      },
+      "CarePlan.instantiatesUri": {
+        "status": "new"
+      },
+      "CarePlan.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/care-plan-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/request-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "CarePlan.intent": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/care-plan-intent",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/care-plan-intent|4.0.1",
+          "strength": "required"
+        }
+      },
+      "CarePlan.encounter": {
+        "status": "new"
+      },
+      "CarePlan.created": {
+        "status": "new"
+      },
+      "CarePlan.author": {
+        "old-max": "*",
+        "new-max": "1",
+        "removed-types": [
+          "Reference(Patient | Practitioner | RelatedPerson | Organization | CareTeam)"
+        ],
+        "added-types": [
+          "Reference(Patient | Practitioner | PractitionerRole | Device | RelatedPerson | Organization | CareTeam)"
+        ]
+      },
+      "CarePlan.contributor": {
+        "status": "new"
+      },
+      "CarePlan.activity.reference": {
+        "removed-types": [
+          "Reference(Appointment | CommunicationRequest | DeviceRequest | MedicationRequest | NutritionOrder | Task | ProcedureRequest | ReferralRequest | VisionPrescription | RequestGroup)"
+        ],
+        "added-types": [
+          "Reference(Appointment | CommunicationRequest | DeviceRequest | MedicationRequest | NutritionOrder | Task | ServiceRequest | VisionPrescription | RequestGroup)"
+        ]
+      },
+      "CarePlan.activity.detail.kind": {
+        "old-name": "category",
+        "removed-types": [
+          "CodeableConcept"
+        ],
+        "added-types": [
+          "code"
+        ],
+        "binding-status": "added",
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/care-plan-activity-kind|4.0.1",
+          "strength": "required"
+        }
+      },
+      "CarePlan.activity.detail.instantiatesCanonical": {
+        "status": "new"
+      },
+      "CarePlan.activity.detail.instantiatesUri": {
+        "status": "new"
+      },
+      "CarePlan.activity.detail.reasonReference": {
+        "removed-types": [
+          "Reference(Condition)"
+        ],
+        "added-types": [
+          "Reference(Condition | Observation | DiagnosticReport | DocumentReference)"
+        ]
+      },
+      "CarePlan.activity.detail.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/care-plan-activity-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/care-plan-activity-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "CarePlan.activity.detail.statusReason": {
+        "removed-types": [
+          "string"
+        ],
+        "added-types": [
+          "CodeableConcept"
+        ]
+      },
+      "CarePlan.activity.detail.doNotPerform": {
+        "old-name": "prohibited",
+        "default": "removed",
+        "old-default": "\"false\""
+      },
+      "CarePlan.activity.detail.performer": {
+        "removed-types": [
+          "Reference(Practitioner | Organization | RelatedPerson | Patient | CareTeam)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization | RelatedPerson | Patient | CareTeam | HealthcareService | Device)"
+        ]
+      },
+      "CarePlan.definition": {
+        "status": "deleted"
+      },
+      "CarePlan.context": {
+        "status": "deleted"
+      },
+      "CarePlan.activity.detail.definition": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

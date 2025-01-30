@@ -1,0 +1,811 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Person - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/person.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="administration-module.html"><img src="administration.jpg"/> Administration</a></li>        <li><b>Person</b></li>          <!-- person.html / resource / Person -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="person-examples.html">Examples</a></li><li><a href="person-definitions.html">Detailed Descriptions</a></li><li><a href="person-mappings.html">Mappings</a></li><li><a href="person-profiles.html">Profiles &amp; Extensions</a></li><li><a href="person-version-maps.html">R3 Conversions</a></li></ul>
+
+<h1 class="self-link-parent"><span class="sectioncount">8.18<a name="8.18"> </a></span> Resource Person - Content <a href="person.html#8.18" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h1>
+
+<table class="colstu"><tr><td><a href="http://www.hl7.org/Special/committees/pafm/index.cfm">Patient Administration <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: 2</td><td>&nbsp;<a href="versions.html#std-process" title="Standard Status">Trial Use</a></td><td><a href="security.html#SecPrivConsiderations">Security Category</a>: Patient</td>  <!-- !ns! --><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-patient.html">Patient</a>, <a href="compartmentdefinition-practitioner.html">Practitioner</a>, <a href="compartmentdefinition-relatedperson.html">RelatedPerson</a></td></tr></table>
+
+
+<p>
+<p>Demographics and administrative information about a person independent of a specific health-related context.</p>
+
+</p>
+
+<div>
+<a name="scope"></a>
+<h2 class="self-link-parent"><span class="sectioncount">8.18.1</span> Scope and Usage <a href="person.html#scope" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<p>
+  The Person resource serves as a linkage resource that may provide a reference set of common demographics 
+  for an individual (human or animal) across multiple roles.<br/>
+  This linkage can be direct to role-specific FHIR resources (Patient, Practitioner and RelatedPerson)
+  residing on the same or possibly distinct FHIR systems/applications, or indirectly through the use of
+  business identifiers.
+</p>
+  <p>
+  The Person resource may be used in many situations/contexts, including:
+  </p>
+  <ul>
+  <li>A set of demographics that can be used to co-ordinate the maintenance of this
+  de-normalized information across practitioners, patients and/or related persons<br/>
+  <i>e.g. link known resources of the different types together within a system</i></li>
+
+  <li>A state/network based Master Person Index<br/>
+  <i>e.g. A National Identifier Index or a Network membership/subscriber list</i></li>
+
+  <li>A central register that links patient resources from multiple servers, indicating they
+  all correspond to the same individual<br/>
+  <i>e.g. Within a large organization with many systems to be able to link the various records, 
+  without having to modify the source information with external links</i></li>
+
+  <li>A support for access monitoring software that is able to assert what practitioner, 
+  patient and related person records correspond to the same human being to assist in 
+  detecting improper querying.<br/>
+  <i>e.g. asserting that a Patient A is the same individual as a RelatedPerson B who is
+  related to Patient C, who is also Practitioner D.  As such, monitoring for Practitioner
+  D’s accesses to Patient A’s records should be carefully scrutinized.</i></li>
+
+  <li>Local record(s) on a mobile device listing links to remote server patient resources<br/>
+  <i>e.g. A mobile phone application storing references to the hospitals they have access to</i></li>
+  </ul>
+
+  <blockquote class="stu-note">
+    <a name="advanced"></a>
+    <p>
+    <b>Note:</b>  The Person resource is an advanced feature.  Many systems don’t have a way
+    to relate information across resource types, or systems, especially from Patient to
+    Practitioner, and therefore might not implement this functionality. Some do have ways
+    of relating the Patient and RelatedPerson resource types. FHIR is also able to do this
+    without the Person resource, utilizing the Patient.link property
+    <a href="patient.html#maternity">(as shown in the Mother and newborn relationship example)</a>
+    </p>
+  </blockquote>
+</div>
+
+<div>
+<h2 class="self-link-parent"><span class="sectioncount">8.18.2<a name="8.18.2"> </a></span> Boundaries and Relationships <a href="person.html#8.18.2" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+  <p>
+    Person resources may have references to Patient, RelatedPerson and/or Practitioner resources. 
+    These linkages assert that all the records relate to the same individual.
+  </p>
+  <p>
+    Person instances are never directly referenced as actors (authors, subjects, performers, etc.)
+    Individual actors are always identified as either Patient, Practitioner or RelatedPerson, depending on the role
+    of the individual when undertaking the action. Therefore this resource SHALL NOT be referenced by any
+    other clinical or administrative resources.  
+    E.g. it can be the focus of an operation or message or included in a Bundle, 
+    but cannot be a member of a List or Group, the subject of an Observation, or other similar non-infrastructural usage.
+  </p>
+  <p>
+    In some use cases the linkages will be indirect, and through business Identifiers, such as in the case of
+    the various types of Master Person Indexes, where the records are not there for the purpose of healthcare, 
+    but simply describing a population of people, and has other purposes and not just to represent a population patients.
+  </p>
+</div>
+
+  <!-- (optional):
+<div>
+<h2>Background and Context</h2>
+<p>
+Provides additional detail on exactly how the resource is to be used
+</p>
+</div> -->
+
+<p>This resource is referenced by itself</p>
+
+
+<a name="resource"></a>
+<h2 class="self-link-parent"><span class="sectioncount">8.18.3</span> 
+Resource Content
+ <a href="person.html#resource" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<a name="def"></a>
+<a name="person"></a>
+<a name="Person"></a>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-struc">Structure</a></li>
+    <li><a href="#tabs-uml">UML</a></li>
+    <li><a href="#tabs-xml">XML</a></li>
+    <li><a href="#tabs-json">JSON</a></li>
+    <li><a href="#tabs-ttl">Turtle</a></li>
+    <li><a href="#tabs-diff">R3 Diff</a></li>
+    <li><a href="#tabs-all">All</a></li>
+  </ul>
+  <div id="tabs-struc">
+
+<div id="tbl">
+<p><b>Structure</b></p>
+ <div id="tbl-inner">
+  <table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance">Card.</a></th><th style="width: 100px" class="hierarchy"><a href="formats.html#table" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="formats.html#table" title="Legend for this format"><img src="help16.png" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="." style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="person-definitions.html#Person" title="Person : Demographics and administrative information about a person independent of a specific health-related context.">Person</a><a name="Person"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; border: 1px grey solid; font-weight: bold; color: black; background-color: #fff5e6" href="versions.html#std-process" title="Standards Status = Trial Use">TU</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="domainresource.html">DomainResource</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A generic person record<br/>Elements defined in Ancestors: <a href="resource.html#Resource" title="The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.">id</a>, <a href="resource.html#Resource" title="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.">meta</a>, <a href="resource.html#Resource" title="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.">implicitRules</a>, <a href="resource.html#Resource" title="The base language in which the resource is written.">language</a>, <a href="domainresource.html#DomainResource" title="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.">text</a>, <a href="domainresource.html#DomainResource" title="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.">contained</a>, <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a>, <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).">modifierExtension</a></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.identifier" title="Person.identifier : Identifier for a person within a particular scope.">identifier</a><a name="Person.identifier"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A human identifier for this person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.name" title="Person.name : A name associated with the person.">name</a><a name="Person.name"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#HumanName">HumanName</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A name associated with the person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.telecom" title="Person.telecom : A contact detail for the person, e.g. a telephone number or an email address.">telecom</a><a name="Person.telecom"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#ContactPoint">ContactPoint</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A contact detail for the person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.gender" title="Person.gender : Administrative Gender.">gender</a><a name="Person.gender"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">male | female | other | unknown<br/><a href="valueset-administrative-gender.html" title="The gender of a person used for administrative purposes.">AdministrativeGender</a> (<a href="terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">Required</a>)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.birthDate" title="Person.birthDate : The birth date for the person.">birthDate</a><a name="Person.birthDate"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#date">date</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The date on which the person was born</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.address" title="Person.address : One or more addresses for the person.">address</a><a name="Person.address"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Address">Address</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">One or more addresses for the person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.photo" title="Person.photo : An image that can be displayed as a thumbnail of the person to enhance the identification of the individual.">photo</a><a name="Person.photo"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Attachment">Attachment</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Image of the person</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="person-definitions.html#Person.managingOrganization" title="Person.managingOrganization : The organization that is the custodian of the person record.">managingOrganization</a><a name="Person.managingOrganization"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="organization.html">Organization</a>)</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The organization that is the custodian of the person record</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.active" title="Person.active : Whether this person's record is in active use.">active</a><a name="Person.active"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="conformance-rules.html#isModifier" title="This element is a modifier element">?!</a><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#boolean">boolean</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">This person's record is in active use</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="person-definitions.html#Person.link" title="Person.link : Link to a resource that concerns the same actual person.">link</a><a name="Person.link"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="backboneelement.html">BackboneElement</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Link to a resource that concerns the same actual person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="person-definitions.html#Person.link.target" title="Person.link.target : The resource to which this actual person is associated.">target</a><a name="Person.link.target"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="patient.html">Patient</a> | <a href="practitioner.html">Practitioner</a> | <a href="relatedperson.html">RelatedPerson</a> | <a href="person.html">Person</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The resource to which this actual person is associated</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.link.assurance" title="Person.link.assurance : Level of assurance that this link is associated with the target resource.">assurance</a><a name="Person.link.assurance"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">level1 | level2 | level3 | level4<br/><a href="valueset-identity-assuranceLevel.html" title="The level of confidence that this link represents the same actual person, based on NIST Authentication Levels.">IdentityAssuranceLevel</a> (<a href="terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">Required</a>)</td></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="formats.html#table" title="Legend for this format"><img src="help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-uml">
+
+<div id="uml">
+<p><b>UML Diagram</b> (<a href="formats.html#uml">Legend</a>)</p>
+ <div id="uml-inner">
+ <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="827.2" id="n44" version="1.1" height="172.0">  <defs>
+    <filter x="0" width="200%" y="0" id="shadowA" height="200%">
+      <feOffset result="offOut" dx="3" in="SourceGraphic" dy="3"></feOffset>
+      <feColorMatrix result="matrixOut" in="offOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix"></feColorMatrix>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"></feGaussianBlur>
+      <feBlend mode="normal" in="SourceGraphic" in2="blurOut"></feBlend>
+    </filter>
+  </defs><g id="n45"><rect filter="url(#shadowA)" rx="4" ry="4" x="0.0" width="246.40000000000003" y="0.0" style="fill:#fff9ec;stroke:black;stroke-width:1" id="Person" height="162.0"></rect><line y1="28.0" x1="0.0" y2="28.0" x2="246.40000000000003" style="stroke:dimgrey;stroke-width:1" id="n46"></line><text x="123.20000000000002" y="20.0" id="n47" fill="black" class="diagram-class-title  diagram-class-resource">Person<tspan class="diagram-class-title-link"> (<a id="n48" class="diagram-class-reference" xlink:href="domainresource.html">DomainResource</a>)</tspan></text><text x="6.0" y="42.0" id="n49" fill="black" class="diagram-class-detail"><a id="n50" xlink:href="person-definitions.html#Person.identifier"><title>Identifier for a person within a particular scope</title>identifier</a> : <a id="n51" xlink:href="datatypes.html#Identifier">Identifier</a> [0..*]</text><text x="6.0" y="56.0" id="n55" fill="black" class="diagram-class-detail"><a id="n56" xlink:href="person-definitions.html#Person.name"><title>A name associated with the person</title>name</a> : <a id="n57" xlink:href="datatypes.html#HumanName">HumanName</a> [0..*]</text><text x="6.0" y="70.0" id="n61" fill="black" class="diagram-class-detail"><a id="n62" xlink:href="person-definitions.html#Person.telecom"><title>A contact detail for the person, e.g. a telephone number or an email address</title>telecom</a> : <a id="n63" xlink:href="datatypes.html#ContactPoint">ContactPoint</a> [0..*]</text><text x="6.0" y="84.0" id="n67" fill="black" class="diagram-class-detail"><a id="n68" xlink:href="person-definitions.html#Person.gender"><title>Administrative Gender</title>gender</a> : <a id="n69" xlink:href="datatypes.html#code">code</a> [0..1] « <a id="n70" xlink:href="valueset-administrative-gender.html"><title id="n71">The gender of a person used for administrative purposes. (Strength=Required)</title>AdministrativeGender</a>! »</text><text x="6.0" y="98.0" id="n77" fill="black" class="diagram-class-detail"><a id="n78" xlink:href="person-definitions.html#Person.birthDate"><title>The birth date for the person</title>birthDate</a> : <a id="n79" xlink:href="datatypes.html#date">date</a> [0..1]</text><text x="6.0" y="112.0" id="n83" fill="black" class="diagram-class-detail"><a id="n84" xlink:href="person-definitions.html#Person.address"><title>One or more addresses for the person</title>address</a> : <a id="n85" xlink:href="datatypes.html#Address">Address</a> [0..*]</text><text x="6.0" y="126.0" id="n89" fill="black" class="diagram-class-detail"><a id="n90" xlink:href="person-definitions.html#Person.photo"><title>An image that can be displayed as a thumbnail of the person to enhance the identification of the individual</title>photo</a> : <a id="n91" xlink:href="datatypes.html#Attachment">Attachment</a> [0..1]</text><text x="6.0" y="140.0" id="n95" fill="black" class="diagram-class-detail"><a id="n96" xlink:href="person-definitions.html#Person.managingOrganization"><title>The organization that is the custodian of the person record</title>managingOrganization</a> : <a id="n97" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n98" xlink:href="organization.html#Organization">Organization</a> »</text><text x="6.0" y="154.0" id="n103" fill="black" class="diagram-class-detail"><a id="n104" xlink:href="person-definitions.html#Person.active"><title>Whether this person's record is in active use (this element modifies the meaning of other elements)</title>active</a> : <a id="n105" xlink:href="datatypes.html#boolean">boolean</a> [0..1]</text></g><g id="n109"><rect filter="url(#shadowA)" rx="4" ry="4" x="350.0" width="277.20000000000005" y="40.0" style="fill:#fff9ec;stroke:black;stroke-width:1" id="Person.link" height="78.0"></rect><line y1="68.0" x1="350.0" y2="68.0" x2="627.2" style="stroke:dimgrey;stroke-width:1" id="n110"></line><text x="488.6" y="60.0" id="n111" fill="black" class="diagram-class-title">Link</text><text x="356.0" y="82.0" id="n112" fill="black" class="diagram-class-detail"><a id="n113" xlink:href="person-definitions.html#Person.link.target"><title>The resource to which this actual person is associated</title>target</a> : <a id="n114" xlink:href="references.html#Reference">Reference</a> [1..1] « <a id="n115" xlink:href="patient.html#Patient">Patient</a>|<a id="n116" xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a id="n117" xlink:href="relatedperson.html#RelatedPerson">RelatedPerson</a>|</text><text x="376.0" y="96.0" id="n118" fill="black" class="diagram-class-detail">      <a id="n119" xlink:href="person.html#Person">Person</a> »</text><text x="356.0" y="110.0" id="n128" fill="black" class="diagram-class-detail"><a id="n129" xlink:href="person-definitions.html#Person.link.assurance"><title>Level of assurance that this link is associated with the target resource</title>assurance</a> : <a id="n130" xlink:href="datatypes.html#code">code</a> [0..1] « <a id="n131" xlink:href="valueset-identity-assuranceLevel.html"><title id="n132">The level of confidence that this link represents the same actual person, based on NIST Authentication Levels. (Strength=Required)</title>IdentityAssuranceLevel</a>! »</text></g><line y1="80.32567049808429" x1="246.40000000000003" y2="79.75862068965517" x2="350.0" style="stroke:navy;stroke-width:1" id="n138"></line><polygon transform="rotate(-0.3136026675118836 246.40000000000003 80.32567049808429)" style="fill:navy;stroke:navy;stroke-width:1" id="n139" points="246.40000000000003,80.32567049808429 252.40000000000003,84.32567049808429 258.40000000000003,80.32567049808429 252.40000000000003,76.32567049808429 246.40000000000003,80.32567049808429"></polygon><rect x="289.5" width="17.0" y="73.0" style="fill:white;stroke:black;stroke-width:0" id="n140" height="18.0"></rect><text x="298.0" y="83.0" id="n141" fill="black" class="diagram-class-linkage"><a id="n142" xlink:href="person-definitions.html#Person.link"><title>Link to a resource that concerns the same actual person</title>link</a></text><text x="330.0" y="75.75862068965517" id="n143" fill="black" class="diagram-class-linkage">[0..*]</text></svg>
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-xml">
+
+<div id="xml">
+<p><b>XML Template</b></p>
+ <div id="xml-inner">
+  <pre class="spec">
+&lt;<a href="person-definitions.html#Person" title="Demographics and administrative information about a person independent of a specific health-related context." class="dict"><b>Person</b></a> xmlns="http://hl7.org/fhir"&gt; <span style="float: right"><a href="xml.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+ &lt;!-- from <a href="resource.html">Resource</a>: <a href="resource.html#id">id</a>, <a href="resource.html#meta">meta</a>, <a href="resource.html#implicitRules">implicitRules</a>, and <a href="resource.html#language">language</a> --&gt;
+ &lt;!-- from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">text</a>, <a href="references.html#contained">contained</a>, <a href="extensibility.html">extension</a>, and <a href="extensibility.html#modifierExtension">modifierExtension</a> --&gt;
+ &lt;<a href="person-definitions.html#Person.identifier" title="Identifier for a person within a particular scope." class="dict"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">A human identifier for this person</a></span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a href="person-definitions.html#Person.name" title="A name associated with the person." class="dict"><b>name</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#HumanName">HumanName</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">A name associated with the person</a></span><span style="color: Gray"> --&gt;</span>&lt;/name&gt;
+ &lt;<a href="person-definitions.html#Person.telecom" title="A contact detail for the person, e.g. a telephone number or an email address." class="dict"><b>telecom</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#ContactPoint">ContactPoint</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">A contact detail for the person</a></span><span style="color: Gray"> --&gt;</span>&lt;/telecom&gt;
+ &lt;<a href="person-definitions.html#Person.gender" title="Administrative Gender." class="dict"><b>gender</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-administrative-gender.html">male | female | other | unknown</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="person-definitions.html#Person.birthDate" title="The birth date for the person." class="dict"><b>birthDate</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">The date on which the person was born</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="person-definitions.html#Person.address" title="One or more addresses for the person." class="dict"><b>address</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Address">Address</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">One or more addresses for the person</a></span><span style="color: Gray"> --&gt;</span>&lt;/address&gt;
+ &lt;<a href="person-definitions.html#Person.photo" title="An image that can be displayed as a thumbnail of the person to enhance the identification of the individual." class="dict"><b>photo</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Attachment">Attachment</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Image of the person</a></span><span style="color: Gray"> --&gt;</span>&lt;/photo&gt;
+ &lt;<a href="person-definitions.html#Person.managingOrganization" title="The organization that is the custodian of the person record." class="dict"><b>managingOrganization</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">The organization that is the custodian of the person record</a></span><span style="color: Gray"> --&gt;</span>&lt;/managingOrganization&gt;
+ &lt;<a href="person-definitions.html#Person.active" title="Whether this person's record is in active use (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline"><b>active</b></span></a> value="[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">This person's record is in active use</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="person-definitions.html#Person.link" title="Link to a resource that concerns the same actual person." class="dict"><b>link</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Link to a resource that concerns the same actual person --&gt;</span>
+  &lt;<a href="person-definitions.html#Person.link.target" title="The resource to which this actual person is associated." class="dict"><b>target</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="patient.html#Patient">Patient</a>|<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>|<a href="person.html#Person">Person</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">The resource to which this actual person is associated</a></span><span style="color: Gray"> --&gt;</span>&lt;/target&gt;
+  &lt;<a href="person-definitions.html#Person.link.assurance" title="Level of assurance that this link is associated with the target resource." class="dict"><b>assurance</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-identity-assuranceLevel.html">level1 | level2 | level3 | level4</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;/link&gt;
+&lt;/Person&gt;
+</pre>
+
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-json">
+
+<div id="json">
+<p><b>JSON Template</b></p>
+ <div id="json-inner">
+  <pre class="spec">
+{<span style="float: right"><a href="json.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+  "resourceType" : "<a href="person-definitions.html#Person" title="Demographics and administrative information about a person independent of a specific health-related context." class="dict"><b>Person</b></a>",
+  // from <a href="resource.html">Resource</a>: <a href="resource.html#id">id</a>, <a href="resource.html#meta">meta</a>, <a href="resource.html#implicitRules">implicitRules</a>, and <a href="resource.html#language">language</a>
+  // from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">text</a>, <a href="references.html#contained">contained</a>, <a href="extensibility.html">extension</a>, and <a href="extensibility.html#modifierExtension">modifierExtension</a>
+  "<a href="person-definitions.html#Person.identifier" title="Identifier for a person within a particular scope." class="dict">identifier</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">A human identifier for this person</a></span>
+  "<a href="person-definitions.html#Person.name" title="A name associated with the person." class="dict">name</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#HumanName">HumanName</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">A name associated with the person</a></span>
+  "<a href="person-definitions.html#Person.telecom" title="A contact detail for the person, e.g. a telephone number or an email address." class="dict">telecom</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#ContactPoint">ContactPoint</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">A contact detail for the person</a></span>
+  "<a href="person-definitions.html#Person.gender" title="Administrative Gender." class="dict">gender</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="valueset-administrative-gender.html">male | female | other | unknown</a></span>
+  "<a href="person-definitions.html#Person.birthDate" title="The birth date for the person." class="dict">birthDate</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">The date on which the person was born</a></span>
+  "<a href="person-definitions.html#Person.address" title="One or more addresses for the person." class="dict">address</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#Address">Address</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">One or more addresses for the person</a></span>
+  "<a href="person-definitions.html#Person.photo" title="An image that can be displayed as a thumbnail of the person to enhance the identification of the individual." class="dict">photo</a>" : { <span style="color: darkgreen"><a href="datatypes.html#Attachment">Attachment</a></span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Image of the person</a></span>
+  "<a href="person-definitions.html#Person.managingOrganization" title="The organization that is the custodian of the person record." class="dict">managingOrganization</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">The organization that is the custodian of the person record</a></span>
+  "<a href="person-definitions.html#Person.active" title="Whether this person's record is in active use (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">active</span></a>" : &lt;<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>&gt;, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">This person's record is in active use</a></span>
+  "<a href="person-definitions.html#Person.link" title="Link to a resource that concerns the same actual person." class="dict">link</a>" : [{ <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Link to a resource that concerns the same actual person</a></span>
+    "<a href="person-definitions.html#Person.link.target" title="The resource to which this actual person is associated." class="dict">target</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="patient.html#Patient">Patient</a>|<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>|<a href="person.html#Person">Person</a>)</span> }, <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">The resource to which this actual person is associated</a></span>
+    "<a href="person-definitions.html#Person.link.assurance" title="Level of assurance that this link is associated with the target resource." class="dict">assurance</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>&gt;" <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="valueset-identity-assuranceLevel.html">level1 | level2 | level3 | level4</a></span>
+  }]
+}
+</pre>
+
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-ttl">
+
+<div id="ttl">
+<p><b>Turtle Template</b></p>
+ <div id="json-inner">
+  <pre class="spec">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .<span style="float: right"><a href="rdf.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+
+
+[ a fhir:<a href="person-definitions.html#Person" title="Demographics and administrative information about a person independent of a specific health-related context." class="dict"><b>Person</b></a>;
+  fhir:nodeRole fhir:treeRoot; # if this is the parser root
+
+  # from <a href="resource.html">Resource</a>: <a href="resource.html#id">.id</a>, <a href="resource.html#meta">.meta</a>, <a href="resource.html#implicitRules">.implicitRules</a>, and <a href="resource.html#language">.language</a>
+  # from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">.text</a>, <a href="references.html#contained">.contained</a>, <a href="extensibility.html">.extension</a>, and <a href="extensibility.html#modifierExtension">.modifierExtension</a>
+  fhir:<a href="person-definitions.html#Person.identifier" title="Identifier for a person within a particular scope." class="dict">Person.identifier</a><a name="ttl-identifier"> </a>[ <a href="datatypes.html#Identifier">Identifier</a> ], ... ; # 0..* <span style="color: navy">A human identifier for this person</span>
+  fhir:<a href="person-definitions.html#Person.name" title="A name associated with the person." class="dict">Person.name</a><a name="ttl-name"> </a>[ <a href="datatypes.html#HumanName">HumanName</a> ], ... ; # 0..* <span style="color: navy">A name associated with the person</span>
+  fhir:<a href="person-definitions.html#Person.telecom" title="A contact detail for the person, e.g. a telephone number or an email address." class="dict">Person.telecom</a><a name="ttl-telecom"> </a>[ <a href="datatypes.html#ContactPoint">ContactPoint</a> ], ... ; # 0..* <span style="color: navy">A contact detail for the person</span>
+  fhir:<a href="person-definitions.html#Person.gender" title="Administrative Gender." class="dict">Person.gender</a><a name="ttl-gender"> </a>[ <a href="datatypes.html#code">code</a> ]; # 0..1 <span style="color: navy">male | female | other | unknown</span>
+  fhir:<a href="person-definitions.html#Person.birthDate" title="The birth date for the person." class="dict">Person.birthDate</a><a name="ttl-birthDate"> </a>[ <a href="datatypes.html#date">date</a> ]; # 0..1 <span style="color: navy">The date on which the person was born</span>
+  fhir:<a href="person-definitions.html#Person.address" title="One or more addresses for the person." class="dict">Person.address</a><a name="ttl-address"> </a>[ <a href="datatypes.html#Address">Address</a> ], ... ; # 0..* <span style="color: navy">One or more addresses for the person</span>
+  fhir:<a href="person-definitions.html#Person.photo" title="An image that can be displayed as a thumbnail of the person to enhance the identification of the individual." class="dict">Person.photo</a><a name="ttl-photo"> </a>[ <a href="datatypes.html#Attachment">Attachment</a> ]; # 0..1 <span style="color: navy">Image of the person</span>
+  fhir:<a href="person-definitions.html#Person.managingOrganization" title="The organization that is the custodian of the person record." class="dict">Person.managingOrganization</a><a name="ttl-managingOrganization"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>) ]; # 0..1 <span style="color: navy">The organization that is the custodian of the person record</span>
+  fhir:<a href="person-definitions.html#Person.active" title="Whether this person's record is in active use (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">Person.active</span></a><a name="ttl-active"> </a>[ <a href="datatypes.html#boolean">boolean</a> ]; # 0..1 <span style="color: navy">This person's record is in active use</span>
+  fhir:<a href="person-definitions.html#Person.link" title="Link to a resource that concerns the same actual person." class="dict">Person.link</a><a name="ttl-link"> </a>[ # 0..* <span style="color: navy">Link to a resource that concerns the same actual person</span>
+    fhir:<a href="person-definitions.html#Person.link.target" title="The resource to which this actual person is associated." class="dict">Person.link.target</a><a name="ttl-target"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="patient.html#Patient">Patient</a>|<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>|<a href="person.html#Person">Person</a>) ]; # 1..1 <span style="color: navy">The resource to which this actual person is associated</span>
+    fhir:<a href="person-definitions.html#Person.link.assurance" title="Level of assurance that this link is associated with the target resource." class="dict">Person.link.assurance</a><a name="ttl-assurance"> </a>[ <a href="datatypes.html#code">code</a> ]; # 0..1 <span style="color: navy">level1 | level2 | level3 | level4</span>
+  ], ...;
+]
+</pre>
+
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-diff">
+
+<div id="vdiff">
+<p><b>Changes since R3</b></p>
+ <div id="diff-inner">
+  <table class="grid">
+  <tr class="diff-item">
+    <td class="diff-left">
+      <a href="person.html#Person">Person</a>
+    </td>
+    <td class="diff-right"></td>
+  </tr>
+  <tr class="diff-entry">
+    <td class="diff-left">Person.gender</td>
+    <td class="diff-right">
+      <ul>
+        <li>Change value set from http://hl7.org/fhir/ValueSet/administrative-gender to http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-entry">
+    <td class="diff-left">Person.link.assurance</td>
+    <td class="diff-right">
+      <ul>
+        <li>Change value set from http://hl7.org/fhir/ValueSet/identity-assuranceLevel to http://hl7.org/fhir/ValueSet/identity-assuranceLevel|4.0.1</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p>See the <a href="diff.html">Full Difference</a> for further information</p>
+
+  <p>
+  This analysis is available as <a href="person.diff.xml">XML</a> or <a href="person.diff.json">JSON</a>.
+  </p>
+  <p>See <a href="person-version-maps.html">R3 &lt;--&gt; R4 Conversion Maps</a> (status = 5 tests that all execute ok. All tests pass round-trip testing  and all r3 resources are valid.)</p>
+
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-all">
+
+<div id="tbl">
+<a name="tbl"></a>
+<p><b>Structure</b></p>
+ <div id="tbl-inner">
+  <table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance">Card.</a></th><th style="width: 100px" class="hierarchy"><a href="formats.html#table" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="formats.html#table" title="Legend for this format"><img src="help16.png" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="." style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="person-definitions.html#Person" title="Person : Demographics and administrative information about a person independent of a specific health-related context.">Person</a><a name="Person"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; border: 1px grey solid; font-weight: bold; color: black; background-color: #fff5e6" href="versions.html#std-process" title="Standards Status = Trial Use">TU</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="domainresource.html">DomainResource</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A generic person record<br/>Elements defined in Ancestors: <a href="resource.html#Resource" title="The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.">id</a>, <a href="resource.html#Resource" title="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.">meta</a>, <a href="resource.html#Resource" title="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.">implicitRules</a>, <a href="resource.html#Resource" title="The base language in which the resource is written.">language</a>, <a href="domainresource.html#DomainResource" title="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.">text</a>, <a href="domainresource.html#DomainResource" title="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.">contained</a>, <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a>, <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).">modifierExtension</a></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.identifier" title="Person.identifier : Identifier for a person within a particular scope.">identifier</a><a name="Person.identifier"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A human identifier for this person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.name" title="Person.name : A name associated with the person.">name</a><a name="Person.name"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#HumanName">HumanName</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A name associated with the person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.telecom" title="Person.telecom : A contact detail for the person, e.g. a telephone number or an email address.">telecom</a><a name="Person.telecom"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#ContactPoint">ContactPoint</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A contact detail for the person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.gender" title="Person.gender : Administrative Gender.">gender</a><a name="Person.gender"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">male | female | other | unknown<br/><a href="valueset-administrative-gender.html" title="The gender of a person used for administrative purposes.">AdministrativeGender</a> (<a href="terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">Required</a>)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.birthDate" title="Person.birthDate : The birth date for the person.">birthDate</a><a name="Person.birthDate"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#date">date</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The date on which the person was born</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.address" title="Person.address : One or more addresses for the person.">address</a><a name="Person.address"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Address">Address</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">One or more addresses for the person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.photo" title="Person.photo : An image that can be displayed as a thumbnail of the person to enhance the identification of the individual.">photo</a><a name="Person.photo"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Attachment">Attachment</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Image of the person</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="person-definitions.html#Person.managingOrganization" title="Person.managingOrganization : The organization that is the custodian of the person record.">managingOrganization</a><a name="Person.managingOrganization"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="organization.html">Organization</a>)</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The organization that is the custodian of the person record</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.active" title="Person.active : Whether this person's record is in active use.">active</a><a name="Person.active"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="conformance-rules.html#isModifier" title="This element is a modifier element">?!</a><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#boolean">boolean</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">This person's record is in active use</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="person-definitions.html#Person.link" title="Person.link : Link to a resource that concerns the same actual person.">link</a><a name="Person.link"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="backboneelement.html">BackboneElement</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Link to a resource that concerns the same actual person<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="person-definitions.html#Person.link.target" title="Person.link.target : The resource to which this actual person is associated.">target</a><a name="Person.link.target"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="patient.html">Patient</a> | <a href="practitioner.html">Practitioner</a> | <a href="relatedperson.html">RelatedPerson</a> | <a href="person.html">Person</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The resource to which this actual person is associated</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="person-definitions.html#Person.link.assurance" title="Person.link.assurance : Level of assurance that this link is associated with the target resource.">assurance</a><a name="Person.link.assurance"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">level1 | level2 | level3 | level4<br/><a href="valueset-identity-assuranceLevel.html" title="The level of confidence that this link represents the same actual person, based on NIST Authentication Levels.">IdentityAssuranceLevel</a> (<a href="terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">Required</a>)</td></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="formats.html#table" title="Legend for this format"><img src="help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
+ </div>
+</div>
+
+
+<div id="uml">
+<a name="uml"></a>
+<p><b>UML Diagram</b> (<a href="formats.html#uml">Legend</a>)</p>
+ <div id="uml-inner">
+ <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="827.2" id="n44" version="1.1" height="172.0">  <defs>
+    <filter x="0" width="200%" y="0" id="shadowB" height="200%">
+      <feOffset result="offOut" dx="3" in="SourceGraphic" dy="3"></feOffset>
+      <feColorMatrix result="matrixOut" in="offOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix"></feColorMatrix>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"></feGaussianBlur>
+      <feBlend mode="normal" in="SourceGraphic" in2="blurOut"></feBlend>
+    </filter>
+  </defs><g id="n45"><rect filter="url(#shadowB)" rx="4" ry="4" x="0.0" width="246.40000000000003" y="0.0" style="fill:#fff9ec;stroke:black;stroke-width:1" id="Person" height="162.0"></rect><line y1="28.0" x1="0.0" y2="28.0" x2="246.40000000000003" style="stroke:dimgrey;stroke-width:1" id="n46"></line><text x="123.20000000000002" y="20.0" id="n47" fill="black" class="diagram-class-title  diagram-class-resource">Person<tspan class="diagram-class-title-link"> (<a id="n48" class="diagram-class-reference" xlink:href="domainresource.html">DomainResource</a>)</tspan></text><text x="6.0" y="42.0" id="n49" fill="black" class="diagram-class-detail"><a id="n50" xlink:href="person-definitions.html#Person.identifier"><title>Identifier for a person within a particular scope</title>identifier</a> : <a id="n51" xlink:href="datatypes.html#Identifier">Identifier</a> [0..*]</text><text x="6.0" y="56.0" id="n55" fill="black" class="diagram-class-detail"><a id="n56" xlink:href="person-definitions.html#Person.name"><title>A name associated with the person</title>name</a> : <a id="n57" xlink:href="datatypes.html#HumanName">HumanName</a> [0..*]</text><text x="6.0" y="70.0" id="n61" fill="black" class="diagram-class-detail"><a id="n62" xlink:href="person-definitions.html#Person.telecom"><title>A contact detail for the person, e.g. a telephone number or an email address</title>telecom</a> : <a id="n63" xlink:href="datatypes.html#ContactPoint">ContactPoint</a> [0..*]</text><text x="6.0" y="84.0" id="n67" fill="black" class="diagram-class-detail"><a id="n68" xlink:href="person-definitions.html#Person.gender"><title>Administrative Gender</title>gender</a> : <a id="n69" xlink:href="datatypes.html#code">code</a> [0..1] « <a id="n70" xlink:href="valueset-administrative-gender.html"><title id="n71">The gender of a person used for administrative purposes. (Strength=Required)</title>AdministrativeGender</a>! »</text><text x="6.0" y="98.0" id="n77" fill="black" class="diagram-class-detail"><a id="n78" xlink:href="person-definitions.html#Person.birthDate"><title>The birth date for the person</title>birthDate</a> : <a id="n79" xlink:href="datatypes.html#date">date</a> [0..1]</text><text x="6.0" y="112.0" id="n83" fill="black" class="diagram-class-detail"><a id="n84" xlink:href="person-definitions.html#Person.address"><title>One or more addresses for the person</title>address</a> : <a id="n85" xlink:href="datatypes.html#Address">Address</a> [0..*]</text><text x="6.0" y="126.0" id="n89" fill="black" class="diagram-class-detail"><a id="n90" xlink:href="person-definitions.html#Person.photo"><title>An image that can be displayed as a thumbnail of the person to enhance the identification of the individual</title>photo</a> : <a id="n91" xlink:href="datatypes.html#Attachment">Attachment</a> [0..1]</text><text x="6.0" y="140.0" id="n95" fill="black" class="diagram-class-detail"><a id="n96" xlink:href="person-definitions.html#Person.managingOrganization"><title>The organization that is the custodian of the person record</title>managingOrganization</a> : <a id="n97" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n98" xlink:href="organization.html#Organization">Organization</a> »</text><text x="6.0" y="154.0" id="n103" fill="black" class="diagram-class-detail"><a id="n104" xlink:href="person-definitions.html#Person.active"><title>Whether this person's record is in active use (this element modifies the meaning of other elements)</title>active</a> : <a id="n105" xlink:href="datatypes.html#boolean">boolean</a> [0..1]</text></g><g id="n109"><rect filter="url(#shadowB)" rx="4" ry="4" x="350.0" width="277.20000000000005" y="40.0" style="fill:#fff9ec;stroke:black;stroke-width:1" id="Person.link" height="78.0"></rect><line y1="68.0" x1="350.0" y2="68.0" x2="627.2" style="stroke:dimgrey;stroke-width:1" id="n110"></line><text x="488.6" y="60.0" id="n111" fill="black" class="diagram-class-title">Link</text><text x="356.0" y="82.0" id="n112" fill="black" class="diagram-class-detail"><a id="n113" xlink:href="person-definitions.html#Person.link.target"><title>The resource to which this actual person is associated</title>target</a> : <a id="n114" xlink:href="references.html#Reference">Reference</a> [1..1] « <a id="n115" xlink:href="patient.html#Patient">Patient</a>|<a id="n116" xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a id="n117" xlink:href="relatedperson.html#RelatedPerson">RelatedPerson</a>|</text><text x="376.0" y="96.0" id="n118" fill="black" class="diagram-class-detail">      <a id="n119" xlink:href="person.html#Person">Person</a> »</text><text x="356.0" y="110.0" id="n128" fill="black" class="diagram-class-detail"><a id="n129" xlink:href="person-definitions.html#Person.link.assurance"><title>Level of assurance that this link is associated with the target resource</title>assurance</a> : <a id="n130" xlink:href="datatypes.html#code">code</a> [0..1] « <a id="n131" xlink:href="valueset-identity-assuranceLevel.html"><title id="n132">The level of confidence that this link represents the same actual person, based on NIST Authentication Levels. (Strength=Required)</title>IdentityAssuranceLevel</a>! »</text></g><line y1="80.32567049808429" x1="246.40000000000003" y2="79.75862068965517" x2="350.0" style="stroke:navy;stroke-width:1" id="n138"></line><polygon transform="rotate(-0.3136026675118836 246.40000000000003 80.32567049808429)" style="fill:navy;stroke:navy;stroke-width:1" id="n139" points="246.40000000000003,80.32567049808429 252.40000000000003,84.32567049808429 258.40000000000003,80.32567049808429 252.40000000000003,76.32567049808429 246.40000000000003,80.32567049808429"></polygon><rect x="289.5" width="17.0" y="73.0" style="fill:white;stroke:black;stroke-width:0" id="n140" height="18.0"></rect><text x="298.0" y="83.0" id="n141" fill="black" class="diagram-class-linkage"><a id="n142" xlink:href="person-definitions.html#Person.link"><title>Link to a resource that concerns the same actual person</title>link</a></text><text x="330.0" y="75.75862068965517" id="n143" fill="black" class="diagram-class-linkage">[0..*]</text></svg>
+ </div>
+</div>
+
+<div id="xml">
+<a name="xml"></a>
+<p><b>XML Template</b></p>
+ <div id="xml-inner">
+  <pre class="spec">
+&lt;<a href="person-definitions.html#Person" title="Demographics and administrative information about a person independent of a specific health-related context." class="dict"><b>Person</b></a> xmlns="http://hl7.org/fhir"&gt; <span style="float: right"><a href="xml.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+ &lt;!-- from <a href="resource.html">Resource</a>: <a href="resource.html#id">id</a>, <a href="resource.html#meta">meta</a>, <a href="resource.html#implicitRules">implicitRules</a>, and <a href="resource.html#language">language</a> --&gt;
+ &lt;!-- from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">text</a>, <a href="references.html#contained">contained</a>, <a href="extensibility.html">extension</a>, and <a href="extensibility.html#modifierExtension">modifierExtension</a> --&gt;
+ &lt;<a href="person-definitions.html#Person.identifier" title="Identifier for a person within a particular scope." class="dict"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">A human identifier for this person</a></span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a href="person-definitions.html#Person.name" title="A name associated with the person." class="dict"><b>name</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#HumanName">HumanName</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">A name associated with the person</a></span><span style="color: Gray"> --&gt;</span>&lt;/name&gt;
+ &lt;<a href="person-definitions.html#Person.telecom" title="A contact detail for the person, e.g. a telephone number or an email address." class="dict"><b>telecom</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#ContactPoint">ContactPoint</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">A contact detail for the person</a></span><span style="color: Gray"> --&gt;</span>&lt;/telecom&gt;
+ &lt;<a href="person-definitions.html#Person.gender" title="Administrative Gender." class="dict"><b>gender</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-administrative-gender.html">male | female | other | unknown</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="person-definitions.html#Person.birthDate" title="The birth date for the person." class="dict"><b>birthDate</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">The date on which the person was born</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="person-definitions.html#Person.address" title="One or more addresses for the person." class="dict"><b>address</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Address">Address</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">One or more addresses for the person</a></span><span style="color: Gray"> --&gt;</span>&lt;/address&gt;
+ &lt;<a href="person-definitions.html#Person.photo" title="An image that can be displayed as a thumbnail of the person to enhance the identification of the individual." class="dict"><b>photo</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Attachment">Attachment</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Image of the person</a></span><span style="color: Gray"> --&gt;</span>&lt;/photo&gt;
+ &lt;<a href="person-definitions.html#Person.managingOrganization" title="The organization that is the custodian of the person record." class="dict"><b>managingOrganization</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">The organization that is the custodian of the person record</a></span><span style="color: Gray"> --&gt;</span>&lt;/managingOrganization&gt;
+ &lt;<a href="person-definitions.html#Person.active" title="Whether this person's record is in active use (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline"><b>active</b></span></a> value="[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">This person's record is in active use</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="person-definitions.html#Person.link" title="Link to a resource that concerns the same actual person." class="dict"><b>link</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Link to a resource that concerns the same actual person --&gt;</span>
+  &lt;<a href="person-definitions.html#Person.link.target" title="The resource to which this actual person is associated." class="dict"><b>target</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="patient.html#Patient">Patient</a>|<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>|<a href="person.html#Person">Person</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">The resource to which this actual person is associated</a></span><span style="color: Gray"> --&gt;</span>&lt;/target&gt;
+  &lt;<a href="person-definitions.html#Person.link.assurance" title="Level of assurance that this link is associated with the target resource." class="dict"><b>assurance</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-identity-assuranceLevel.html">level1 | level2 | level3 | level4</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;/link&gt;
+&lt;/Person&gt;
+</pre>
+
+ </div>
+</div>
+
+<div id="json2">
+<a name="json"></a>
+<p><b>JSON Template</b></p>
+ <div id="json-inner">
+  <pre class="spec">
+{<span style="float: right"><a href="json.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+  "resourceType" : "<a href="person-definitions.html#Person" title="Demographics and administrative information about a person independent of a specific health-related context." class="dict"><b>Person</b></a>",
+  // from <a href="resource.html">Resource</a>: <a href="resource.html#id">id</a>, <a href="resource.html#meta">meta</a>, <a href="resource.html#implicitRules">implicitRules</a>, and <a href="resource.html#language">language</a>
+  // from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">text</a>, <a href="references.html#contained">contained</a>, <a href="extensibility.html">extension</a>, and <a href="extensibility.html#modifierExtension">modifierExtension</a>
+  "<a href="person-definitions.html#Person.identifier" title="Identifier for a person within a particular scope." class="dict">identifier</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">A human identifier for this person</a></span>
+  "<a href="person-definitions.html#Person.name" title="A name associated with the person." class="dict">name</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#HumanName">HumanName</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">A name associated with the person</a></span>
+  "<a href="person-definitions.html#Person.telecom" title="A contact detail for the person, e.g. a telephone number or an email address." class="dict">telecom</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#ContactPoint">ContactPoint</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">A contact detail for the person</a></span>
+  "<a href="person-definitions.html#Person.gender" title="Administrative Gender." class="dict">gender</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="valueset-administrative-gender.html">male | female | other | unknown</a></span>
+  "<a href="person-definitions.html#Person.birthDate" title="The birth date for the person." class="dict">birthDate</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">The date on which the person was born</a></span>
+  "<a href="person-definitions.html#Person.address" title="One or more addresses for the person." class="dict">address</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#Address">Address</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">One or more addresses for the person</a></span>
+  "<a href="person-definitions.html#Person.photo" title="An image that can be displayed as a thumbnail of the person to enhance the identification of the individual." class="dict">photo</a>" : { <span style="color: darkgreen"><a href="datatypes.html#Attachment">Attachment</a></span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Image of the person</a></span>
+  "<a href="person-definitions.html#Person.managingOrganization" title="The organization that is the custodian of the person record." class="dict">managingOrganization</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">The organization that is the custodian of the person record</a></span>
+  "<a href="person-definitions.html#Person.active" title="Whether this person's record is in active use (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">active</span></a>" : &lt;<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>&gt;, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">This person's record is in active use</a></span>
+  "<a href="person-definitions.html#Person.link" title="Link to a resource that concerns the same actual person." class="dict">link</a>" : [{ <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Link to a resource that concerns the same actual person</a></span>
+    "<a href="person-definitions.html#Person.link.target" title="The resource to which this actual person is associated." class="dict">target</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="patient.html#Patient">Patient</a>|<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>|<a href="person.html#Person">Person</a>)</span> }, <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">The resource to which this actual person is associated</a></span>
+    "<a href="person-definitions.html#Person.link.assurance" title="Level of assurance that this link is associated with the target resource." class="dict">assurance</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>&gt;" <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="valueset-identity-assuranceLevel.html">level1 | level2 | level3 | level4</a></span>
+  }]
+}
+</pre>
+
+ </div>
+</div>
+
+<div id="ttl2">
+<a name="ttl"></a>
+<p><b>Turtle Template</b></p>
+ <div id="ttl-inner">
+  <pre class="spec">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .<span style="float: right"><a href="rdf.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+
+
+[ a fhir:<a href="person-definitions.html#Person" title="Demographics and administrative information about a person independent of a specific health-related context." class="dict"><b>Person</b></a>;
+  fhir:nodeRole fhir:treeRoot; # if this is the parser root
+
+  # from <a href="resource.html">Resource</a>: <a href="resource.html#id">.id</a>, <a href="resource.html#meta">.meta</a>, <a href="resource.html#implicitRules">.implicitRules</a>, and <a href="resource.html#language">.language</a>
+  # from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">.text</a>, <a href="references.html#contained">.contained</a>, <a href="extensibility.html">.extension</a>, and <a href="extensibility.html#modifierExtension">.modifierExtension</a>
+  fhir:<a href="person-definitions.html#Person.identifier" title="Identifier for a person within a particular scope." class="dict">Person.identifier</a><a name="ttl-identifier"> </a>[ <a href="datatypes.html#Identifier">Identifier</a> ], ... ; # 0..* <span style="color: navy">A human identifier for this person</span>
+  fhir:<a href="person-definitions.html#Person.name" title="A name associated with the person." class="dict">Person.name</a><a name="ttl-name"> </a>[ <a href="datatypes.html#HumanName">HumanName</a> ], ... ; # 0..* <span style="color: navy">A name associated with the person</span>
+  fhir:<a href="person-definitions.html#Person.telecom" title="A contact detail for the person, e.g. a telephone number or an email address." class="dict">Person.telecom</a><a name="ttl-telecom"> </a>[ <a href="datatypes.html#ContactPoint">ContactPoint</a> ], ... ; # 0..* <span style="color: navy">A contact detail for the person</span>
+  fhir:<a href="person-definitions.html#Person.gender" title="Administrative Gender." class="dict">Person.gender</a><a name="ttl-gender"> </a>[ <a href="datatypes.html#code">code</a> ]; # 0..1 <span style="color: navy">male | female | other | unknown</span>
+  fhir:<a href="person-definitions.html#Person.birthDate" title="The birth date for the person." class="dict">Person.birthDate</a><a name="ttl-birthDate"> </a>[ <a href="datatypes.html#date">date</a> ]; # 0..1 <span style="color: navy">The date on which the person was born</span>
+  fhir:<a href="person-definitions.html#Person.address" title="One or more addresses for the person." class="dict">Person.address</a><a name="ttl-address"> </a>[ <a href="datatypes.html#Address">Address</a> ], ... ; # 0..* <span style="color: navy">One or more addresses for the person</span>
+  fhir:<a href="person-definitions.html#Person.photo" title="An image that can be displayed as a thumbnail of the person to enhance the identification of the individual." class="dict">Person.photo</a><a name="ttl-photo"> </a>[ <a href="datatypes.html#Attachment">Attachment</a> ]; # 0..1 <span style="color: navy">Image of the person</span>
+  fhir:<a href="person-definitions.html#Person.managingOrganization" title="The organization that is the custodian of the person record." class="dict">Person.managingOrganization</a><a name="ttl-managingOrganization"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>) ]; # 0..1 <span style="color: navy">The organization that is the custodian of the person record</span>
+  fhir:<a href="person-definitions.html#Person.active" title="Whether this person's record is in active use (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">Person.active</span></a><a name="ttl-active"> </a>[ <a href="datatypes.html#boolean">boolean</a> ]; # 0..1 <span style="color: navy">This person's record is in active use</span>
+  fhir:<a href="person-definitions.html#Person.link" title="Link to a resource that concerns the same actual person." class="dict">Person.link</a><a name="ttl-link"> </a>[ # 0..* <span style="color: navy">Link to a resource that concerns the same actual person</span>
+    fhir:<a href="person-definitions.html#Person.link.target" title="The resource to which this actual person is associated." class="dict">Person.link.target</a><a name="ttl-target"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="patient.html#Patient">Patient</a>|<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>|<a href="person.html#Person">Person</a>) ]; # 1..1 <span style="color: navy">The resource to which this actual person is associated</span>
+    fhir:<a href="person-definitions.html#Person.link.assurance" title="Level of assurance that this link is associated with the target resource." class="dict">Person.link.assurance</a><a name="ttl-assurance"> </a>[ <a href="datatypes.html#code">code</a> ]; # 0..1 <span style="color: navy">level1 | level2 | level3 | level4</span>
+  ], ...;
+]
+</pre>
+
+ </div>
+</div>
+
+<div id="vdiff2">
+<p><b>Changes since Release 3</b></p>
+ <div id="diff-inner2">
+  <table class="grid">
+  <tr class="diff-item">
+    <td class="diff-left">
+      <a href="person.html#Person">Person</a>
+    </td>
+    <td class="diff-right"></td>
+  </tr>
+  <tr class="diff-entry">
+    <td class="diff-left">Person.gender</td>
+    <td class="diff-right">
+      <ul>
+        <li>Change value set from http://hl7.org/fhir/ValueSet/administrative-gender to http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-entry">
+    <td class="diff-left">Person.link.assurance</td>
+    <td class="diff-right">
+      <ul>
+        <li>Change value set from http://hl7.org/fhir/ValueSet/identity-assuranceLevel to http://hl7.org/fhir/ValueSet/identity-assuranceLevel|4.0.1</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p>See the <a href="diff.html">Full Difference</a> for further information</p>
+
+  <p>
+  This analysis is available as <a href="person.diff.xml">XML</a> or <a href="person.diff.json">JSON</a>.
+  </p>
+  <p>See <a href="person-version-maps.html">R3 &lt;--&gt; R4 Conversion Maps</a> (status = 5 tests that all execute ok. All tests pass round-trip testing  and all r3 resources are valid.)</p>
+
+ </div>
+</div>
+
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<p>See the <a href="person-profiles.html">Profiles &amp; Extensions</a> and the alternate definitions:
+Master Definition <a href="person.profile.xml.html">XML</a> + <a href="person.profile.json.html">JSON</a>,
+<a href="xml.html">XML</a> <a href="person.xsd">Schema</a>/<a href="person.sch">Schematron</a> + <a href="json.html">JSON</a> 
+<a href="person.schema.json.html">Schema</a>, <a href="person.shex.html">ShEx</a> (for <a href="rdf.html">Turtle</a>)  + <a href="person-profiles.html">see the extensions</a> &amp; the <a href="person-dependencies.html">dependency analysis</a></p>
+
+<a name="tx"></a>
+<h3 class="self-link-parent"><span class="sectioncount">8.18.3.1</span> 
+Terminology Bindings
+ <a href="person.html#tx" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td valign="top" title="AdministrativeGender">Person.gender </td><td valign="top">The gender of a person used for administrative purposes.</td><td><a href="terminologies.html#required">Required</a></td><td valign="top"><a href="valueset-administrative-gender.html">AdministrativeGender</a>  <!-- b --></td> </tr>
+ <tr><td valign="top" title="IdentityAssuranceLevel">Person.link.assurance </td><td valign="top">The level of confidence that this link represents the same actual person, based on NIST Authentication Levels.</td><td><a href="terminologies.html#required">Required</a></td><td valign="top"><a href="valueset-identity-assuranceLevel.html">IdentityAssuranceLevel</a>  <!-- b --></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+<a name="dedata"></a>
+  <h2 class="self-link-parent"><span class="sectioncount">8.18.4</span> De-normalized Data <a href="person.html#dedata" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+  <p>
+    Most of the properties of the Person resource are replicated within the other resources that they
+    are shared with. This is intentional and highlights the loose coupling of the resources.
+  </p>
+  <p>
+    Not many systems implement a shared Person record, and as such the values DO become out of
+    sync with each other. The inclusion of this resource does permit a capability for systems to identify
+    other instances of this actual person's data via a centralized registry that can assist in keeping things
+    up to date.
+  </p>
+  
+<a name="linking"></a>
+  <h2 class="self-link-parent"><span class="sectioncount">8.18.5</span> 
+    Person and Linking
+   <a href="person.html#linking" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+  <p>
+  The <i>link</i> element is used to relate resources under a common person record. 
+  This element supports two primary scenarios where other resources refer to the same person resource.
+  </p>
+  <p>
+    The <i>link</i> element cannot be used to link to RelatedPerson entries, so we can use a Person
+    resource to relate these elements together identifying them as the same individual.
+  </p>
+
+<a name="xdomain"></a>
+  <h2 class="self-link-parent"><span class="sectioncount">8.18.6</span> 
+  Cross-Domain Patient Directory
+   <a href="person.html#xdomain" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+  <p>
+    In a data sharing network, finding the location of patient records across different systems is a 
+    necessary pre-requisite for accessing external patient data. Using the <i>link</i> element, systems associate
+    patient resources from different organizations. The assuranceLevel associated with the <i>link</i> provides
+    a way for a system to qualify its confidence in the asserted <i>link</i>. For example, a relationship from
+    the person to a patient using a probabilistic matching algorithm may be represented using a <i>link</i> with
+    an assurance level of level1, while a relationship established using a government-issued photo ID may
+    be created with an assurance level of level3.
+  </p>
+  
+<a name="xdomain2"></a>
+  <h2 class="self-link-parent"><span class="sectioncount">8.18.7</span> 
+    Cross-Domain Provider Directory
+   <a href="person.html#xdomain2" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+  <p>
+    Similarly, providers working in multiple healthcare service settings may be linked across different 
+    organizations using the <i>link</i> element. The various practitioner resources can be related using a common 
+    person resource with a <i>link</i> for each of the practitioner resources located in other organizations.
+  </p>
+
+<a name="pmi"></a>
+<h2 class="self-link-parent"><span class="sectioncount">8.18.8</span> 
+  Person Master Index
+ <a href="person.html#pmi" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<p>
+  Many national and state programs maintain a central register of people, and their key Identifiers.
+  These systems do not store any health related information, they are purely a validated set data, often
+  provided by government departments. These may contain identifiers for patients, practitioners from various
+  departments for various purposes. Access to these systems typically requires some form of professional
+  role or permission, such as those in healthcare, law enforcement, or other internal government uses.
+</p>
+<p>
+  These may also operate outside of government in the private sector, such as associations or networks
+  that a person may be involved with and may work in the same was as they do inside government.
+  The usage of the data into the healthcare environment is not the only use of the register.
+</p>
+<blockquote class="stu-note">
+  <p>
+    <b>Note:</b>  This style of system may use the Person resource without any FHIR references
+    to Patient or Practitioner resources. In these environments the Master Index is likely to
+    have a master identifier that performs this logical linking.<br/>
+    This style of usage has fewer security implications, as it doesn’t disclose where the
+    information is being used.
+  </p>
+</blockquote>
+
+<a name="portal"></a>
+  <h2 class="self-link-parent"><span class="sectioncount">8.18.9</span> 
+    Client Portal
+   <a href="person.html#portal" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+  <p>
+    Client Portals provide consumer access to a window of their data locked up in healthcare systems. 
+    In many cases these systems are externally integrated and do not have access to the legacy CIS/PAS systems.
+  </p>
+  <p>
+    In contrast to most systems where a user has access to multiple patients depending on their roles and permissions,
+    a client portal provides a consumer with direct access to their data (with permissions applied).
+    This can also include not just their data (via the Person.link Patient entries), but also to information that they
+    have entered, or were involved with (via the Person.link RelatedPerson entries), such as observations that they 
+    entered.<br/>
+    With appropriate permissions/consent applied, the user could have access to other Patient records linked via 
+    a RelatedPerson.
+  </p>
+
+<a name="security"></a>
+  <h2 class="self-link-parent"><span class="sectioncount">8.18.10</span> 
+    Security and Privacy Considerations
+   <a href="person.html#security" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+  <p>
+    The Person resource may contain identifying and demographic information about an individual, therefore it must
+    be protected as Identifying Information.
+  </p>
+  <p>
+    The Person resource may contain references to the individual's other various Patient, Practitioner,
+    and RelatedPerson resources, where the referenced record might be to very sensitive information.
+    The access to the linked sensitive Resource may be protected, but the link itself may expose information.<br/> 
+    For example where a Practitioner and Patient resource are linked through a Person resource, inspecting the
+    Patient URL could reveal that the Practitioner has a record at a sensitive medical health clinic (e.g. Drug Rehabilitation Clinic).
+  </p>
+  <p>
+    When implementing the Person resource consideration should be given to the security and privacy
+    of this information. Some mitigations to these risks include higher access control protections, filling
+    out the Person resource as sparsely as practical for the given use-cases, and masking some data elements for
+    certain users of the information. Additional security guidance can be found on the <a href="security.html">security page</a>.
+  </p>
+
+<a name="search"></a>
+<h2 class="self-link-parent"><span class="sectioncount">8.18.11</span> Search Parameters <a href="person.html#search" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<p>Search parameters for this resource. The <a href="search.html#all">common parameters</a> also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Expression</b></td><td><b>In Common</b></td></tr>
+<tr><td><a name="sp-address"> </a>address</td><td><a href="search.html#string">string</a></td><td>A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text</td><td>Person.address</td><td><a href="searchparameter-registry.html#individual-address">3 Resources</a></td></tr>
+<tr><td><a name="sp-address-city"> </a>address-city</td><td><a href="search.html#string">string</a></td><td>A city specified in an address</td><td>Person.address.city</td><td><a href="searchparameter-registry.html#individual-address-city">3 Resources</a></td></tr>
+<tr><td><a name="sp-address-country"> </a>address-country</td><td><a href="search.html#string">string</a></td><td>A country specified in an address</td><td>Person.address.country</td><td><a href="searchparameter-registry.html#individual-address-country">3 Resources</a></td></tr>
+<tr><td><a name="sp-address-postalcode"> </a>address-postalcode</td><td><a href="search.html#string">string</a></td><td>A postal code specified in an address</td><td>Person.address.postalCode</td><td><a href="searchparameter-registry.html#individual-address-postalcode">3 Resources</a></td></tr>
+<tr><td><a name="sp-address-state"> </a>address-state</td><td><a href="search.html#string">string</a></td><td>A state specified in an address</td><td>Person.address.state</td><td><a href="searchparameter-registry.html#individual-address-state">3 Resources</a></td></tr>
+<tr><td><a name="sp-address-use"> </a>address-use</td><td><a href="search.html#token">token</a></td><td>A use code specified in an address</td><td>Person.address.use</td><td><a href="searchparameter-registry.html#individual-address-use">3 Resources</a></td></tr>
+<tr><td><a name="sp-birthdate"> </a>birthdate</td><td><a href="search.html#date">date</a></td><td>The person's date of birth</td><td>Person.birthDate</td><td><a href="searchparameter-registry.html#individual-birthdate">2 Resources</a></td></tr>
+<tr><td><a name="sp-email"> </a>email</td><td><a href="search.html#token">token</a></td><td>A value in an email contact</td><td>Person.telecom.where(system='email')</td><td><a href="searchparameter-registry.html#individual-email">4 Resources</a></td></tr>
+<tr><td><a name="sp-gender"> </a>gender</td><td><a href="search.html#token">token</a></td><td>The gender of the person</td><td>Person.gender</td><td><a href="searchparameter-registry.html#individual-gender">3 Resources</a></td></tr>
+<tr><td><a name="sp-identifier"> </a>identifier</td><td><a href="search.html#token">token</a></td><td>A person Identifier</td><td>Person.identifier</td><td></td></tr>
+<tr><td><a name="sp-link"> </a>link</td><td><a href="search.html#reference">reference</a></td><td>Any link has this Patient, Person, RelatedPerson or Practitioner reference</td><td>Person.link.target<br/>(<a href="practitioner.html">Practitioner</a>, <a href="patient.html">Patient</a>, <a href="person.html">Person</a>, <a href="relatedperson.html">RelatedPerson</a>)</td><td></td></tr>
+<tr><td><a name="sp-name"> </a>name</td><td><a href="search.html#string">string</a></td><td>A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text</td><td>Person.name</td><td></td></tr>
+<tr><td><a name="sp-organization"> </a>organization</td><td><a href="search.html#reference">reference</a></td><td>The organization at which this person record is being managed</td><td>Person.managingOrganization<br/>(<a href="organization.html">Organization</a>)</td><td></td></tr>
+<tr><td><a name="sp-patient"> </a>patient</td><td><a href="search.html#reference">reference</a></td><td>The Person links to this Patient</td><td>Person.link.target.where(resolve() is Patient)<br/>(<a href="patient.html">Patient</a>)</td><td></td></tr>
+<tr><td><a name="sp-phone"> </a>phone</td><td><a href="search.html#token">token</a></td><td>A value in a phone contact</td><td>Person.telecom.where(system='phone')</td><td><a href="searchparameter-registry.html#individual-phone">4 Resources</a></td></tr>
+<tr><td><a name="sp-phonetic"> </a>phonetic</td><td><a href="search.html#string">string</a></td><td>A portion of name using some kind of phonetic matching algorithm</td><td>Person.name</td><td><a href="searchparameter-registry.html#individual-phonetic">3 Resources</a></td></tr>
+<tr><td><a name="sp-practitioner"> </a>practitioner</td><td><a href="search.html#reference">reference</a></td><td>The Person links to this Practitioner</td><td>Person.link.target.where(resolve() is Practitioner)<br/>(<a href="practitioner.html">Practitioner</a>)</td><td></td></tr>
+<tr><td><a name="sp-relatedperson"> </a>relatedperson</td><td><a href="search.html#reference">reference</a></td><td>The Person links to this RelatedPerson</td><td>Person.link.target.where(resolve() is RelatedPerson)<br/>(<a href="relatedperson.html">RelatedPerson</a>)</td><td></td></tr>
+<tr><td><a name="sp-telecom"> </a>telecom</td><td><a href="search.html#token">token</a></td><td>The value in any kind of contact</td><td>Person.telecom</td><td><a href="searchparameter-registry.html#individual-telecom">4 Resources</a></td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:36+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fperson.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fperson.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+
+
+
+<script src="external/jquery/jquery.js"> </script>
+<script src="jquery-ui.min.js"> </script>
+<script>
+try {
+  var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
+}
+catch(exception){
+}
+
+if (!currentTabIndex)
+  currentTabIndex = '0';
+
+$( '#tabs' ).tabs({
+         active: currentTabIndex,
+         activate: function( event, ui ) {
+             var active = $('.selector').tabs('option', 'active');
+             currentTabIndex = ui.newTab.index();
+             document.activeElement.blur();
+             try {
+               sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
+             }
+             catch(exception){
+             }
+         }
+     });
+</script>
+
+</body>
+</html>

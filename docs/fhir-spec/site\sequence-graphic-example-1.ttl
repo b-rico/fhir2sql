@@ -1,0 +1,52 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MolecularSequence/graphic-example-1> a fhir:MolecularSequence;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "graphic-example-1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: graphic-example-1</p><p><b>type</b>: dna</p><p><b>coordinateSystem</b>: 0</p><h3>ReferenceSeqs</h3><table><tr><td>-</td><td><b>ReferenceSeqId</b></td><td><b>Strand</b></td><td><b>WindowStart</b></td><td><b>WindowEnd</b></td></tr><tr><td>*</td><td>NC_000002.12 <span>(Details : {http://www.ncbi.nlm.nih.gov/nuccore code 'NC_000002.12' = 'NC_000002.12)</span></td><td>watson</td><td>128273724</td><td>128273732</td></tr></table><h3>Variants</h3><table><tr><td>-</td><td><b>Start</b></td><td><b>End</b></td><td><b>ObservedAllele</b></td><td><b>ReferenceAllele</b></td><td><b>Cigar</b></td></tr><tr><td>*</td><td>128273725</td><td>128273726</td><td>G</td><td>T</td><td>1M</td></tr></table><p><b>pointer</b>: <a>MolecularSequence/graphic-example-2</a></p></div>"
+  ];
+  fhir:MolecularSequence.type [ fhir:value "dna"];
+  fhir:MolecularSequence.coordinateSystem [ fhir:value "0"^^xsd:integer];
+  fhir:MolecularSequence.referenceSeq [
+     fhir:MolecularSequence.referenceSeq.referenceSeqId [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.ncbi.nlm.nih.gov/nuccore" ];
+         fhir:Coding.code [ fhir:value "NC_000002.12" ]
+       ]
+     ];
+     fhir:MolecularSequence.referenceSeq.strand [ fhir:value "watson" ];
+     fhir:MolecularSequence.referenceSeq.windowStart [ fhir:value "128273724"^^xsd:integer ];
+     fhir:MolecularSequence.referenceSeq.windowEnd [ fhir:value "128273732"^^xsd:integer ]
+  ];
+  fhir:MolecularSequence.variant [
+     fhir:index 0;
+     fhir:MolecularSequence.variant.start [ fhir:value "128273725"^^xsd:integer ];
+     fhir:MolecularSequence.variant.end [ fhir:value "128273726"^^xsd:integer ];
+     fhir:MolecularSequence.variant.observedAllele [ fhir:value "G" ];
+     fhir:MolecularSequence.variant.referenceAllele [ fhir:value "T" ];
+     fhir:MolecularSequence.variant.cigar [ fhir:value "1M" ]
+  ];
+  fhir:MolecularSequence.pointer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/MolecularSequence/graphic-example-2>;
+     fhir:Reference.reference [ fhir:value "MolecularSequence/graphic-example-2" ]
+  ] .
+
+<http://hl7.org/fhir/MolecularSequence/graphic-example-2> a fhir:MolecularSequence .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MolecularSequence/graphic-example-1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MolecularSequence/graphic-example-1.ttl> .
+
+# -------------------------------------------------------------------------------------
+

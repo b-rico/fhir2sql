@@ -1,0 +1,142 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicinalProductIndication {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subject: [Reference]
+  diseaseSymptomProcedure: CodeableConcept
+  diseaseStatus: CodeableConcept
+  comorbidity: [CodeableConcept]
+  intendedEffect: CodeableConcept
+  duration: Quantity
+  otherTherapy: [MedicinalProductIndicationOtherTherapy]
+  undesirableEffect: [Reference]
+  population: [Population]
+}
+
+type MedicinalProductIndicationOtherTherapy {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  therapyRelationshipType: CodeableConcept!
+  medicationCodeableConcept: CodeableConcept
+  medicationReference: Reference
+}
+
+input MedicinalProductIndication {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subject: [Reference]
+  diseaseSymptomProcedure: CodeableConcept
+  diseaseStatus: CodeableConcept
+  comorbidity: [CodeableConcept]
+  intendedEffect: CodeableConcept
+  duration: Quantity
+  otherTherapy: [MedicinalProductIndicationOtherTherapy]
+  undesirableEffect: [Reference]
+  population: [Population]
+}
+
+input MedicinalProductIndicationOtherTherapy {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  therapyRelationshipType: CodeableConcept!
+  medicationCodeableConcept: CodeableConcept
+  medicationReference: Reference
+}
+
+type MedicinalProductIndicationReadType {
+  MedicinalProductIndication(id : ID!) : MedicinalProductIndication
+}
+
+type MedicinalProductIndicationListType {
+  MedicinalProductIndicationList(_filter : String
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicinalProductIndication]
+}
+
+type MedicinalProductIndicationConnectionType {
+  MedicinalProductIndicationConection(_filter : String
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicinalProductIndicationConnection
+}
+
+type MedicinalProductIndicationConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicinalProductIndicationEdge]
+}
+
+type MedicinalProductIndicationEdge {
+  mode : String
+  score : Float
+  resource : MedicinalProductIndication
+}
+
+type MedicinalProductIndicationCreateType {
+  MedicinalProductIndicationCreate(resource : MedicinalProductIndication) : MedicinalProductIndicationCreation
+}
+
+type MedicinalProductIndicationCreation {
+  location : String
+  resource : MedicinalProductIndication
+  information : OperationOutcome
+}
+
+type MedicinalProductIndicationUpdateType {
+  MedicinalProductIndicationUpdate(id : IDresource : MedicinalProductIndication) : MedicinalProductIndicationUpdate
+}
+
+type MedicinalProductIndicationUpdate {
+  resource : MedicinalProductIndication
+  information : OperationOutcome
+}
+
+type MedicinalProductIndicationDeleteType {
+  MedicinalProductIndicationDelete(id : ID) : MedicinalProductIndicationDelete
+}
+
+type MedicinalProductIndicationDelete {
+  information : OperationOutcome
+}
+

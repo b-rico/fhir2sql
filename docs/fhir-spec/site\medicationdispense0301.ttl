@@ -1,0 +1,159 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicationDispense/meddisp0301> a fhir:MedicationDispense;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "meddisp0301"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: meddisp0301</p><p><b>contained</b>: </p><p><b>status</b>: in-progress</p><p><b>medication</b>: Vancomycin Hydrochloride. Generated Summary: id: med0301; Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE) <span>(Details : {http://hl7.org/fhir/sid/ndc code '0069-2587-10' = 'n/a', given as 'Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)'})</span></p><p><b>subject</b>: <a>Donald Duck</a></p><p><b>supportingInformation</b>: <a>Condition/f203</a></p><h3>Performers</h3><table><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a>Practitioner/f006</a></td></tr></table><p><b>location</b>: <a>Pharmacy</a></p><p><b>authorizingPrescription</b>: <a>MedicationRequest/medrx0318</a></p><p><b>type</b>: Emergency Supply <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ActCode code 'EM' = 'Emergency Supply', given as 'Emergency Supply'})</span></p><p><b>quantity</b>: 12 Vial<span> (Details: http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm code Vial = 'Vial')</span></p><p><b>daysSupply</b>: 3 Day<span> (Details: UCUM code d = 'd')</span></p><p><b>whenPrepared</b>: 15/01/2015 10:20:00 AM</p><p><b>destination</b>: <a>Location/ph</a></p><p><b>receiver</b>: <a>Donald Duck</a></p><p><b>dosageInstruction</b>: </p></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Medication;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "med0301" ];
+     fhir:Medication.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/ndc" ];
+         fhir:Coding.code [ fhir:value "0069-2587-10" ];
+         fhir:Coding.display [ fhir:value "Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)" ]
+       ]
+     ]
+  ];
+  fhir:MedicationDispense.status [ fhir:value "in-progress"];
+  fhir:MedicationDispense.medicationReference [
+     fhir:Reference.reference [ fhir:value "#med0301" ];
+     fhir:Reference.display [ fhir:value "Vancomycin Hydrochloride" ]
+  ];
+  fhir:MedicationDispense.subject [
+     fhir:link <http://hl7.org/fhir/Patient/pat1>;
+     fhir:Reference.reference [ fhir:value "Patient/pat1" ];
+     fhir:Reference.display [ fhir:value "Donald Duck" ]
+  ];
+  fhir:MedicationDispense.supportingInformation [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Condition/f203>;
+     fhir:Reference.reference [ fhir:value "Condition/f203" ]
+  ];
+  fhir:MedicationDispense.performer [
+     fhir:index 0;
+     fhir:MedicationDispense.performer.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/f006>;
+       fhir:Reference.reference [ fhir:value "Practitioner/f006" ]
+     ]
+  ];
+  fhir:MedicationDispense.location [
+     fhir:link <http://hl7.org/fhir/Location/ukp>;
+     fhir:Reference.reference [ fhir:value "Location/ukp" ];
+     fhir:Reference.display [ fhir:value "Pharmacy" ]
+  ];
+  fhir:MedicationDispense.authorizingPrescription [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/MedicationRequest/medrx0318>;
+     fhir:Reference.reference [ fhir:value "MedicationRequest/medrx0318" ]
+  ];
+  fhir:MedicationDispense.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "EM" ];
+       fhir:Coding.display [ fhir:value "Emergency Supply" ]
+     ]
+  ];
+  fhir:MedicationDispense.quantity [
+     fhir:Quantity.value [ fhir:value "12"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "Vial" ];
+     fhir:Quantity.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm" ];
+     fhir:Quantity.code [ fhir:value "Vial" ]
+  ];
+  fhir:MedicationDispense.daysSupply [
+     fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "Day" ];
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+     fhir:Quantity.code [ fhir:value "d" ]
+  ];
+  fhir:MedicationDispense.whenPrepared [ fhir:value "2015-01-15T10:20:00Z"^^xsd:dateTime];
+  fhir:MedicationDispense.destination [
+     fhir:link <http://hl7.org/fhir/Location/ph>;
+     fhir:Reference.reference [ fhir:value "Location/ph" ]
+  ];
+  fhir:MedicationDispense.receiver [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Patient/pat1>;
+     fhir:Reference.reference [ fhir:value "Patient/pat1" ];
+     fhir:Reference.display [ fhir:value "Donald Duck" ]
+  ];
+  fhir:MedicationDispense.dosageInstruction [
+     fhir:index 0;
+     fhir:Dosage.sequence [ fhir:value "1"^^xsd:integer ];
+     fhir:Dosage.text [ fhir:value "500mg IV q6h x 3 days" ];
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+         fhir:Timing.repeat.period [ fhir:value "6"^^xsd:decimal ];
+         fhir:Timing.repeat.periodUnit [ fhir:value "h" ]
+       ]
+     ];
+     fhir:Dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:255560000;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "255560000" ];
+         fhir:Coding.display [ fhir:value "Intravenous" ]
+       ]
+     ];
+     fhir:Dosage.method [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:420620005;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "420620005" ];
+         fhir:Coding.display [ fhir:value "Push - dosing instruction imperative (qualifier value)" ]
+       ]
+     ];
+     fhir:Dosage.doseAndRate [
+       fhir:index 0;
+       fhir:Dosage.doseAndRate.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/dose-rate-type" ];
+           fhir:Coding.code [ fhir:value "ordered" ];
+           fhir:Coding.display [ fhir:value "Ordered" ]
+         ]
+       ];
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "500"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "mg" ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "mg" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/pat1> a fhir:Patient .
+
+<http://hl7.org/fhir/Condition/f203> a fhir:Condition .
+
+<http://hl7.org/fhir/Practitioner/f006> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Location/ukp> a fhir:Location .
+
+<http://hl7.org/fhir/MedicationRequest/medrx0318> a fhir:MedicationRequest .
+
+<http://hl7.org/fhir/Location/ph> a fhir:Location .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicationDispense/meddisp0301.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MedicationDispense/meddisp0301.ttl> .
+
+# -------------------------------------------------------------------------------------
+

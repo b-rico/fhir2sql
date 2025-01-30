@@ -1,0 +1,2155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="qs1"/>
+  <contained>
+    <ValueSet>
+      <id value="vs2"/>
+      <name value="Type options for RequestGroup.action.relatedAction.offset[x]"/>
+      <status value="active"/>
+      <description value="Type options for RequestGroup.action.relatedAction.offset[x]"/>
+      <expansion>
+        <identifier value="urn:uuid:6bda53e0-16cb-4773-a1b8-4cb42f0c44a4"/>
+        <timestamp value="2019-11-01T09:36:48+11:00"/>
+        <contains>
+          <system value="http://hl7.org/fhir/data-types"/>
+          <code value="Duration"/>
+          <display value="Duration"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/data-types"/>
+          <code value="Range"/>
+          <display value="Range"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="vs3"/>
+      <name value="Type options for RequestGroup.action.timing[x]"/>
+      <status value="active"/>
+      <description value="Type options for RequestGroup.action.timing[x]"/>
+      <expansion>
+        <identifier value="urn:uuid:60ba1b26-7779-496c-9ef6-730fd09ab425"/>
+        <timestamp value="2019-11-01T09:36:48+11:00"/>
+        <contains>
+          <system value="http://hl7.org/fhir/data-types"/>
+          <code value="dateTime"/>
+          <display value="dateTime"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/data-types"/>
+          <code value="Age"/>
+          <display value="Age"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/data-types"/>
+          <code value="Period"/>
+          <display value="Period"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/data-types"/>
+          <code value="Duration"/>
+          <display value="Duration"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/data-types"/>
+          <code value="Range"/>
+          <display value="Range"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/data-types"/>
+          <code value="Timing"/>
+          <display value="Timing"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+  </identifier>
+  <version value="4.0.1"/>
+  <status value="draft"/>
+  <date value="2019-11-01T09:29:23+11:00"/>
+  <publisher value="HL7"/>
+  <item>
+    <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+      <valueInteger value="1"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+      <valueInteger value="1"/>
+    </extension>
+    <linkId value="RequestGroup"/>
+    <text value="A group of related requests"/>
+    <type value="group"/>
+    <required value="true"/>
+    <repeats value="false"/>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+            <code value="flyover"/>
+            <display value="Fly-over"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <text value="A group of related requests that can be used to capture intended activities that have inter-dependencies such as &quot;give this medication after that one&quot;."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="string"/>
+      </extension>
+      <linkId value="RequestGroup.id"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes. The only time that a resource does not have an id is when it is being submitted to the server using a create operation."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.id.value"/>
+        <text value="Logical id of this artifact"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <linkId value="RequestGroup.meta"/>
+      <text value="Metadata about the resource"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource."/>
+        <type value="display"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="uri"/>
+      </extension>
+      <linkId value="RequestGroup.implicitRules"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it&#39;s narrative along with other profiles, value sets, etc."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.implicitRules.value"/>
+        <text value="A set of rules under which this content was created"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="code"/>
+      </extension>
+      <linkId value="RequestGroup.language"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="The base language in which the resource is written. Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute)."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.language.value"/>
+        <text value="language"/>
+        <type value="choice"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <linkId value="RequestGroup.text"/>
+      <text value="Text summary of the resource, for human interpretation"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety. Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a &quot;text blob&quot; or where text is additionally entered raw or narrated and encoded information is added later."/>
+        <type value="display"/>
+      </item>
+    </item>
+    <item>
+      <linkId value="RequestGroup.contained"/>
+      <text value="Contained, inline Resources"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope. This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels."/>
+        <type value="display"/>
+      </item>
+    </item>
+    <item>
+      <linkId value="RequestGroup.extension"/>
+      <text value="Additional content defined by implementations"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+        <type value="display"/>
+      </item>
+    </item>
+    <item>
+      <linkId value="RequestGroup.modifierExtension"/>
+      <text value="Extensions that cannot be ignored"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element&#39;s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+        <type value="display"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Identifier"/>
+      </extension>
+      <linkId value="RequestGroup.identifier"/>
+      <text value="Business identifier"/>
+      <type value="group"/>
+      <required value="true"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Allows a service to provide a unique, business identifier for the request."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.identifier.label"/>
+        <text value="label:"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.identifier.system"/>
+        <text value="system:"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.identifier.value"/>
+        <text value="value:"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="uri"/>
+      </extension>
+      <linkId value="RequestGroup.instantiatesCanonical"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.instantiatesCanonical.value"/>
+        <text value="Instantiates FHIR protocol or definition"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="uri"/>
+      </extension>
+      <linkId value="RequestGroup.instantiatesUri"/>
+      <type value="group"/>
+      <required value="true"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.instantiatesUri.value"/>
+        <text value="Instantiates external protocol or definition"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Reference"/>
+      </extension>
+      <linkId value="RequestGroup.basedOn"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="A plan, proposal or order that is fulfilled in whole or in part by this request."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+          <valueCode value="Resource"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter">
+          <valueString value="subject=$subj&amp;patient=$subj&amp;encounter=$encounter"/>
+        </extension>
+        <linkId value="RequestGroup.basedOn.value"/>
+        <text value="Fulfills plan, proposal, or order"/>
+        <type value="reference"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Reference"/>
+      </extension>
+      <linkId value="RequestGroup.replaces"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Completed or terminated request(s) whose function is taken by this new request. The replacement could be because the initial request was immediately rejected (due to an issue) or because the previous request was completed, but the need for the action described by the request remains ongoing."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+          <valueCode value="Resource"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter">
+          <valueString value="subject=$subj&amp;patient=$subj&amp;encounter=$encounter"/>
+        </extension>
+        <linkId value="RequestGroup.replaces.value"/>
+        <text value="Request(s) replaced by this request"/>
+        <type value="reference"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Identifier"/>
+      </extension>
+      <linkId value="RequestGroup.groupIdentifier"/>
+      <text value="Composite request this is part of"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form. Requests are linked either by a &quot;basedOn&quot; relationship (i.e. one request is fulfilling another) or by having a common requisition.  Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.groupIdentifier.label"/>
+        <text value="label:"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.groupIdentifier.system"/>
+        <text value="system:"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.groupIdentifier.value"/>
+        <text value="value:"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="code"/>
+      </extension>
+      <linkId value="RequestGroup.status"/>
+      <type value="group"/>
+      <required value="true"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="The current state of the request. For request groups, the status reflects the status of all the requests in the group."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.status.value"/>
+        <text value="status"/>
+        <type value="choice"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="code"/>
+      </extension>
+      <linkId value="RequestGroup.intent"/>
+      <type value="group"/>
+      <required value="true"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.intent.value"/>
+        <text value="intent"/>
+        <type value="choice"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="code"/>
+      </extension>
+      <linkId value="RequestGroup.priority"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Indicates how quickly the request should be addressed with respect to other requests."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.priority.value"/>
+        <text value="priority"/>
+        <type value="choice"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="CodeableConcept"/>
+      </extension>
+      <linkId value="RequestGroup.code"/>
+      <text value="What&#39;s being requested/ordered"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="A code that identifies what the overall request group is. This element can be used to provide a code that captures the meaning of the request group as a whole, as opposed to the code of the action element, which captures the meaning of the individual actions within the request group."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.code.coding"/>
+        <text value="code:"/>
+        <type value="open-choice"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.code.text"/>
+        <text value="text:"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Reference"/>
+      </extension>
+      <linkId value="RequestGroup.subject"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="The subject for which the request group was created."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+          <valueCode value="Patient, Group"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter">
+          <valueString value="subject=$subj&amp;patient=$subj&amp;encounter=$encounter"/>
+        </extension>
+        <linkId value="RequestGroup.subject.value"/>
+        <text value="Who the request group is about"/>
+        <type value="reference"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Reference"/>
+      </extension>
+      <linkId value="RequestGroup.encounter"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Describes the context of the request group, if any."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+          <valueCode value="Encounter"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter">
+          <valueString value="subject=$subj&amp;patient=$subj&amp;encounter=$encounter"/>
+        </extension>
+        <linkId value="RequestGroup.encounter.value"/>
+        <text value="Created as part of"/>
+        <type value="reference"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="datetime"/>
+      </extension>
+      <linkId value="RequestGroup.authoredOn"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Indicates when the request group was created."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.authoredOn.value"/>
+        <text value="When the request group was authored"/>
+        <type value="dateTime"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+        <valueInteger value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Reference"/>
+      </extension>
+      <linkId value="RequestGroup.author"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Provides a reference to the author of the request group."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+          <valueCode value="Device, Practitioner, PractitionerRole"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter">
+          <valueString value="subject=$subj&amp;patient=$subj&amp;encounter=$encounter"/>
+        </extension>
+        <linkId value="RequestGroup.author.value"/>
+        <text value="Device or practitioner that authored the request group"/>
+        <type value="reference"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="CodeableConcept"/>
+      </extension>
+      <linkId value="RequestGroup.reasonCode"/>
+      <text value="Why the request group is needed"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Describes the reason for the request group in coded or textual form."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.reasonCode.coding"/>
+        <text value="code:"/>
+        <type value="open-choice"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+      <item>
+        <linkId value="RequestGroup.reasonCode.text"/>
+        <text value="text:"/>
+        <type value="string"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Reference"/>
+      </extension>
+      <linkId value="RequestGroup.reasonReference"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Indicates another resource whose existence justifies this request group."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+          <valueCode value="Condition, Observation, DiagnosticReport, DocumentReference"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter">
+          <valueString value="subject=$subj&amp;patient=$subj&amp;encounter=$encounter"/>
+        </extension>
+        <linkId value="RequestGroup.reasonReference.value"/>
+        <text value="Why the request group is needed"/>
+        <type value="reference"/>
+        <required value="false"/>
+        <repeats value="false"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+        <valueString value="Annotation"/>
+      </extension>
+      <linkId value="RequestGroup.note"/>
+      <text value="Additional notes about the response"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="Provides a mechanism to communicate additional information about the response."/>
+        <type value="display"/>
+      </item>
+    </item>
+    <item>
+      <linkId value="RequestGroup.action"/>
+      <text value="Proposed actions, if any"/>
+      <type value="group"/>
+      <required value="false"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="flyover"/>
+              <display value="Fly-over"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <text value="The actions, if any, produced by the evaluation of the artifact."/>
+        <type value="display"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="string"/>
+        </extension>
+        <linkId value="RequestGroup.action.id"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.id.value"/>
+          <text value="Unique id for inter-element referencing"/>
+          <type value="string"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <linkId value="RequestGroup.action.extension"/>
+        <text value="Additional content defined by implementations"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+          <type value="display"/>
+        </item>
+      </item>
+      <item>
+        <linkId value="RequestGroup.action.modifierExtension"/>
+        <text value="Extensions that cannot be ignored even if unrecognized"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element&#39;s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+          <type value="display"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="string"/>
+        </extension>
+        <linkId value="RequestGroup.action.prefix"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="A user-visible prefix for the action."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.prefix.value"/>
+          <text value="User-visible prefix for the action (e.g. 1. or A.)"/>
+          <type value="string"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="string"/>
+        </extension>
+        <linkId value="RequestGroup.action.title"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="The title of the action displayed to a user."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.title.value"/>
+          <text value="User-visible title"/>
+          <type value="string"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="string"/>
+        </extension>
+        <linkId value="RequestGroup.action.description"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="A short description of the action used to provide a summary to display to the user."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.description.value"/>
+          <text value="Short description of the action"/>
+          <type value="string"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="string"/>
+        </extension>
+        <linkId value="RequestGroup.action.textEquivalent"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.textEquivalent.value"/>
+          <text value="Static text equivalent of the action, used if the dynamic aspects cannot be interpreted by the receiving system"/>
+          <type value="string"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="code"/>
+        </extension>
+        <linkId value="RequestGroup.action.priority"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Indicates how quickly the action should be addressed with respect to other actions."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.priority.value"/>
+          <text value="priority"/>
+          <type value="choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="CodeableConcept"/>
+        </extension>
+        <linkId value="RequestGroup.action.code"/>
+        <text value="Code representing the meaning of the action or sub-actions"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.code.coding"/>
+          <text value="code:"/>
+          <type value="open-choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.code.text"/>
+          <text value="text:"/>
+          <type value="string"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <linkId value="RequestGroup.action.documentation"/>
+        <text value="Supporting documentation for the intended performer of the action"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources."/>
+          <type value="display"/>
+        </item>
+      </item>
+      <item>
+        <linkId value="RequestGroup.action.condition"/>
+        <text value="Whether or not the action is applicable"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <text value="When multiple conditions of the same kind are present, the effects are combined using AND semantics, so the overall condition is true only if all of the conditions are true."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="An expression that describes applicability criteria, or start/stop conditions for the action."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+            <valueString value="string"/>
+          </extension>
+          <linkId value="RequestGroup.action.condition.id"/>
+          <type value="group"/>
+          <required value="false"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <type value="display"/>
+          </item>
+          <item>
+            <linkId value="RequestGroup.action.condition.id.value"/>
+            <text value="Unique id for inter-element referencing"/>
+            <type value="string"/>
+            <required value="false"/>
+            <repeats value="false"/>
+          </item>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.condition.extension"/>
+          <text value="Additional content defined by implementations"/>
+          <type value="group"/>
+          <required value="false"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <type value="display"/>
+          </item>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.condition.modifierExtension"/>
+          <text value="Extensions that cannot be ignored even if unrecognized"/>
+          <type value="group"/>
+          <required value="false"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element&#39;s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <type value="display"/>
+          </item>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+            <valueString value="code"/>
+          </extension>
+          <linkId value="RequestGroup.action.condition.kind"/>
+          <type value="group"/>
+          <required value="true"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="The kind of condition. Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action."/>
+            <type value="display"/>
+          </item>
+          <item>
+            <linkId value="RequestGroup.action.condition.kind.value"/>
+            <text value="kind"/>
+            <type value="choice"/>
+            <required value="false"/>
+            <repeats value="false"/>
+          </item>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <linkId value="RequestGroup.action.condition.expression"/>
+          <text value="Boolean-valued expression"/>
+          <type value="group"/>
+          <required value="false"/>
+          <repeats value="false"/>
+          <item>
+            <text value="The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element."/>
+            <type value="display"/>
+          </item>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="An expression that returns true or false, indicating whether or not the condition is satisfied."/>
+            <type value="display"/>
+          </item>
+        </item>
+      </item>
+      <item>
+        <linkId value="RequestGroup.action.relatedAction"/>
+        <text value="Relationship to another action"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="A relationship to another action such as &quot;before&quot; or &quot;30-60 minutes after start of&quot;."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+            <valueString value="string"/>
+          </extension>
+          <linkId value="RequestGroup.action.relatedAction.id"/>
+          <type value="group"/>
+          <required value="false"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <type value="display"/>
+          </item>
+          <item>
+            <linkId value="RequestGroup.action.relatedAction.id.value"/>
+            <text value="Unique id for inter-element referencing"/>
+            <type value="string"/>
+            <required value="false"/>
+            <repeats value="false"/>
+          </item>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.relatedAction.extension"/>
+          <text value="Additional content defined by implementations"/>
+          <type value="group"/>
+          <required value="false"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <type value="display"/>
+          </item>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.relatedAction.modifierExtension"/>
+          <text value="Extensions that cannot be ignored even if unrecognized"/>
+          <type value="group"/>
+          <required value="false"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element&#39;s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <type value="display"/>
+          </item>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+            <valueString value="string"/>
+          </extension>
+          <linkId value="RequestGroup.action.relatedAction.actionId"/>
+          <type value="group"/>
+          <required value="true"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="The element id of the action this is related to."/>
+            <type value="display"/>
+          </item>
+          <item>
+            <linkId value="RequestGroup.action.relatedAction.actionId.value"/>
+            <text value="What action this is related to"/>
+            <type value="string"/>
+            <required value="false"/>
+            <repeats value="false"/>
+          </item>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+            <valueString value="code"/>
+          </extension>
+          <linkId value="RequestGroup.action.relatedAction.relationship"/>
+          <type value="group"/>
+          <required value="true"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="The relationship of this action to the related action."/>
+            <type value="display"/>
+          </item>
+          <item>
+            <linkId value="RequestGroup.action.relatedAction.relationship.value"/>
+            <text value="relationship"/>
+            <type value="choice"/>
+            <required value="false"/>
+            <repeats value="false"/>
+          </item>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+            <valueInteger value="1"/>
+          </extension>
+          <linkId value="RequestGroup.action.relatedAction.offset[x]"/>
+          <text value="Time offset for the relationship"/>
+          <type value="group"/>
+          <required value="false"/>
+          <repeats value="true"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                  <code value="flyover"/>
+                  <display value="Fly-over"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <text value="A duration or range of durations to apply to the relationship. For example, 30-60 minutes before."/>
+            <type value="display"/>
+          </item>
+          <item>
+            <linkId value="RequestGroup.action.relatedAction.offset[x]._type"/>
+            <text value="type"/>
+            <type value="choice"/>
+            <required value="false"/>
+            <repeats value="false"/>
+            <answerValueSet value="#vs2"/>
+            <item>
+              <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+                <valueString value="Quantity"/>
+              </extension>
+              <linkId value="RequestGroup.action.relatedAction.offset[x]._null"/>
+              <type value="group"/>
+              <item>
+                <linkId value="RequestGroup.action.relatedAction.offset[x]._null.comparator"/>
+                <text value="comp:"/>
+                <type value="choice"/>
+                <required value="false"/>
+                <repeats value="false"/>
+              </item>
+              <item>
+                <linkId value="RequestGroup.action.relatedAction.offset[x]._null.value"/>
+                <text value="value:"/>
+                <type value="decimal"/>
+                <required value="false"/>
+                <repeats value="false"/>
+              </item>
+              <item>
+                <linkId value="RequestGroup.action.relatedAction.offset[x]._null.units"/>
+                <text value="units:"/>
+                <type value="string"/>
+                <required value="false"/>
+                <repeats value="false"/>
+              </item>
+              <item>
+                <linkId value="RequestGroup.action.relatedAction.offset[x]._null.code"/>
+                <text value="coded units:"/>
+                <type value="string"/>
+                <required value="false"/>
+                <repeats value="false"/>
+              </item>
+              <item>
+                <linkId value="RequestGroup.action.relatedAction.offset[x]._null.system"/>
+                <text value="units system:"/>
+                <type value="string"/>
+                <required value="false"/>
+                <repeats value="false"/>
+              </item>
+            </item>
+            <item>
+              <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+                <valueString value="Range"/>
+              </extension>
+              <linkId value="RequestGroup.action.relatedAction.offset[x]._null"/>
+              <type value="group"/>
+              <item>
+                <linkId value="RequestGroup.action.relatedAction.offset[x]._null.low"/>
+                <text value="low:"/>
+                <type value="decimal"/>
+                <required value="false"/>
+                <repeats value="false"/>
+              </item>
+              <item>
+                <linkId value="RequestGroup.action.relatedAction.offset[x]._null.high"/>
+                <text value="high:"/>
+                <type value="decimal"/>
+                <required value="false"/>
+                <repeats value="false"/>
+              </item>
+              <item>
+                <linkId value="RequestGroup.action.relatedAction.offset[x]._null.units"/>
+                <text value="units:"/>
+                <type value="string"/>
+                <required value="false"/>
+                <repeats value="false"/>
+              </item>
+            </item>
+          </item>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <linkId value="RequestGroup.action.timing[x]"/>
+        <text value="When the action should take place"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="An optional value describing when the action should be performed."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.timing[x]._type"/>
+          <text value="type"/>
+          <type value="choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+          <answerValueSet value="#vs3"/>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+              <valueString value="datetime"/>
+            </extension>
+            <linkId value="RequestGroup.action.timing[x]._null"/>
+            <type value="group"/>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.value"/>
+              <type value="dateTime"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+          </item>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+              <valueString value="Quantity"/>
+            </extension>
+            <linkId value="RequestGroup.action.timing[x]._null"/>
+            <type value="group"/>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.comparator"/>
+              <text value="comp:"/>
+              <type value="choice"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.value"/>
+              <text value="value:"/>
+              <type value="decimal"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.units"/>
+              <text value="units:"/>
+              <type value="string"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.code"/>
+              <text value="coded units:"/>
+              <type value="string"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.system"/>
+              <text value="units system:"/>
+              <type value="string"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+          </item>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+              <valueString value="Period"/>
+            </extension>
+            <linkId value="RequestGroup.action.timing[x]._null"/>
+            <type value="group"/>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.low"/>
+              <text value="start:"/>
+              <type value="dateTime"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.end"/>
+              <text value="end:"/>
+              <type value="dateTime"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+          </item>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+              <valueString value="Quantity"/>
+            </extension>
+            <linkId value="RequestGroup.action.timing[x]._null"/>
+            <type value="group"/>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.comparator"/>
+              <text value="comp:"/>
+              <type value="choice"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.value"/>
+              <text value="value:"/>
+              <type value="decimal"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.units"/>
+              <text value="units:"/>
+              <type value="string"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.code"/>
+              <text value="coded units:"/>
+              <type value="string"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.system"/>
+              <text value="units system:"/>
+              <type value="string"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+          </item>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+              <valueString value="Range"/>
+            </extension>
+            <linkId value="RequestGroup.action.timing[x]._null"/>
+            <type value="group"/>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.low"/>
+              <text value="low:"/>
+              <type value="decimal"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.high"/>
+              <text value="high:"/>
+              <type value="decimal"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.units"/>
+              <text value="units:"/>
+              <type value="string"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+          </item>
+          <item>
+            <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+              <valueString value="Schedule"/>
+            </extension>
+            <linkId value="RequestGroup.action.timing[x]._null"/>
+            <type value="group"/>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.text"/>
+              <text value="text:"/>
+              <type value="string"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <linkId value="RequestGroup.action.timing[x]._null.date"/>
+              <text value="date:"/>
+              <type value="dateTime"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+            <item>
+              <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+                <valueCode value="Patient"/>
+              </extension>
+              <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+                <valueCode value="Practitioner"/>
+              </extension>
+              <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+                <valueCode value="RelatedPerson"/>
+              </extension>
+              <linkId value="RequestGroup.action.timing[x]._null.author"/>
+              <text value="author:"/>
+              <type value="reference"/>
+              <required value="false"/>
+              <repeats value="false"/>
+            </item>
+          </item>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="Reference"/>
+        </extension>
+        <linkId value="RequestGroup.action.participant"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="The participant that should perform or be responsible for this action."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+            <valueCode value="Patient, Practitioner, PractitionerRole, RelatedPerson, Device"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter">
+            <valueString value="subject=$subj&amp;patient=$subj&amp;encounter=$encounter"/>
+          </extension>
+          <linkId value="RequestGroup.action.participant.value"/>
+          <text value="Who should perform the action"/>
+          <type value="reference"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="CodeableConcept"/>
+        </extension>
+        <linkId value="RequestGroup.action.type"/>
+        <text value="create | update | remove | fire-event"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="The type of action to perform (create, update, remove)."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.type.coding"/>
+          <text value="code:"/>
+          <type value="open-choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.type.text"/>
+          <text value="text:"/>
+          <type value="string"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="code"/>
+        </extension>
+        <linkId value="RequestGroup.action.groupingBehavior"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Defines the grouping behavior for the action and its children."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.groupingBehavior.value"/>
+          <text value="grouping behavior"/>
+          <type value="choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="code"/>
+        </extension>
+        <linkId value="RequestGroup.action.selectionBehavior"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Defines the selection behavior for the action and its children."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.selectionBehavior.value"/>
+          <text value="selection behavior"/>
+          <type value="choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="code"/>
+        </extension>
+        <linkId value="RequestGroup.action.requiredBehavior"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Defines expectations around whether an action is required."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.requiredBehavior.value"/>
+          <text value="required behavior"/>
+          <type value="choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="code"/>
+        </extension>
+        <linkId value="RequestGroup.action.precheckBehavior"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Defines whether the action should usually be preselected."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.precheckBehavior.value"/>
+          <text value="precheck behavior"/>
+          <type value="choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="code"/>
+        </extension>
+        <linkId value="RequestGroup.action.cardinalityBehavior"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Defines whether the action can be selected multiple times."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <linkId value="RequestGroup.action.cardinalityBehavior.value"/>
+          <text value="cardinality behavior"/>
+          <type value="choice"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType">
+          <valueString value="Reference"/>
+        </extension>
+        <linkId value="RequestGroup.action.resource"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="The resource that is the target of the action (e.g. CommunicationRequest). The target resource SHALL be a [Request](http://hl7.org/fhir/request.html) resource with a Request.intent set to &quot;option&quot;."/>
+          <type value="display"/>
+        </item>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource">
+            <valueCode value="Resource"/>
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter">
+            <valueString value="subject=$subj&amp;patient=$subj&amp;encounter=$encounter"/>
+          </extension>
+          <linkId value="RequestGroup.action.resource.value"/>
+          <text value="The target of the action"/>
+          <type value="reference"/>
+          <required value="false"/>
+          <repeats value="false"/>
+        </item>
+      </item>
+      <item>
+        <linkId value="RequestGroup.action.action"/>
+        <text value="Sub action"/>
+        <type value="group"/>
+        <required value="false"/>
+        <repeats value="true"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="flyover"/>
+                <display value="Fly-over"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <text value="Sub actions."/>
+          <type value="display"/>
+        </item>
+      </item>
+    </item>
+  </item>
+</Questionnaire>

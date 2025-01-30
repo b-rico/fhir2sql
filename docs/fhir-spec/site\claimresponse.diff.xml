@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="ClaimResponse" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               new-min="1"
+               old-min="0"
+               path="ClaimResponse.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/fm-status" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/fm-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="ClaimResponse.type" status="new"/>
+      <element path="ClaimResponse.subType" status="new"/>
+      <element path="ClaimResponse.use" status="new"/>
+      <element new-min="1" old-min="0" path="ClaimResponse.patient"/>
+      <element new-min="1" old-min="0" path="ClaimResponse.created"/>
+      <element new-min="1" old-min="0" path="ClaimResponse.insurer"/>
+      <element old-name="requestProvider" path="ClaimResponse.requestor">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element binding-status="added"
+               new-min="1"
+               old-min="0"
+               path="ClaimResponse.outcome">
+         <removed-type name="CodeableConcept"/>
+         <added-type name="code"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/remittance-outcome|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-max="1" old-max="*" path="ClaimResponse.preAuthRef"/>
+      <element path="ClaimResponse.preAuthPeriod" status="new"/>
+      <element old-name="sequenceLinkId" path="ClaimResponse.item.itemSequence"/>
+      <element new-min="1" old-min="0" path="ClaimResponse.item.adjudication"/>
+      <element old-name="sequenceLinkId"
+               path="ClaimResponse.item.detail.detailSequence"/>
+      <element new-min="1"
+               old-min="0"
+               path="ClaimResponse.item.detail.adjudication"/>
+      <element old-name="sequenceLinkId"
+               path="ClaimResponse.item.detail.subDetail.subDetailSequence"/>
+      <element old-name="sequenceLinkId" path="ClaimResponse.addItem.itemSequence"/>
+      <element path="ClaimResponse.addItem.detailSequence" status="new"/>
+      <element path="ClaimResponse.addItem.subdetailSequence" status="new"/>
+      <element path="ClaimResponse.addItem.provider" status="new"/>
+      <element new-min="1"
+               old-min="0"
+               old-name="service"
+               path="ClaimResponse.addItem.productOrService"/>
+      <element path="ClaimResponse.addItem.programCode" status="new"/>
+      <element path="ClaimResponse.addItem.serviced[x]" status="new"/>
+      <element path="ClaimResponse.addItem.location[x]" status="new"/>
+      <element path="ClaimResponse.addItem.quantity" status="new"/>
+      <element path="ClaimResponse.addItem.unitPrice" status="new"/>
+      <element path="ClaimResponse.addItem.factor" status="new"/>
+      <element path="ClaimResponse.addItem.net" status="new"/>
+      <element path="ClaimResponse.addItem.bodySite" status="new"/>
+      <element path="ClaimResponse.addItem.subSite" status="new"/>
+      <element new-min="1" old-min="0" path="ClaimResponse.addItem.adjudication"/>
+      <element new-min="1"
+               old-min="0"
+               old-name="service"
+               path="ClaimResponse.addItem.detail.productOrService"/>
+      <element path="ClaimResponse.addItem.detail.quantity" status="new"/>
+      <element path="ClaimResponse.addItem.detail.unitPrice" status="new"/>
+      <element path="ClaimResponse.addItem.detail.factor" status="new"/>
+      <element path="ClaimResponse.addItem.detail.net" status="new"/>
+      <element new-min="1"
+               old-min="0"
+               path="ClaimResponse.addItem.detail.adjudication"/>
+      <element path="ClaimResponse.addItem.detail.subDetail" status="new"/>
+      <element path="ClaimResponse.addItem.detail.subDetail.productOrService"
+               status="new"/>
+      <element path="ClaimResponse.addItem.detail.subDetail.modifier" status="new"/>
+      <element path="ClaimResponse.addItem.detail.subDetail.quantity" status="new"/>
+      <element path="ClaimResponse.addItem.detail.subDetail.unitPrice" status="new"/>
+      <element path="ClaimResponse.addItem.detail.subDetail.factor" status="new"/>
+      <element path="ClaimResponse.addItem.detail.subDetail.net" status="new"/>
+      <element path="ClaimResponse.addItem.detail.subDetail.noteNumber" status="new"/>
+      <element path="ClaimResponse.addItem.detail.subDetail.adjudication" status="new"/>
+      <element path="ClaimResponse.adjudication" status="new"/>
+      <element path="ClaimResponse.total" status="new"/>
+      <element path="ClaimResponse.total.category" status="new"/>
+      <element path="ClaimResponse.total.amount" status="new"/>
+      <element new-min="1" old-min="0" path="ClaimResponse.payment.type"/>
+      <element new-min="1" old-min="0" path="ClaimResponse.payment.amount"/>
+      <element old-name="reserved" path="ClaimResponse.fundsReserve">
+         <removed-type name="Coding"/>
+         <added-type name="CodeableConcept"/>
+      </element>
+      <element path="ClaimResponse.formCode" status="new"/>
+      <element path="ClaimResponse.form">
+         <removed-type name="CodeableConcept"/>
+         <added-type name="Attachment"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="ClaimResponse.processNote.type">
+         <removed-type name="CodeableConcept"/>
+         <added-type name="code"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/note-type" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/note-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-min="1" old-min="0" path="ClaimResponse.processNote.text"/>
+      <element binding-status="changed"
+               binding-strength-changed="true"
+               path="ClaimResponse.processNote.language">
+         <old-binding max="http://hl7.org/fhir/ValueSet/all-languages"
+                      reference="http://hl7.org/fhir/ValueSet/languages"
+                      strength="extensible"/>
+         <new-binding max="http://hl7.org/fhir/ValueSet/all-languages"
+                      reference="http://hl7.org/fhir/ValueSet/languages"
+                      strength="preferred"/>
+      </element>
+      <element old-name="sequenceLinkId" path="ClaimResponse.error.itemSequence"/>
+      <element old-name="detailSequenceLinkId"
+               path="ClaimResponse.error.detailSequence"/>
+      <element old-name="subdetailSequenceLinkId"
+               path="ClaimResponse.error.subDetailSequence"/>
+      <element path="ClaimResponse.requestOrganization" status="deleted"/>
+      <element path="ClaimResponse.addItem.revenue" status="deleted"/>
+      <element path="ClaimResponse.addItem.category" status="deleted"/>
+      <element path="ClaimResponse.addItem.fee" status="deleted"/>
+      <element path="ClaimResponse.addItem.detail.revenue" status="deleted"/>
+      <element path="ClaimResponse.addItem.detail.category" status="deleted"/>
+      <element path="ClaimResponse.addItem.detail.fee" status="deleted"/>
+      <element path="ClaimResponse.totalCost" status="deleted"/>
+      <element path="ClaimResponse.unallocDeductable" status="deleted"/>
+      <element path="ClaimResponse.totalBenefit" status="deleted"/>
+   </type>
+</difference>

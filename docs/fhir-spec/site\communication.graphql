@@ -1,0 +1,198 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Communication {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  basedOn: [Reference]
+  partOf: [Reference]
+  inResponseTo: [Reference]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  category: [CodeableConcept]
+  priority: code  _priority: ElementBase
+  medium: [CodeableConcept]
+  subject: Reference
+  topic: CodeableConcept
+  about: [Reference]
+  encounter: Reference
+  sent: dateTime  _sent: ElementBase
+  received: dateTime  _received: ElementBase
+  recipient: [Reference]
+  sender: Reference
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  payload: [CommunicationPayload]
+  note: [Annotation]
+}
+
+type CommunicationPayload {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  contentString: String  _contentString: ElementBase
+  contentAttachment: Attachment
+  contentReference: Reference
+}
+
+input Communication {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  basedOn: [Reference]
+  partOf: [Reference]
+  inResponseTo: [Reference]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  category: [CodeableConcept]
+  priority: code  _priority: ElementBase
+  medium: [CodeableConcept]
+  subject: Reference
+  topic: CodeableConcept
+  about: [Reference]
+  encounter: Reference
+  sent: dateTime  _sent: ElementBase
+  received: dateTime  _received: ElementBase
+  recipient: [Reference]
+  sender: Reference
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  payload: [CommunicationPayload]
+  note: [Annotation]
+}
+
+input CommunicationPayload {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  contentString: String  _contentString: ElementBase
+  contentAttachment: Attachment
+  contentReference: Reference
+}
+
+type CommunicationReadType {
+  Communication(id : ID!) : Communication
+}
+
+type CommunicationListType {
+  CommunicationList(_filter : String
+    based_on : [reference]
+    category : [token]
+    encounter : [reference]
+    identifier : [token]
+    instantiates_canonical : [reference]
+    instantiates_uri : [uri]
+    medium : [token]
+    part_of : [reference]
+    patient : [reference]
+    received : [date]
+    recipient : [reference]
+    sender : [reference]
+    sent : [date]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Communication]
+}
+
+type CommunicationConnectionType {
+  CommunicationConection(_filter : String
+    based_on : [reference]
+    category : [token]
+    encounter : [reference]
+    identifier : [token]
+    instantiates_canonical : [reference]
+    instantiates_uri : [uri]
+    medium : [token]
+    part_of : [reference]
+    patient : [reference]
+    received : [date]
+    recipient : [reference]
+    sender : [reference]
+    sent : [date]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : CommunicationConnection
+}
+
+type CommunicationConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [CommunicationEdge]
+}
+
+type CommunicationEdge {
+  mode : String
+  score : Float
+  resource : Communication
+}
+
+type CommunicationCreateType {
+  CommunicationCreate(resource : Communication) : CommunicationCreation
+}
+
+type CommunicationCreation {
+  location : String
+  resource : Communication
+  information : OperationOutcome
+}
+
+type CommunicationUpdateType {
+  CommunicationUpdate(id : IDresource : Communication) : CommunicationUpdate
+}
+
+type CommunicationUpdate {
+  resource : Communication
+  information : OperationOutcome
+}
+
+type CommunicationDeleteType {
+  CommunicationDelete(id : ID) : CommunicationDelete
+}
+
+type CommunicationDelete {
+  information : OperationOutcome
+}
+

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="MeasureReport" status="changed">
+      <element new-max="*" old-max="1" path="MeasureReport.identifier"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MeasureReport.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/measure-report-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/measure-report-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MeasureReport.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/measure-report-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/measure-report-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="MeasureReport.measure">
+         <removed-type name="Reference(Measure)"/>
+         <added-type name="canonical(Measure)"/>
+      </element>
+      <element path="MeasureReport.subject" status="new"/>
+      <element path="MeasureReport.reporter" status="new"/>
+      <element path="MeasureReport.improvementNotation" status="new"/>
+      <element path="MeasureReport.group.code" status="new"/>
+      <element path="MeasureReport.group.population.subjectResults" status="new"/>
+      <element path="MeasureReport.group.measureScore">
+         <removed-type name="decimal"/>
+         <added-type name="Quantity"/>
+      </element>
+      <element path="MeasureReport.group.stratifier.code" status="new"/>
+      <element new-min="0"
+               old-min="1"
+               path="MeasureReport.group.stratifier.stratum.value">
+         <removed-type name="string"/>
+         <added-type name="CodeableConcept"/>
+      </element>
+      <element path="MeasureReport.group.stratifier.stratum.component" status="new"/>
+      <element path="MeasureReport.group.stratifier.stratum.component.code"
+               status="new"/>
+      <element path="MeasureReport.group.stratifier.stratum.component.value"
+               status="new"/>
+      <element path="MeasureReport.group.stratifier.stratum.population.subjectResults"
+               status="new"/>
+      <element path="MeasureReport.group.stratifier.stratum.measureScore">
+         <removed-type name="decimal"/>
+         <added-type name="Quantity"/>
+      </element>
+      <element path="MeasureReport.evaluatedResource" status="new"/>
+      <element path="MeasureReport.patient" status="deleted"/>
+      <element path="MeasureReport.reportingOrganization" status="deleted"/>
+      <element path="MeasureReport.group.identifier" status="deleted"/>
+      <element path="MeasureReport.group.population.identifier" status="deleted"/>
+      <element path="MeasureReport.group.population.patients" status="deleted"/>
+      <element path="MeasureReport.group.stratifier.identifier" status="deleted"/>
+      <element path="MeasureReport.group.stratifier.stratum.population.identifier"
+               status="deleted"/>
+      <element path="MeasureReport.group.stratifier.stratum.population.patients"
+               status="deleted"/>
+      <element path="MeasureReport.evaluatedResources" status="deleted"/>
+   </type>
+</difference>

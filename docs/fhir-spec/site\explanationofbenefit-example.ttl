@@ -1,0 +1,333 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ExplanationOfBenefit/EB3500> a fhir:ExplanationOfBenefit;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "EB3500"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the ExplanationOfBenefit</div>"
+  ];
+  fhir:ExplanationOfBenefit.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.BenefitsInc.com/fhir/explanationofbenefit" ];
+     fhir:Identifier.value [ fhir:value "987654321" ]
+  ];
+  fhir:ExplanationOfBenefit.status [ fhir:value "active"];
+  fhir:ExplanationOfBenefit.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claim-type" ];
+       fhir:Coding.code [ fhir:value "oral" ]
+     ]
+  ];
+  fhir:ExplanationOfBenefit.use [ fhir:value "claim"];
+  fhir:ExplanationOfBenefit.patient [
+     fhir:link <http://hl7.org/fhir/Patient/pat1>;
+     fhir:Reference.reference [ fhir:value "Patient/pat1" ]
+  ];
+  fhir:ExplanationOfBenefit.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:ExplanationOfBenefit.enterer [
+     fhir:link <http://hl7.org/fhir/Practitioner/1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/1" ]
+  ];
+  fhir:ExplanationOfBenefit.insurer [
+     fhir:link <http://hl7.org/fhir/Organization/3>;
+     fhir:Reference.reference [ fhir:value "Organization/3" ]
+  ];
+  fhir:ExplanationOfBenefit.provider [
+     fhir:link <http://hl7.org/fhir/Practitioner/1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/1" ]
+  ];
+  fhir:ExplanationOfBenefit.payee [
+     fhir:ExplanationOfBenefit.payee.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/payeetype" ];
+         fhir:Coding.code [ fhir:value "provider" ]
+       ]
+     ];
+     fhir:ExplanationOfBenefit.payee.party [
+       fhir:link <http://hl7.org/fhir/Organization/2>;
+       fhir:Reference.reference [ fhir:value "Organization/2" ]
+     ]
+  ];
+  fhir:ExplanationOfBenefit.facility [
+     fhir:link <http://hl7.org/fhir/Location/1>;
+     fhir:Reference.reference [ fhir:value "Location/1" ]
+  ];
+  fhir:ExplanationOfBenefit.claim [
+     fhir:link <http://hl7.org/fhir/Claim/100150>;
+     fhir:Reference.reference [ fhir:value "Claim/100150" ]
+  ];
+  fhir:ExplanationOfBenefit.claimResponse [
+     fhir:link <http://hl7.org/fhir/ClaimResponse/R3500>;
+     fhir:Reference.reference [ fhir:value "ClaimResponse/R3500" ]
+  ];
+  fhir:ExplanationOfBenefit.outcome [ fhir:value "complete"];
+  fhir:ExplanationOfBenefit.disposition [ fhir:value "Claim settled as per contract."];
+  fhir:ExplanationOfBenefit.careTeam [
+     fhir:index 0;
+     fhir:ExplanationOfBenefit.careTeam.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:ExplanationOfBenefit.careTeam.provider [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:ExplanationOfBenefit.insurance [
+     fhir:index 0;
+     fhir:ExplanationOfBenefit.insurance.focal [ fhir:value "true"^^xsd:boolean ];
+     fhir:ExplanationOfBenefit.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ]
+  ];
+  fhir:ExplanationOfBenefit.item [
+     fhir:index 0;
+     fhir:ExplanationOfBenefit.item.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:ExplanationOfBenefit.item.careTeamSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:ExplanationOfBenefit.item.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-USCLS" ];
+         fhir:Coding.code [ fhir:value "1205" ]
+       ]
+     ];
+     fhir:ExplanationOfBenefit.item.servicedDate [ fhir:value "2014-08-16"^^xsd:date ];
+     fhir:ExplanationOfBenefit.item.unitPrice [
+       fhir:Money.value [ fhir:value "135.57"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:ExplanationOfBenefit.item.net [
+       fhir:Money.value [ fhir:value "135.57"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:ExplanationOfBenefit.item.udi [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/Device/example>;
+       fhir:Reference.reference [ fhir:value "Device/example" ]
+     ];
+     fhir:ExplanationOfBenefit.item.encounter [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/Encounter/example>;
+       fhir:Reference.reference [ fhir:value "Encounter/example" ]
+     ];
+     fhir:ExplanationOfBenefit.item.adjudication [
+       fhir:index 0;
+       fhir:ExplanationOfBenefit.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "eligible" ]
+         ]
+       ];
+       fhir:ExplanationOfBenefit.item.adjudication.amount [
+         fhir:Money.value [ fhir:value "120.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ExplanationOfBenefit.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "eligpercent" ]
+         ]
+       ];
+       fhir:ExplanationOfBenefit.item.adjudication.value [ fhir:value "0.80"^^xsd:decimal ]
+     ], [
+       fhir:index 2;
+       fhir:ExplanationOfBenefit.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "benefit" ]
+         ]
+       ];
+       fhir:ExplanationOfBenefit.item.adjudication.amount [
+         fhir:Money.value [ fhir:value "96.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ExplanationOfBenefit.item.sequence [ fhir:value "2"^^xsd:positiveInteger ];
+     fhir:ExplanationOfBenefit.item.careTeamSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:ExplanationOfBenefit.item.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "group" ]
+       ]
+     ];
+     fhir:ExplanationOfBenefit.item.servicedDate [ fhir:value "2014-08-16"^^xsd:date ];
+     fhir:ExplanationOfBenefit.item.net [
+       fhir:Money.value [ fhir:value "200.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:ExplanationOfBenefit.item.adjudication [
+       fhir:index 0;
+       fhir:ExplanationOfBenefit.item.adjudication.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "benefit" ]
+         ]
+       ];
+       fhir:ExplanationOfBenefit.item.adjudication.amount [
+         fhir:Money.value [ fhir:value "180.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ];
+     fhir:ExplanationOfBenefit.item.detail [
+       fhir:index 0;
+       fhir:ExplanationOfBenefit.item.detail.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+       fhir:ExplanationOfBenefit.item.detail.productOrService [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "group" ]
+         ]
+       ];
+       fhir:ExplanationOfBenefit.item.detail.net [
+         fhir:Money.value [ fhir:value "200.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ];
+       fhir:ExplanationOfBenefit.item.detail.udi [
+         fhir:index 0;
+         fhir:link <http://hl7.org/fhir/Device/example>;
+         fhir:Reference.reference [ fhir:value "Device/example" ]
+       ];
+       fhir:ExplanationOfBenefit.item.detail.adjudication [
+         fhir:index 0;
+         fhir:ExplanationOfBenefit.item.adjudication.category [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "benefit" ]
+           ]
+         ];
+         fhir:ExplanationOfBenefit.item.adjudication.amount [
+           fhir:Money.value [ fhir:value "180.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ]
+       ];
+       fhir:ExplanationOfBenefit.item.detail.subDetail [
+         fhir:index 0;
+         fhir:ExplanationOfBenefit.item.detail.subDetail.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+         fhir:ExplanationOfBenefit.item.detail.subDetail.productOrService [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-USCLS" ];
+             fhir:Coding.code [ fhir:value "1205" ]
+           ]
+         ];
+         fhir:ExplanationOfBenefit.item.detail.subDetail.unitPrice [
+           fhir:Money.value [ fhir:value "200.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ];
+         fhir:ExplanationOfBenefit.item.detail.subDetail.net [
+           fhir:Money.value [ fhir:value "200.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ];
+         fhir:ExplanationOfBenefit.item.detail.subDetail.udi [
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/Device/example>;
+           fhir:Reference.reference [ fhir:value "Device/example" ]
+         ];
+         fhir:ExplanationOfBenefit.item.detail.subDetail.adjudication [
+           fhir:index 0;
+           fhir:ExplanationOfBenefit.item.adjudication.category [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.code [ fhir:value "eligible" ]
+             ]
+           ];
+           fhir:ExplanationOfBenefit.item.adjudication.amount [
+             fhir:Money.value [ fhir:value "200.00"^^xsd:decimal ];
+             fhir:Money.currency [ fhir:value "USD" ]
+           ]
+         ], [
+           fhir:index 1;
+           fhir:ExplanationOfBenefit.item.adjudication.category [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.code [ fhir:value "eligpercent" ]
+             ]
+           ];
+           fhir:ExplanationOfBenefit.item.adjudication.value [ fhir:value "0.90"^^xsd:decimal ]
+         ], [
+           fhir:index 2;
+           fhir:ExplanationOfBenefit.item.adjudication.category [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.code [ fhir:value "benefit" ]
+             ]
+           ];
+           fhir:ExplanationOfBenefit.item.adjudication.amount [
+             fhir:Money.value [ fhir:value "180.00"^^xsd:decimal ];
+             fhir:Money.currency [ fhir:value "USD" ]
+           ]
+         ]
+       ]
+     ]
+  ];
+  fhir:ExplanationOfBenefit.total [
+     fhir:index 0;
+     fhir:ExplanationOfBenefit.total.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "submitted" ]
+       ]
+     ];
+     fhir:ExplanationOfBenefit.total.amount [
+       fhir:Money.value [ fhir:value "135.57"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ExplanationOfBenefit.total.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "benefit" ]
+       ]
+     ];
+     fhir:ExplanationOfBenefit.total.amount [
+       fhir:Money.value [ fhir:value "96.00"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/pat1> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/1> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Organization/3> a fhir:Organization .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Location/1> a fhir:Location .
+
+<http://hl7.org/fhir/Claim/100150> a fhir:Claim .
+
+<http://hl7.org/fhir/ClaimResponse/R3500> a fhir:ClaimResponse .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+<http://hl7.org/fhir/Device/example> a fhir:Device .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ExplanationOfBenefit/EB3500.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ExplanationOfBenefit/EB3500.ttl> .
+
+# -------------------------------------------------------------------------------------
+

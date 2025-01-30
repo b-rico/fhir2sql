@@ -1,0 +1,286 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type TestReport {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  name: String  _name: ElementBase
+  status: code  _status: ElementBase
+  testScript: Reference!
+  result: code  _result: ElementBase
+  score: decimal  _score: ElementBase
+  tester: String  _tester: ElementBase
+  issued: dateTime  _issued: ElementBase
+  participant: [TestReportParticipant]
+  setup: TestReportSetup
+  test: [TestReportTest]
+  teardown: TestReportTeardown
+}
+
+type TestReportParticipant {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: code  _type: ElementBase
+  uri: uri  _uri: ElementBase
+  display: String  _display: ElementBase
+}
+
+type TestReportSetup {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  action: [TestReportSetupAction]!
+}
+
+type TestReportSetupAction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  operation: TestReportSetupActionOperation
+  assert: TestReportSetupActionAssert
+}
+
+type TestReportSetupActionOperation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  result: code  _result: ElementBase
+  message: markdown  _message: ElementBase
+  detail: uri  _detail: ElementBase
+}
+
+type TestReportSetupActionAssert {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  result: code  _result: ElementBase
+  message: markdown  _message: ElementBase
+  detail: String  _detail: ElementBase
+}
+
+type TestReportTest {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  description: String  _description: ElementBase
+  action: [TestReportTestAction]!
+}
+
+type TestReportTestAction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  operation: TestReportSetupActionOperation
+  assert: TestReportSetupActionAssert
+}
+
+type TestReportTeardown {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  action: [TestReportTeardownAction]!
+}
+
+type TestReportTeardownAction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  operation: TestReportSetupActionOperation!
+}
+
+input TestReport {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  name: String  _name: ElementBase
+  status: code  _status: ElementBase
+  testScript: Reference!
+  result: code  _result: ElementBase
+  score: decimal  _score: ElementBase
+  tester: String  _tester: ElementBase
+  issued: dateTime  _issued: ElementBase
+  participant: [TestReportParticipant]
+  setup: TestReportSetup
+  test: [TestReportTest]
+  teardown: TestReportTeardown
+}
+
+input TestReportParticipant {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: code  _type: ElementBase
+  uri: uri  _uri: ElementBase
+  display: String  _display: ElementBase
+}
+
+input TestReportSetup {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  action: [TestReportSetupAction]!
+}
+
+input TestReportSetupAction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  operation: TestReportSetupActionOperation
+  assert: TestReportSetupActionAssert
+}
+
+input TestReportSetupActionOperation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  result: code  _result: ElementBase
+  message: markdown  _message: ElementBase
+  detail: uri  _detail: ElementBase
+}
+
+input TestReportSetupActionAssert {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  result: code  _result: ElementBase
+  message: markdown  _message: ElementBase
+  detail: String  _detail: ElementBase
+}
+
+input TestReportTest {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  description: String  _description: ElementBase
+  action: [TestReportTestAction]!
+}
+
+input TestReportTestAction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  operation: TestReportSetupActionOperation
+  assert: TestReportSetupActionAssert
+}
+
+input TestReportTeardown {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  action: [TestReportTeardownAction]!
+}
+
+input TestReportTeardownAction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  operation: TestReportSetupActionOperation!
+}
+
+type TestReportReadType {
+  TestReport(id : ID!) : TestReport
+}
+
+type TestReportListType {
+  TestReportList(_filter : String
+    identifier : [token]
+    issued : [date]
+    participant : [uri]
+    result : [token]
+    tester : [String]
+    testscript : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [TestReport]
+}
+
+type TestReportConnectionType {
+  TestReportConection(_filter : String
+    identifier : [token]
+    issued : [date]
+    participant : [uri]
+    result : [token]
+    tester : [String]
+    testscript : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : TestReportConnection
+}
+
+type TestReportConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [TestReportEdge]
+}
+
+type TestReportEdge {
+  mode : String
+  score : Float
+  resource : TestReport
+}
+
+type TestReportCreateType {
+  TestReportCreate(resource : TestReport) : TestReportCreation
+}
+
+type TestReportCreation {
+  location : String
+  resource : TestReport
+  information : OperationOutcome
+}
+
+type TestReportUpdateType {
+  TestReportUpdate(id : IDresource : TestReport) : TestReportUpdate
+}
+
+type TestReportUpdate {
+  resource : TestReport
+  information : OperationOutcome
+}
+
+type TestReportDeleteType {
+  TestReportDelete(id : ID) : TestReportDelete
+}
+
+type TestReportDelete {
+  information : OperationOutcome
+}
+

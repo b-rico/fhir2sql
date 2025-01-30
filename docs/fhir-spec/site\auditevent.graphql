@@ -1,0 +1,278 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type AuditEvent {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: Coding!
+  subtype: [Coding]
+  action: code  _action: ElementBase
+  period: Period
+  recorded: instant  _recorded: ElementBase
+  outcome: code  _outcome: ElementBase
+  outcomeDesc: String  _outcomeDesc: ElementBase
+  purposeOfEvent: [CodeableConcept]
+  agent: [AuditEventAgent]!
+  source: AuditEventSource!
+  entity: [AuditEventEntity]
+}
+
+type AuditEventAgent {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  role: [CodeableConcept]
+  who: Reference
+  altId: String  _altId: ElementBase
+  name: String  _name: ElementBase
+  requestor: Boolean  _requestor: ElementBase
+  location: Reference
+  policy: uri  _policy: [ElementBase]
+  media: Coding
+  network: AuditEventAgentNetwork
+  purposeOfUse: [CodeableConcept]
+}
+
+type AuditEventAgentNetwork {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  address: String  _address: ElementBase
+  type: code  _type: ElementBase
+}
+
+type AuditEventSource {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  site: String  _site: ElementBase
+  observer: Reference!
+  type: [Coding]
+}
+
+type AuditEventEntity {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  what: Reference
+  type: Coding
+  role: Coding
+  lifecycle: Coding
+  securityLabel: [Coding]
+  name: String  _name: ElementBase
+  description: String  _description: ElementBase
+  query: base64Binary  _query: ElementBase
+  detail: [AuditEventEntityDetail]
+}
+
+type AuditEventEntityDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: String  _type: ElementBase
+  valueString: String  _valueString: ElementBase
+  valueBase64Binary: base64Binary  _valueBase64Binary: ElementBase
+}
+
+input AuditEvent {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: Coding!
+  subtype: [Coding]
+  action: code  _action: ElementBase
+  period: Period
+  recorded: instant  _recorded: ElementBase
+  outcome: code  _outcome: ElementBase
+  outcomeDesc: String  _outcomeDesc: ElementBase
+  purposeOfEvent: [CodeableConcept]
+  agent: [AuditEventAgent]!
+  source: AuditEventSource!
+  entity: [AuditEventEntity]
+}
+
+input AuditEventAgent {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  role: [CodeableConcept]
+  who: Reference
+  altId: String  _altId: ElementBase
+  name: String  _name: ElementBase
+  requestor: Boolean  _requestor: ElementBase
+  location: Reference
+  policy: uri  _policy: [ElementBase]
+  media: Coding
+  network: AuditEventAgentNetwork
+  purposeOfUse: [CodeableConcept]
+}
+
+input AuditEventAgentNetwork {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  address: String  _address: ElementBase
+  type: code  _type: ElementBase
+}
+
+input AuditEventSource {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  site: String  _site: ElementBase
+  observer: Reference!
+  type: [Coding]
+}
+
+input AuditEventEntity {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  what: Reference
+  type: Coding
+  role: Coding
+  lifecycle: Coding
+  securityLabel: [Coding]
+  name: String  _name: ElementBase
+  description: String  _description: ElementBase
+  query: base64Binary  _query: ElementBase
+  detail: [AuditEventEntityDetail]
+}
+
+input AuditEventEntityDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: String  _type: ElementBase
+  valueString: String  _valueString: ElementBase
+  valueBase64Binary: base64Binary  _valueBase64Binary: ElementBase
+}
+
+type AuditEventReadType {
+  AuditEvent(id : ID!) : AuditEvent
+}
+
+type AuditEventListType {
+  AuditEventList(_filter : String
+    action : [token]
+    address : [String]
+    agent : [reference]
+    agent_name : [String]
+    agent_role : [token]
+    altid : [token]
+    date : [date]
+    entity : [reference]
+    entity_name : [String]
+    entity_role : [token]
+    entity_type : [token]
+    outcome : [token]
+    patient : [reference]
+    policy : [uri]
+    site : [token]
+    source : [reference]
+    subtype : [token]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [AuditEvent]
+}
+
+type AuditEventConnectionType {
+  AuditEventConection(_filter : String
+    action : [token]
+    address : [String]
+    agent : [reference]
+    agent_name : [String]
+    agent_role : [token]
+    altid : [token]
+    date : [date]
+    entity : [reference]
+    entity_name : [String]
+    entity_role : [token]
+    entity_type : [token]
+    outcome : [token]
+    patient : [reference]
+    policy : [uri]
+    site : [token]
+    source : [reference]
+    subtype : [token]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : AuditEventConnection
+}
+
+type AuditEventConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [AuditEventEdge]
+}
+
+type AuditEventEdge {
+  mode : String
+  score : Float
+  resource : AuditEvent
+}
+
+type AuditEventCreateType {
+  AuditEventCreate(resource : AuditEvent) : AuditEventCreation
+}
+
+type AuditEventCreation {
+  location : String
+  resource : AuditEvent
+  information : OperationOutcome
+}
+
+type AuditEventUpdateType {
+  AuditEventUpdate(id : IDresource : AuditEvent) : AuditEventUpdate
+}
+
+type AuditEventUpdate {
+  resource : AuditEvent
+  information : OperationOutcome
+}
+
+type AuditEventDeleteType {
+  AuditEventDelete(id : ID) : AuditEventDelete
+}
+
+type AuditEventDelete {
+  information : OperationOutcome
+}
+

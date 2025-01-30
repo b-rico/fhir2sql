@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ImmunizationEvaluation/notValid> a fhir:ImmunizationEvaluation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "notValid"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: notValid</p><p><b>identifier</b>: urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234</p><p><b>status</b>: completed</p><p><b>patient</b>: <a>Patient/example</a></p><p><b>date</b>: 10/01/2013</p><p><b>authority</b>: <a>Organization/hl7</a></p><p><b>targetDisease</b>: Gestational rubella syndrome <span>(Details : {SNOMED CT code '1857005' = 'Gestational rubella syndrome)</span></p><p><b>immunizationEvent</b>: <a>Immunization/example</a></p><p><b>doseStatus</b>: Not Valid <span>(Details : {http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status code 'notvalid' = 'Not valid', given as 'Not Valid'})</span></p><p><b>doseStatusReason</b>: Administered outside recommended schedule <span>(Details : {http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason code 'outsidesched' = 'Administered outside recommended schedule', given as 'Administered outside recommended schedule'})</span></p><p><b>series</b>: Vaccination Series 1</p><p><b>doseNumber</b>: 2</p><p><b>seriesDoses</b>: 3</p></div>"
+  ];
+  fhir:ImmunizationEvaluation.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234" ]
+  ];
+  fhir:ImmunizationEvaluation.status [ fhir:value "completed"];
+  fhir:ImmunizationEvaluation.patient [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ImmunizationEvaluation.date [ fhir:value "2013-01-10"^^xsd:date];
+  fhir:ImmunizationEvaluation.authority [
+     fhir:link <http://hl7.org/fhir/Organization/hl7>;
+     fhir:Reference.reference [ fhir:value "Organization/hl7" ]
+  ];
+  fhir:ImmunizationEvaluation.targetDisease [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:1857005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "1857005" ]
+     ]
+  ];
+  fhir:ImmunizationEvaluation.immunizationEvent [
+     fhir:link <http://hl7.org/fhir/Immunization/example>;
+     fhir:Reference.reference [ fhir:value "Immunization/example" ]
+  ];
+  fhir:ImmunizationEvaluation.doseStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status" ];
+       fhir:Coding.code [ fhir:value "notvalid" ];
+       fhir:Coding.display [ fhir:value "Not Valid" ]
+     ]
+  ];
+  fhir:ImmunizationEvaluation.doseStatusReason [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason" ];
+       fhir:Coding.code [ fhir:value "outsidesched" ];
+       fhir:Coding.display [ fhir:value "Administered outside recommended schedule" ]
+     ]
+  ];
+  fhir:ImmunizationEvaluation.series [ fhir:value "Vaccination Series 1"];
+  fhir:ImmunizationEvaluation.doseNumberPositiveInt [ fhir:value "2"^^xsd:positiveInteger];
+  fhir:ImmunizationEvaluation.seriesDosesPositiveInt [ fhir:value "3"^^xsd:positiveInteger] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/hl7> a fhir:Organization .
+
+<http://hl7.org/fhir/Immunization/example> a fhir:Immunization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ImmunizationEvaluation/notValid.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ImmunizationEvaluation/notValid.ttl> .
+
+# -------------------------------------------------------------------------------------
+

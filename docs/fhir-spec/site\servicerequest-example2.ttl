@@ -1,0 +1,190 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/physiotherapy> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "physiotherapy"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: physiotherapy</p><p><b>contained</b>: , </p><p><b>identifier</b>: Placer = 20170201-0001</p><p><b>basedOn</b>: <a>CarePlan/gpvisit</a></p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>code</b>: Physiotherapy of chest (regime/therapy)  <span>(Details : {SNOMED CT code '34431008' = 'Physiotherapy of chest', given as 'Physiotherapy of chest (regime/therapy) '})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>occurrence</b>: Duration 15days, Do 1-1 per 1 days</p><p><b>asNeeded</b>: as needed to clear mucus <span>(Details )</span></p><p><b>authoredOn</b>: 01/02/2017 5:23:07 PM</p><p><b>requester</b>: <a>Dr Adam Careful</a></p><p><b>reasonReference</b>: id: cystic-fibrosis; Active <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-clinical code 'active' = 'Active)</span>; Confirmed <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-ver-status code 'confirmed' = 'Confirmed)</span>; Problem List Item <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-category code 'problem-list-item' = 'Problem List Item', given as 'Problem List Item'})</span>; Mild <span>(Details : {SNOMED CT code '255604002' = 'Mild', given as 'Mild'})</span>; Cystic Fibrosis <span>(Details : {http://hl7.org/fhir/sid/icd-10-cm code 'E84.0' = 'E84.0', given as 'Cystic fibrosis with pulmonary manifestations'})</span>; onset: 12/11/2012</p><p><b>relevantHistory</b>: Author's Signature. Generated Summary: id: signature; recorded: 01/02/2017 5:23:07 PM; </p></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Provenance;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "signature" ];
+     fhir:Provenance.target [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ServiceRequest/physiotherapy/_history/1>;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/physiotherapy/_history/1" ]
+     ];
+     fhir:Provenance.recorded [ fhir:value "2017-02-01T17:23:07Z"^^xsd:dateTime ];
+     fhir:Provenance.agent [
+       fhir:index 0;
+       fhir:Provenance.agent.role [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+           fhir:Coding.code [ fhir:value "AUT" ]
+         ]
+       ];
+       fhir:Provenance.agent.who [
+         fhir:link <http://hl7.org/fhir/Practitioner/example>;
+         fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+         fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+       ]
+     ];
+     fhir:Provenance.signature [
+       fhir:index 0;
+       fhir:Signature.type [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "urn:iso-astm:E1762-95:2013" ];
+         fhir:Coding.code [ fhir:value "1.2.840.10065.1.12.1.1" ];
+         fhir:Coding.display [ fhir:value "Author's Signature" ]
+       ];
+       fhir:Signature.when [ fhir:value "2017-02-01T17:23:07Z"^^xsd:dateTime ];
+       fhir:Signature.who [
+         fhir:link <http://hl7.org/fhir/Practitioner/example>;
+         fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+         fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+       ];
+       fhir:Signature.targetFormat [ fhir:value "application/fhir+xml" ];
+       fhir:Signature.sigFormat [ fhir:value "application/signature+xml" ];
+       fhir:Signature.data [ fhir:value "dGhpcyBibG9iIGlzIHNuaXBwZWQ="^^xsd:base64Binary ]
+     ]
+  ], [
+     a fhir:Condition;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "cystic-fibrosis" ];
+     fhir:Condition.clinicalStatus [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+         fhir:Coding.code [ fhir:value "active" ]
+       ]
+     ];
+     fhir:Condition.verificationStatus [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+         fhir:Coding.code [ fhir:value "confirmed" ]
+       ]
+     ];
+     fhir:Condition.category [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-category" ];
+         fhir:Coding.code [ fhir:value "problem-list-item" ];
+         fhir:Coding.display [ fhir:value "Problem List Item" ]
+       ]
+     ];
+     fhir:Condition.severity [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:255604002;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "255604002" ];
+         fhir:Coding.display [ fhir:value "Mild" ]
+       ]
+     ];
+     fhir:Condition.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/icd-10-cm" ];
+         fhir:Coding.code [ fhir:value "E84.0" ];
+         fhir:Coding.display [ fhir:value "Cystic fibrosis with pulmonary manifestations" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Cystic Fibrosis" ]
+     ];
+     fhir:Condition.subject [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ]
+     ];
+     fhir:Condition.onsetDateTime [ fhir:value "2012-11-12"^^xsd:date ]
+  ];
+  fhir:ServiceRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "PLAC" ];
+         fhir:Coding.display [ fhir:value "Placer Identifier" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Placer" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://goodhealth.org/placer-ids" ];
+     fhir:Identifier.value [ fhir:value "20170201-0001" ]
+  ];
+  fhir:ServiceRequest.basedOn [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/CarePlan/gpvisit>;
+     fhir:Reference.reference [ fhir:value "CarePlan/gpvisit" ]
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:34431008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "34431008" ];
+       fhir:Coding.display [ fhir:value "Physiotherapy of chest (regime/therapy) " ]
+     ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ServiceRequest.occurrenceTiming [
+     fhir:Timing.repeat [
+       fhir:Timing.repeat.duration [ fhir:value "15"^^xsd:decimal ];
+       fhir:Timing.repeat.durationMax [ fhir:value "25"^^xsd:decimal ];
+       fhir:Timing.repeat.durationUnit [ fhir:value "min" ];
+       fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+       fhir:Timing.repeat.frequencyMax [ fhir:value "4"^^xsd:positiveInteger ];
+       fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+       fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+     ]
+  ];
+  fhir:ServiceRequest.asNeededCodeableConcept [
+     fhir:CodeableConcept.text [ fhir:value "as needed to clear mucus" ]
+  ];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2017-02-01T17:23:07Z"^^xsd:dateTime];
+  fhir:ServiceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+  ];
+  fhir:ServiceRequest.reasonReference [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#cystic-fibrosis" ]
+  ];
+  fhir:ServiceRequest.relevantHistory [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#signature" ];
+     fhir:Reference.display [ fhir:value "Author's Signature" ]
+  ] .
+
+<http://hl7.org/fhir/ServiceRequest/physiotherapy/_history/1> a fhir:ServiceRequest .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/CarePlan/gpvisit> a fhir:CarePlan .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/physiotherapy.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/physiotherapy.ttl> .
+
+# -------------------------------------------------------------------------------------
+

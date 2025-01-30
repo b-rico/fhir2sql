@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CodeSystem/summary> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "summary"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <h2>Code system summary example for ACME body sites</h2>\n      <div>\n        <p>This is an example code system summary for the ACME codes for body site.</p>\n\n      </div>\n      <p>This code system http://hl7.org/fhir/CodeSystem/summary defines many codes, but they are not represented here</p>\n    </div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/CodeSystem/summary"];
+  fhir:CodeSystem.version [ fhir:value "4.0.1"];
+  fhir:CodeSystem.name [ fhir:value "Code system summary example for ACME body sites"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:CodeSystem.publisher [ fhir:value "HL7 International"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "FHIR project team" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "This is an example code system summary for the ACME codes for body site."];
+  fhir:CodeSystem.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://example.org/CodeSystem/contexttype" ];
+       fhir:Coding.code [ fhir:value "species" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:337915000;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "337915000" ];
+         fhir:Coding.display [ fhir:value "Homo sapiens (organism)" ]
+       ]
+     ]
+  ];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "CA" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "not-present"];
+  fhir:CodeSystem.count [ fhir:value "92"^^xsd:nonNegativeInteger] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CodeSystem/summary.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CodeSystem/summary.ttl> .
+
+# -------------------------------------------------------------------------------------
+

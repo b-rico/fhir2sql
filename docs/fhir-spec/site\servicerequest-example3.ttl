@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/do-not-turn> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "do-not-turn"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: do-not-turn</p><p><b>identifier</b>: 20170201-0002</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>priority</b>: stat</p><p><b>doNotPerform</b>: true</p><p><b>code</b>: Turning patient in bed (procedure) <span>(Details : {SNOMED CT code '359962006' = 'Turning patient in bed', given as 'Turning patient in bed (procedure)'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>authoredOn</b>: 01/02/2017 5:23:07 PM</p><p><b>requester</b>: <a>Dr Adam Careful</a></p><p><b>reasonReference</b>: Patient has a spinal fracture</p></div>"
+  ];
+  fhir:ServiceRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://goodhealth.org/placer-ids" ];
+     fhir:Identifier.value [ fhir:value "20170201-0002" ]
+  ];
+  fhir:ServiceRequest.status [ fhir:value "active"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.priority [ fhir:value "stat"];
+  fhir:ServiceRequest.doNotPerform [ fhir:value "true"^^xsd:boolean];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:359962006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "359962006" ];
+       fhir:Coding.display [ fhir:value "Turning patient in bed (procedure)" ]
+     ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2017-02-01T17:23:07Z"^^xsd:dateTime];
+  fhir:ServiceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+  ];
+  fhir:ServiceRequest.reasonReference [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Patient has a spinal fracture" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/do-not-turn.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/do-not-turn.ttl> .
+
+# -------------------------------------------------------------------------------------
+

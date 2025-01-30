@@ -1,0 +1,274 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type StructureDefinition {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  url: uri  _url: ElementBase
+  identifier: [Identifier]
+  version: String  _version: ElementBase
+  name: String  _name: ElementBase
+  title: String  _title: ElementBase
+  status: code  _status: ElementBase
+  experimental: Boolean  _experimental: ElementBase
+  date: dateTime  _date: ElementBase
+  publisher: String  _publisher: ElementBase
+  contact: [ContactDetail]
+  description: markdown  _description: ElementBase
+  useContext: [UsageContext]
+  jurisdiction: [CodeableConcept]
+  purpose: markdown  _purpose: ElementBase
+  copyright: markdown  _copyright: ElementBase
+  keyword: [Coding]
+  fhirVersion: code  _fhirVersion: ElementBase
+  mapping: [StructureDefinitionMapping]
+  kind: code  _kind: ElementBase
+  abstract: Boolean  _abstract: ElementBase
+  context: [StructureDefinitionContext]
+  contextInvariant: String  _contextInvariant: [ElementBase]
+  type: uri  _type: ElementBase
+  baseDefinition: canonical  _baseDefinition: ElementBase
+  derivation: code  _derivation: ElementBase
+  snapshot: StructureDefinitionSnapshot
+  differential: StructureDefinitionDifferential
+}
+
+type StructureDefinitionMapping {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identity: ID  _identity: ElementBase
+  uri: uri  _uri: ElementBase
+  name: String  _name: ElementBase
+  comment: String  _comment: ElementBase
+}
+
+type StructureDefinitionContext {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: code  _type: ElementBase
+  expression: String  _expression: ElementBase
+}
+
+type StructureDefinitionSnapshot {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  element: [ElementDefinition]!
+}
+
+type StructureDefinitionDifferential {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  element: [ElementDefinition]!
+}
+
+input StructureDefinition {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  url: uri  _url: ElementBase
+  identifier: [Identifier]
+  version: String  _version: ElementBase
+  name: String  _name: ElementBase
+  title: String  _title: ElementBase
+  status: code  _status: ElementBase
+  experimental: Boolean  _experimental: ElementBase
+  date: dateTime  _date: ElementBase
+  publisher: String  _publisher: ElementBase
+  contact: [ContactDetail]
+  description: markdown  _description: ElementBase
+  useContext: [UsageContext]
+  jurisdiction: [CodeableConcept]
+  purpose: markdown  _purpose: ElementBase
+  copyright: markdown  _copyright: ElementBase
+  keyword: [Coding]
+  fhirVersion: code  _fhirVersion: ElementBase
+  mapping: [StructureDefinitionMapping]
+  kind: code  _kind: ElementBase
+  abstract: Boolean  _abstract: ElementBase
+  context: [StructureDefinitionContext]
+  contextInvariant: String  _contextInvariant: [ElementBase]
+  type: uri  _type: ElementBase
+  baseDefinition: canonical  _baseDefinition: ElementBase
+  derivation: code  _derivation: ElementBase
+  snapshot: StructureDefinitionSnapshot
+  differential: StructureDefinitionDifferential
+}
+
+input StructureDefinitionMapping {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identity: ID  _identity: ElementBase
+  uri: uri  _uri: ElementBase
+  name: String  _name: ElementBase
+  comment: String  _comment: ElementBase
+}
+
+input StructureDefinitionContext {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: code  _type: ElementBase
+  expression: String  _expression: ElementBase
+}
+
+input StructureDefinitionSnapshot {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  element: [ElementDefinition]!
+}
+
+input StructureDefinitionDifferential {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  element: [ElementDefinition]!
+}
+
+type StructureDefinitionReadType {
+  StructureDefinition(id : ID!) : StructureDefinition
+}
+
+type StructureDefinitionListType {
+  StructureDefinitionList(_filter : String
+    abstract : [token]
+    base : [reference]
+    base_path : [token]
+    context : [token]
+    context_quantity : [quantity]
+    context_type : [token]
+    context_type_quantity : [composite]
+    context_type_value : [composite]
+    date : [date]
+    derivation : [token]
+    description : [String]
+    experimental : [token]
+    ext_context : [token]
+    identifier : [token]
+    jurisdiction : [token]
+    keyword : [token]
+    kind : [token]
+    name : [String]
+    path : [token]
+    publisher : [String]
+    status : [token]
+    title : [String]
+    type : [uri]
+    url : [uri]
+    valueset : [reference]
+    version : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [StructureDefinition]
+}
+
+type StructureDefinitionConnectionType {
+  StructureDefinitionConection(_filter : String
+    abstract : [token]
+    base : [reference]
+    base_path : [token]
+    context : [token]
+    context_quantity : [quantity]
+    context_type : [token]
+    context_type_quantity : [composite]
+    context_type_value : [composite]
+    date : [date]
+    derivation : [token]
+    description : [String]
+    experimental : [token]
+    ext_context : [token]
+    identifier : [token]
+    jurisdiction : [token]
+    keyword : [token]
+    kind : [token]
+    name : [String]
+    path : [token]
+    publisher : [String]
+    status : [token]
+    title : [String]
+    type : [uri]
+    url : [uri]
+    valueset : [reference]
+    version : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : StructureDefinitionConnection
+}
+
+type StructureDefinitionConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [StructureDefinitionEdge]
+}
+
+type StructureDefinitionEdge {
+  mode : String
+  score : Float
+  resource : StructureDefinition
+}
+
+type StructureDefinitionCreateType {
+  StructureDefinitionCreate(resource : StructureDefinition) : StructureDefinitionCreation
+}
+
+type StructureDefinitionCreation {
+  location : String
+  resource : StructureDefinition
+  information : OperationOutcome
+}
+
+type StructureDefinitionUpdateType {
+  StructureDefinitionUpdate(id : IDresource : StructureDefinition) : StructureDefinitionUpdate
+}
+
+type StructureDefinitionUpdate {
+  resource : StructureDefinition
+  information : OperationOutcome
+}
+
+type StructureDefinitionDeleteType {
+  StructureDefinitionDelete(id : ID) : StructureDefinitionDelete
+}
+
+type StructureDefinitionDelete {
+  information : OperationOutcome
+}
+

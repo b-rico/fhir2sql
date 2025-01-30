@@ -1,0 +1,1293 @@
+<!DOCTYPE HTML>
+  <!-- template-example-xml.html --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>StructureMap - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/structuremap.schema.json.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="implsupport-module.html"><img src="implsupport.png"/> Implementation Support</a></li>        <li><a href="structuremap.html">StructureMap</a></li>        <li><b>schema</b></li>          <!-- structuremap.html / res-schema / StructureMap -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<h2 class="self-link-parent"><span class="sectioncount">7.8.12<a name="7.8.12"> </a></span> JSON Schema for StructureMap <a href="structuremap.schema.json.html#7.8.12" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td>  <!-- !ns! --><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+<p>
+This is a representation of the json schema for StructureMap, which is just a part of the <a href="http://hl7.org/fhir/R4/fhir.schema.json.zip">full JSON Schema</a>.
+</p>
+
+
+<pre>
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "id": "http://hl7.org/fhir/json-schema/StructureMap",
+  "$ref": "#/definitions/StructureMap",
+  "description": "see http://hl7.org/fhir/json.html#schema for information about the FHIR Json Schemas",
+  "definitions": {
+    "StructureMap": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "resourceType": {
+          "description": "This is a StructureMap resource",
+          "const": "StructureMap"
+        },
+        "id": {
+          "description": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+          "$ref": "id.schema.json#/definitions/id"
+        },
+        "meta": {
+          "description": "The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.",
+          "$ref": "Meta.schema.json#/definitions/Meta"
+        },
+        "implicitRules": {
+          "description": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
+          "$ref": "#/definitions/uri"
+        },
+        "_implicitRules": {
+          "description": "Extensions for implicitRules",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "language": {
+          "description": "The base language in which the resource is written.",
+          "$ref": "#/definitions/code"
+        },
+        "_language": {
+          "description": "Extensions for language",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "text": {
+          "description": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+          "$ref": "Narrative.schema.json#/definitions/Narrative"
+        },
+        "contained": {
+          "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+          "items": {
+            "$ref": "ResourceList.schema.json#/definitions/ResourceList"
+          },
+          "type": "array"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "url": {
+          "description": "An absolute URI that is used to identify this structure map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure map is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure map is stored on different servers.",
+          "$ref": "#/definitions/uri"
+        },
+        "_url": {
+          "description": "Extensions for url",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "identifier": {
+          "description": "A formal identifier that is used to identify this structure map when it is represented in other formats, or referenced in a specification, model, design or an instance.",
+          "items": {
+            "$ref": "Identifier.schema.json#/definitions/Identifier"
+          },
+          "type": "array"
+        },
+        "version": {
+          "description": "The identifier that is used to identify this version of the structure map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.",
+          "$ref": "#/definitions/string"
+        },
+        "_version": {
+          "description": "Extensions for version",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "name": {
+          "description": "A natural language name identifying the structure map. This name should be usable as an identifier for the module by machine processing applications such as code generation.",
+          "$ref": "#/definitions/string"
+        },
+        "_name": {
+          "description": "Extensions for name",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "title": {
+          "description": "A short, descriptive, user-friendly title for the structure map.",
+          "$ref": "#/definitions/string"
+        },
+        "_title": {
+          "description": "Extensions for title",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "status": {
+          "description": "The status of this structure map. Enables tracking the life-cycle of the content.",
+          "enum": [
+            "draft",
+            "active",
+            "retired",
+            "unknown"
+          ]
+        },
+        "_status": {
+          "description": "Extensions for status",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "experimental": {
+          "description": "A Boolean value to indicate that this structure map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.",
+          "$ref": "#/definitions/boolean"
+        },
+        "_experimental": {
+          "description": "Extensions for experimental",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "date": {
+          "description": "The date  (and optionally time) when the structure map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure map changes.",
+          "$ref": "#/definitions/dateTime"
+        },
+        "_date": {
+          "description": "Extensions for date",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "publisher": {
+          "description": "The name of the organization or individual that published the structure map.",
+          "$ref": "#/definitions/string"
+        },
+        "_publisher": {
+          "description": "Extensions for publisher",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "contact": {
+          "description": "Contact details to assist a user in finding and communicating with the publisher.",
+          "items": {
+            "$ref": "ContactDetail.schema.json#/definitions/ContactDetail"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "A free text natural language description of the structure map from a consumer\u0027s perspective.",
+          "$ref": "#/definitions/markdown"
+        },
+        "_description": {
+          "description": "Extensions for description",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "useContext": {
+          "description": "The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate structure map instances.",
+          "items": {
+            "$ref": "UsageContext.schema.json#/definitions/UsageContext"
+          },
+          "type": "array"
+        },
+        "jurisdiction": {
+          "description": "A legal or geographic region in which the structure map is intended to be used.",
+          "items": {
+            "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+          },
+          "type": "array"
+        },
+        "purpose": {
+          "description": "Explanation of why this structure map is needed and why it has been designed as it has.",
+          "$ref": "#/definitions/markdown"
+        },
+        "_purpose": {
+          "description": "Extensions for purpose",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "copyright": {
+          "description": "A copyright statement relating to the structure map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure map.",
+          "$ref": "#/definitions/markdown"
+        },
+        "_copyright": {
+          "description": "Extensions for copyright",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "structure": {
+          "description": "A structure definition used by this map. The structure definition may describe instances that are converted, or the instances that are produced.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Structure"
+          },
+          "type": "array"
+        },
+        "import": {
+          "description": "Other maps used by this map (canonical URLs).",
+          "items": {
+            "$ref": "canonical.schema.json#/definitions/canonical"
+          },
+          "type": "array"
+        },
+        "group": {
+          "description": "Organizes the mapping into manageable chunks for human review/ease of maintenance.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Group"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "resourceType",
+        "group"
+      ]
+    },
+    "StructureMap_Structure": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "url": {
+          "description": "The canonical reference to the structure.",
+          "$ref": "canonical.schema.json#/definitions/canonical"
+        },
+        "mode": {
+          "description": "How the referenced structure is used in this mapping.",
+          "enum": [
+            "source",
+            "queried",
+            "target",
+            "produced"
+          ]
+        },
+        "_mode": {
+          "description": "Extensions for mode",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "alias": {
+          "description": "The name used for this type in the map.",
+          "$ref": "#/definitions/string"
+        },
+        "_alias": {
+          "description": "Extensions for alias",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "documentation": {
+          "description": "Documentation that describes how the structure is used in the mapping.",
+          "$ref": "#/definitions/string"
+        },
+        "_documentation": {
+          "description": "Extensions for documentation",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "url"
+      ]
+    },
+    "StructureMap_Group": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "A unique name for the group for the convenience of human readers.",
+          "$ref": "#/definitions/id"
+        },
+        "_name": {
+          "description": "Extensions for name",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "extends": {
+          "description": "Another group that this group adds rules to.",
+          "$ref": "#/definitions/id"
+        },
+        "_extends": {
+          "description": "Extensions for extends",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "typeMode": {
+          "description": "If this is the default rule set to apply for the source type or this combination of types.",
+          "enum": [
+            "none",
+            "types",
+            "type-and-types"
+          ]
+        },
+        "_typeMode": {
+          "description": "Extensions for typeMode",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "documentation": {
+          "description": "Additional supporting documentation that explains the purpose of the group and the types of mappings within it.",
+          "$ref": "#/definitions/string"
+        },
+        "_documentation": {
+          "description": "Extensions for documentation",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "input": {
+          "description": "A name assigned to an instance of data. The instance must be provided when the mapping is invoked.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Input"
+          },
+          "type": "array"
+        },
+        "rule": {
+          "description": "Transform Rule from source to target.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Rule"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "input",
+        "rule"
+      ]
+    },
+    "StructureMap_Input": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "Name for this instance of data.",
+          "$ref": "#/definitions/id"
+        },
+        "_name": {
+          "description": "Extensions for name",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "type": {
+          "description": "Type for this instance of data.",
+          "$ref": "#/definitions/string"
+        },
+        "_type": {
+          "description": "Extensions for type",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "mode": {
+          "description": "Mode for this instance of data.",
+          "enum": [
+            "source",
+            "target"
+          ]
+        },
+        "_mode": {
+          "description": "Extensions for mode",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "documentation": {
+          "description": "Documentation for this instance of data.",
+          "$ref": "#/definitions/string"
+        },
+        "_documentation": {
+          "description": "Extensions for documentation",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "StructureMap_Rule": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "Name of the rule for internal references.",
+          "$ref": "#/definitions/id"
+        },
+        "_name": {
+          "description": "Extensions for name",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "source": {
+          "description": "Source inputs to the mapping.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Source"
+          },
+          "type": "array"
+        },
+        "target": {
+          "description": "Content to create because of this mapping rule.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Target"
+          },
+          "type": "array"
+        },
+        "rule": {
+          "description": "Rules contained in this rule.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Rule"
+          },
+          "type": "array"
+        },
+        "dependent": {
+          "description": "Which other rules to apply in the context of this rule.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Dependent"
+          },
+          "type": "array"
+        },
+        "documentation": {
+          "description": "Documentation for this instance of data.",
+          "$ref": "#/definitions/string"
+        },
+        "_documentation": {
+          "description": "Extensions for documentation",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "source"
+      ]
+    },
+    "StructureMap_Source": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "context": {
+          "description": "Type or variable this rule applies to.",
+          "$ref": "#/definitions/id"
+        },
+        "_context": {
+          "description": "Extensions for context",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "min": {
+          "description": "Specified minimum cardinality for the element. This is optional; if present, it acts an implicit check on the input content.",
+          "$ref": "#/definitions/integer"
+        },
+        "_min": {
+          "description": "Extensions for min",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "max": {
+          "description": "Specified maximum cardinality for the element - a number or a \"*\". This is optional; if present, it acts an implicit check on the input content (* just serves as documentation; it\u0027s the default value).",
+          "$ref": "#/definitions/string"
+        },
+        "_max": {
+          "description": "Extensions for max",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "type": {
+          "description": "Specified type for the element. This works as a condition on the mapping - use for polymorphic elements.",
+          "$ref": "#/definitions/string"
+        },
+        "_type": {
+          "description": "Extensions for type",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueBase64Binary": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^(\\s*([0-9a-zA-Z\\+/\u003d]){4}\\s*)+$",
+          "type": "string"
+        },
+        "_defaultValueBase64Binary": {
+          "description": "Extensions for defaultValueBase64Binary",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueBoolean": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^true|false$",
+          "type": "boolean"
+        },
+        "_defaultValueBoolean": {
+          "description": "Extensions for defaultValueBoolean",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueCanonical": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^\\S*$",
+          "type": "string"
+        },
+        "_defaultValueCanonical": {
+          "description": "Extensions for defaultValueCanonical",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueCode": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^[^\\s]+(\\s[^\\s]+)*$",
+          "type": "string"
+        },
+        "_defaultValueCode": {
+          "description": "Extensions for defaultValueCode",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueDate": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1]))?)?$",
+          "type": "string"
+        },
+        "_defaultValueDate": {
+          "description": "Extensions for defaultValueDate",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueDateTime": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$",
+          "type": "string"
+        },
+        "_defaultValueDateTime": {
+          "description": "Extensions for defaultValueDateTime",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueDecimal": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$",
+          "type": "number"
+        },
+        "_defaultValueDecimal": {
+          "description": "Extensions for defaultValueDecimal",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueId": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^[A-Za-z0-9\\-\\.]{1,64}$",
+          "type": "string"
+        },
+        "_defaultValueId": {
+          "description": "Extensions for defaultValueId",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueInstant": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))$",
+          "type": "string"
+        },
+        "_defaultValueInstant": {
+          "description": "Extensions for defaultValueInstant",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueInteger": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^-?([0]|([1-9][0-9]*))$",
+          "type": "number"
+        },
+        "_defaultValueInteger": {
+          "description": "Extensions for defaultValueInteger",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueMarkdown": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^[ \\r\\n\\t\\S]+$",
+          "type": "string"
+        },
+        "_defaultValueMarkdown": {
+          "description": "Extensions for defaultValueMarkdown",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueOid": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^urn:oid:[0-2](\\.(0|[1-9][0-9]*))+$",
+          "type": "string"
+        },
+        "_defaultValueOid": {
+          "description": "Extensions for defaultValueOid",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValuePositiveInt": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^[1-9][0-9]*$",
+          "type": "number"
+        },
+        "_defaultValuePositiveInt": {
+          "description": "Extensions for defaultValuePositiveInt",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueString": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^[ \\r\\n\\t\\S]+$",
+          "type": "string"
+        },
+        "_defaultValueString": {
+          "description": "Extensions for defaultValueString",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueTime": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?$",
+          "type": "string"
+        },
+        "_defaultValueTime": {
+          "description": "Extensions for defaultValueTime",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueUnsignedInt": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^[0]|([1-9][0-9]*)$",
+          "type": "number"
+        },
+        "_defaultValueUnsignedInt": {
+          "description": "Extensions for defaultValueUnsignedInt",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueUri": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^\\S*$",
+          "type": "string"
+        },
+        "_defaultValueUri": {
+          "description": "Extensions for defaultValueUri",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueUrl": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^\\S*$",
+          "type": "string"
+        },
+        "_defaultValueUrl": {
+          "description": "Extensions for defaultValueUrl",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueUuid": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "pattern": "^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "type": "string"
+        },
+        "_defaultValueUuid": {
+          "description": "Extensions for defaultValueUuid",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "defaultValueAddress": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Address.schema.json#/definitions/Address"
+        },
+        "defaultValueAge": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Age.schema.json#/definitions/Age"
+        },
+        "defaultValueAnnotation": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Annotation.schema.json#/definitions/Annotation"
+        },
+        "defaultValueAttachment": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Attachment.schema.json#/definitions/Attachment"
+        },
+        "defaultValueCodeableConcept": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+        },
+        "defaultValueCoding": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Coding.schema.json#/definitions/Coding"
+        },
+        "defaultValueContactPoint": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "ContactPoint.schema.json#/definitions/ContactPoint"
+        },
+        "defaultValueCount": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Count.schema.json#/definitions/Count"
+        },
+        "defaultValueDistance": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Distance.schema.json#/definitions/Distance"
+        },
+        "defaultValueDuration": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Duration.schema.json#/definitions/Duration"
+        },
+        "defaultValueHumanName": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "HumanName.schema.json#/definitions/HumanName"
+        },
+        "defaultValueIdentifier": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Identifier.schema.json#/definitions/Identifier"
+        },
+        "defaultValueMoney": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Money.schema.json#/definitions/Money"
+        },
+        "defaultValuePeriod": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Period.schema.json#/definitions/Period"
+        },
+        "defaultValueQuantity": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Quantity.schema.json#/definitions/Quantity"
+        },
+        "defaultValueRange": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Range.schema.json#/definitions/Range"
+        },
+        "defaultValueRatio": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Ratio.schema.json#/definitions/Ratio"
+        },
+        "defaultValueReference": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Reference.schema.json#/definitions/Reference"
+        },
+        "defaultValueSampledData": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "SampledData.schema.json#/definitions/SampledData"
+        },
+        "defaultValueSignature": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Signature.schema.json#/definitions/Signature"
+        },
+        "defaultValueTiming": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Timing.schema.json#/definitions/Timing"
+        },
+        "defaultValueContactDetail": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "ContactDetail.schema.json#/definitions/ContactDetail"
+        },
+        "defaultValueContributor": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Contributor.schema.json#/definitions/Contributor"
+        },
+        "defaultValueDataRequirement": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "DataRequirement.schema.json#/definitions/DataRequirement"
+        },
+        "defaultValueExpression": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Expression.schema.json#/definitions/Expression"
+        },
+        "defaultValueParameterDefinition": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "ParameterDefinition.schema.json#/definitions/ParameterDefinition"
+        },
+        "defaultValueRelatedArtifact": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "RelatedArtifact.schema.json#/definitions/RelatedArtifact"
+        },
+        "defaultValueTriggerDefinition": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "TriggerDefinition.schema.json#/definitions/TriggerDefinition"
+        },
+        "defaultValueUsageContext": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "UsageContext.schema.json#/definitions/UsageContext"
+        },
+        "defaultValueDosage": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Dosage.schema.json#/definitions/Dosage"
+        },
+        "defaultValueMeta": {
+          "description": "A value to use if there is no existing value in the source object.",
+          "$ref": "Meta.schema.json#/definitions/Meta"
+        },
+        "element": {
+          "description": "Optional field for this source.",
+          "$ref": "#/definitions/string"
+        },
+        "_element": {
+          "description": "Extensions for element",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "listMode": {
+          "description": "How to handle the list mode for this element.",
+          "enum": [
+            "first",
+            "not_first",
+            "last",
+            "not_last",
+            "only_one"
+          ]
+        },
+        "_listMode": {
+          "description": "Extensions for listMode",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "variable": {
+          "description": "Named context for field, if a field is specified.",
+          "$ref": "#/definitions/id"
+        },
+        "_variable": {
+          "description": "Extensions for variable",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "condition": {
+          "description": "FHIRPath expression  - must be true or the rule does not apply.",
+          "$ref": "#/definitions/string"
+        },
+        "_condition": {
+          "description": "Extensions for condition",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "check": {
+          "description": "FHIRPath expression  - must be true or the mapping engine throws an error instead of completing.",
+          "$ref": "#/definitions/string"
+        },
+        "_check": {
+          "description": "Extensions for check",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "logMessage": {
+          "description": "A FHIRPath expression which specifies a message to put in the transform log when content matching the source rule is found.",
+          "$ref": "#/definitions/string"
+        },
+        "_logMessage": {
+          "description": "Extensions for logMessage",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "StructureMap_Target": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "context": {
+          "description": "Type or variable this rule applies to.",
+          "$ref": "#/definitions/id"
+        },
+        "_context": {
+          "description": "Extensions for context",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "contextType": {
+          "description": "How to interpret the context.",
+          "enum": [
+            "type",
+            "variable"
+          ]
+        },
+        "_contextType": {
+          "description": "Extensions for contextType",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "element": {
+          "description": "Field to create in the context.",
+          "$ref": "#/definitions/string"
+        },
+        "_element": {
+          "description": "Extensions for element",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "variable": {
+          "description": "Named context for field, if desired, and a field is specified.",
+          "$ref": "#/definitions/id"
+        },
+        "_variable": {
+          "description": "Extensions for variable",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "listMode": {
+          "description": "If field is a list, how to manage the list.",
+          "items": {
+            "enum": [
+              "first",
+              "share",
+              "last",
+              "collate"
+            ]
+          },
+          "type": "array"
+        },
+        "_listMode": {
+          "description": "Extensions for listMode",
+          "items": {
+            "$ref": "Element.schema.json#/definitions/Element"
+          },
+          "type": "array"
+        },
+        "listRuleId": {
+          "description": "Internal rule reference for shared list items.",
+          "$ref": "#/definitions/id"
+        },
+        "_listRuleId": {
+          "description": "Extensions for listRuleId",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "transform": {
+          "description": "How the data is copied / created.",
+          "enum": [
+            "create",
+            "copy",
+            "truncate",
+            "escape",
+            "cast",
+            "append",
+            "translate",
+            "reference",
+            "dateOp",
+            "uuid",
+            "pointer",
+            "evaluate",
+            "cc",
+            "c",
+            "qty",
+            "id",
+            "cp"
+          ]
+        },
+        "_transform": {
+          "description": "Extensions for transform",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "parameter": {
+          "description": "Parameters to the transform.",
+          "items": {
+            "$ref": "#/definitions/StructureMap_Parameter"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    },
+    "StructureMap_Parameter": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "valueId": {
+          "description": "Parameter value - variable or literal.",
+          "pattern": "^[A-Za-z0-9\\-\\.]{1,64}$",
+          "type": "string"
+        },
+        "_valueId": {
+          "description": "Extensions for valueId",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueString": {
+          "description": "Parameter value - variable or literal.",
+          "pattern": "^[ \\r\\n\\t\\S]+$",
+          "type": "string"
+        },
+        "_valueString": {
+          "description": "Extensions for valueString",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueBoolean": {
+          "description": "Parameter value - variable or literal.",
+          "pattern": "^true|false$",
+          "type": "boolean"
+        },
+        "_valueBoolean": {
+          "description": "Extensions for valueBoolean",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueInteger": {
+          "description": "Parameter value - variable or literal.",
+          "pattern": "^-?([0]|([1-9][0-9]*))$",
+          "type": "number"
+        },
+        "_valueInteger": {
+          "description": "Extensions for valueInteger",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "valueDecimal": {
+          "description": "Parameter value - variable or literal.",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$",
+          "type": "number"
+        },
+        "_valueDecimal": {
+          "description": "Extensions for valueDecimal",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "StructureMap_Dependent": {
+      "description": "A Map of relationships between 2 structures that can be used to transform data.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "Name of a rule or group to apply.",
+          "$ref": "#/definitions/id"
+        },
+        "_name": {
+          "description": "Extensions for name",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "variable": {
+          "description": "Variable to pass to the rule or group.",
+          "items": {
+            "$ref": "#/definitions/string"
+          },
+          "type": "array"
+        },
+        "_variable": {
+          "description": "Extensions for variable",
+          "items": {
+            "$ref": "Element.schema.json#/definitions/Element"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
+</pre>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:36+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fstructuremap.schema.json.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fstructuremap.schema.json.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

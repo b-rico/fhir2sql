@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/benchpress> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "benchpress"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: benchpress</p><p><b>status</b>: active</p><p><b>intent</b>: plan</p><p><b>code</b>: Bench Press (regime/therapy)  <span>(Details : {SNOMED CT code '229115003' = 'Bench press', given as 'Bench Press (regime/therapy) '})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>occurrence</b>: Count 20 times, Do 3 per 1 weeks</p><p><b>patientInstruction</b>: Start with 30kg 10-15 repetitions for three sets and increase in increments of 5kg when you feel ready</p></div>"
+  ];
+  fhir:ServiceRequest.status [ fhir:value "active"];
+  fhir:ServiceRequest.intent [ fhir:value "plan"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:229115003;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "229115003" ];
+       fhir:Coding.display [ fhir:value "Bench Press (regime/therapy) " ]
+     ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ServiceRequest.occurrenceTiming [
+     fhir:Timing.repeat [
+       fhir:Timing.repeat.count [ fhir:value "20"^^xsd:positiveInteger ];
+       fhir:Timing.repeat.countMax [ fhir:value "30"^^xsd:positiveInteger ];
+       fhir:Timing.repeat.frequency [ fhir:value "3"^^xsd:positiveInteger ];
+       fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+       fhir:Timing.repeat.periodUnit [ fhir:value "wk" ]
+     ]
+  ];
+  fhir:ServiceRequest.patientInstruction [ fhir:value "Start with 30kg 10-15 repetitions for three sets and increase in increments of 5kg when you feel ready"] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/benchpress.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/benchpress.ttl> .
+
+# -------------------------------------------------------------------------------------
+

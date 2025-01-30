@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="NutritionOrder" status="changed">
+      <element path="NutritionOrder.instantiatesCanonical" status="new"/>
+      <element path="NutritionOrder.instantiatesUri" status="new"/>
+      <element path="NutritionOrder.instantiates" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               new-min="1"
+               old-min="0"
+               path="NutritionOrder.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/nutrition-request-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/request-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="NutritionOrder.intent" status="new"/>
+      <element path="NutritionOrder.orderer">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element path="NutritionOrder.enteralFormula.administration.rate[x]">
+         <removed-type name="Quantity()"/>
+         <added-type name="Quantity()"/>
+      </element>
+      <element path="NutritionOrder.note" status="new"/>
+   </type>
+</difference>

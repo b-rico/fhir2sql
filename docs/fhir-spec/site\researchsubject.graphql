@@ -1,0 +1,132 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type ResearchSubject {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  period: Period
+  study: Reference!
+  individual: Reference!
+  assignedArm: String  _assignedArm: ElementBase
+  actualArm: String  _actualArm: ElementBase
+  consent: Reference
+}
+
+input ResearchSubject {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  period: Period
+  study: Reference!
+  individual: Reference!
+  assignedArm: String  _assignedArm: ElementBase
+  actualArm: String  _actualArm: ElementBase
+  consent: Reference
+}
+
+type ResearchSubjectReadType {
+  ResearchSubject(id : ID!) : ResearchSubject
+}
+
+type ResearchSubjectListType {
+  ResearchSubjectList(_filter : String
+    date : [date]
+    identifier : [token]
+    individual : [reference]
+    patient : [reference]
+    status : [token]
+    study : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [ResearchSubject]
+}
+
+type ResearchSubjectConnectionType {
+  ResearchSubjectConection(_filter : String
+    date : [date]
+    identifier : [token]
+    individual : [reference]
+    patient : [reference]
+    status : [token]
+    study : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : ResearchSubjectConnection
+}
+
+type ResearchSubjectConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [ResearchSubjectEdge]
+}
+
+type ResearchSubjectEdge {
+  mode : String
+  score : Float
+  resource : ResearchSubject
+}
+
+type ResearchSubjectCreateType {
+  ResearchSubjectCreate(resource : ResearchSubject) : ResearchSubjectCreation
+}
+
+type ResearchSubjectCreation {
+  location : String
+  resource : ResearchSubject
+  information : OperationOutcome
+}
+
+type ResearchSubjectUpdateType {
+  ResearchSubjectUpdate(id : IDresource : ResearchSubject) : ResearchSubjectUpdate
+}
+
+type ResearchSubjectUpdate {
+  resource : ResearchSubject
+  information : OperationOutcome
+}
+
+type ResearchSubjectDeleteType {
+  ResearchSubjectDelete(id : ID) : ResearchSubjectDelete
+}
+
+type ResearchSubjectDelete {
+  information : OperationOutcome
+}
+

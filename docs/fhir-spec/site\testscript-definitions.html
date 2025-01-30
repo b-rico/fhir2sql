@@ -1,0 +1,1017 @@
+<!DOCTYPE HTML>
+  <!-- template-definitions.html --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>TestScript - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/testscript-definitions.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="implsupport-module.html"><img src="implsupport.png"/> Implementation Support</a></li>        <li><a href="testscript.html">TestScript</a></li>        <li><b>Detailed Descriptions</b></li>          <!-- testscript.html / res-Detailed Descriptions / TestScript -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<ul class="nav nav-tabs"><li><a href="testscript.html">Content</a></li><li><a href="testscript-examples.html">Examples</a></li><li class="active"><a href="#">Detailed Descriptions</a></li><li><a href="testscript-mappings.html">Mappings</a></li><li><a href="testscript-profiles.html">Profiles &amp; Extensions</a></li><li><a href="testscript-version-maps.html">R3 Conversions</a></li></ul>
+
+<h2 class="self-link-parent"><span class="sectioncount">7.3.8<a name="7.3.8"> </a></span> Resource TestScript - Detailed Descriptions <a href="testscript-definitions.html#7.3.8" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colstu"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: 2</td><td>&nbsp;<a href="versions.html#std-process" title="Standard Status">Trial Use</a></td><td><a href="security.html#SecPrivConsiderations">Security Category</a>: Anonymous</td>  <!-- !ns! --><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+
+<p>Detailed Descriptions for the elements in the TestScript resource.</p>
+
+<table class="dict">
+  <tr><td colspan="2" class="structure"><a name="TestScript"> </a><b>TestScript</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript</td></tr>
+  <tr><td>Definition</td><td><p>A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="domainresource.html">DomainResource</a></td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-0</b></td><td><a style="color: Chocolate" href="conformance-rules.html#warning">Warning</a> </td><td>Name should be usable as an identifier for the module by machine processing applications such as code generation</td><td><span style="font-family: Courier New, monospace">name.matches('[A-Z]([A-Za-z0-9_]){0,254}')</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.url"> </a><b>TestScript.url</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.url</td></tr>
+  <tr><td>Definition</td><td><p>An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this test script is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the test script is stored on different servers.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#uri">uri</a></td></tr>
+  <tr><td>Requirements</td><td><p>Allows the test script to be referenced by a single globally unique identifier.</p>
+</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>url; authoritative-url; destination; identity</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.</p>
+<p>The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in <a href="resource.html#versions">Technical and Business Versions</a>.</p>
+<p>In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the <a href="resource.html#meta">meta.source</a> element to indicate where the current master source of the resource can be found.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.identifier"> </a><b>TestScript.identifier</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.identifier</td></tr>
+  <tr><td>Definition</td><td><p>A formal identifier that is used to identify this test script when it is represented in other formats, or referenced in a specification, model, design or an instance.</p>
+</td></tr>
+  <tr><td>Note</td><td>This is a business identifier, not a resource identifier (see <a href="resource.html#identifiers">discussion</a>)</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td>Requirements</td><td><p>Allows externally provided and/or usable business identifiers to be easily associated with the module.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this test script outside of FHIR, where it is not possible to use the logical URI.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.version"> </a><b>TestScript.version</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.version</td></tr>
+  <tr><td>Definition</td><td><p>The identifier that is used to identify this version of the test script when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the test script author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</p>
+</td></tr>
+  <tr><td>Note</td><td>This is a business versionId, not a resource version id (see <a href="resource.html#versions">discussion</a>)</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>There may be different test script instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the test script with the format [url]|[version].</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.name"> </a><b>TestScript.name</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.name</td></tr>
+  <tr><td>Definition</td><td><p>A natural language name identifying the test script. This name should be usable as an identifier for the module by machine processing applications such as code generation.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Requirements</td><td><p>Support human navigation and code generation.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Affect this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">inv-0</b></td><td><a style="color: Chocolate" href="conformance-rules.html#warning">Warning</a> </td><td>Name should be usable as an identifier for the module by machine processing applications such as code generation</td><td><span style="font-family: Courier New, monospace">name.matches('[A-Z]([A-Za-z0-9_]){0,254}')</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.title"> </a><b>TestScript.title</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.title</td></tr>
+  <tr><td>Definition</td><td><p>A short, descriptive, user-friendly title for the test script.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.status"> </a><b>TestScript.status</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.status</td></tr>
+  <tr><td>Definition</td><td><p>The status of this test script. Enables tracking the life-cycle of the content.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-publication-status.html">PublicationStatus</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="conformance-rules.html#ismodifier">Is Modifier</a></td><td>true (Reason: This is labeled as "Is Modifier" because applications should not use a retired {{title}} without due consideration)</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Allows filtering of test scripts that are appropriate for use versus not.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.experimental"> </a><b>TestScript.experimental</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.experimental</td></tr>
+  <tr><td>Definition</td><td><p>A Boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td>Requirements</td><td><p>Enables experimental content to be developed following the same lifecycle that would be used for a production-level test script.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Allows filtering of test scripts that are appropriate for use versus not.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.date"> </a><b>TestScript.date</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.date</td></tr>
+  <tr><td>Definition</td><td><p>The date  (and optionally time) when the test script was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>Revision Date</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the test script. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.publisher"> </a><b>TestScript.publisher</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.publisher</td></tr>
+  <tr><td>Definition</td><td><p>The name of the organization or individual that published the test script.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Requirements</td><td><p>Helps establish the "authority/credibility" of the test script.  May also allow for contact.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Usually an organization but may be an individual. The publisher (or steward) of the test script is the organization or individual primarily responsible for the maintenance and upkeep of the test script. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the test script. This item SHOULD be populated unless the information is available from context.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.contact"> </a><b>TestScript.contact</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.contact</td></tr>
+  <tr><td>Definition</td><td><p>Contact details to assist a user in finding and communicating with the publisher.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="metadatatypes.html#ContactDetail">ContactDetail</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>May be a web site, an email address, a telephone number, etc.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.description"> </a><b>TestScript.description</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.description</td></tr>
+  <tr><td>Definition</td><td><p>A free text natural language description of the test script from a consumer's perspective.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#markdown">markdown</a></td></tr>
+  <tr><td>Comments</td><td><p>This description can be used to capture details such as why the test script was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the test script as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the test script is presumed to be the predominant language in the place the test script was created).</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.useContext"> </a><b>TestScript.useContext</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.useContext</td></tr>
+  <tr><td>Definition</td><td><p>The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate test script instances.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="metadatatypes.html#UsageContext">UsageContext</a></td></tr>
+  <tr><td>Requirements</td><td><p>Assist in searching for appropriate content.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.jurisdiction"> </a><b>TestScript.jurisdiction</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.jurisdiction</td></tr>
+  <tr><td>Definition</td><td><p>A legal or geographic region in which the test script is intended to be used.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-jurisdiction.html">Jurisdiction</a> (<a href="terminologies.html#extensible">Extensible</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>It may be possible for the test script to be used in jurisdictions other than those for which it was originally designed or intended.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.purpose"> </a><b>TestScript.purpose</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.purpose</td></tr>
+  <tr><td>Definition</td><td><p>Explanation of why this test script is needed and why it has been designed as it has.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#markdown">markdown</a></td></tr>
+  <tr><td>Comments</td><td><p>This element does not describe the usage of the test script. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this test script.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.copyright"> </a><b>TestScript.copyright</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.copyright</td></tr>
+  <tr><td>Definition</td><td><p>A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#markdown">markdown</a></td></tr>
+  <tr><td>Requirements</td><td><p>Consumers must be able to determine any legal restrictions on the use of the test script and/or its content.</p>
+</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>License; Restrictions</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.origin"> </a><b>TestScript.origin</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.origin</td></tr>
+  <tr><td>Definition</td><td><p>An abstract server used in operations within this test script in the origin element.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td><p>The purpose of this element is to define the profile of an origin element used elsewhere in the script.  Test engines could then use the origin-profile mapping to offer a filtered list of test systems that can serve as the sender for the interaction.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.origin.index"> </a><b>TestScript.origin.index</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.origin.index</td></tr>
+  <tr><td>Definition</td><td><p>Abstract name given to an origin server in this test script.  The name is provided as a number starting at 1.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#integer">integer</a></td></tr>
+  <tr><td>Comments</td><td><p>A given origin index (e.g. 1) can appear only once in the list (e.g. Origin 1 cannot be specified twice ... once as FormFiller and again as FormProcessor within the same script as that could get confusing during test configuration).</p>
+<p>Different origin indices could play the same actor in the same test script (e.g. You could have two different test systems acting as Form-Filler).</p>
+<p>The origin indices provided elsewhere in the test script must be one of these origin indices.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.origin.profile"> </a><b>TestScript.origin.profile</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.origin.profile</td></tr>
+  <tr><td>Definition</td><td><p>The type of origin profile the test system supports.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-testscript-profile-origin-types.html">Test script profile origin type</a> (<a href="terminologies.html#extensible">Extensible</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Coding">Coding</a></td></tr>
+  <tr><td>Meaning if Missing</td><td>FHIR-Client</td></tr>
+  <tr><td>Comments</td><td><p>Must be a "sender"/"client" profile.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.destination"> </a><b>TestScript.destination</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.destination</td></tr>
+  <tr><td>Definition</td><td><p>An abstract server used in operations within this test script in the destination element.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td><p>The purpose of this element is to define the profile of a destination element used elsewhere in the script.  Test engines could then use the destination-profile mapping to offer a filtered list of test systems that can serve as the receiver for the interaction.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.destination.index"> </a><b>TestScript.destination.index</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.destination.index</td></tr>
+  <tr><td>Definition</td><td><p>Abstract name given to a destination server in this test script.  The name is provided as a number starting at 1.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#integer">integer</a></td></tr>
+  <tr><td>Comments</td><td><p>A given destination index (e.g. 1) can appear only once in the list (e.g. Destination 1 cannot be specified twice ... once as Form-Manager and again as Form-Processor within the same script as that could get confusing during test configuration).</p>
+<p>Different destination indices could play the same actor in the same test script (e.g. You could have two different test systems acting as Form-Manager).</p>
+<p>The destination indices provided elsewhere in the test script must be one of these destination indices.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.destination.profile"> </a><b>TestScript.destination.profile</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.destination.profile</td></tr>
+  <tr><td>Definition</td><td><p>The type of destination profile the test system supports.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-testscript-profile-destination-types.html">Test script profile destination type</a> (<a href="terminologies.html#extensible">Extensible</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Coding">Coding</a></td></tr>
+  <tr><td>Meaning if Missing</td><td>FHIR-Server</td></tr>
+  <tr><td>Comments</td><td><p>Must be a "receiver"/"server" profile.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata"> </a><b>TestScript.metadata</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata</td></tr>
+  <tr><td>Definition</td><td><p>The required capability must exist and are assumed to function correctly on the FHIR server being tested.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-4</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>TestScript metadata capability SHALL contain required or validated or both.</td><td><span style="font-family: Courier New, monospace">capability.required.exists() or capability.validated.exists()</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.link"> </a><b>TestScript.metadata.link</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.link</td></tr>
+  <tr><td>Definition</td><td><p>A link to the FHIR specification that this test is covering.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.link.url"> </a><b>TestScript.metadata.link.url</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.link.url</td></tr>
+  <tr><td>Definition</td><td><p>URL to a particular requirement or feature within the FHIR specification.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#uri">uri</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.link.description"> </a><b>TestScript.metadata.link.description</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.link.description</td></tr>
+  <tr><td>Definition</td><td><p>Short description of the link.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.capability"> </a><b>TestScript.metadata.capability</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.capability</td></tr>
+  <tr><td>Definition</td><td><p>Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..*</td></tr>
+  <tr><td>Comments</td><td><p>When the metadata capabilities section is defined at TestScript.metadata or at TestScript.setup.metadata, and the server's conformance statement does not contain the elements defined in the minimal conformance statement, then all the tests in the TestScript are skipped.  When the metadata capabilities section is defined at TestScript.test.metadata and the server's conformance statement does not contain the elements defined in the minimal conformance statement, then only that test is skipped.  The "metadata.capabilities.required" and "metadata.capabilities.validated" elements only indicate whether the capabilities are the primary focus of the test script or not.  They do not impact the skipping logic.  Capabilities whose "metadata.capabilities.validated" flag is true are the primary focus of the test script.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.capability.required"> </a><b>TestScript.metadata.capability.required</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.capability.required</td></tr>
+  <tr><td>Definition</td><td><p>Whether or not the test execution will require the given capabilities of the server in order for this test script to execute.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.capability.validated"> </a><b>TestScript.metadata.capability.validated</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.capability.validated</td></tr>
+  <tr><td>Definition</td><td><p>Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.capability.description"> </a><b>TestScript.metadata.capability.description</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.capability.description</td></tr>
+  <tr><td>Definition</td><td><p>Description of the capabilities that this test script is requiring the server to support.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.capability.origin"> </a><b>TestScript.metadata.capability.origin</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.capability.origin</td></tr>
+  <tr><td>Definition</td><td><p>Which origin server these requirements apply to.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#integer">integer</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.capability.destination"> </a><b>TestScript.metadata.capability.destination</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.capability.destination</td></tr>
+  <tr><td>Definition</td><td><p>Which server these requirements apply to.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#integer">integer</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.capability.link"> </a><b>TestScript.metadata.capability.link</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.capability.link</td></tr>
+  <tr><td>Definition</td><td><p>Links to the FHIR specification that describes this interaction and the resources involved in more detail.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#uri">uri</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.metadata.capability.capabilities"> </a><b>TestScript.metadata.capability.capabilities</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.metadata.capability.capabilities</td></tr>
+  <tr><td>Definition</td><td><p>Minimum capabilities required of server for test script to execute successfully.   If server does not meet at a minimum the referenced capability statement, then all tests in this script are skipped.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#canonical">canonical</a>(<a href="capabilitystatement.html">CapabilityStatement</a>)</td></tr>
+  <tr><td>Comments</td><td><p>The conformance statement of the server has to contain at a minimum the contents of the reference pointed to by this element.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.fixture"> </a><b>TestScript.fixture</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.fixture</td></tr>
+  <tr><td>Definition</td><td><p>Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.fixture.autocreate"> </a><b>TestScript.fixture.autocreate</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.fixture.autocreate</td></tr>
+  <tr><td>Definition</td><td><p>Whether or not to implicitly create the fixture during setup. If true, the fixture is automatically created on each server being tested during setup, therefore no create operation is required for this fixture in the TestScript.setup section.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.fixture.autodelete"> </a><b>TestScript.fixture.autodelete</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.fixture.autodelete</td></tr>
+  <tr><td>Definition</td><td><p>Whether or not to implicitly delete the fixture during teardown. If true, the fixture is automatically deleted on each server being tested during teardown, therefore no delete operation is required for this fixture in the TestScript.teardown section.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.fixture.resource"> </a><b>TestScript.fixture.resource</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.fixture.resource</td></tr>
+  <tr><td>Definition</td><td><p>Reference to the resource (containing the contents of the resource needed for operations).</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html#Any">Any</a>)</td></tr>
+  <tr><td>Comments</td><td><p>See http://build.fhir.org/resourcelist.html for complete list of resource types.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.profile"> </a><b>TestScript.profile</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.profile</td></tr>
+  <tr><td>Definition</td><td><p>Reference to the profile to be used for validation.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html#Any">Any</a>)</td></tr>
+  <tr><td>Comments</td><td><p>See http://build.fhir.org/resourcelist.html for complete list of resource types.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable"> </a><b>TestScript.variable</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable</td></tr>
+  <tr><td>Definition</td><td><p>Variable is set based either on element value in response body or on header field value in the response headers.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td><p>Variables would be set based either on XPath/JSONPath expressions against fixtures (static and response), or headerField evaluations against response headers. If variable evaluates to nodelist or anything other than a primitive value, then test engine would report an error.  Variables would be used to perform clean replacements in "operation.params", "operation.requestHeader.value", and "operation.url" element values during operation calls and in "assert.value" during assertion evaluations. This limits the places that test engines would need to look for placeholders "${}".  Variables are scoped to the whole script. They are NOT evaluated at declaration. They are evaluated by test engine when used for substitutions in "operation.params", "operation.requestHeader.value", and "operation.url" element values during operation calls and in "assert.value" during assertion evaluations.  See example testscript-search.xml.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-3</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Variable can only contain one of expression, headerField or path.</td><td><span style="font-family: Courier New, monospace">expression.empty() or headerField.empty() or path.empty()</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable.name"> </a><b>TestScript.variable.name</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable.name</td></tr>
+  <tr><td>Definition</td><td><p>Descriptive name for this variable.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>Placeholders would contain the variable name wrapped in ${} in "operation.params", "operation.requestHeader.value", and "operation.url" elements.  These placeholders would need to be replaced by the variable value before the operation is executed.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable.defaultValue"> </a><b>TestScript.variable.defaultValue</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable.defaultValue</td></tr>
+  <tr><td>Definition</td><td><p>A default, hard-coded, or user-defined value for this variable.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>The purpose of this element is to allow for a pre-defined value that can be used as a default or as an override value. Test engines can optionally use this as a placeholder for user-defined execution time values.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable.description"> </a><b>TestScript.variable.description</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable.description</td></tr>
+  <tr><td>Definition</td><td><p>A free text natural language description of the variable and its purpose.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable.expression"> </a><b>TestScript.variable.expression</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable.expression</td></tr>
+  <tr><td>Definition</td><td><p>The FHIRPath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If headerField is defined, then the variable will be evaluated against the headers that sourceId is pointing to.  If expression or path is defined, then the variable will be evaluated against the fixture body that sourceId is pointing to.  It is an error to define any combination of expression, headerField and path.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable.headerField"> </a><b>TestScript.variable.headerField</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable.headerField</td></tr>
+  <tr><td>Definition</td><td><p>Will be used to grab the HTTP header field value from the headers that sourceId is pointing to.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If headerField is defined, then the variable will be evaluated against the headers that sourceId is pointing to.  If path is defined, then the variable will be evaluated against the fixture body that sourceId is pointing to.  It is an error to define both headerField and path.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable.hint"> </a><b>TestScript.variable.hint</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable.hint</td></tr>
+  <tr><td>Definition</td><td><p>Displayable text string with hint help information to the user when entering a default value.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable.path"> </a><b>TestScript.variable.path</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable.path</td></tr>
+  <tr><td>Definition</td><td><p>XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If headerField is defined, then the variable will be evaluated against the headers that sourceId is pointing to.  If expression or path is defined, then the variable will be evaluated against the fixture body that sourceId is pointing to.  It is an error to define any combination of expression, headerField and path.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.variable.sourceId"> </a><b>TestScript.variable.sourceId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.variable.sourceId</td></tr>
+  <tr><td>Definition</td><td><p>Fixture to evaluate the XPath/JSONPath expression or the headerField  against within this variable.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#id">id</a></td></tr>
+  <tr><td>Comments</td><td><p>This can be a statically defined fixture (at the top of the TestScript) or a dynamically set fixture created by responseId of the <code>action.operation</code> element.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup"> </a><b>TestScript.setup</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup</td></tr>
+  <tr><td>Definition</td><td><p>A series of required setup operations before tests are executed.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action"> </a><b>TestScript.setup.action</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action</td></tr>
+  <tr><td>Definition</td><td><p>Action would contain either an operation or an assertion.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..*</td></tr>
+  <tr><td>Comments</td><td><p>An action should contain either an operation or an assertion but not both.  It can contain any number of variables.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-1</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Setup action SHALL contain either an operation or assert but not both.</td><td><span style="font-family: Courier New, monospace">operation.exists() xor assert.exists()</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation"> </a><b>TestScript.setup.action.operation</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation</td></tr>
+  <tr><td>Definition</td><td><p>The operation to perform.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-7</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Setup operation SHALL contain either sourceId or targetId or params or url.</td><td><span style="font-family: Courier New, monospace">sourceId.exists() or (targetId.count() + url.count() + params.count() = 1) or (type.code in ('capabilities' |'search' | 'transaction' | 'history'))</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.type"> </a><b>TestScript.setup.action.operation.type</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.type</td></tr>
+  <tr><td>Definition</td><td><p>Server interaction or operation type.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-testscript-operation-codes.html">Test script operation code</a> (<a href="terminologies.html#extensible">Extensible</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Coding">Coding</a></td></tr>
+  <tr><td>Comments</td><td><p>See http://build.fhir.org/http.html for list of server interactions.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.resource"> </a><b>TestScript.setup.action.operation.resource</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.resource</td></tr>
+  <tr><td>Definition</td><td><p>The type of the resource.  See http://build.fhir.org/resourcelist.html.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-defined-types.html">Any defined Resource or Data Type name</a></td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>If "url" element is specified, then "targetId", "params", and "resource" elements will be ignored as "url" element will have everything needed for constructing the request url.  If "params" element is specified, then "targetId" element is ignored. For FHIR operations that require a resource (e.g. "read" and "vread" operations), the "resource" element must be specified when "params" element is specified.  If "url" and "params" elements are absent, then the request url will be constructed from "targetId" fixture if present. For "read" operation, the resource and id values will be extracted from "targetId" fixture and used to construct the url. For "vread" and "history" operations, the versionId value will also be used.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.label"> </a><b>TestScript.setup.action.operation.label</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.label</td></tr>
+  <tr><td>Definition</td><td><p>The label would be used for tracking/logging purposes by test engines.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>This has no impact on the verification itself.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.description"> </a><b>TestScript.setup.action.operation.description</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.description</td></tr>
+  <tr><td>Definition</td><td><p>The description would be used by test engines for tracking and reporting purposes.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>This has no impact on the verification itself.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.accept"> </a><b>TestScript.setup.action.operation.accept</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.accept</td></tr>
+  <tr><td>Definition</td><td><p>The mime-type to use for RESTful operation in the 'Accept' header.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-mimetypes.html">MimeType</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>If this is specified, then test engine shall set the 'Accept' header to the corresponding value.  If you'd like to explicitly set the 'Accept' to some other value then use the 'requestHeader' element.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.contentType"> </a><b>TestScript.setup.action.operation.contentType</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.contentType</td></tr>
+  <tr><td>Definition</td><td><p>The mime-type to use for RESTful operation in the 'Content-Type' header.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-mimetypes.html">MimeType</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>If this is specified, then test engine shall set the 'Content-Type' header to the corresponding value.  If you'd like to explicitly set the 'Content-Type' to some other value then use the 'requestHeader' element.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.destination"> </a><b>TestScript.setup.action.operation.destination</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.destination</td></tr>
+  <tr><td>Definition</td><td><p>The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#integer">integer</a></td></tr>
+  <tr><td>Comments</td><td><p>If multiple TestScript.destination elements are defined and operation.destination is undefined, test engine will report an error as it cannot determine what destination to use for the exchange.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.encodeRequestUrl"> </a><b>TestScript.setup.action.operation.encodeRequestUrl</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.encodeRequestUrl</td></tr>
+  <tr><td>Definition</td><td><p>Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.method"> </a><b>TestScript.setup.action.operation.method</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.method</td></tr>
+  <tr><td>Definition</td><td><p>The HTTP method the test engine MUST use for this operation regardless of any other operation details.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-http-operations.html">TestScriptRequestMethodCode</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>The primary purpose of the explicit HTTP method is support of  HTTP POST method invocation of the FHIR search. Other uses will include support of negative testing.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.origin"> </a><b>TestScript.setup.action.operation.origin</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.origin</td></tr>
+  <tr><td>Definition</td><td><p>The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#integer">integer</a></td></tr>
+  <tr><td>Comments</td><td><p>If absent, test engine will send the message.  When present, test engine will not send the request message but will wait for the request message to be sent from this origin server.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.params"> </a><b>TestScript.setup.action.operation.params</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.params</td></tr>
+  <tr><td>Definition</td><td><p>Path plus parameters after [type].  Used to set parts of the request URL explicitly.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If "url" element is specified, then "targetId", "params", and "resource" elements will be ignored as "url" element will have everything needed for constructing the request url.  If "params" element is specified, then "targetId" element is ignored.  For FHIR operations that require a resource (e.g. "read" and "vread" operations), the "resource" element must be specified when "params" element is specified.  If "url" and "params" elements are absent, then the request url will be constructed from "targetId" fixture if present.  For "read" operation, the resource and id values will be extracted from "targetId" fixture and used to construct the url.  For "vread" and "history" operations, the versionId value will also be used.   Test engines would append whatever is specified for "params" to the URL after the resource type without tampering with the string (beyond encoding the URL for HTTP).  The "params" element does not correspond exactly to "search parameters".  Nor is it the "path".  It corresponds to the part of the URL that comes after the [type] (when "resource" element is specified); e.g. It corresponds to "/[id]/_history/[vid] {?_format=[mime-type]}" in the following operation: GET [base]/[type]/[id]/_history/[vid] {?_format=[mime-type]}  Test engines do have to look for placeholders (${}) and replace the variable placeholders with the variable values at runtime before sending the request.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.requestHeader"> </a><b>TestScript.setup.action.operation.requestHeader</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.requestHeader</td></tr>
+  <tr><td>Definition</td><td><p>Header elements would be used to set HTTP headers.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td><p>This gives control to test-script writers to set headers explicitly based on test requirements.  It will allow for testing using:  - "If-Modified-Since" and "If-None-Match" headers.  See http://build.fhir.org/http.html#2.1.0.5.1 - "If-Match" header.  See http://build.fhir.org/http.html#2.1.0.11 - Conditional Create using "If-None-Exist".  See http://build.fhir.org/http.html#2.1.0.13.1 - Invalid "Content-Type" header for negative testing. - etc.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.requestHeader.field"> </a><b>TestScript.setup.action.operation.requestHeader.field</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.requestHeader.field</td></tr>
+  <tr><td>Definition</td><td><p>The HTTP header field e.g. "Accept".</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If header element is specified, then field is required.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.requestHeader.value"> </a><b>TestScript.setup.action.operation.requestHeader.value</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.requestHeader.value</td></tr>
+  <tr><td>Definition</td><td><p>The value of the header e.g. "application/fhir+xml".</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If header element is specified, then value is required.  No conversions will be done by the test engine e.g. "xml" to "application/fhir+xml".  The values will be set in HTTP headers "as-is".  Test engines do have to look for placeholders (${}) and replace the variable placeholders with the variable values at runtime before sending the request.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.requestId"> </a><b>TestScript.setup.action.operation.requestId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.requestId</td></tr>
+  <tr><td>Definition</td><td><p>The fixture id (maybe new) to map to the request.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#id">id</a></td></tr>
+  <tr><td>Comments</td><td><p>If a requestId is supplied, then the resulting request (both headers and body) is mapped to the fixture ID (which may be entirely new and previously undeclared) designated by "requestId".  If requestId is not specified, it is the test engine's responsibility to store the request and use it as the requestId in subsequent assertions when assertion path and/or headerField is specified, direction is equal to request, and the requestId in not specified.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.responseId"> </a><b>TestScript.setup.action.operation.responseId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.responseId</td></tr>
+  <tr><td>Definition</td><td><p>The fixture id (maybe new) to map to the response.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#id">id</a></td></tr>
+  <tr><td>Comments</td><td><p>If a responseId is supplied, and the server responds, then the resulting response (both headers and body) is mapped to the fixture ID (which may be entirely new and previously undeclared) designated by "responseId".  If responseId is not specified, it is the test engine's responsibility to store the response and use it as the responseId in subsequent assertions when assertion path and/or headerField is specified and the responseId is not specified.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.sourceId"> </a><b>TestScript.setup.action.operation.sourceId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.sourceId</td></tr>
+  <tr><td>Definition</td><td><p>The id of the fixture used as the body of a PUT or POST request.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#id">id</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.targetId"> </a><b>TestScript.setup.action.operation.targetId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.targetId</td></tr>
+  <tr><td>Definition</td><td><p>Id of fixture used for extracting the [id],  [type], and [vid] for GET requests.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#id">id</a></td></tr>
+  <tr><td>Comments</td><td><p>If "url" element is specified, then "targetId", "params", and "resource" elements will be ignored as "url" element will have everything needed for constructing the request url.  If "params" element is specified, then "targetId" element is ignored.  For FHIR operations that require a resource (e.g. "read" and "vread" operations), the "resource" element must be specified when "params" element is specified.  If "url" and "params" elements are absent, then the request url will be constructed from "targetId" fixture if present.  For "read" operation, the resource and id values will be extracted from "targetId" fixture and used to construct the url.  For "vread" and "history" operations, the versionId value will also be used.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.operation.url"> </a><b>TestScript.setup.action.operation.url</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.operation.url</td></tr>
+  <tr><td>Definition</td><td><p>Complete request URL.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>Used to set the request URL explicitly.  If "url" element is defined, then "targetId", "resource", and "params" elements will be ignored.  Test engines would use whatever is specified in "url" without tampering with the string (beyond encoding the URL for HTTP).  Test engines do have to look for placeholders (${}) and replace the variable placeholders with the variable values at runtime before sending the request.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert"> </a><b>TestScript.setup.action.assert</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert</td></tr>
+  <tr><td>Definition</td><td><p>Evaluates the results of previous operations to determine if the server under test behaves appropriately.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td>Comments</td><td><p>In order to evaluate an assertion, the request, response, and results of the most recently executed operation must always be maintained by the test engine.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-5</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Only a single assertion SHALL be present within setup action assert element.</td><td><span style="font-family: Courier New, monospace">extension.exists() or (contentType.count() + expression.count() + headerField.count() + minimumId.count() + navigationLinks.count() + path.count() + requestMethod.count() + resource.count() + responseCode.count() + response.count()  + validateProfileId.count() &lt;=1)</span></td></tr><tr><td width="60px"><b title="Formal Invariant Identifier">tst-10</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Setup action assert SHALL contain either compareToSourceId and compareToSourceExpression, compareToSourceId and compareToSourcePath or neither.</td><td><span style="font-family: Courier New, monospace">compareToSourceId.empty() xor (compareToSourceExpression.exists() or compareToSourcePath.exists())</span></td></tr><tr><td width="60px"><b title="Formal Invariant Identifier">tst-12</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Setup action assert response and responseCode SHALL be empty when direction equals request</td><td><span style="font-family: Courier New, monospace">(response.empty() and responseCode.empty() and direction = 'request') or direction.empty() or direction = 'response'</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.label"> </a><b>TestScript.setup.action.assert.label</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.label</td></tr>
+  <tr><td>Definition</td><td><p>The label would be used for tracking/logging purposes by test engines.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>This has no impact on the verification itself.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.description"> </a><b>TestScript.setup.action.assert.description</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.description</td></tr>
+  <tr><td>Definition</td><td><p>The description would be used by test engines for tracking and reporting purposes.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>This has no impact on the verification itself.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.direction"> </a><b>TestScript.setup.action.assert.direction</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.direction</td></tr>
+  <tr><td>Definition</td><td><p>The direction to use for the assertion.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-assert-direction-codes.html">AssertionDirectionType</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.compareToSourceId"> </a><b>TestScript.setup.action.assert.compareToSourceId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.compareToSourceId</td></tr>
+  <tr><td>Definition</td><td><p>Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.compareToSourceExpression"> </a><b>TestScript.setup.action.assert.compareToSourceExpression</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.compareToSourceExpression</td></tr>
+  <tr><td>Definition</td><td><p>The FHIRPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>Thefhirpath expression to be evaluated against the expected fixture to compare to. Ignored if "assert.value" is used. The evaluation will be done before the assertion is evaluated.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.compareToSourcePath"> </a><b>TestScript.setup.action.assert.compareToSourcePath</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.compareToSourcePath</td></tr>
+  <tr><td>Definition</td><td><p>XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>The XPath or JSONPath expression to be evaluated against the expected fixture to compare to. Ignored if "assert.value" is used. The evaluation will be done before the assertion is evaluated.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.contentType"> </a><b>TestScript.setup.action.assert.contentType</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.contentType</td></tr>
+  <tr><td>Definition</td><td><p>The mime-type contents to compare against the request or response message 'Content-Type' header.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-mimetypes.html">MimeType</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>If this is specified, then test engine shall confirm that the content-type of the last operation's headers is set to this value.  If "assert.sourceId" element is specified, then the evaluation will be done against the headers mapped to that sourceId (and not the last operation's headers).  If you'd like to have more control over the string, then use 'assert.headerField' instead.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.expression"> </a><b>TestScript.setup.action.assert.expression</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.expression</td></tr>
+  <tr><td>Definition</td><td><p>The FHIRPath expression to be evaluated against the request or response message contents - HTTP headers and payload.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If both "expression" and a "fixtureId" are specified, then the expression will be evaluated against the request or response body mapped to the fixtureId.  If "expression" is specified and a "fixtureId" is not, then the expression will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.headerField"> </a><b>TestScript.setup.action.assert.headerField</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.headerField</td></tr>
+  <tr><td>Definition</td><td><p>The HTTP header field name e.g. 'Location'.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If "headerField" is specified then "value" must be specified.  If "sourceId" is not specified, then "headerField" will be evaluated against the last operation's response headers.  Test engines are to keep track of the last operation's response body and response headers.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.minimumId"> </a><b>TestScript.setup.action.assert.minimumId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.minimumId</td></tr>
+  <tr><td>Definition</td><td><p>The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>Asserts that the response contains all the element/content in another fixture pointed to by minimumId.  This can be a statically defined fixture or one that is dynamically set via responseId.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.navigationLinks"> </a><b>TestScript.setup.action.assert.navigationLinks</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.navigationLinks</td></tr>
+  <tr><td>Definition</td><td><p>Whether or not the test execution performs validation on the bundle navigation links.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td>Comments</td><td><p>Asserts that the Bundle contains first, last, and next links.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.operator"> </a><b>TestScript.setup.action.assert.operator</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.operator</td></tr>
+  <tr><td>Definition</td><td><p>The operator type defines the conditional behavior of the assert. If not defined, the default is equals.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-assert-operator-codes.html">AssertionOperatorType</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. <code>&lt;code&gt; &lt;assert&gt; &lt;operator value="in" /&gt; &lt;responseCode value="200,201,204" /&gt; &lt;/assert&gt; &lt;assert&gt; &lt;operator value="notEquals" /&gt; &lt;response value="okay"/&gt; &lt;/assert&gt; &lt;assert&gt; &lt;operator value="greaterThan" /&gt; &lt;responseHeader&gt; &lt;field value="Content-Length" /&gt; &lt;value value="0" /&gt; &lt;/responseHeader/&gt; &lt;/assert&gt; &lt;/code&gt;</code>.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.path"> </a><b>TestScript.setup.action.assert.path</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.path</td></tr>
+  <tr><td>Definition</td><td><p>The XPath or JSONPath expression to be evaluated against the fixture representing the response received from server.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.requestMethod"> </a><b>TestScript.setup.action.assert.requestMethod</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.requestMethod</td></tr>
+  <tr><td>Definition</td><td><p>The request method or HTTP operation code to compare against that used by the client system under test.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-http-operations.html">TestScriptRequestMethodCode</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>If "requestMethod" is specified then it will be used in place of "value". The "requestMethod" will evaluate against the last operation's request HTTP operation.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.requestURL"> </a><b>TestScript.setup.action.assert.requestURL</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.requestURL</td></tr>
+  <tr><td>Definition</td><td><p>The value to use in a comparison against the request URL path string.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>If "requestURL" is specified then it will be used in place of "value". The "requestURL" will evaluate against the last operation's full request URL path string.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.resource"> </a><b>TestScript.setup.action.assert.resource</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.resource</td></tr>
+  <tr><td>Definition</td><td><p>The type of the resource.  See http://build.fhir.org/resourcelist.html.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-defined-types.html">Any defined Resource or Data Type name</a></td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>This will be expected resource type in response body e.g. in read, vread, search, etc.  See http://build.fhir.org/resourcelist.html for complete list of resource types; e.g. &lt;assert &gt; &lt;resourceType value="Patient" &lt;/assert&gt;.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.response"> </a><b>TestScript.setup.action.assert.response</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.response</td></tr>
+  <tr><td>Definition</td><td><p>okay | created | noContent | notModified | bad | forbidden | notFound | methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-assert-response-code-types.html">AssertionResponseTypes</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>This is a shorter way of achieving similar verifications via "assert.responseCode".  If you need more control, then use "assert.responseCode"  e.g. &lt;assert&gt;  &lt;contentType value="json" /&gt;  &lt;response value="okay"/&gt; &lt;/assert&gt;.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.responseCode"> </a><b>TestScript.setup.action.assert.responseCode</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.responseCode</td></tr>
+  <tr><td>Definition</td><td><p>The value of the HTTP response code to be tested.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>To be used with "operator" attribute value. Asserts that the response code equals this value if "operator" is not specified.   If the operator is "in" or "notIn" then the responseCode would be a comma-separated list of values e.g. "200,201". Otherwise, it's expected to be a numeric value.   If "fixture" is not specified, then the "responseBodyId" value of the last operation is assumed.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.sourceId"> </a><b>TestScript.setup.action.assert.sourceId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.sourceId</td></tr>
+  <tr><td>Definition</td><td><p>Fixture to evaluate the XPath/JSONPath expression or the headerField  against.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#id">id</a></td></tr>
+  <tr><td>Comments</td><td><p>This can be a statically defined fixture (at the top of the testscript) or a dynamically set fixture created by responseId of the action.operation element.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.validateProfileId"> </a><b>TestScript.setup.action.assert.validateProfileId</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.validateProfileId</td></tr>
+  <tr><td>Definition</td><td><p>The ID of the Profile to validate against.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#id">id</a></td></tr>
+  <tr><td>Comments</td><td><p>The ID of a Profile fixture. Asserts that the response is valid according to the Profile specified by validateProfileId.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.value"> </a><b>TestScript.setup.action.assert.value</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.value</td></tr>
+  <tr><td>Definition</td><td><p>The value to compare to.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>The string-representation of a number, string, or boolean that is expected.  Test engines do have to look for placeholders (${}) and replace the variable placeholders with the variable values at runtime before comparing this value to the actual value.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.setup.action.assert.warningOnly"> </a><b>TestScript.setup.action.assert.warningOnly</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.setup.action.assert.warningOnly</td></tr>
+  <tr><td>Definition</td><td><p>Whether or not the test execution will produce a warning only on error for this assert.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td>Comments</td><td><p>If this element is specified and it is true, then assertion failures can be logged by test engine but should not stop the test script execution from proceeding.  There are likely cases where the spec is not clear on what should happen. If the spec says something is optional (maybe a response header for example), but a server doesn’t do it, we could choose to issue a warning.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.test"> </a><b>TestScript.test</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.test</td></tr>
+  <tr><td>Definition</td><td><p>A test in this script.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.test.name"> </a><b>TestScript.test.name</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.test.name</td></tr>
+  <tr><td>Definition</td><td><p>The name of this test used for tracking/logging purposes by test engines.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.test.description"> </a><b>TestScript.test.description</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.test.description</td></tr>
+  <tr><td>Definition</td><td><p>A short description of the test used by test engines for tracking and reporting purposes.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.test.action"> </a><b>TestScript.test.action</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.test.action</td></tr>
+  <tr><td>Definition</td><td><p>Action would contain either an operation or an assertion.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..*</td></tr>
+  <tr><td>Comments</td><td><p>An action should contain either an operation or an assertion but not both.  It can contain any number of variables.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-2</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Test action SHALL contain either an operation or assert but not both.</td><td><span style="font-family: Courier New, monospace">operation.exists() xor assert.exists()</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.test.action.operation"> </a><b>TestScript.test.action.operation</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.test.action.operation</td></tr>
+  <tr><td>Definition</td><td><p>An operation would involve a REST request to a server.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="#TestScript.setup.action.operation">See TestScript.setup.action.operation</a></td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-8</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Test operation SHALL contain either sourceId or targetId or params or url.</td><td><span style="font-family: Courier New, monospace">sourceId.exists() or (targetId.count() + url.count() + params.count() = 1) or (type.code in ('capabilities' | 'search' | 'transaction' | 'history'))</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.test.action.assert"> </a><b>TestScript.test.action.assert</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.test.action.assert</td></tr>
+  <tr><td>Definition</td><td><p>Evaluates the results of previous operations to determine if the server under test behaves appropriately.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="#TestScript.setup.action.assert">See TestScript.setup.action.assert</a></td></tr>
+  <tr><td>Comments</td><td><p>In order to evaluate an assertion, the request, response, and results of the most recently executed operation must always be maintained by the test engine.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-6</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Only a single assertion SHALL be present within test action assert element.</td><td><span style="font-family: Courier New, monospace">extension.exists() or (contentType.count() + expression.count() + headerField.count() + minimumId.count() + navigationLinks.count() + path.count() + requestMethod.count() + resource.count() + responseCode.count() + response.count() + validateProfileId.count() &lt;=1)</span></td></tr><tr><td width="60px"><b title="Formal Invariant Identifier">tst-11</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Test action assert SHALL contain either compareToSourceId and compareToSourceExpression, compareToSourceId and compareToSourcePath or neither.</td><td><span style="font-family: Courier New, monospace">compareToSourceId.empty() xor (compareToSourceExpression.exists() or compareToSourcePath.exists())</span></td></tr><tr><td width="60px"><b title="Formal Invariant Identifier">tst-13</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Test action assert response and response and responseCode SHALL be empty when direction equals request</td><td><span style="font-family: Courier New, monospace">(response.empty() and responseCode.empty() and direction = 'request') or direction.empty() or direction = 'response'</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.teardown"> </a><b>TestScript.teardown</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.teardown</td></tr>
+  <tr><td>Definition</td><td><p>A series of operations required to clean up after all the tests are executed (successfully or otherwise).</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.teardown.action"> </a><b>TestScript.teardown.action</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.teardown.action</td></tr>
+  <tr><td>Definition</td><td><p>The teardown action will only contain an operation.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..*</td></tr>
+  <tr><td>Comments</td><td><p>An action should contain either an operation or an assertion but not both.  It can contain any number of variables.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="TestScript.teardown.action.operation"> </a><b>TestScript.teardown.action.operation</b></td></tr>
+  <tr><td>Element Id</td><td>TestScript.teardown.action.operation</td></tr>
+  <tr><td>Definition</td><td><p>An operation would involve a REST request to a server.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="#TestScript.setup.action.operation">See TestScript.setup.action.operation</a></td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">tst-9</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Teardown operation SHALL contain either sourceId or targetId or params or url.</td><td><span style="font-family: Courier New, monospace">sourceId.exists() or (targetId.count() + url.count() + params.count() = 1) or (type.code in ('capabilities' | 'search' | 'transaction' | 'history'))</span></td></tr></table>
+</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Ftestscript-definitions.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Ftestscript-definitions.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Communication" status="changed">
+      <element path="Communication.instantiatesCanonical" status="new"/>
+      <element path="Communication.instantiatesUri" status="new"/>
+      <element path="Communication.inResponseTo" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Communication.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/event-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/event-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Communication.statusReason" status="new"/>
+      <element path="Communication.priority" status="new"/>
+      <element new-max="1" old-max="*" path="Communication.topic">
+         <removed-type name="Reference(Resource)"/>
+         <added-type name="CodeableConcept"/>
+      </element>
+      <element path="Communication.about" status="new"/>
+      <element path="Communication.encounter" status="new"/>
+      <element path="Communication.recipient">
+         <removed-type name="Reference(Device | Organization | Patient | Practitioner | RelatedPerson | Group)"/>
+         <added-type name="Reference(Device | Organization | Patient | Practitioner | PractitionerRole | RelatedPerson | Group | CareTeam | HealthcareService)"/>
+      </element>
+      <element path="Communication.sender">
+         <removed-type name="Reference(Device | Organization | Patient | Practitioner | RelatedPerson)"/>
+         <added-type name="Reference(Device | Organization | Patient | Practitioner | PractitionerRole | RelatedPerson | HealthcareService)"/>
+      </element>
+      <element path="Communication.reasonReference">
+         <removed-type name="Reference(Condition | Observation)"/>
+         <added-type name="Reference(Condition | Observation | DiagnosticReport | DocumentReference)"/>
+      </element>
+      <element path="Communication.definition" status="deleted"/>
+      <element path="Communication.notDone" status="deleted"/>
+      <element path="Communication.notDoneReason" status="deleted"/>
+      <element path="Communication.context" status="deleted"/>
+   </type>
+</difference>

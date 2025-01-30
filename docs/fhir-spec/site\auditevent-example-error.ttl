@@ -1,0 +1,130 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/AuditEvent/example-error> a fhir:AuditEvent;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-error"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Recording that an error has happened due to a client requesting that an Observation resource be Created on the Patient endpoint. Note that the OperationOutcome from failed transaction is recorded as an AuditEvent.entity.</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:OperationOutcome;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "o1" ];
+     fhir:OperationOutcome.issue [
+       fhir:index 0;
+       fhir:OperationOutcome.issue.severity [ fhir:value "error" ];
+       fhir:OperationOutcome.issue.code [ fhir:value "invalid" ];
+       fhir:OperationOutcome.issue.details [
+         fhir:CodeableConcept.text [ fhir:value "Invalid pointer operation" ]
+       ]
+     ]
+  ];
+  fhir:AuditEvent.type [
+     fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/audit-event-type" ];
+     fhir:Coding.code [ fhir:value "rest" ];
+     fhir:Coding.display [ fhir:value "Restful Operation" ]
+  ];
+  fhir:AuditEvent.subtype [
+     fhir:index 0;
+     fhir:Coding.system [ fhir:value "http://hl7.org/fhir/restful-interaction" ];
+     fhir:Coding.code [ fhir:value "create" ];
+     fhir:Coding.display [ fhir:value "create" ]
+  ];
+  fhir:AuditEvent.action [ fhir:value "C"];
+  fhir:AuditEvent.recorded [ fhir:value "2017-09-07T23:42:24Z"^^xsd:dateTime];
+  fhir:AuditEvent.outcome [ fhir:value "8"];
+  fhir:AuditEvent.outcomeDesc [ fhir:value "Invalid request to create an Operation resource on the Patient endpoint."];
+  fhir:AuditEvent.agent [
+     fhir:index 0;
+     fhir:AuditEvent.agent.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/extra-security-role-type" ];
+         fhir:Coding.code [ fhir:value "humanuser" ];
+         fhir:Coding.display [ fhir:value "human user" ]
+       ]
+     ];
+     fhir:AuditEvent.agent.who [
+       fhir:Reference.identifier [
+         fhir:Identifier.value [ fhir:value "95" ]
+       ]
+     ];
+     fhir:AuditEvent.agent.altId [ fhir:value "601847123" ];
+     fhir:AuditEvent.agent.name [ fhir:value "Grahame Grieve" ];
+     fhir:AuditEvent.agent.requestor [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 1;
+     fhir:AuditEvent.agent.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://dicom.nema.org/resources/ontology/DCM" ];
+         fhir:Coding.code [ fhir:value "110153" ];
+         fhir:Coding.display [ fhir:value "Source Role ID" ]
+       ]
+     ];
+     fhir:AuditEvent.agent.who [
+       fhir:Reference.identifier [
+         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.4.2" ];
+         fhir:Identifier.value [ fhir:value "2.16.840.1.113883.4.2" ]
+       ]
+     ];
+     fhir:AuditEvent.agent.altId [ fhir:value "6580" ];
+     fhir:AuditEvent.agent.requestor [ fhir:value "false"^^xsd:boolean ];
+     fhir:AuditEvent.agent.network [
+       fhir:AuditEvent.agent.network.address [ fhir:value "Workstation1.ehr.familyclinic.com" ];
+       fhir:AuditEvent.agent.network.type [ fhir:value "1" ]
+     ]
+  ];
+  fhir:AuditEvent.source [
+     fhir:AuditEvent.source.site [ fhir:value "Cloud" ];
+     fhir:AuditEvent.source.observer [
+       fhir:Reference.identifier [
+         fhir:Identifier.value [ fhir:value "hl7connect.healthintersections.com.au" ]
+       ]
+     ];
+     fhir:AuditEvent.source.type [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/security-source-type" ];
+       fhir:Coding.code [ fhir:value "3" ];
+       fhir:Coding.display [ fhir:value "Web Server" ]
+     ]
+  ];
+  fhir:AuditEvent.entity [
+     fhir:index 0;
+     fhir:AuditEvent.entity.type [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/audit-entity-type" ];
+       fhir:Coding.code [ fhir:value "2" ];
+       fhir:Coding.display [ fhir:value "System Object" ]
+     ];
+     fhir:AuditEvent.entity.detail [
+       fhir:index 0;
+       fhir:AuditEvent.entity.detail.type [ fhir:value "requested transaction" ];
+       fhir:AuditEvent.entity.detail.valueString [ fhir:value "http POST ..... " ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:AuditEvent.entity.what [
+       fhir:Reference.reference [ fhir:value "#o1" ]
+     ];
+     fhir:AuditEvent.entity.type [
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/resource-types" ];
+       fhir:Coding.code [ fhir:value "OperationOutcome" ];
+       fhir:Coding.display [ fhir:value "OperationOutcome" ]
+     ];
+     fhir:AuditEvent.entity.description [ fhir:value "transaction failed" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/AuditEvent/example-error.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/AuditEvent/example-error.ttl> .
+
+# -------------------------------------------------------------------------------------
+

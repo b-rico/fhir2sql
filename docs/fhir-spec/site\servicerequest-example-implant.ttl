@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/example-implant> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-implant"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-implant</p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>code</b>: Implant Pacemaker <span>(Details : {SNOMED CT code '25267002' = 'Insertion of intracardiac pacemaker', given as 'Insertion of intracardiac pacemaker (procedure)'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>authoredOn</b>: 30/03/2015</p><p><b>requester</b>: <a>Dr. Beverly Crusher</a></p><p><b>performer</b>: <a>Dr Cecil Surgeon</a></p><p><b>reasonCode</b>: Bradycardia <span>(Details )</span></p></div>"
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:25267002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "25267002" ];
+       fhir:Coding.display [ fhir:value "Insertion of intracardiac pacemaker (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Implant Pacemaker" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2015-03-30"^^xsd:date];
+  fhir:ServiceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809>;
+     fhir:Reference.reference [ fhir:value "Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809" ];
+     fhir:Reference.display [ fhir:value "Dr. Beverly Crusher" ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr Cecil Surgeon" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Bradycardia" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/example-implant.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/example-implant.ttl> .
+
+# -------------------------------------------------------------------------------------
+

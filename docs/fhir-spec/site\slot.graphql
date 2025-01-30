@@ -1,0 +1,142 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Slot {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  serviceCategory: [CodeableConcept]
+  serviceType: [CodeableConcept]
+  specialty: [CodeableConcept]
+  appointmentType: CodeableConcept
+  schedule: Reference!
+  status: code  _status: ElementBase
+  start: instant  _start: ElementBase
+  end: instant  _end: ElementBase
+  overbooked: Boolean  _overbooked: ElementBase
+  comment: String  _comment: ElementBase
+}
+
+input Slot {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  serviceCategory: [CodeableConcept]
+  serviceType: [CodeableConcept]
+  specialty: [CodeableConcept]
+  appointmentType: CodeableConcept
+  schedule: Reference!
+  status: code  _status: ElementBase
+  start: instant  _start: ElementBase
+  end: instant  _end: ElementBase
+  overbooked: Boolean  _overbooked: ElementBase
+  comment: String  _comment: ElementBase
+}
+
+type SlotReadType {
+  Slot(id : ID!) : Slot
+}
+
+type SlotListType {
+  SlotList(_filter : String
+    appointment_type : [token]
+    identifier : [token]
+    schedule : [reference]
+    service_category : [token]
+    service_type : [token]
+    specialty : [token]
+    start : [date]
+    status : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Slot]
+}
+
+type SlotConnectionType {
+  SlotConection(_filter : String
+    appointment_type : [token]
+    identifier : [token]
+    schedule : [reference]
+    service_category : [token]
+    service_type : [token]
+    specialty : [token]
+    start : [date]
+    status : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : SlotConnection
+}
+
+type SlotConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [SlotEdge]
+}
+
+type SlotEdge {
+  mode : String
+  score : Float
+  resource : Slot
+}
+
+type SlotCreateType {
+  SlotCreate(resource : Slot) : SlotCreation
+}
+
+type SlotCreation {
+  location : String
+  resource : Slot
+  information : OperationOutcome
+}
+
+type SlotUpdateType {
+  SlotUpdate(id : IDresource : Slot) : SlotUpdate
+}
+
+type SlotUpdate {
+  resource : Slot
+  information : OperationOutcome
+}
+
+type SlotDeleteType {
+  SlotDelete(id : ID) : SlotDelete
+}
+
+type SlotDelete {
+  information : OperationOutcome
+}
+

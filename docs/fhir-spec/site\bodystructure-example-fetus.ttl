@@ -1,0 +1,46 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/BodyStructure/fetus> a fhir:BodyStructure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "fetus"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: fetus</p><p><b>identifier</b>: 12345</p><p><b>location</b>: Fetus <span>(Details : {SNOMED CT code '83418008' = 'Fetus', given as 'Entire fetus (body structure)'})</span></p><p><b>description</b>: EDD 1/1/2017 confirmation by LMP</p><p><b>patient</b>: <a>Patient/example</a></p></div>"
+  ];
+  fhir:BodyStructure.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://goodhealth.org/bodystructure/identifiers" ];
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:BodyStructure.location [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:83418008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "83418008" ];
+       fhir:Coding.display [ fhir:value "Entire fetus (body structure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Fetus" ]
+  ];
+  fhir:BodyStructure.description [ fhir:value "EDD 1/1/2017 confirmation by LMP"];
+  fhir:BodyStructure.patient [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/BodyStructure/fetus.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/BodyStructure/fetus.ttl> .
+
+# -------------------------------------------------------------------------------------
+

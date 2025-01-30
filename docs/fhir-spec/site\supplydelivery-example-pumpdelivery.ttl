@@ -1,0 +1,44 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/SupplyDelivery/pumpdelivery> a fhir:SupplyDelivery;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "pumpdelivery"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">[Put rendering here]</div>"
+  ];
+  fhir:SupplyDelivery.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "98398459409" ];
+     fhir:Identifier.assigner [
+       fhir:Reference.display [ fhir:value "SupplierDeliveryNr" ]
+     ]
+  ];
+  fhir:SupplyDelivery.status [ fhir:value "in-progress"];
+  fhir:SupplyDelivery.patient [
+     fhir:Reference.display [ fhir:value "Mr. Belpit" ]
+  ];
+  fhir:SupplyDelivery.supplier [
+     fhir:Reference.display [ fhir:value "ACME distribution" ]
+  ];
+  fhir:SupplyDelivery.destination [
+     fhir:Reference.display [ fhir:value "Home care dept" ]
+  ];
+  fhir:SupplyDelivery.receiver [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Nurse Smith" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/SupplyDelivery/pumpdelivery.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/SupplyDelivery/pumpdelivery.ttl> .
+
+# -------------------------------------------------------------------------------------
+

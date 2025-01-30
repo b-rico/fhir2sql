@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MolecularSequence/breastcancer> a fhir:MolecularSequence;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "breastcancer"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: breastcancer</p><p><b>type</b>: rna</p><p><b>coordinateSystem</b>: 0</p><p><b>patient</b>: <a>Patient/brcapat</a></p><h3>ReferenceSeqs</h3><table><tr><td>-</td><td><b>ReferenceSeqId</b></td><td><b>WindowStart</b></td><td><b>WindowEnd</b></td></tr><tr><td>*</td><td>Homo sapiens BRCA2, DNA repair associated (BRCA2), mRNA <span>(Details : {http://www.ncbi.nlm.nih.gov/nuccore/ code 'NM_000059.3' = 'NM_000059.3', given as 'Homo sapiens BRCA2, DNA repair associated (BRCA2), mRNA'})</span></td><td>101488058</td><td>101499444</td></tr></table><h3>Variants</h3><table><tr><td>-</td><td><b>Start</b></td><td><b>End</b></td><td><b>ObservedAllele</b></td><td><b>ReferenceAllele</b></td></tr><tr><td>*</td><td>32316186</td><td>32316187</td><td>A</td><td>C</td></tr></table></div>"
+  ];
+  fhir:MolecularSequence.type [ fhir:value "rna"];
+  fhir:MolecularSequence.coordinateSystem [ fhir:value "0"^^xsd:integer];
+  fhir:MolecularSequence.patient [
+     fhir:link <http://hl7.org/fhir/Patient/brcapat>;
+     fhir:Reference.reference [ fhir:value "Patient/brcapat" ]
+  ];
+  fhir:MolecularSequence.referenceSeq [
+     fhir:MolecularSequence.referenceSeq.referenceSeqId [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.ncbi.nlm.nih.gov/nuccore/" ];
+         fhir:Coding.code [ fhir:value "NM_000059.3" ];
+         fhir:Coding.display [ fhir:value "Homo sapiens BRCA2, DNA repair associated (BRCA2), mRNA" ]
+       ]
+     ];
+     fhir:MolecularSequence.referenceSeq.windowStart [ fhir:value "101488058"^^xsd:integer ];
+     fhir:MolecularSequence.referenceSeq.windowEnd [ fhir:value "101499444"^^xsd:integer ]
+  ];
+  fhir:MolecularSequence.variant [
+     fhir:index 0;
+     fhir:MolecularSequence.variant.start [ fhir:value "32316186"^^xsd:integer ];
+     fhir:MolecularSequence.variant.end [ fhir:value "32316187"^^xsd:integer ];
+     fhir:MolecularSequence.variant.observedAllele [ fhir:value "A" ];
+     fhir:MolecularSequence.variant.referenceAllele [ fhir:value "C" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/brcapat> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MolecularSequence/breastcancer.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MolecularSequence/breastcancer.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,190 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicinalProductAuthorization {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  subject: Reference
+  country: [CodeableConcept]
+  jurisdiction: [CodeableConcept]
+  status: CodeableConcept
+  statusDate: dateTime  _statusDate: ElementBase
+  restoreDate: dateTime  _restoreDate: ElementBase
+  validityPeriod: Period
+  dataExclusivityPeriod: Period
+  dateOfFirstAuthorization: dateTime  _dateOfFirstAuthorization: ElementBase
+  internationalBirthDate: dateTime  _internationalBirthDate: ElementBase
+  legalBasis: CodeableConcept
+  jurisdictionalAuthorization: [MedicinalProductAuthorizationJurisdictionalAuthorization]
+  holder: Reference
+  regulator: Reference
+  procedure: MedicinalProductAuthorizationProcedure
+}
+
+type MedicinalProductAuthorizationJurisdictionalAuthorization {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  country: CodeableConcept
+  jurisdiction: [CodeableConcept]
+  legalStatusOfSupply: CodeableConcept
+  validityPeriod: Period
+}
+
+type MedicinalProductAuthorizationProcedure {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  type: CodeableConcept!
+  datePeriod: Period
+  dateDateTime: dateTime  _dateDateTime: ElementBase
+  application: [MedicinalProductAuthorizationProcedure]
+}
+
+input MedicinalProductAuthorization {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  subject: Reference
+  country: [CodeableConcept]
+  jurisdiction: [CodeableConcept]
+  status: CodeableConcept
+  statusDate: dateTime  _statusDate: ElementBase
+  restoreDate: dateTime  _restoreDate: ElementBase
+  validityPeriod: Period
+  dataExclusivityPeriod: Period
+  dateOfFirstAuthorization: dateTime  _dateOfFirstAuthorization: ElementBase
+  internationalBirthDate: dateTime  _internationalBirthDate: ElementBase
+  legalBasis: CodeableConcept
+  jurisdictionalAuthorization: [MedicinalProductAuthorizationJurisdictionalAuthorization]
+  holder: Reference
+  regulator: Reference
+  procedure: MedicinalProductAuthorizationProcedure
+}
+
+input MedicinalProductAuthorizationJurisdictionalAuthorization {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  country: CodeableConcept
+  jurisdiction: [CodeableConcept]
+  legalStatusOfSupply: CodeableConcept
+  validityPeriod: Period
+}
+
+input MedicinalProductAuthorizationProcedure {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  type: CodeableConcept!
+  datePeriod: Period
+  dateDateTime: dateTime  _dateDateTime: ElementBase
+  application: [MedicinalProductAuthorizationProcedure]
+}
+
+type MedicinalProductAuthorizationReadType {
+  MedicinalProductAuthorization(id : ID!) : MedicinalProductAuthorization
+}
+
+type MedicinalProductAuthorizationListType {
+  MedicinalProductAuthorizationList(_filter : String
+    country : [token]
+    holder : [reference]
+    identifier : [token]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicinalProductAuthorization]
+}
+
+type MedicinalProductAuthorizationConnectionType {
+  MedicinalProductAuthorizationConection(_filter : String
+    country : [token]
+    holder : [reference]
+    identifier : [token]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicinalProductAuthorizationConnection
+}
+
+type MedicinalProductAuthorizationConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicinalProductAuthorizationEdge]
+}
+
+type MedicinalProductAuthorizationEdge {
+  mode : String
+  score : Float
+  resource : MedicinalProductAuthorization
+}
+
+type MedicinalProductAuthorizationCreateType {
+  MedicinalProductAuthorizationCreate(resource : MedicinalProductAuthorization) : MedicinalProductAuthorizationCreation
+}
+
+type MedicinalProductAuthorizationCreation {
+  location : String
+  resource : MedicinalProductAuthorization
+  information : OperationOutcome
+}
+
+type MedicinalProductAuthorizationUpdateType {
+  MedicinalProductAuthorizationUpdate(id : IDresource : MedicinalProductAuthorization) : MedicinalProductAuthorizationUpdate
+}
+
+type MedicinalProductAuthorizationUpdate {
+  resource : MedicinalProductAuthorization
+  information : OperationOutcome
+}
+
+type MedicinalProductAuthorizationDeleteType {
+  MedicinalProductAuthorizationDelete(id : ID) : MedicinalProductAuthorizationDelete
+}
+
+type MedicinalProductAuthorizationDelete {
+  information : OperationOutcome
+}
+

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="FamilyMemberHistory" status="changed">
+      <element path="FamilyMemberHistory.instantiatesCanonical" status="new"/>
+      <element path="FamilyMemberHistory.instantiatesUri" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="FamilyMemberHistory.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/history-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/history-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="FamilyMemberHistory.dataAbsentReason" status="new"/>
+      <element path="FamilyMemberHistory.sex" status="new"/>
+      <element modifier="removed" path="FamilyMemberHistory.estimatedAge"/>
+      <element path="FamilyMemberHistory.reasonReference">
+         <removed-type name="Reference(Condition | Observation | AllergyIntolerance | QuestionnaireResponse)"/>
+         <added-type name="Reference(Condition | Observation | AllergyIntolerance | QuestionnaireResponse | DiagnosticReport | DocumentReference)"/>
+      </element>
+      <element path="FamilyMemberHistory.condition.contributedToDeath" status="new"/>
+      <element path="FamilyMemberHistory.definition" status="deleted"/>
+      <element path="FamilyMemberHistory.notDone" status="deleted"/>
+      <element path="FamilyMemberHistory.notDoneReason" status="deleted"/>
+      <element path="FamilyMemberHistory.gender" status="deleted"/>
+   </type>
+</difference>

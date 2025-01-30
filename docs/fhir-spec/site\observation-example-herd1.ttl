@@ -1,0 +1,87 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/herd1> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "herd1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: herd1</p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span>(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'})</span></p><p><b>code</b>: Mycoplasma hyopneumoniae - MHP <span>(Details : {LOINC code '80219-9' = 'Mycoplasma hyopneumoniae Ab sample/Positive control in Serum by Immunoassay', given as 'Mycoplasma hyopneumoniae Ab sample/Positive control in Serum by Immunoassay'}; {http://acme.org/devices/clinical-codes code 'Mycoplasma' = 'Mycoplasma', given as 'Mycoplasma'})</span></p><p><b>subject</b>: <a>Group/herd1</a></p><p><b>encounter</b>: part of a health assurance program</p><p><b>effective</b>: 20/11/2017</p><p><b>value</b>: 0.2 % (sample/positive control)<span> (Details: UCUM code % = '%')</span></p><p><b>interpretation</b>: Negative <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'NEG' = 'Negative', given as 'Negative'})</span></p><p><b>specimen</b>: <a>30 serum</a></p><h3>ReferenceRanges</h3><table><tr><td>-</td><td><b>Text</b></td></tr><tr><td>*</td><td>&gt;0.4 Positive; 0.3 to 0.4 Suspect &lt; 0.3 Negative</td></tr></table></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+       fhir:Coding.code [ fhir:value "laboratory" ];
+       fhir:Coding.display [ fhir:value "Laboratory" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Laboratory" ]
+  ];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:80219-9;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "80219-9" ];
+       fhir:Coding.display [ fhir:value "Mycoplasma hyopneumoniae Ab sample/Positive control in Serum by Immunoassay" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://acme.org/devices/clinical-codes" ];
+       fhir:Coding.code [ fhir:value "Mycoplasma" ];
+       fhir:Coding.display [ fhir:value "Mycoplasma" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Mycoplasma hyopneumoniae - MHP" ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Group/herd1>;
+     fhir:Reference.reference [ fhir:value "Group/herd1" ]
+  ];
+  fhir:Observation.encounter [
+     fhir:Reference.display [ fhir:value "part of a health assurance program" ]
+  ];
+  fhir:Observation.effectiveDateTime [ fhir:value "2017-11-20"^^xsd:date];
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "0.2"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "% (sample/positive control)" ];
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+     fhir:Quantity.code [ fhir:value "%" ]
+  ];
+  fhir:Observation.interpretation [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation" ];
+       fhir:Coding.code [ fhir:value "NEG" ];
+       fhir:Coding.display [ fhir:value "Negative" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Negative" ]
+  ];
+  fhir:Observation.specimen [
+     fhir:link <http://hl7.org/fhir/Specimen/pooled-serum>;
+     fhir:Reference.reference [ fhir:value "Specimen/pooled-serum" ];
+     fhir:Reference.display [ fhir:value "30 serum" ]
+  ];
+  fhir:Observation.referenceRange [
+     fhir:index 0;
+     fhir:Observation.referenceRange.text [ fhir:value ">0.4 Positive; 0.3 to 0.4 Suspect < 0.3 Negative" ]
+  ] .
+
+<http://hl7.org/fhir/Group/herd1> a fhir:Group .
+
+<http://hl7.org/fhir/Specimen/pooled-serum> a fhir:Specimen .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/herd1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/herd1.ttl> .
+
+# -------------------------------------------------------------------------------------
+

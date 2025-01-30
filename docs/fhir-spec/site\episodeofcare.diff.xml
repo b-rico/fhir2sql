@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="EpisodeOfCare" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="EpisodeOfCare.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/episode-of-care-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/episode-of-care-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="EpisodeOfCare.statusHistory.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/episode-of-care-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/episode-of-care-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="EpisodeOfCare.referralRequest">
+         <removed-type name="Reference(ReferralRequest)"/>
+         <added-type name="Reference(ServiceRequest)"/>
+      </element>
+      <element path="EpisodeOfCare.careManager">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+   </type>
+</difference>

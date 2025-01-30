@@ -1,0 +1,403 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/opioidcds-10> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "opioidcds-10"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: opioidcds-10</p><p><b>url</b>: <b>http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/opioidcds-10</b></p><p><b>identifier</b>: cdc-opioid-guidance (OFFICIAL)</p><p><b>version</b>: 0.1.0</p><p><b>name</b>: cdc-opioid-10</p><p><b>title</b>: CDC Opioid Prescribing Guideline Recommendation #10</p><p><b>type</b>: ECA Rule <span>(Details : {http://terminology.hl7.org/CodeSystem/plan-definition-type code 'eca-rule' = 'ECA Rule', given as 'ECA Rule'})</span></p><p><b>status</b>: draft</p><p><b>date</b>: 23/04/2017</p><p><b>publisher</b>: Centers for Disease Control and Prevention (CDC)</p><p><b>description</b>: When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.</p><p><b>useContext</b>: , </p><p><b>jurisdiction</b>: United States of America <span>(Details : {urn:iso:std:iso:3166 code 'US' = 'United States of America', given as 'United States of America'})</span></p><p><b>purpose</b>: CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.</p><p><b>usage</b>: Providers should be aware if patients are taking other prescription drugs or illicit drugs that might increase their risk of an overdose.</p><p><b>copyright</b>: © CDC 2016+.</p><p><b>topic</b>: Opioid Prescribing <span>(Details )</span></p><p><b>author</b>: , , , </p><p><b>relatedArtifact</b>: </p><p><b>library</b>: <a>Library/opioidcds-recommendation-10</a></p><blockquote><p><b>action</b></p><p><b>title</b>: Annual Urine Screening Check</p><p><b>description</b>: Patient has not had a urine screening in the past 12 months</p><p><b>documentation</b>: </p><p><b>trigger</b>: </p><h3>Conditions</h3><table><tr><td>-</td><td><b>Kind</b></td><td><b>Expression</b></td></tr><tr><td>*</td><td>applicability</td><td/></tr></table><h3>DynamicValues</h3><table><tr><td>-</td><td><b>Path</b></td><td><b>Expression</b></td></tr><tr><td>*</td><td>activity.extension</td><td/></tr></table><h3>Actions</h3><table><tr><td>-</td></tr><tr><td>*</td></tr><tr><td>*</td></tr></table></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Positive Urine Screening Check</p><p><b>description</b>: Patient has a urine screening testing positive for either unprescribed opioids or illicit drugs in the past 12 months</p><p><b>documentation</b>: </p><h3>Conditions</h3><table><tr><td>-</td><td><b>Kind</b></td><td><b>Expression</b></td></tr><tr><td>*</td><td>applicability</td><td/></tr></table><h3>Actions</h3><table><tr><td>-</td></tr><tr><td>*</td></tr><tr><td>*</td></tr><tr><td>*</td></tr></table></blockquote></div>"
+  ];
+  fhir:PlanDefinition.url [ fhir:value "http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/opioidcds-10"];
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "cdc-opioid-guidance" ]
+  ];
+  fhir:PlanDefinition.version [ fhir:value "0.1.0"];
+  fhir:PlanDefinition.name [ fhir:value "cdc-opioid-10"];
+  fhir:PlanDefinition.title [ fhir:value "CDC Opioid Prescribing Guideline Recommendation #10"];
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ];
+       fhir:Coding.display [ fhir:value "ECA Rule" ]
+     ]
+  ];
+  fhir:PlanDefinition.status [ fhir:value "draft"];
+  fhir:PlanDefinition.date [ fhir:value "2017-04-23"^^xsd:date];
+  fhir:PlanDefinition.publisher [ fhir:value "Centers for Disease Control and Prevention (CDC)"];
+  fhir:PlanDefinition.description [ fhir:value "When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs."];
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ];
+       fhir:Coding.display [ fhir:value "Clinical Focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:182888003;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "182888003" ];
+         fhir:Coding.display [ fhir:value "Medication requested (situation)" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ];
+       fhir:Coding.display [ fhir:value "Clinical Focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:82423001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "82423001" ];
+         fhir:Coding.display [ fhir:value "Chronic pain (finding)" ]
+       ]
+     ]
+  ];
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States of America" ]
+     ]
+  ];
+  fhir:PlanDefinition.purpose [ fhir:value "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care."];
+  fhir:PlanDefinition.usage [ fhir:value "Providers should be aware if patients are taking other prescription drugs or illicit drugs that might increase their risk of an overdose."];
+  fhir:PlanDefinition.copyright [ fhir:value "© CDC 2016+."];
+  fhir:PlanDefinition.topic [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Opioid Prescribing" ]
+  ];
+  fhir:PlanDefinition.author [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Kensaku Kawamoto, MD, PhD, MHS" ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "Bryn Rhodes" ]
+  ], [
+     fhir:index 2;
+     fhir:ContactDetail.name [ fhir:value "Floyd Eisenberg, MD, MPH" ]
+  ], [
+     fhir:index 3;
+     fhir:ContactDetail.name [ fhir:value "Robert McClure, MD, MPH" ]
+  ];
+  fhir:PlanDefinition.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+     fhir:RelatedArtifact.display [ fhir:value "CDC guideline for prescribing opioids for chronic pain" ];
+     fhir:RelatedArtifact.url [ fhir:value "https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420" ]
+  ];
+  fhir:PlanDefinition.library [
+     fhir:value "Library/opioidcds-recommendation-10";
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Library/opioidcds-recommendation-10>
+  ];
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "Annual Urine Screening Check" ];
+     fhir:PlanDefinition.action.description [ fhir:value "Patient has not had a urine screening in the past 12 months" ];
+     fhir:PlanDefinition.action.documentation [
+       fhir:index 0;
+       fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+       fhir:RelatedArtifact.document [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-strengthOfRecommendation" ];
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/recommendation-strength" ];
+               fhir:Coding.code [ fhir:value "strong" ];
+               fhir:Coding.display [ fhir:value "Strong" ]
+             ]
+           ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-qualityOfEvidence" ];
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/evidence-quality" ];
+               fhir:Coding.code [ fhir:value "low" ];
+               fhir:Coding.display [ fhir:value "Low quality" ]
+             ]
+           ]
+         ]
+       ]
+     ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "medication-prescribe" ]
+     ];
+     fhir:PlanDefinition.action.condition [
+       fhir:index 0;
+       fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+       fhir:PlanDefinition.action.condition.expression [
+         fhir:Expression.description [ fhir:value "Patient has not had a urine screening in the past 12 months" ];
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "No Screenings in Past Year" ]
+       ]
+     ];
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "activity.extension" ];
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Get Indicator" ]
+       ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:PlanDefinition.action.description [ fhir:value "Will perform urine screening" ]
+     ], [
+       fhir:index 1;
+       fhir:PlanDefinition.action.description [ fhir:value "Not for chronic pain management. Snooze 3 months" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:PlanDefinition.action.title [ fhir:value "Positive Urine Screening Check" ];
+     fhir:PlanDefinition.action.description [ fhir:value "Patient has a urine screening testing positive for either unprescribed opioids or illicit drugs in the past 12 months" ];
+     fhir:PlanDefinition.action.documentation [
+       fhir:index 0;
+       fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+       fhir:RelatedArtifact.document [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-strengthOfRecommendation" ];
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/recommendation-strength" ];
+               fhir:Coding.code [ fhir:value "strong" ];
+               fhir:Coding.display [ fhir:value "Strong" ]
+             ]
+           ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-qualityOfEvidence" ];
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/evidence-quality" ];
+               fhir:Coding.code [ fhir:value "low" ];
+               fhir:Coding.display [ fhir:value "Low quality" ]
+             ]
+           ]
+         ]
+       ]
+     ];
+     fhir:PlanDefinition.action.condition [
+       fhir:index 0;
+       fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+       fhir:PlanDefinition.action.condition.expression [
+         fhir:Expression.description [ fhir:value "Patient has a positive urine screening in the past 12 months" ];
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Has Positive Screening?" ]
+       ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:PlanDefinition.action.title [ fhir:value "Unprescribed Opioids Found In Urine Screening" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+         fhir:RelatedArtifact.document [
+           fhir:Element.extension [
+             fhir:index 0;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-strengthOfRecommendation" ];
+             fhir:Extension.valueCodeableConcept [
+               fhir:CodeableConcept.coding [
+                 fhir:index 0;
+                 fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/recommendation-strength" ];
+                 fhir:Coding.code [ fhir:value "strong" ];
+                 fhir:Coding.display [ fhir:value "Strong" ]
+               ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-qualityOfEvidence" ];
+             fhir:Extension.valueCodeableConcept [
+               fhir:CodeableConcept.coding [
+                 fhir:index 0;
+                 fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/evidence-quality" ];
+                 fhir:Coding.code [ fhir:value "low" ];
+                 fhir:Coding.display [ fhir:value "Low quality" ]
+               ]
+             ]
+           ]
+         ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed" ];
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Has Unprescribed Opioids?" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.dynamicValue [
+         fhir:index 0;
+         fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "activity.extension" ];
+         fhir:PlanDefinition.action.dynamicValue.expression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Get Indicator" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.description" ];
+         fhir:PlanDefinition.action.dynamicValue.expression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Inconsistent Unprescribed Opioids" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.description [ fhir:value "Not for chronic pain management. Snooze 3 months" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:PlanDefinition.action.title [ fhir:value "Prescribed Opioids Not Found In Urine Screening" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+         fhir:RelatedArtifact.document [
+           fhir:Element.extension [
+             fhir:index 0;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-strengthOfRecommendation" ];
+             fhir:Extension.valueCodeableConcept [
+               fhir:CodeableConcept.coding [
+                 fhir:index 0;
+                 fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/recommendation-strength" ];
+                 fhir:Coding.code [ fhir:value "strong" ];
+                 fhir:Coding.display [ fhir:value "Strong" ]
+               ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-qualityOfEvidence" ];
+             fhir:Extension.valueCodeableConcept [
+               fhir:CodeableConcept.coding [
+                 fhir:index 0;
+                 fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/evidence-quality" ];
+                 fhir:Coding.code [ fhir:value "low" ];
+                 fhir:Coding.display [ fhir:value "Low quality" ]
+               ]
+             ]
+           ]
+         ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids" ];
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Has Missing Opioids?" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.dynamicValue [
+         fhir:index 0;
+         fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "activity.extension" ];
+         fhir:PlanDefinition.action.dynamicValue.expression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Get Indicator" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.description" ];
+         fhir:PlanDefinition.action.dynamicValue.expression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Inconsistent Missing Opioids" ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:PlanDefinition.action.title [ fhir:value "Illicit Drugs Found In Urine Screening" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Patient has a positive urine screening in the past 12 months for illicit drugs" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+         fhir:RelatedArtifact.document [
+           fhir:Element.extension [
+             fhir:index 0;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-strengthOfRecommendation" ];
+             fhir:Extension.valueCodeableConcept [
+               fhir:CodeableConcept.coding [
+                 fhir:index 0;
+                 fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/recommendation-strength" ];
+                 fhir:Coding.code [ fhir:value "strong" ];
+                 fhir:Coding.display [ fhir:value "Strong" ]
+               ]
+             ]
+           ], [
+             fhir:index 1;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-qualityOfEvidence" ];
+             fhir:Extension.valueCodeableConcept [
+               fhir:CodeableConcept.coding [
+                 fhir:index 0;
+                 fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/evidence-quality" ];
+                 fhir:Coding.code [ fhir:value "low" ];
+                 fhir:Coding.display [ fhir:value "Low quality" ]
+               ]
+             ]
+           ]
+         ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "Patient has a positive urine screening in the past 12 months for illicit drugs" ];
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Has Illicit Drugs in Screening?" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.dynamicValue [
+         fhir:index 0;
+         fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "activity.extension" ];
+         fhir:PlanDefinition.action.dynamicValue.expression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Get Indicator" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.description" ];
+         fhir:PlanDefinition.action.dynamicValue.expression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Inconsistent Illicit Drugs" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.description [ fhir:value "Not for chronic pain management. Snooze 3 months" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/opioidcds-10.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/PlanDefinition/opioidcds-10.ttl> .
+
+# -------------------------------------------------------------------------------------
+

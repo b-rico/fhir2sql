@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceRequest/insulinpump> a fhir:DeviceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "insulinpump"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: insulinpump</p><p><b>identifier</b>: ip_request1.1</p><p><b>instantiatesCanonical</b>: <a>http://motivemi.com/artifacts/PlanDefinition/low-suicide-risk-order-set</a></p><p><b>basedOn</b>: Homecare - DM follow-up</p><p><b>priorRequest</b>: CGM ambulatory</p><p><b>groupIdentifier</b>: ip_request1</p><p><b>status</b>: active</p><p><b>intent</b>: instance-order</p><p><b>priority</b>: routine</p><p><b>code</b>: Insulin delivery device panel <span>(Details : {LOINC code '43148-6' = 'Insulin delivery device panel)</span></p><p><b>subject</b>: <a>Patient/dicom</a></p><p><b>encounter</b>: Encounter 1</p><p><b>occurrence</b>: 08/05/2013 9:33:27 AM</p><p><b>authoredOn</b>: 08/05/2013 9:33:27 AM</p><p><b>requester</b>: <a>Dr. Adam Careful</a></p><p><b>performerType</b>: Nurse <span>(Details : {[not stated] code 'null' = 'null', given as 'Qualified nurse'})</span></p><p><b>performer</b>: Nurse Rossignol</p><p><b>reasonCode</b>: gastroparesis <span>(Details )</span></p><p><b>reasonReference</b>: Gastroparesis</p><p><b>supportingInfo</b>: Previous results</p><p><b>note</b>: this is the right device brand and model</p><p><b>relevantHistory</b>: Request for unspecified device</p></div>"
+  ];
+  fhir:DeviceRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "ip_request1.1" ]
+  ];
+  fhir:DeviceRequest.instantiatesCanonical [
+     fhir:value "http://motivemi.com/artifacts/PlanDefinition/low-suicide-risk-order-set";
+     fhir:index 0;
+     fhir:link <http://motivemi.com/artifacts/PlanDefinition/low-suicide-risk-order-set>
+  ];
+  fhir:DeviceRequest.basedOn [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Homecare - DM follow-up" ]
+  ];
+  fhir:DeviceRequest.priorRequest [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "CGM ambulatory" ]
+  ];
+  fhir:DeviceRequest.groupIdentifier [
+     fhir:Identifier.value [ fhir:value "ip_request1" ]
+  ];
+  fhir:DeviceRequest.status [ fhir:value "active"];
+  fhir:DeviceRequest.intent [ fhir:value "instance-order"];
+  fhir:DeviceRequest.priority [ fhir:value "routine"];
+  fhir:DeviceRequest.codeCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:43148-6;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "43148-6" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Insulin delivery device panel" ]
+  ];
+  fhir:DeviceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/dicom>;
+     fhir:Reference.reference [ fhir:value "Patient/dicom" ]
+  ];
+  fhir:DeviceRequest.encounter [
+     fhir:Reference.display [ fhir:value "Encounter 1" ]
+  ];
+  fhir:DeviceRequest.occurrenceDateTime [ fhir:value "2013-05-08T09:33:27+07:00"^^xsd:dateTime];
+  fhir:DeviceRequest.authoredOn [ fhir:value "2013-05-08T09:33:27+07:00"^^xsd:dateTime];
+  fhir:DeviceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr. Adam Careful" ]
+  ];
+  fhir:DeviceRequest.performerType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.display [ fhir:value "Qualified nurse" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Nurse" ]
+  ];
+  fhir:DeviceRequest.performer [
+     fhir:Reference.display [ fhir:value "Nurse Rossignol" ]
+  ];
+  fhir:DeviceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "gastroparesis" ]
+  ];
+  fhir:DeviceRequest.reasonReference [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Gastroparesis" ]
+  ];
+  fhir:DeviceRequest.supportingInfo [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Previous results" ]
+  ];
+  fhir:DeviceRequest.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "this is the right device brand and model" ]
+  ];
+  fhir:DeviceRequest.relevantHistory [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Request for unspecified device" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/dicom> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceRequest/insulinpump.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/DeviceRequest/insulinpump.ttl> .
+
+# -------------------------------------------------------------------------------------
+

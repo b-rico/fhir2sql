@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Contract/C-123> a fhir:Contract;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "C-123"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the contract</div>"
+  ];
+  fhir:Contract.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://happyvalley.com/contract" ];
+     fhir:Identifier.value [ fhir:value "12347" ]
+  ];
+  fhir:Contract.term [
+     fhir:index 0;
+     fhir:Contract.term.offer [
+       fhir:Contract.term.offer.text [ fhir:value "Can't refuse" ]
+     ];
+     fhir:Contract.term.asset [
+       fhir:index 0;
+       fhir:Contract.term.asset.type [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "urn:ietf:rfc:3986" ];
+           fhir:Coding.code [ fhir:value "RicardianContract" ]
+         ]
+       ];
+       fhir:Contract.term.asset.subtype [
+         fhir:index 0;
+         fhir:CodeableConcept.text [ fhir:value "sample" ]
+       ];
+       fhir:Contract.term.asset.period [
+         fhir:index 0;
+         fhir:Period.start [ fhir:value "2017-06-01"^^xsd:date ]
+       ];
+       fhir:Contract.term.asset.valuedItem [
+         fhir:index 0;
+         fhir:Contract.term.asset.valuedItem.entityCodeableConcept [
+           fhir:CodeableConcept.text [ fhir:value "Ford Bobcat" ]
+         ];
+         fhir:Contract.term.asset.valuedItem.identifier [
+           fhir:Identifier.system [ fhir:value "http://somewhere.motor-vehicle.com/vin" ];
+           fhir:Identifier.value [ fhir:value "XXSVT34-7665t952236" ]
+         ];
+         fhir:Contract.term.asset.valuedItem.effectiveTime [ fhir:value "1995"^^xsd:gYear ];
+         fhir:Contract.term.asset.valuedItem.quantity [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+         ];
+         fhir:Contract.term.asset.valuedItem.unitPrice [
+           fhir:Money.value [ fhir:value "200.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "CAD" ]
+         ];
+         fhir:Contract.term.asset.valuedItem.factor [ fhir:value "1.0"^^xsd:decimal ];
+         fhir:Contract.term.asset.valuedItem.points [ fhir:value "1.0"^^xsd:decimal ];
+         fhir:Contract.term.asset.valuedItem.net [
+           fhir:Money.value [ fhir:value "200.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "CAD" ]
+         ]
+       ]
+     ]
+  ];
+  fhir:Contract.rule [
+     fhir:index 0;
+     fhir:Contract.rule.contentAttachment [
+       fhir:Attachment.contentType [ fhir:value "application/txt" ];
+       fhir:Attachment.url [ fhir:value "http://www.rfc-editor.org/bcp/bcp13.txt" ]
+     ]
+  ];
+  fhir:Contract.legallyBindingAttachment [
+     fhir:Attachment.contentType [ fhir:value "application/pdf" ];
+     fhir:Attachment.url [ fhir:value "http://www.aws3.com/storage/doc.pdf" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Contract/C-123.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Contract/C-123.ttl> .
+
+# -------------------------------------------------------------------------------------
+

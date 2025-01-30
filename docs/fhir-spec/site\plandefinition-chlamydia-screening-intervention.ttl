@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/chlamydia-screening-intervention> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "chlamydia-screening-intervention"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Id: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">PlanDefinition/chlamydia-screening-intervention</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Identifier: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">\n                  <b>value: </b>\n                  <span>ChlamydiaScreening_CDS_UsingCommon</span>\n               </td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Title: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">Chalmydia Screening CDS Example Using Common</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Status: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">draft</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Description: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">Chlamydia Screening CDS Example Using Common</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Topic: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">\n                  <span>\n                     <b>text: </b>\n                     <span>Chlamydia Screening</span>\n                  </span>\n               </td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Library: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">\n                  <b>reference: </b>\n                  <span>Library/example</span>\n               </td>\n            </tr>\n         </table>\n         <p/>\n         <h2>Actions</h2>\n         <p style=\"width: 100%;\" class=\"hierarchy\">\n            <span>\n               <b>Step: </b>\n               <br/>\n               <span style=\"padding-left: 25px;\">\n                  <b>title: </b>\n                  <span>Patient has not had chlamydia screening within the recommended timeframe...</span>\n                  <br/>\n               </span>\n               <span style=\"padding-left: 25px;\">\n                  <b>condition: </b>\n                  <br/>\n                  <span style=\"padding-left: 50px;\">\n                     <b>type: </b>\n                     <span>applicability</span>\n                  </span>\n                  <br/>\n                  <span style=\"padding-left: 50px;\">\n                     <b>expression: </b>\n                     <span>NoScreening</span>\n                  </span>\n               </span>\n            </span>\n         </p>\n      </div>"
+  ];
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "ChlamydiaScreening_CDS_UsingCommon" ]
+  ];
+  fhir:PlanDefinition.version [ fhir:value "2.0.0"];
+  fhir:PlanDefinition.title [ fhir:value "Chalmydia Screening CDS Example Using Common"];
+  fhir:PlanDefinition.status [ fhir:value "draft"];
+  fhir:PlanDefinition.date [ fhir:value "2015-07-22"^^xsd:date];
+  fhir:PlanDefinition.description [ fhir:value "Chlamydia Screening CDS Example Using Common"];
+  fhir:PlanDefinition.topic [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Chlamydia Screening" ]
+  ];
+  fhir:PlanDefinition.library [
+     fhir:value "Library/example";
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Library/example>
+  ];
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "Patient has not had chlamydia screening within the recommended timeframe..." ];
+     fhir:PlanDefinition.action.condition [
+       fhir:index 0;
+       fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+       fhir:PlanDefinition.action.condition.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "NoScreening" ]
+       ]
+     ];
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "$this" ];
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "ChlamydiaScreeningRequest" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/chlamydia-screening-intervention.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/PlanDefinition/chlamydia-screening-intervention.ttl> .
+
+# -------------------------------------------------------------------------------------
+

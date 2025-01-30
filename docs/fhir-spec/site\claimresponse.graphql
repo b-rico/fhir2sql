@@ -1,0 +1,472 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type ClaimResponse {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  type: CodeableConcept!
+  subType: CodeableConcept
+  use: code  _use: ElementBase
+  patient: Reference!
+  created: dateTime  _created: ElementBase
+  insurer: Reference!
+  requestor: Reference
+  request: Reference
+  outcome: code  _outcome: ElementBase
+  disposition: String  _disposition: ElementBase
+  preAuthRef: String  _preAuthRef: ElementBase
+  preAuthPeriod: Period
+  payeeType: CodeableConcept
+  item: [ClaimResponseItem]
+  addItem: [ClaimResponseAddItem]
+  adjudication: [ClaimResponseItemAdjudication]
+  total: [ClaimResponseTotal]
+  payment: ClaimResponsePayment
+  fundsReserve: CodeableConcept
+  formCode: CodeableConcept
+  form: Attachment
+  processNote: [ClaimResponseProcessNote]
+  communicationRequest: [Reference]
+  insurance: [ClaimResponseInsurance]
+  error: [ClaimResponseError]
+}
+
+type ClaimResponseItem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemSequence: positiveInt  _itemSequence: ElementBase
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+  detail: [ClaimResponseItemDetail]
+}
+
+type ClaimResponseItemAdjudication {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  category: CodeableConcept!
+  reason: CodeableConcept
+  amount: Money
+  value: decimal  _value: ElementBase
+}
+
+type ClaimResponseItemDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  detailSequence: positiveInt  _detailSequence: ElementBase
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+  subDetail: [ClaimResponseItemDetailSubDetail]
+}
+
+type ClaimResponseItemDetailSubDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subDetailSequence: positiveInt  _subDetailSequence: ElementBase
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]
+}
+
+type ClaimResponseAddItem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemSequence: positiveInt  _itemSequence: [ElementBase]
+  detailSequence: positiveInt  _detailSequence: [ElementBase]
+  subdetailSequence: positiveInt  _subdetailSequence: [ElementBase]
+  provider: [Reference]
+  productOrService: CodeableConcept!
+  modifier: [CodeableConcept]
+  programCode: [CodeableConcept]
+  servicedDate: date  _servicedDate: ElementBase
+  servicedPeriod: Period
+  locationCodeableConcept: CodeableConcept
+  locationAddress: Address
+  locationReference: Reference
+  quantity: Quantity
+  unitPrice: Money
+  factor: decimal  _factor: ElementBase
+  net: Money
+  bodySite: CodeableConcept
+  subSite: [CodeableConcept]
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+  detail: [ClaimResponseAddItemDetail]
+}
+
+type ClaimResponseAddItemDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  productOrService: CodeableConcept!
+  modifier: [CodeableConcept]
+  quantity: Quantity
+  unitPrice: Money
+  factor: decimal  _factor: ElementBase
+  net: Money
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+  subDetail: [ClaimResponseAddItemDetailSubDetail]
+}
+
+type ClaimResponseAddItemDetailSubDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  productOrService: CodeableConcept!
+  modifier: [CodeableConcept]
+  quantity: Quantity
+  unitPrice: Money
+  factor: decimal  _factor: ElementBase
+  net: Money
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+}
+
+type ClaimResponseTotal {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  category: CodeableConcept!
+  amount: Money!
+}
+
+type ClaimResponsePayment {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  adjustment: Money
+  adjustmentReason: CodeableConcept
+  date: date  _date: ElementBase
+  amount: Money!
+  identifier: Identifier
+}
+
+type ClaimResponseProcessNote {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  number: positiveInt  _number: ElementBase
+  type: code  _type: ElementBase
+  text: String  _text: ElementBase
+  language: CodeableConcept
+}
+
+type ClaimResponseInsurance {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  sequence: positiveInt  _sequence: ElementBase
+  focal: Boolean  _focal: ElementBase
+  coverage: Reference!
+  businessArrangement: String  _businessArrangement: ElementBase
+  claimResponse: Reference
+}
+
+type ClaimResponseError {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemSequence: positiveInt  _itemSequence: ElementBase
+  detailSequence: positiveInt  _detailSequence: ElementBase
+  subDetailSequence: positiveInt  _subDetailSequence: ElementBase
+  code: CodeableConcept!
+}
+
+input ClaimResponse {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  type: CodeableConcept!
+  subType: CodeableConcept
+  use: code  _use: ElementBase
+  patient: Reference!
+  created: dateTime  _created: ElementBase
+  insurer: Reference!
+  requestor: Reference
+  request: Reference
+  outcome: code  _outcome: ElementBase
+  disposition: String  _disposition: ElementBase
+  preAuthRef: String  _preAuthRef: ElementBase
+  preAuthPeriod: Period
+  payeeType: CodeableConcept
+  item: [ClaimResponseItem]
+  addItem: [ClaimResponseAddItem]
+  adjudication: [ClaimResponseItemAdjudication]
+  total: [ClaimResponseTotal]
+  payment: ClaimResponsePayment
+  fundsReserve: CodeableConcept
+  formCode: CodeableConcept
+  form: Attachment
+  processNote: [ClaimResponseProcessNote]
+  communicationRequest: [Reference]
+  insurance: [ClaimResponseInsurance]
+  error: [ClaimResponseError]
+}
+
+input ClaimResponseItem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemSequence: positiveInt  _itemSequence: ElementBase
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+  detail: [ClaimResponseItemDetail]
+}
+
+input ClaimResponseItemAdjudication {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  category: CodeableConcept!
+  reason: CodeableConcept
+  amount: Money
+  value: decimal  _value: ElementBase
+}
+
+input ClaimResponseItemDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  detailSequence: positiveInt  _detailSequence: ElementBase
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+  subDetail: [ClaimResponseItemDetailSubDetail]
+}
+
+input ClaimResponseItemDetailSubDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subDetailSequence: positiveInt  _subDetailSequence: ElementBase
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]
+}
+
+input ClaimResponseAddItem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemSequence: positiveInt  _itemSequence: [ElementBase]
+  detailSequence: positiveInt  _detailSequence: [ElementBase]
+  subdetailSequence: positiveInt  _subdetailSequence: [ElementBase]
+  provider: [Reference]
+  productOrService: CodeableConcept!
+  modifier: [CodeableConcept]
+  programCode: [CodeableConcept]
+  servicedDate: date  _servicedDate: ElementBase
+  servicedPeriod: Period
+  locationCodeableConcept: CodeableConcept
+  locationAddress: Address
+  locationReference: Reference
+  quantity: Quantity
+  unitPrice: Money
+  factor: decimal  _factor: ElementBase
+  net: Money
+  bodySite: CodeableConcept
+  subSite: [CodeableConcept]
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+  detail: [ClaimResponseAddItemDetail]
+}
+
+input ClaimResponseAddItemDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  productOrService: CodeableConcept!
+  modifier: [CodeableConcept]
+  quantity: Quantity
+  unitPrice: Money
+  factor: decimal  _factor: ElementBase
+  net: Money
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+  subDetail: [ClaimResponseAddItemDetailSubDetail]
+}
+
+input ClaimResponseAddItemDetailSubDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  productOrService: CodeableConcept!
+  modifier: [CodeableConcept]
+  quantity: Quantity
+  unitPrice: Money
+  factor: decimal  _factor: ElementBase
+  net: Money
+  noteNumber: positiveInt  _noteNumber: [ElementBase]
+  adjudication: [ClaimResponseItemAdjudication]!
+}
+
+input ClaimResponseTotal {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  category: CodeableConcept!
+  amount: Money!
+}
+
+input ClaimResponsePayment {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  adjustment: Money
+  adjustmentReason: CodeableConcept
+  date: date  _date: ElementBase
+  amount: Money!
+  identifier: Identifier
+}
+
+input ClaimResponseProcessNote {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  number: positiveInt  _number: ElementBase
+  type: code  _type: ElementBase
+  text: String  _text: ElementBase
+  language: CodeableConcept
+}
+
+input ClaimResponseInsurance {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  sequence: positiveInt  _sequence: ElementBase
+  focal: Boolean  _focal: ElementBase
+  coverage: Reference!
+  businessArrangement: String  _businessArrangement: ElementBase
+  claimResponse: Reference
+}
+
+input ClaimResponseError {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemSequence: positiveInt  _itemSequence: ElementBase
+  detailSequence: positiveInt  _detailSequence: ElementBase
+  subDetailSequence: positiveInt  _subDetailSequence: ElementBase
+  code: CodeableConcept!
+}
+
+type ClaimResponseReadType {
+  ClaimResponse(id : ID!) : ClaimResponse
+}
+
+type ClaimResponseListType {
+  ClaimResponseList(_filter : String
+    created : [date]
+    disposition : [String]
+    identifier : [token]
+    insurer : [reference]
+    outcome : [token]
+    patient : [reference]
+    payment_date : [date]
+    request : [reference]
+    requestor : [reference]
+    status : [token]
+    use : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [ClaimResponse]
+}
+
+type ClaimResponseConnectionType {
+  ClaimResponseConection(_filter : String
+    created : [date]
+    disposition : [String]
+    identifier : [token]
+    insurer : [reference]
+    outcome : [token]
+    patient : [reference]
+    payment_date : [date]
+    request : [reference]
+    requestor : [reference]
+    status : [token]
+    use : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : ClaimResponseConnection
+}
+
+type ClaimResponseConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [ClaimResponseEdge]
+}
+
+type ClaimResponseEdge {
+  mode : String
+  score : Float
+  resource : ClaimResponse
+}
+
+type ClaimResponseCreateType {
+  ClaimResponseCreate(resource : ClaimResponse) : ClaimResponseCreation
+}
+
+type ClaimResponseCreation {
+  location : String
+  resource : ClaimResponse
+  information : OperationOutcome
+}
+
+type ClaimResponseUpdateType {
+  ClaimResponseUpdate(id : IDresource : ClaimResponse) : ClaimResponseUpdate
+}
+
+type ClaimResponseUpdate {
+  resource : ClaimResponse
+  information : OperationOutcome
+}
+
+type ClaimResponseDeleteType {
+  ClaimResponseDelete(id : ID) : ClaimResponseDelete
+}
+
+type ClaimResponseDelete {
+  information : OperationOutcome
+}
+

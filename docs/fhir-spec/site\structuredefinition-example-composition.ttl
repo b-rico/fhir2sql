@@ -1,0 +1,118 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/StructureDefinition/example-composition> a fhir:StructureDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-composition"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-composition</p><p><b>url</b>: <b>http://hl7.org/fhir/StructureDefinition/example-composition</b></p><p><b>name</b>: DocumentStructure</p><p><b>title</b>: Document Structure (For testing section templates)</p><p><b>status</b>: active</p><p><b>experimental</b>: false</p><p><b>date</b>: 05/11/2018 5:47:00 PM</p><p><b>kind</b>: complex-type</p><p><b>abstract</b>: false</p><p><b>type</b>: <a>Composition</a></p><p><b>baseDefinition</b>: <a>http://hl7.org/fhir/StructureDefinition/Composition</a></p><p><b>derivation</b>: constraint</p><h3>Differentials</h3><table><tr><td>-</td><td><b>Element</b></td></tr><tr><td>*</td><td>todo-bundle</td></tr></table></div>"
+  ];
+  fhir:StructureDefinition.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/example-composition"];
+  fhir:StructureDefinition.name [ fhir:value "DocumentStructure"];
+  fhir:StructureDefinition.title [ fhir:value "Document Structure (For testing section templates)"];
+  fhir:StructureDefinition.status [ fhir:value "active"];
+  fhir:StructureDefinition.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:StructureDefinition.date [ fhir:value "2018-11-05T17:47:00+11:00"^^xsd:dateTime];
+  fhir:StructureDefinition.kind [ fhir:value "complex-type"];
+  fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean];
+  fhir:StructureDefinition.type [ fhir:value "Composition"];
+  fhir:StructureDefinition.baseDefinition [
+     fhir:value "http://hl7.org/fhir/StructureDefinition/Composition";
+     fhir:link <http://hl7.org/fhir/StructureDefinition/Composition>
+  ];
+  fhir:StructureDefinition.derivation [ fhir:value "constraint"];
+  fhir:StructureDefinition.differential [
+     fhir:StructureDefinition.differential.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "Composition" ];
+       fhir:ElementDefinition.path [ fhir:value "Composition" ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "Composition.section" ];
+       fhir:ElementDefinition.path [ fhir:value "Composition.section" ];
+       fhir:ElementDefinition.slicing [
+         fhir:ElementDefinition.slicing.discriminator [
+           fhir:index 0;
+           fhir:ElementDefinition.slicing.discriminator.type [ fhir:value "pattern" ];
+           fhir:ElementDefinition.slicing.discriminator.path [ fhir:value "code" ]
+         ];
+         fhir:ElementDefinition.slicing.description [ fhir:value "Slice by .section.code" ];
+         fhir:ElementDefinition.slicing.ordered [ fhir:value "true"^^xsd:boolean ];
+         fhir:ElementDefinition.slicing.rules [ fhir:value "closed" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "Composition.section:procedure" ];
+       fhir:ElementDefinition.path [ fhir:value "Composition.section" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "procedure" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/document-section-library";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/document-section-library>;
+           fhir:Element.extension [
+             fhir:index 0;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element" ];
+             fhir:Extension.valueString [ fhir:value "Composition.section:procedure" ]
+           ]
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "Composition.section:medications" ];
+       fhir:ElementDefinition.path [ fhir:value "Composition.section" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "medications" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/document-section-library";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/document-section-library>;
+           fhir:Element.extension [
+             fhir:index 0;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element" ];
+             fhir:Extension.valueString [ fhir:value "Composition.section:medications" ]
+           ]
+         ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "Composition.section:plan" ];
+       fhir:ElementDefinition.path [ fhir:value "Composition.section" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "plan" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/document-section-library";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/document-section-library>;
+           fhir:Element.extension [
+             fhir:index 0;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element" ];
+             fhir:Extension.valueString [ fhir:value "Composition.section:plan" ]
+           ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/StructureDefinition/example-composition.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/StructureDefinition/example-composition.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/decimal> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "decimal"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: decimal</p><p><b>status</b>: final</p><p><b>code</b>: Decimal Testing Observation <span>(Details )</span></p><blockquote><p><b>component</b></p><p><b>code</b>: Component <span>(Details )</span></p><p><b>value</b>: 1.0 g</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Component <span>(Details )</span></p><p><b>value</b>: 1.00 g</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Component <span>(Details )</span></p><p><b>value</b>: 1.0 g</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Component <span>(Details )</span></p><p><b>value</b>: 1E-22 g</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Component <span>(Details )</span></p><p><b>value</b>: 1000000000000000000 g</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Component <span>(Details )</span></p><p><b>value</b>: 1.000000000000000000E-245 g</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Component <span>(Details )</span></p><p><b>value</b>: -1.000000000000000000E+245 g</p></blockquote></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "Decimal Testing Observation" ]
+  ];
+  fhir:Observation.component [
+     fhir:index 0;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Component" ]
+     ];
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.0"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "g" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Component" ]
+     ];
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.00"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "g" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Component" ]
+     ];
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.0e0"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "g" ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Component" ]
+     ];
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "0.0000000000000000000001"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "g" ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Component" ]
+     ];
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1000000000000000000"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "g" ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Component" ]
+     ];
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.000000000000000000e-245"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "g" ]
+     ]
+  ], [
+     fhir:index 6;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Component" ]
+     ];
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "-1.000000000000000000e245"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "g" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/decimal.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/decimal.ttl> .
+
+# -------------------------------------------------------------------------------------
+

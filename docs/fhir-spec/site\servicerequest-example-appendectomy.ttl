@@ -1,0 +1,31 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/appendectomy-narrative> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "appendectomy-narrative"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<p>Date: 2013-03-16</p>\n			<p>Patient:: Paula Patient</p>\n			<p>Ordered by: Angela Care, MD</p>\n			<p>Procedure: Routine Appendectomy</p>\n			<p>Surgeon: Dr Cecil Surgeon</p>\n		</div>"
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.text [ fhir:value "Appendectomy" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:Reference.display [ fhir:value "Paula Patient" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/appendectomy-narrative.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/appendectomy-narrative.ttl> .
+
+# -------------------------------------------------------------------------------------
+

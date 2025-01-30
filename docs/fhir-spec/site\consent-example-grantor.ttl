@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Consent/consent-example-grantor> a fhir:Consent;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "consent-example-grantor"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">The following scenario is based on a question asked on John Moehrke's blog in the \n	<a href=\"http://healthcaresecprivacy.blogspot.com/2016/04/consent-given-to-authorized.html\">Consent given to authorized representative</a>\n    <p>\nThis is a case where a Patient is giving a limited (read-only) access to an individual.\n	</p><p>\n    Patient &quot;P. van de Heuvel&quot; wishes to provide XXX with read-only access to the data at Good Health Psychiatric Hospital \n   available for patient requested access use.\n   </p>\n   </div>"
+  ];
+  fhir:Consent.status [ fhir:value "active"];
+  fhir:Consent.scope [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentscope" ];
+       fhir:Coding.code [ fhir:value "patient-privacy" ]
+     ]
+  ];
+  fhir:Consent.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "INFAO" ]
+     ]
+  ];
+  fhir:Consent.patient [
+     fhir:link <http://hl7.org/fhir/Patient/f001>;
+     fhir:Reference.reference [ fhir:value "Patient/f001" ];
+     fhir:Reference.display [ fhir:value "P. van de Heuvel" ]
+  ];
+  fhir:Consent.dateTime [ fhir:value "2015-11-18"^^xsd:date];
+  fhir:Consent.organization [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/f001>;
+     fhir:Reference.reference [ fhir:value "Organization/f001" ]
+  ];
+  fhir:Consent.sourceAttachment [
+     fhir:Attachment.title [ fhir:value "The terms of the consent in lawyer speak." ]
+  ];
+  fhir:Consent.policyRule [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "OPTOUT" ]
+     ]
+  ];
+  fhir:Consent.provision [
+     fhir:Consent.provision.actor [
+       fhir:index 0;
+       fhir:Consent.provision.actor.role [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+           fhir:Coding.code [ fhir:value "CST" ]
+         ]
+       ];
+       fhir:Consent.provision.actor.reference [
+         fhir:link <http://hl7.org/fhir/Organization/f001>;
+         fhir:Reference.reference [ fhir:value "Organization/f001" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Consent.provision.actor.role [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+           fhir:Coding.code [ fhir:value "PRCP" ]
+         ]
+       ];
+       fhir:Consent.provision.actor.reference [
+         fhir:link <http://hl7.org/fhir/Patient/example>;
+         fhir:Reference.reference [ fhir:value "Patient/example" ];
+         fhir:Reference.display [ fhir:value "Good Health Clinic" ]
+       ]
+     ];
+     fhir:Consent.provision.action [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentaction" ];
+         fhir:Coding.code [ fhir:value "access" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f001> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/f001> a fhir:Organization .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Consent/consent-example-grantor.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Consent/consent-example-grantor.ttl> .
+
+# -------------------------------------------------------------------------------------
+

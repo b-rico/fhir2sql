@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/education> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "education"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: education</p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>category</b>: Education <span>(Details : {SNOMED CT code '311401005' = 'Patient education', given as 'Patient education (procedure)'})</span></p><p><b>code</b>: Health education - breast examination <span>(Details : {SNOMED CT code '48023004' = 'Breast self-examination technique education', given as 'Breast self-examination technique education (procedure)'})</span></p><p><b>subject</b>: Jane Doe</p><p><b>occurrence</b>: 16/08/2014</p><p><b>authoredOn</b>: 16/08/2016</p><p><b>requester</b>: Angela Care, MD</p><p><b>performer</b>: Pamela Educator, RN</p><p><b>reasonCode</b>: early detection of breast mass <span>(Details )</span></p></div>"
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:311401005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "311401005" ];
+       fhir:Coding.display [ fhir:value "Patient education (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Education" ]
+  ];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:48023004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "48023004" ];
+       fhir:Coding.display [ fhir:value "Breast self-examination technique education (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Health education - breast examination" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:Reference.display [ fhir:value "Jane Doe" ]
+  ];
+  fhir:ServiceRequest.occurrenceDateTime [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2016-08-16"^^xsd:date];
+  fhir:ServiceRequest.requester [
+     fhir:Reference.display [ fhir:value "Angela Care, MD" ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Pamela Educator, RN" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "early detection of breast mass" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/education.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/education.ttl> .
+
+# -------------------------------------------------------------------------------------
+

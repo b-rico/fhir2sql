@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="ResearchStudy" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="ResearchStudy.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/research-study-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/research-study-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="ResearchStudy.primaryPurposeType" status="new"/>
+      <element path="ResearchStudy.phase" status="new"/>
+      <element path="ResearchStudy.condition" status="new"/>
+      <element path="ResearchStudy.location" status="new"/>
+      <element path="ResearchStudy.principalInvestigator">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element path="ResearchStudy.arm.type" status="new"/>
+      <element path="ResearchStudy.objective" status="new"/>
+      <element path="ResearchStudy.objective.name" status="new"/>
+      <element path="ResearchStudy.objective.type" status="new"/>
+      <element path="ResearchStudy.jurisdiction" status="deleted"/>
+      <element path="ResearchStudy.arm.code" status="deleted"/>
+   </type>
+</difference>

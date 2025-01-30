@@ -1,0 +1,634 @@
+<!DOCTYPE HTML>
+  <!-- These elements SHALL always appear in this order. These basic elements shared by all resources come first
+in order to support consistent definitions for schema and UML derived code. --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Financial-module - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/financial-module.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><b><img src="financial.png"/> Financial</b></li>          <!-- financial-module.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+<table class="colsi"><tr><td id="wg">Work Group <a href="http://www.hl7.org/Special/committees/fm/index.cfm" _target="blank">Financial Management <img src="external.png" style="text-align: baseline"/></a> </td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:  <!-- !ns! --><a href="versions.html#std-process">Informative</a></td></tr></table>
+
+<a name="root"></a>
+<h2 class="self-link-parent"><span class="sectioncount">13.0<a name="13.0"> </a></span> Financial Module <a href="financial-module.html#13.0" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+
+<a name="intro"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.1</span> Introduction <a href="financial-module.html#intro" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+The Financial module covers the resources and services provided by FHIR to support the costing, financial transactions and billing which occur within
+a healthcare provider as well as the eligibility, enrollment, authorizations, claims and payments which occur between healthcare providers
+and insurers and the reporting and notification between insurers and subscribers and patients.  
+</p>
+<p>
+See also the <a href="administration-module.html">Administration</a> and <a href="workflow-module.html">WorkFlow</a>  modules.
+</p>
+
+<a name="index"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.2</span> Index <a href="financial-module.html#index" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+    <table width="100%" style="table-layout: fixed">
+        <tr>
+            <td>
+                <ul>
+                    <li><a href="account.html">Account</a></li>
+                    <li><a href="contract.html">Contract</a></li>
+                    <li><a href="coverage.html">Coverage</a></li>
+                    <li><a href="coverageeligibilityrequest.html">CoverageEligibilityRequest</a></li>
+                    <li><a href="coverageeligibilityresponse.html">CoverageEligibilityResponse</a></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><a href="enrollmentrequest.html">EnrollmentRequest</a></li>
+                    <li><a href="enrollmentresponse.html">EnrollmentResponse</a></li>
+                    <li><a href="claim.html">Claim</a></li>
+                    <li><a href="claimresponse.html">ClaimResponse</a></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><a href="paymentnotice.html">PaymentNotice</a></li>
+                    <li><a href="paymentreconciliation.html">PaymentReconciliation</a></li>
+                    <li><a href="explanationofbenefit.html">ExplanationOfBenefit</a></li>
+                    <li><a href="visionprescription.html">VisionPrescription</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <img src="financial-module.png" alt="Image showing the relationship between the financial resources" width="658px"/>
+    </div>
+
+    <h4 class="self-link-parent"><span class="sectioncount">13.0.2.1<a name="13.0.2.1"> </a></span> Support <a href="financial-module.html#13.0.2.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+    <p>
+        Administrative
+    </p>
+    <table class="bare">
+        <tr><td><b>Name</b></td><td><b>Aliases</b></td><td><b>Description</b></td></tr>
+        <tr bgcolor="#EFEFEF"><td><a href="account.html">Account</a></td><td>Cost center</td><td>A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track charges for a patient, cost centers, etc.</td></tr>
+
+        <tr bgcolor="#FFFFFF"><td><a href="contract.html">Contract</a></td><td></td><td>Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.</td></tr>
+
+        <tr bgcolor="#EFEFEF"><td><a href="coverage.html">Coverage</a></td><td></td><td>Financial instrument which may be used to reimburse or pay for health care products and services. Includes both insurance and self-payment.</td></tr>
+
+        <tr bgcolor="#FFFFFF"><td><a href="coverageeligibilityrequest.html">CoverageEligibilityRequest</a></td><td></td><td>The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.</td></tr>
+
+        <tr bgcolor="#EFEFEF"><td><a href="coverageeligibilityresponse.html">CoverageEligibilityResponse</a></td><td></td><td>This resource provides eligibility and plan details from the processing of an CoverageEligibilityRequest resource.</td></tr>
+
+        <tr bgcolor="#FFFFFF"><td><a href="enrollmentrequest.html">EnrollmentRequest</a></td><td></td><td>This resource provides the insurance enrollment details to the insurer regarding a specified coverage.</td></tr>
+
+        <tr bgcolor="#EFEFEF"><td><a href="enrollmentresponse.html">EnrollmentResponse</a></td><td></td><td>This resource provides enrollment and plan details from the processing of an EnrollmentRequest resource.</td></tr>
+
+        <tr bgcolor="#FFFFFF"><td><a href="visionprescription.html">VisionPrescription</a></td><td></td><td>An authorization for the provision of glasses and/or contact lenses to a patient.</td></tr>
+
+    </table>
+
+    <h4 class="self-link-parent"><span class="sectioncount">13.0.2.2<a name="13.0.2.2"> </a></span> Billing <a href="financial-module.html#13.0.2.2" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+    <p>
+        Claims, processing and responses
+    </p>
+    <table class="bare">
+        <tr><td><b>Name</b></td><td><b>Aliases</b></td><td><b>Description</b></td></tr>
+        <tr bgcolor="#EFEFEF"><td><a href="claim.html">Claim</a></td><td>Adjudication Request, Preauthorization Request</td><td>A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.</td></tr>
+
+        <tr bgcolor="#FFFFFF"><td><a href="claimresponse.html">ClaimResponse</a></td><td>Remittance Advice</td><td>This resource provides the adjudication details from the processing of a Claim resource.</td></tr>
+
+    </table>
+
+    <h4 class="self-link-parent"><span class="sectioncount">13.0.2.3<a name="13.0.2.3"> </a></span> Payment <a href="financial-module.html#13.0.2.3" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+    <p>
+        Used to support service payment processing and reporting
+    </p>
+    <table class="bare">
+        <tr><td><b>Name</b></td><td><b>Aliases</b></td><td><b>Description</b></td></tr>
+        <tr bgcolor="#EFEFEF"><td><a href="paymentnotice.html">PaymentNotice</a></td><td></td><td>This resource provides the status of the payment for goods and services rendered, and the request and response resource references.</td></tr>
+
+        <tr bgcolor="#FFFFFF"><td><a href="paymentreconciliation.html">PaymentReconciliation</a></td><td></td><td>This resource provides the details including amount of a payment and allocates the payment items being paid.</td></tr>
+
+    </table>
+
+    <h4 class="self-link-parent"><span class="sectioncount">13.0.2.4<a name="13.0.2.4"> </a></span> Other <a href="financial-module.html#13.0.2.4" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+    <p>
+        Patient reporting and other purposes
+    </p>
+    <table class="bare">
+        <tr><td><b>Name</b></td><td><b>Aliases</b></td><td><b>Description</b></td></tr>
+        <tr bgcolor="#EFEFEF"><td><a href="explanationofbenefit.html">ExplanationOfBenefit</a></td><td>EOB</td><td>This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.</td></tr>
+
+    </table>
+
+<p>
+Additional Resources will be added in the future. A list of hypothesized resources can be found on the
+<a href="https://confluence.hl7.org/display/FHIR/Resource+Types">HL7 Confluence <img src="external.png" style="text-align: baseline"/></a>.  Feel free to add any you think are missing or engage with one
+of the <a href="http://www.hl7.org/Special/committees/index.cfm">HL7 Work Groups <img src="external.png" style="text-align: baseline"/></a> to submit a
+<a href="https://confluence.hl7.org/display/FHIR/Resource+Proposals">proposal <img src="external.png" style="text-align: baseline"/></a> to define a resource of particular interest.
+</p>
+
+<a name="secpriv"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.3</span> Security and Privacy <a href="financial-module.html#secpriv" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+Financial information in general and in particular when related to or including health information, such as claims data, are typically considered
+Protected Health Information and as such must be afforded the same protection and safeguards as would be afforded to purely clinical identified health data.
+</p>
+<p>
+The Security and Privacy measures associated with FHIR, such as the use of Security labels and tags in the resource.meta, are
+encouraged in addition to the use of whatever measures for authorization and encryption are supported by the chosen exchange model,
+e.g. FHIR REST, Web Services, Direct, MLLP, SMTP and others.
+</p>
+<p>
+For more general considerations, see <a href="secpriv-module.html">the Security and Privacy module</a>.
+</p>
+
+<a name="fingloss"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.4</span> Glossary <a href="financial-module.html#fingloss" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+Financial information in general and in particular when related to or including health information, such as claims data, are typically considered
+Protected Health Information and as such must be afforded the same protection and safeguards as would be afforded to purely clinical identified health data.
+</p>
+<p>
+ <table class="grid">
+ <tr><td><b>Term</b></td><td><b>Alias</b></td><td><b>Resource Type</b></td><td><b>Description</b></td></tr>
+ <tr><td>Adjudication</td><td>Claim, Preauthorization or Predetermination Processing</td><td>ClaimResponse</td><td>The processing by an insurer of a claim, preauthorization or predetermination to determine under the insurance plan what if any benefits are or would be payable.</td></tr>
+ <tr><td>Assignment of Benefit</td><td>Assignment</td><td>n/a</td><td>When a Beneficiary directs that any benefits they receive from the adjudication of a claim may be paid to the service provider who issued the claim.</td></tr>
+ <tr><td>Attachment</td><td></td><td>Communication</td><td>A collection of information objects sent to a party to support their understanding or processing of another resource such as a claim.</td></tr>
+ <tr><td>Beneficiary</td><td>Patient</td><td>Patient</td><td>The party whose health care expenses may be covered by a policy issued by an Insurer.</td></tr>
+ <tr><td>Benefit Amount</td><td>Benefit</td><td>n/a</td><td>The amount payable under an insurance policy for a given expense incurred by a patient.</td></tr>
+ <tr><td>Claim</td><td>Claim</td><td>Claim</td><td>A request to an Insurer to adjudicate the supplied charges for health care goods and services under the identified policy and to pay the determined Benefit amount, if any.</td></tr>
+ <tr><td>Coordination of Benefit</td><td>COB</td><td>n/a</td><td>The rules, usually regionally defined, which govern the order of application of multiple Insurance coverages or Self-Pay to a given suite of health care expenses.</td></tr>
+ <tr><td>Dependent</td><td></td><td>Patient, RelatedPerson</td><td>A person who receives their coverage via a policy which is own or subscribed to by another. Typically, these include spouses, partners and minor children but may also include students, parents and disabled persons.</td></tr>
+ <tr><td>Insurer</td><td>Payer, Payor</td><td>Organization</td><td>A public or private insurer which will adjudicate Claims for health care goods and services to determine if the there is any benefit payable, amount due, under the policy which covers the patient.</td></tr>
+ <tr><td>Network</td><td></td><td>n/a</td><td>An insurer defined grouping of Providers for which the Beneficiary's plan preferentially covers the costs of treatment, e.g. closed, rental, etc.</td></tr>
+ <tr><td>Payer</td><td>Payor, Insurer</td><td>Organization</td><td>A public or private insurer.</td></tr>
+ <tr><td>Payor</td><td>Payer, Insurer</td><td>Organization</td><td>A public or private insurer.</td></tr>
+ <tr><td>Policy</td><td></td><td>Contract</td><td>A contract between an Insurer and an individual or other entity such as an employer to reimburse covered parties (Beneficiaries) for some or all of a prescribed suite of health-related goods and services.</td></tr>
+ <tr><td>Policy Holder</td><td>Policy owner</td><td>Patient, RelatedPerson, Organization</td><td>The party which owns the policy. It may be the employer for work-related policies or the individual for purchased or public policies.</td></tr>
+ <tr><td>Preauthorization</td><td>Prior Authorization, Pre-Auth</td><td>Claim</td><td>A request to an Insurer to adjudicate the supplied <b><i>proposed future</i></b> charges for health care goods and services under the identified policy and to approve the services and provide the expected benefit amounts and potentially to reserve funds to pay the benefits when Claims for the indicated services are later submitted.</td></tr>
+ <tr><td>Predetermination</td><td>Pre-Determination, PreD</td><td>Claim</td><td>A request to an Insurer to adjudicate the supplied <b><i>'what if'</i></b> charges for health care goods and services under the identified policy and report back what the Benefit payable would be had the services actually been provided.</td></tr>
+ <tr><td>Solicited Attachment</td><td></td><td>Communication</td><td>An attachment sent to provide supporting information in response to having received a request for additional information.</td></tr>
+ <tr><td>Subscriber</td><td></td><td>Patient, RelatedPerson</td><td>The person who signs-up for the coverage. May be an employee or person with dependents.</td></tr>
+ <tr><td>Unsolicited Attachment</td><td></td><td>Communication</td><td>An attachment sent to provide supporting information without first having received a request for additional information.</td></tr>
+ </table>
+</p>
+
+<a name="uses"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.5</span> Common Use Cases <a href="financial-module.html#uses" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+ <p>
+ The table below details various common business activities which occur in the financial realm, and the focal resources
+ which may be exchanged, along with supporting resources, to accomplish the business activities. Whether the
+ resources specified are actually needed requires consideration of the business itself and the exchange methodology
+ and transport being used.
+ </p>
+ <p>
+ For example: If a content model is not required to obtain the appropriate status element then a SEARCH (GET) may be used,
+ however if a content model is required to support the request for information then the content model will need to be CREATEd (POST).
+ Alternately, if FHIR Operations are being used then
+ the specified focal resource may be employed as one of the Operation parameters or might not be required.
+ </p>
+
+ <table class="grid">
+
+ <tr><td><b>Business Activity</b></td><td><b>Request Resource</b></td><td><b>Response Resource</b></td></tr>
+ <tr><td>Eligibility Check</td><td><a href="coverageeligibilityrequest.html">CoverageEligibilityRequest</a></td><td><a href="coverageeligibilityresponse.html">CoverageEligibilityResponse</a></td></tr>
+ <tr><td>Enrollment Update</td><td><a href="enrollmentrequest.html">EnrollmentRequest</a></td><td><a href="enrollmentresponse.html">EnrollmentResponse</a></td></tr>
+ <tr><td>Claim</td><td><a href="claim.html">Claim</a> (type={discipline}, use=claim)</td><td><a href="claimresponse.html">ClaimResponse</a></td></tr>
+ <tr><td>Claim with attachments</td><td><a href="bundle.html">Bundle</a> containing <a href="claim.html">Claim</a> and the attachments</td><td><a href="claimresponse.html">ClaimResponse</a></td></tr>
+ <tr><td>Predetermination</td><td><a href="claim.html">Claim</a> (type={discipline}, use=predetermination)</td><td><a href="claimresponse.html">ClaimResponse</a></td></tr>
+ <tr><td>Preauthorization</td><td><a href="claim.html">Claim</a> (type={discipline}, use=preauthorization)</td><td><a href="claimresponse.html">ClaimResponse</a></td></tr>
+ <tr><td>Reversal<sup><a href="#cancel">Cancel</a></sup></td><td><a href="task.html">Task</a> (code=cancel)</td><td><a href="task.html">Task</a> (optional output=<a href="claimresponse.html">ClaimResponse</a>)</td></tr>
+ <tr><td>Nullify<sup><a href="#nullify">Nullify</a></sup></td><td><a href="task.html">Task</a> (code=nullify)</td><td><a href="task.html">Task</a> (output=error codes)</td></tr>
+ <tr><td>Release<sup><a href="#release">Release</a></sup></td><td><a href="task.html">Task</a> (code=release)</td><td><a href="task.html">Task</a> (output=error codes)</td></tr>
+ <tr><td>Re-adjudication<sup><a href="#reprocess">Reprocess</a></sup></td><td><a href="task.html">Task</a> (code=reprocess)</td><td><a href="task.html">Task</a> (output=<a href="claimresponse.html">ClaimResponse</a>)</td></tr>
+ <tr><td>Status Check<sup><a href="#status">Status</a></sup></td><td><a href="task.html">Task</a> (code=status)</td><td><a href="task.html">Task</a> (output=status code)</td></tr>
+ <tr><td>Pended Check (Polling)<sup><a href="#poll">Poll</a></sup></td><td><a href="task.html">Task</a> (code=poll)</td><td><a href="task.html">Task</a> (output=<a href="resourcelist.html">{Resource}</a>)</td></tr>
+ <tr><td>Payment Notice</td><td><a href="task.html">Task</a> (code=deliver, input=<a href="paymentnotice.html">PaymentNotice</a>)</td><td><a href="task.html">Task</a> (output=error codes)</td></tr>
+ <tr><td>Payment Reconciliation</td><td><a href="task.html">Task</a> (code=poll, input=<a href="paymentreconciliation.html">PaymentReconciliation</a>)</td><td><a href="task.html">Task</a> (output=<a href="paymentreconciliation.html">PaymentReconciliation</a>)</td></tr>
+ <tr><td>Send Attachments</td><td><a href="task.html">Task</a> (code=deliver, input=<a href="communication.html">Communication</a>)</td><td><a href="task.html">Task</a> (output=error codes)</td></tr>
+ <tr><td>Request Attachments</td><td><a href="task.html">Task</a> (code=poll, input=<a href="communicationrequest.html">CommunicationRequest</a>)</td><td><a href="task.html">Task</a> (output=<a href="communicationrequest.html">CommunicationRequest</a>)</td></tr>
+ <tr><td>Request an Explanation of Benefits&nbsp;&nbsp;&nbsp;</td><td><a href="task.html">Task</a> (code=poll, input=<a href="explanationofbenefit.html">ExplanationOfBenefit</a>)</td><td><a href="task.html">Task</a> (output=<a href="explanationofbenefit.html">ExplanationOfBenefit</a>)</td></tr>
+</table>
+ <p>
+ <b>{discipline}</b> means the type of claim: OralHealth, Vision, Pharmacy, Professional or Institutional.
+ </p>
+  <p>
+ <b>{Resource}</b> means any pended or undelivered resource subject to the selection details specified in the request.
+ </p>
+
+<a name="tasks"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.6</span> Tasks <a href="financial-module.html#tasks" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p> See the Financial examples in <a href="task.html">Task</a>. </p>
+<p>
+In addition to supplying a reference to a focal resource in the .focus element, where appropriate an .input element 
+of type 'origresponse' may also be provided with a reference to the resource which was the original response to the focal resource. 
+</p>
+
+<a name="cancel"></a>
+<h4 class="self-link-parent"><span class="sectioncount">13.0.6.1</span> Cancel <a href="financial-module.html#cancel" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>
+The <b>Cancel</b> is the formal request to cease processing an incomplete prior request or to reverse 
+a completed prior request or information submission. A copy of the original request may be retained. The Task will be updated to indicate 
+whether the requested action was accepted and successful or whether errors were found in the request and 
+ may contain a reference to the ClaimResponse or such other resource as may be appropriate for expressing the outcome of the cancellation.
+</p>
+<a name="nullify"></a>
+<h4 class="self-link-parent"><span class="sectioncount">13.0.6.2</span> Nullify <a href="financial-module.html#nullify" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>
+The <b>Nullify</b> is the formal request to cease processing an incomplete prior request or to reverse 
+a completed prior request or information submission. All copies 
+of the original submission are to be purged, although audit logs may be retained. The Task will be updated to indicate 
+whether the requested action was accepted and successful or whether errors were found in the request.
+</p>
+<a name="poll"></a>
+<h4 class="self-link-parent"><span class="sectioncount">13.0.6.3</span> Poll <a href="financial-module.html#poll" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>
+<b>Poll</b> provides supporting information for the poll request. The response to 
+a Poll is a Task referring to: a previously undelivered response Resource; a Bundle containing one or more Resources; or, a Task which may 
+contain errors. 
+</p>
+<p>
+A simple Poll request, one which doesn't specify additional .input parameters: origresponse, include, exclude, period or count; would return
+any single pended resource. Specific types of business behaviors may be supported by providing values for the
+filtering elements in the .input element, for example:
+</p>
+<ul>
+<li>Get any pended resource - no filters specified</li>
+<li>Get deferred response to a Claim - specify the Claim in the .focus and optionally the original response in 'origresponse'</li>
+<li>Get all supporting information - specify 'Communication' as an 'include'</li>
+<li>Get an Explanation of Benefit - specify 'ExplanationOfBenefit' as an 'include'</li>
+<li>Get any resource except Explanation of Benefit - specify 'ExplanationOfBenefit' as an 'exclude'</li>
+<li>Get a payment reconciliation - specify a 'period' which contains the expected reconciliation 
+creation date, and specify 'PaymentReconciliation' as an 'include'</li> 
+<li>Get a bundle containing more than one resource - specify the maximum number in 'count'</li>
+</ul>
+<p>
+Upon processing of the request, the Task or Bundle may contain errors or a reference to the resource(s) found.
+</p>
+<a name="release"></a>
+<h4 class="self-link-parent"><span class="sectioncount">13.0.6.4</span> Release <a href="financial-module.html#release" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>
+<b>Release</b> is the formal request for the release of any allocation or reserved resources such as funds or products reserved, for example  
+on a preauthorization, which have not been consumed, e.g. as indicated on claims, and which are no longer required. The preauthorization which request ed the reservation
+will be identified in the .focus element and the insurer's response confirming the reservation may be provided as a .input element.
+</p>
+
+<a name="reprocess"></a>
+<h4 class="self-link-parent"><span class="sectioncount">13.0.6.5</span> Reprocess <a href="financial-module.html#reprocess" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>
+<b>Reprocess</b> indicates the resource which is to be reprocessed in the .focus element, for example a claim to be re-adjudicated or a specimen or diagnostic image to be re-examined, 
+and provides both supporting information for the reprocessing and the line items which are to be reprocessed in the .input element.
+</p>
+<p>
+This is necessary for the limited supporters who require the ability to formally request the 
+reprocessing of specified service sub-trees from an already processed resource such as a previously adjudicated Claim. Upon processing of the request the
+ Task may contain errors or a reference to the ClaimResponse or such other resource as may be appropriate for expressing the outcome of the reprocessing.
+</p>
+
+<a name="status"></a>
+<h4 class="self-link-parent"><span class="sectioncount">13.0.6.6</span> Status <a href="financial-module.html#status" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>
+<b>Status</b> indicates the resource for which the processing status is requested in the .focus element and 
+provides any supporting information for the status request. The 
+</p>
+<p>
+This is a formal request for systems which require requisition-level information or transports which don't support a
+'Get Operation', for the processing status of a previously submitted processing request.
+</p>
+<p>
+Upon processing of the status request the Task may contain errors or a .output parameter of 'status' containing the status of outcome code of the processing
+of the targeted resource.
+</p> 
+ 
+<a name="order"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.7</span> Relative Order of Use <a href="financial-module.html#order" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+ <p>
+ The table below details the relative order of events and use of financial resources for patient care during the care cycle.
+ Not all steps or information exchanges may occur.  Supporting information may be required more frequently than has been depicted below.
+ </p>
+ <p>
+ <table class="grid">
+ <tr><td><b>Business Activity</b></td><td><b>Focal Resource</b></td></tr>
+ <tr><td><b>Patient visits Provider</b></td></tr>
+ <tr><td>Provider checks for valid insurance coverage</td><td><a href="coverageeligibilityrequest.html">CoverageEligibilityRequest</a></td></tr>
+ <tr><td>Insurer responds with coverage status and optional plan details</td><td><a href="coverageeligibilityresponse.html">CoverageEligibilityResponse</a></td></tr>
+ <tr><td><b>Provider examines Patient and reviews treatment options</b></td></tr>
+ <tr><td>Provider submits Predetermination(s) for treatment options to determine potential reimbursement</td><td><a href="claim.html">Claim</a> {use=predetermination}</td></tr>
+ <tr><td>Insurer responds with potential reimbursement</td><td><a href="claimresponse.html">ClaimResponse</a></td></tr>
+ <tr><td><b>Provider and Patient determine treatment plan</b></td></tr>
+ <tr><td>Treatment plan submitted to Insurer to reserve funds</td><td><a href="claim.html">Claim</a> {use=preauthorization}</td></tr>
+ <tr><td>Insurer acknowledges receipt of preauthorization</td><td><a href="claimresponse.html">ClaimResponse</a></td></tr>
+ <tr><td>Insurer requests additional information</td><td><a href="communicationrequest.html">CommunicationRequest</a></td></tr>
+ <tr><td>Provider submits supporting information</td><td><a href="communication.html">Communication</a></td></tr>
+ <tr><td>Insurer provides adjudicated response to pre-authorization</td><td><a href="claimresponse.html">ClaimResponse</a></td></tr>
+ <tr><td>Provider checks on status of pre-authorization processing</td><td><a href="task.html">Task</a> {code=status}</td></tr>
+ <tr><td>Insurer responds indicating adjudication is ready</td><td><a href="task.html">Task</a></td></tr>
+ <tr><td>Provider retrieves pre-authorization adjudication</td><td>READ or <a href="task.html">Task</a> {code=poll}</td></tr>
+ <tr><td><b>Provider provides treatment</b></td></tr>
+ <tr><td>Provider submits patient's claim for reimbursement</td><td><a href="claim.html">Claim</a> {use=claim}</td></tr>
+ <tr><td>Insurer responds with claim adjudication</td><td><a href="claimresponse.html">ClaimResponse</a></td></tr>
+ <tr><td><b>Patient leaves treatment setting</b></td></tr>
+ <tr><td>Patient requests an Explanation of Benefit for their Personal Health Record application</td><td>READ or <a href="task.html">Task</a> {code=poll}</td></tr>
+ <tr><td>Insurer responds with Explanation of Benefit</td><td><a href="explanationofbenefit.html">ExplanationOfBenefit</a></td></tr>
+ <tr><td>Provider requests the payment details associated with a bulk payment</td><td>SEARCH or <a href="task.html">Task</a> {code=poll}</td></tr>
+ <tr><td>Insurer responds with a Payment Reconciliation</td><td><a href="paymentreconciliation.html">PaymentReconciliation</a></td></tr>
+ <tr><td>Insurer notifies provider that payment has been issued</td><td><a href="paymentnotice.html">PaymentNotice</a></td></tr>
+ <tr><td>Insurer notifies parties that payment funds have been received</td><td><a href="paymentnotice.html">PaymentNotice</a></td></tr>
+ </table>
+ </p>
+
+<a name="resource-status"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.8</span> Resource Status Life-cycle <a href="financial-module.html#resource-status" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+Financial resources, such as claim and eligibility resources, begin with the status 'draft' and continue with this status during the 
+development of the resource. When a resource is exchanged with an external party, for example when a provider claim is sent or 
+otherwise created on the insurer's system before the exchange the status of the claim shall be changed to 'active'. A resource with 
+the 'active' status is immutable and cannot be edited except for further change to the status in the event the resource is subsequently 
+canceled resulting in a status of 'cancel'.
+</p>
+<p>
+In the event that a resource is determined to have been entered in error, for example a wrong date of service or billing code, while the
+status is 'draft' then the status may be changed to 'entered-in-error' and no further editing of the resource is permitted. If the resource 
+status is 'active' when the error is noted, then the resource must be canceled and further interaction with whatever parties have been supplied 
+the resource may be required to halt any processing or reverse any effects of the resource prior to creating an amended instance.
+</p>
+<a name="secondary-use"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.9</span> Secondary Uses <a href="financial-module.html#secondary-use" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+In addition to their primary use of conveying patient billing information to insurers for reimbursement either to the subscriber or the provider (
+assignment of benefit), many of the financial resources, such as <a href="claim.html">Claim</a> and 
+<a href="explanationofbenefit.html">ExplanationOfBenefit</a>, may be used to export data to other agencies to support reporting and analytics. 
+Consequently the cardinalities of many elements are set to optional, '0..', to support reporting, for example of partial adjudications, where the 
+cardinality for a normal claim profile or claim response profile would expect the cardinality to required, '1..'. </p>
+<p>Profiles will usually be necessary 
+to set tight constraints on cardinalities, require jurisdictional terminologies, and eliminate or introduce elements require to support various
+business needs and discipline requirements.  
+</p>
+
+<a name="attachments"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.10</span> Attachments - Supporting Information <a href="financial-module.html#attachments" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+There is often a need to provide supporting information, commonly referred to as <b>attachments</b>, to document the need for a service
+and/or to confirm that the good or service was authorized or rendered.
+This information may be in many forms, including: scanned documents, PDFs, word processing files, X-Rays, images, CDAs and FHIR Resources.
+</p>
+<p>
+Supporting information may be provided, as a reference or the actual material, to support the <a href="claim.html">Claim</a> (complete claim or Preauthorization) or <a href="explanationofbenefit.html">ExplanationOfBenefit</a> in a variety of manners:
+</p>
+<ul>
+<li><b>Included</b>: in the <i>{resource}</i>.supportingInfo section;</li>
+<li><b>Unsolicited</b>: in a <a href="communication.html">Communication</a> which refers to the Claim or Explanation of Benefit; or</li>
+<li><b>Solicited</b>: in a <a href="communication.html">Communication</a> in response to a <a href="communicationrequest.html">CommunicationRequest</a> from the insurer requesting more information; or</li>
+<li><b>Input</b>: in the input parameters of a FHIR operation or Task.input element if a <a href="task.html">Task</a> resource is used.</li>
+</ul>
+
+<a name="subrogation"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.11</span> Subrogation - Insurers recovering costs from other insurers <a href="financial-module.html#subrogation" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+It is not always appropriate to send a Claim, or other eClaim requests such as eligibility or pre-authorizations, to some insurers. This may be due to 
+jurisdictional rules, for example the national health program may pay for workplace accident claims then recover costs directly against that program, 
+or there may be no direct relationship between the provider and the insurer, for example for injury caused by another party or covered under
+property or accident insurance, the patient's primary health insurer may pay for services then recover a portion of their costs from that other insurer.
+</p>
+<p>To support the downstream recovery of costs from the appropriate insurer it is necessary to supply the insurance coverage information for all logically 
+potentially applicable coverages and to flag those which are provided for subrogation so that both the provider and payor systems know whether to expect to
+submit eClaims requests to or expect eClaims responses from these insurers. In the specific case of the Claim resource (claim, predetermination, 
+preauthorization) the provider would list all insurance coverages, including only work or accident related if appropriate, but send Claims only 
+to non-subrogation coverages (Coverage.subrogation=false) and not include ClaimResponses, nor would payors expect ClaimResponses to be provided, for 
+subrogated coverages.
+</p>
+
+<a name="cob"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.12</span> Coordination of Benefit - Handling multiple insurance coverages <a href="financial-module.html#cob" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+When a patient has multiple <a href="coverage.html">Coverages</a> there will generally be agreement within the jurisdiction as to the order of
+ application of claims recovery against the coverages which is referred to as the Coordination of Benefit (COB) order. This would also be the order
+ used to request preauthorization and predeterminations. Coverage eligibility is typically independent of the COB order as it is coverage specific.  
+</p>
+<p>
+While the jurisdiction rules must be consulted for COB specifics, generally: risk specific polices apply before risk-general policies; 
+ national policies will apply before personal or top-up policies; 
+ coverage obtained with full-time employment applies before coverage obtained with part-time employment; policies where the patient is the 
+ subscriber apply before a spouse's policy; and, there will be some understanding as to the order of application for policies which apply to
+ dependents, for example, birthday order of the subscribers. 
+</p>
+<p>
+When sending Claims down the COB order all logically applicable policies will be listed, so that insurers may confirm adherence to the COB order,
+ and, aside from subrogated coverages, will include the <a href="claimresponse.html">ClaimResponses</a> from any coverages appearing earlier in
+ the COB order so that each insurer may correctly calculate their portion of the overall cost of products and services supplied. The claims 
+ work their way through the COB order until the order is exhausted or there is no further outstanding balance, whichever comes first.
+</p>
+<p>
+While it is most common, it is not always the case that all claims originate with the provider. In some jurisdictions, in some or all cases,
+ the primary health insurer takes or is assigned responsibility to obtain the <a href="claimresponse.html">ClaimResponses</a> from downstream
+ insurers and to return the suite of <a href="claimresponse.html">ClaimResponses</a> to the provider. This is similar to subrogation in that
+ it removes the claim-cycle work from the provider but unlike subrogation the individual insurers still make their payments to the provider, if 
+ Assignment of Benefit is agreed, and a reversal of the base claim often requires the provider to handle reversal of the downstream claims as well.
+</p>
+
+<a name="batch"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.13</span> Batches - Handling multiple eClaim requests or responses within a single exchange <a href="financial-module.html#batch" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+eClaims request and response resources may be exchanged between providers and payors individually or via batches. eClaim requests, individual and batches, 
+ may be created on a payor system via FHIR REST or sent to the payor, either synchronously via FHIR operations or another request-response protocol such as:
+ WSI Web Services, a SOA exchange, MLLP, etc. 
+</p>
+<h4 class="self-link-parent"><span class="sectioncount">13.0.13.1<a name="13.0.13.1"> </a></span> Individual eClaim Requests and Responses <a href="financial-module.html#13.0.13.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>An individual eClaim request or response, for example a <a href="claim.html">Claim</a> (use=claim), may be either a simple Claim resource which refers to or contains
+ any supporting resources or <a href="bundle.html">Bundle</a> resource containing a single request, e.g. a <a href="claim.html">Claim</a>, 
+ and any associated resources (Patient, Practitioner, Organization, Coverage, etc.). 
+</p>
+<h4 class="self-link-parent"><span class="sectioncount">13.0.13.2<a name="13.0.13.2"> </a></span> eClaim Batches <a href="financial-module.html#13.0.13.2" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>A batch of eClaim requests or responses is a (<a href="bundle.html">FHIR Bundle</a>) containing one or more eClaim requests or responses, as above.
+The batch is simply a 'bag' of request or responses, typically of a consistent type of request or response, for example: all eligibility, preauthorizations,
+ claim, payment notifications, etc. There is no assurance provided that when receiving a batch of 100 claim responses that they relate to the 100 claims 
+ just submitted. 
+</p> 
+<a name="real-time"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.14</span> Real-time eClaims Exchange <a href="financial-module.html#real-time" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+The eClaims resources are intended to support the real-time exchange of eClaim request and responses. While certain eligibility, claims, preauthorizations
+ and predeterminations may be processed in real-time there are many cases where they cannot due to the complexity of the material submitted, the
+ maturity of the jurisdictional styles and insurer processing systems, and the inclusion or requirements for supporting information which tends to
+ require manual review. Therefore, in some cases the eClaim response will only indicate the receipt and typically validation that the request is 
+ processable (or that it contain errors which inhibit processing).
+</p>
+<p>
+Deferred responses, those which could not be returned in real-time, and those returned asynchronously may be obtained either by FHIR REST 
+ (a GET or SEARCH) or via a <a href="#poll">Poll</a> depending upon the style of information exchange supported.
+</p>
+
+<a name="roadmap"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.15</span> Developmental Roadmap <a href="financial-module.html#roadmap" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+The Financial Management Work Group (FM) is responsible for two subdomains:
+</p>
+<p>
+Financial Accounts and Billing (FIAB) - resources for accounts, charges (internal costing transactions) and patient billing, and<br/>
+Financial Claims and Reimbursement (FICR) - insurance information, enrollment, eligibility, predetermination, preauthorization, claims, patient reporting and payments.
+</p>
+<p>
+To date FM has been focusing on the resources required to support the exchange of claims and related information between health care providers and insurers. The first draft of this work
+is nearing completion with the release of the first Financial Standard for Trial Use in STU4 of FHIR. Over the next year further refinements will be expected as implementers begin developing regional profiles
+and begin live pilots with resources.
+</p>
+<p>
+Once the above is well underway FM can then look to developing the Enrollment-related resources and the resources to support the FIAB functions.
+</p>
+
+<a name="terminology"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.0.16</span> Terminology <a href="financial-module.html#terminology" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+In many cases an <b>example</b> valueset has been provided in this release. Financial Management will be devoting effort in the
+preparation to Release 5 of FHIR to develop more representative example sets and to determine where global codesets exist such
+that some of the valuesets may be elevated in strength to extensible or required.
+</p>
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Ffinancial-module.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Ffinancial-module.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

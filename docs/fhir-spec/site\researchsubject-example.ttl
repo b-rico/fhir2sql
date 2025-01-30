@@ -1,0 +1,44 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ResearchSubject/example> a fhir:ResearchSubject;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">[Put rendering here]</div>"
+  ];
+  fhir:ResearchSubject.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.text [ fhir:value "Subject id" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://example.org/studysubjectids" ];
+     fhir:Identifier.value [ fhir:value "123" ]
+  ];
+  fhir:ResearchSubject.status [ fhir:value "candidate"];
+  fhir:ResearchSubject.study [
+     fhir:link <http://hl7.org/fhir/ResearchStudy/example>;
+     fhir:Reference.reference [ fhir:value "ResearchStudy/example" ]
+  ];
+  fhir:ResearchSubject.individual [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://hl7.org/fhir/ResearchStudy/example> a fhir:ResearchStudy .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ResearchSubject/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ResearchSubject/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

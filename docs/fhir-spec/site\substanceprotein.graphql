@@ -1,0 +1,140 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type SubstanceProtein {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  sequenceType: CodeableConcept
+  numberOfSubunits: Int  _numberOfSubunits: ElementBase
+  disulfideLinkage: String  _disulfideLinkage: [ElementBase]
+  subunit: [SubstanceProteinSubunit]
+}
+
+type SubstanceProteinSubunit {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subunit: Int  _subunit: ElementBase
+  sequence: String  _sequence: ElementBase
+  length: Int  _length: ElementBase
+  sequenceAttachment: Attachment
+  nTerminalModificationId: Identifier
+  nTerminalModification: String  _nTerminalModification: ElementBase
+  cTerminalModificationId: Identifier
+  cTerminalModification: String  _cTerminalModification: ElementBase
+}
+
+input SubstanceProtein {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  sequenceType: CodeableConcept
+  numberOfSubunits: Int  _numberOfSubunits: ElementBase
+  disulfideLinkage: String  _disulfideLinkage: [ElementBase]
+  subunit: [SubstanceProteinSubunit]
+}
+
+input SubstanceProteinSubunit {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subunit: Int  _subunit: ElementBase
+  sequence: String  _sequence: ElementBase
+  length: Int  _length: ElementBase
+  sequenceAttachment: Attachment
+  nTerminalModificationId: Identifier
+  nTerminalModification: String  _nTerminalModification: ElementBase
+  cTerminalModificationId: Identifier
+  cTerminalModification: String  _cTerminalModification: ElementBase
+}
+
+type SubstanceProteinReadType {
+  SubstanceProtein(id : ID!) : SubstanceProtein
+}
+
+type SubstanceProteinListType {
+  SubstanceProteinList(_filter : String
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [SubstanceProtein]
+}
+
+type SubstanceProteinConnectionType {
+  SubstanceProteinConection(_filter : String
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : SubstanceProteinConnection
+}
+
+type SubstanceProteinConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [SubstanceProteinEdge]
+}
+
+type SubstanceProteinEdge {
+  mode : String
+  score : Float
+  resource : SubstanceProtein
+}
+
+type SubstanceProteinCreateType {
+  SubstanceProteinCreate(resource : SubstanceProtein) : SubstanceProteinCreation
+}
+
+type SubstanceProteinCreation {
+  location : String
+  resource : SubstanceProtein
+  information : OperationOutcome
+}
+
+type SubstanceProteinUpdateType {
+  SubstanceProteinUpdate(id : IDresource : SubstanceProtein) : SubstanceProteinUpdate
+}
+
+type SubstanceProteinUpdate {
+  resource : SubstanceProtein
+  information : OperationOutcome
+}
+
+type SubstanceProteinDeleteType {
+  SubstanceProteinDelete(id : ID) : SubstanceProteinDelete
+}
+
+type SubstanceProteinDelete {
+  information : OperationOutcome
+}
+

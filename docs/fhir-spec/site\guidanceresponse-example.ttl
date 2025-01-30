@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/GuidanceResponse/example> a fhir:GuidanceResponse;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>contained</b>: </p><p><b>requestIdentifier</b>: guidanceRequest1</p><p><b>identifier</b>: guidanceResponse1</p><p><b>module</b>: <a>http://someguidelineprovider.org/radiology-appropriateness-guidelines.html</a></p><p><b>status</b>: success</p><p><b>subject</b>: <a>Patient/example</a></p><p><b>encounter</b>: <a>Encounter/example</a></p><p><b>occurrenceDateTime</b>: 10/03/2017 4:02:00 PM</p><p><b>performer</b>: <a>Device/software</a></p><p><b>reasonCode</b>: Guideline Appropriate Ordering Assessment <span>(Details )</span></p><p><b>outputParameters</b>: id: outputParameters1</p></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Parameters;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "outputParameters1" ];
+     fhir:Parameters.parameter [
+       fhir:index 0;
+       fhir:Parameters.parameter.name [ fhir:value "score" ];
+       fhir:Parameters.parameter.valueDecimal [ fhir:value "7"^^xsd:decimal ]
+     ], [
+       fhir:index 1;
+       fhir:Parameters.parameter.name [ fhir:value "item-assessed" ];
+       fhir:Parameters.parameter.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://www.ama-assn.org/go/cpt" ];
+           fhir:Coding.code [ fhir:value "70450" ];
+           fhir:Coding.display [ fhir:value "CT, head, wo iv contrast" ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Parameters.parameter.name [ fhir:value "device" ];
+       fhir:Parameters.parameter.valueReference [
+         fhir:link <http://hl7.org/fhir/Device/software>;
+         fhir:Reference.reference [ fhir:value "Device/software" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Parameters.parameter.name [ fhir:value "guideline-followed" ];
+       fhir:Parameters.parameter.valueUri [ fhir:value "http://someguidelineprovider.org/radiology-appropriateness-guidelines.html" ]
+     ]
+  ];
+  fhir:GuidanceResponse.requestIdentifier [
+     fhir:Identifier.system [ fhir:value "http://example.org" ];
+     fhir:Identifier.value [ fhir:value "guidanceRequest1" ]
+  ];
+  fhir:GuidanceResponse.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://example.org" ];
+     fhir:Identifier.value [ fhir:value "guidanceResponse1" ]
+  ];
+  fhir:GuidanceResponse.moduleUri [ fhir:value "http://someguidelineprovider.org/radiology-appropriateness-guidelines.html"];
+  fhir:GuidanceResponse.status [ fhir:value "success"];
+  fhir:GuidanceResponse.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:GuidanceResponse.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:GuidanceResponse.occurrenceDateTime [ fhir:value "2017-03-10T16:02:00Z"^^xsd:dateTime];
+  fhir:GuidanceResponse.performer [
+     fhir:link <http://hl7.org/fhir/Device/software>;
+     fhir:Reference.reference [ fhir:value "Device/software" ]
+  ];
+  fhir:GuidanceResponse.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Guideline Appropriate Ordering Assessment" ]
+  ];
+  fhir:GuidanceResponse.outputParameters [
+     fhir:Reference.reference [ fhir:value "#outputParameters1" ]
+  ] .
+
+<http://hl7.org/fhir/Device/software> a fhir:Device .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/GuidanceResponse/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/GuidanceResponse/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Task" status="changed">
+      <element path="Task.instantiatesCanonical" status="new"/>
+      <element path="Task.instantiatesUri" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               modifier="added"
+               path="Task.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/task-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/task-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Task.intent">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/request-intent"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/task-intent|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Task.priority">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/request-priority"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Task.encounter" status="new"/>
+      <element path="Task.requester">
+         <removed-type name="BackboneElement"/>
+         <added-type name="Reference(Device | Organization | Patient | Practitioner | PractitionerRole | RelatedPerson)"/>
+      </element>
+      <element path="Task.owner">
+         <removed-type name="Reference(Device | Organization | Patient | Practitioner | RelatedPerson)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | CareTeam | HealthcareService | Patient | Device | RelatedPerson)"/>
+      </element>
+      <element path="Task.location" status="new"/>
+      <element path="Task.reasonCode" status="new"/>
+      <element path="Task.reasonReference" status="new"/>
+      <element path="Task.insurance" status="new"/>
+      <element path="Task.restriction.recipient">
+         <removed-type name="Reference(Patient | Practitioner | RelatedPerson | Group | Organization)"/>
+         <added-type name="Reference(Patient | Practitioner | PractitionerRole | RelatedPerson | Group | Organization)"/>
+      </element>
+      <element path="Task.input.value[x]">
+         <added-type name="canonical"/>
+         <added-type name="url"/>
+         <added-type name="uuid"/>
+         <added-type name="ContactDetail"/>
+         <added-type name="Contributor"/>
+         <added-type name="DataRequirement"/>
+         <added-type name="Expression"/>
+         <added-type name="ParameterDefinition"/>
+         <added-type name="RelatedArtifact"/>
+         <added-type name="TriggerDefinition"/>
+         <added-type name="UsageContext"/>
+         <added-type name="Dosage"/>
+      </element>
+      <element path="Task.output.value[x]">
+         <added-type name="canonical"/>
+         <added-type name="url"/>
+         <added-type name="uuid"/>
+         <added-type name="ContactDetail"/>
+         <added-type name="Contributor"/>
+         <added-type name="DataRequirement"/>
+         <added-type name="Expression"/>
+         <added-type name="ParameterDefinition"/>
+         <added-type name="RelatedArtifact"/>
+         <added-type name="TriggerDefinition"/>
+         <added-type name="UsageContext"/>
+         <added-type name="Dosage"/>
+      </element>
+      <element path="Task.definition[x]" status="deleted"/>
+      <element path="Task.context" status="deleted"/>
+      <element path="Task.requester.agent" status="deleted"/>
+      <element path="Task.requester.onBehalfOf" status="deleted"/>
+      <element path="Task.reason" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,214 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Coverage {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  type: CodeableConcept
+  policyHolder: Reference
+  subscriber: Reference
+  subscriberId: String  _subscriberId: ElementBase
+  beneficiary: Reference!
+  dependent: String  _dependent: ElementBase
+  relationship: CodeableConcept
+  period: Period
+  payor: [Reference]!
+  class: [CoverageClass]
+  order: positiveInt  _order: ElementBase
+  network: String  _network: ElementBase
+  costToBeneficiary: [CoverageCostToBeneficiary]
+  subrogation: Boolean  _subrogation: ElementBase
+  contract: [Reference]
+}
+
+type CoverageClass {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  value: String  _value: ElementBase
+  name: String  _name: ElementBase
+}
+
+type CoverageCostToBeneficiary {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  valueQuantity: Quantity
+  valueMoney: Money
+  exception: [CoverageCostToBeneficiaryException]
+}
+
+type CoverageCostToBeneficiaryException {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  period: Period
+}
+
+input Coverage {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  type: CodeableConcept
+  policyHolder: Reference
+  subscriber: Reference
+  subscriberId: String  _subscriberId: ElementBase
+  beneficiary: Reference!
+  dependent: String  _dependent: ElementBase
+  relationship: CodeableConcept
+  period: Period
+  payor: [Reference]!
+  class: [CoverageClass]
+  order: positiveInt  _order: ElementBase
+  network: String  _network: ElementBase
+  costToBeneficiary: [CoverageCostToBeneficiary]
+  subrogation: Boolean  _subrogation: ElementBase
+  contract: [Reference]
+}
+
+input CoverageClass {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  value: String  _value: ElementBase
+  name: String  _name: ElementBase
+}
+
+input CoverageCostToBeneficiary {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  valueQuantity: Quantity
+  valueMoney: Money
+  exception: [CoverageCostToBeneficiaryException]
+}
+
+input CoverageCostToBeneficiaryException {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  period: Period
+}
+
+type CoverageReadType {
+  Coverage(id : ID!) : Coverage
+}
+
+type CoverageListType {
+  CoverageList(_filter : String
+    beneficiary : [reference]
+    class_type : [token]
+    class_value : [String]
+    dependent : [String]
+    identifier : [token]
+    patient : [reference]
+    payor : [reference]
+    policy_holder : [reference]
+    status : [token]
+    subscriber : [reference]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Coverage]
+}
+
+type CoverageConnectionType {
+  CoverageConection(_filter : String
+    beneficiary : [reference]
+    class_type : [token]
+    class_value : [String]
+    dependent : [String]
+    identifier : [token]
+    patient : [reference]
+    payor : [reference]
+    policy_holder : [reference]
+    status : [token]
+    subscriber : [reference]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : CoverageConnection
+}
+
+type CoverageConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [CoverageEdge]
+}
+
+type CoverageEdge {
+  mode : String
+  score : Float
+  resource : Coverage
+}
+
+type CoverageCreateType {
+  CoverageCreate(resource : Coverage) : CoverageCreation
+}
+
+type CoverageCreation {
+  location : String
+  resource : Coverage
+  information : OperationOutcome
+}
+
+type CoverageUpdateType {
+  CoverageUpdate(id : IDresource : Coverage) : CoverageUpdate
+}
+
+type CoverageUpdate {
+  resource : Coverage
+  information : OperationOutcome
+}
+
+type CoverageDeleteType {
+  CoverageDelete(id : ID) : CoverageDelete
+}
+
+type CoverageDelete {
+  information : OperationOutcome
+}
+

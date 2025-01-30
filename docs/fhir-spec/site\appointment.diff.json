@@ -1,0 +1,85 @@
+﻿{
+  "types": [
+    "Appointment"
+  ],
+  "Appointment": {
+    "elements": {
+      "Appointment.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/appointmentstatus",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/appointmentstatus|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Appointment.cancelationReason": {
+        "status": "new"
+      },
+      "Appointment.serviceCategory": {
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "Appointment.reasonCode": {
+        "status": "new"
+      },
+      "Appointment.reasonReference": {
+        "status": "new"
+      },
+      "Appointment.patientInstruction": {
+        "status": "new"
+      },
+      "Appointment.basedOn": {
+        "status": "new"
+      },
+      "Appointment.participant.actor": {
+        "removed-types": [
+          "Reference(Patient | Practitioner | RelatedPerson | Device | HealthcareService | Location)"
+        ],
+        "added-types": [
+          "Reference(Patient | Practitioner | PractitionerRole | RelatedPerson | Device | HealthcareService | Location)"
+        ]
+      },
+      "Appointment.participant.required": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/participantrequired",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/participantrequired|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Appointment.participant.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/participationstatus",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/participationstatus|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Appointment.participant.period": {
+        "status": "new"
+      },
+      "Appointment.reason": {
+        "status": "deleted"
+      },
+      "Appointment.indication": {
+        "status": "deleted"
+      },
+      "Appointment.incomingReferral": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

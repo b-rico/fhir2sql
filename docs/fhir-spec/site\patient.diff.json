@@ -1,0 +1,87 @@
+﻿{
+  "types": [
+    "Patient"
+  ],
+  "Patient": {
+    "elements": {
+      "Patient.active": {
+        "default": "removed",
+        "old-default": "\"true\""
+      },
+      "Patient.gender": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/administrative-gender",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Patient.contact.relationship": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://terminology.hl7.org/ValueSet/v2-0131",
+          "strength": "extensible"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
+          "strength": "extensible"
+        }
+      },
+      "Patient.contact.gender": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/administrative-gender",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Patient.communication.language": {
+        "binding-strength-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/languages",
+          "strength": "extensible",
+          "max": "http://hl7.org/fhir/ValueSet/all-languages"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/languages",
+          "strength": "preferred",
+          "max": "http://hl7.org/fhir/ValueSet/all-languages"
+        }
+      },
+      "Patient.generalPractitioner": {
+        "removed-types": [
+          "Reference(Organization | Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Organization | Practitioner | PractitionerRole)"
+        ]
+      },
+      "Patient.link.type": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/link-type",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/link-type|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Patient.animal": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

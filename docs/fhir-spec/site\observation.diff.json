@@ -1,0 +1,135 @@
+﻿{
+  "types": [
+    "Observation"
+  ],
+  "Observation": {
+    "elements": {
+      "Observation.basedOn": {
+        "removed-types": [
+          "Reference(CarePlan | DeviceRequest | ImmunizationRecommendation | MedicationRequest | NutritionOrder | ProcedureRequest | ReferralRequest)"
+        ],
+        "added-types": [
+          "Reference(CarePlan | DeviceRequest | ImmunizationRecommendation | MedicationRequest | NutritionOrder | ServiceRequest)"
+        ]
+      },
+      "Observation.partOf": {
+        "status": "new"
+      },
+      "Observation.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/observation-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/observation-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Observation.focus": {
+        "status": "new"
+      },
+      "Observation.encounter": {
+        "old-name": "context",
+        "removed-types": [
+          "Reference(Encounter | EpisodeOfCare)"
+        ],
+        "added-types": [
+          "Reference(Encounter)"
+        ]
+      },
+      "Observation.effective[x]": {
+        "added-types": [
+          "Timing",
+          "instant"
+        ]
+      },
+      "Observation.performer": {
+        "removed-types": [
+          "Reference(Practitioner | Organization | Patient | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization | CareTeam | Patient | RelatedPerson)"
+        ]
+      },
+      "Observation.value[x]": {
+        "removed-types": [
+          "Attachment"
+        ],
+        "added-types": [
+          "integer"
+        ]
+      },
+      "Observation.dataAbsentReason": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/observation-valueabsentreason",
+          "strength": "extensible"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/data-absent-reason",
+          "strength": "extensible"
+        }
+      },
+      "Observation.interpretation": {
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "Observation.note": {
+        "old-name": "comment",
+        "old-max": "1",
+        "new-max": "*",
+        "removed-types": [
+          "string"
+        ],
+        "added-types": [
+          "Annotation"
+        ]
+      },
+      "Observation.referenceRange.type": {
+        "binding-status": "removed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/referencerange-meaning",
+          "strength": "extensible"
+        }
+      },
+      "Observation.hasMember": {
+        "status": "new"
+      },
+      "Observation.derivedFrom": {
+        "status": "new"
+      },
+      "Observation.component.value[x]": {
+        "removed-types": [
+          "Attachment"
+        ],
+        "added-types": [
+          "boolean",
+          "integer"
+        ]
+      },
+      "Observation.component.dataAbsentReason": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/observation-valueabsentreason",
+          "strength": "extensible"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/data-absent-reason",
+          "strength": "extensible"
+        }
+      },
+      "Observation.component.interpretation": {
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "Observation.related": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="MessageDefinition" status="changed">
+      <element new-max="*" old-max="1" path="MessageDefinition.identifier"/>
+      <element path="MessageDefinition.replaces">
+         <removed-type name="Reference(MessageDefinition)"/>
+         <added-type name="canonical(MessageDefinition)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MessageDefinition.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/publication-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/publication-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element modifier="removed" path="MessageDefinition.experimental"/>
+      <element path="MessageDefinition.base">
+         <removed-type name="Reference(MessageDefinition)"/>
+         <added-type name="canonical(MessageDefinition)"/>
+      </element>
+      <element path="MessageDefinition.parent">
+         <removed-type name="Reference(ActivityDefinition | PlanDefinition)"/>
+         <added-type name="canonical(ActivityDefinition | PlanDefinition)"/>
+      </element>
+      <element old-name="event" path="MessageDefinition.event[x]">
+         <added-type name="uri"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MessageDefinition.category">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/message-significance-category"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/message-significance-category|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MessageDefinition.focus.code">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/resource-types"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/resource-types|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="MessageDefinition.focus.profile">
+         <removed-type name="Reference(StructureDefinition)"/>
+         <added-type name="canonical(StructureDefinition)"/>
+      </element>
+      <element default="removed"
+               new-min="1"
+               old-default="&#34;0&#34;"
+               old-min="0"
+               path="MessageDefinition.focus.min"/>
+      <element binding-status="added"
+               default="removed"
+               old-default="&#34;false&#34;"
+               path="MessageDefinition.responseRequired">
+         <removed-type name="boolean"/>
+         <added-type name="code"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/messageheader-response-request|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="MessageDefinition.allowedResponse.message">
+         <removed-type name="Reference(MessageDefinition)"/>
+         <added-type name="canonical(MessageDefinition)"/>
+      </element>
+      <element path="MessageDefinition.graph" status="new"/>
+   </type>
+</difference>

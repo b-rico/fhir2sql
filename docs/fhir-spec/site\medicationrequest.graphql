@@ -1,0 +1,264 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicationRequest {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  intent: code  _intent: ElementBase
+  category: [CodeableConcept]
+  priority: code  _priority: ElementBase
+  doNotPerform: Boolean  _doNotPerform: ElementBase
+  reportedBoolean: Boolean  _reportedBoolean: ElementBase
+  reportedReference: Reference
+  medicationCodeableConcept: CodeableConcept
+  medicationReference: Reference
+  subject: Reference!
+  encounter: Reference
+  supportingInformation: [Reference]
+  authoredOn: dateTime  _authoredOn: ElementBase
+  requester: Reference
+  performer: Reference
+  performerType: CodeableConcept
+  recorder: Reference
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  basedOn: [Reference]
+  groupIdentifier: Identifier
+  courseOfTherapyType: CodeableConcept
+  insurance: [Reference]
+  note: [Annotation]
+  dosageInstruction: [Dosage]
+  dispenseRequest: MedicationRequestDispenseRequest
+  substitution: MedicationRequestSubstitution
+  priorPrescription: Reference
+  detectedIssue: [Reference]
+  eventHistory: [Reference]
+}
+
+type MedicationRequestDispenseRequest {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  initialFill: MedicationRequestDispenseRequestInitialFill
+  dispenseInterval: Duration
+  validityPeriod: Period
+  numberOfRepeatsAllowed: unsignedInt  _numberOfRepeatsAllowed: ElementBase
+  quantity: Quantity
+  expectedSupplyDuration: Duration
+  performer: Reference
+}
+
+type MedicationRequestDispenseRequestInitialFill {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  quantity: Quantity
+  duration: Duration
+}
+
+type MedicationRequestSubstitution {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  allowedBoolean: Boolean  _allowedBoolean: ElementBase
+  allowedCodeableConcept: CodeableConcept
+  reason: CodeableConcept
+}
+
+input MedicationRequest {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  intent: code  _intent: ElementBase
+  category: [CodeableConcept]
+  priority: code  _priority: ElementBase
+  doNotPerform: Boolean  _doNotPerform: ElementBase
+  reportedBoolean: Boolean  _reportedBoolean: ElementBase
+  reportedReference: Reference
+  medicationCodeableConcept: CodeableConcept
+  medicationReference: Reference
+  subject: Reference!
+  encounter: Reference
+  supportingInformation: [Reference]
+  authoredOn: dateTime  _authoredOn: ElementBase
+  requester: Reference
+  performer: Reference
+  performerType: CodeableConcept
+  recorder: Reference
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  basedOn: [Reference]
+  groupIdentifier: Identifier
+  courseOfTherapyType: CodeableConcept
+  insurance: [Reference]
+  note: [Annotation]
+  dosageInstruction: [Dosage]
+  dispenseRequest: MedicationRequestDispenseRequest
+  substitution: MedicationRequestSubstitution
+  priorPrescription: Reference
+  detectedIssue: [Reference]
+  eventHistory: [Reference]
+}
+
+input MedicationRequestDispenseRequest {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  initialFill: MedicationRequestDispenseRequestInitialFill
+  dispenseInterval: Duration
+  validityPeriod: Period
+  numberOfRepeatsAllowed: unsignedInt  _numberOfRepeatsAllowed: ElementBase
+  quantity: Quantity
+  expectedSupplyDuration: Duration
+  performer: Reference
+}
+
+input MedicationRequestDispenseRequestInitialFill {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  quantity: Quantity
+  duration: Duration
+}
+
+input MedicationRequestSubstitution {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  allowedBoolean: Boolean  _allowedBoolean: ElementBase
+  allowedCodeableConcept: CodeableConcept
+  reason: CodeableConcept
+}
+
+type MedicationRequestReadType {
+  MedicationRequest(id : ID!) : MedicationRequest
+}
+
+type MedicationRequestListType {
+  MedicationRequestList(_filter : String
+    authoredon : [date]
+    category : [token]
+    code : [token]
+    date : [date]
+    encounter : [reference]
+    identifier : [token]
+    intended_dispenser : [reference]
+    intended_performer : [reference]
+    intended_performertype : [token]
+    intent : [token]
+    medication : [reference]
+    patient : [reference]
+    priority : [token]
+    requester : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicationRequest]
+}
+
+type MedicationRequestConnectionType {
+  MedicationRequestConection(_filter : String
+    authoredon : [date]
+    category : [token]
+    code : [token]
+    date : [date]
+    encounter : [reference]
+    identifier : [token]
+    intended_dispenser : [reference]
+    intended_performer : [reference]
+    intended_performertype : [token]
+    intent : [token]
+    medication : [reference]
+    patient : [reference]
+    priority : [token]
+    requester : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicationRequestConnection
+}
+
+type MedicationRequestConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicationRequestEdge]
+}
+
+type MedicationRequestEdge {
+  mode : String
+  score : Float
+  resource : MedicationRequest
+}
+
+type MedicationRequestCreateType {
+  MedicationRequestCreate(resource : MedicationRequest) : MedicationRequestCreation
+}
+
+type MedicationRequestCreation {
+  location : String
+  resource : MedicationRequest
+  information : OperationOutcome
+}
+
+type MedicationRequestUpdateType {
+  MedicationRequestUpdate(id : IDresource : MedicationRequest) : MedicationRequestUpdate
+}
+
+type MedicationRequestUpdate {
+  resource : MedicationRequest
+  information : OperationOutcome
+}
+
+type MedicationRequestDeleteType {
+  MedicationRequestDelete(id : ID) : MedicationRequestDelete
+}
+
+type MedicationRequestDelete {
+  information : OperationOutcome
+}
+

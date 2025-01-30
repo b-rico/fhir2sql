@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/infant-mom> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "infant-mom"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: infant-mom</p><p><b>name</b>: Leia Solo (OFFICIAL), Leia Organa (MAIDEN)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 12/10/1995</p><p><b>maritalStatus</b>: Married <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-MaritalStatus code 'M' = 'Married', given as 'Married'})</span></p><p><b>generalPractitioner</b>: <a>Too-Onebee</a></p></div>"
+  ];
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.family [ fhir:value "Solo" ];
+     fhir:HumanName.given [
+       fhir:value "Leia";
+       fhir:index 0
+     ]
+  ], [
+     fhir:index 1;
+     fhir:HumanName.use [ fhir:value "maiden" ];
+     fhir:HumanName.family [ fhir:value "Organa" ];
+     fhir:HumanName.given [
+       fhir:value "Leia";
+       fhir:index 0
+     ]
+  ];
+  fhir:Patient.gender [ fhir:value "female"];
+  fhir:Patient.birthDate [ fhir:value "1995-10-12"^^xsd:date];
+  fhir:Patient.maritalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus" ];
+       fhir:Coding.code [ fhir:value "M" ];
+       fhir:Coding.display [ fhir:value "Married" ]
+     ]
+  ];
+  fhir:Patient.generalPractitioner [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/21B>;
+     fhir:Reference.reference [ fhir:value "Practitioner/21B" ];
+     fhir:Reference.display [ fhir:value "Too-Onebee" ]
+  ] .
+
+<http://hl7.org/fhir/Practitioner/21B> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/infant-mom.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Patient/infant-mom.ttl> .
+
+# -------------------------------------------------------------------------------------
+

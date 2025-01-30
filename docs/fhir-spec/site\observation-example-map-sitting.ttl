@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/map-sitting> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "map-sitting"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: map-sitting</p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span>(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'})</span></p><p><b>code</b>: Mean blood pressure <span>(Details : {LOINC code '8478-0' = 'Mean blood pressure', given as 'Mean blood pressure'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>encounter</b>: <a>Encounter/example</a></p><p><b>effective</b>: 02/04/2018 10:30:10 AM --&gt; 05/04/2018 10:30:10 AM</p><p><b>issued</b>: 03/04/2018 3:30:10 PM</p><p><b>value</b>: 60 mm Hg<span> (Details: UCUM code mm[Hg] = 'mmHg')</span></p><p><b>interpretation</b>: Below low normal <span>(Details : {http://terminology.hl7.org/CodeSystem/v2-0078 code 'L' = 'Low', given as 'Low'})</span></p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/observation-bodyPosition" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:33586001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "33586001" ];
+         fhir:Coding.display [ fhir:value "Sitting position (finding)" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/observation-delta" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:1250004;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "1250004" ];
+         fhir:Coding.display [ fhir:value "Decreased (qualifier value)" ]
+       ]
+     ]
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+       fhir:Coding.code [ fhir:value "laboratory" ];
+       fhir:Coding.display [ fhir:value "Laboratory" ]
+     ]
+  ];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:8478-0;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "8478-0" ];
+       fhir:Coding.display [ fhir:value "Mean blood pressure" ]
+     ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Observation.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:Observation.effectivePeriod [
+     fhir:Period.start [ fhir:value "2018-04-02T10:30:10+01:00"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2018-04-05T10:30:10+01:00"^^xsd:dateTime ]
+  ];
+  fhir:Observation.issued [ fhir:value "2018-04-03T15:30:10+01:00"^^xsd:dateTime];
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "60"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "mm Hg" ];
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+     fhir:Quantity.code [ fhir:value "mm[Hg]" ]
+  ];
+  fhir:Observation.interpretation [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0078" ];
+       fhir:Coding.code [ fhir:value "L" ];
+       fhir:Coding.display [ fhir:value "Low" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Below low normal" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/map-sitting.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/map-sitting.ttl> .
+
+# -------------------------------------------------------------------------------------
+

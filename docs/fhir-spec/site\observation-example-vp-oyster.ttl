@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/vp-oyster> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "vp-oyster"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: vp-oyster</p><p><b>identifier</b>: 20171014-1234 (OFFICIAL)</p><p><b>status</b>: preliminary</p><p><b>code</b>: OYSTER TESTING <span>(Details : {LOINC code '41857-4' = 'Vibrio parahaemolyticus DNA [Presence] in Unspecified specimen by Probe and target amplification method', given as 'Vibrio parahaemolyticus DNA [Presence] in Unspecified specimen by Probe and target amplification method'}; {http://sonomacounty.ca.gov/Health/Public-Health/Laboratory/test-codes code 'VP MULTI PCR' = 'VP MULTI PCR', given as 'VP MULTI PCR'})</span></p><p><b>subject</b>: Sonoma oyster farm</p><p><b>effective</b>: 12/10/2017</p><p><b>issued</b>: 14/10/2017 11:11:24 PM</p><p><b>performer</b>: <a>A. Langeveld</a></p><p><b>value</b>: POSITIVE <span>(Details : {SNOMED CT code '10828004' = 'Positive', given as 'Positive (qualifier value)'}; {http://sonomacounty.ca.gov/Health/Public-Health/Laboratory/result-codes code 'POSITIVE' = 'POSITIVE', given as 'POSITIVE'})</span></p><p><b>interpretation</b>: Abnormal <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'A' = 'Abnormal', given as 'Abnormal'})</span></p><p><b>specimen</b>: Live Oysters Acc#20171014-1234</p><h3>ReferenceRanges</h3><table><tr><td>-</td><td><b>Text</b></td></tr><tr><td>*</td><td>NEGATIVE</td></tr></table></div>"
+  ];
+  fhir:Observation.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://sonomacounty.ca.gov/Health/Public-Health/Laboratory" ];
+     fhir:Identifier.value [ fhir:value "20171014-1234" ]
+  ];
+  fhir:Observation.status [ fhir:value "preliminary"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:41857-4;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "41857-4" ];
+       fhir:Coding.display [ fhir:value "Vibrio parahaemolyticus DNA [Presence] in Unspecified specimen by Probe and target amplification method" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://sonomacounty.ca.gov/Health/Public-Health/Laboratory/test-codes" ];
+       fhir:Coding.code [ fhir:value "VP MULTI PCR" ];
+       fhir:Coding.display [ fhir:value "VP MULTI PCR" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OYSTER TESTING" ]
+  ];
+  fhir:Observation.subject [
+     fhir:Reference.display [ fhir:value "Sonoma oyster farm" ]
+  ];
+  fhir:Observation.effectiveDateTime [ fhir:value "2017-10-12"^^xsd:date];
+  fhir:Observation.issued [ fhir:value "2017-10-14T23:11:24Z"^^xsd:dateTime];
+  fhir:Observation.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/f005>;
+     fhir:Reference.reference [ fhir:value "Practitioner/f005" ];
+     fhir:Reference.display [ fhir:value "A. Langeveld" ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:10828004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "10828004" ];
+       fhir:Coding.display [ fhir:value "Positive (qualifier value)" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://sonomacounty.ca.gov/Health/Public-Health/Laboratory/result-codes" ];
+       fhir:Coding.code [ fhir:value "POSITIVE" ];
+       fhir:Coding.display [ fhir:value "POSITIVE" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "POSITIVE" ]
+  ];
+  fhir:Observation.interpretation [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation" ];
+       fhir:Coding.code [ fhir:value "A" ];
+       fhir:Coding.display [ fhir:value "Abnormal" ]
+     ]
+  ];
+  fhir:Observation.specimen [
+     fhir:Reference.display [ fhir:value "Live Oysters Acc#20171014-1234" ]
+  ];
+  fhir:Observation.referenceRange [
+     fhir:index 0;
+     fhir:Observation.referenceRange.text [ fhir:value "NEGATIVE" ]
+  ] .
+
+<http://hl7.org/fhir/Practitioner/f005> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/vp-oyster.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/vp-oyster.ttl> .
+
+# -------------------------------------------------------------------------------------
+

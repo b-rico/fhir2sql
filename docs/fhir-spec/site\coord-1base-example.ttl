@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MolecularSequence/coord-1-base> a fhir:MolecularSequence;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "coord-1-base"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: coord-1-base</p><p><b>type</b>: dna</p><p><b>coordinateSystem</b>: 1</p><h3>ReferenceSeqs</h3><table><tr><td>-</td><td><b>ReferenceSeqString</b></td><td><b>Strand</b></td><td><b>WindowStart</b></td><td><b>WindowEnd</b></td></tr><tr><td>*</td><td>ACGTAGTC</td><td>watson</td><td>1</td><td>8</td></tr></table><blockquote><p><b>variant</b></p><p><b>start</b>: 2</p><p><b>end</b>: 3</p><p><b>observedAllele</b>: ATG</p><p><b>referenceAllele</b>: -</p><p><b>cigar</b>: 3I</p></blockquote><blockquote><p><b>variant</b></p><p><b>start</b>: 5</p><p><b>end</b>: 5</p><p><b>observedAllele</b>: T</p><p><b>referenceAllele</b>: A</p><p><b>cigar</b>: 3I</p></blockquote><blockquote><p><b>variant</b></p><p><b>start</b>: 7</p><p><b>end</b>: 7</p><p><b>observedAllele</b>: -</p><p><b>referenceAllele</b>: T</p><p><b>cigar</b>: 1D</p></blockquote><p><b>observedSeq</b>: ACATGGTAGC</p></div>"
+  ];
+  fhir:MolecularSequence.type [ fhir:value "dna"];
+  fhir:MolecularSequence.coordinateSystem [ fhir:value "1"^^xsd:integer];
+  fhir:MolecularSequence.referenceSeq [
+     fhir:MolecularSequence.referenceSeq.referenceSeqString [ fhir:value "ACGTAGTC" ];
+     fhir:MolecularSequence.referenceSeq.strand [ fhir:value "watson" ];
+     fhir:MolecularSequence.referenceSeq.windowStart [ fhir:value "1"^^xsd:integer ];
+     fhir:MolecularSequence.referenceSeq.windowEnd [ fhir:value "8"^^xsd:integer ]
+  ];
+  fhir:MolecularSequence.variant [
+     fhir:index 0;
+     fhir:MolecularSequence.variant.start [ fhir:value "2"^^xsd:integer ];
+     fhir:MolecularSequence.variant.end [ fhir:value "3"^^xsd:integer ];
+     fhir:MolecularSequence.variant.observedAllele [ fhir:value "ATG" ];
+     fhir:MolecularSequence.variant.referenceAllele [ fhir:value "-" ];
+     fhir:MolecularSequence.variant.cigar [ fhir:value "3I" ]
+  ], [
+     fhir:index 1;
+     fhir:MolecularSequence.variant.start [ fhir:value "5"^^xsd:integer ];
+     fhir:MolecularSequence.variant.end [ fhir:value "5"^^xsd:integer ];
+     fhir:MolecularSequence.variant.observedAllele [ fhir:value "T" ];
+     fhir:MolecularSequence.variant.referenceAllele [ fhir:value "A" ];
+     fhir:MolecularSequence.variant.cigar [ fhir:value "3I" ]
+  ], [
+     fhir:index 2;
+     fhir:MolecularSequence.variant.start [ fhir:value "7"^^xsd:integer ];
+     fhir:MolecularSequence.variant.end [ fhir:value "7"^^xsd:integer ];
+     fhir:MolecularSequence.variant.observedAllele [ fhir:value "-" ];
+     fhir:MolecularSequence.variant.referenceAllele [ fhir:value "T" ];
+     fhir:MolecularSequence.variant.cigar [ fhir:value "1D" ]
+  ];
+  fhir:MolecularSequence.observedSeq [ fhir:value "ACATGGTAGC"] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MolecularSequence/coord-1-base.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MolecularSequence/coord-1-base.ttl> .
+
+# -------------------------------------------------------------------------------------
+

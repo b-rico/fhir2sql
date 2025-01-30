@@ -1,0 +1,154 @@
+﻿{
+  "types": [
+    "AdverseEvent"
+  ],
+  "AdverseEvent": {
+    "elements": {
+      "AdverseEvent.actuality": {
+        "status": "new"
+      },
+      "AdverseEvent.category": {
+        "old-max": "1",
+        "new-max": "*",
+        "removed-types": [
+          "code"
+        ],
+        "added-types": [
+          "CodeableConcept"
+        ],
+        "binding-strength-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/adverse-event-category",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/adverse-event-category",
+          "strength": "extensible"
+        }
+      },
+      "AdverseEvent.event": {
+        "status": "new"
+      },
+      "AdverseEvent.subject": {
+        "old-min": 0,
+        "new-min": 1,
+        "removed-types": [
+          "Reference(Patient | ResearchSubject | Medication | Device)"
+        ],
+        "added-types": [
+          "Reference(Patient | Group | Practitioner | RelatedPerson)"
+        ]
+      },
+      "AdverseEvent.encounter": {
+        "status": "new"
+      },
+      "AdverseEvent.detected": {
+        "status": "new"
+      },
+      "AdverseEvent.recordedDate": {
+        "status": "new"
+      },
+      "AdverseEvent.resultingCondition": {
+        "status": "new"
+      },
+      "AdverseEvent.severity": {
+        "status": "new"
+      },
+      "AdverseEvent.outcome": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/adverse-event-outcome",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/adverse-event-outcome|4.0.1",
+          "strength": "required"
+        }
+      },
+      "AdverseEvent.recorder": {
+        "removed-types": [
+          "Reference(Patient | Practitioner | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Patient | Practitioner | PractitionerRole | RelatedPerson)"
+        ]
+      },
+      "AdverseEvent.contributor": {
+        "status": "new"
+      },
+      "AdverseEvent.suspectEntity.instance": {
+        "removed-types": [
+          "Reference(Substance | Medication | MedicationAdministration | MedicationStatement | Device)"
+        ],
+        "added-types": [
+          "Reference(Immunization | Procedure | Substance | Medication | MedicationAdministration | MedicationStatement | Device)"
+        ]
+      },
+      "AdverseEvent.suspectEntity.causality": {
+        "old-max": "1",
+        "new-max": "*",
+        "removed-types": [
+          "code"
+        ],
+        "added-types": [
+          "BackboneElement"
+        ],
+        "binding-status": "removed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/adverse-event-causality",
+          "strength": "required"
+        }
+      },
+      "AdverseEvent.suspectEntity.causality.assessment": {
+        "status": "new"
+      },
+      "AdverseEvent.suspectEntity.causality.productRelatedness": {
+        "status": "new"
+      },
+      "AdverseEvent.suspectEntity.causality.author": {
+        "status": "new"
+      },
+      "AdverseEvent.suspectEntity.causality.method": {
+        "status": "new"
+      },
+      "AdverseEvent.subjectMedicalHistory": {
+        "removed-types": [
+          "Reference(Condition | Observation | AllergyIntolerance | FamilyMemberHistory | Immunization | Procedure)"
+        ],
+        "added-types": [
+          "Reference(Condition | Observation | AllergyIntolerance | FamilyMemberHistory | Immunization | Procedure | Media | DocumentReference)"
+        ]
+      },
+      "AdverseEvent.type": {
+        "status": "deleted"
+      },
+      "AdverseEvent.reaction": {
+        "status": "deleted"
+      },
+      "AdverseEvent.eventParticipant": {
+        "status": "deleted"
+      },
+      "AdverseEvent.description": {
+        "status": "deleted"
+      },
+      "AdverseEvent.suspectEntity.causalityAssessment": {
+        "status": "deleted"
+      },
+      "AdverseEvent.suspectEntity.causalityProductRelatedness": {
+        "status": "deleted"
+      },
+      "AdverseEvent.suspectEntity.causalityMethod": {
+        "status": "deleted"
+      },
+      "AdverseEvent.suspectEntity.causalityAuthor": {
+        "status": "deleted"
+      },
+      "AdverseEvent.suspectEntity.causalityResult": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

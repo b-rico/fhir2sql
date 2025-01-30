@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="DocumentManifest" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="DocumentManifest.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/document-reference-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/document-reference-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="DocumentManifest.author">
+         <removed-type name="Reference(Practitioner | Organization | Device | Patient | RelatedPerson)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | Device | Patient | RelatedPerson)"/>
+      </element>
+      <element path="DocumentManifest.recipient">
+         <removed-type name="Reference(Patient | Practitioner | RelatedPerson | Organization)"/>
+         <added-type name="Reference(Patient | Practitioner | PractitionerRole | RelatedPerson | Organization)"/>
+      </element>
+      <element path="DocumentManifest.content">
+         <removed-type name="BackboneElement"/>
+         <added-type name="Reference(Resource)"/>
+      </element>
+      <element path="DocumentManifest.content.p[x]" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="DetectedIssue" status="changed">
+      <element new-max="*" old-max="1" path="DetectedIssue.identifier"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="DetectedIssue.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/observation-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/observation-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element old-name="category" path="DetectedIssue.code"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="DetectedIssue.severity">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/detectedissue-severity"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/detectedissue-severity|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="DetectedIssue.identified[x]" status="new"/>
+      <element path="DetectedIssue.author">
+         <removed-type name="Reference(Practitioner | Device)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Device)"/>
+      </element>
+      <element path="DetectedIssue.evidence" status="new"/>
+      <element path="DetectedIssue.evidence.code" status="new"/>
+      <element path="DetectedIssue.evidence.detail" status="new"/>
+      <element path="DetectedIssue.mitigation.author">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element path="DetectedIssue.date" status="deleted"/>
+   </type>
+</difference>

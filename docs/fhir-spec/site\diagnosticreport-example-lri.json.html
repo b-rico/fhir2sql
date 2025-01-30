@@ -1,0 +1,1807 @@
+<!DOCTYPE HTML>
+<!-- template-example-json.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Diagnosticreport-example-lri.json - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/diagnosticreport-example-lri.json.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="diagnostics-module.html"><img src="diagnostics.jpg"/> Diagnostics</a></li>        <li><a href="diagnosticreport.html">DiagnosticReport</a></li>        <li><b>Example Instance</b></li>        <!-- diagnosticreport-example-lri.json.html / resource-instance:DiagnosticReport / Example-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Diagnosticreport-example-lri.json</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/orders/index.cfm">Orders and Observations</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-device.html">Device</a>, <a href="compartmentdefinition-encounter.html">Encounter</a>, <a href="compartmentdefinition-patient.html">Patient</a>, <a href="compartmentdefinition-practitioner.html">Practitioner</a></td></tr></table>
+
+<p>
+<a href="diagnosticreport-example-lri.json">Raw JSON</a> (<a href="diagnosticreport-example-lri.canonical.json">canonical form</a> + also see <a href="json.html">JSON Format Specification</a>)
+</p>
+
+<div class="example">
+<p>An collection Bundle showing an example of a complex Micro Isolate and Sensitivities</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;lri-example&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2017-06-27T00:52:51Z&quot;
+  },
+  &quot;type&quot;: &quot;collection&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/DiagnosticReport/lri-example&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;DiagnosticReport&quot;,
+        &quot;id&quot;: &quot;lri-example&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: lri-example&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: Placer Identifier = RP723234, Filler Identifier = 250401, Group = RFP 123456&lt;/p&gt;&lt;p&gt;&lt;b&gt;basedOn&lt;/b&gt;: &lt;a&gt;ServiceRequest/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Laboratory &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v2-0074 code 'LAB' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Aerobic Respiratory Culture, Sputum &lt;span&gt;(Details : {LOINC code '624-7' = 'Bacteria identified in Sputum by Respiratory culture', given as 'Bacteria Spt Resp Cul'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 15/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 6:14:35 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;specimen&lt;/b&gt;: &lt;a&gt;Specimen/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;result&lt;/b&gt;: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a&gt;Normal Flora&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Klebsiella pneumoniae&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Staphlyococcuc aureus&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Many WBCs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Moderate Gram Positive Rods&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Moderate Gram Positive Cocci in Chains&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Many Gram Negative Rods&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;type&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;,
+                  &quot;code&quot;: &quot;PLAC&quot;,
+                  &quot;display&quot;: &quot;Placer Identifier&quot;
+                }
+              ]
+            },
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;RP723234&quot;
+          },
+          {
+            &quot;type&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;,
+                  &quot;code&quot;: &quot;FILL&quot;,
+                  &quot;display&quot;: &quot;Filler Identifier&quot;
+                }
+              ]
+            },
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;250401&quot;
+          },
+          {
+            &quot;type&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+                  &quot;code&quot;: &quot;GRP&quot;,
+                  &quot;display&quot;: &quot;Group&quot;
+                }
+              ]
+            },
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;RFP 123456&quot;
+          }
+        ],
+        &quot;basedOn&quot;: [
+          {
+            &quot;reference&quot;: &quot;ServiceRequest/example&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;LAB&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;624-7&quot;,
+              &quot;display&quot;: &quot;Bacteria Spt Resp Cul&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Aerobic Respiratory Culture, Sputum&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-15&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T18:14:35Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;specimen&quot;: [
+          {
+            &quot;reference&quot;: &quot;Specimen/example&quot;
+          }
+        ],
+        &quot;result&quot;: [
+          {
+            &quot;reference&quot;: &quot;Observation/organism1&quot;,
+            &quot;display&quot;: &quot;Normal Flora&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/organism2&quot;,
+            &quot;display&quot;: &quot;Klebsiella pneumoniae&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/organism3&quot;,
+            &quot;display&quot;: &quot;Staphlyococcuc aureus&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/gramstain1&quot;,
+            &quot;display&quot;: &quot;Many WBCs&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/gramstain2&quot;,
+            &quot;display&quot;: &quot;Moderate Gram Positive Rods&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/gramstain3&quot;,
+            &quot;display&quot;: &quot;Moderate Gram Positive Cocci in Chains&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/gramstain4&quot;,
+            &quot;display&quot;: &quot;Many Gram Negative Rods&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-gramstain1&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;gramstain1&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: gramstain1&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: gramstain1&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'}; {https://acme.org/codes code 'GMST' = 'GMST', given as 'Gram Stain'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Many &lt;span&gt;(Details : {https://acme.org/codes code 'MNY' = 'MNY', given as 'Many'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: WBCS &lt;span&gt;(Details : {https://acme.org/codes code 'WBCS' = 'WBCS', given as 'WBCS'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;gramstain1&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;664-3&quot;,
+              &quot;display&quot;: &quot;Gram Stn XXX&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;GMST&quot;,
+              &quot;display&quot;: &quot;Gram Stain&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Gram Stain&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;component&quot;: [
+          {
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;664-3&quot;,
+                  &quot;display&quot;: &quot;Gram Stn XXX&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Stain&quot;
+            },
+            &quot;valueCodeableConcept&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+                  &quot;code&quot;: &quot;MNY&quot;,
+                  &quot;display&quot;: &quot;Many&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Many&quot;
+            }
+          },
+          {
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;664-3&quot;,
+                  &quot;display&quot;: &quot;Gram Stn XXX&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Stain&quot;
+            },
+            &quot;valueCodeableConcept&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+                  &quot;code&quot;: &quot;WBCS&quot;,
+                  &quot;display&quot;: &quot;WBCS&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;WBCS&quot;
+            }
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-gramstain2&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;gramstain2&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: gramstain2&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: gramstain2&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'}; {https://acme.org/codes code 'GMST' = 'GMST', given as 'Gram Stain'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Moderate &lt;span&gt;(Details : {https://acme.org/codes code 'MOD' = 'MOD', given as 'Moderate'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Gram Positive Rods &lt;span&gt;(Details : {https://acme.org/codes code 'GPR' = 'GPR', given as 'Moderate'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;gramstain2&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;664-3&quot;,
+              &quot;display&quot;: &quot;Gram Stn XXX&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;GMST&quot;,
+              &quot;display&quot;: &quot;Gram Stain&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Gram Stain&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;component&quot;: [
+          {
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;664-3&quot;,
+                  &quot;display&quot;: &quot;Gram Stn XXX&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Stain&quot;
+            },
+            &quot;valueCodeableConcept&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+                  &quot;code&quot;: &quot;MOD&quot;,
+                  &quot;display&quot;: &quot;Moderate&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Moderate&quot;
+            }
+          },
+          {
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;664-3&quot;,
+                  &quot;display&quot;: &quot;Gram Stn XXX&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Stain&quot;
+            },
+            &quot;valueCodeableConcept&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+                  &quot;code&quot;: &quot;GPR&quot;,
+                  &quot;display&quot;: &quot;Moderate&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Positive Rods&quot;
+            }
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-gramstain3&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;gramstain3&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: gramstain3&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: gramstain3&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'}; {https://acme.org/codes code 'GMST' = 'GMST', given as 'Gram Stain'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Moderate &lt;span&gt;(Details : {https://acme.org/codes code 'MOD' = 'MOD', given as 'Moderate'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Gram Positive Cocci in Chains &lt;span&gt;(Details : {https://acme.org/codes code 'GPCCH' = 'GPCCH', given as 'Gram Positive Cocci in Chains'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;gramstain3&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;664-3&quot;,
+              &quot;display&quot;: &quot;Gram Stn XXX&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;GMST&quot;,
+              &quot;display&quot;: &quot;Gram Stain&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Gram Stain&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;component&quot;: [
+          {
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;664-3&quot;,
+                  &quot;display&quot;: &quot;Gram Stn XXX&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Stain&quot;
+            },
+            &quot;valueCodeableConcept&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+                  &quot;code&quot;: &quot;MOD&quot;,
+                  &quot;display&quot;: &quot;Moderate&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Moderate&quot;
+            }
+          },
+          {
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;664-3&quot;,
+                  &quot;display&quot;: &quot;Gram Stn XXX&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Stain&quot;
+            },
+            &quot;valueCodeableConcept&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+                  &quot;code&quot;: &quot;GPCCH&quot;,
+                  &quot;display&quot;: &quot;Gram Positive Cocci in Chains&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Positive Cocci in Chains&quot;
+            }
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-gramstain4&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;gramstain4&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: gramstain4&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: gramstain4&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'}; {https://acme.org/codes code 'GMST' = 'GMST', given as 'Gram Stain'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Many &lt;span&gt;(Details : {https://acme.org/codes code 'MNY' = 'MNY', given as 'Many'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gram Stain &lt;span&gt;(Details : {LOINC code '664-3' = 'Microscopic observation [Identifier] in Unspecified specimen by Gram stain', given as 'Gram Stn XXX'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Gram Negative Rods &lt;span&gt;(Details : {https://acme.org/codes code 'GNR' = 'GNR', given as 'Gram Negative Rods'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;gramstain4&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;664-3&quot;,
+              &quot;display&quot;: &quot;Gram Stn XXX&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;GMST&quot;,
+              &quot;display&quot;: &quot;Gram Stain&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Gram Stain&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;component&quot;: [
+          {
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;664-3&quot;,
+                  &quot;display&quot;: &quot;Gram Stn XXX&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Stain&quot;
+            },
+            &quot;valueCodeableConcept&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+                  &quot;code&quot;: &quot;MNY&quot;,
+                  &quot;display&quot;: &quot;Many&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Many&quot;
+            }
+          },
+          {
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;664-3&quot;,
+                  &quot;display&quot;: &quot;Gram Stn XXX&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Stain&quot;
+            },
+            &quot;valueCodeableConcept&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+                  &quot;code&quot;: &quot;GNR&quot;,
+                  &quot;display&quot;: &quot;Gram Negative Rods&quot;
+                }
+              ],
+              &quot;text&quot;: &quot;Gram Negative Rods&quot;
+            }
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-growth1&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;growth1&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: growth1&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: growth1&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Aerobic Respiratory Culture, Sputum &lt;span&gt;(Details : {LOINC code '624-7' = 'Bacteria identified in Sputum by Respiratory culture', given as 'Bacteria Spt Resp Cul'}; {https://acme.org/codes code 'GROWTH' = 'GROWTH', given as 'Growth'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Moderate Growth &lt;span&gt;(Details : {SNOMED CT code '263812008' = 'Moderate growth', given as 'Moderate Growth'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;growth1&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;624-7&quot;,
+              &quot;display&quot;: &quot;Bacteria Spt Resp Cul&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;GROWTH&quot;,
+              &quot;display&quot;: &quot;Growth&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Aerobic Respiratory Culture, Sputum&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueCodeableConcept&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;263812008&quot;,
+              &quot;display&quot;: &quot;Moderate Growth&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Moderate Growth&quot;
+        }
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-growth2&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;growth2&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: growth2&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: growth2&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Aerobic Respiratory Culture, Sputum &lt;span&gt;(Details : {LOINC code '624-7' = 'Bacteria identified in Sputum by Respiratory culture', given as 'Bacteria Spt Resp Cul'}; {https://acme.org/codes code 'GROWTH' = 'GROWTH', given as 'Growth'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Heavy growth &lt;span&gt;(Details : {SNOMED CT code '263776006' = 'Heavy growth', given as 'Heavy growth'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;growth2&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;624-7&quot;,
+              &quot;display&quot;: &quot;Bacteria Spt Resp Cul&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;GROWTH&quot;,
+              &quot;display&quot;: &quot;Growth&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Aerobic Respiratory Culture, Sputum&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueCodeableConcept&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;263776006&quot;,
+              &quot;display&quot;: &quot;Heavy growth&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Heavy growth&quot;
+        }
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-growth3&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;growth3&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: growth3&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: growth3&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Aerobic Respiratory Culture, Sputum &lt;span&gt;(Details : {LOINC code '624-7' = 'Bacteria identified in Sputum by Respiratory culture', given as 'Bacteria Spt Resp Cul'}; {https://acme.org/codes code 'GROWTH' = 'GROWTH', given as 'Growth'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Heavy growth &lt;span&gt;(Details : {SNOMED CT code '263776006' = 'Heavy growth', given as 'Heavy growth'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;growth3&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;624-7&quot;,
+              &quot;display&quot;: &quot;Bacteria Spt Resp Cul&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;GROWTH&quot;,
+              &quot;display&quot;: &quot;Growth&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Aerobic Respiratory Culture, Sputum&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueCodeableConcept&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;263776006&quot;,
+              &quot;display&quot;: &quot;Heavy growth&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Heavy growth&quot;
+        }
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-org2-amp&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;org2-amp&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: org2-amp&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: org2-amp&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Ampicilin MIC &lt;span&gt;(Details : {LOINC code '28-1' = 'Ampicillin [Susceptibility] by Minimum inhibitory concentration (MIC)', given as 'Ampicilin Islt MIC'}; {https://acme.org/codes code 'AMPMIC' = 'AMPMIC', given as 'Ampicilin MIC'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &amp;lt;0.06 ug/ml&lt;span&gt; (Details: UCUM code ug/mL = 'ug/mL')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Susceptible &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'S' = 'Susceptible', given as 'Susceptible'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;org2-amp&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;28-1&quot;,
+              &quot;display&quot;: &quot;Ampicilin Islt MIC&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;AMPMIC&quot;,
+              &quot;display&quot;: &quot;Ampicilin MIC&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Ampicilin MIC&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueQuantity&quot;: {
+          &quot;value&quot;: 0.06,
+          &quot;comparator&quot;: &quot;&lt;&quot;,
+          &quot;unit&quot;: &quot;ug/ml&quot;,
+          &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+          &quot;code&quot;: &quot;ug/mL&quot;
+        },
+        &quot;interpretation&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation&quot;,
+                &quot;code&quot;: &quot;S&quot;,
+                &quot;display&quot;: &quot;Susceptible&quot;
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-org2-cip&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;org2-cip&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: org2-cip&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: org2-cip&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Ciprofloxacin MIC &lt;span&gt;(Details : {LOINC code '185-9' = 'Ciprofloxacin [Susceptibility] by Minimum inhibitory concentration (MIC)', given as 'Ciprofloxacin Islt MIC'}; {https://acme.org/codes code 'CIPMIC' = 'CIPMIC', given as 'Ciprofloxacin MIC'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &amp;lt;0.05 ug/ml&lt;span&gt; (Details: UCUM code ug/mL = 'ug/mL')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Susceptible &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'S' = 'Susceptible', given as 'Susceptible'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;org2-cip&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;185-9&quot;,
+              &quot;display&quot;: &quot;Ciprofloxacin Islt MIC&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;CIPMIC&quot;,
+              &quot;display&quot;: &quot;Ciprofloxacin MIC&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Ciprofloxacin MIC&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueQuantity&quot;: {
+          &quot;value&quot;: 0.05,
+          &quot;comparator&quot;: &quot;&lt;&quot;,
+          &quot;unit&quot;: &quot;ug/ml&quot;,
+          &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+          &quot;code&quot;: &quot;ug/mL&quot;
+        },
+        &quot;interpretation&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation&quot;,
+                &quot;code&quot;: &quot;S&quot;,
+                &quot;display&quot;: &quot;Susceptible&quot;
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-org2-gent&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;org2-gent&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: org2-gent&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: org2-gent&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gentamicin MIC &lt;span&gt;(Details : {LOINC code '267-5' = 'Gentamicin [Susceptibility] by Minimum inhibitory concentration (MIC)', given as 'Gentamicin Islt MIC'}; {https://acme.org/codes code 'CIPMIC' = 'CIPMIC', given as 'Gentamicin MIC'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &amp;lt;0.05 ug/ml&lt;span&gt; (Details: UCUM code ug/mL = 'ug/mL')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Susceptible &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'S' = 'Susceptible', given as 'Susceptible'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;org2-gent&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;267-5&quot;,
+              &quot;display&quot;: &quot;Gentamicin Islt MIC&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;CIPMIC&quot;,
+              &quot;display&quot;: &quot;Gentamicin MIC&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Gentamicin MIC&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueQuantity&quot;: {
+          &quot;value&quot;: 0.05,
+          &quot;comparator&quot;: &quot;&lt;&quot;,
+          &quot;unit&quot;: &quot;ug/ml&quot;,
+          &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+          &quot;code&quot;: &quot;ug/mL&quot;
+        },
+        &quot;interpretation&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation&quot;,
+                &quot;code&quot;: &quot;S&quot;,
+                &quot;display&quot;: &quot;Susceptible&quot;
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-org3-amp&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;org3-amp&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: org3-amp&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: org3-amp&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Ampicilin MIC &lt;span&gt;(Details : {LOINC code '28-1' = 'Ampicillin [Susceptibility] by Minimum inhibitory concentration (MIC)', given as 'Ampicilin Islt MIC'}; {https://acme.org/codes code 'AMPMIC' = 'AMPMIC', given as 'Ampicilin MIC'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &amp;lt;0.06 ug/ml&lt;span&gt; (Details: UCUM code ug/mL = 'ug/mL')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Susceptible &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'S' = 'Susceptible', given as 'Susceptible'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;org3-amp&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;28-1&quot;,
+              &quot;display&quot;: &quot;Ampicilin Islt MIC&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;AMPMIC&quot;,
+              &quot;display&quot;: &quot;Ampicilin MIC&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Ampicilin MIC&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueQuantity&quot;: {
+          &quot;value&quot;: 0.06,
+          &quot;comparator&quot;: &quot;&lt;&quot;,
+          &quot;unit&quot;: &quot;ug/ml&quot;,
+          &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+          &quot;code&quot;: &quot;ug/mL&quot;
+        },
+        &quot;interpretation&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation&quot;,
+                &quot;code&quot;: &quot;S&quot;,
+                &quot;display&quot;: &quot;Susceptible&quot;
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-org3-cip&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;org3-cip&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: org3-cip&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: org3-cip&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Ciprofloxacin MIC &lt;span&gt;(Details : {LOINC code '185-9' = 'Ciprofloxacin [Susceptibility] by Minimum inhibitory concentration (MIC)', given as 'Ciprofloxacin Islt MIC'}; {https://acme.org/codes code 'CIPMIC' = 'CIPMIC', given as 'Ciprofloxacin MIC'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &amp;lt;0.05 ug/ml&lt;span&gt; (Details: UCUM code ug/mL = 'ug/mL')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Susceptible &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'S' = 'Susceptible', given as 'Susceptible'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;org3-cip&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;185-9&quot;,
+              &quot;display&quot;: &quot;Ciprofloxacin Islt MIC&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;CIPMIC&quot;,
+              &quot;display&quot;: &quot;Ciprofloxacin MIC&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Ciprofloxacin MIC&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueQuantity&quot;: {
+          &quot;value&quot;: 0.05,
+          &quot;comparator&quot;: &quot;&lt;&quot;,
+          &quot;unit&quot;: &quot;ug/ml&quot;,
+          &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+          &quot;code&quot;: &quot;ug/mL&quot;
+        },
+        &quot;interpretation&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation&quot;,
+                &quot;code&quot;: &quot;S&quot;,
+                &quot;display&quot;: &quot;Susceptible&quot;
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-org3-gent&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;org3-gent&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: org3-gent&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: org3-gent&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Gentamicin MIC &lt;span&gt;(Details : {LOINC code '267-5' = 'Gentamicin [Susceptibility] by Minimum inhibitory concentration (MIC)', given as 'Gentamicin Islt MIC'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &amp;lt;0.05 ug/ml&lt;span&gt; (Details: UCUM code ug/mL = 'ug/mL')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Susceptible &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'S' = 'Susceptible', given as 'Susceptible'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;org3-gent&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;267-5&quot;,
+              &quot;display&quot;: &quot;Gentamicin Islt MIC&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Gentamicin MIC&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueQuantity&quot;: {
+          &quot;value&quot;: 0.05,
+          &quot;comparator&quot;: &quot;&lt;&quot;,
+          &quot;unit&quot;: &quot;ug/ml&quot;,
+          &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+          &quot;code&quot;: &quot;ug/mL&quot;
+        },
+        &quot;interpretation&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation&quot;,
+                &quot;code&quot;: &quot;S&quot;,
+                &quot;display&quot;: &quot;Susceptible&quot;
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-organism1&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;organism1&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: organism1&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: organism1&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Aerobic Respiratory Culture, Sputum &lt;span&gt;(Details : {LOINC code '624-7' = 'Bacteria identified in Sputum by Respiratory culture', given as 'Bacteria Spt Resp Cul'}; {https://acme.org/codes code 'CULTID' = 'CULTID', given as 'Culture ID'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Normal flora &lt;span&gt;(Details : {SNOMED CT code '23506009' = 'Normal flora', given as 'Normal flora'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;hasMember&lt;/b&gt;: &lt;a&gt;Moderate growth&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;organism1&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;624-7&quot;,
+              &quot;display&quot;: &quot;Bacteria Spt Resp Cul&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;CULTID&quot;,
+              &quot;display&quot;: &quot;Culture ID&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Aerobic Respiratory Culture, Sputum&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueCodeableConcept&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;23506009&quot;,
+              &quot;display&quot;: &quot;Normal flora&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Normal flora&quot;
+        },
+        &quot;hasMember&quot;: [
+          {
+            &quot;reference&quot;: &quot;Observation/growth1&quot;,
+            &quot;display&quot;: &quot;Moderate growth&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-organism2&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;organism2&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: organism2&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: organism2&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Aerobic Respiratory Culture, Sputum &lt;span&gt;(Details : {LOINC code '624-7' = 'Bacteria identified in Sputum by Respiratory culture', given as 'Bacteria Spt Resp Cul'}; {https://acme.org/codes code 'CULTID' = 'CULTID', given as 'Culture ID'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Klebsiella pneumonia &lt;span&gt;(Details : {SNOMED CT code '56415008' = 'Klebsiella pneumoniae', given as 'Klebsiella pneumonia'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;hasMember&lt;/b&gt;: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a&gt;Heavy growth&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Ampicillin MIC - Susceptible&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Ciprofloxacin MIC - Susceptible&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Gentamicin MIC  - Susceptible&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;organism2&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;624-7&quot;,
+              &quot;display&quot;: &quot;Bacteria Spt Resp Cul&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;CULTID&quot;,
+              &quot;display&quot;: &quot;Culture ID&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Aerobic Respiratory Culture, Sputum&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueCodeableConcept&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;56415008&quot;,
+              &quot;display&quot;: &quot;Klebsiella pneumonia&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Klebsiella pneumonia&quot;
+        },
+        &quot;hasMember&quot;: [
+          {
+            &quot;reference&quot;: &quot;Observation/growth2&quot;,
+            &quot;display&quot;: &quot;Heavy growth&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/org2-amp&quot;,
+            &quot;display&quot;: &quot;Ampicillin MIC - Susceptible&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/org2-cip&quot;,
+            &quot;display&quot;: &quot;Ciprofloxacin MIC - Susceptible&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/org2-gent&quot;,
+            &quot;display&quot;: &quot;Gentamicin MIC  - Susceptible&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;fullUrl&quot;: &quot;http://test.fhir.org/r4/Observation/lri-organism3&quot;,
+      &quot;resource&quot;: {
+        &quot;resourceType&quot;: &quot;Observation&quot;,
+        &quot;id&quot;: &quot;organism3&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: organism3&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: organism3&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Micro &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'}; {http://terminology.hl7.org/CodeSystem/v2-0074 code 'MB' = 'Microbiology', given as 'microbiology'})&lt;/span&gt;, Result &lt;span&gt;(Details : {urn:oid:2.16.840.1.113883.9.195.4.61 code 'RSLT' = 'RSLT', given as 'Result'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Aerobic Respiratory Culture, Sputum &lt;span&gt;(Details : {LOINC code '624-7' = 'Bacteria identified in Sputum by Respiratory culture', given as 'Bacteria Spt Resp Cul'}; {https://acme.org/codes code 'CULTID' = 'CULTID', given as 'Culture ID'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 18/08/2016&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 18/08/2016 11:06:32 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Organization/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Staphlyococcuc aureus &lt;span&gt;(Details : {SNOMED CT code '3092008' = 'Staphylococcus aureus', given as 'Staphlyococcuc aureus'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;hasMember&lt;/b&gt;: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a&gt;Heavy growth&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Ampicillin MIC - Susceptible&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Ciprofloxacin MIC - Susceptible&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a&gt;Gentamicin MIC  - Susceptible&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;
+        },
+        &quot;identifier&quot;: [
+          {
+            &quot;system&quot;: &quot;https://acme.org/identifiers&quot;,
+            &quot;value&quot;: &quot;organism3&quot;
+          }
+        ],
+        &quot;status&quot;: &quot;final&quot;,
+        &quot;category&quot;: [
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+                &quot;code&quot;: &quot;laboratory&quot;,
+                &quot;display&quot;: &quot;Laboratory&quot;
+              },
+              {
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;,
+                &quot;code&quot;: &quot;MB&quot;,
+                &quot;display&quot;: &quot;microbiology&quot;
+              }
+            ],
+            &quot;text&quot;: &quot;Micro&quot;
+          },
+          {
+            &quot;coding&quot;: [
+              {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.9.195.4.61&quot;,
+                &quot;code&quot;: &quot;RSLT&quot;,
+                &quot;display&quot;: &quot;Result&quot;
+              }
+            ]
+          }
+        ],
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://loinc.org&quot;,
+              &quot;code&quot;: &quot;624-7&quot;,
+              &quot;display&quot;: &quot;Bacteria Spt Resp Cul&quot;
+            },
+            {
+              &quot;system&quot;: &quot;https://acme.org/codes&quot;,
+              &quot;code&quot;: &quot;CULTID&quot;,
+              &quot;display&quot;: &quot;Culture ID&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Aerobic Respiratory Culture, Sputum&quot;
+        },
+        &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;Patient/example&quot;
+        },
+        &quot;effectiveDateTime&quot;: &quot;2016-08-18&quot;,
+        &quot;issued&quot;: &quot;2016-08-18T23:06:32Z&quot;,
+        &quot;performer&quot;: [
+          {
+            &quot;reference&quot;: &quot;Organization/example&quot;
+          }
+        ],
+        &quot;valueCodeableConcept&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;3092008&quot;,
+              &quot;display&quot;: &quot;Staphlyococcuc aureus&quot;
+            }
+          ],
+          &quot;text&quot;: &quot;Staphlyococcuc aureus&quot;
+        },
+        &quot;hasMember&quot;: [
+          {
+            &quot;reference&quot;: &quot;Observation/growth3&quot;,
+            &quot;display&quot;: &quot;Heavy growth&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/org3-amp&quot;,
+            &quot;display&quot;: &quot;Ampicillin MIC - Susceptible&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/org3-cip&quot;,
+            &quot;display&quot;: &quot;Ciprofloxacin MIC - Susceptible&quot;
+          },
+          {
+            &quot;reference&quot;: &quot;Observation/org3-gent&quot;,
+            &quot;display&quot;: &quot;Gentamicin MIC  - Susceptible&quot;
+          }
+        ]
+      }
+    }
+  ]
+}
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fdiagnosticreport-example-lri.json.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fdiagnosticreport-example-lri.json.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

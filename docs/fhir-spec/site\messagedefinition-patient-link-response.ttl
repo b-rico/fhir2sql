@@ -1,0 +1,89 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MessageDefinition/patient-link-response> a fhir:MessageDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "patient-link-response"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Link Patients Response</div>"
+  ];
+  fhir:MessageDefinition.url [ fhir:value "http://hl7.org/fhir/MessageDefinition/patient-link-response"];
+  fhir:MessageDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "urn:oid:1.3.6.1.4.1.21367.2005.3.7.9879" ]
+  ];
+  fhir:MessageDefinition.version [ fhir:value "1"];
+  fhir:MessageDefinition.name [ fhir:value "PATIENT-LINK-RESPONSE"];
+  fhir:MessageDefinition.title [ fhir:value "Link Patients Response"];
+  fhir:MessageDefinition.status [ fhir:value "draft"];
+  fhir:MessageDefinition.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:MessageDefinition.date [ fhir:value "2017-02-03"^^xsd:date];
+  fhir:MessageDefinition.publisher [ fhir:value "Health Level Seven, Int'l"];
+  fhir:MessageDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org" ]
+     ]
+  ];
+  fhir:MessageDefinition.description [ fhir:value "Optional response to a patient link notification."];
+  fhir:MessageDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/variant-state" ];
+         fhir:Coding.code [ fhir:value "positive" ]
+       ]
+     ]
+  ];
+  fhir:MessageDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States of America (the)" ]
+     ]
+  ];
+  fhir:MessageDefinition.purpose [ fhir:value "Optional response message that may provide additional information on the outcome of the patient link operation."];
+  fhir:MessageDefinition.copyright [ fhir:value "� HL7.org 2011+"];
+  fhir:MessageDefinition.base [
+     fhir:value "MessageDefinition/example";
+     fhir:link <http://hl7.org/fhir/MessageDefinition/example>
+  ];
+  fhir:MessageDefinition.eventCoding [
+     fhir:Coding.system [ fhir:value "http://example.org/fhir/message-events" ];
+     fhir:Coding.code [ fhir:value "admin-notify" ]
+  ];
+  fhir:MessageDefinition.category [ fhir:value "consequence"];
+  fhir:MessageDefinition.focus [
+     fhir:index 0;
+     fhir:MessageDefinition.focus.code [ fhir:value "Patient" ];
+     fhir:MessageDefinition.focus.profile [
+       fhir:value "StructureDefinition/example";
+       fhir:link <http://hl7.org/fhir/StructureDefinition/example>
+     ];
+     fhir:MessageDefinition.focus.min [ fhir:value "2"^^xsd:nonNegativeInteger ];
+     fhir:MessageDefinition.focus.max [ fhir:value "2" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MessageDefinition/patient-link-response.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MessageDefinition/patient-link-response.ttl> .
+
+# -------------------------------------------------------------------------------------
+

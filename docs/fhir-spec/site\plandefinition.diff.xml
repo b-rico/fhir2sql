@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="PlanDefinition" status="changed">
+      <element path="PlanDefinition.subtitle" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/publication-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/publication-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element modifier="removed" path="PlanDefinition.experimental"/>
+      <element path="PlanDefinition.subject[x]" status="new"/>
+      <element path="PlanDefinition.author" status="new"/>
+      <element path="PlanDefinition.editor" status="new"/>
+      <element path="PlanDefinition.reviewer" status="new"/>
+      <element path="PlanDefinition.endorser" status="new"/>
+      <element path="PlanDefinition.library">
+         <removed-type name="Reference(Library)"/>
+         <added-type name="canonical(Library)"/>
+      </element>
+      <element path="PlanDefinition.action.prefix" status="new"/>
+      <element path="PlanDefinition.action.priority" status="new"/>
+      <element path="PlanDefinition.action.subject[x]" status="new"/>
+      <element path="PlanDefinition.action.trigger" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.action.condition.kind">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-condition-kind"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-condition-kind|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="PlanDefinition.action.condition.expression">
+         <removed-type name="string"/>
+         <added-type name="Expression"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.action.relatedAction.relationship">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-relationship-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-relationship-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="PlanDefinition.action.timing[x]">
+         <added-type name="Age"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.action.participant.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-participant-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-participant-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-strength-changed="true"
+               path="PlanDefinition.action.type">
+         <removed-type name="Coding"/>
+         <added-type name="CodeableConcept"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-type"
+                      strength="extensible"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.action.groupingBehavior">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-grouping-behavior"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-grouping-behavior|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.action.selectionBehavior">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-selection-behavior"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-selection-behavior|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.action.requiredBehavior">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-required-behavior"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-required-behavior|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.action.precheckBehavior">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-precheck-behavior"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-precheck-behavior|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="PlanDefinition.action.cardinalityBehavior">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/action-cardinality-behavior"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/action-cardinality-behavior|4.0.1"
+                      strength="required"/>
+      </element>
+      <element old-name="definition" path="PlanDefinition.action.definition[x]">
+         <removed-type name="Reference(ActivityDefinition | PlanDefinition)"/>
+         <added-type name="canonical(ActivityDefinition | PlanDefinition | Questionnaire)"/>
+         <added-type name="uri"/>
+      </element>
+      <element path="PlanDefinition.action.transform">
+         <removed-type name="Reference(StructureMap)"/>
+         <added-type name="canonical(StructureMap)"/>
+      </element>
+      <element path="PlanDefinition.action.dynamicValue.expression">
+         <removed-type name="string"/>
+         <added-type name="Expression"/>
+      </element>
+      <element path="PlanDefinition.contributor" status="deleted"/>
+      <element path="PlanDefinition.action.label" status="deleted"/>
+      <element path="PlanDefinition.action.triggerDefinition" status="deleted"/>
+      <element path="PlanDefinition.action.condition.description" status="deleted"/>
+      <element path="PlanDefinition.action.condition.language" status="deleted"/>
+      <element path="PlanDefinition.action.dynamicValue.description" status="deleted"/>
+      <element path="PlanDefinition.action.dynamicValue.language" status="deleted"/>
+   </type>
+</difference>

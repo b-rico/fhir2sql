@@ -1,0 +1,61 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/BodyStructure/tumor> a fhir:BodyStructure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "tumor"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: tumor</p><p><b>identifier</b>: 12345</p><p><b>morphology</b>: Splenic mass <span>(Details : {SNOMED CT code '4147007' = 'Mass', given as 'Mass (morphologic abnormality)'})</span></p><p><b>location</b>: Spleen <span>(Details : {SNOMED CT code '78961009' = 'Spleen', given as 'Splenic structure (body structure)'})</span></p><p><b>description</b>: 7 cm maximum diameter</p><p><b>image</b>: </p><p><b>patient</b>: <a>Patient/example</a></p></div>"
+  ];
+  fhir:BodyStructure.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://goodhealth.org/bodystructure/identifiers" ];
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:BodyStructure.morphology [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:4147007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "4147007" ];
+       fhir:Coding.display [ fhir:value "Mass (morphologic abnormality)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Splenic mass" ]
+  ];
+  fhir:BodyStructure.location [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:78961009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "78961009" ];
+       fhir:Coding.display [ fhir:value "Splenic structure (body structure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Spleen" ]
+  ];
+  fhir:BodyStructure.description [ fhir:value "7 cm maximum diameter"];
+  fhir:BodyStructure.image [
+     fhir:index 0;
+     fhir:Attachment.contentType [ fhir:value "application/dicom" ];
+     fhir:Attachment.url [ fhir:value "http://imaging.acme.com/wado/server?requestType=WADO&amp;wado_details" ]
+  ];
+  fhir:BodyStructure.patient [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/BodyStructure/tumor.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/BodyStructure/tumor.ttl> .
+
+# -------------------------------------------------------------------------------------
+

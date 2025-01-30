@@ -1,0 +1,228 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type SubstancePolymer {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  class: CodeableConcept
+  geometry: CodeableConcept
+  copolymerConnectivity: [CodeableConcept]
+  modification: String  _modification: [ElementBase]
+  monomerSet: [SubstancePolymerMonomerSet]
+  repeat: [SubstancePolymerRepeat]
+}
+
+type SubstancePolymerMonomerSet {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  ratioType: CodeableConcept
+  startingMaterial: [SubstancePolymerMonomerSetStartingMaterial]
+}
+
+type SubstancePolymerMonomerSetStartingMaterial {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  material: CodeableConcept
+  type: CodeableConcept
+  isDefining: Boolean  _isDefining: ElementBase
+  amount: SubstanceAmount
+}
+
+type SubstancePolymerRepeat {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  numberOfUnits: Int  _numberOfUnits: ElementBase
+  averageMolecularFormula: String  _averageMolecularFormula: ElementBase
+  repeatUnitAmountType: CodeableConcept
+  repeatUnit: [SubstancePolymerRepeatRepeatUnit]
+}
+
+type SubstancePolymerRepeatRepeatUnit {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  orientationOfPolymerisation: CodeableConcept
+  repeatUnit: String  _repeatUnit: ElementBase
+  amount: SubstanceAmount
+  degreeOfPolymerisation: [SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation]
+  structuralRepresentation: [SubstancePolymerRepeatRepeatUnitStructuralRepresentation]
+}
+
+type SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  degree: CodeableConcept
+  amount: SubstanceAmount
+}
+
+type SubstancePolymerRepeatRepeatUnitStructuralRepresentation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  representation: String  _representation: ElementBase
+  attachment: Attachment
+}
+
+input SubstancePolymer {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  class: CodeableConcept
+  geometry: CodeableConcept
+  copolymerConnectivity: [CodeableConcept]
+  modification: String  _modification: [ElementBase]
+  monomerSet: [SubstancePolymerMonomerSet]
+  repeat: [SubstancePolymerRepeat]
+}
+
+input SubstancePolymerMonomerSet {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  ratioType: CodeableConcept
+  startingMaterial: [SubstancePolymerMonomerSetStartingMaterial]
+}
+
+input SubstancePolymerMonomerSetStartingMaterial {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  material: CodeableConcept
+  type: CodeableConcept
+  isDefining: Boolean  _isDefining: ElementBase
+  amount: SubstanceAmount
+}
+
+input SubstancePolymerRepeat {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  numberOfUnits: Int  _numberOfUnits: ElementBase
+  averageMolecularFormula: String  _averageMolecularFormula: ElementBase
+  repeatUnitAmountType: CodeableConcept
+  repeatUnit: [SubstancePolymerRepeatRepeatUnit]
+}
+
+input SubstancePolymerRepeatRepeatUnit {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  orientationOfPolymerisation: CodeableConcept
+  repeatUnit: String  _repeatUnit: ElementBase
+  amount: SubstanceAmount
+  degreeOfPolymerisation: [SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation]
+  structuralRepresentation: [SubstancePolymerRepeatRepeatUnitStructuralRepresentation]
+}
+
+input SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  degree: CodeableConcept
+  amount: SubstanceAmount
+}
+
+input SubstancePolymerRepeatRepeatUnitStructuralRepresentation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  representation: String  _representation: ElementBase
+  attachment: Attachment
+}
+
+type SubstancePolymerReadType {
+  SubstancePolymer(id : ID!) : SubstancePolymer
+}
+
+type SubstancePolymerListType {
+  SubstancePolymerList(_filter : String
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [SubstancePolymer]
+}
+
+type SubstancePolymerConnectionType {
+  SubstancePolymerConection(_filter : String
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : SubstancePolymerConnection
+}
+
+type SubstancePolymerConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [SubstancePolymerEdge]
+}
+
+type SubstancePolymerEdge {
+  mode : String
+  score : Float
+  resource : SubstancePolymer
+}
+
+type SubstancePolymerCreateType {
+  SubstancePolymerCreate(resource : SubstancePolymer) : SubstancePolymerCreation
+}
+
+type SubstancePolymerCreation {
+  location : String
+  resource : SubstancePolymer
+  information : OperationOutcome
+}
+
+type SubstancePolymerUpdateType {
+  SubstancePolymerUpdate(id : IDresource : SubstancePolymer) : SubstancePolymerUpdate
+}
+
+type SubstancePolymerUpdate {
+  resource : SubstancePolymer
+  information : OperationOutcome
+}
+
+type SubstancePolymerDeleteType {
+  SubstancePolymerDelete(id : ID) : SubstancePolymerDelete
+}
+
+type SubstancePolymerDelete {
+  information : OperationOutcome
+}
+

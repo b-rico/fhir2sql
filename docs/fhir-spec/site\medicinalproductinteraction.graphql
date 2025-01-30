@@ -1,0 +1,136 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicinalProductInteraction {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subject: [Reference]
+  description: String  _description: ElementBase
+  interactant: [MedicinalProductInteractionInteractant]
+  type: CodeableConcept
+  effect: CodeableConcept
+  incidence: CodeableConcept
+  management: CodeableConcept
+}
+
+type MedicinalProductInteractionInteractant {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemReference: Reference
+  itemCodeableConcept: CodeableConcept
+}
+
+input MedicinalProductInteraction {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subject: [Reference]
+  description: String  _description: ElementBase
+  interactant: [MedicinalProductInteractionInteractant]
+  type: CodeableConcept
+  effect: CodeableConcept
+  incidence: CodeableConcept
+  management: CodeableConcept
+}
+
+input MedicinalProductInteractionInteractant {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  itemReference: Reference
+  itemCodeableConcept: CodeableConcept
+}
+
+type MedicinalProductInteractionReadType {
+  MedicinalProductInteraction(id : ID!) : MedicinalProductInteraction
+}
+
+type MedicinalProductInteractionListType {
+  MedicinalProductInteractionList(_filter : String
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicinalProductInteraction]
+}
+
+type MedicinalProductInteractionConnectionType {
+  MedicinalProductInteractionConection(_filter : String
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicinalProductInteractionConnection
+}
+
+type MedicinalProductInteractionConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicinalProductInteractionEdge]
+}
+
+type MedicinalProductInteractionEdge {
+  mode : String
+  score : Float
+  resource : MedicinalProductInteraction
+}
+
+type MedicinalProductInteractionCreateType {
+  MedicinalProductInteractionCreate(resource : MedicinalProductInteraction) : MedicinalProductInteractionCreation
+}
+
+type MedicinalProductInteractionCreation {
+  location : String
+  resource : MedicinalProductInteraction
+  information : OperationOutcome
+}
+
+type MedicinalProductInteractionUpdateType {
+  MedicinalProductInteractionUpdate(id : IDresource : MedicinalProductInteraction) : MedicinalProductInteractionUpdate
+}
+
+type MedicinalProductInteractionUpdate {
+  resource : MedicinalProductInteraction
+  information : OperationOutcome
+}
+
+type MedicinalProductInteractionDeleteType {
+  MedicinalProductInteractionDelete(id : ID) : MedicinalProductInteractionDelete
+}
+
+type MedicinalProductInteractionDelete {
+  information : OperationOutcome
+}
+

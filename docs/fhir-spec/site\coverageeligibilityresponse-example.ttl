@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CoverageEligibilityResponse/E2500> a fhir:CoverageEligibilityResponse;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "E2500"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the CoverageEligibilityResponse.</div>"
+  ];
+  fhir:CoverageEligibilityResponse.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.BenefitsInc.com/fhir/coverageeligibilityresponse" ];
+     fhir:Identifier.value [ fhir:value "881234" ]
+  ];
+  fhir:CoverageEligibilityResponse.status [ fhir:value "active"];
+  fhir:CoverageEligibilityResponse.purpose [
+     fhir:value "validation";
+     fhir:index 0
+  ];
+  fhir:CoverageEligibilityResponse.patient [
+     fhir:link <http://hl7.org/fhir/Patient/pat1>;
+     fhir:Reference.reference [ fhir:value "Patient/pat1" ]
+  ];
+  fhir:CoverageEligibilityResponse.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:CoverageEligibilityResponse.request [
+     fhir:link <http://www.BenefitsInc.com/fhir/coverageeligibilityrequest/225476332402>;
+     fhir:Reference.reference [ fhir:value "http://www.BenefitsInc.com/fhir/coverageeligibilityrequest/225476332402" ]
+  ];
+  fhir:CoverageEligibilityResponse.outcome [ fhir:value "complete"];
+  fhir:CoverageEligibilityResponse.disposition [ fhir:value "Policy is currently in-force."];
+  fhir:CoverageEligibilityResponse.insurer [
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:CoverageEligibilityResponse.insurance [
+     fhir:index 0;
+     fhir:CoverageEligibilityResponse.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ];
+     fhir:CoverageEligibilityResponse.insurance.inforce [ fhir:value "true"^^xsd:boolean ]
+  ] .
+
+<http://hl7.org/fhir/Patient/pat1> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CoverageEligibilityResponse/E2500.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CoverageEligibilityResponse/E2500.ttl> .
+
+# -------------------------------------------------------------------------------------
+

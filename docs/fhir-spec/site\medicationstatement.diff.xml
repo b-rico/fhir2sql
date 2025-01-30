@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="MedicationStatement" status="changed">
+      <element path="MedicationStatement.basedOn">
+         <removed-type name="Reference(MedicationRequest | CarePlan | ProcedureRequest | ReferralRequest)"/>
+         <added-type name="Reference(MedicationRequest | CarePlan | ServiceRequest)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MedicationStatement.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/medication-statement-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/medication-statement-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="MedicationStatement.statusReason" status="new"/>
+      <element path="MedicationStatement.informationSource">
+         <removed-type name="Reference(Patient | Practitioner | RelatedPerson | Organization)"/>
+         <added-type name="Reference(Patient | Practitioner | PractitionerRole | RelatedPerson | Organization)"/>
+      </element>
+      <element path="MedicationStatement.reasonReference">
+         <removed-type name="Reference(Condition | Observation)"/>
+         <added-type name="Reference(Condition | Observation | DiagnosticReport)"/>
+      </element>
+      <element path="MedicationStatement.taken" status="deleted"/>
+      <element path="MedicationStatement.reasonNotTaken" status="deleted"/>
+   </type>
+</difference>

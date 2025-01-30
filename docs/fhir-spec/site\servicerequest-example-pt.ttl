@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/physical-therapy> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "physical-therapy"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: physical-therapy</p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>category</b>: Evaluation <span>(Details : {SNOMED CT code '386053000' = 'Patient evaluation procedure', given as 'Evaluation procedure (procedure)'})</span></p><p><b>code</b>: Assessment of passive range of motion <span>(Details : {SNOMED CT code '710830005' = 'Assessment of passive range of motion', given as 'Assessment of passive range of motion (procedure)'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>occurrence</b>: 27/09/2016</p><p><b>authoredOn</b>: 20/09/2016</p><p><b>requester</b>: Ollie Ortho, MD</p><p><b>performer</b>: Paul Therapist, PT</p><p><b>reasonCode</b>: assessment of mobility limitations due to osteoarthritis <span>(Details )</span></p><p><b>bodySite</b>: Both knees <span>(Details : {SNOMED CT code '36701003' = 'Both knees', given as 'Both knees (body structure)'})</span></p></div>"
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:386053000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "386053000" ];
+       fhir:Coding.display [ fhir:value "Evaluation procedure (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Evaluation" ]
+  ];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:710830005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "710830005" ];
+       fhir:Coding.display [ fhir:value "Assessment of passive range of motion (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Assessment of passive range of motion" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ServiceRequest.occurrenceDateTime [ fhir:value "2016-09-27"^^xsd:date];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2016-09-20"^^xsd:date];
+  fhir:ServiceRequest.requester [
+     fhir:Reference.display [ fhir:value "Ollie Ortho, MD" ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Paul Therapist, PT" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "assessment of mobility limitations due to osteoarthritis" ]
+  ];
+  fhir:ServiceRequest.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:36701003;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "36701003" ];
+       fhir:Coding.display [ fhir:value "Both knees (body structure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Both knees" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/physical-therapy.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/physical-therapy.ttl> .
+
+# -------------------------------------------------------------------------------------
+

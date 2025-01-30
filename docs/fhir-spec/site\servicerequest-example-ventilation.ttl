@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/vent> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "vent"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: vent</p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>code</b>: Mechanical Ventilation <span>(Details : {SNOMED CT code '40617009' = 'Artificial respiration', given as 'Artificial respiration (procedure)'})</span></p><p><b>orderDetail</b>: IPPB <span>(Details : {SNOMED CT code '243144002' = 'Patient triggered inspiratory assistance', given as 'Patient triggered inspiratory assistance (procedure)'})</span>,  Initial Settings : Sens: -1 cm H20 Pressure 15 cm H2O moderate flow:  Monitor VS every 15 minutes x 4 at the start of mechanical ventilation, then routine for unit OR every 5 hr <span>(Details )</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>authoredOn</b>: 20/02/2018</p><p><b>requester</b>: <a>Dr. Beverly Crusher</a></p><p><b>performer</b>: <a>Dr Cecil Surgeon</a></p><p><b>reasonCode</b>: chronic obstructive lung disease (COLD) <span>(Details )</span></p></div>"
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:40617009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "40617009" ];
+       fhir:Coding.display [ fhir:value "Artificial respiration (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Mechanical Ventilation" ]
+  ];
+  fhir:ServiceRequest.orderDetail [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:243144002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "243144002" ];
+       fhir:Coding.display [ fhir:value "Patient triggered inspiratory assistance (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "IPPB" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeableConcept.text [ fhir:value " Initial Settings : Sens: -1 cm H20 Pressure 15 cm H2O moderate flow:  Monitor VS every 15 minutes x 4 at the start of mechanical ventilation, then routine for unit OR every 5 hr" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2018-02-20"^^xsd:date];
+  fhir:ServiceRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809>;
+     fhir:Reference.reference [ fhir:value "Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809" ];
+     fhir:Reference.display [ fhir:value "Dr. Beverly Crusher" ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr Cecil Surgeon" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "chronic obstructive lung disease (COLD)" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/vent.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/vent.ttl> .
+
+# -------------------------------------------------------------------------------------
+

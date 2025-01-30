@@ -1,0 +1,40 @@
+﻿{
+  "types": [
+    "Practitioner"
+  ],
+  "Practitioner": {
+    "elements": {
+      "Practitioner.active": {
+        "default": "removed",
+        "old-default": "\"true\""
+      },
+      "Practitioner.gender": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/administrative-gender",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Practitioner.communication": {
+        "binding-strength-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/languages",
+          "strength": "extensible",
+          "max": "http://hl7.org/fhir/ValueSet/all-languages"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/languages",
+          "strength": "preferred",
+          "max": "http://hl7.org/fhir/ValueSet/all-languages"
+        }
+      }
+    },
+    "status": "changed"
+  }
+}

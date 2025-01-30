@@ -1,0 +1,471 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Claim/660152> a fhir:Claim;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "660152"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the Vision Claim for Glasses</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Device;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "device-frame" ]
+  ], [
+     a fhir:Device;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "device-lens" ]
+  ];
+  fhir:Claim.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://happysight.com/claim" ];
+     fhir:Identifier.value [ fhir:value "6612347" ]
+  ];
+  fhir:Claim.status [ fhir:value "active"];
+  fhir:Claim.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claim-type" ];
+       fhir:Coding.code [ fhir:value "vision" ]
+     ]
+  ];
+  fhir:Claim.use [ fhir:value "claim"];
+  fhir:Claim.patient [
+     fhir:link <http://hl7.org/fhir/Patient/1>;
+     fhir:Reference.reference [ fhir:value "Patient/1" ]
+  ];
+  fhir:Claim.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:Claim.insurer [
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:Claim.provider [
+     fhir:link <http://hl7.org/fhir/Organization/1>;
+     fhir:Reference.reference [ fhir:value "Organization/1" ]
+  ];
+  fhir:Claim.priority [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "normal" ]
+     ]
+  ];
+  fhir:Claim.prescription [
+     fhir:link <http://www.optdocs.com/prescription/12345>;
+     fhir:Reference.reference [ fhir:value "http://www.optdocs.com/prescription/12345" ]
+  ];
+  fhir:Claim.payee [
+     fhir:Claim.payee.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "provider" ]
+       ]
+     ]
+  ];
+  fhir:Claim.careTeam [
+     fhir:index 0;
+     fhir:Claim.careTeam.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.careTeam.provider [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:Claim.diagnosis [
+     fhir:index 0;
+     fhir:Claim.diagnosis.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.diagnosis.diagnosisCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "654321" ]
+       ]
+     ]
+  ];
+  fhir:Claim.insurance [
+     fhir:index 0;
+     fhir:Claim.insurance.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.insurance.focal [ fhir:value "false"^^xsd:boolean ];
+     fhir:Claim.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ];
+     fhir:Claim.insurance.preAuthRef [
+       fhir:value "PR7652387237";
+       fhir:index 0
+     ];
+     fhir:Claim.insurance.claimResponse [
+       fhir:link <http://hl7.org/fhir/ClaimResponse/R3500>;
+       fhir:Reference.reference [ fhir:value "ClaimResponse/R3500" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Claim.insurance.sequence [ fhir:value "2"^^xsd:positiveInteger ];
+     fhir:Claim.insurance.focal [ fhir:value "true"^^xsd:boolean ];
+     fhir:Claim.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ];
+     fhir:Claim.insurance.preAuthRef [
+       fhir:value "AB543GTD7567";
+       fhir:index 0
+     ]
+  ];
+  fhir:Claim.item [
+     fhir:index 0;
+     fhir:Claim.item.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.item.careTeamSequence [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:Claim.item.revenue [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-revenue-center" ];
+         fhir:Coding.code [ fhir:value "0010" ];
+         fhir:Coding.display [ fhir:value "Vision Clinic" ]
+       ]
+     ];
+     fhir:Claim.item.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/benefit-subcategory" ];
+         fhir:Coding.code [ fhir:value "F6" ];
+         fhir:Coding.display [ fhir:value "Vision Coverage" ]
+       ]
+     ];
+     fhir:Claim.item.productOrService [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/ex-visionservice" ];
+         fhir:Coding.code [ fhir:value "glasses" ]
+       ]
+     ];
+     fhir:Claim.item.modifier [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/modifiers" ];
+         fhir:Coding.code [ fhir:value "rooh" ]
+       ]
+     ];
+     fhir:Claim.item.programCode [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-programcode" ];
+         fhir:Coding.code [ fhir:value "none" ]
+       ]
+     ];
+     fhir:Claim.item.servicedDate [ fhir:value "2014-08-16"^^xsd:date ];
+     fhir:Claim.item.unitPrice [
+       fhir:Money.value [ fhir:value "235.40"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.net [
+       fhir:Money.value [ fhir:value "235.40"^^xsd:decimal ];
+       fhir:Money.currency [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.detail [
+       fhir:index 0;
+       fhir:Claim.item.detail.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+       fhir:Claim.item.detail.revenue [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-revenue-center" ];
+           fhir:Coding.code [ fhir:value "0010" ];
+           fhir:Coding.display [ fhir:value "Vision Clinic" ]
+         ]
+       ];
+       fhir:Claim.item.detail.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/benefit-subcategory" ];
+           fhir:Coding.code [ fhir:value "F6" ];
+           fhir:Coding.display [ fhir:value "Vision Coverage" ]
+         ]
+       ];
+       fhir:Claim.item.detail.productOrService [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/ex-visionservice" ];
+           fhir:Coding.code [ fhir:value "frame" ]
+         ]
+       ];
+       fhir:Claim.item.detail.modifier [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/modifiers" ];
+           fhir:Coding.code [ fhir:value "rooh" ]
+         ]
+       ];
+       fhir:Claim.item.detail.unitPrice [
+         fhir:Money.value [ fhir:value "100.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.factor [ fhir:value "1.1"^^xsd:decimal ];
+       fhir:Claim.item.detail.net [
+         fhir:Money.value [ fhir:value "110.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.udi [
+         fhir:index 0;
+         fhir:Reference.reference [ fhir:value "#device-frame" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Claim.item.detail.sequence [ fhir:value "2"^^xsd:positiveInteger ];
+       fhir:Claim.item.detail.revenue [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-revenue-center" ];
+           fhir:Coding.code [ fhir:value "0010" ];
+           fhir:Coding.display [ fhir:value "Vision Clinic" ]
+         ]
+       ];
+       fhir:Claim.item.detail.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/benefit-subcategory" ];
+           fhir:Coding.code [ fhir:value "F6" ];
+           fhir:Coding.display [ fhir:value "Vision Coverage" ]
+         ]
+       ];
+       fhir:Claim.item.detail.productOrService [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/ex-visionservice" ];
+           fhir:Coding.code [ fhir:value "lens" ]
+         ]
+       ];
+       fhir:Claim.item.detail.programCode [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-programcode" ];
+           fhir:Coding.code [ fhir:value "none" ]
+         ]
+       ];
+       fhir:Claim.item.detail.quantity [
+         fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ]
+       ];
+       fhir:Claim.item.detail.unitPrice [
+         fhir:Money.value [ fhir:value "55.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.net [
+         fhir:Money.value [ fhir:value "110.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.subDetail [
+         fhir:index 0;
+         fhir:Claim.item.detail.subDetail.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+         fhir:Claim.item.detail.subDetail.revenue [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-revenue-center" ];
+             fhir:Coding.code [ fhir:value "0010" ];
+             fhir:Coding.display [ fhir:value "Vision Clinic" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.category [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/benefit-subcategory" ];
+             fhir:Coding.code [ fhir:value "F6" ];
+             fhir:Coding.display [ fhir:value "Vision Coverage" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.productOrService [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/ex-visionservice" ];
+             fhir:Coding.code [ fhir:value "lens" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.modifier [
+           fhir:index 0;
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/modifiers" ];
+             fhir:Coding.code [ fhir:value "rooh" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.programCode [
+           fhir:index 0;
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-programcode" ];
+             fhir:Coding.code [ fhir:value "none" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.quantity [
+           fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ]
+         ];
+         fhir:Claim.item.detail.subDetail.unitPrice [
+           fhir:Money.value [ fhir:value "30.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ];
+         fhir:Claim.item.detail.subDetail.factor [ fhir:value "1.1"^^xsd:decimal ];
+         fhir:Claim.item.detail.subDetail.net [
+           fhir:Money.value [ fhir:value "66.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ];
+         fhir:Claim.item.detail.subDetail.udi [
+           fhir:index 0;
+           fhir:Reference.reference [ fhir:value "#device-lens" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Claim.item.detail.subDetail.sequence [ fhir:value "2"^^xsd:positiveInteger ];
+         fhir:Claim.item.detail.subDetail.revenue [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-revenue-center" ];
+             fhir:Coding.code [ fhir:value "0010" ];
+             fhir:Coding.display [ fhir:value "Vision Clinic" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.category [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/benefit-subcategory" ];
+             fhir:Coding.code [ fhir:value "F6" ];
+             fhir:Coding.display [ fhir:value "Vision Coverage" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.productOrService [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/ex-visionservice" ];
+             fhir:Coding.code [ fhir:value "hardening" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.modifier [
+           fhir:index 0;
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/modifiers" ];
+             fhir:Coding.code [ fhir:value "rooh" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.quantity [
+           fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ]
+         ];
+         fhir:Claim.item.detail.subDetail.unitPrice [
+           fhir:Money.value [ fhir:value "15.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ];
+         fhir:Claim.item.detail.subDetail.factor [ fhir:value "1.1"^^xsd:decimal ];
+         fhir:Claim.item.detail.subDetail.net [
+           fhir:Money.value [ fhir:value "33.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:Claim.item.detail.subDetail.sequence [ fhir:value "3"^^xsd:positiveInteger ];
+         fhir:Claim.item.detail.subDetail.revenue [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-revenue-center" ];
+             fhir:Coding.code [ fhir:value "0010" ];
+             fhir:Coding.display [ fhir:value "Vision Clinic" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.category [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/benefit-subcategory" ];
+             fhir:Coding.code [ fhir:value "F6" ];
+             fhir:Coding.display [ fhir:value "Vision Coverage" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.productOrService [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/ex-visionservice" ];
+             fhir:Coding.code [ fhir:value "UV coating" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.modifier [
+           fhir:index 0;
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/modifiers" ];
+             fhir:Coding.code [ fhir:value "rooh" ]
+           ]
+         ];
+         fhir:Claim.item.detail.subDetail.quantity [
+           fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ]
+         ];
+         fhir:Claim.item.detail.subDetail.unitPrice [
+           fhir:Money.value [ fhir:value "5.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ];
+         fhir:Claim.item.detail.subDetail.factor [ fhir:value "1.1"^^xsd:decimal ];
+         fhir:Claim.item.detail.subDetail.net [
+           fhir:Money.value [ fhir:value "11.00"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "USD" ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Claim.item.detail.sequence [ fhir:value "3"^^xsd:positiveInteger ];
+       fhir:Claim.item.detail.revenue [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-revenue-center" ];
+           fhir:Coding.code [ fhir:value "0010" ];
+           fhir:Coding.display [ fhir:value "Vision Clinic" ]
+         ]
+       ];
+       fhir:Claim.item.detail.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/benefit-subcategory" ];
+           fhir:Coding.code [ fhir:value "F6" ];
+           fhir:Coding.display [ fhir:value "Vision Coverage" ]
+         ]
+       ];
+       fhir:Claim.item.detail.productOrService [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/fhir/CodeSystem/ex-visionservice" ];
+           fhir:Coding.code [ fhir:value "fst" ]
+         ]
+       ];
+       fhir:Claim.item.detail.unitPrice [
+         fhir:Money.value [ fhir:value "220.00"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.factor [ fhir:value "0.07"^^xsd:decimal ];
+       fhir:Claim.item.detail.net [
+         fhir:Money.value [ fhir:value "15.40"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "USD" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/1> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Organization/1> a fhir:Organization .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+<http://hl7.org/fhir/ClaimResponse/R3500> a fhir:ClaimResponse .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Claim/660152.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Claim/660152.ttl> .
+
+# -------------------------------------------------------------------------------------
+

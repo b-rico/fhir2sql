@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<!-- template-example-json.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Testscript-example-search.json - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/testscript-example-search.json.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="implsupport-module.html"><img src="implsupport.png"/> Implementation Support</a></li>        <li><a href="testscript.html">TestScript</a></li>        <li><b>Example Instance</b></li>        <!-- testscript-example-search.json.html / resource-instance:TestScript / Example-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Testscript-example-search.json</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+<p>
+<a href="testscript-example-search.json">Raw JSON</a> (<a href="testscript-example-search.canonical.json">canonical form</a> + also see <a href="json.html">JSON Format Specification</a>)
+</p>
+
+<div class="example">
+<p>Search TestScript Example</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;TestScript&quot;,
+  &quot;id&quot;: &quot;testscript-example-search&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: testscript-example-search&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;b&gt;http://hl7.org/fhir/TestScript/testscript-example-search&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: urn:oid:1.3.6.1.4.1.21367.2005.3.7.9881&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: TestScript Example Search&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: draft&lt;/p&gt;&lt;p&gt;&lt;b&gt;experimental&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 18/01/2017&lt;/p&gt;&lt;p&gt;&lt;b&gt;publisher&lt;/b&gt;: HL7&lt;/p&gt;&lt;p&gt;&lt;b&gt;contact&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: TestScript example resource with simple Patient search test. The read tests will utilize user defined dynamic variables that will hold the Patient search parameter values.&lt;/p&gt;&lt;p&gt;&lt;b&gt;jurisdiction&lt;/b&gt;: United States of America (the) &lt;span&gt;(Details : {urn:iso:std:iso:3166 code 'US' = 'United States of America', given as 'United States of America (the)'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;purpose&lt;/b&gt;: Patient Search Operation&lt;/p&gt;&lt;p&gt;&lt;b&gt;copyright&lt;/b&gt;: © HL7.org 2011+&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;metadata&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Links&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Url&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;a&gt;http://hl7.org/fhir/patient.html&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Demographics and other administrative information about an individual or animal receiving care or other health-related services.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h3&gt;Capabilities&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Required&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Validated&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Link&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Capabilities&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;td&gt;Patient Search Operation&lt;/td&gt;&lt;td&gt;&lt;a&gt;http://hl7.org/fhir/http.html#search&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a&gt;CapabilityStatement/example&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;h3&gt;Fixtures&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Autocreate&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Autodelete&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;td&gt;&lt;a&gt;Peter Chalmers&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;profile&lt;/b&gt;: &lt;a&gt;Generated Summary: url: http://hl7.org/fhir/StructureDefinition/Bundle; version: 4.0.1; name: Bundle; ACTIVE; date: 01/11/2019 9:29:23 AM; publisher: Health Level Seven International (FHIR Infrastructure); description: A container for a collection of resources.; 4.0.1; RESOURCE; type: Bundle; baseDefinition: http://hl7.org/fhir/StructureDefinition/Resource; SPECIALIZATION&lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PatientCreateLocation&lt;/p&gt;&lt;p&gt;&lt;b&gt;headerField&lt;/b&gt;: Location&lt;/p&gt;&lt;p&gt;&lt;b&gt;sourceId&lt;/b&gt;: PatientCreateResponse&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PatientSearchFamilyName&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Enter patient search criteria for a known family name on the target system&lt;/p&gt;&lt;p&gt;&lt;b&gt;hint&lt;/b&gt;: [Family name]&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PatientSearchGivenName&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Enter patient search criteria for a known given name on the target system&lt;/p&gt;&lt;p&gt;&lt;b&gt;hint&lt;/b&gt;: [Given name]&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PatientSearchBundleTotal&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Evaluate the returned Patient searchset Bundle.total value&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: Bundle.total.toInteger()&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;setup&lt;/b&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Operations&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Accept&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;EncodeRequestUrl&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Params&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Search (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code search = 'Search', stated as 'null')&lt;/td&gt;&lt;td&gt;Patient&lt;/td&gt;&lt;td&gt;Test simple search to verify server support.&lt;/td&gt;&lt;td&gt;xml&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;td&gt;?family=DONTEXPECTAMATCH&amp;amp;given=DONTEXPECTAMATCH&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;RequestURL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the request url contains the family search parameter.&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;contains&lt;/td&gt;&lt;td&gt;family&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;ResponseCode&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the returned HTTP status is 200(OK).&lt;/td&gt;&lt;td&gt;response&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the returned resource type is Bundle.&lt;/td&gt;&lt;td&gt;Bundle&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;NavigationLinks&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the returned Bundle correctly defines the navigation links.&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;test&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Patient Create Search&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Create a Patient resource and capture the returned HTTP Header Location. Then search for (read) that Patient using the Location URL value and validate the response.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Operations&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Operations&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;test&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Patient Search Dynamic&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Search for Patient resources using the user defined dynamic variables ${PatientSearchFamilyName} and ${PatientSearchGivenName} and validate response.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Operations&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+  },
+  &quot;url&quot;: &quot;http://hl7.org/fhir/TestScript/testscript-example-search&quot;,
+  &quot;identifier&quot;: {
+    &quot;system&quot;: &quot;urn:ietf:rfc:3986&quot;,
+    &quot;value&quot;: &quot;urn:oid:1.3.6.1.4.1.21367.2005.3.7.9881&quot;
+  },
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;name&quot;: &quot;TestScript Example Search&quot;,
+  &quot;status&quot;: &quot;draft&quot;,
+  &quot;experimental&quot;: true,
+  &quot;date&quot;: &quot;2017-01-18&quot;,
+  &quot;publisher&quot;: &quot;HL7&quot;,
+  &quot;contact&quot;: [
+    {
+      &quot;name&quot;: &quot;Support&quot;,
+      &quot;telecom&quot;: [
+        {
+          &quot;system&quot;: &quot;email&quot;,
+          &quot;value&quot;: &quot;support@HL7.org&quot;,
+          &quot;use&quot;: &quot;work&quot;
+        }
+      ]
+    }
+  ],
+  &quot;description&quot;: &quot;TestScript example resource with simple Patient search test. The read tests will utilize user defined dynamic variables that will hold the Patient search parameter values.&quot;,
+  &quot;jurisdiction&quot;: [
+    {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;urn:iso:std:iso:3166&quot;,
+          &quot;code&quot;: &quot;US&quot;,
+          &quot;display&quot;: &quot;United States of America (the)&quot;
+        }
+      ]
+    }
+  ],
+  &quot;purpose&quot;: &quot;Patient Search Operation&quot;,
+  &quot;copyright&quot;: &quot;© HL7.org 2011+&quot;,
+  &quot;metadata&quot;: {
+    &quot;link&quot;: [
+      {
+        &quot;url&quot;: &quot;http://hl7.org/fhir/patient.html&quot;,
+        &quot;description&quot;: &quot;Demographics and other administrative information about an individual or animal receiving care or other health-related services.&quot;
+      }
+    ],
+    &quot;capability&quot;: [
+      {
+        &quot;required&quot;: true,
+        &quot;validated&quot;: false,
+        &quot;description&quot;: &quot;Patient Search Operation&quot;,
+        &quot;link&quot;: [
+          &quot;http://hl7.org/fhir/http.html#search&quot;
+        ],
+        &quot;capabilities&quot;: &quot;CapabilityStatement/example&quot;
+      }
+    ]
+  },
+  &quot;fixture&quot;: [
+    {
+      &quot;id&quot;: &quot;fixture-patient-create&quot;,
+      &quot;autocreate&quot;: false,
+      &quot;autodelete&quot;: false,
+      &quot;resource&quot;: {
+        &quot;reference&quot;: &quot;Patient/example&quot;,
+        &quot;display&quot;: &quot;Peter Chalmers&quot;
+      }
+    }
+  ],
+  &quot;profile&quot;: [
+    {
+      &quot;id&quot;: &quot;bundle-profile&quot;,
+      &quot;reference&quot;: &quot;http://hl7.org/fhir/StructureDefinition/Bundle&quot;
+    }
+  ],
+  &quot;variable&quot;: [
+    {
+      &quot;name&quot;: &quot;PatientCreateLocation&quot;,
+      &quot;headerField&quot;: &quot;Location&quot;,
+      &quot;sourceId&quot;: &quot;PatientCreateResponse&quot;
+    },
+    {
+      &quot;name&quot;: &quot;PatientSearchFamilyName&quot;,
+      &quot;description&quot;: &quot;Enter patient search criteria for a known family name on the target system&quot;,
+      &quot;hint&quot;: &quot;[Family name]&quot;
+    },
+    {
+      &quot;name&quot;: &quot;PatientSearchGivenName&quot;,
+      &quot;description&quot;: &quot;Enter patient search criteria for a known given name on the target system&quot;,
+      &quot;hint&quot;: &quot;[Given name]&quot;
+    },
+    {
+      &quot;name&quot;: &quot;PatientSearchBundleTotal&quot;,
+      &quot;description&quot;: &quot;Evaluate the returned Patient searchset Bundle.total value&quot;,
+      &quot;expression&quot;: &quot;Bundle.total.toInteger()&quot;
+    }
+  ],
+  &quot;setup&quot;: {
+    &quot;action&quot;: [
+      {
+        &quot;operation&quot;: {
+          &quot;type&quot;: {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/testscript-operation-codes&quot;,
+            &quot;code&quot;: &quot;search&quot;
+          },
+          &quot;resource&quot;: &quot;Patient&quot;,
+          &quot;description&quot;: &quot;Test simple search to verify server support.&quot;,
+          &quot;accept&quot;: &quot;xml&quot;,
+          &quot;encodeRequestUrl&quot;: true,
+          &quot;params&quot;: &quot;?family=DONTEXPECTAMATCH&amp;given=DONTEXPECTAMATCH&quot;
+        }
+      },
+      {
+        &quot;assert&quot;: {
+          &quot;description&quot;: &quot;Confirm that the request url contains the family search parameter.&quot;,
+          &quot;direction&quot;: &quot;request&quot;,
+          &quot;operator&quot;: &quot;contains&quot;,
+          &quot;requestURL&quot;: &quot;family&quot;,
+          &quot;warningOnly&quot;: false
+        }
+      },
+      {
+        &quot;assert&quot;: {
+          &quot;description&quot;: &quot;Confirm that the returned HTTP status is 200(OK).&quot;,
+          &quot;direction&quot;: &quot;response&quot;,
+          &quot;responseCode&quot;: &quot;200&quot;,
+          &quot;warningOnly&quot;: false
+        }
+      },
+      {
+        &quot;assert&quot;: {
+          &quot;description&quot;: &quot;Confirm that the returned resource type is Bundle.&quot;,
+          &quot;resource&quot;: &quot;Bundle&quot;,
+          &quot;warningOnly&quot;: false
+        }
+      },
+      {
+        &quot;assert&quot;: {
+          &quot;description&quot;: &quot;Confirm that the returned Bundle correctly defines the navigation links.&quot;,
+          &quot;navigationLinks&quot;: true,
+          &quot;warningOnly&quot;: false
+        }
+      }
+    ]
+  },
+  &quot;test&quot;: [
+    {
+      &quot;id&quot;: &quot;01-PatientCreateSearch&quot;,
+      &quot;name&quot;: &quot;Patient Create Search&quot;,
+      &quot;description&quot;: &quot;Create a Patient resource and capture the returned HTTP Header Location. Then search for (read) that Patient using the Location URL value and validate the response.&quot;,
+      &quot;action&quot;: [
+        {
+          &quot;operation&quot;: {
+            &quot;type&quot;: {
+              &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/testscript-operation-codes&quot;,
+              &quot;code&quot;: &quot;create&quot;
+            },
+            &quot;resource&quot;: &quot;Patient&quot;,
+            &quot;description&quot;: &quot;Create a Patient resource and capture the returned HTTP Header Location.&quot;,
+            &quot;accept&quot;: &quot;xml&quot;,
+            &quot;contentType&quot;: &quot;xml&quot;,
+            &quot;encodeRequestUrl&quot;: true,
+            &quot;responseId&quot;: &quot;PatientCreateResponse&quot;,
+            &quot;sourceId&quot;: &quot;fixture-patient-create&quot;
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned HTTP status is 201(Created).&quot;,
+            &quot;response&quot;: &quot;created&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned HTTP Header Location is present.&quot;,
+            &quot;direction&quot;: &quot;response&quot;,
+            &quot;headerField&quot;: &quot;Location&quot;,
+            &quot;operator&quot;: &quot;notEmpty&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        },
+        {
+          &quot;operation&quot;: {
+            &quot;type&quot;: {
+              &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/testscript-operation-codes&quot;,
+              &quot;code&quot;: &quot;read&quot;
+            },
+            &quot;description&quot;: &quot;Read the created Patient using the captured Location URL value.&quot;,
+            &quot;accept&quot;: &quot;xml&quot;,
+            &quot;encodeRequestUrl&quot;: true,
+            &quot;url&quot;: &quot;${PatientCreateLocation}&quot;
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned HTTP status is 200(OK).&quot;,
+            &quot;response&quot;: &quot;okay&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned resource type is Patient.&quot;,
+            &quot;resource&quot;: &quot;Patient&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;02-PatientSearchDynamic&quot;,
+      &quot;name&quot;: &quot;Patient Search Dynamic&quot;,
+      &quot;description&quot;: &quot;Search for Patient resources using the user defined dynamic variables ${PatientSearchFamilyName} and ${PatientSearchGivenName} and validate response.&quot;,
+      &quot;action&quot;: [
+        {
+          &quot;operation&quot;: {
+            &quot;type&quot;: {
+              &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/testscript-operation-codes&quot;,
+              &quot;code&quot;: &quot;search&quot;
+            },
+            &quot;resource&quot;: &quot;Patient&quot;,
+            &quot;description&quot;: &quot;Search for Patient resources on the destination test system.&quot;,
+            &quot;accept&quot;: &quot;xml&quot;,
+            &quot;encodeRequestUrl&quot;: true,
+            &quot;params&quot;: &quot;?family=${PatientSearchFamilyName}&amp;given=${PatientSearchGivenName}&quot;
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned HTTP status is 200(OK).&quot;,
+            &quot;response&quot;: &quot;okay&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned format is XML.&quot;,
+            &quot;contentType&quot;: &quot;xml&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned resource type is Bundle.&quot;,
+            &quot;resource&quot;: &quot;Bundle&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned Bundle conforms to the base FHIR specification.&quot;,
+            &quot;validateProfileId&quot;: &quot;bundle-profile&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned Bundle type equals 'searchset'.&quot;,
+            &quot;operator&quot;: &quot;equals&quot;,
+            &quot;path&quot;: &quot;fhir:Bundle/fhir:type/@value&quot;,
+            &quot;value&quot;: &quot;searchset&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        },
+        {
+          &quot;assert&quot;: {
+            &quot;description&quot;: &quot;Confirm that the returned Bundle total is greater than or equal to the number of returned entries.&quot;,
+            &quot;expression&quot;: &quot;Bundle.total.toInteger() &gt;= entry.count()&quot;,
+            &quot;warningOnly&quot;: false
+          }
+        }
+      ]
+    }
+  ]
+}
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Ftestscript-example-search.json.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Ftestscript-example-search.json.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

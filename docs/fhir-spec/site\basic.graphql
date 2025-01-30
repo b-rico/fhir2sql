@@ -1,0 +1,126 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Basic {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  code: CodeableConcept!
+  subject: Reference
+  created: date  _created: ElementBase
+  author: Reference
+}
+
+input Basic {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  code: CodeableConcept!
+  subject: Reference
+  created: date  _created: ElementBase
+  author: Reference
+}
+
+type BasicReadType {
+  Basic(id : ID!) : Basic
+}
+
+type BasicListType {
+  BasicList(_filter : String
+    author : [reference]
+    code : [token]
+    created : [date]
+    identifier : [token]
+    patient : [reference]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Basic]
+}
+
+type BasicConnectionType {
+  BasicConection(_filter : String
+    author : [reference]
+    code : [token]
+    created : [date]
+    identifier : [token]
+    patient : [reference]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : BasicConnection
+}
+
+type BasicConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [BasicEdge]
+}
+
+type BasicEdge {
+  mode : String
+  score : Float
+  resource : Basic
+}
+
+type BasicCreateType {
+  BasicCreate(resource : Basic) : BasicCreation
+}
+
+type BasicCreation {
+  location : String
+  resource : Basic
+  information : OperationOutcome
+}
+
+type BasicUpdateType {
+  BasicUpdate(id : IDresource : Basic) : BasicUpdate
+}
+
+type BasicUpdate {
+  resource : Basic
+  information : OperationOutcome
+}
+
+type BasicDeleteType {
+  BasicDelete(id : ID) : BasicDelete
+}
+
+type BasicDelete {
+  information : OperationOutcome
+}
+

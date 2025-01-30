@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Schedule/exampleloc1> a fhir:Schedule;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "exampleloc1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Dr. Beverly Crusher - USS Enterprise-D Sickbay Schedule\n		</div>"
+  ];
+  fhir:Schedule.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/scheduleid" ];
+     fhir:Identifier.value [ fhir:value "46" ]
+  ];
+  fhir:Schedule.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Schedule.serviceCategory [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "17" ];
+       fhir:Coding.display [ fhir:value "General Practice" ]
+     ]
+  ];
+  fhir:Schedule.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "75" ];
+       fhir:Coding.display [ fhir:value "Genetic Counselling" ]
+     ]
+  ];
+  fhir:Schedule.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394580004" ];
+       fhir:Coding.display [ fhir:value "Clinical genetics" ]
+     ]
+  ];
+  fhir:Schedule.actor [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/1" ];
+     fhir:Reference.display [ fhir:value "Dr. Beverly Crusher" ]
+  ], [
+     fhir:index 1;
+     fhir:link <http://hl7.org/fhir/Location/3>;
+     fhir:Reference.reference [ fhir:value "Location/3" ];
+     fhir:Reference.display [ fhir:value "USS Enterprise-D Sickbay" ]
+  ];
+  fhir:Schedule.planningHorizon [
+     fhir:Period.start [ fhir:value "2017-12-25T09:15:00Z"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2017-12-25T09:30:00Z"^^xsd:dateTime ]
+  ];
+  fhir:Schedule.comment [ fhir:value "The slots attached to this schedule are for genetic counselling in the USS Enterprise-D Sickbay."] .
+
+<http://hl7.org/fhir/Practitioner/1> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Location/3> a fhir:Location .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Schedule/exampleloc1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Schedule/exampleloc1.ttl> .
+
+# -------------------------------------------------------------------------------------
+

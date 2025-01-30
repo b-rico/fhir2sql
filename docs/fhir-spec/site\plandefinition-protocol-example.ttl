@@ -1,0 +1,174 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/protocol-example> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "protocol-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<p>\n    <b>id: </b>example, </p>\n\n  <p>\n    <b>identifier: </b>, <b>system: </b>http://acme.org, <b>value: </b>example-1, </p>\n  <p>\n    <b>title: </b>Obesity Assessment Protocol, </p>\n  <p>\n    <b>status: </b>draft, </p>\n  <p>\n    <b>type: </b>condition, </p>\n  <p>\n    <b>purpose: </b>Example of A medical algorithm for assessment and treatment of overweight and obesity, </p>\n  <p>\n    <b>author: </b>, <b>display: </b>National Heart, Lung, and Blood Institute http://www.nhlbi.nih.gov/health-pro/guidelines/current/obesity-guidelines/e_textbook/txgd/algorthm/algorthm.htm, </p>\n  <p>\n    <b>step: </b>, <b>name: </b>Measure BMI, <b>description: </b>Measure, Weight, Height, Waist, Circumference; Calculate BMI  Weight must be measured so that the BMI can be calculated. Most charts are based on weights obtained with the patient wearing undergarments and no shoes. BMI can be manually calculated (kg/[height in meters]2), but is more easily obtained from a nomogram. Waist circumference is important because evidence suggests that abdominal fat is a particularly strong determinant of cardiovascular risk in those with a BMI of 25 to 34.9 kg/m2. Increased waist circumference can also be a marker of increased risk even in persons of normal weight. The technique for measuring waist circumference is described in the text. A nutrition assessment will also help to assess the diet and physical activity habits of overweight patients, <b>precondition: </b>, <b>union: </b>, <b>description: </b>The practitioner must seek to determine whether the patient has ever been overweight. While a technical definition is provided, a simple question such as 'Have you ever been overweight?' will accomplish the same goal. Questions directed towards weight history, dietary habits, physical activities, and medications may provide useful information about the origins of obesity in particular patients., <b>condition: </b>, <b>type: </b>, <b>coding: </b>, <b>system: </b>http://acme.org, <b>code: </b>1234, <b>display: </b>Obesity, <b>valueBoolean: </b>true, <b>union: </b>, <b>description: </b>BMI Measured in Past 2 Years  For those who have not been overweight, a 2 year interval is appropriate for the reassessment of BMI. While this time span is not evidence-based, it is believed to be a reasonable compromise between the need to identify weight gain at an early stage and the need to limit the time, effort, and cost of repeated measurements., <b>condition: </b>, <b>type: </b>, <b>text: </b>BMI in last 2 years, <b>valueBoolean: </b>false, <b>activity: </b>, <b>detail: </b>, <b>category: </b>procedure, <b>code: </b>, <b>coding: </b>, <b>system: </b>http://loinc.org, <b>code: </b>39156-5, <b>display: </b>Body mass index (BMI) [Ratio], <b>performer: </b>, <b>display: </b>Nurse Ratched, <b>description: </b>Extra information on activity , </p>\n    </div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:ActivityDefinition;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "procedure" ];
+     fhir:ActivityDefinition.status [ fhir:value "draft" ];
+     fhir:ActivityDefinition.description [ fhir:value "Extra information on activity " ];
+     fhir:ActivityDefinition.kind [ fhir:value "ServiceRequest" ];
+     fhir:ActivityDefinition.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a loinc:39156-5;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ];
+         fhir:Coding.code [ fhir:value "39156-5" ];
+         fhir:Coding.display [ fhir:value "Body mass index (BMI) [Ratio]" ]
+       ]
+     ];
+     fhir:ActivityDefinition.participant [
+       fhir:index 0;
+       fhir:ActivityDefinition.participant.type [ fhir:value "practitioner" ];
+       fhir:ActivityDefinition.participant.role [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/practitioner-role" ];
+           fhir:Coding.code [ fhir:value "doctor" ];
+           fhir:Coding.display [ fhir:value "Doctor" ]
+         ]
+       ]
+     ]
+  ];
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://acme.org" ];
+     fhir:Identifier.value [ fhir:value "example-1" ]
+  ];
+  fhir:PlanDefinition.title [ fhir:value "Obesity Assessment Protocol"];
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "clinical-protocol" ]
+     ]
+  ];
+  fhir:PlanDefinition.status [ fhir:value "draft"];
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.code [ fhir:value "focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:414916001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "414916001" ];
+         fhir:Coding.display [ fhir:value "Obesity (disorder)" ]
+       ]
+     ]
+  ];
+  fhir:PlanDefinition.purpose [ fhir:value "Example of A medical algorithm for assessment and treatment of overweight and obesity"];
+  fhir:PlanDefinition.author [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "National Heart, Lung, and Blood Institute" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.nhlbi.nih.gov/health-pro/guidelines" ]
+     ]
+  ];
+  fhir:PlanDefinition.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "derived-from" ];
+     fhir:RelatedArtifact.display [ fhir:value "Overweight and Obesity Treatment Guidelines" ];
+     fhir:RelatedArtifact.url [ fhir:value "http://www.nhlbi.nih.gov/health-pro/guidelines/current/obesity-guidelines/e_textbook/txgd/algorthm/algorthm.htm" ]
+  ];
+  fhir:PlanDefinition.goal [
+     fhir:index 0;
+     fhir:Element.id [ fhir:value "reduce-bmi-ratio" ];
+     fhir:PlanDefinition.goal.category [
+       fhir:CodeableConcept.text [ fhir:value "Treatment" ]
+     ];
+     fhir:PlanDefinition.goal.description [
+       fhir:CodeableConcept.text [ fhir:value "Reduce BMI to below 25" ]
+     ];
+     fhir:PlanDefinition.goal.priority [
+       fhir:CodeableConcept.text [ fhir:value "medium-priority" ]
+     ];
+     fhir:PlanDefinition.goal.start [
+       fhir:CodeableConcept.text [ fhir:value "When the patient's BMI Ratio is at or above 25" ]
+     ];
+     fhir:PlanDefinition.goal.addresses [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:414916001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "414916001" ];
+         fhir:Coding.display [ fhir:value "Obesity (disorder)" ]
+       ]
+     ];
+     fhir:PlanDefinition.goal.documentation [
+       fhir:index 0;
+       fhir:RelatedArtifact.type [ fhir:value "justification" ];
+       fhir:RelatedArtifact.display [ fhir:value "Evaluation and Treatment Strategy" ];
+       fhir:RelatedArtifact.url [ fhir:value "https://www.nhlbi.nih.gov/health-pro/guidelines/current/obesity-guidelines/e_textbook/txgd/42.htm" ]
+     ];
+     fhir:PlanDefinition.goal.target [
+       fhir:index 0;
+       fhir:PlanDefinition.goal.target.measure [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a loinc:39156-5;
+           fhir:Coding.system [ fhir:value "http://loinc.org" ];
+           fhir:Coding.code [ fhir:value "39156-5" ];
+           fhir:Coding.display [ fhir:value "Body mass index (BMI) [Ratio]" ]
+         ]
+       ];
+       fhir:PlanDefinition.goal.target.detailRange [
+         fhir:Range.high [
+           fhir:Quantity.value [ fhir:value "24.9"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "kg/m2" ]
+         ]
+       ];
+       fhir:PlanDefinition.goal.target.due [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "a" ]
+       ]
+     ]
+  ];
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "Measure BMI" ];
+     fhir:PlanDefinition.action.description [ fhir:value "Measure, Weight, Height, Waist, Circumference; Calculate BMI" ];
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "Weight must be measured so that the BMI can be calculated. Most charts are based on weights obtained with the patient wearing undergarments and no shoes. BMI can be manually calculated (kg/[height in meters]2), but is more easily obtained from a nomogram. Waist circumference is important because evidence suggests that abdominal fat is a particularly strong determinant of cardiovascular risk in those with a BMI of 25 to 34.9 kg/m2. Increased waist circumference can also be a marker of increased risk even in persons of normal weight. The technique for measuring waist circumference is described in the text. A nutrition assessment will also help to assess the diet and physical activity habits of overweight patients" ];
+     fhir:PlanDefinition.action.goalId [
+       fhir:value "reduce-bmi-ratio";
+       fhir:index 0
+     ];
+     fhir:PlanDefinition.action.condition [
+       fhir:index 0;
+       fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+       fhir:PlanDefinition.action.condition.expression [
+         fhir:Expression.description [ fhir:value "The practitioner must seek to determine whether the patient has ever been overweight. While a technical definition is provided, a simple question such as 'Have you ever been overweight?' will accomplish the same goal. Questions directed towards weight history, dietary habits, physical activities, and medications may provide useful information about the origins of obesity in particular patients.  For those who have not been overweight, a 2 year interval is appropriate for the reassessment of BMI. While this time span is not evidence-based, it is believed to be a reasonable compromise between the need to identify weight gain at an early stage and the need to limit the time, effort, and cost of repeated measurements." ];
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "exists ([Condition: Obesity]) or not exists ([Observation: BMI] O where O.effectiveDateTime 2 years or less before Today())" ]
+       ]
+     ];
+     fhir:PlanDefinition.action.requiredBehavior [ fhir:value "must-unless-documented" ];
+     fhir:PlanDefinition.action.cardinalityBehavior [ fhir:value "single" ];
+     fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#procedure" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/protocol-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/PlanDefinition/protocol-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

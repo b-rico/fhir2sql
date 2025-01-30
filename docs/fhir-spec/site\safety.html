@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Safety - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/safety.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="implsupport-module.html"><img src="implsupport.png"/> Implementation Support</a></li>
+        <li><b>Clinical Safety</b></li>          <!-- safety.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+
+<h2 class="self-link-parent"><span class="sectioncount">7.10<a name="7.10"> </a></span> Clinical Safety <a href="safety.html#7.10" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsi"><tr><td id="wg"><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm" _target="blank">FHIR Infrastructure <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:  <!-- !ns! --><a href="versions.html#std-process">Informative</a></td></tr></table>
+
+<p>
+This specification defines data elements, resources, formats, methods and APIs for
+exchanging healthcare data between different participants in the healthcare process.
+As such, Clinical Safety is a key concern with regard to the specification and its 
+many and various implementations.
+</p>
+
+<a name="dstu0"></a>
+<blockquote class="stu-note"><p><b>Trial-Use Note:</b>
+This page, and the concept of <i>safety</i> in an API specification, needs further development.
+</p>
+<p>
+Feedback is welcome <a href="http://hl7.org/fhir-issues">here <img src="external.png" style="text-align: baseline"/></a>.
+</p></blockquote>
+
+<h3 class="self-link-parent"><span class="sectioncount">7.10.1<a name="7.10.1"> </a></span> Implementer's Safety Check List <a href="safety.html#7.10.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+FHIR is as simple to implement as we know how to make it. However, due to the nature of
+healthcare, and healthcare processes, and cultural concerns, there are a number of features in
+FHIR that implementers are obliged to consider in order to implement safe systems.
+</p>
+<p>
+This section is a check list to help implementers be sure that they've considered all the parts
+of FHIR that impact on their system design with regard to safety. Note that for this list, 
+safety is interpreted loosely, and the list covers security and privacy issues as well. 
+</p>
+
+<a name="conformance"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">7.10.2</span> Conformance Related Safety Checks <a href="safety.html#conformance" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+These basic safety checks relate to using the FHIR specification correctly. 
+</p>
+
+<ol start="1">
+ <li><input type="checkbox"/> For each resource that my system handles, my system handles the full <a href="lifecycle.html">Life cycle</a> (status codes, currency issues, and erroneous entry status)</li>
+ <li><input type="checkbox"/> For each resource that my system handles, I've reviewed the <a href="conformance-rules.html#isModifier">Modifier elements</a></li>
+ <li><input type="checkbox"/> My system checks for <a href="extensibility.html#modifierExtension">modifierExtension</a> elements</li>
+ <li><input type="checkbox"/> My system supports <a href="conformance-rules.html#mustSupport">elements labeled as "MustSupport"</a> in the <a href="profiling.html">profiles</a> that apply to my system</li>
+ <li><input type="checkbox"/> My system has documented how <a href="managing.html#distributed">distributed resource identification</a> works in its relevant contexts of use, and where (and why) <a href="references.html#contained">contained</a> resources are used</li>
+ <li><input type="checkbox"/> My system manages lists of <a href="lifecycle.html#current">current resources</a> correctly</li>
+ <li><input type="checkbox"/> When other systems <a href="http.html#summary">return http errors from the RESTful API</a> and <a href="operations.html">Operations</a> (perhaps using <a href="operationoutcome.html">Operation Outcome</a>), my system checks for them and handles them appropriately </li>
+ <li><input type="checkbox"/> My system ensures checks for patient links (and/or merges) and handles data that is linked to patients accordingly</li>
+ <li><input type="checkbox"/> My system publishes a <a href="capabilitystatement.html">Capability Statement</a> with <a href="structuredefinition.html">StructureDefinitions</a>, <a href="valueset.html">ValueSets</a>, and <a href="operationdefinition.html">OperationDefinitions</a>, etc., so other implementers know how the system functions</li>
+ <li><input type="checkbox"/> All resources in use are <a href="validation.html">valid</a> against the base specification and the <a href="profiling.html">profiles</a> that apply to my system (see note about the <a href="validation.html#correct-use">correct run-time use of validation</a>)</li>
+ <li><input type="checkbox"/> I've reviewed the <a href="observation.html">Observation</a> resource, and understand how <code>focus</code> is a mechanism for observations to be about someone or something other than the patient or subject of record.</li>
+</ol>
+
+<a name="conformance"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">7.10.3</span> Date / Timezone Related Safety Checks <a href="safety.html#conformance" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+Dates and timezone issues are well-known sources of confusion and safety issues in clinical applications. 
+</p>
+
+<ol start="12">
+ <li><input type="checkbox"/> My system checks for time zones and adjusts times appropriately. (note: time zones are extremely difficult to get correct - see <a href="https://www.w3.org/TR/timezone/">W3C Timezone Advice <img src="external.png" style="text-align: baseline"/></a>, and note that some fields should be timezone corrected, and others should not be)</li>
+ <li><input type="checkbox"/> My system renders dates safely for changes in culture and language (the date formats D-M-Y and M-D-Y are not differentiated for many dates, and this is a well-known source of confusion. Systems should use the month name, or otherwise be specific for each date when rendering, unless
+   there is solid confidence that such confusion cannot arise, even in the future when information/narrative from resources will be shared much more widely)</li>
+</ol>
+
+   
+<a name="search"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">7.10.4</span> Search Related Safety Checks <a href="safety.html#search" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+These basic safety checks relate to managing the search process correctly. Mismatches in expectations between 
+client and server (or search requester and search processor) can result in finding more resources than expected or 
+appropriate, or much more seriously, missing resources out in search results that were expected to be present. 
+</p>
+
+<ol start="14">
+ <li><input type="checkbox"/> My system takes care to ensure that clients can (for servers) or will (for clients) find the information they need when content that might reasonably be exposed using more than one FHIR resource. Possible patterns: Support a single search across the applicable resources, or expose data through each applicable resource. See discussion on <a href="https://confluence.hl7.org/display/FHIR/Managing+Overlap+Between+Resources">Wiki Page <img src="external.png" style="text-align: baseline"/></a> for further information</li>
+</ol>
+
+<p><b>For clients</b></p>
+
+<ol start="15">
+ <li><input type="checkbox"/> My system will display warnings returned by the server to the user</li>
+ <li><input type="checkbox"/> My system checks whether the server processed all the requested search parameter, and is safe if servers ignore parameters (typically, either filters locally or warns the user)</li>
+</ol>
+<p><b>For Servers</b></p> 
+<ol start="17">
+<li><input type="checkbox"/> My system caters for <a href="search.html#missing">parameters that have missing values</a> when doing search operations, and responds correctly to the client with regard to <a href="search.html#errors">erroneous search parameters</a></li>
+<li><input type="checkbox"/> My system includes appropriate default filters when searching based on patient context - e.g. filtering out entered-in-error records, filtering to only include active, living patients if appropriate, and clearly documents these 
+ (preferably including them in the self link for a search</li>
+</ol>
+
+<a name="conformance"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">7.10.5</span> Deletion Safety Checks <a href="safety.html#conformance" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+Deleting records and/or marking records as no longer valid is a well known
+source of safety issues in all applications. This specification allows for 
+resources to be deleted, but does not require systems to behave in any 
+particular fashion.
+</p>
+<ol start="20">
+  <li><input type="checkbox"/> For each resource, I have checked whether resources can be deleted, and/or how records are marked as incorrect/no longer relevant</li>
+  <li><input type="checkbox"/> Deletion of records (or equivalent updates in status) flow through the system so any replicated copies are deleted/updated</li>
+  <li><input type="checkbox"/> (If a server) my documentation about deleted resources is clear, and my test sandbox (if exists) has deleted/error record cases in the test data</li>   
+</ol>
+
+ 
+<a name="privacy"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">7.10.6</span> Privacy Related Safety Checks <a href="safety.html#privacy" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+FHIR defines a set of capabilities to support data exchange. Not all the capabilities that FHIR enables may be appropriate or 
+legal for use in some combinations of context and jurisdiction (e.g. HIPAA for exchange between institutions). It is the 
+responsibility of implementers to ensure that relevant regulations and other requirements are met.
+</p>
+
+<ol start="23">
+ <li><input type="checkbox"/> My system checks that the right <a href="consent.html">Patient consent</a> has been granted (where applicable)</li>
+ <li><input type="checkbox"/> My system sends an <a href="secpriv-module.html#AoD">Accounting of Disclosure</a> to the consenter as requested when permitted actions on resources are performed using an <a href="auditevent.html">AuditEvent</a> Resource</li>
+</ol>
+
+<a name="security-framework"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">7.10.7</span> Security Related Safety Checks <a href="safety.html#security-framework" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>Basic Context:</p>
+<ol start="25">
+ <li><input type="checkbox"/> My system ensures that system clocks are synchronized using a protocol like NTP or SNTP, or my server is robust against clients that have the wrong clock set</li>
+ <li><input type="checkbox"/> My system uses security methods for an API to authenticate where Domain Name System (DNS) responses are coming from and ensure that they are valid</li>
+</ol>
+
+<p>Communications:</p>
+<ol start="27">
+ <li><input type="checkbox"/> Production exchange of patient or other sensitive data will always use some form of <a href="security.html#http">encryption on the wire</a></li>
+ <li><input type="checkbox"/> Where resources are exchanged using <a href="security.html#http">HTTP</a>, <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">TLS <img src="external.png" style="text-align: baseline"/></a> should be utilized to protect the communications channel</li>
+ <li><input type="checkbox"/> Where resources are exchanged using email, <a href="https://en.wikipedia.org/wiki/S/MIME">S/MIME <img src="external.png" style="text-align: baseline"/></a> should be used to protect the end-to-end communication</li>
+ <li><input type="checkbox"/> Production exchange should utilize recommendations for <a href="https://tools.ietf.org/html/bcp195">Best-Current-Practice on TLS in BCP 195 <img src="external.png" style="text-align: baseline"/></a></li>
+ 
+</ol>
+<p>Authentication/Authorization:</p>
+<p>
+Note: Users/Clients may be identified and authenticated in any way desired. For web-centric use, OAuth is recommended.
+</p>
+<ol start="31">
+ <li><input type="checkbox"/> My system utilizes a risk and use case <a href="security.html#oauth">appropriate OAuth profile</a> (preferably <a href="http://hl7.org/fhir/smart-app-launch">Smart App Launch <img src="external.png" style="text-align: baseline"/></a>), with a <a href="security.html#authentication">clear policy on authentication strength</a></li>
+ <li><input type="checkbox"/> My system uses <a href="https://openid.net/connect/">OpenID Connect <img src="external.png" style="text-align: baseline"/></a> (or other suitable authentication protocol) to verify identity of end user, where it is necessary that end-users be identified to the client application, and has a clear policy on <a href="secpriv-module.html#user">identity proofing</a></li>
+</ol>
+<p>Access Control:</p>
+<ol start="33">
+ <li><input type="checkbox"/> My system applies appropriate access control to every request, using a combination of requester’s clearance (ABAC) and/or roles (RBAC)</li>
+ <li><input type="checkbox"/> My system considers <a href="security-labels.html">security labels</a> on the affected resources when making access control decisions </li>
+</ol>
+<p>Integrity:</p>
+<ol start="35">
+ <li><input type="checkbox"/> My system can <a href="narrative.html#css">render narratives properly</a> and <a href="security.html#narrative">securely</a>(where they are used)</li>
+ <li><input type="checkbox"/> My system <a href="validation.html">validates all input received</a> (whether in resource format or other) from other actors so that it data is well-formed and does not contain content that would cause unwanted system behavior</li>
+ <li><input type="checkbox"/> My system makes the right <a href="provenance.html">Provenance</a> statements and <a href="auditevent.html">AuditEvent</a> logs, and uses the right <a href="security-labels.html#core">security labels</a> where appropriate</li>
+</ol>
+
+ 
+<a name="other"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">7.10.8</span> Other Safety Checks <a href="safety.html#other" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3> 
+<p>
+Obviously, this list is only a small part of the overall safety check list for an application, which will have checks regarding jurisdictionally mandated policies, internal integrity, etc.
+</p>
+<p>
+In addition, server developers should check these specific additional checks for client convenience:
+</p>
+<ol start="38">
+ <li><input type="checkbox"/> Server: CORS (<a href="http://enable-cors.org/">cross-origin resource sharing <img src="external.png" style="text-align: baseline"/></a>) is appropriately enabled (many clients are Javascript apps running in a browser)</li>
+ <li><input type="checkbox"/> JSON is supported (many clients are Javascript apps running in a browser; XML is inconvenient at best)</li>
+ <li><input type="checkbox"/> JSON is returned correctly when errors happen (clients often don't handle HTML errors well)</li>
+ <li><input type="checkbox"/> The _format header is supported correctly</li>
+ <li><input type="checkbox"/> Errors are trapped and an OperationOutcome returned</li>
+</ol>
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fsafety.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fsafety.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

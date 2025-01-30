@@ -1,0 +1,386 @@
+﻿{
+  "types": [
+    "ExplanationOfBenefit"
+  ],
+  "ExplanationOfBenefit": {
+    "elements": {
+      "ExplanationOfBenefit.status": {
+        "old-min": 0,
+        "new-min": 1,
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/explanationofbenefit-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/explanationofbenefit-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "ExplanationOfBenefit.type": {
+        "old-min": 0,
+        "new-min": 1,
+        "binding-strength-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/claim-type",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/claim-type",
+          "strength": "extensible"
+        }
+      },
+      "ExplanationOfBenefit.subType": {
+        "old-max": "*",
+        "new-max": "1"
+      },
+      "ExplanationOfBenefit.use": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.patient": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.created": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.enterer": {
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole)"
+        ]
+      },
+      "ExplanationOfBenefit.insurer": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.provider": {
+        "old-min": 0,
+        "new-min": 1,
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "ExplanationOfBenefit.priority": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.fundsReserveRequested": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.fundsReserve": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.payee.party": {
+        "removed-types": [
+          "Reference(Practitioner | Organization | Patient | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson)"
+        ]
+      },
+      "ExplanationOfBenefit.referral": {
+        "removed-types": [
+          "Reference(ReferralRequest)"
+        ],
+        "added-types": [
+          "Reference(ServiceRequest)"
+        ]
+      },
+      "ExplanationOfBenefit.outcome": {
+        "old-min": 0,
+        "new-min": 1,
+        "removed-types": [
+          "CodeableConcept"
+        ],
+        "added-types": [
+          "code"
+        ],
+        "binding-status": "added",
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/remittance-outcome|4.0.1",
+          "strength": "required"
+        }
+      },
+      "ExplanationOfBenefit.preAuthRef": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.preAuthRefPeriod": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.careTeam.provider": {
+        "removed-types": [
+          "Reference(Practitioner | Organization)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "ExplanationOfBenefit.supportingInfo": {
+        "old-name": "information"
+      },
+      "ExplanationOfBenefit.supportingInfo.value[x]": {
+        "added-types": [
+          "boolean"
+        ]
+      },
+      "ExplanationOfBenefit.diagnosis.onAdmission": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.procedure.type": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.procedure.udi": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.insurance": {
+        "old-min": 0,
+        "new-min": 1,
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "ExplanationOfBenefit.insurance.focal": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.insurance.coverage": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.accident.type": {
+        "binding-strength-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://terminology.hl7.org/ValueSet/v3-ActIncidentCode",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://terminology.hl7.org/ValueSet/v3-ActIncidentCode",
+          "strength": "extensible"
+        }
+      },
+      "ExplanationOfBenefit.item.careTeamSequence": {
+        "old-name": "careTeamLinkId"
+      },
+      "ExplanationOfBenefit.item.diagnosisSequence": {
+        "old-name": "diagnosisLinkId"
+      },
+      "ExplanationOfBenefit.item.procedureSequence": {
+        "old-name": "procedureLinkId"
+      },
+      "ExplanationOfBenefit.item.informationSequence": {
+        "old-name": "informationLinkId"
+      },
+      "ExplanationOfBenefit.item.productOrService": {
+        "old-name": "service",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.item.detail.productOrService": {
+        "old-name": "service",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.item.detail.subDetail.productOrService": {
+        "old-name": "service",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.addItem.itemSequence": {
+        "old-name": "sequenceLinkId"
+      },
+      "ExplanationOfBenefit.addItem.detailSequence": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.subDetailSequence": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.provider": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.productOrService": {
+        "old-name": "service",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.addItem.programCode": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.serviced[x]": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.location[x]": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.quantity": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.unitPrice": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.factor": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.net": {
+        "old-name": "fee"
+      },
+      "ExplanationOfBenefit.addItem.bodySite": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.subSite": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.productOrService": {
+        "old-name": "service",
+        "old-min": 0,
+        "new-min": 1
+      },
+      "ExplanationOfBenefit.addItem.detail.quantity": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.unitPrice": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.factor": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.net": {
+        "old-name": "fee"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail.productOrService": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail.modifier": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail.quantity": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail.unitPrice": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail.factor": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail.net": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail.noteNumber": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.addItem.detail.subDetail.adjudication": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.adjudication": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.total": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.total.category": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.total.amount": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.formCode": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.form": {
+        "removed-types": [
+          "CodeableConcept"
+        ],
+        "added-types": [
+          "Attachment"
+        ]
+      },
+      "ExplanationOfBenefit.processNote.type": {
+        "removed-types": [
+          "CodeableConcept"
+        ],
+        "added-types": [
+          "code"
+        ],
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/note-type",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/note-type|4.0.1",
+          "strength": "required"
+        }
+      },
+      "ExplanationOfBenefit.processNote.language": {
+        "binding-strength-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/languages",
+          "strength": "extensible",
+          "max": "http://hl7.org/fhir/ValueSet/all-languages"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/languages",
+          "strength": "preferred",
+          "max": "http://hl7.org/fhir/ValueSet/all-languages"
+        }
+      },
+      "ExplanationOfBenefit.benefitPeriod": {
+        "status": "new"
+      },
+      "ExplanationOfBenefit.organization": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.payee.resourceType": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.employmentImpacted": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.hospitalization": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.item.detail.type": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.item.detail.subDetail.type": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.addItem.revenue": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.addItem.category": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.addItem.detail.revenue": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.addItem.detail.category": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.totalCost": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.unallocDeductable": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.totalBenefit": {
+        "status": "deleted"
+      },
+      "ExplanationOfBenefit.benefitBalance.subCategory": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

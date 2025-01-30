@@ -1,0 +1,576 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CapabilityStatement/knowledge-repository> a fhir:CapabilityStatement;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "knowledge-repository"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <h2>Knowledge Repository Service Conformance Statement</h2>\n      <div>\n        <p>Basic conformance statement for a Knowledge Repository Service. A server can support more functionality\n           than defined here, but this is the minimum amount</p>\n\n      </div>\n      <table>\n        <tr>\n          <td>Mode</td>\n          <td>SERVER</td>\n        </tr>\n        <tr>\n          <td>Description</td>\n          <td>RESTful Knowledge Repository Server</td>\n        </tr>\n        <tr>\n          <td>Transaction</td>\n          <td/>\n        </tr>\n        <tr>\n          <td>System History</td>\n          <td/>\n        </tr>\n        <tr>\n          <td>System Search</td>\n          <td/>\n        </tr>\n      </table>\n      <table>\n        <tr>\n          <th>\n            <b>Resource Type</b>\n          </th>\n          <th>\n            <b>Profile</b>\n          </th>\n          <th>\n            <b>Read</b>\n          </th>\n          <th>\n            <b>V-Read</b>\n          </th>\n          <th>\n            <b>Search</b>\n          </th>\n          <th>\n            <b>Update</b>\n          </th>\n          <th>\n            <b>Updates</b>\n          </th>\n          <th>\n            <b>Create</b>\n          </th>\n          <th>\n            <b>Delete</b>\n          </th>\n          <th>\n            <b>History</b>\n          </th>\n        </tr>\n      </table>\n    </div>"
+  ];
+  fhir:CapabilityStatement.url [ fhir:value "http://hl7.org/fhir/knowledge-repository"];
+  fhir:CapabilityStatement.name [ fhir:value "Knowledge Repository Service Conformance Statement"];
+  fhir:CapabilityStatement.status [ fhir:value "draft"];
+  fhir:CapabilityStatement.date [ fhir:value "2017-02-25"^^xsd:date];
+  fhir:CapabilityStatement.publisher [ fhir:value "HL7, Inc"];
+  fhir:CapabilityStatement.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "FHIR Project" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "other" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:CapabilityStatement.description [ fhir:value "Basic conformance statement for a Knowledge Repository Service. A server can support more functionality    than defined here, but this is the minimum amount"];
+  fhir:CapabilityStatement.kind [ fhir:value "capability"];
+  fhir:CapabilityStatement.software [
+     fhir:CapabilityStatement.software.name [ fhir:value "ACME Knowledge Repository Service" ]
+  ];
+  fhir:CapabilityStatement.fhirVersion [ fhir:value "4.0.1"];
+  fhir:CapabilityStatement.format [
+     fhir:value "json";
+     fhir:index 0
+  ], [
+     fhir:value "xml";
+     fhir:index 1
+  ];
+  fhir:CapabilityStatement.rest [
+     fhir:index 0;
+     fhir:CapabilityStatement.rest.mode [ fhir:value "server" ];
+     fhir:CapabilityStatement.rest.documentation [ fhir:value "RESTful Knowledge Repository Service" ];
+     fhir:CapabilityStatement.rest.security [
+       fhir:CapabilityStatement.rest.security.cors [ fhir:value "true"^^xsd:boolean ];
+       fhir:CapabilityStatement.rest.security.service [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/restful-security-service" ];
+           fhir:Coding.code [ fhir:value "Certificates" ]
+         ]
+       ]
+     ];
+     fhir:CapabilityStatement.rest.resource [
+       fhir:index 0;
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Library" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "StructureDefinition/Library";
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Library>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Read allows clients to get the logical definitions of the libraries" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Search allows clients to filter libraries based on a provided search parameter" ]
+       ];
+       fhir:CapabilityStatement.rest.resource.searchParam [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "description" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-description";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-description>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-identifier";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-identifier>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 2;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-status";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-status>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 3;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "title" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-title";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-title>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 4;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "topic" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-topic";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-topic>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 5;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "version" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-version";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-version>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 6;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "composed-of" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-composed-of";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-composed-of>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 7;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "depends-on" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-depends-on";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-depends-on>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 8;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "derived-from" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-derived-from";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-derived-from>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 9;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "predecessor" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-predecessor";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-predecessor>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 10;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "successor" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Library-successor";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Library-successor>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "PlanDefinition" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "StructureDefinition/PlanDefinition";
+         fhir:link <http://hl7.org/fhir/StructureDefinition/PlanDefinition>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Read allows clients to get the logical definitions of the plan definitions" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Search allows clients to filter plan definitions based on a provided search parameter" ]
+       ];
+       fhir:CapabilityStatement.rest.resource.searchParam [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "description" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-description";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-description>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-identifier";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-identifier>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 2;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-status";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-status>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 3;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "title" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-title";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-title>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 4;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "topic" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-topic";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-topic>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 5;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "version" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-version";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-version>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 6;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "composed-of" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-composed-of";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-composed-of>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 7;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "depends-on" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-depends-on";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-depends-on>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 8;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "derived-from" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-derived-from";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-derived-from>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 9;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "predecessor" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-predecessor";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-predecessor>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 10;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "successor" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/PlanDefinition-successor";
+           fhir:link <http://hl7.org/fhir/SearchParameter/PlanDefinition-successor>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "ActivityDefinition" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "StructureDefinition/ActivityDefinition";
+         fhir:link <http://hl7.org/fhir/StructureDefinition/ActivityDefinition>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Read allows clients to get the logical definitions of the activity definitions" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Search allows clients to filter activity definitions based on a provided search parameter" ]
+       ];
+       fhir:CapabilityStatement.rest.resource.searchParam [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "description" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-description";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-description>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-identifier";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-identifier>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 2;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-status";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-status>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 3;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "title" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-title";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-title>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 4;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "topic" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-topic";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-topic>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 5;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "version" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-version";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-version>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 6;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "composed-of" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-composed-of";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-composed-of>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 7;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "depends-on" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-depends-on";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-depends-on>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 8;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "derived-from" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-derived-from";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-derived-from>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 9;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "predecessor" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-predecessor";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-predecessor>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 10;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "successor" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/ActivityDefinition-successor";
+           fhir:link <http://hl7.org/fhir/SearchParameter/ActivityDefinition-successor>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Measure" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "StructureDefinition/Measure";
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Measure>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Read allows clients to get the logical definitions of the measures" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Search allows clients to filter measures based on a provided search parameter" ]
+       ];
+       fhir:CapabilityStatement.rest.resource.searchParam [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "description" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-description";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-description>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-identifier";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-identifier>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 2;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-status";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-status>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 3;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "title" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-title";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-title>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 4;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "topic" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-topic";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-topic>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 5;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "version" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-version";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-version>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 6;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "composed-of" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-composed-of";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-composed-of>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 7;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "depends-on" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-depends-on";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-depends-on>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 8;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "derived-from" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-derived-from";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-derived-from>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 9;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "predecessor" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-predecessor";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-predecessor>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ], [
+         fhir:index 10;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "successor" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Measure-successor";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Measure-successor>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Questionnaire" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "StructureDefinition/Questionnaire";
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Questionnaire>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Read allows clients to get the logical definitions of the measures" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Search allows clients to filter measures based on a provided search parameter" ]
+       ];
+       fhir:CapabilityStatement.rest.resource.searchParam [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "code" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Questionnaire-code";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Questionnaire-code>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "context" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Questionnaire-context";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Questionnaire-context>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 2;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "date" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Questionnaire-date";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Questionnaire-date>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ]
+       ], [
+         fhir:index 3;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Questionnaire-identifier";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Questionnaire-identifier>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 4;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "publisher" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Questionnaire-publisher";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Questionnaire-publisher>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 5;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Questionnaire-status";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Questionnaire-status>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
+       ], [
+         fhir:index 6;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "title" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Questionnaire-title";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Questionnaire-title>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ], [
+         fhir:index 7;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "version" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Questionnaire-version";
+           fhir:link <http://hl7.org/fhir/SearchParameter/Questionnaire-version>
+         ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ]
+       ]
+     ];
+     fhir:CapabilityStatement.rest.operation [
+       fhir:index 0;
+       fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "data-requirements" ];
+       fhir:CapabilityStatement.rest.resource.operation.definition [
+         fhir:value "OperationDefinition/Library-data-requirements";
+         fhir:link <http://hl7.org/fhir/OperationDefinition/Library-data-requirements>
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CapabilityStatement/knowledge-repository.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CapabilityStatement/knowledge-repository.ttl> .
+
+# -------------------------------------------------------------------------------------
+

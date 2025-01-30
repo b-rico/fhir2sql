@@ -1,0 +1,3387 @@
+<!DOCTYPE HTML>
+<!-- template-example-json.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Implementationguide-questionnaire.json - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/implementationguide-questionnaire.json.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="conformance-module.html"><img src="conformance.jpg"/> Conformance</a></li>        <li><a href="implementationguide.html">ImplementationGuide</a></li>        <li><b>Generated Questionnaire</b></li>        <!-- implementationguide-questionnaire.json.html / resource-questionnaire:ImplementationGuide / Questionnaire-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Implementationguide-questionnaire.json</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+<p>
+<a href="implementationguide-questionnaire.json">Raw JSON</a> (<a href="implementationguide-questionnaire.canonical.json">canonical form</a> + also see <a href="json.html">JSON Format Specification</a>)
+</p>
+
+<div class="example">
+<p>Generated Questionnaire for ImplementationGuide</p>
+<pre class="json">
+{
+  &quot;resourceType&quot; : &quot;Questionnaire&quot;,
+  &quot;id&quot; : &quot;qs1&quot;,
+  &quot;contained&quot; : [{
+    &quot;resourceType&quot; : &quot;ValueSet&quot;,
+    &quot;id&quot; : &quot;vs2&quot;,
+    &quot;name&quot; : &quot;Type options for ImplementationGuide.definition.resource.example[x]&quot;,
+    &quot;status&quot; : &quot;active&quot;,
+    &quot;description&quot; : &quot;Type options for ImplementationGuide.definition.resource.example[x]&quot;,
+    &quot;expansion&quot; : {
+      &quot;identifier&quot; : &quot;urn:uuid:12fc9263-b0b8-4d22-bce7-35191ca5d117&quot;,
+      &quot;timestamp&quot; : &quot;2019-11-01T09:35:27+11:00&quot;,
+      &quot;contains&quot; : [{
+        &quot;system&quot; : &quot;http://hl7.org/fhir/data-types&quot;,
+        &quot;code&quot; : &quot;boolean&quot;,
+        &quot;display&quot; : &quot;boolean&quot;
+      },
+      {
+        &quot;system&quot; : &quot;http://hl7.org/fhir/resource-types&quot;,
+        &quot;code&quot; : &quot;StructureDefinition&quot;,
+        &quot;display&quot; : &quot;StructureDefinition&quot;
+      }]
+    }
+  },
+  {
+    &quot;resourceType&quot; : &quot;ValueSet&quot;,
+    &quot;id&quot; : &quot;vs3&quot;,
+    &quot;name&quot; : &quot;Type options for ImplementationGuide.definition.page.name[x]&quot;,
+    &quot;status&quot; : &quot;active&quot;,
+    &quot;description&quot; : &quot;Type options for ImplementationGuide.definition.page.name[x]&quot;,
+    &quot;expansion&quot; : {
+      &quot;identifier&quot; : &quot;urn:uuid:762f4298-f5ca-483b-8a7b-8f5057c17bb0&quot;,
+      &quot;timestamp&quot; : &quot;2019-11-01T09:35:27+11:00&quot;,
+      &quot;contains&quot; : [{
+        &quot;system&quot; : &quot;http://hl7.org/fhir/data-types&quot;,
+        &quot;code&quot; : &quot;url&quot;,
+        &quot;display&quot; : &quot;url&quot;
+      },
+      {
+        &quot;system&quot; : &quot;http://hl7.org/fhir/resource-types&quot;,
+        &quot;code&quot; : &quot;Binary&quot;,
+        &quot;display&quot; : &quot;Binary&quot;
+      }]
+    }
+  },
+  {
+    &quot;resourceType&quot; : &quot;ValueSet&quot;,
+    &quot;id&quot; : &quot;vs4&quot;,
+    &quot;name&quot; : &quot;Type options for ImplementationGuide.manifest.resource.example[x]&quot;,
+    &quot;status&quot; : &quot;active&quot;,
+    &quot;description&quot; : &quot;Type options for ImplementationGuide.manifest.resource.example[x]&quot;,
+    &quot;expansion&quot; : {
+      &quot;identifier&quot; : &quot;urn:uuid:5e5cf923-2727-415a-9a73-3e3d9e5977ec&quot;,
+      &quot;timestamp&quot; : &quot;2019-11-01T09:35:27+11:00&quot;,
+      &quot;contains&quot; : [{
+        &quot;system&quot; : &quot;http://hl7.org/fhir/data-types&quot;,
+        &quot;code&quot; : &quot;boolean&quot;,
+        &quot;display&quot; : &quot;boolean&quot;
+      },
+      {
+        &quot;system&quot; : &quot;http://hl7.org/fhir/resource-types&quot;,
+        &quot;code&quot; : &quot;StructureDefinition&quot;,
+        &quot;display&quot; : &quot;StructureDefinition&quot;
+      }]
+    }
+  }],
+  &quot;identifier&quot; : [{
+    &quot;system&quot; : &quot;urn:ietf:rfc:3986&quot;
+  }],
+  &quot;version&quot; : &quot;4.0.1&quot;,
+  &quot;status&quot; : &quot;draft&quot;,
+  &quot;date&quot; : &quot;2019-11-01T09:29:23+11:00&quot;,
+  &quot;publisher&quot; : &quot;Health Level Seven International (FHIR Infrastructure)&quot;,
+  &quot;item&quot; : [{
+    &quot;linkId&quot; : &quot;ImplementationGuide&quot;,
+    &quot;text&quot; : &quot;A set of rules about how FHIR is used&quot;,
+    &quot;type&quot; : &quot;group&quot;,
+    &quot;required&quot; : false,
+    &quot;repeats&quot; : true,
+    &quot;item&quot; : [{
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+        &quot;valueCodeableConcept&quot; : {
+          &quot;coding&quot; : [{
+            &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+            &quot;code&quot; : &quot;flyover&quot;,
+            &quot;display&quot; : &quot;Fly-over&quot;
+          }]
+        }
+      }],
+      &quot;text&quot; : &quot;A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.&quot;,
+      &quot;type&quot; : &quot;display&quot;
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;string&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.id&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes. The only time that a resource does not have an id is when it is being submitted to the server using a create operation.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.id.value&quot;,
+        &quot;text&quot; : &quot;Logical id of this artifact&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.meta&quot;,
+      &quot;text&quot; : &quot;Metadata about the resource&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;uri&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.implicitRules&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.implicitRules.value&quot;,
+        &quot;text&quot; : &quot;A set of rules under which this content was created&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;code&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.language&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The base language in which the resource is written. Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.language.value&quot;,
+        &quot;text&quot; : &quot;language&quot;,
+        &quot;type&quot; : &quot;choice&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.text&quot;,
+      &quot;text&quot; : &quot;Text summary of the resource, for human interpretation&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \&quot;clinically safe\&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety. Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a \&quot;text blob\&quot; or where text is additionally entered raw or narrated and encoded information is added later.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      }]
+    },
+    {
+      &quot;linkId&quot; : &quot;ImplementationGuide.contained&quot;,
+      &quot;text&quot; : &quot;Contained, inline Resources&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope. This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      }]
+    },
+    {
+      &quot;linkId&quot; : &quot;ImplementationGuide.extension&quot;,
+      &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      }]
+    },
+    {
+      &quot;linkId&quot; : &quot;ImplementationGuide.modifierExtension&quot;,
+      &quot;text&quot; : &quot;Extensions that cannot be ignored&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;uri&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.url&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : true,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this implementation guide is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the implementation guide is stored on different servers. Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.\n\nThe determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). \n\nIn some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the [meta.source](resource.html#meta) element to indicate where the current master source of the resource can be found.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.url.value&quot;,
+        &quot;text&quot; : &quot;Canonical identifier for this implementation guide, represented as a URI (globally unique)&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;string&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.version&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. There may be different implementation guide instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the implementation guide with the format [url]|[version].&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.version.value&quot;,
+        &quot;text&quot; : &quot;Business version of the implementation guide&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;string&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.name&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : true,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A natural language name identifying the implementation guide. This name should be usable as an identifier for the module by machine processing applications such as code generation. The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.name.value&quot;,
+        &quot;text&quot; : &quot;Name for this implementation guide (computer friendly)&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;string&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.title&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A short, descriptive, user-friendly title for the implementation guide. This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.title.value&quot;,
+        &quot;text&quot; : &quot;Name for this implementation guide (human friendly)&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;code&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.status&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : true,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The status of this implementation guide. Enables tracking the life-cycle of the content. Allows filtering of implementation guides that are appropriate for use versus not.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.status.value&quot;,
+        &quot;text&quot; : &quot;status&quot;,
+        &quot;type&quot; : &quot;choice&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;boolean&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.experimental&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A Boolean value to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage. Allows filtering of implementation guides that are appropriate for use versus not.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.experimental.value&quot;,
+        &quot;text&quot; : &quot;For testing purposes, not real usage&quot;,
+        &quot;type&quot; : &quot;boolean&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;datetime&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.date&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The date  (and optionally time) when the implementation guide was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the implementation guide. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.date.value&quot;,
+        &quot;text&quot; : &quot;Date last changed&quot;,
+        &quot;type&quot; : &quot;dateTime&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;string&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.publisher&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The name of the organization or individual that published the implementation guide. Usually an organization but may be an individual. The publisher (or steward) of the implementation guide is the organization or individual primarily responsible for the maintenance and upkeep of the implementation guide. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the implementation guide. This item SHOULD be populated unless the information is available from context.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.publisher.value&quot;,
+        &quot;text&quot; : &quot;Name of the publisher (organization or individual)&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;linkId&quot; : &quot;ImplementationGuide.contact&quot;,
+      &quot;text&quot; : &quot;Contact details for the publisher&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;text&quot; : &quot;May be a web site, an email address, a telephone number, etc.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;Contact details to assist a user in finding and communicating with the publisher.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;string&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.description&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A free text natural language description of the implementation guide from a consumer's perspective. This description can be used to capture details such as why the implementation guide was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the implementation guide as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the implementation guide is presumed to be the predominant language in the place the implementation guide was created).&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.description.value&quot;,
+        &quot;text&quot; : &quot;Natural language description of the implementation guide&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;linkId&quot; : &quot;ImplementationGuide.useContext&quot;,
+      &quot;text&quot; : &quot;The context that the content is intended to support&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;text&quot; : &quot;When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate implementation guide instances.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;CodeableConcept&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.jurisdiction&quot;,
+      &quot;text&quot; : &quot;Intended jurisdiction for implementation guide (if applicable)&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A legal or geographic region in which the implementation guide is intended to be used. It may be possible for the implementation guide to be used in jurisdictions other than those for which it was originally designed or intended.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.jurisdiction.coding&quot;,
+        &quot;text&quot; : &quot;code:&quot;,
+        &quot;type&quot; : &quot;open-choice&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.jurisdiction.text&quot;,
+        &quot;text&quot; : &quot;text:&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;string&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.copyright&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.copyright.value&quot;,
+        &quot;text&quot; : &quot;Use and/or publishing restrictions&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;string&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.packageId&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : true,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The NPM package name for this Implementation Guide, used in the NPM package distribution, which is the primary mechanism by which FHIR based tooling manages IG dependencies. This value must be globally unique, and should be assigned with care. Many (if not all) IG publishing tools will require that this element be present. For implementation guides published through HL7 or the FHIR foundation, the FHIR product director assigns package IDs.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.packageId.value&quot;,
+        &quot;text&quot; : &quot;NPM Package name for IG&quot;,
+        &quot;type&quot; : &quot;string&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;code&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.license&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The license that applies to this Implementation Guide, using an SPDX license code, or 'not-open-source'.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.license.value&quot;,
+        &quot;text&quot; : &quot;license&quot;,
+        &quot;type&quot; : &quot;choice&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      },
+      {
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+        &quot;valueString&quot; : &quot;code&quot;
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.fhirVersion&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : true,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The version(s) of the FHIR specification that this ImplementationGuide targets - e.g. describes how to use. The value of this element is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.0.1. for this version. Most implementation guides target a single version - e.g. they describe how to use a particular version, and the profiles and examples etc are valid for that version. But some implementation guides describe how to use multiple different versions of FHIR to solve the same problem, or in concert with each other. Typically, the requirement to support multiple versions arises as implementation matures and different implementation communities are stuck at different versions by regulation or market dynamics.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.fhirVersion.value&quot;,
+        &quot;text&quot; : &quot;fhir version&quot;,
+        &quot;type&quot; : &quot;choice&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false
+      }]
+    },
+    {
+      &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn&quot;,
+      &quot;text&quot; : &quot;Another Implementation guide this depends on&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;string&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.id&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.id.value&quot;,
+          &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.extension&quot;,
+        &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.modifierExtension&quot;,
+        &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;uri&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.uri&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : true,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;A canonical reference to the Implementation guide for the dependency. Usually, A canonical reference to the implementation guide is the same as the master location at which the implementation guide is published.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.uri.value&quot;,
+          &quot;text&quot; : &quot;Identity of the IG that this depends on&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;string&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.packageId&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;The NPM package name for the Implementation Guide that this IG depends on.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.packageId.value&quot;,
+          &quot;text&quot; : &quot;NPM Package name for IG this depends on&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;string&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.version&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;The version of the IG that is depended on, when the correct version is required to understand the IG correctly. This follows the syntax of the NPM packaging version field - see [[reference]].&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.dependsOn.version.value&quot;,
+          &quot;text&quot; : &quot;Version of the IG&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      }]
+    },
+    {
+      &quot;linkId&quot; : &quot;ImplementationGuide.global&quot;,
+      &quot;text&quot; : &quot;Profiles that apply globally&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : true,
+      &quot;item&quot; : [{
+        &quot;text&quot; : &quot;See [Default Profiles](implementationguide.html#default) for a discussion of which resources are 'covered' by an implementation guide.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;A set of profiles that all resources covered by this implementation guide must conform to.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;string&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.global.id&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.global.id.value&quot;,
+          &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.global.extension&quot;,
+        &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.global.modifierExtension&quot;,
+        &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;code&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.global.type&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : true,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;The type of resource that all instances must conform to. The type must match that of the profile that is referred to but is made explicit here as a denormalization so that a system processing the implementation guide resource knows which resources the profile applies to even if the profile itself is not available.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.global.type.value&quot;,
+          &quot;text&quot; : &quot;type&quot;,
+          &quot;type&quot; : &quot;choice&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;uri&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.global.profile&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : true,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;A reference to the profile that all instances must conform to.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.global.profile.value&quot;,
+          &quot;text&quot; : &quot;Profile that all resources must conform to&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.definition&quot;,
+      &quot;text&quot; : &quot;Information needed to build the IG&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : false,
+      &quot;item&quot; : [{
+        &quot;text&quot; : &quot;Principally, this consists of information abuot source resource and file locations, and build parameters and templates.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;The information needed by an IG publisher tool to publish the whole implementation guide.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;string&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.definition.id&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.id.value&quot;,
+          &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.definition.extension&quot;,
+        &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.definition.modifierExtension&quot;,
+        &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping&quot;,
+        &quot;text&quot; : &quot;Grouping used to present related resources in the IG&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;text&quot; : &quot;Groupings are arbitrary sub-divisions of content. Typically, they are used to help build Table of Contents automatically.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;A logical group of resources. Logical groups can be used when building pages.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping.id&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping.id.value&quot;,
+            &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping.extension&quot;,
+          &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping.modifierExtension&quot;,
+          &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping.name&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;The human-readable title to display for the package of resources when rendering the implementation guide.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping.name.value&quot;,
+            &quot;text&quot; : &quot;Descriptive name for the package&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping.description&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Human readable text describing the package.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.grouping.description.value&quot;,
+            &quot;text&quot; : &quot;Human readable text describing the package&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource&quot;,
+        &quot;text&quot; : &quot;Resource in the implementation guide&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : true,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.id&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.id.value&quot;,
+            &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.extension&quot;,
+          &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.modifierExtension&quot;,
+          &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;Reference&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.reference&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Where this resource is found. Usually this is a relative URL that locates the resource within the implementation guide. If you authoring an implementation guide, and will publish it using the FHIR publication tooling, use a URI that may point to a resource, or to one of various alternative representations (e.g. spreadsheet). The tooling will convert this when it publishes it.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource&quot;,
+              &quot;valueCode&quot; : &quot;Resource&quot;
+            },
+            {
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter&quot;,
+              &quot;valueString&quot; : &quot;subject=$subj&amp;patient=$subj&amp;encounter=$encounter&quot;
+            }],
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.reference.value&quot;,
+            &quot;text&quot; : &quot;Location of the resource&quot;,
+            &quot;type&quot; : &quot;reference&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;code&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.fhirVersion&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Indicates the FHIR Version(s) this artifact is intended to apply to. If no versions are specified, the resource is assumed to apply to all the versions stated in ImplementationGuide.fhirVersion. The resource SHALL be valid against all the versions it is specified to apply to. If the resource referred to is a StructureDefinition, the fhirVersion stated in the StructureDefinition cannot disagree with the version specified here; the specified versions SHALL include the version specified by the StructureDefinition, and may include additional versions using the [applicable-version](extension-structuredefinition-applicable-version.html) extension.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.fhirVersion.value&quot;,
+            &quot;text&quot; : &quot;fhir version&quot;,
+            &quot;type&quot; : &quot;choice&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.name&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.name.value&quot;,
+            &quot;text&quot; : &quot;Human Name for the resource&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.description&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;A description of the reason that a resource has been included in the implementation guide. This is mostly used with examples to explain why it is present (though they can have extensive comments in the examples).&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.description.value&quot;,
+            &quot;text&quot; : &quot;Reason why included in guide&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.example[x]&quot;,
+          &quot;text&quot; : &quot;Is an example/What is this an example of?&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile. Examples: \n\n* StructureDefinition -&gt; Any \n* ValueSet -&gt; expansion \n* OperationDefinition -&gt; Parameters \n* Questionnaire -&gt; QuestionnaireResponse.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.example[x]._type&quot;,
+            &quot;text&quot; : &quot;type&quot;,
+            &quot;type&quot; : &quot;choice&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false,
+            &quot;answerValueSet&quot; : &quot;#vs2&quot;,
+            &quot;item&quot; : [{
+              &quot;extension&quot; : [{
+                &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+                &quot;valueString&quot; : &quot;boolean&quot;
+              }],
+              &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.example[x]._null&quot;,
+              &quot;type&quot; : &quot;group&quot;,
+              &quot;item&quot; : [{
+                &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.example[x]._null.value&quot;,
+                &quot;type&quot; : &quot;boolean&quot;,
+                &quot;required&quot; : false,
+                &quot;repeats&quot; : false
+              }]
+            },
+            {
+              &quot;extension&quot; : [{
+                &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+                &quot;valueString&quot; : &quot;uri&quot;
+              }],
+              &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.example[x]._null&quot;,
+              &quot;type&quot; : &quot;group&quot;,
+              &quot;item&quot; : [{
+                &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.example[x]._null.value&quot;,
+                &quot;type&quot; : &quot;string&quot;,
+                &quot;required&quot; : false,
+                &quot;repeats&quot; : false
+              }]
+            }]
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.groupingId&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Reference to the id of the grouping this resource appears in. This must correspond to a package.id element within this implementation guide.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.resource.groupingId.value&quot;,
+            &quot;text&quot; : &quot;Grouping this is part of&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.definition.page&quot;,
+        &quot;text&quot; : &quot;Page/Section in the Guide&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : false,
+        &quot;item&quot; : [{
+          &quot;text&quot; : &quot;Pages automatically become sections if they have sub-pages. By convention, the home page is called index.html.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;A page / section in the implementation guide. The root page is the implementation guide home page.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.id&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.id.value&quot;,
+            &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.extension&quot;,
+          &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.modifierExtension&quot;,
+          &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.name[x]&quot;,
+          &quot;text&quot; : &quot;Where to find that page&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;The source address for the page. The publishing tool will autogenerate source for list (source = n/a) and inject included implementations for include (source = uri of guide to include).&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.name[x]._type&quot;,
+            &quot;text&quot; : &quot;type&quot;,
+            &quot;type&quot; : &quot;choice&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false,
+            &quot;answerValueSet&quot; : &quot;#vs3&quot;,
+            &quot;item&quot; : [{
+              &quot;extension&quot; : [{
+                &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+                &quot;valueString&quot; : &quot;uri&quot;
+              }],
+              &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.name[x]._null&quot;,
+              &quot;type&quot; : &quot;group&quot;,
+              &quot;item&quot; : [{
+                &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.name[x]._null.value&quot;,
+                &quot;type&quot; : &quot;string&quot;,
+                &quot;required&quot; : false,
+                &quot;repeats&quot; : false
+              }]
+            },
+            {
+              &quot;extension&quot; : [{
+                &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+                &quot;valueString&quot; : &quot;Reference&quot;
+              }],
+              &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.name[x]._null&quot;,
+              &quot;type&quot; : &quot;group&quot;,
+              &quot;item&quot; : [{
+                &quot;extension&quot; : [{
+                  &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource&quot;,
+                  &quot;valueCode&quot; : &quot;Binary&quot;
+                },
+                {
+                  &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter&quot;,
+                  &quot;valueString&quot; : &quot;subject=$subj&amp;patient=$subj&amp;encounter=$encounter&quot;
+                }],
+                &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.name[x]._null.value&quot;,
+                &quot;type&quot; : &quot;reference&quot;,
+                &quot;required&quot; : false,
+                &quot;repeats&quot; : false
+              }]
+            }]
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.title&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.title.value&quot;,
+            &quot;text&quot; : &quot;Short title shown for navigational assistance&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;code&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.generation&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;A code that indicates how the page is generated.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.generation.value&quot;,
+            &quot;text&quot; : &quot;generation&quot;,
+            &quot;type&quot; : &quot;choice&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.page.page&quot;,
+          &quot;text&quot; : &quot;Nested Pages / Sections&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;text&quot; : &quot;The implementation guide breadcrumbs are generated from this structure.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Nested Pages/Sections under this page.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter&quot;,
+        &quot;text&quot; : &quot;Defines how IG is built by tools&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;Defines how IG is built by tools.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter.id&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter.id.value&quot;,
+            &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter.extension&quot;,
+          &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter.modifierExtension&quot;,
+          &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;code&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter.code&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter.code.value&quot;,
+            &quot;text&quot; : &quot;code&quot;,
+            &quot;type&quot; : &quot;choice&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter.value&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Value for named type.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.parameter.value.value&quot;,
+            &quot;text&quot; : &quot;Value for named type&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.definition.template&quot;,
+        &quot;text&quot; : &quot;A template for building resources&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;A template for building resources.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.id&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.id.value&quot;,
+            &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.extension&quot;,
+          &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.modifierExtension&quot;,
+          &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;code&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.code&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Type of template specified.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.code.value&quot;,
+            &quot;text&quot; : &quot;code&quot;,
+            &quot;type&quot; : &quot;choice&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.source&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;The source location for the template.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.source.value&quot;,
+            &quot;text&quot; : &quot;The source location for the template&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.scope&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;The scope in which the template applies.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.definition.template.scope.value&quot;,
+            &quot;text&quot; : &quot;The scope in which the template applies&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        }]
+      }]
+    },
+    {
+      &quot;extension&quot; : [{
+        &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+        &quot;valueInteger&quot; : 1
+      }],
+      &quot;linkId&quot; : &quot;ImplementationGuide.manifest&quot;,
+      &quot;text&quot; : &quot;Information about an assembled IG&quot;,
+      &quot;type&quot; : &quot;group&quot;,
+      &quot;required&quot; : false,
+      &quot;repeats&quot; : false,
+      &quot;item&quot; : [{
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+          &quot;valueCodeableConcept&quot; : {
+            &quot;coding&quot; : [{
+              &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+              &quot;code&quot; : &quot;flyover&quot;,
+              &quot;display&quot; : &quot;Fly-over&quot;
+            }]
+          }
+        }],
+        &quot;text&quot; : &quot;Information about an assembled implementation guide, created by the publication tooling.&quot;,
+        &quot;type&quot; : &quot;display&quot;
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;string&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.manifest.id&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.id.value&quot;,
+          &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.manifest.extension&quot;,
+        &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.manifest.modifierExtension&quot;,
+        &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        },
+        {
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;uri&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.manifest.rendering&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;A pointer to official web page, PDF or other rendering of the implementation guide.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.rendering.value&quot;,
+          &quot;text&quot; : &quot;Location of rendered implementation guide&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+          &quot;valueInteger&quot; : 1
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource&quot;,
+        &quot;text&quot; : &quot;Resource in the implementation guide&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : true,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.id&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.id.value&quot;,
+            &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.extension&quot;,
+          &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.modifierExtension&quot;,
+          &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;Reference&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.reference&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Where this resource is found. Usually this is a relative URL that locates the resource within the implementation guide. If you authoring an implementation guide, and will publish it using the FHIR publication tooling, use a URI that may point to a resource, or to one of various alternative representations (e.g. spreadsheet). The tooling will convert this when it publishes it.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-allowedResource&quot;,
+              &quot;valueCode&quot; : &quot;Resource&quot;
+            },
+            {
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter&quot;,
+              &quot;valueString&quot; : &quot;subject=$subj&amp;patient=$subj&amp;encounter=$encounter&quot;
+            }],
+            &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.reference.value&quot;,
+            &quot;text&quot; : &quot;Location of the resource&quot;,
+            &quot;type&quot; : &quot;reference&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.example[x]&quot;,
+          &quot;text&quot; : &quot;Is an example/What is this an example of?&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile. Typically, conformance resources and knowledge resources are directly part of the implementation guide, with their normal meaning, and patient linked resources are usually examples. However this is not always true.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.example[x]._type&quot;,
+            &quot;text&quot; : &quot;type&quot;,
+            &quot;type&quot; : &quot;choice&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false,
+            &quot;answerValueSet&quot; : &quot;#vs4&quot;,
+            &quot;item&quot; : [{
+              &quot;extension&quot; : [{
+                &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+                &quot;valueString&quot; : &quot;boolean&quot;
+              }],
+              &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.example[x]._null&quot;,
+              &quot;type&quot; : &quot;group&quot;,
+              &quot;item&quot; : [{
+                &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.example[x]._null.value&quot;,
+                &quot;type&quot; : &quot;boolean&quot;,
+                &quot;required&quot; : false,
+                &quot;repeats&quot; : false
+              }]
+            },
+            {
+              &quot;extension&quot; : [{
+                &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+                &quot;valueString&quot; : &quot;uri&quot;
+              }],
+              &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.example[x]._null&quot;,
+              &quot;type&quot; : &quot;group&quot;,
+              &quot;item&quot; : [{
+                &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.example[x]._null.value&quot;,
+                &quot;type&quot; : &quot;string&quot;,
+                &quot;required&quot; : false,
+                &quot;repeats&quot; : false
+              }]
+            }]
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;uri&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.relativePath&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;The relative path for primary page for this resource within the IG. Appending 'rendering' + \&quot;/\&quot; + this should resolve to the resource page.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.manifest.resource.relativePath.value&quot;,
+            &quot;text&quot; : &quot;Relative path for page in IG&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        }]
+      },
+      {
+        &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page&quot;,
+        &quot;text&quot; : &quot;HTML page within the parent IG&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;Information about a page within the IG.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.id&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.id.value&quot;,
+            &quot;text&quot; : &quot;Unique id for inter-element referencing&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.extension&quot;,
+          &quot;text&quot; : &quot;Additional content defined by implementations&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.modifierExtension&quot;,
+          &quot;text&quot; : &quot;Extensions that cannot be ignored even if unrecognized&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.name&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : true,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Relative path to the page. Appending 'rendering' + \&quot;/\&quot; + this should resolve to the page.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.name.value&quot;,
+            &quot;text&quot; : &quot;HTML page name&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs&quot;,
+            &quot;valueInteger&quot; : 1
+          },
+          {
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.title&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;Label for the page intended for human display.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.title.value&quot;,
+            &quot;text&quot; : &quot;Title of the page, for references&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        },
+        {
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+            &quot;valueString&quot; : &quot;string&quot;
+          }],
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.anchor&quot;,
+          &quot;type&quot; : &quot;group&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : true,
+          &quot;item&quot; : [{
+            &quot;extension&quot; : [{
+              &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+              &quot;valueCodeableConcept&quot; : {
+                &quot;coding&quot; : [{
+                  &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                  &quot;code&quot; : &quot;flyover&quot;,
+                  &quot;display&quot; : &quot;Fly-over&quot;
+                }]
+              }
+            }],
+            &quot;text&quot; : &quot;The name of an anchor available on the page. Appending 'rendering' + \&quot;/\&quot; + page.name + \&quot;#\&quot; + page.anchor should resolve to the anchor.&quot;,
+            &quot;type&quot; : &quot;display&quot;
+          },
+          {
+            &quot;linkId&quot; : &quot;ImplementationGuide.manifest.page.anchor.value&quot;,
+            &quot;text&quot; : &quot;Anchor available on the page&quot;,
+            &quot;type&quot; : &quot;string&quot;,
+            &quot;required&quot; : false,
+            &quot;repeats&quot; : false
+          }]
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;string&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.manifest.image&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;Indicates a relative path to an image that exists within the IG.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.image.value&quot;,
+          &quot;text&quot; : &quot;Image within the IG&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      },
+      {
+        &quot;extension&quot; : [{
+          &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType&quot;,
+          &quot;valueString&quot; : &quot;string&quot;
+        }],
+        &quot;linkId&quot; : &quot;ImplementationGuide.manifest.other&quot;,
+        &quot;type&quot; : &quot;group&quot;,
+        &quot;required&quot; : false,
+        &quot;repeats&quot; : true,
+        &quot;item&quot; : [{
+          &quot;extension&quot; : [{
+            &quot;url&quot; : &quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;,
+            &quot;valueCodeableConcept&quot; : {
+              &quot;coding&quot; : [{
+                &quot;system&quot; : &quot;http://hl7.org/fhir/questionnaire-item-control&quot;,
+                &quot;code&quot; : &quot;flyover&quot;,
+                &quot;display&quot; : &quot;Fly-over&quot;
+              }]
+            }
+          }],
+          &quot;text&quot; : &quot;Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.&quot;,
+          &quot;type&quot; : &quot;display&quot;
+        },
+        {
+          &quot;linkId&quot; : &quot;ImplementationGuide.manifest.other.value&quot;,
+          &quot;text&quot; : &quot;Additional linkable file in IG&quot;,
+          &quot;type&quot; : &quot;string&quot;,
+          &quot;required&quot; : false,
+          &quot;repeats&quot; : false
+        }]
+      }]
+    }]
+  }]
+}
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fimplementationguide-questionnaire.json.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fimplementationguide-questionnaire.json.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

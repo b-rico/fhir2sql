@@ -1,0 +1,567 @@
+<!DOCTYPE HTML>
+  <!-- template-definitions.html --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>OperationDefinition - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/operationdefinition-definitions.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="conformance-module.html"><img src="conformance.jpg"/> Conformance</a></li>        <li><a href="operationdefinition.html">OperationDefinition</a></li>        <li><b>Detailed Descriptions</b></li>          <!-- operationdefinition.html / res-Detailed Descriptions / OperationDefinition -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<ul class="nav nav-tabs"><li><a href="operationdefinition.html">Content</a></li><li><a href="operationdefinition-examples.html">Examples</a></li><li class="active"><a href="#">Detailed Descriptions</a></li><li><a href="operationdefinition-mappings.html">Mappings</a></li><li><a href="operationdefinition-profiles.html">Profiles &amp; Extensions</a></li><li><a href="operationdefinition-version-maps.html">R3 Conversions</a></li></ul>
+
+<h2 class="self-link-parent"><span class="sectioncount">5.4.6<a name="5.4.6"> </a></span> Resource OperationDefinition - Detailed Descriptions <a href="operationdefinition-definitions.html#5.4.6" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsn"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: <a href="versions.html#std-process">N</a></td><td>&nbsp;<a href="versions.html#std-process" title="Standard Status">Normative</a> (from v4.0.0)</td><td><a href="security.html#SecPrivConsiderations">Security Category</a>: Anonymous</td>  <!-- !ns! --><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+
+<p>Detailed Descriptions for the elements in the OperationDefinition resource.</p>
+
+<table class="dict">
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition"> </a><b>OperationDefinition</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition</td></tr>
+  <tr><td>Definition</td><td><p>A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="domainresource.html">DomainResource</a></td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">opd-0</b></td><td><a style="color: Chocolate" href="conformance-rules.html#warning">Warning</a> </td><td>Name should be usable as an identifier for the module by machine processing applications such as code generation</td><td><span style="font-family: Courier New, monospace">name.matches('[A-Z]([A-Za-z0-9_]){0,254}')</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.url"> </a><b>OperationDefinition.url</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.url</td></tr>
+  <tr><td>Definition</td><td><p>An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this operation definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the operation definition is stored on different servers.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#uri">uri</a></td></tr>
+  <tr><td>Requirements</td><td><p>Allows the operation definition to be referenced by a single globally unique identifier.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.</p>
+<p>The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in <a href="resource.html#versions">Technical and Business Versions</a>.</p>
+<p>In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the <a href="resource.html#meta">meta.source</a> element to indicate where the current master source of the resource can be found.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.version"> </a><b>OperationDefinition.version</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.version</td></tr>
+  <tr><td>Definition</td><td><p>The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</p>
+</td></tr>
+  <tr><td>Note</td><td>This is a business versionId, not a resource version id (see <a href="resource.html#versions">discussion</a>)</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>There may be different operation definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the operation definition with the format [url]|[version].</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.name"> </a><b>OperationDefinition.name</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.name</td></tr>
+  <tr><td>Definition</td><td><p>A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Requirements</td><td><p>Support human navigation and code generation.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Affect this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">inv-0</b></td><td><a style="color: Chocolate" href="conformance-rules.html#warning">Warning</a> </td><td>Name should be usable as an identifier for the module by machine processing applications such as code generation</td><td><span style="font-family: Courier New, monospace">name.matches('[A-Z]([A-Za-z0-9_]){0,254}')</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.title"> </a><b>OperationDefinition.title</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.title</td></tr>
+  <tr><td>Definition</td><td><p>A short, descriptive, user-friendly title for the operation definition.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.status"> </a><b>OperationDefinition.status</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.status</td></tr>
+  <tr><td>Definition</td><td><p>The status of this operation definition. Enables tracking the life-cycle of the content.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-publication-status.html">PublicationStatus</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="conformance-rules.html#ismodifier">Is Modifier</a></td><td>true (Reason: This is labeled as "Is Modifier" because applications should not use a retired {{title}} without due consideration)</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Allows filtering of operation definitions that are appropriate for use versus not.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.kind"> </a><b>OperationDefinition.kind</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.kind</td></tr>
+  <tr><td>Definition</td><td><p>Whether this is an operation or a named query.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-operation-kind.html">OperationKind</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Named queries are invoked differently, and have different capabilities.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.experimental"> </a><b>OperationDefinition.experimental</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.experimental</td></tr>
+  <tr><td>Definition</td><td><p>A Boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td>Requirements</td><td><p>Enables experimental content to be developed following the same lifecycle that would be used for a production-level operation definition.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Allows filtering of operation definitions that are appropriate for use versus not.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.date"> </a><b>OperationDefinition.date</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.date</td></tr>
+  <tr><td>Definition</td><td><p>The date  (and optionally time) when the operation definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>Revision Date</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the operation definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.publisher"> </a><b>OperationDefinition.publisher</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.publisher</td></tr>
+  <tr><td>Definition</td><td><p>The name of the organization or individual that published the operation definition.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Requirements</td><td><p>Helps establish the "authority/credibility" of the operation definition.  May also allow for contact.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Usually an organization but may be an individual. The publisher (or steward) of the operation definition is the organization or individual primarily responsible for the maintenance and upkeep of the operation definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the operation definition. This item SHOULD be populated unless the information is available from context.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.contact"> </a><b>OperationDefinition.contact</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.contact</td></tr>
+  <tr><td>Definition</td><td><p>Contact details to assist a user in finding and communicating with the publisher.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="metadatatypes.html#ContactDetail">ContactDetail</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>May be a web site, an email address, a telephone number, etc.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.description"> </a><b>OperationDefinition.description</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.description</td></tr>
+  <tr><td>Definition</td><td><p>A free text natural language description of the operation definition from a consumer's perspective.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#markdown">markdown</a></td></tr>
+  <tr><td>Comments</td><td><p>This description can be used to capture details such as why the operation definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the operation definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the operation definition is presumed to be the predominant language in the place the operation definition was created).</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.useContext"> </a><b>OperationDefinition.useContext</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.useContext</td></tr>
+  <tr><td>Definition</td><td><p>The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate operation definition instances.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="metadatatypes.html#UsageContext">UsageContext</a></td></tr>
+  <tr><td>Requirements</td><td><p>Assist in searching for appropriate content.</p>
+</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.jurisdiction"> </a><b>OperationDefinition.jurisdiction</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.jurisdiction</td></tr>
+  <tr><td>Definition</td><td><p>A legal or geographic region in which the operation definition is intended to be used.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-jurisdiction.html">Jurisdiction</a> (<a href="terminologies.html#extensible">Extensible</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>It may be possible for the operation definition to be used in jurisdictions other than those for which it was originally designed or intended.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.purpose"> </a><b>OperationDefinition.purpose</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.purpose</td></tr>
+  <tr><td>Definition</td><td><p>Explanation of why this operation definition is needed and why it has been designed as it has.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#markdown">markdown</a></td></tr>
+  <tr><td>Comments</td><td><p>This element does not describe the usage of the operation definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this operation definition.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.affectsState"> </a><b>OperationDefinition.affectsState</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.affectsState</td></tr>
+  <tr><td>Definition</td><td><p>Whether the operation affects state. Side effects such as producing audit trail entries do not count as 'affecting  state'.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>What http methods can be used for the operation depends on the .affectsState value and whether the input parameters are primitive or complex:</p>
+<ol>
+<li>
+<p>Servers SHALL support POST method for all operations.</p>
+</li>
+<li>
+<p>Servers SHALL support GET method if all the parameters for the operation are primitive or there are no parameters and the operation has affectsState = false.</p>
+</li>
+</ol>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.code"> </a><b>OperationDefinition.code</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.code</td></tr>
+  <tr><td>Definition</td><td><p>The name used to invoke the operation.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.comment"> </a><b>OperationDefinition.comment</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.comment</td></tr>
+  <tr><td>Definition</td><td><p>Additional information about how to use this operation or named query.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#markdown">markdown</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.base"> </a><b>OperationDefinition.base</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.base</td></tr>
+  <tr><td>Definition</td><td><p>Indicates that this operation definition is a constraining profile on the base.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#canonical">canonical</a>(<a href="operationdefinition.html">OperationDefinition</a>)</td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>A constrained profile can make optional parameters required or not used and clarify documentation.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.resource"> </a><b>OperationDefinition.resource</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.resource</td></tr>
+  <tr><td>Definition</td><td><p>The types on which this operation can be executed.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-resource-types.html">Any defined Resource Type name</a></td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>If the type is an abstract resource ("Resource" or "DomainResource") then the operation can be invoked on any concrete specialization.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.system"> </a><b>OperationDefinition.system</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.system</td></tr>
+  <tr><td>Definition</td><td><p>Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.type"> </a><b>OperationDefinition.type</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.type</td></tr>
+  <tr><td>Definition</td><td><p>Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.instance"> </a><b>OperationDefinition.instance</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.instance</td></tr>
+  <tr><td>Definition</td><td><p>Indicates whether this operation can be invoked on a particular instance of one of the given types.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td><a href="search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.inputProfile"> </a><b>OperationDefinition.inputProfile</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.inputProfile</td></tr>
+  <tr><td>Definition</td><td><p>Additional validation information for the in parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource as a whole.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#canonical">canonical</a>(<a href="structuredefinition.html">StructureDefinition</a>)</td></tr>
+  <tr><td>Comments</td><td><p>If present the profile shall not conflict with what is specified in the parameters in the operation definition (max/min etc.), though it may provide additional constraints. The constraints expressed in the profile apply whether the operation is invoked by a POST wih parameters or not.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.outputProfile"> </a><b>OperationDefinition.outputProfile</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.outputProfile</td></tr>
+  <tr><td>Definition</td><td><p>Additional validation information for the out parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#canonical">canonical</a>(<a href="structuredefinition.html">StructureDefinition</a>)</td></tr>
+  <tr><td>Comments</td><td><p>If present the profile shall not conflict with what is specified in the parameters in the operation definition (max/min etc.), though it may provide additional constraints. The constraints expressed in the profile apply whether the operation is invoked by a POST wih parameters or not.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter"> </a><b>OperationDefinition.parameter</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter</td></tr>
+  <tr><td>Definition</td><td><p>The parameters for the operation/query.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td><p>Query Definitions only have one output parameter, named "result". This might not be described, but can be to allow a profile to be defined.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Defined on this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">opd-1</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Either a type must be provided, or parts</td><td><span style="font-family: Courier New, monospace">type.exists() or part.exists()</span></td></tr><tr><td width="60px"><b title="Formal Invariant Identifier">opd-2</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>A search type can only be specified for parameters of type string</td><td><span style="font-family: Courier New, monospace">searchType.exists() implies type = 'string'</span></td></tr><tr><td width="60px"><b title="Formal Invariant Identifier">opd-3</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>A targetProfile can only be specified for parameters of type Reference or Canonical</td><td><span style="font-family: Courier New, monospace">targetProfile.exists() implies (type = 'Reference' or type = 'canonical')</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.name"> </a><b>OperationDefinition.parameter.name</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.name</td></tr>
+  <tr><td>Definition</td><td><p>The name of used to identify the parameter.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>This name must be a token (start with a letter in a..z, and only contain letters, numerals, and underscore. Note that for search parameters (type = string, with a search type), the name may be altered by the search modifiers.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.use"> </a><b>OperationDefinition.parameter.use</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.use</td></tr>
+  <tr><td>Definition</td><td><p>Whether this is an input or an output parameter.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-operation-parameter-use.html">OperationParameterUse</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>If a parameter name is used for both an input and an output parameter, the parameter should be defined twice.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.min"> </a><b>OperationDefinition.parameter.min</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.min</td></tr>
+  <tr><td>Definition</td><td><p>The minimum number of times this parameter SHALL appear in the request or response.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#integer">integer</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.max"> </a><b>OperationDefinition.parameter.max</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.max</td></tr>
+  <tr><td>Definition</td><td><p>The maximum number of times this element is permitted to appear in the request or response.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.documentation"> </a><b>OperationDefinition.parameter.documentation</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.documentation</td></tr>
+  <tr><td>Definition</td><td><p>Describes the meaning or use of this parameter.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.type"> </a><b>OperationDefinition.parameter.type</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.type</td></tr>
+  <tr><td>Definition</td><td><p>The type for this parameter.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-all-types.html">Any defined Resource or Data Type name (including "Any" and "Type")</a></td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>if there is no stated parameter, then the parameter is a multi-part parameter; type and must have at least one part defined.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Affect this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">opd-1</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Either a type must be provided, or parts</td><td><span style="font-family: Courier New, monospace">type.exists() or part.exists()</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.targetProfile"> </a><b>OperationDefinition.parameter.targetProfile</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.targetProfile</td></tr>
+  <tr><td>Definition</td><td><p>Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this parameter refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#canonical">canonical</a>(<a href="structuredefinition.html">StructureDefinition</a>)</td></tr>
+  <tr><td>Comments</td><td><p>Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.searchType"> </a><b>OperationDefinition.parameter.searchType</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.searchType</td></tr>
+  <tr><td>Definition</td><td><p>How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-search-param-type.html">SearchParamType</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Affect this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">opd-2</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>A search type can only be specified for parameters of type string</td><td><span style="font-family: Courier New, monospace">searchType.exists() implies type = 'string'</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.binding"> </a><b>OperationDefinition.parameter.binding</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.binding</td></tr>
+  <tr><td>Definition</td><td><p>Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.binding.strength"> </a><b>OperationDefinition.parameter.binding.strength</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.binding.strength</td></tr>
+  <tr><td>Definition</td><td><p>Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Terminology Binding</a></td><td><a href="valueset-binding-strength.html">BindingStrength</a> (<a href="terminologies.html#required">Required</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>conformance; extensibility</td></tr>
+  <tr><td>Comments</td><td><p>For further discussion, see <a href="terminologies.html">Using Terminologies</a>.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.binding.valueSet"> </a><b>OperationDefinition.parameter.binding.valueSet</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.binding.valueSet</td></tr>
+  <tr><td>Definition</td><td><p>Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#canonical">canonical</a>(<a href="valueset.html">ValueSet</a>)</td></tr>
+  <tr><td>Comments</td><td><p>For value sets with a referenceResource, the display can contain the value set description.  The reference may be version-specific or not.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.referencedFrom"> </a><b>OperationDefinition.parameter.referencedFrom</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.referencedFrom</td></tr>
+  <tr><td>Definition</td><td><p>Identifies other resource parameters within the operation invocation that are expected to resolve to this resource.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td><p>Resolution applies if the referenced parameter exists.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.referencedFrom.source"> </a><b>OperationDefinition.parameter.referencedFrom.source</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.referencedFrom.source</td></tr>
+  <tr><td>Definition</td><td><p>The name of the parameter or dot-separated path of parameter names pointing to the resource parameter that is expected to contain a reference to this resource.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.referencedFrom.sourceId"> </a><b>OperationDefinition.parameter.referencedFrom.sourceId</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.referencedFrom.sourceId</td></tr>
+  <tr><td>Definition</td><td><p>The id of the element in the referencing resource that is expected to resolve to this resource.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.parameter.part"> </a><b>OperationDefinition.parameter.part</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.parameter.part</td></tr>
+  <tr><td>Definition</td><td><p>The parts of a nested Parameter.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="#OperationDefinition.parameter">See OperationDefinition.parameter</a></td></tr>
+  <tr><td>Comments</td><td><p>Query Definitions only have one output parameter, named "result". This might not be described, but can be to allow a profile to be defined.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>Affect this element</b></td></tr>
+<tr><td width="60px"><b title="Formal Invariant Identifier">opd-1</b></td><td><a style="color: Maroon" href="conformance-rules.html#rule">Rule</a> </td><td>Either a type must be provided, or parts</td><td><span style="font-family: Courier New, monospace">type.exists() or part.exists()</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.overload"> </a><b>OperationDefinition.overload</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.overload</td></tr>
+  <tr><td>Definition</td><td><p>Defines an appropriate combination of parameters to use when invoking this operation, to help code generators when generating overloaded parameter sets for this operation.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td><p>The combinations are suggestions as to which sets of parameters to use together, but the combinations are not intended to be authoritative.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.overload.parameterName"> </a><b>OperationDefinition.overload.parameterName</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.overload.parameterName</td></tr>
+  <tr><td>Definition</td><td><p>Name of parameter to include in overload.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="OperationDefinition.overload.comment"> </a><b>OperationDefinition.overload.comment</b></td></tr>
+  <tr><td>Element Id</td><td>OperationDefinition.overload.comment</td></tr>
+  <tr><td>Definition</td><td><p>Comments to go on overload.</p>
+</td></tr>
+  <tr><td><a href="conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:36+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Foperationdefinition-definitions.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Foperationdefinition-definitions.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

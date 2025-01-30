@@ -1,0 +1,200 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicinalProductPharmaceutical {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  administrableDoseForm: CodeableConcept!
+  unitOfPresentation: CodeableConcept
+  ingredient: [Reference]
+  device: [Reference]
+  characteristics: [MedicinalProductPharmaceuticalCharacteristics]
+  routeOfAdministration: [MedicinalProductPharmaceuticalRouteOfAdministration]!
+}
+
+type MedicinalProductPharmaceuticalCharacteristics {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  status: CodeableConcept
+}
+
+type MedicinalProductPharmaceuticalRouteOfAdministration {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  firstDose: Quantity
+  maxSingleDose: Quantity
+  maxDosePerDay: Quantity
+  maxDosePerTreatmentPeriod: Ratio
+  maxTreatmentPeriod: Duration
+  targetSpecies: [MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies]
+}
+
+type MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  withdrawalPeriod: [MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod]
+}
+
+type MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  tissue: CodeableConcept!
+  value: Quantity!
+  supportingInformation: String  _supportingInformation: ElementBase
+}
+
+input MedicinalProductPharmaceutical {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  administrableDoseForm: CodeableConcept!
+  unitOfPresentation: CodeableConcept
+  ingredient: [Reference]
+  device: [Reference]
+  characteristics: [MedicinalProductPharmaceuticalCharacteristics]
+  routeOfAdministration: [MedicinalProductPharmaceuticalRouteOfAdministration]!
+}
+
+input MedicinalProductPharmaceuticalCharacteristics {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  status: CodeableConcept
+}
+
+input MedicinalProductPharmaceuticalRouteOfAdministration {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  firstDose: Quantity
+  maxSingleDose: Quantity
+  maxDosePerDay: Quantity
+  maxDosePerTreatmentPeriod: Ratio
+  maxTreatmentPeriod: Duration
+  targetSpecies: [MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies]
+}
+
+input MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  withdrawalPeriod: [MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod]
+}
+
+input MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  tissue: CodeableConcept!
+  value: Quantity!
+  supportingInformation: String  _supportingInformation: ElementBase
+}
+
+type MedicinalProductPharmaceuticalReadType {
+  MedicinalProductPharmaceutical(id : ID!) : MedicinalProductPharmaceutical
+}
+
+type MedicinalProductPharmaceuticalListType {
+  MedicinalProductPharmaceuticalList(_filter : String
+    identifier : [token]
+    route : [token]
+    target_species : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicinalProductPharmaceutical]
+}
+
+type MedicinalProductPharmaceuticalConnectionType {
+  MedicinalProductPharmaceuticalConection(_filter : String
+    identifier : [token]
+    route : [token]
+    target_species : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicinalProductPharmaceuticalConnection
+}
+
+type MedicinalProductPharmaceuticalConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicinalProductPharmaceuticalEdge]
+}
+
+type MedicinalProductPharmaceuticalEdge {
+  mode : String
+  score : Float
+  resource : MedicinalProductPharmaceutical
+}
+
+type MedicinalProductPharmaceuticalCreateType {
+  MedicinalProductPharmaceuticalCreate(resource : MedicinalProductPharmaceutical) : MedicinalProductPharmaceuticalCreation
+}
+
+type MedicinalProductPharmaceuticalCreation {
+  location : String
+  resource : MedicinalProductPharmaceutical
+  information : OperationOutcome
+}
+
+type MedicinalProductPharmaceuticalUpdateType {
+  MedicinalProductPharmaceuticalUpdate(id : IDresource : MedicinalProductPharmaceutical) : MedicinalProductPharmaceuticalUpdate
+}
+
+type MedicinalProductPharmaceuticalUpdate {
+  resource : MedicinalProductPharmaceutical
+  information : OperationOutcome
+}
+
+type MedicinalProductPharmaceuticalDeleteType {
+  MedicinalProductPharmaceuticalDelete(id : ID) : MedicinalProductPharmaceuticalDelete
+}
+
+type MedicinalProductPharmaceuticalDelete {
+  information : OperationOutcome
+}
+

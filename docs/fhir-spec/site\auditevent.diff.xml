@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="AuditEvent" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AuditEvent.action">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/audit-event-action"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/audit-event-action|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="AuditEvent.period" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AuditEvent.outcome">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/audit-event-outcome"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/audit-event-outcome|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="AuditEvent.agent.type" status="new"/>
+      <element binding-status="removed" path="AuditEvent.agent.role">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/security-role-type"
+                      strength="extensible"/>
+      </element>
+      <element path="AuditEvent.agent.who" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AuditEvent.agent.network.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/network-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/network-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="AuditEvent.source.observer" status="new"/>
+      <element path="AuditEvent.entity.what" status="new"/>
+      <element old-name="value" path="AuditEvent.entity.detail.value[x]">
+         <added-type name="string"/>
+      </element>
+      <element path="AuditEvent.agent.reference" status="deleted"/>
+      <element path="AuditEvent.agent.userId" status="deleted"/>
+      <element path="AuditEvent.source.identifier" status="deleted"/>
+      <element path="AuditEvent.entity.identifier" status="deleted"/>
+      <element path="AuditEvent.entity.reference" status="deleted"/>
+   </type>
+</difference>

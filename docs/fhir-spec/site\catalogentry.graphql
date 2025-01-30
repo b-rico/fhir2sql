@@ -1,0 +1,146 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type CatalogEntry {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  type: CodeableConcept
+  orderable: Boolean  _orderable: ElementBase
+  referencedItem: Reference!
+  additionalIdentifier: [Identifier]
+  classification: [CodeableConcept]
+  status: code  _status: ElementBase
+  validityPeriod: Period
+  validTo: dateTime  _validTo: ElementBase
+  lastUpdated: dateTime  _lastUpdated: ElementBase
+  additionalCharacteristic: [CodeableConcept]
+  additionalClassification: [CodeableConcept]
+  relatedEntry: [CatalogEntryRelatedEntry]
+}
+
+type CatalogEntryRelatedEntry {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  relationtype: code  _relationtype: ElementBase
+  item: Reference!
+}
+
+input CatalogEntry {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  type: CodeableConcept
+  orderable: Boolean  _orderable: ElementBase
+  referencedItem: Reference!
+  additionalIdentifier: [Identifier]
+  classification: [CodeableConcept]
+  status: code  _status: ElementBase
+  validityPeriod: Period
+  validTo: dateTime  _validTo: ElementBase
+  lastUpdated: dateTime  _lastUpdated: ElementBase
+  additionalCharacteristic: [CodeableConcept]
+  additionalClassification: [CodeableConcept]
+  relatedEntry: [CatalogEntryRelatedEntry]
+}
+
+input CatalogEntryRelatedEntry {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  relationtype: code  _relationtype: ElementBase
+  item: Reference!
+}
+
+type CatalogEntryReadType {
+  CatalogEntry(id : ID!) : CatalogEntry
+}
+
+type CatalogEntryListType {
+  CatalogEntryList(_filter : String
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [CatalogEntry]
+}
+
+type CatalogEntryConnectionType {
+  CatalogEntryConection(_filter : String
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : CatalogEntryConnection
+}
+
+type CatalogEntryConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [CatalogEntryEdge]
+}
+
+type CatalogEntryEdge {
+  mode : String
+  score : Float
+  resource : CatalogEntry
+}
+
+type CatalogEntryCreateType {
+  CatalogEntryCreate(resource : CatalogEntry) : CatalogEntryCreation
+}
+
+type CatalogEntryCreation {
+  location : String
+  resource : CatalogEntry
+  information : OperationOutcome
+}
+
+type CatalogEntryUpdateType {
+  CatalogEntryUpdate(id : IDresource : CatalogEntry) : CatalogEntryUpdate
+}
+
+type CatalogEntryUpdate {
+  resource : CatalogEntry
+  information : OperationOutcome
+}
+
+type CatalogEntryDeleteType {
+  CatalogEntryDelete(id : ID) : CatalogEntryDelete
+}
+
+type CatalogEntryDelete {
+  information : OperationOutcome
+}
+

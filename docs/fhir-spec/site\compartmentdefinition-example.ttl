@@ -1,0 +1,79 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CompartmentDefinition/example> a fhir:CompartmentDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>url</b>: <b>http://hl7.org/fhir/CompartmentDefinition/example</b></p><p><b>name</b>: EXAMPLE</p><p><b>status</b>: draft</p><p><b>experimental</b>: true</p><p><b>date</b>: 24/02/2017</p><p><b>publisher</b>: Health Level Seven International (FHIR Infrastructure)</p><p><b>contact</b>: </p><p><b>description</b>: The set of resources associated with a particular Device (example with Communication and CommunicationRequest resourses only).</p><p><b>useContext</b>: </p><p><b>purpose</b>: Provides an example of a FHIR compartment definition based on the Device resource type.</p><p><b>code</b>: Device</p><p><b>search</b>: true</p><blockquote><p><b>resource</b></p><p><b>code</b>: Communication</p><p><b>param</b>: sender, recipient</p><p><b>documentation</b>: The device used as the message sender and recipient</p></blockquote><blockquote><p><b>resource</b></p><p><b>code</b>: CommunicationRequest</p><p><b>param</b>: sender, recipient</p><p><b>documentation</b>: The device used as the message sender and recipient</p></blockquote></div>"
+  ];
+  fhir:CompartmentDefinition.url [ fhir:value "http://hl7.org/fhir/CompartmentDefinition/example"];
+  fhir:CompartmentDefinition.name [ fhir:value "EXAMPLE"];
+  fhir:CompartmentDefinition.status [ fhir:value "draft"];
+  fhir:CompartmentDefinition.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:CompartmentDefinition.date [ fhir:value "2017-02-24"^^xsd:date];
+  fhir:CompartmentDefinition.publisher [ fhir:value "Health Level Seven International (FHIR Infrastructure)"];
+  fhir:CompartmentDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "[string]" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:CompartmentDefinition.description [ fhir:value "The set of resources associated with a particular Device (example with Communication and CommunicationRequest resourses only)."];
+  fhir:CompartmentDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/resource-types" ];
+         fhir:Coding.code [ fhir:value "Device" ]
+       ]
+     ]
+  ];
+  fhir:CompartmentDefinition.purpose [ fhir:value "Provides an example of a FHIR compartment definition based on the Device resource type."];
+  fhir:CompartmentDefinition.code [ fhir:value "Device"];
+  fhir:CompartmentDefinition.search [ fhir:value "true"^^xsd:boolean];
+  fhir:CompartmentDefinition.resource [
+     fhir:index 0;
+     fhir:CompartmentDefinition.resource.code [ fhir:value "Communication" ];
+     fhir:CompartmentDefinition.resource.param [
+       fhir:value "sender";
+       fhir:index 0
+     ], [
+       fhir:value "recipient";
+       fhir:index 1
+     ];
+     fhir:CompartmentDefinition.resource.documentation [ fhir:value "The device used as the message sender and recipient" ]
+  ], [
+     fhir:index 1;
+     fhir:CompartmentDefinition.resource.code [ fhir:value "CommunicationRequest" ];
+     fhir:CompartmentDefinition.resource.param [
+       fhir:value "sender";
+       fhir:index 0
+     ], [
+       fhir:value "recipient";
+       fhir:index 1
+     ];
+     fhir:CompartmentDefinition.resource.documentation [ fhir:value "The device used as the message sender and recipient" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CompartmentDefinition/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CompartmentDefinition/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

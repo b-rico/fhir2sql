@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="GuidanceResponse" status="changed">
+      <element old-name="requestId" path="GuidanceResponse.requestIdentifier">
+         <removed-type name="id"/>
+         <added-type name="Identifier"/>
+      </element>
+      <element new-max="*" old-max="1" path="GuidanceResponse.identifier"/>
+      <element old-name="module" path="GuidanceResponse.module[x]">
+         <removed-type name="Reference(ServiceDefinition)"/>
+         <added-type name="uri"/>
+         <added-type name="canonical"/>
+         <added-type name="CodeableConcept"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="GuidanceResponse.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/guidance-response-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/guidance-response-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="GuidanceResponse.encounter" status="new"/>
+      <element path="GuidanceResponse.reasonCode" status="new"/>
+      <element path="GuidanceResponse.reasonReference" status="new"/>
+      <element path="GuidanceResponse.context" status="deleted"/>
+      <element path="GuidanceResponse.reason[x]" status="deleted"/>
+   </type>
+</difference>

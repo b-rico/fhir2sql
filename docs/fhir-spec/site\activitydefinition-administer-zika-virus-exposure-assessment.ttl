@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ActivityDefinition/administer-zika-virus-exposure-assessment> a fhir:ActivityDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "administer-zika-virus-exposure-assessment"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Id: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">ActivityDefinition/administer-zika-virus-exposure-assessment</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Status: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">draft</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Description: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">Administer Zika Virus Exposure Assessment</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Category: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">procedure</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Code: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-right: 25px;\">\n                  <span>\n                     <span>\n                        <span style=\"padding-left: 25px;\">\n                           <b>system: </b>\n                           <span>http://example.org/questionnaires</span>\n                           <br/>\n                        </span>\n                        <span style=\"padding-left: 25px;\">\n                           <b>code: </b>\n                           <span>zika-virus-exposure-assessment</span>\n                           <br/>\n                        </span>\n                     </span>\n                  </span>\n               </td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Participant: </b>\n               </td>\n            </tr>\n            <tr style=\"vertical-align: top;\">\n               <td style=\"padding-left: 25px; padding-right: 25px;\">practitioner</td>\n            </tr>\n         </table>\n      </div>"
+  ];
+  fhir:ActivityDefinition.url [ fhir:value "http://example.org/ActivityDefinition/administer-zika-virus-exposure-assessment"];
+  fhir:ActivityDefinition.status [ fhir:value "draft"];
+  fhir:ActivityDefinition.description [ fhir:value "Administer Zika Virus Exposure Assessment"];
+  fhir:ActivityDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "age" ]
+     ];
+     fhir:UsageContext.valueRange [
+       fhir:Range.low [
+         fhir:Quantity.value [ fhir:value "12"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "a" ]
+       ]
+     ]
+  ];
+  fhir:ActivityDefinition.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "derived-from" ];
+     fhir:RelatedArtifact.url [ fhir:value "https://www.cdc.gov/zika/hc-providers/pregnant-woman.html" ]
+  ], [
+     fhir:index 1;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "Questionnaire/zika-virus-exposure-assessment";
+       fhir:link <http://hl7.org/fhir/Questionnaire/zika-virus-exposure-assessment>
+     ]
+  ];
+  fhir:ActivityDefinition.library [
+     fhir:value "Library/zika-virus-intervention-logic";
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Library/zika-virus-intervention-logic>
+  ];
+  fhir:ActivityDefinition.kind [ fhir:value "ServiceRequest"];
+  fhir:ActivityDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://example.org/questionnaires" ];
+       fhir:Coding.code [ fhir:value "zika-virus-exposure-assessment" ]
+     ]
+  ];
+  fhir:ActivityDefinition.timingTiming [
+     fhir:Timing.event [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-expression" ];
+         fhir:Extension.valueExpression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Now()" ]
+         ]
+       ]
+     ]
+  ];
+  fhir:ActivityDefinition.participant [
+     fhir:index 0;
+     fhir:ActivityDefinition.participant.type [ fhir:value "practitioner" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ActivityDefinition/administer-zika-virus-exposure-assessment.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ActivityDefinition/administer-zika-virus-exposure-assessment.ttl> .
+
+# -------------------------------------------------------------------------------------
+

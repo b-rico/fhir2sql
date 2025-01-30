@@ -1,0 +1,142 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Bundle/dg2> a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "dg2"];
+  fhir:Bundle.type [ fhir:value "collection"];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/DiagnosticReport/dg2" ];
+     fhir:Bundle.entry.resource <https://example.com/base/DiagnosticReport/dg2>
+  ], [
+     fhir:index 1;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/FamilyMemberHistory/f1-genetics" ];
+     fhir:Bundle.entry.resource <https://example.com/base/FamilyMemberHistory/f1-genetics>
+  ] .
+
+<https://example.com/base/DiagnosticReport/dg2> a fhir:DiagnosticReport;
+  fhir:Resource.id [ fhir:value "dg2"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n						<h3>Genetic test Report for Marry Chalmers (MRN: 12345) </h3>\n						<pre>\n              Gene                DNAVariation       Status        Interpretation\n              BRCA1                                 Negative\n              BRCA2                 185delAG        Positive         Pathogenic\n          </pre>\n						<p> Method: BRACAnalysis CDx Offered by Myriad Genetic Laboratories, Inc </p>\n						<p> Issued: 2015-05-26T15:30:10+01:00</p>\n						<p> FamilyMemeberHistory: Mother </p>\n						<pre>\n              Gene                 DNAVariation      Status\n              BRCA2                 185delAG        Positive\n          </pre>\n						<p> Method: BRACAnalysis CDx Offered by Myriad Genetic Laboratories, Inc </p>\n					</div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/DiagnosticReport-geneticsFamilyMemberHistory" ];
+     fhir:Extension.valueReference [
+       fhir:link <http://hl7.org/fhir/FamilyMemberHistory/f1-genetics>;
+       fhir:Reference.reference [ fhir:value "FamilyMemberHistory/f1-genetics" ]
+     ]
+  ];
+  fhir:DiagnosticReport.status [ fhir:value "final"];
+  fhir:DiagnosticReport.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:15220000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "15220000" ];
+       fhir:Coding.display [ fhir:value "Laboratory test" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0074" ];
+       fhir:Coding.code [ fhir:value "LAB" ]
+     ]
+  ];
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:55233-1;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "55233-1" ];
+       fhir:Coding.display [ fhir:value "Genetic analysis master panel" ]
+     ]
+  ];
+  fhir:DiagnosticReport.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers(MRN: 12345)" ]
+  ];
+  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "2015-05-26T15:30:10+01:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.issued [ fhir:value "2014-05-16T10:28:00+01:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/genetics-example2>;
+     fhir:Reference.reference [ fhir:value "Practitioner/genetics-example2" ];
+     fhir:Reference.display [ fhir:value "Molecular Diagnostic Laboratory" ]
+  ];
+  fhir:DiagnosticReport.specimen [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Specimen/genetics-example2>;
+     fhir:Reference.reference [ fhir:value "Specimen/genetics-example2" ];
+     fhir:Reference.display [ fhir:value "Molecular Specimen ID: MLD45-Z4-1234" ]
+  ];
+  fhir:DiagnosticReport.result [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Observation/ob-genetics-3-1>;
+     fhir:Reference.reference [ fhir:value "Observation/ob-genetics-3-1" ];
+     fhir:Reference.display [ fhir:value "Genetic analysis for BRAC -1" ]
+  ], [
+     fhir:index 1;
+     fhir:link <http://hl7.org/fhir/Observation/ob-genetics-3-2>;
+     fhir:Reference.reference [ fhir:value "Observation/ob-genetics-3-2" ];
+     fhir:Reference.display [ fhir:value "Genetic analysis for BRAC -2" ]
+  ] .
+
+<http://hl7.org/fhir/FamilyMemberHistory/f1-genetics> a fhir:FamilyMemberHistory .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/genetics-example2> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Specimen/genetics-example2> a fhir:Specimen .
+
+<http://hl7.org/fhir/Observation/ob-genetics-3-1> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/ob-genetics-3-2> a fhir:Observation .
+
+<https://example.com/base/FamilyMemberHistory/f1-genetics> a fhir:FamilyMemberHistory;
+  fhir:Resource.id [ fhir:value "f1-genetics"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: f1-genetics</p><p><b>status</b>: completed</p><p><b>patient</b>: <a>Patient/example</a></p><p><b>relationship</b>: Mother <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'MTH' = 'mother', given as 'Mother'})</span></p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/family-member-history-genetics-observation" ];
+     fhir:Extension.valueReference [
+       fhir:link <http://hl7.org/fhir/Observation/dgf1>;
+       fhir:Reference.reference [ fhir:value "Observation/dgf1" ]
+     ]
+  ];
+  fhir:FamilyMemberHistory.status [ fhir:value "completed"];
+  fhir:FamilyMemberHistory.patient [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:FamilyMemberHistory.relationship [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+       fhir:Coding.code [ fhir:value "MTH" ];
+       fhir:Coding.display [ fhir:value "Mother" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Observation/dgf1> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Bundle/dg2.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Bundle/dg2.ttl> .
+
+# -------------------------------------------------------------------------------------
+

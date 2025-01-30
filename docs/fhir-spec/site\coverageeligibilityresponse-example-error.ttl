@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CoverageEligibilityResponse/E2503> a fhir:CoverageEligibilityResponse;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "E2503"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the CoverageEligibilityResponse.</div>"
+  ];
+  fhir:CoverageEligibilityResponse.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.BenefitsInc.com/fhir/coverageeligibilityresponse" ];
+     fhir:Identifier.value [ fhir:value "8812343" ]
+  ];
+  fhir:CoverageEligibilityResponse.status [ fhir:value "active"];
+  fhir:CoverageEligibilityResponse.purpose [
+     fhir:value "validation";
+     fhir:index 0
+  ];
+  fhir:CoverageEligibilityResponse.patient [
+     fhir:link <http://hl7.org/fhir/Patient/f201>;
+     fhir:Reference.reference [ fhir:value "Patient/f201" ]
+  ];
+  fhir:CoverageEligibilityResponse.created [ fhir:value "2014-09-16"^^xsd:date];
+  fhir:CoverageEligibilityResponse.requestor [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://national.org/clinic" ];
+       fhir:Identifier.value [ fhir:value "OR1234" ]
+     ]
+  ];
+  fhir:CoverageEligibilityResponse.request [
+     fhir:link <http://www.BenefitsInc.com/fhir/coverageeligibilityresponse/225476332406>;
+     fhir:Reference.reference [ fhir:value "http://www.BenefitsInc.com/fhir/coverageeligibilityresponse/225476332406" ]
+  ];
+  fhir:CoverageEligibilityResponse.outcome [ fhir:value "error"];
+  fhir:CoverageEligibilityResponse.disposition [ fhir:value "Eligibiliy request could not be processed, please address errors before submitting."];
+  fhir:CoverageEligibilityResponse.insurer [
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:CoverageEligibilityResponse.form [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://national.org/form" ];
+       fhir:Coding.code [ fhir:value "ELRSP/2017/01" ]
+     ]
+  ];
+  fhir:CoverageEligibilityResponse.error [
+     fhir:index 0;
+     fhir:CoverageEligibilityResponse.error.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/adjudication-error" ];
+         fhir:Coding.code [ fhir:value "a001" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f201> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CoverageEligibilityResponse/E2503.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CoverageEligibilityResponse/E2503.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Consent" status="changed">
+      <element new-max="*" old-max="1" path="Consent.identifier"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Consent.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/consent-state-codes"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Consent.scope" status="new"/>
+      <element binding-status="added"
+               new-min="1"
+               old-min="0"
+               path="Consent.category">
+         <new-binding reference="http://hl7.org/fhir/ValueSet/consent-category"
+                      strength="extensible"/>
+      </element>
+      <element new-min="0" old-min="1" path="Consent.patient"/>
+      <element path="Consent.performer" status="new"/>
+      <element path="Consent.source[x]">
+         <removed-type name="Identifier"/>
+      </element>
+      <element binding-status="added" path="Consent.policyRule">
+         <removed-type name="uri"/>
+         <added-type name="CodeableConcept"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/consent-policy"
+                      strength="extensible"/>
+      </element>
+      <element path="Consent.verification" status="new"/>
+      <element path="Consent.verification.verified" status="new"/>
+      <element path="Consent.verification.verifiedWith" status="new"/>
+      <element path="Consent.verification.verificationDate" status="new"/>
+      <element path="Consent.provision" status="new"/>
+      <element path="Consent.provision.type" status="new"/>
+      <element path="Consent.provision.period" status="new"/>
+      <element path="Consent.provision.actor" status="new"/>
+      <element path="Consent.provision.actor.role" status="new"/>
+      <element path="Consent.provision.actor.reference" status="new"/>
+      <element path="Consent.provision.action" status="new"/>
+      <element path="Consent.provision.securityLabel" status="new"/>
+      <element path="Consent.provision.purpose" status="new"/>
+      <element path="Consent.provision.class" status="new"/>
+      <element path="Consent.provision.code" status="new"/>
+      <element path="Consent.provision.dataPeriod" status="new"/>
+      <element path="Consent.provision.data" status="new"/>
+      <element path="Consent.provision.data.meaning" status="new"/>
+      <element path="Consent.provision.data.reference" status="new"/>
+      <element path="Consent.provision.provision" status="new"/>
+      <element path="Consent.period" status="deleted"/>
+      <element path="Consent.consentingParty" status="deleted"/>
+      <element path="Consent.actor" status="deleted"/>
+      <element path="Consent.action" status="deleted"/>
+      <element path="Consent.securityLabel" status="deleted"/>
+      <element path="Consent.purpose" status="deleted"/>
+      <element path="Consent.dataPeriod" status="deleted"/>
+      <element path="Consent.data" status="deleted"/>
+      <element path="Consent.except" status="deleted"/>
+   </type>
+</difference>

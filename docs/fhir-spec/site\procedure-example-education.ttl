@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/education> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "education"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Health education - breast examination for early detection of breast mass</div>"
+  ];
+  fhir:Procedure.basedOn [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ServiceRequest/education>;
+     fhir:Reference.reference [ fhir:value "ServiceRequest/education" ];
+     fhir:Reference.display [ fhir:value "Order for health education" ]
+  ];
+  fhir:Procedure.status [ fhir:value "completed"];
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:311401005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "311401005" ];
+       fhir:Coding.display [ fhir:value "Patient education (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Education" ]
+  ];
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:48023004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "48023004" ];
+       fhir:Coding.display [ fhir:value "Breast self-examination technique education (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Health education - breast examination" ]
+  ];
+  fhir:Procedure.subject [
+     fhir:Reference.display [ fhir:value "Jane Doe" ]
+  ];
+  fhir:Procedure.performedDateTime [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:Reference.display [ fhir:value "Pamela Educator, RN" ]
+     ]
+  ];
+  fhir:Procedure.location [
+     fhir:Reference.display [ fhir:value "Southside Community Health Center" ]
+  ];
+  fhir:Procedure.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "early detection of breast mass" ]
+  ] .
+
+<http://hl7.org/fhir/ServiceRequest/education> a fhir:ServiceRequest .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/education.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Procedure/education.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="DeviceRequest" status="changed">
+      <element path="DeviceRequest.instantiatesCanonical" status="new"/>
+      <element path="DeviceRequest.instantiatesUri" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="DeviceRequest.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/request-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/request-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="DeviceRequest.intent">
+         <removed-type name="CodeableConcept"/>
+         <added-type name="code"/>
+         <old-binding reference="http://build.fhir.org/valueset-request-intent.html"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/request-intent|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               default="removed"
+               old-default="&#34;If missing, normal priority&#34;"
+               path="DeviceRequest.priority">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/request-priority"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="DeviceRequest.parameter" status="new"/>
+      <element path="DeviceRequest.parameter.code" status="new"/>
+      <element path="DeviceRequest.parameter.value[x]" status="new"/>
+      <element path="DeviceRequest.encounter" status="new"/>
+      <element path="DeviceRequest.requester">
+         <removed-type name="BackboneElement"/>
+         <added-type name="Reference(Device | Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element path="DeviceRequest.performer">
+         <removed-type name="Reference(Practitioner | Organization | Patient | Device | RelatedPerson | HealthcareService)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | CareTeam | HealthcareService | Patient | Device | RelatedPerson)"/>
+      </element>
+      <element path="DeviceRequest.reasonReference">
+         <removed-type name="Reference(Resource)"/>
+         <added-type name="Reference(Condition | Observation | DiagnosticReport | DocumentReference)"/>
+      </element>
+      <element path="DeviceRequest.insurance" status="new"/>
+      <element path="DeviceRequest.definition" status="deleted"/>
+      <element path="DeviceRequest.context" status="deleted"/>
+      <element path="DeviceRequest.requester.agent" status="deleted"/>
+      <element path="DeviceRequest.requester.onBehalfOf" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Goal/stop-smoking> a fhir:Goal;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "stop-smoking"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<p> A simple care goal for a patient to stop smoking.</p>\n		</div>"
+  ];
+  fhir:Goal.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "123" ]
+  ];
+  fhir:Goal.lifecycleStatus [ fhir:value "completed"];
+  fhir:Goal.achievementStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/goal-achievement" ];
+       fhir:Coding.code [ fhir:value "achieved" ];
+       fhir:Coding.display [ fhir:value "Achieved" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Achieved" ]
+  ];
+  fhir:Goal.description [
+     fhir:CodeableConcept.text [ fhir:value "Stop smoking" ]
+  ];
+  fhir:Goal.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:Goal.startDate [ fhir:value "2015-04-05"^^xsd:date];
+  fhir:Goal.outcomeCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:8517006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "8517006" ];
+       fhir:Coding.display [ fhir:value "Ex-smoker (finding)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Former smoker" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Goal/stop-smoking.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Goal/stop-smoking.ttl> .
+
+# -------------------------------------------------------------------------------------
+

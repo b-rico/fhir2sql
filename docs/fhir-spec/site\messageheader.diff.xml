@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="MessageHeader" status="changed">
+      <element old-name="event" path="MessageHeader.event[x]">
+         <added-type name="uri"/>
+      </element>
+      <element path="MessageHeader.destination.endpoint">
+         <removed-type name="uri"/>
+         <added-type name="url"/>
+      </element>
+      <element path="MessageHeader.destination.receiver">
+         <removed-type name="Reference(Practitioner | Organization)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element path="MessageHeader.sender">
+         <removed-type name="Reference(Practitioner | Organization)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element path="MessageHeader.enterer">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element path="MessageHeader.author">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element path="MessageHeader.source.endpoint">
+         <removed-type name="uri"/>
+         <added-type name="url"/>
+      </element>
+      <element path="MessageHeader.responsible">
+         <removed-type name="Reference(Practitioner | Organization)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MessageHeader.response.code">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/response-code"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/response-code|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="MessageHeader.definition" status="new"/>
+      <element path="MessageHeader.timestamp" status="deleted"/>
+   </type>
+</difference>

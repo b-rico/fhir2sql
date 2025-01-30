@@ -1,0 +1,36 @@
+﻿{
+  "types": [
+    "EnrollmentRequest"
+  ],
+  "EnrollmentRequest": {
+    "elements": {
+      "EnrollmentRequest.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/fm-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/fm-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "EnrollmentRequest.provider": {
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Organization)"
+        ]
+      },
+      "EnrollmentRequest.candidate": {
+        "old-name": "subject"
+      },
+      "EnrollmentRequest.organization": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

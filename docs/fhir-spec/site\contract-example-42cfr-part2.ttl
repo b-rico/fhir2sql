@@ -1,0 +1,183 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Contract/C-2121> a fhir:Contract;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "C-2121"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2016-07-19T18:18:42.108-04:00"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: C-2121</p><p><b>meta</b>: </p><p><b>status</b>: executed</p><p><b>contentDerivative</b>: Content Registration <span>(Details : {http://terminology.hl7.org/CodeSystem/contract-content-derivative code 'registration' = 'Content Registration)</span></p><p><b>issued</b>: 01/11/2013 9:18:27 PM</p><p><b>applies</b>: 01/11/2013 9:18:27 PM --&gt; (ongoing)</p><p><b>subject</b>: <a>Patient/f201</a></p><p><b>type</b>: Opt-in consent directive <span>(Details : {http://mdhhs.org/fhir/consentdirective-type code 'OPTIN' = 'OPTIN)</span></p><p><b>subType</b>: Health Care Directive <span>(Details : {http://terminology.hl7.org/CodeSystem/consentcategorycodes code 'hcd' = 'Health Care Directive)</span></p><blockquote><p><b>term</b></p><h3>Offers</h3><table><tr><td>-</td><td><b>Type</b></td><td><b>Decision</b></td><td><b>Text</b></td></tr><tr><td>*</td><td>Statutory <span>(Details : {http://terminology.hl7.org/CodeSystem/contracttermtypecodes code 'statutory' = 'Statutory)</span></td><td>opt-in <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ActCode code 'OPTIN' = 'opt-in)</span></td><td>Can't refuse</td></tr></table><h3>Assets</h3><table><tr><td>-</td><td><b>Period</b></td></tr><tr><td>*</td><td>01/11/2013 9:18:27 PM --&gt; 01/11/2019 9:18:27 PM</td></tr></table><blockquote><p><b>action</b></p><p><b>type</b>: Action A <span>(Details : {http://terminology.hl7.org/CodeSystem/contractaction code 'action-a' = 'Action A)</span></p><blockquote><p><b>subject</b></p><p><b>reference</b>: <a>VA Ann Arbor Healthcare System</a></p><p><b>role</b>: Recipient of restricted health information <span>(Details : {http://mdhhs.org/fhir/consent-actor-type code 'IR' = 'IR', given as 'Recipient'})</span></p></blockquote><blockquote><p><b>subject</b></p><p><b>reference</b>: <a>Community Mental Health Clinic</a></p><p><b>role</b>: Sender of restricted health information <span>(Details : {http://mdhhs.org/fhir/consent-actor-type code 'IS' = 'IS', given as 'Sender'})</span></p></blockquote><p><b>intent</b>: health program reporting <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ActReason code 'HPRGRP' = 'health program reporting)</span></p><p><b>status</b>: Sample <span>(Details )</span></p></blockquote></blockquote><h3>Signers</h3><table><tr><td>-</td><td><b>Type</b></td><td><b>Party</b></td><td><b>Signature</b></td></tr><tr><td>*</td><td>SELF (Details: http://mdhhs.org/fhir/consent-signer-type code SELF = 'SELF', stated as 'null')</td><td><a>Alice Recruit</a></td><td/></tr></table><h3>Legals</h3><table><tr><td>-</td><td><b>Content[x]</b></td></tr><tr><td>*</td><td/></tr></table></div>"
+  ];
+  fhir:Contract.status [ fhir:value "executed"];
+  fhir:Contract.contentDerivative [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/contract-content-derivative" ];
+       fhir:Coding.code [ fhir:value "registration" ]
+     ]
+  ];
+  fhir:Contract.issued [ fhir:value "2013-11-01T21:18:27-04:00"^^xsd:dateTime];
+  fhir:Contract.applies [
+     fhir:Period.start [ fhir:value "2013-11-01T21:18:27-04:00"^^xsd:dateTime ]
+  ];
+  fhir:Contract.subject [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Patient/f201>;
+     fhir:Reference.reference [ fhir:value "Patient/f201" ]
+  ];
+  fhir:Contract.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://mdhhs.org/fhir/consentdirective-type" ];
+       fhir:Coding.code [ fhir:value "OPTIN" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Opt-in consent directive" ]
+  ];
+  fhir:Contract.subType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentcategorycodes" ];
+       fhir:Coding.code [ fhir:value "hcd" ]
+     ]
+  ];
+  fhir:Contract.term [
+     fhir:index 0;
+     fhir:Contract.term.offer [
+       fhir:Contract.term.offer.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/contracttermtypecodes" ];
+           fhir:Coding.code [ fhir:value "statutory" ]
+         ]
+       ];
+       fhir:Contract.term.offer.decision [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+           fhir:Coding.code [ fhir:value "OPTIN" ]
+         ]
+       ];
+       fhir:Contract.term.offer.text [ fhir:value "Can't refuse" ]
+     ];
+     fhir:Contract.term.asset [
+       fhir:index 0;
+       fhir:Contract.term.asset.period [
+         fhir:index 0;
+         fhir:Period.start [ fhir:value "2013-11-01T21:18:27-04:00"^^xsd:dateTime ];
+         fhir:Period.end [ fhir:value "2019-11-01T21:18:27-04:00"^^xsd:dateTime ]
+       ]
+     ];
+     fhir:Contract.term.action [
+       fhir:index 0;
+       fhir:Contract.term.action.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/contractaction" ];
+           fhir:Coding.code [ fhir:value "action-a" ]
+         ]
+       ];
+       fhir:Contract.term.action.subject [
+         fhir:index 0;
+         fhir:Contract.term.action.subject.reference [
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/Organization/f001>;
+           fhir:Reference.reference [ fhir:value "Organization/f001" ];
+           fhir:Reference.display [ fhir:value "VA Ann Arbor Healthcare System" ]
+         ];
+         fhir:Contract.term.action.subject.role [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://mdhhs.org/fhir/consent-actor-type" ];
+             fhir:Coding.code [ fhir:value "IR" ];
+             fhir:Coding.display [ fhir:value "Recipient" ]
+           ];
+           fhir:CodeableConcept.text [ fhir:value "Recipient of restricted health information" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Contract.term.action.subject.reference [
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/Organization/2>;
+           fhir:Reference.reference [ fhir:value "Organization/2" ];
+           fhir:Reference.display [ fhir:value "Community Mental Health Clinic" ]
+         ];
+         fhir:Contract.term.action.subject.role [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://mdhhs.org/fhir/consent-actor-type" ];
+             fhir:Coding.code [ fhir:value "IS" ];
+             fhir:Coding.display [ fhir:value "Sender" ]
+           ];
+           fhir:CodeableConcept.text [ fhir:value "Sender of restricted health information" ]
+         ]
+       ];
+       fhir:Contract.term.action.intent [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ];
+           fhir:Coding.code [ fhir:value "HPRGRP" ]
+         ]
+       ];
+       fhir:Contract.term.action.status [
+         fhir:CodeableConcept.text [ fhir:value "Sample" ]
+       ]
+     ]
+  ];
+  fhir:Contract.signer [
+     fhir:index 0;
+     fhir:Contract.signer.type [
+       fhir:Coding.system [ fhir:value "http://mdhhs.org/fhir/consent-signer-type" ];
+       fhir:Coding.code [ fhir:value "SELF" ]
+     ];
+     fhir:Contract.signer.party [
+       fhir:link <http://hl7.org/fhir/Patient/f201>;
+       fhir:Reference.reference [ fhir:value "Patient/f201" ];
+       fhir:Reference.display [ fhir:value "Alice Recruit" ]
+     ];
+     fhir:Contract.signer.signature [
+       fhir:index 0;
+       fhir:Signature.type [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "urn:iso-astm:E1762-95:2013" ];
+         fhir:Coding.code [ fhir:value "1.2.840.10065.1.12.1.1" ]
+       ];
+       fhir:Signature.when [ fhir:value "2017-02-08T10:57:34+01:00"^^xsd:dateTime ];
+       fhir:Signature.who [
+         fhir:link <http://hl7.org/fhir/Patient/f201>;
+         fhir:Reference.reference [ fhir:value "Patient/f201" ]
+       ]
+     ]
+  ];
+  fhir:Contract.legal [
+     fhir:index 0;
+     fhir:Contract.legal.contentAttachment [
+       fhir:Attachment.contentType [ fhir:value "application/pdf" ];
+       fhir:Attachment.language [ fhir:value "en-US" ];
+       fhir:Attachment.url [ fhir:value "http://org.mihin.ecms/ConsentDirective-2121" ];
+       fhir:Attachment.title [ fhir:value "MDHHS-5515 Consent To Share Your Health Information" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f201> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/f001> a fhir:Organization .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Contract/C-2121.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Contract/C-2121.ttl> .
+
+# -------------------------------------------------------------------------------------
+

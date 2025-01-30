@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="MedicationRequest" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               new-min="1"
+               old-min="0"
+               path="MedicationRequest.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/medication-request-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/medicationrequest-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="MedicationRequest.statusReason" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MedicationRequest.intent">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/medication-request-intent"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/medicationrequest-intent|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-max="*" old-max="1" path="MedicationRequest.category"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MedicationRequest.priority">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/medication-request-priority"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="MedicationRequest.doNotPerform" status="new"/>
+      <element path="MedicationRequest.reported[x]" status="new"/>
+      <element path="MedicationRequest.encounter" status="new"/>
+      <element path="MedicationRequest.requester">
+         <removed-type name="BackboneElement"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device)"/>
+      </element>
+      <element path="MedicationRequest.performer" status="new"/>
+      <element path="MedicationRequest.performerType" status="new"/>
+      <element path="MedicationRequest.recorder">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element path="MedicationRequest.instantiatesCanonical" status="new"/>
+      <element path="MedicationRequest.instantiatesUri" status="new"/>
+      <element path="MedicationRequest.basedOn">
+         <removed-type name="Reference(CarePlan | MedicationRequest | ProcedureRequest | ReferralRequest)"/>
+         <added-type name="Reference(CarePlan | MedicationRequest | ServiceRequest | ImmunizationRecommendation)"/>
+      </element>
+      <element path="MedicationRequest.courseOfTherapyType" status="new"/>
+      <element path="MedicationRequest.insurance" status="new"/>
+      <element path="MedicationRequest.dispenseRequest.initialFill" status="new"/>
+      <element path="MedicationRequest.dispenseRequest.initialFill.quantity"
+               status="new"/>
+      <element path="MedicationRequest.dispenseRequest.initialFill.duration"
+               status="new"/>
+      <element path="MedicationRequest.dispenseRequest.dispenseInterval" status="new"/>
+      <element path="MedicationRequest.dispenseRequest.numberOfRepeatsAllowed">
+         <removed-type name="positiveInt"/>
+         <added-type name="unsignedInt"/>
+      </element>
+      <element modifier="removed"
+               old-name="allowed"
+               path="MedicationRequest.substitution.allowed[x]">
+         <added-type name="CodeableConcept"/>
+      </element>
+      <element path="MedicationRequest.definition" status="deleted"/>
+      <element path="MedicationRequest.context" status="deleted"/>
+      <element path="MedicationRequest.requester.agent" status="deleted"/>
+      <element path="MedicationRequest.requester.onBehalfOf" status="deleted"/>
+   </type>
+</difference>

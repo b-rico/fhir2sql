@@ -1,0 +1,135 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Consent/consent-example-signature> a fhir:Consent;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "consent-example-signature"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: consent-example-signature</p><p><b>identifier</b>: 494e0c7a-a69e-4fb4-9d02-6aae747790d7</p><p><b>status</b>: active</p><p><b>scope</b>: Privacy Consent <span>(Details : {http://terminology.hl7.org/CodeSystem/consentscope code 'patient-privacy' = 'Privacy Consent)</span></p><p><b>category</b>: Notice of Privacy Practices <span>(Details : {http://terminology.hl7.org/CodeSystem/consentcategorycodes code 'npp' = 'Notice of Privacy Practices)</span></p><p><b>patient</b>: <a>Patient/72</a></p><p><b>dateTime</b>: 26/05/2016 12:41:10 AM</p><p><b>performer</b>: <a>Patient/72</a></p><p><b>organization</b>: <a>Organization/f001</a></p><p><b>policyRule</b>: opt-in <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ActCode code 'OPTIN' = 'opt-in)</span></p><blockquote><p><b>provision</b></p><p><b>period</b>: 10/10/2015 --&gt; 10/10/2016</p><h3>Actors</h3><table><tr><td>-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td>*</td><td>primary information recipient <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-ParticipationType code 'PRCP' = 'primary information recipient)</span></td><td><a>Practitioner/13</a></td></tr></table><h3>Provisions</h3><table><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote></div>"
+  ];
+  fhir:Consent.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.72.5.9.1" ];
+     fhir:Identifier.value [ fhir:value "494e0c7a-a69e-4fb4-9d02-6aae747790d7" ]
+  ];
+  fhir:Consent.status [ fhir:value "active"];
+  fhir:Consent.scope [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentscope" ];
+       fhir:Coding.code [ fhir:value "patient-privacy" ]
+     ]
+  ];
+  fhir:Consent.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentcategorycodes" ];
+       fhir:Coding.code [ fhir:value "npp" ]
+     ]
+  ];
+  fhir:Consent.patient [
+     fhir:link <http://hl7.org/fhir/Patient/72>;
+     fhir:Reference.reference [ fhir:value "Patient/72" ]
+  ];
+  fhir:Consent.dateTime [ fhir:value "2016-05-26T00:41:10-04:00"^^xsd:dateTime];
+  fhir:Consent.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Patient/72>;
+     fhir:Reference.reference [ fhir:value "Patient/72" ]
+  ];
+  fhir:Consent.organization [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/f001>;
+     fhir:Reference.reference [ fhir:value "Organization/f001" ]
+  ];
+  fhir:Consent.policyRule [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "OPTIN" ]
+     ]
+  ];
+  fhir:Consent.provision [
+     fhir:Consent.provision.period [
+       fhir:Period.start [ fhir:value "2015-10-10"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2016-10-10"^^xsd:date ]
+     ];
+     fhir:Consent.provision.actor [
+       fhir:index 0;
+       fhir:Consent.provision.actor.role [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+           fhir:Coding.code [ fhir:value "PRCP" ]
+         ]
+       ];
+       fhir:Consent.provision.actor.reference [
+         fhir:link <http://hl7.org/fhir/Practitioner/13>;
+         fhir:Reference.reference [ fhir:value "Practitioner/13" ]
+       ]
+     ];
+     fhir:Consent.provision.provision [
+       fhir:index 0;
+       fhir:Consent.provision.type [ fhir:value "permit" ];
+       fhir:Consent.provision.actor [
+         fhir:index 0;
+         fhir:Consent.provision.actor.role [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+             fhir:Coding.code [ fhir:value "AUT" ]
+           ]
+         ];
+         fhir:Consent.provision.actor.reference [
+           fhir:link <http://hl7.org/fhir/Practitioner/xcda-author>;
+           fhir:Reference.reference [ fhir:value "Practitioner/xcda-author" ]
+         ]
+       ];
+       fhir:Consent.provision.class [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "urn:ietf:bcp:13" ];
+         fhir:Coding.code [ fhir:value "application/hl7-cda+xml" ]
+       ];
+       fhir:Consent.provision.code [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a loinc:34133-9;
+           fhir:Coding.system [ fhir:value "http://loinc.org" ];
+           fhir:Coding.code [ fhir:value "34133-9" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a loinc:18842-5;
+           fhir:Coding.system [ fhir:value "http://loinc.org" ];
+           fhir:Coding.code [ fhir:value "18842-5" ]
+         ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/72> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/f001> a fhir:Organization .
+
+<http://hl7.org/fhir/Practitioner/13> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Practitioner/xcda-author> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Consent/consent-example-signature.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Consent/consent-example-signature.ttl> .
+
+# -------------------------------------------------------------------------------------
+

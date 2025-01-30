@@ -1,0 +1,126 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type EnrollmentRequest {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  created: dateTime  _created: ElementBase
+  insurer: Reference
+  provider: Reference
+  candidate: Reference
+  coverage: Reference
+}
+
+input EnrollmentRequest {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  created: dateTime  _created: ElementBase
+  insurer: Reference
+  provider: Reference
+  candidate: Reference
+  coverage: Reference
+}
+
+type EnrollmentRequestReadType {
+  EnrollmentRequest(id : ID!) : EnrollmentRequest
+}
+
+type EnrollmentRequestListType {
+  EnrollmentRequestList(_filter : String
+    identifier : [token]
+    patient : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [EnrollmentRequest]
+}
+
+type EnrollmentRequestConnectionType {
+  EnrollmentRequestConection(_filter : String
+    identifier : [token]
+    patient : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : EnrollmentRequestConnection
+}
+
+type EnrollmentRequestConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [EnrollmentRequestEdge]
+}
+
+type EnrollmentRequestEdge {
+  mode : String
+  score : Float
+  resource : EnrollmentRequest
+}
+
+type EnrollmentRequestCreateType {
+  EnrollmentRequestCreate(resource : EnrollmentRequest) : EnrollmentRequestCreation
+}
+
+type EnrollmentRequestCreation {
+  location : String
+  resource : EnrollmentRequest
+  information : OperationOutcome
+}
+
+type EnrollmentRequestUpdateType {
+  EnrollmentRequestUpdate(id : IDresource : EnrollmentRequest) : EnrollmentRequestUpdate
+}
+
+type EnrollmentRequestUpdate {
+  resource : EnrollmentRequest
+  information : OperationOutcome
+}
+
+type EnrollmentRequestDeleteType {
+  EnrollmentRequestDelete(id : ID) : EnrollmentRequestDelete
+}
+
+type EnrollmentRequestDelete {
+  information : OperationOutcome
+}
+

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Measure" status="changed">
+      <element path="Measure.subtitle" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Measure.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/publication-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/publication-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element modifier="removed" path="Measure.experimental"/>
+      <element path="Measure.subject[x]" status="new"/>
+      <element path="Measure.author" status="new"/>
+      <element path="Measure.editor" status="new"/>
+      <element path="Measure.reviewer" status="new"/>
+      <element path="Measure.endorser" status="new"/>
+      <element path="Measure.library">
+         <removed-type name="Reference(Library)"/>
+         <added-type name="canonical(Library)"/>
+      </element>
+      <element binding-status="added" path="Measure.improvementNotation">
+         <removed-type name="string"/>
+         <added-type name="CodeableConcept"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/measure-improvement-notation|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Measure.group.code" status="new"/>
+      <element path="Measure.group.population.criteria">
+         <removed-type name="string"/>
+         <added-type name="Expression"/>
+      </element>
+      <element path="Measure.group.stratifier.code" status="new"/>
+      <element path="Measure.group.stratifier.description" status="new"/>
+      <element path="Measure.group.stratifier.criteria">
+         <removed-type name="string"/>
+         <added-type name="Expression"/>
+      </element>
+      <element path="Measure.group.stratifier.component" status="new"/>
+      <element path="Measure.group.stratifier.component.code" status="new"/>
+      <element path="Measure.group.stratifier.component.description" status="new"/>
+      <element path="Measure.group.stratifier.component.criteria" status="new"/>
+      <element path="Measure.supplementalData.code" status="new"/>
+      <element path="Measure.supplementalData.description" status="new"/>
+      <element new-min="1" old-min="0" path="Measure.supplementalData.criteria">
+         <removed-type name="string"/>
+         <added-type name="Expression"/>
+      </element>
+      <element path="Measure.contributor" status="deleted"/>
+      <element path="Measure.set" status="deleted"/>
+      <element path="Measure.group.identifier" status="deleted"/>
+      <element path="Measure.group.name" status="deleted"/>
+      <element path="Measure.group.population.identifier" status="deleted"/>
+      <element path="Measure.group.population.name" status="deleted"/>
+      <element path="Measure.group.stratifier.identifier" status="deleted"/>
+      <element path="Measure.group.stratifier.path" status="deleted"/>
+      <element path="Measure.supplementalData.identifier" status="deleted"/>
+      <element path="Measure.supplementalData.path" status="deleted"/>
+   </type>
+</difference>

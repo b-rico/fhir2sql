@@ -1,0 +1,166 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type CareTeam {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  category: [CodeableConcept]
+  name: String  _name: ElementBase
+  subject: Reference
+  encounter: Reference
+  period: Period
+  participant: [CareTeamParticipant]
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  managingOrganization: [Reference]
+  telecom: [ContactPoint]
+  note: [Annotation]
+}
+
+type CareTeamParticipant {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  role: [CodeableConcept]
+  member: Reference
+  onBehalfOf: Reference
+  period: Period
+}
+
+input CareTeam {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  category: [CodeableConcept]
+  name: String  _name: ElementBase
+  subject: Reference
+  encounter: Reference
+  period: Period
+  participant: [CareTeamParticipant]
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  managingOrganization: [Reference]
+  telecom: [ContactPoint]
+  note: [Annotation]
+}
+
+input CareTeamParticipant {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  role: [CodeableConcept]
+  member: Reference
+  onBehalfOf: Reference
+  period: Period
+}
+
+type CareTeamReadType {
+  CareTeam(id : ID!) : CareTeam
+}
+
+type CareTeamListType {
+  CareTeamList(_filter : String
+    category : [token]
+    date : [date]
+    encounter : [reference]
+    identifier : [token]
+    participant : [reference]
+    patient : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [CareTeam]
+}
+
+type CareTeamConnectionType {
+  CareTeamConection(_filter : String
+    category : [token]
+    date : [date]
+    encounter : [reference]
+    identifier : [token]
+    participant : [reference]
+    patient : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : CareTeamConnection
+}
+
+type CareTeamConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [CareTeamEdge]
+}
+
+type CareTeamEdge {
+  mode : String
+  score : Float
+  resource : CareTeam
+}
+
+type CareTeamCreateType {
+  CareTeamCreate(resource : CareTeam) : CareTeamCreation
+}
+
+type CareTeamCreation {
+  location : String
+  resource : CareTeam
+  information : OperationOutcome
+}
+
+type CareTeamUpdateType {
+  CareTeamUpdate(id : IDresource : CareTeam) : CareTeamUpdate
+}
+
+type CareTeamUpdate {
+  resource : CareTeam
+  information : OperationOutcome
+}
+
+type CareTeamDeleteType {
+  CareTeamDelete(id : ID) : CareTeamDelete
+}
+
+type CareTeamDelete {
+  information : OperationOutcome
+}
+

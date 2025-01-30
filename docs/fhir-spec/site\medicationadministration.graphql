@@ -1,0 +1,214 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicationAdministration {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiates: uri  _instantiates: [ElementBase]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  statusReason: [CodeableConcept]
+  category: CodeableConcept
+  medicationCodeableConcept: CodeableConcept
+  medicationReference: Reference
+  subject: Reference!
+  context: Reference
+  supportingInformation: [Reference]
+  effectiveDateTime: dateTime  _effectiveDateTime: ElementBase
+  effectivePeriod: Period
+  performer: [MedicationAdministrationPerformer]
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  request: Reference
+  device: [Reference]
+  note: [Annotation]
+  dosage: MedicationAdministrationDosage
+  eventHistory: [Reference]
+}
+
+type MedicationAdministrationPerformer {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  function: CodeableConcept
+  actor: Reference!
+}
+
+type MedicationAdministrationDosage {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  text: String  _text: ElementBase
+  site: CodeableConcept
+  route: CodeableConcept
+  method: CodeableConcept
+  dose: Quantity
+  rateRatio: Ratio
+  rateQuantity: Quantity
+}
+
+input MedicationAdministration {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiates: uri  _instantiates: [ElementBase]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  statusReason: [CodeableConcept]
+  category: CodeableConcept
+  medicationCodeableConcept: CodeableConcept
+  medicationReference: Reference
+  subject: Reference!
+  context: Reference
+  supportingInformation: [Reference]
+  effectiveDateTime: dateTime  _effectiveDateTime: ElementBase
+  effectivePeriod: Period
+  performer: [MedicationAdministrationPerformer]
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  request: Reference
+  device: [Reference]
+  note: [Annotation]
+  dosage: MedicationAdministrationDosage
+  eventHistory: [Reference]
+}
+
+input MedicationAdministrationPerformer {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  function: CodeableConcept
+  actor: Reference!
+}
+
+input MedicationAdministrationDosage {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  text: String  _text: ElementBase
+  site: CodeableConcept
+  route: CodeableConcept
+  method: CodeableConcept
+  dose: Quantity
+  rateRatio: Ratio
+  rateQuantity: Quantity
+}
+
+type MedicationAdministrationReadType {
+  MedicationAdministration(id : ID!) : MedicationAdministration
+}
+
+type MedicationAdministrationListType {
+  MedicationAdministrationList(_filter : String
+    code : [token]
+    context : [reference]
+    device : [reference]
+    effective_time : [date]
+    identifier : [token]
+    medication : [reference]
+    patient : [reference]
+    performer : [reference]
+    reason_given : [token]
+    reason_not_given : [token]
+    request : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicationAdministration]
+}
+
+type MedicationAdministrationConnectionType {
+  MedicationAdministrationConection(_filter : String
+    code : [token]
+    context : [reference]
+    device : [reference]
+    effective_time : [date]
+    identifier : [token]
+    medication : [reference]
+    patient : [reference]
+    performer : [reference]
+    reason_given : [token]
+    reason_not_given : [token]
+    request : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicationAdministrationConnection
+}
+
+type MedicationAdministrationConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicationAdministrationEdge]
+}
+
+type MedicationAdministrationEdge {
+  mode : String
+  score : Float
+  resource : MedicationAdministration
+}
+
+type MedicationAdministrationCreateType {
+  MedicationAdministrationCreate(resource : MedicationAdministration) : MedicationAdministrationCreation
+}
+
+type MedicationAdministrationCreation {
+  location : String
+  resource : MedicationAdministration
+  information : OperationOutcome
+}
+
+type MedicationAdministrationUpdateType {
+  MedicationAdministrationUpdate(id : IDresource : MedicationAdministration) : MedicationAdministrationUpdate
+}
+
+type MedicationAdministrationUpdate {
+  resource : MedicationAdministration
+  information : OperationOutcome
+}
+
+type MedicationAdministrationDeleteType {
+  MedicationAdministrationDelete(id : ID) : MedicationAdministrationDelete
+}
+
+type MedicationAdministrationDelete {
+  information : OperationOutcome
+}
+

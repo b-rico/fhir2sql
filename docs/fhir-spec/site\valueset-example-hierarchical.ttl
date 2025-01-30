@@ -1,0 +1,381 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ValueSet/example-hierarchical> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-hierarchical"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/shareablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablevalueset>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n     <table class=\"grid\">\n      <tr><td/><td>(Most common)</td></tr>\n      <tr><td>..login</td><td>Login Required</td></tr>\n      <tr><td>..conflict</td><td>Edit Version Conflict</td></tr>\n      <tr><td>processing</td><td>Processing Failure</td></tr>\n      <tr><td>..duplicate</td><td>Duplicate</td></tr>\n      <tr><td>..not-found</td><td>Not Found</td></tr>\n      <tr><td>invalid</td><td>Invalid Content</td></tr>\n      <tr><td>..structure</td><td>Structural Issue</td></tr>\n      <tr><td>..required</td><td>Required element missing</td></tr>\n      <tr><td>..value</td><td>Element value invalid</td></tr>\n      <tr><td>transient</td><td>Transient Issue</td></tr>\n      <tr><td>..lock-error</td><td>Lock Error</td></tr>\n      <tr><td>..exception</td><td>Exception</td></tr>\n      <tr><td>..throttled</td><td>Throttled</td></tr>\n      <tr><td>security</td><td>Security Problem</td></tr>\n      <tr><td>..login</td><td>Login Required</td></tr>\n      <tr><td>..unknown</td><td>Unknown User</td></tr>\n     </table>\n		</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:CodeSystem;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "hacked" ];
+     fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/hacked" ];
+     fhir:CodeSystem.status [ fhir:value "draft" ];
+     fhir:CodeSystem.description [ fhir:value "Issue type in an error message - hack from real FHIR List" ];
+     fhir:CodeSystem.content [ fhir:value "complete" ];
+     fhir:CodeSystem.property [
+       fhir:index 0;
+       fhir:CodeSystem.property.code [ fhir:value "notSelectable" ];
+       fhir:CodeSystem.property.uri [ fhir:value "http://hl7.org/fhir/concept-properties#notSelectable" ];
+       fhir:CodeSystem.property.type [ fhir:value "boolean" ]
+     ];
+     fhir:CodeSystem.concept [
+       fhir:index 0;
+       fhir:CodeSystem.concept.code [ fhir:value "invalid" ];
+       fhir:CodeSystem.concept.display [ fhir:value "Invalid Content" ];
+       fhir:CodeSystem.concept.property [
+         fhir:index 0;
+         fhir:CodeSystem.concept.property.code [ fhir:value "notSelectable" ];
+         fhir:CodeSystem.concept.property.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+       ];
+       fhir:CodeSystem.concept.concept [
+         fhir:index 0;
+         fhir:CodeSystem.concept.code [ fhir:value "structure" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Structural Issue" ]
+       ], [
+         fhir:index 1;
+         fhir:CodeSystem.concept.code [ fhir:value "required" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Required element missing" ]
+       ], [
+         fhir:index 2;
+         fhir:CodeSystem.concept.code [ fhir:value "value" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Element value invalid" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.code [ fhir:value "security" ];
+       fhir:CodeSystem.concept.display [ fhir:value "Security Problem" ];
+       fhir:CodeSystem.concept.property [
+         fhir:index 0;
+         fhir:CodeSystem.concept.property.code [ fhir:value "notSelectable" ];
+         fhir:CodeSystem.concept.property.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+       ];
+       fhir:CodeSystem.concept.concept [
+         fhir:index 0;
+         fhir:CodeSystem.concept.code [ fhir:value "login" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Login Required" ]
+       ], [
+         fhir:index 1;
+         fhir:CodeSystem.concept.code [ fhir:value "unknown" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Unknown User" ]
+       ], [
+         fhir:index 2;
+         fhir:CodeSystem.concept.code [ fhir:value "expired" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Session Expired" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.code [ fhir:value "processing" ];
+       fhir:CodeSystem.concept.display [ fhir:value "Processing Failure" ];
+       fhir:CodeSystem.concept.concept [
+         fhir:index 0;
+         fhir:CodeSystem.concept.code [ fhir:value "duplicate" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Duplicate" ]
+       ], [
+         fhir:index 1;
+         fhir:CodeSystem.concept.code [ fhir:value "not-found" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Not Found" ]
+       ], [
+         fhir:index 2;
+         fhir:CodeSystem.concept.code [ fhir:value "conflict" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Edit Version Conflict" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:CodeSystem.concept.code [ fhir:value "transient" ];
+       fhir:CodeSystem.concept.display [ fhir:value "Transient Issue" ];
+       fhir:CodeSystem.concept.concept [
+         fhir:index 0;
+         fhir:CodeSystem.concept.code [ fhir:value "lock-error" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Lock Error" ]
+       ], [
+         fhir:index 1;
+         fhir:CodeSystem.concept.code [ fhir:value "exception" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Exception" ]
+       ], [
+         fhir:index 2;
+         fhir:CodeSystem.concept.code [ fhir:value "throttled" ];
+         fhir:CodeSystem.concept.display [ fhir:value "Throttled" ]
+       ]
+     ]
+  ];
+  fhir:ValueSet.url [ fhir:value "http://hl7.org/fhir/ValueSet/example-hierarchical"];
+  fhir:ValueSet.version [ fhir:value "4.0.1"];
+  fhir:ValueSet.name [ fhir:value "Example Hierarchical ValueSet"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2018-07-20"^^xsd:date];
+  fhir:ValueSet.publisher [ fhir:value "FHIR Project team"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "Demonstration of extensions that build a hierarchical contains"];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-expand-rules" ];
+         fhir:Extension.valueCode [ fhir:value "groups-only" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-expand-group" ];
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "display" ];
+           fhir:Extension.valueString [ fhir:value "(Most common)" ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "login" ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "conflict" ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-expand-group" ];
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "code" ];
+           fhir:Extension.valueCode [ fhir:value "processing" ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "duplicate" ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "not-found" ]
+         ]
+       ], [
+         fhir:index 3;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-expand-group" ];
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "code" ];
+           fhir:Extension.valueCode [ fhir:value "invalid" ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "structure" ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "required" ]
+         ], [
+           fhir:index 3;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "value" ]
+         ]
+       ], [
+         fhir:index 4;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-expand-group" ];
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "code" ];
+           fhir:Extension.valueCode [ fhir:value "transient" ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "lock" ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "exception" ]
+         ], [
+           fhir:index 3;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "throttled" ]
+         ]
+       ], [
+         fhir:index 5;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-expand-group" ];
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "code" ];
+           fhir:Extension.valueCode [ fhir:value "security" ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "login" ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value "member" ];
+           fhir:Extension.valueCode [ fhir:value "unknown" ]
+         ]
+       ];
+       fhir:ValueSet.compose.include.system [ fhir:value "#hacked" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "invalid" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "structure" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "required" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "value" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "processing" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "duplicate" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "not-found" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "conflict" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "lock" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "exception" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "tbrottled" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "login" ]
+       ], [
+         fhir:index 12;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "unknown" ]
+       ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.identifier [ fhir:value "urn:uuid:42316ff8-2714-4680-9980-f37a6d1a71bc" ];
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2018-07-20T23:14:07+10:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.parameter [
+       fhir:index 0;
+       fhir:ValueSet.expansion.parameter.name [ fhir:value "excludeNotForUI" ];
+       fhir:ValueSet.expansion.parameter.valueUri [ fhir:value "false" ]
+     ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.abstract [ fhir:value "true"^^xsd:boolean ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "(Most common)" ];
+       fhir:ValueSet.expansion.contains.contains [
+         fhir:index 0;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "login" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Login Required" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "conflict" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Edit Version Conflict" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "processing" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Processing Failure" ];
+       fhir:ValueSet.expansion.contains.contains [
+         fhir:index 0;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "duplicate" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Duplicate" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "not-found" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Not Found" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+       fhir:ValueSet.expansion.contains.abstract [ fhir:value "true"^^xsd:boolean ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "invalid" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Invalid Content" ];
+       fhir:ValueSet.expansion.contains.contains [
+         fhir:index 0;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "structure" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Structural Issue" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "required" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Required element missing" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "value" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Element value invalid" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+       fhir:ValueSet.expansion.contains.abstract [ fhir:value "true"^^xsd:boolean ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "transient" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Transient Issue" ];
+       fhir:ValueSet.expansion.contains.contains [
+         fhir:index 0;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "lock-error" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Lock Error" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "exception" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Exception" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "throttled" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Throttled" ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+       fhir:ValueSet.expansion.contains.abstract [ fhir:value "true"^^xsd:boolean ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "security" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Security Problem" ];
+       fhir:ValueSet.expansion.contains.contains [
+         fhir:index 0;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "login" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Login Required" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/hacked" ];
+         fhir:ValueSet.expansion.contains.code [ fhir:value "unknown" ];
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Unknown User" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ValueSet/example-hierarchical.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ValueSet/example-hierarchical.ttl> .
+
+# -------------------------------------------------------------------------------------
+

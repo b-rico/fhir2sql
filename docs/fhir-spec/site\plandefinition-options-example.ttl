@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/options-example> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "options-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">[Put rendering here]</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:ActivityDefinition;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "activitydefinition-medicationrequest-1" ];
+     fhir:ActivityDefinition.status [ fhir:value "draft" ];
+     fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest" ];
+     fhir:ActivityDefinition.productCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Medication 1" ]
+     ]
+  ], [
+     a fhir:ActivityDefinition;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "activitydefinition-medicationrequest-2" ];
+     fhir:ActivityDefinition.status [ fhir:value "draft" ];
+     fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest" ];
+     fhir:ActivityDefinition.productCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Medication 2" ]
+     ]
+  ];
+  fhir:PlanDefinition.title [ fhir:value "This example illustrates relationships between actions."];
+  fhir:PlanDefinition.status [ fhir:value "draft"];
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.groupingBehavior [ fhir:value "logical-group" ];
+     fhir:PlanDefinition.action.selectionBehavior [ fhir:value "all" ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "medication-action-1" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Administer Medication 1" ];
+       fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#activitydefinition-medicationrequest-1" ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "medication-action-2" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Administer Medication 2" ];
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "medication-action-1" ];
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-end" ];
+         fhir:PlanDefinition.action.relatedAction.offsetDuration [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "h" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.definitionCanonical [ fhir:value "#activitydefinition-medicationrequest-2" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/options-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/PlanDefinition/options-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,135 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Task/example6> a fhir:Task;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example6"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example6</p><p><b>identifier</b>: 20170201-001 (OFFICIAL)</p><p><b>basedOn</b>: General Wellness Careplan</p><p><b>groupIdentifier</b>: G20170201-001 (OFFICIAL)</p><p><b>status</b>: completed</p><p><b>businessStatus</b>: test completed and posted <span>(Details )</span></p><p><b>intent</b>: order</p><p><b>priority</b>: routine</p><p><b>code</b>: Lipid Panel <span>(Details )</span></p><p><b>description</b>: Create order for getting specimen, Set up inhouse testing,  generate order for any sendouts and submit with specimen</p><p><b>focus</b>: <a>Lipid Panel Request</a></p><p><b>for</b>: <a>Peter James Chalmers</a></p><p><b>encounter</b>: <a>Example In-Patient Encounter</a></p><p><b>executionPeriod</b>: 31/10/2016 8:25:05 AM --&gt; 31/10/2016 6:45:05 PM</p><p><b>authoredOn</b>: 31/10/2016 8:25:05 AM</p><p><b>lastModified</b>: 31/10/2016 6:45:05 PM</p><p><b>requester</b>: <a>Dr Adam Careful</a></p><p><b>performerType</b>: Performer <span>(Details : {http://terminology.hl7.org/CodeSystem/task-performer-type code 'performer' = 'performer', given as 'Performer'})</span></p><p><b>owner</b>: <a>Clinical Laboratory @ Acme Hospital</a></p><p><b>reasonCode</b>: The Task.reason should only be included if there is no Task.focus or if it differs from the reason indicated on the focus <span>(Details )</span></p><p><b>note</b>: This is an example to demonstrate using task for actioning a servicerequest and to illustrate how to populate many of the task elements - this is the parent task that will be broken into subtask to grab the specimen and a sendout lab test </p><h3>Restrictions</h3><table><tr><td>-</td><td><b>Repetitions</b></td><td><b>Period</b></td></tr><tr><td>*</td><td>1</td><td>?? --&gt; 02/11/2016 9:45:05 AM</td></tr></table><blockquote><p><b>output</b></p><p><b>type</b>: DiagnosticReport generated <span>(Details )</span></p><p><b>value</b>: <a>DiagnosticReport/lipids</a></p></blockquote><blockquote><p><b>output</b></p><p><b>type</b>: collected specimen <span>(Details )</span></p><p><b>value</b>: <a>Specimen/101</a></p></blockquote></div>"
+  ];
+  fhir:Task.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http:/goodhealth.org/identifiers" ];
+     fhir:Identifier.value [ fhir:value "20170201-001" ]
+  ];
+  fhir:Task.basedOn [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "General Wellness Careplan" ]
+  ];
+  fhir:Task.groupIdentifier [
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http:/goodhealth.org/accession/identifiers" ];
+     fhir:Identifier.value [ fhir:value "G20170201-001" ]
+  ];
+  fhir:Task.status [ fhir:value "completed"];
+  fhir:Task.businessStatus [
+     fhir:CodeableConcept.text [ fhir:value "test completed and posted" ]
+  ];
+  fhir:Task.intent [ fhir:value "order"];
+  fhir:Task.priority [ fhir:value "routine"];
+  fhir:Task.code [
+     fhir:CodeableConcept.text [ fhir:value "Lipid Panel" ]
+  ];
+  fhir:Task.description [ fhir:value "Create order for getting specimen, Set up inhouse testing,  generate order for any sendouts and submit with specimen"];
+  fhir:Task.focus [
+     fhir:link <http://hl7.org/fhir/ServiceRequest/lipid>;
+     fhir:Reference.reference [ fhir:value "ServiceRequest/lipid" ];
+     fhir:Reference.display [ fhir:value "Lipid Panel Request" ]
+  ];
+  fhir:Task.for [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:Task.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ];
+     fhir:Reference.display [ fhir:value "Example In-Patient Encounter" ]
+  ];
+  fhir:Task.executionPeriod [
+     fhir:Period.start [ fhir:value "2016-10-31T08:25:05+10:00"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2016-10-31T18:45:05+10:00"^^xsd:dateTime ]
+  ];
+  fhir:Task.authoredOn [ fhir:value "2016-10-31T08:25:05+10:00"^^xsd:dateTime];
+  fhir:Task.lastModified [ fhir:value "2016-10-31T18:45:05+10:00"^^xsd:dateTime];
+  fhir:Task.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+     fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+  ];
+  fhir:Task.performerType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/task-performer-type" ];
+       fhir:Coding.code [ fhir:value "performer" ];
+       fhir:Coding.display [ fhir:value "Performer" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Performer" ]
+  ];
+  fhir:Task.owner [
+     fhir:link <http://hl7.org/fhir/Organization/1832473e-2fe0-452d-abe9-3cdb9879522f>;
+     fhir:Reference.reference [ fhir:value "Organization/1832473e-2fe0-452d-abe9-3cdb9879522f" ];
+     fhir:Reference.display [ fhir:value "Clinical Laboratory @ Acme Hospital" ]
+  ];
+  fhir:Task.reasonCode [
+     fhir:CodeableConcept.text [ fhir:value "The Task.reason should only be included if there is no Task.focus or if it differs from the reason indicated on the focus" ]
+  ];
+  fhir:Task.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "This is an example to demonstrate using task for actioning a servicerequest and to illustrate how to populate many of the task elements - this is the parent task that will be broken into subtask to grab the specimen and a sendout lab test " ]
+  ];
+  fhir:Task.restriction [
+     fhir:Task.restriction.repetitions [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Task.restriction.period [
+       fhir:Period.end [ fhir:value "2016-11-02T09:45:05+10:00"^^xsd:dateTime ]
+     ]
+  ];
+  fhir:Task.output [
+     fhir:index 0;
+     fhir:Task.output.type [
+       fhir:CodeableConcept.text [ fhir:value "DiagnosticReport generated" ]
+     ];
+     fhir:Task.output.valueReference [
+       fhir:link <http://hl7.org/fhir/DiagnosticReport/lipids>;
+       fhir:Reference.reference [ fhir:value "DiagnosticReport/lipids" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Task.output.type [
+       fhir:CodeableConcept.text [ fhir:value "collected specimen" ]
+     ];
+     fhir:Task.output.valueReference [
+       fhir:link <http://hl7.org/fhir/Specimen/101>;
+       fhir:Reference.reference [ fhir:value "Specimen/101" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/ServiceRequest/lipid> a fhir:ServiceRequest .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Organization/1832473e-2fe0-452d-abe9-3cdb9879522f> a fhir:Organization .
+
+<http://hl7.org/fhir/DiagnosticReport/lipids> a fhir:DiagnosticReport .
+
+<http://hl7.org/fhir/Specimen/101> a fhir:Specimen .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Task/example6.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Task/example6.ttl> .
+
+# -------------------------------------------------------------------------------------
+

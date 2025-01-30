@@ -1,0 +1,262 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Consent {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  scope: CodeableConcept!
+  category: [CodeableConcept]!
+  patient: Reference
+  dateTime: dateTime  _dateTime: ElementBase
+  performer: [Reference]
+  organization: [Reference]
+  sourceAttachment: Attachment
+  sourceReference: Reference
+  policy: [ConsentPolicy]
+  policyRule: CodeableConcept
+  verification: [ConsentVerification]
+  provision: ConsentProvision
+}
+
+type ConsentPolicy {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  authority: uri  _authority: ElementBase
+  uri: uri  _uri: ElementBase
+}
+
+type ConsentVerification {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  verified: Boolean  _verified: ElementBase
+  verifiedWith: Reference
+  verificationDate: dateTime  _verificationDate: ElementBase
+}
+
+type ConsentProvision {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: code  _type: ElementBase
+  period: Period
+  actor: [ConsentProvisionActor]
+  action: [CodeableConcept]
+  securityLabel: [Coding]
+  purpose: [Coding]
+  class: [Coding]
+  code: [CodeableConcept]
+  dataPeriod: Period
+  data: [ConsentProvisionData]
+  provision: [ConsentProvision]
+}
+
+type ConsentProvisionActor {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  role: CodeableConcept!
+  reference: Reference!
+}
+
+type ConsentProvisionData {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  meaning: code  _meaning: ElementBase
+  reference: Reference!
+}
+
+input Consent {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  scope: CodeableConcept!
+  category: [CodeableConcept]!
+  patient: Reference
+  dateTime: dateTime  _dateTime: ElementBase
+  performer: [Reference]
+  organization: [Reference]
+  sourceAttachment: Attachment
+  sourceReference: Reference
+  policy: [ConsentPolicy]
+  policyRule: CodeableConcept
+  verification: [ConsentVerification]
+  provision: ConsentProvision
+}
+
+input ConsentPolicy {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  authority: uri  _authority: ElementBase
+  uri: uri  _uri: ElementBase
+}
+
+input ConsentVerification {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  verified: Boolean  _verified: ElementBase
+  verifiedWith: Reference
+  verificationDate: dateTime  _verificationDate: ElementBase
+}
+
+input ConsentProvision {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: code  _type: ElementBase
+  period: Period
+  actor: [ConsentProvisionActor]
+  action: [CodeableConcept]
+  securityLabel: [Coding]
+  purpose: [Coding]
+  class: [Coding]
+  code: [CodeableConcept]
+  dataPeriod: Period
+  data: [ConsentProvisionData]
+  provision: [ConsentProvision]
+}
+
+input ConsentProvisionActor {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  role: CodeableConcept!
+  reference: Reference!
+}
+
+input ConsentProvisionData {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  meaning: code  _meaning: ElementBase
+  reference: Reference!
+}
+
+type ConsentReadType {
+  Consent(id : ID!) : Consent
+}
+
+type ConsentListType {
+  ConsentList(_filter : String
+    action : [token]
+    actor : [reference]
+    category : [token]
+    consentor : [reference]
+    data : [reference]
+    date : [date]
+    identifier : [token]
+    organization : [reference]
+    patient : [reference]
+    period : [date]
+    purpose : [token]
+    scope : [token]
+    security_label : [token]
+    source_reference : [reference]
+    status : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Consent]
+}
+
+type ConsentConnectionType {
+  ConsentConection(_filter : String
+    action : [token]
+    actor : [reference]
+    category : [token]
+    consentor : [reference]
+    data : [reference]
+    date : [date]
+    identifier : [token]
+    organization : [reference]
+    patient : [reference]
+    period : [date]
+    purpose : [token]
+    scope : [token]
+    security_label : [token]
+    source_reference : [reference]
+    status : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : ConsentConnection
+}
+
+type ConsentConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [ConsentEdge]
+}
+
+type ConsentEdge {
+  mode : String
+  score : Float
+  resource : Consent
+}
+
+type ConsentCreateType {
+  ConsentCreate(resource : Consent) : ConsentCreation
+}
+
+type ConsentCreation {
+  location : String
+  resource : Consent
+  information : OperationOutcome
+}
+
+type ConsentUpdateType {
+  ConsentUpdate(id : IDresource : Consent) : ConsentUpdate
+}
+
+type ConsentUpdate {
+  resource : Consent
+  information : OperationOutcome
+}
+
+type ConsentDeleteType {
+  ConsentDelete(id : ID) : ConsentDelete
+}
+
+type ConsentDelete {
+  information : OperationOutcome
+}
+

@@ -1,0 +1,138 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicinalProductContraindication {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subject: [Reference]
+  disease: CodeableConcept
+  diseaseStatus: CodeableConcept
+  comorbidity: [CodeableConcept]
+  therapeuticIndication: [Reference]
+  otherTherapy: [MedicinalProductContraindicationOtherTherapy]
+  population: [Population]
+}
+
+type MedicinalProductContraindicationOtherTherapy {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  therapyRelationshipType: CodeableConcept!
+  medicationCodeableConcept: CodeableConcept
+  medicationReference: Reference
+}
+
+input MedicinalProductContraindication {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  subject: [Reference]
+  disease: CodeableConcept
+  diseaseStatus: CodeableConcept
+  comorbidity: [CodeableConcept]
+  therapeuticIndication: [Reference]
+  otherTherapy: [MedicinalProductContraindicationOtherTherapy]
+  population: [Population]
+}
+
+input MedicinalProductContraindicationOtherTherapy {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  therapyRelationshipType: CodeableConcept!
+  medicationCodeableConcept: CodeableConcept
+  medicationReference: Reference
+}
+
+type MedicinalProductContraindicationReadType {
+  MedicinalProductContraindication(id : ID!) : MedicinalProductContraindication
+}
+
+type MedicinalProductContraindicationListType {
+  MedicinalProductContraindicationList(_filter : String
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicinalProductContraindication]
+}
+
+type MedicinalProductContraindicationConnectionType {
+  MedicinalProductContraindicationConection(_filter : String
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicinalProductContraindicationConnection
+}
+
+type MedicinalProductContraindicationConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicinalProductContraindicationEdge]
+}
+
+type MedicinalProductContraindicationEdge {
+  mode : String
+  score : Float
+  resource : MedicinalProductContraindication
+}
+
+type MedicinalProductContraindicationCreateType {
+  MedicinalProductContraindicationCreate(resource : MedicinalProductContraindication) : MedicinalProductContraindicationCreation
+}
+
+type MedicinalProductContraindicationCreation {
+  location : String
+  resource : MedicinalProductContraindication
+  information : OperationOutcome
+}
+
+type MedicinalProductContraindicationUpdateType {
+  MedicinalProductContraindicationUpdate(id : IDresource : MedicinalProductContraindication) : MedicinalProductContraindicationUpdate
+}
+
+type MedicinalProductContraindicationUpdate {
+  resource : MedicinalProductContraindication
+  information : OperationOutcome
+}
+
+type MedicinalProductContraindicationDeleteType {
+  MedicinalProductContraindicationDelete(id : ID) : MedicinalProductContraindicationDelete
+}
+
+type MedicinalProductContraindicationDelete {
+  information : OperationOutcome
+}
+

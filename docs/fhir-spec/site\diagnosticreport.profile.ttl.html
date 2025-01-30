@@ -1,0 +1,2732 @@
+<!DOCTYPE HTML>
+
+<!-- template-example-ttl.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Diagnosticreport.profile.ttl - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/diagnosticreport.profile.ttl.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="diagnostics-module.html"><img src="diagnostics.jpg"/> Diagnostics</a></li>          <li><a href="diagnosticreport.html">DiagnosticReport</a></li>        <li><b>Profile Instance</b></li>        <!-- diagnosticreport.profile.ttl.html / profile-instance:resource:DiagnosticReport / Profile-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Diagnosticreport.profile.ttl</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/orders/index.cfm">Orders and Observations</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-device.html">Device</a>, <a href="compartmentdefinition-encounter.html">Encounter</a>, <a href="compartmentdefinition-patient.html">Patient</a>, <a href="compartmentdefinition-practitioner.html">Practitioner</a></td></tr></table>
+
+</tbody></table>
+<p>
+<a href="diagnosticreport.profile.ttl">Raw Turtle</a> (+ also see <a href="rdf.html">Turtle/RDF Format Specification</a>)
+</p>
+
+<div class="example">
+<p>StructureDefinition for diagnosticreport</p>
+<pre class="turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+[] a fhir:StructureDefinition;
+  fhir:Resource.id [ fhir:value &quot;DiagnosticReport&quot;];
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value &quot;2019-11-01T09:29:23.356+11:00&quot; ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-category&quot; ];
+     fhir:Extension.value [ fhir:value &quot;Clinical.Diagnostics&quot; ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot; ];
+     fhir:Extension.value [ fhir:value &quot;trial-use&quot; ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot; ];
+     fhir:Extension.value [ fhir:value &quot;3&quot; ]
+  ], [
+     fhir:index 3;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category&quot; ];
+     fhir:Extension.value [ fhir:value &quot;patient&quot; ]
+  ], [
+     fhir:index 4;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot; ];
+     fhir:Extension.value [ fhir:value &quot;oo&quot; ]
+  ];
+  fhir:StructureDefinition.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DiagnosticReport&quot;];
+  fhir:StructureDefinition.version [ fhir:value &quot;4.0.1&quot;];
+  fhir:StructureDefinition.name [ fhir:value &quot;DiagnosticReport&quot;];
+  fhir:StructureDefinition.status [ fhir:value &quot;draft&quot;];
+  fhir:StructureDefinition.date [ fhir:value &quot;2019-11-01T09:29:23+11:00&quot;];
+  fhir:StructureDefinition.publisher [ fhir:value &quot;Health Level Seven International (Orders and Observations)&quot;];
+  fhir:StructureDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value &quot;url&quot; ];
+       fhir:ContactPoint.value [ fhir:value &quot;http://hl7.org/fhir&quot; ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value &quot;url&quot; ];
+       fhir:ContactPoint.value [ fhir:value &quot;http://www.hl7.org/Special/committees/orders/index.cfm&quot; ]
+     ]
+  ];
+  fhir:StructureDefinition.description [ fhir:value &quot;The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretations, and formatted representation of diagnostic reports.&quot;];
+  fhir:StructureDefinition.purpose [ fhir:value &quot;To support reporting for any diagnostic report into a clinical data repository.&quot;];
+  fhir:StructureDefinition.fhirVersion [ fhir:value &quot;4.0.1&quot;];
+  fhir:StructureDefinition.mapping [
+     fhir:index 0;
+     fhir:StructureDefinition.identity [ fhir:value &quot;workflow&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/fhir/workflow&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;Workflow Pattern&quot; ]
+  ], [
+     fhir:index 1;
+     fhir:StructureDefinition.identity [ fhir:value &quot;v2&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/v2&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;HL7 v2 Mapping&quot; ]
+  ], [
+     fhir:index 2;
+     fhir:StructureDefinition.identity [ fhir:value &quot;rim&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/v3&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;RIM Mapping&quot; ]
+  ], [
+     fhir:index 3;
+     fhir:StructureDefinition.identity [ fhir:value &quot;w5&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/fhir/fivews&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;FiveWs Pattern Mapping&quot; ]
+  ];
+  fhir:StructureDefinition.kind [ fhir:value &quot;resource&quot;];
+  fhir:StructureDefinition.abstract [ fhir:value &quot;false&quot;];
+  fhir:StructureDefinition.type [ fhir:value &quot;DiagnosticReport&quot;];
+  fhir:StructureDefinition.baseDefinition [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot;];
+  fhir:StructureDefinition.derivation [ fhir:value &quot;specialization&quot;];
+  fhir:StructureDefinition.snapshot [
+     fhir:StructureDefinition.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;A Diagnostic report - a combination of request information, atomic results, images, interpretation, as well as formatted reports&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretations, and formatted representation of diagnostic reports.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This is intended to capture a single report and is not suitable for use in displaying summary information that covers multiple reports.  For example, this resource has not been designed for laboratory cumulative reporting formats nor detailed structured reports for sequencing.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Report&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Test&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Result&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;Results&quot;;
+         fhir:index 3
+       ], [
+         fhir:value &quot;Labs&quot;;
+         fhir:index 4
+       ], [
+         fhir:value &quot;Laboratory&quot;;
+         fhir:index 5
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-2&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;If the resource is contained in another resource, it SHALL NOT contain nested Resources&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;contained.contained.empty()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;not(parent::f:contained and f:contained)&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-3&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-4&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-5&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;If a resource is contained in another resource, it SHALL NOT have a security label&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;contained.meta.security.empty()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;not(exists(f:contained/*/f:meta/f:security))&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ], [
+         fhir:index 4;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice&quot; ];
+           fhir:Extension.value [ fhir:value &quot;true&quot; ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation&quot; ];
+           fhir:Extension.value [ fhir:value &quot;When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time.&quot; ]
+         ];
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-6&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;warning&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;A resource should have narrative for robust management&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;text.`div`.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:text/h:div)&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Entity. Role, or Act&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;ORU -&gt; OBR&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Observation[classCode=OBS, moodCode=EVN]&quot; ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.id&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.id&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Logical id of this artifact&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The only time that a resource does not have an id is when it is being submitted to the server using a create operation.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Resource.id&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot; ];
+           fhir:Extension.value [ fhir:value &quot;string&quot; ]
+         ];
+         fhir:ElementDefinition.code [ fhir:value &quot;http://hl7.org/fhirpath/System.String&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.meta&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.meta&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Metadata about the resource&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Resource.meta&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Meta&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.implicitRules&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.implicitRules&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;A set of rules under which this content was created&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Resource.implicitRules&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;uri&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.language&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.language&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Language of the resource content&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The base language in which the resource is written.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Resource.language&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;code&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet&quot; ];
+           fhir:Extension.value [ fhir:value &quot;http://hl7.org/fhir/ValueSet/all-languages&quot; ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;Language&quot; ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot; ];
+           fhir:Extension.value [ fhir:value &quot;true&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;preferred&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A human language.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/languages&quot; ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.text&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.text&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Text summary of the resource, for human interpretation&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \&quot;clinically safe\&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a \&quot;text blob\&quot; or where text is additionally entered raw or narrated and encoded information is added later.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;narrative&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;html&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;xhtml&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;display&quot;;
+         fhir:index 3
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DomainResource.text&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Narrative&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Act.text?&quot; ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.contained&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.contained&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Contained, inline Resources&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;inline resources&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;anonymous resources&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;contained resources&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DomainResource.contained&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Resource&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.extension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.extension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Additional content defined by implementations&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DomainResource.extension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.modifierExtension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.modifierExtension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Extensions that cannot be ignored&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DomainResource.modifierExtension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.identifier&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.identifier&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Business identifier for report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Identifiers assigned to this report by the performer or other systems.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Usually assigned by the Information System of the diagnostic service provider (filler id).&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to know what identifier to use when making queries about this report from the source laboratory, and for linking to the report outside FHIR context.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;ReportID&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Filler ID&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Placer ID&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.identifier&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Identifier&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.identifier&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.identifier&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-51/ for globally unique filler ID  - OBR-3 , For non-globally unique filler-id the flller/placer number must be combined with the universal service Id -  OBR-2(if present)+OBR-3+OBR-4&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;id&quot; ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.basedOn&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.basedOn&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;What was requested&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Details concerning a service requested.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single test result resource. Note that there are also cases where one request leads to multiple reports.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;This allows tracing of authorization for the report and tracking whether proposals/recommendations were acted upon.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Request&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.basedOn&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/CarePlan&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/MedicationRequest&quot;;
+           fhir:index 2
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/NutritionOrder&quot;;
+           fhir:index 3
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/ServiceRequest&quot;;
+           fhir:index 4
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.basedOn&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;ORC? OBR-2/3?&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;outboundRelationship[typeCode=FLFS].target&quot; ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.status&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.status&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;registered | partial | preliminary | final +&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The status of the diagnostic report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Diagnostic services routinely issue provisional/incomplete reports, and sometimes withdraw previously released reports.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.status&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;code&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DiagnosticReportStatus&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;required&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The status of the diagnostic report.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/diagnostic-report-status|4.0.1&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.status&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.status&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-25 (not 1:1 mapping)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type \&quot;revise\&quot;&quot; ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.category&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.category&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Service category&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Department&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Sub-department&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Service&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;Discipline&quot;;
+         fhir:index 3
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.category&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DiagnosticServiceSection&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Codes for diagnostic service sections.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/diagnostic-service-sections&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.class&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-24&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code&quot; ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.code&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.code&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Name/Code for this diagnostic report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A code or name that describes this diagnostic report.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Type&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.code&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DiagnosticReportCodes&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;preferred&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Codes that describe Diagnostic Reports.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/report-codes&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.code&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.what[x]&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-4 (HL7 v2 doesn't provide an easy way to indicate both the ordered test and the performed panel)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;code&quot; ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.subject&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.subject&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;The subject of the report - usually, but not always, the patient&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;SHALL know the subject context.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Patient&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.subject&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Patient&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Group&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Device&quot;;
+           fhir:index 2
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Location&quot;;
+           fhir:index 3
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.subject&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.subject[x]&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;PID-3 (no HL7 v2 mapping for Group or Device)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;participation[typeCode=SBJ]&quot; ]
+       ], [
+         fhir:index 4;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.subject&quot; ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.encounter&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.encounter&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Health care event when test ordered&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter  but still be tied to the context of the encounter  (e.g. pre-admission laboratory tests).&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Links the request to the Encounter context.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Context&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.encounter&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Encounter&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.encounter&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.context&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;PV1-19&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]&quot; ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.effective[x]&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.effective[x]&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Clinically relevant time/time-period for report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;If the diagnostic procedure was performed on the patient, this is the time it was performed. If there are specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and the exact relationship between the specimens and the diagnostically relevant time is not always automatic.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to know where in the patient history to file/present this report.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Observation time&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Effective Time&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Occurrence&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.effective[x]&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;dateTime&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.code [ fhir:value &quot;Period&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.occurrence[x]&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.done[x]&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-7&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.issued&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.issued&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;DateTime this version was made&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Clinicians need to be able to check the date that the report was released.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Date published&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Date Issued&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Date Verified&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.issued&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;instant&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.recorded&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-22&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;participation[typeCode=VRF or AUT].time&quot; ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.performer&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.performer&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Responsible Diagnostic Service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The diagnostic service that is responsible for issuing the report.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This is not necessarily the source of the atomic data items or the entity that interpreted the results. It is the entity that takes responsibility for the clinical report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to know whom to contact if there are queries about the results. Also may need to track the source of reports for secondary data analysis.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Laboratory&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Service&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Practitioner&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;Department&quot;;
+         fhir:index 3
+       ], [
+         fhir:value &quot;Company&quot;;
+         fhir:index 4
+       ], [
+         fhir:value &quot;Authorized by&quot;;
+         fhir:index 5
+       ], [
+         fhir:value &quot;Director&quot;;
+         fhir:index 6
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.performer&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Practitioner&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/PractitionerRole&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Organization&quot;;
+           fhir:index 2
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/CareTeam&quot;;
+           fhir:index 3
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.performer.actor&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.actor&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;PRT-8 (where this PRT-4-Participation = \&quot;PO\&quot;)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=PRF]&quot; ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.resultsInterpreter&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.resultsInterpreter&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Primary result interpreter&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The practitioner or organization that is responsible for the report's conclusions and interpretations.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Might not be the same entity that takes responsibility for the clinical report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to know whom to contact if there are queries about the results. Also may need to track the source of reports for secondary data analysis.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Analyzed by&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Reported by&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.resultsInterpreter&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Practitioner&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/PractitionerRole&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Organization&quot;;
+           fhir:index 2
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/CareTeam&quot;;
+           fhir:index 3
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.performer.actor&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.actor&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-32, PRT-8 (where this PRT-4-Participation = \&quot;PI\&quot;)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=PRF]&quot; ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.specimen&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.specimen&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Specimens this report is based on&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Details about the specimens on which this diagnostic report is based.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;If the specimen is sufficiently specified with a code in the test result name, then this additional data may be redundant. If there are multiple specimens, these may be represented per observation or group.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to be able to report information about the collected specimens on which the report is based.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.specimen&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Specimen&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;SPM&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;participation[typeCode=SBJ]&quot; ]
+       ]
+     ], [
+       fhir:index 21;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.result&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.result&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Observations&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;[Observations](observation.html)  that are part of this diagnostic report.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Observations can contain observations.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Data&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Atomic Value&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Result&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;Atomic result&quot;;
+         fhir:index 3
+       ], [
+         fhir:value &quot;Data&quot;;
+         fhir:index 4
+       ], [
+         fhir:value &quot;Test&quot;;
+         fhir:index 5
+       ], [
+         fhir:value &quot;Analyte&quot;;
+         fhir:index 6
+       ], [
+         fhir:value &quot;Battery&quot;;
+         fhir:index 7
+       ], [
+         fhir:value &quot;Organizer&quot;;
+         fhir:index 8
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.result&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Observation&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBXs&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;outboundRelationship[typeCode=COMP].target&quot; ]
+       ]
+     ], [
+       fhir:index 22;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.imagingStudy&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.imagingStudy&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Reference to full details of imaging associated with the diagnostic report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;ImagingStudy and the image element are somewhat overlapping - typically, the list of image references in the image element will also be found in one of the imaging study resources. However, each caters to different types of displays for different types of purposes. Neither, either, or both may be provided.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.imagingStudy&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/ImagingStudy&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;outboundRelationship[typeCode=COMP].target[classsCode=DGIMG, moodCode=EVN]&quot; ]
+       ]
+     ], [
+       fhir:index 23;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Key images associated with this report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Many diagnostic services include images in the report as part of their service.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;DICOM&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Slides&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Scans&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;BackboneElement&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBX?&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;outboundRelationship[typeCode=COMP].target&quot; ]
+       ]
+     ], [
+       fhir:index 24;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media.id&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.id&quot; ];
+       fhir:ElementDefinition.representation [
+         fhir:value &quot;xmlAttr&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Unique id for inter-element referencing&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Element.id&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot; ];
+           fhir:Extension.value [ fhir:value &quot;string&quot; ]
+         ];
+         fhir:ElementDefinition.code [ fhir:value &quot;http://hl7.org/fhirpath/System.String&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 25;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media.extension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.extension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Additional content defined by implementations&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Element.extension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 26;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media.modifierExtension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.modifierExtension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Extensions that cannot be ignored even if unrecognized&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;modifiers&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;BackboneElement.modifierExtension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;Modifier extensions are expected to modify the meaning or interpretation of the element that contains them&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 27;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media.comment&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.comment&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Comment about the image (e.g. explanation)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The comment should be displayed with the image. It would be common for the report to include additional discussion of the image contents in other sections such as the conclusion.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;The provider of the report should make a comment about each image included in the report.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.comment&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code=\&quot;annotation\&quot;].value&quot; ]
+       ]
+     ], [
+       fhir:index 28;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media.link&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.link&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Reference to the image source&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Reference to the image source.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.link&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Media&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.value.reference&quot; ]
+       ]
+     ], [
+       fhir:index 29;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.conclusion&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.conclusion&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Clinical conclusion (interpretation) of test results&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to be able to provide a conclusion that is not lost among the basic result data.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Report&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.conclusion&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBX&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;inboundRelationship[typeCode=\&quot;SPRT\&quot;].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)&quot; ]
+       ]
+     ], [
+       fhir:index 30;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.conclusionCode&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.conclusionCode&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Codes for the clinical conclusion of test results&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.conclusionCode&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;AdjunctDiagnosis&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Diagnosis codes provided as adjuncts to the report.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/clinical-findings&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBX&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;inboundRelationship[typeCode=SPRT].source[classCode=OBS, moodCode=EVN, code=LOINC:54531-9].value (type=CD)&quot; ]
+       ]
+     ], [
+       fhir:index 31;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.presentedForm&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.presentedForm&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Entire report as issued&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;\&quot;application/pdf\&quot; is recommended as the most reliable and interoperable in this context.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Gives laboratory the ability to provide its own fully formatted report for clinical fidelity.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.presentedForm&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Attachment&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBX&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;text (type=ED)&quot; ]
+       ]
+     ]
+  ];
+  fhir:StructureDefinition.differential [
+     fhir:StructureDefinition.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;A Diagnostic report - a combination of request information, atomic results, images, interpretation, as well as formatted reports&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretations, and formatted representation of diagnostic reports.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This is intended to capture a single report and is not suitable for use in displaying summary information that covers multiple reports.  For example, this resource has not been designed for laboratory cumulative reporting formats nor detailed structured reports for sequencing.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Report&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Test&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Result&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;Results&quot;;
+         fhir:index 3
+       ], [
+         fhir:value &quot;Labs&quot;;
+         fhir:index 4
+       ], [
+         fhir:value &quot;Laboratory&quot;;
+         fhir:index 5
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;ORU -&gt; OBR&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Observation[classCode=OBS, moodCode=EVN]&quot; ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.identifier&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.identifier&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Business identifier for report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Identifiers assigned to this report by the performer or other systems.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Usually assigned by the Information System of the diagnostic service provider (filler id).&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to know what identifier to use when making queries about this report from the source laboratory, and for linking to the report outside FHIR context.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;ReportID&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Filler ID&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Placer ID&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Identifier&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.identifier&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.identifier&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-51/ for globally unique filler ID  - OBR-3 , For non-globally unique filler-id the flller/placer number must be combined with the universal service Id -  OBR-2(if present)+OBR-3+OBR-4&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;id&quot; ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.basedOn&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.basedOn&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;What was requested&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Details concerning a service requested.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single test result resource. Note that there are also cases where one request leads to multiple reports.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;This allows tracing of authorization for the report and tracking whether proposals/recommendations were acted upon.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Request&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/CarePlan&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/MedicationRequest&quot;;
+           fhir:index 2
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/NutritionOrder&quot;;
+           fhir:index 3
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/ServiceRequest&quot;;
+           fhir:index 4
+         ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.basedOn&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;ORC? OBR-2/3?&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;outboundRelationship[typeCode=FLFS].target&quot; ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.status&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.status&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;registered | partial | preliminary | final +&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The status of the diagnostic report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Diagnostic services routinely issue provisional/incomplete reports, and sometimes withdraw previously released reports.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;code&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DiagnosticReportStatus&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;required&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The status of the diagnostic report.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/diagnostic-report-status|4.0.1&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.status&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.status&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-25 (not 1:1 mapping)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type \&quot;revise\&quot;&quot; ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.category&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.category&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Service category&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Department&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Sub-department&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Service&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;Discipline&quot;;
+         fhir:index 3
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DiagnosticServiceSection&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Codes for diagnostic service sections.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/diagnostic-service-sections&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.class&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-24&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code&quot; ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.code&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.code&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Name/Code for this diagnostic report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A code or name that describes this diagnostic report.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Type&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DiagnosticReportCodes&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;preferred&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Codes that describe Diagnostic Reports.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/report-codes&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.code&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.what[x]&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-4 (HL7 v2 doesn't provide an easy way to indicate both the ordered test and the performed panel)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;code&quot; ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.subject&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.subject&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;The subject of the report - usually, but not always, the patient&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;SHALL know the subject context.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Patient&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Patient&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Group&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Device&quot;;
+           fhir:index 2
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Location&quot;;
+           fhir:index 3
+         ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.subject&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.subject[x]&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;PID-3 (no HL7 v2 mapping for Group or Device)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;participation[typeCode=SBJ]&quot; ]
+       ], [
+         fhir:index 4;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.subject&quot; ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.encounter&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.encounter&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Health care event when test ordered&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter  but still be tied to the context of the encounter  (e.g. pre-admission laboratory tests).&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Links the request to the Encounter context.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Context&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Encounter&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.encounter&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.context&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;PV1-19&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]&quot; ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.effective[x]&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.effective[x]&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Clinically relevant time/time-period for report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;If the diagnostic procedure was performed on the patient, this is the time it was performed. If there are specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and the exact relationship between the specimens and the diagnostically relevant time is not always automatic.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to know where in the patient history to file/present this report.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Observation time&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Effective Time&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Occurrence&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;dateTime&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.code [ fhir:value &quot;Period&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.occurrence[x]&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.done[x]&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-7&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.issued&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.issued&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;DateTime this version was made&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Clinicians need to be able to check the date that the report was released.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Date published&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Date Issued&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Date Verified&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;instant&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.recorded&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-22&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;participation[typeCode=VRF or AUT].time&quot; ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.performer&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.performer&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Responsible Diagnostic Service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The diagnostic service that is responsible for issuing the report.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This is not necessarily the source of the atomic data items or the entity that interpreted the results. It is the entity that takes responsibility for the clinical report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to know whom to contact if there are queries about the results. Also may need to track the source of reports for secondary data analysis.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Laboratory&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Service&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Practitioner&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;Department&quot;;
+         fhir:index 3
+       ], [
+         fhir:value &quot;Company&quot;;
+         fhir:index 4
+       ], [
+         fhir:value &quot;Authorized by&quot;;
+         fhir:index 5
+       ], [
+         fhir:value &quot;Director&quot;;
+         fhir:index 6
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Practitioner&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/PractitionerRole&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Organization&quot;;
+           fhir:index 2
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/CareTeam&quot;;
+           fhir:index 3
+         ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.performer.actor&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.actor&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;PRT-8 (where this PRT-4-Participation = \&quot;PO\&quot;)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=PRF]&quot; ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.resultsInterpreter&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.resultsInterpreter&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Primary result interpreter&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The practitioner or organization that is responsible for the report's conclusions and interpretations.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Might not be the same entity that takes responsibility for the clinical report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to know whom to contact if there are queries about the results. Also may need to track the source of reports for secondary data analysis.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Analyzed by&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Reported by&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Practitioner&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/PractitionerRole&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Organization&quot;;
+           fhir:index 2
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/CareTeam&quot;;
+           fhir:index 3
+         ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;workflow&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Event.performer.actor&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.actor&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBR-32, PRT-8 (where this PRT-4-Participation = \&quot;PI\&quot;)&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=PRF]&quot; ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.specimen&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.specimen&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Specimens this report is based on&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Details about the specimens on which this diagnostic report is based.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;If the specimen is sufficiently specified with a code in the test result name, then this additional data may be redundant. If there are multiple specimens, these may be represented per observation or group.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to be able to report information about the collected specimens on which the report is based.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Specimen&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;SPM&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;participation[typeCode=SBJ]&quot; ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.result&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.result&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Observations&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;[Observations](observation.html)  that are part of this diagnostic report.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Observations can contain observations.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Data&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Atomic Value&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Result&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;Atomic result&quot;;
+         fhir:index 3
+       ], [
+         fhir:value &quot;Data&quot;;
+         fhir:index 4
+       ], [
+         fhir:value &quot;Test&quot;;
+         fhir:index 5
+       ], [
+         fhir:value &quot;Analyte&quot;;
+         fhir:index 6
+       ], [
+         fhir:value &quot;Battery&quot;;
+         fhir:index 7
+       ], [
+         fhir:value &quot;Organizer&quot;;
+         fhir:index 8
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Observation&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBXs&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;outboundRelationship[typeCode=COMP].target&quot; ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.imagingStudy&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.imagingStudy&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Reference to full details of imaging associated with the diagnostic report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;ImagingStudy and the image element are somewhat overlapping - typically, the list of image references in the image element will also be found in one of the imaging study resources. However, each caters to different types of displays for different types of purposes. Neither, either, or both may be provided.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/ImagingStudy&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;outboundRelationship[typeCode=COMP].target[classsCode=DGIMG, moodCode=EVN]&quot; ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Key images associated with this report&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Many diagnostic services include images in the report as part of their service.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;DICOM&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Slides&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;Scans&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;BackboneElement&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBX?&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;outboundRelationship[typeCode=COMP].target&quot; ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media.comment&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.comment&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Comment about the image (e.g. explanation)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The comment should be displayed with the image. It would be common for the report to include additional discussion of the image contents in other sections such as the conclusion.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;The provider of the report should make a comment about each image included in the report.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code=\&quot;annotation\&quot;].value&quot; ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.media.link&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.media.link&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Reference to the image source&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Reference to the image source.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Media&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.value.reference&quot; ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.conclusion&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.conclusion&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Clinical conclusion (interpretation) of test results&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Need to be able to provide a conclusion that is not lost among the basic result data.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Report&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBX&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;inboundRelationship[typeCode=\&quot;SPRT\&quot;].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)&quot; ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.conclusionCode&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.conclusionCode&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Codes for the clinical conclusion of test results&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;AdjunctDiagnosis&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Diagnosis codes provided as adjuncts to the report.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/clinical-findings&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBX&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;inboundRelationship[typeCode=SPRT].source[classCode=OBS, moodCode=EVN, code=LOINC:54531-9].value (type=CD)&quot; ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:Element.id [ fhir:value &quot;DiagnosticReport.presentedForm&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;DiagnosticReport.presentedForm&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Entire report as issued&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;\&quot;application/pdf\&quot; is recommended as the most reliable and interoperable in this context.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Gives laboratory the ability to provide its own fully formatted report for clinical fidelity.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Attachment&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;OBX&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;text (type=ED)&quot; ]
+       ]
+     ]
+  ] .
+
+# -------------------------------------------------------------------------------------
+
+
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fdiagnosticreport.profile.ttl.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fdiagnosticreport.profile.ttl.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

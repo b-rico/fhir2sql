@@ -1,0 +1,108 @@
+﻿{
+  "types": [
+    "Encounter"
+  ],
+  "Encounter": {
+    "elements": {
+      "Encounter.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/encounter-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/encounter-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Encounter.statusHistory.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/encounter-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/encounter-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Encounter.class": {
+        "old-min": 0,
+        "new-min": 1
+      },
+      "Encounter.serviceType": {
+        "status": "new"
+      },
+      "Encounter.basedOn": {
+        "old-name": "incomingReferral",
+        "removed-types": [
+          "Reference(ReferralRequest)"
+        ],
+        "added-types": [
+          "Reference(ServiceRequest)"
+        ]
+      },
+      "Encounter.participant.individual": {
+        "removed-types": [
+          "Reference(Practitioner | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | RelatedPerson)"
+        ]
+      },
+      "Encounter.appointment": {
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "Encounter.reasonCode": {
+        "status": "new"
+      },
+      "Encounter.reasonReference": {
+        "status": "new"
+      },
+      "Encounter.diagnosis.use": {
+        "status": "new"
+      },
+      "Encounter.hospitalization.origin": {
+        "removed-types": [
+          "Reference(Location)"
+        ],
+        "added-types": [
+          "Reference(Location | Organization)"
+        ]
+      },
+      "Encounter.hospitalization.destination": {
+        "removed-types": [
+          "Reference(Location)"
+        ],
+        "added-types": [
+          "Reference(Location | Organization)"
+        ]
+      },
+      "Encounter.location.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/encounter-location-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Encounter.location.physicalType": {
+        "status": "new"
+      },
+      "Encounter.reason": {
+        "status": "deleted"
+      },
+      "Encounter.diagnosis.role": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

@@ -1,0 +1,171 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicationRequest/medrx0322> a fhir:MedicationRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "medrx0322"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: medrx0322</p><p><b>contained</b>: </p><p><b>identifier</b>: 12345689 (OFFICIAL)</p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>medication</b>: Potassium Chloride 20mEq in 1L Normal Saline. Generated Summary: id: med0317; Injection Solution (qualifier value) <span>(Details : {SNOMED CT code '385219001' = 'Injection solution', given as 'Injection Solution (qualifier value)'})</span></p><p><b>subject</b>: <a>Donald Duck</a></p><p><b>authoredOn</b>: 15/01/2015</p><p><b>requester</b>: <a>Patrick Pump</a></p><p><b>reasonCode</b>: Disorder of Electrolytes (disorder) <span>(Details : {SNOMED CT code '237840007' = 'Disorder of electrolytes', given as 'Disorder of Electrolytes (disorder)'})</span></p><p><b>dosageInstruction</b>: </p></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Medication;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "med0317" ];
+     fhir:Medication.form [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:385219001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "385219001" ];
+         fhir:Coding.display [ fhir:value "Injection Solution (qualifier value)" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Injection Solution (qualifier value)" ]
+     ];
+     fhir:Medication.ingredient [
+       fhir:index 0;
+       fhir:Medication.ingredient.itemCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+           fhir:Coding.code [ fhir:value "204520" ];
+           fhir:Coding.display [ fhir:value "Potassium Chloride" ]
+         ]
+       ];
+       fhir:Medication.ingredient.strength [
+         fhir:Ratio.numerator [
+           fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ];
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+           fhir:Quantity.code [ fhir:value "mEq" ]
+         ];
+         fhir:Ratio.denominator [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+           fhir:Quantity.code [ fhir:value "mL" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Medication.ingredient.itemCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+           fhir:Coding.code [ fhir:value "313002" ];
+           fhir:Coding.display [ fhir:value "Sodium Chloride 0.9% injectable solution" ]
+         ]
+       ];
+       fhir:Medication.ingredient.strength [
+         fhir:Ratio.numerator [
+           fhir:Quantity.value [ fhir:value "0.9"^^xsd:decimal ];
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+           fhir:Quantity.code [ fhir:value "g" ]
+         ];
+         fhir:Ratio.denominator [
+           fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ];
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+           fhir:Quantity.code [ fhir:value "mL" ]
+         ]
+       ]
+     ]
+  ];
+  fhir:MedicationRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://www.bmc.nl/portal/prescriptions" ];
+     fhir:Identifier.value [ fhir:value "12345689" ]
+  ];
+  fhir:MedicationRequest.status [ fhir:value "completed"];
+  fhir:MedicationRequest.intent [ fhir:value "order"];
+  fhir:MedicationRequest.medicationReference [
+     fhir:Reference.reference [ fhir:value "#med0317" ];
+     fhir:Reference.display [ fhir:value "Potassium Chloride 20mEq in 1L Normal Saline" ]
+  ];
+  fhir:MedicationRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/pat1>;
+     fhir:Reference.reference [ fhir:value "Patient/pat1" ];
+     fhir:Reference.display [ fhir:value "Donald Duck" ]
+  ];
+  fhir:MedicationRequest.authoredOn [ fhir:value "2015-01-15"^^xsd:date];
+  fhir:MedicationRequest.requester [
+     fhir:link <http://hl7.org/fhir/Practitioner/f007>;
+     fhir:Reference.reference [ fhir:value "Practitioner/f007" ];
+     fhir:Reference.display [ fhir:value "Patrick Pump" ]
+  ];
+  fhir:MedicationRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:237840007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "237840007" ];
+       fhir:Coding.display [ fhir:value "Disorder of Electrolytes (disorder)" ]
+     ]
+  ];
+  fhir:MedicationRequest.dosageInstruction [
+     fhir:index 0;
+     fhir:Dosage.sequence [ fhir:value "1"^^xsd:integer ];
+     fhir:Dosage.text [ fhir:value "KCl 20 mEq in 1 L 0.9%NS IV at 100 ml/hr" ];
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+         fhir:Timing.repeat.periodUnit [ fhir:value "h" ]
+       ]
+     ];
+     fhir:Dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:47625008;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "47625008" ];
+         fhir:Coding.display [ fhir:value "Intravenous route (qualifier value)" ]
+       ]
+     ];
+     fhir:Dosage.doseAndRate [
+       fhir:index 0;
+       fhir:Dosage.doseAndRate.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/dose-rate-type" ];
+           fhir:Coding.code [ fhir:value "ordered" ];
+           fhir:Coding.display [ fhir:value "Ordered" ]
+         ]
+       ];
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "20"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "mEq" ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "mEq" ]
+       ];
+       fhir:Dosage.doseAndRate.rateRatio [
+         fhir:Ratio.numerator [
+           fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ];
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+           fhir:Quantity.code [ fhir:value "mL" ]
+         ];
+         fhir:Ratio.denominator [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+           fhir:Quantity.code [ fhir:value "h" ]
+         ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/pat1> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/f007> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicationRequest/medrx0322.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MedicationRequest/medrx0322.ttl> .
+
+# -------------------------------------------------------------------------------------
+

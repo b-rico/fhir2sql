@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="ClinicalImpression" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="ClinicalImpression.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/clinical-impression-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/clinicalimpression-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="ClinicalImpression.statusReason" status="new"/>
+      <element path="ClinicalImpression.encounter" status="new"/>
+      <element path="ClinicalImpression.assessor">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element path="ClinicalImpression.investigation.item">
+         <removed-type name="Reference(Observation | QuestionnaireResponse | FamilyMemberHistory | DiagnosticReport | RiskAssessment | ImagingStudy)"/>
+         <added-type name="Reference(Observation | QuestionnaireResponse | FamilyMemberHistory | DiagnosticReport | RiskAssessment | ImagingStudy | Media)"/>
+      </element>
+      <element path="ClinicalImpression.finding.itemCodeableConcept" status="new"/>
+      <element path="ClinicalImpression.finding.itemReference" status="new"/>
+      <element path="ClinicalImpression.supportingInfo" status="new"/>
+      <element path="ClinicalImpression.context" status="deleted"/>
+      <element path="ClinicalImpression.finding.item[x]" status="deleted"/>
+      <element path="ClinicalImpression.action" status="deleted"/>
+   </type>
+</difference>

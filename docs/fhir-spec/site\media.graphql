@@ -1,0 +1,176 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Media {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  basedOn: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  type: CodeableConcept
+  modality: CodeableConcept
+  view: CodeableConcept
+  subject: Reference
+  encounter: Reference
+  createdDateTime: dateTime  _createdDateTime: ElementBase
+  createdPeriod: Period
+  issued: instant  _issued: ElementBase
+  operator: Reference
+  reasonCode: [CodeableConcept]
+  bodySite: CodeableConcept
+  deviceName: String  _deviceName: ElementBase
+  device: Reference
+  height: positiveInt  _height: ElementBase
+  width: positiveInt  _width: ElementBase
+  frames: positiveInt  _frames: ElementBase
+  duration: decimal  _duration: ElementBase
+  content: Attachment!
+  note: [Annotation]
+}
+
+input Media {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  basedOn: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  type: CodeableConcept
+  modality: CodeableConcept
+  view: CodeableConcept
+  subject: Reference
+  encounter: Reference
+  createdDateTime: dateTime  _createdDateTime: ElementBase
+  createdPeriod: Period
+  issued: instant  _issued: ElementBase
+  operator: Reference
+  reasonCode: [CodeableConcept]
+  bodySite: CodeableConcept
+  deviceName: String  _deviceName: ElementBase
+  device: Reference
+  height: positiveInt  _height: ElementBase
+  width: positiveInt  _width: ElementBase
+  frames: positiveInt  _frames: ElementBase
+  duration: decimal  _duration: ElementBase
+  content: Attachment!
+  note: [Annotation]
+}
+
+type MediaReadType {
+  Media(id : ID!) : Media
+}
+
+type MediaListType {
+  MediaList(_filter : String
+    based_on : [reference]
+    created : [date]
+    device : [reference]
+    encounter : [reference]
+    identifier : [token]
+    modality : [token]
+    operator : [reference]
+    patient : [reference]
+    site : [token]
+    status : [token]
+    subject : [reference]
+    type : [token]
+    view : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Media]
+}
+
+type MediaConnectionType {
+  MediaConection(_filter : String
+    based_on : [reference]
+    created : [date]
+    device : [reference]
+    encounter : [reference]
+    identifier : [token]
+    modality : [token]
+    operator : [reference]
+    patient : [reference]
+    site : [token]
+    status : [token]
+    subject : [reference]
+    type : [token]
+    view : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MediaConnection
+}
+
+type MediaConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MediaEdge]
+}
+
+type MediaEdge {
+  mode : String
+  score : Float
+  resource : Media
+}
+
+type MediaCreateType {
+  MediaCreate(resource : Media) : MediaCreation
+}
+
+type MediaCreation {
+  location : String
+  resource : Media
+  information : OperationOutcome
+}
+
+type MediaUpdateType {
+  MediaUpdate(id : IDresource : Media) : MediaUpdate
+}
+
+type MediaUpdate {
+  resource : Media
+  information : OperationOutcome
+}
+
+type MediaDeleteType {
+  MediaDelete(id : ID) : MediaDelete
+}
+
+type MediaDelete {
+  information : OperationOutcome
+}
+

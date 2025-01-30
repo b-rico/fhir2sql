@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Measure/component-a-example> a fhir:Measure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "component-a-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Screening for Alcohol Misuse\n    <p>This measure example is used to illustrate how a composite measure can be constructured. This measure is one component of the composite measure.</p></div>"
+  ];
+  fhir:Measure.title [ fhir:value "Screening for Alcohol Misuse"];
+  fhir:Measure.status [ fhir:value "draft"];
+  fhir:Measure.scoring [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "proportion" ]
+     ]
+  ];
+  fhir:Measure.group [
+     fhir:index 0;
+     fhir:Element.id [ fhir:value "Main" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "initial-population" ]
+         ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Initial Population" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "denominator" ]
+         ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Denominator" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "numerator" ]
+         ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Numerator" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Measure/component-a-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Measure/component-a-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

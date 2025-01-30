@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CapabilityStatement/messagedefinition> a fhir:CapabilityStatement;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "messagedefinition"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <h2/>\n      <div>\n        <p>Sample capability statement showing new MessageDefinition structure</p>\n\n      </div>\n    </div>"
+  ];
+  fhir:CapabilityStatement.status [ fhir:value "draft"];
+  fhir:CapabilityStatement.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:CapabilityStatement.date [ fhir:value "2012-01-04"^^xsd:date];
+  fhir:CapabilityStatement.publisher [ fhir:value "ACME Corporation"];
+  fhir:CapabilityStatement.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "System Administrator" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "wile@acme.org" ]
+     ]
+  ];
+  fhir:CapabilityStatement.description [ fhir:value "Sample capability statement showing new MessageDefinition structure"];
+  fhir:CapabilityStatement.kind [ fhir:value "instance"];
+  fhir:CapabilityStatement.software [
+     fhir:CapabilityStatement.software.name [ fhir:value "EHR" ]
+  ];
+  fhir:CapabilityStatement.implementation [
+     fhir:CapabilityStatement.implementation.description [ fhir:value "Acme Message endpoint" ];
+     fhir:CapabilityStatement.implementation.url [ fhir:value "http://acem.com/fhir/message-drop" ]
+  ];
+  fhir:CapabilityStatement.fhirVersion [ fhir:value "4.0.1"];
+  fhir:CapabilityStatement.format [
+     fhir:value "xml";
+     fhir:index 0
+  ], [
+     fhir:value "json";
+     fhir:index 1
+  ];
+  fhir:CapabilityStatement.messaging [
+     fhir:index 0;
+     fhir:CapabilityStatement.messaging.endpoint [
+       fhir:index 0;
+       fhir:CapabilityStatement.messaging.endpoint.protocol [
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/message-transport" ];
+         fhir:Coding.code [ fhir:value "mllp" ]
+       ];
+       fhir:CapabilityStatement.messaging.endpoint.address [ fhir:value "mllp:10.1.1.10:9234" ]
+     ];
+     fhir:CapabilityStatement.messaging.reliableCache [ fhir:value "30"^^xsd:nonNegativeInteger ];
+     fhir:CapabilityStatement.messaging.documentation [ fhir:value "ADT A08 equivalent for external system notifications" ];
+     fhir:CapabilityStatement.messaging.supportedMessage [
+       fhir:index 0;
+       fhir:CapabilityStatement.messaging.supportedMessage.mode [ fhir:value "receiver" ];
+       fhir:CapabilityStatement.messaging.supportedMessage.definition [
+         fhir:value "MessageDefinition/example";
+         fhir:link <http://hl7.org/fhir/MessageDefinition/example>
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CapabilityStatement/messagedefinition.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CapabilityStatement/messagedefinition.ttl> .
+
+# -------------------------------------------------------------------------------------
+

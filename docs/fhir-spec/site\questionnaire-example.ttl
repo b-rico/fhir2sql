@@ -1,0 +1,173 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Questionnaire/3141> a fhir:Questionnaire;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "3141"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <pre>\n            1.Comorbidity?\n              1.1 Cardial Comorbidity\n                1.1.1 Angina?\n                1.1.2 MI?\n              1.2 Vascular Comorbidity?\n              ...\n            Histopathology\n              Abdominal\n                pT category?\n              ...\n          </pre>\n    </div>"
+  ];
+  fhir:Questionnaire.url [ fhir:value "http://hl7.org/fhir/Questionnaire/3141"];
+  fhir:Questionnaire.title [ fhir:value "Cancer Quality Forum Questionnaire 2012"];
+  fhir:Questionnaire.status [ fhir:value "draft"];
+  fhir:Questionnaire.subjectType [
+     fhir:value "Patient";
+     fhir:index 0
+  ];
+  fhir:Questionnaire.date [ fhir:value "2012-01"^^xsd:gYearMonth];
+  fhir:Questionnaire.item [
+     fhir:index 0;
+     fhir:Questionnaire.item.linkId [ fhir:value "1" ];
+     fhir:Questionnaire.item.code [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://example.org/system/code/sections" ];
+       fhir:Coding.code [ fhir:value "COMORBIDITY" ]
+     ];
+     fhir:Questionnaire.item.type [ fhir:value "group" ];
+     fhir:Questionnaire.item.item [
+       fhir:index 0;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.1" ];
+       fhir:Questionnaire.item.code [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/system/code/questions" ];
+         fhir:Coding.code [ fhir:value "COMORB" ]
+       ];
+       fhir:Questionnaire.item.prefix [ fhir:value "1" ];
+       fhir:Questionnaire.item.type [ fhir:value "choice" ];
+       fhir:Questionnaire.item.answerValueSet [
+         fhir:value "http://hl7.org/fhir/ValueSet/yesnodontknow";
+         fhir:link <http://hl7.org/fhir/ValueSet/yesnodontknow>
+       ];
+       fhir:Questionnaire.item.item [
+         fhir:index 0;
+         fhir:Questionnaire.item.linkId [ fhir:value "1.1.1" ];
+         fhir:Questionnaire.item.code [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/system/code/sections" ];
+           fhir:Coding.code [ fhir:value "CARDIAL" ]
+         ];
+         fhir:Questionnaire.item.type [ fhir:value "group" ];
+         fhir:Questionnaire.item.enableWhen [
+           fhir:index 0;
+           fhir:Questionnaire.item.enableWhen.question [ fhir:value "1.1" ];
+           fhir:Questionnaire.item.enableWhen.operator [ fhir:value "=" ];
+           fhir:Questionnaire.item.enableWhen.answerCoding [
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0136" ];
+             fhir:Coding.code [ fhir:value "Y" ]
+           ]
+         ];
+         fhir:Questionnaire.item.item [
+           fhir:index 0;
+           fhir:Questionnaire.item.linkId [ fhir:value "1.1.1.1" ];
+           fhir:Questionnaire.item.code [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/system/code/questions" ];
+             fhir:Coding.code [ fhir:value "COMORBCAR" ]
+           ];
+           fhir:Questionnaire.item.prefix [ fhir:value "1.1" ];
+           fhir:Questionnaire.item.type [ fhir:value "choice" ];
+           fhir:Questionnaire.item.answerValueSet [
+             fhir:value "http://hl7.org/fhir/ValueSet/yesnodontknow";
+             fhir:link <http://hl7.org/fhir/ValueSet/yesnodontknow>
+           ];
+           fhir:Questionnaire.item.item [
+             fhir:index 0;
+             fhir:Questionnaire.item.linkId [ fhir:value "1.1.1.1.1" ];
+             fhir:Questionnaire.item.code [
+               fhir:index 0;
+               fhir:Coding.system [ fhir:value "http://example.org/system/code/questions" ];
+               fhir:Coding.code [ fhir:value "COMCAR00" ];
+               fhir:Coding.display [ fhir:value "Angina Pectoris" ]
+             ], [
+               fhir:index 1;
+               a sct:194828000;
+               fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+               fhir:Coding.code [ fhir:value "194828000" ];
+               fhir:Coding.display [ fhir:value "Angina (disorder)" ]
+             ];
+             fhir:Questionnaire.item.prefix [ fhir:value "1.1.1" ];
+             fhir:Questionnaire.item.type [ fhir:value "choice" ];
+             fhir:Questionnaire.item.answerValueSet [
+               fhir:value "http://hl7.org/fhir/ValueSet/yesnodontknow";
+               fhir:link <http://hl7.org/fhir/ValueSet/yesnodontknow>
+             ]
+           ], [
+             fhir:index 1;
+             fhir:Questionnaire.item.linkId [ fhir:value "1.1.1.1.2" ];
+             fhir:Questionnaire.item.code [
+               fhir:index 0;
+               a sct:22298006;
+               fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+               fhir:Coding.code [ fhir:value "22298006" ];
+               fhir:Coding.display [ fhir:value "Myocardial infarction (disorder)" ]
+             ];
+             fhir:Questionnaire.item.prefix [ fhir:value "1.1.2" ];
+             fhir:Questionnaire.item.type [ fhir:value "choice" ];
+             fhir:Questionnaire.item.answerValueSet [
+               fhir:value "http://hl7.org/fhir/ValueSet/yesnodontknow";
+               fhir:link <http://hl7.org/fhir/ValueSet/yesnodontknow>
+             ]
+           ]
+         ], [
+           fhir:index 1;
+           fhir:Questionnaire.item.linkId [ fhir:value "1.1.1.2" ];
+           fhir:Questionnaire.item.code [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/system/code/questions" ];
+             fhir:Coding.code [ fhir:value "COMORBVAS" ]
+           ];
+           fhir:Questionnaire.item.prefix [ fhir:value "1.2" ];
+           fhir:Questionnaire.item.type [ fhir:value "choice" ];
+           fhir:Questionnaire.item.answerValueSet [
+             fhir:value "http://hl7.org/fhir/ValueSet/yesnodontknow";
+             fhir:link <http://hl7.org/fhir/ValueSet/yesnodontknow>
+           ]
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Questionnaire.item.linkId [ fhir:value "2" ];
+     fhir:Questionnaire.item.code [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://example.org/system/code/sections" ];
+       fhir:Coding.code [ fhir:value "HISTOPATHOLOGY" ]
+     ];
+     fhir:Questionnaire.item.type [ fhir:value "group" ];
+     fhir:Questionnaire.item.item [
+       fhir:index 0;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.1" ];
+       fhir:Questionnaire.item.code [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/system/code/sections" ];
+         fhir:Coding.code [ fhir:value "ABDOMINAL" ]
+       ];
+       fhir:Questionnaire.item.type [ fhir:value "group" ];
+       fhir:Questionnaire.item.item [
+         fhir:index 0;
+         fhir:Questionnaire.item.linkId [ fhir:value "2.1.2" ];
+         fhir:Questionnaire.item.code [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/system/code/questions" ];
+           fhir:Coding.code [ fhir:value "STADPT" ];
+           fhir:Coding.display [ fhir:value "pT category" ]
+         ];
+         fhir:Questionnaire.item.type [ fhir:value "choice" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Questionnaire/3141.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Questionnaire/3141.ttl> .
+
+# -------------------------------------------------------------------------------------
+

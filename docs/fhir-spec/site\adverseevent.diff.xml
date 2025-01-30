@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="AdverseEvent" status="changed">
+      <element path="AdverseEvent.actuality" status="new"/>
+      <element binding-status="changed"
+               binding-strength-changed="true"
+               new-max="*"
+               old-max="1"
+               path="AdverseEvent.category">
+         <removed-type name="code"/>
+         <added-type name="CodeableConcept"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/adverse-event-category"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/adverse-event-category"
+                      strength="extensible"/>
+      </element>
+      <element path="AdverseEvent.event" status="new"/>
+      <element new-min="1" old-min="0" path="AdverseEvent.subject">
+         <removed-type name="Reference(Patient | ResearchSubject | Medication | Device)"/>
+         <added-type name="Reference(Patient | Group | Practitioner | RelatedPerson)"/>
+      </element>
+      <element path="AdverseEvent.encounter" status="new"/>
+      <element path="AdverseEvent.detected" status="new"/>
+      <element path="AdverseEvent.recordedDate" status="new"/>
+      <element path="AdverseEvent.resultingCondition" status="new"/>
+      <element path="AdverseEvent.severity" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AdverseEvent.outcome">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/adverse-event-outcome"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/adverse-event-outcome|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="AdverseEvent.recorder">
+         <removed-type name="Reference(Patient | Practitioner | RelatedPerson)"/>
+         <added-type name="Reference(Patient | Practitioner | PractitionerRole | RelatedPerson)"/>
+      </element>
+      <element path="AdverseEvent.contributor" status="new"/>
+      <element path="AdverseEvent.suspectEntity.instance">
+         <removed-type name="Reference(Substance | Medication | MedicationAdministration | MedicationStatement | Device)"/>
+         <added-type name="Reference(Immunization | Procedure | Substance | Medication | MedicationAdministration | MedicationStatement | Device)"/>
+      </element>
+      <element binding-status="removed"
+               new-max="*"
+               old-max="1"
+               path="AdverseEvent.suspectEntity.causality">
+         <removed-type name="code"/>
+         <added-type name="BackboneElement"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/adverse-event-causality"
+                      strength="required"/>
+      </element>
+      <element path="AdverseEvent.suspectEntity.causality.assessment" status="new"/>
+      <element path="AdverseEvent.suspectEntity.causality.productRelatedness"
+               status="new"/>
+      <element path="AdverseEvent.suspectEntity.causality.author" status="new"/>
+      <element path="AdverseEvent.suspectEntity.causality.method" status="new"/>
+      <element path="AdverseEvent.subjectMedicalHistory">
+         <removed-type name="Reference(Condition | Observation | AllergyIntolerance | FamilyMemberHistory | Immunization | Procedure)"/>
+         <added-type name="Reference(Condition | Observation | AllergyIntolerance | FamilyMemberHistory | Immunization | Procedure | Media | DocumentReference)"/>
+      </element>
+      <element path="AdverseEvent.type" status="deleted"/>
+      <element path="AdverseEvent.reaction" status="deleted"/>
+      <element path="AdverseEvent.eventParticipant" status="deleted"/>
+      <element path="AdverseEvent.description" status="deleted"/>
+      <element path="AdverseEvent.suspectEntity.causalityAssessment" status="deleted"/>
+      <element path="AdverseEvent.suspectEntity.causalityProductRelatedness"
+               status="deleted"/>
+      <element path="AdverseEvent.suspectEntity.causalityMethod" status="deleted"/>
+      <element path="AdverseEvent.suspectEntity.causalityAuthor" status="deleted"/>
+      <element path="AdverseEvent.suspectEntity.causalityResult" status="deleted"/>
+   </type>
+</difference>

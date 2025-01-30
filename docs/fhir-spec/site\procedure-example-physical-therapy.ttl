@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/physical-therapy> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "physical-therapy"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Assessment of passive range of motion for both knees on Sept 27, 2016 due to osteoarthritis</div>"
+  ];
+  fhir:Procedure.basedOn [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ServiceRequest/physical-therapy>;
+     fhir:Reference.reference [ fhir:value "ServiceRequest/physical-therapy" ];
+     fhir:Reference.display [ fhir:value "Order for the assessment of passive range of motion" ]
+  ];
+  fhir:Procedure.status [ fhir:value "completed"];
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:386053000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "386053000" ];
+       fhir:Coding.display [ fhir:value "Evaluation procedure (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Evaluation" ]
+  ];
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:710830005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "710830005" ];
+       fhir:Coding.display [ fhir:value "Assessment of passive range of motion (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Assessment of passive range of motion" ]
+  ];
+  fhir:Procedure.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Procedure.performedDateTime [ fhir:value "2016-09-27"^^xsd:date];
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:Reference.display [ fhir:value "Paul Therapist, PT" ]
+     ]
+  ];
+  fhir:Procedure.location [
+     fhir:Reference.display [ fhir:value "Sawbones Orthopedic Clinic" ]
+  ];
+  fhir:Procedure.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "assessment of mobility limitations due to osteoarthritis" ]
+  ];
+  fhir:Procedure.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:36701003;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "36701003" ];
+       fhir:Coding.display [ fhir:value "Both knees (body structure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Both knees" ]
+  ] .
+
+<http://hl7.org/fhir/ServiceRequest/physical-therapy> a fhir:ServiceRequest .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/physical-therapy.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Procedure/physical-therapy.ttl> .
+
+# -------------------------------------------------------------------------------------
+

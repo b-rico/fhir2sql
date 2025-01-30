@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="DiagnosticReport" status="changed">
+      <element path="DiagnosticReport.basedOn">
+         <removed-type name="Reference(CarePlan | ImmunizationRecommendation | MedicationRequest | NutritionOrder | ProcedureRequest | ReferralRequest)"/>
+         <added-type name="Reference(CarePlan | ImmunizationRecommendation | MedicationRequest | NutritionOrder | ServiceRequest)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="DiagnosticReport.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/diagnostic-report-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/diagnostic-report-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-max="*" old-max="1" path="DiagnosticReport.category"/>
+      <element path="DiagnosticReport.encounter" status="new"/>
+      <element path="DiagnosticReport.performer">
+         <removed-type name="BackboneElement"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | CareTeam)"/>
+      </element>
+      <element path="DiagnosticReport.resultsInterpreter" status="new"/>
+      <element path="DiagnosticReport.imagingStudy">
+         <removed-type name="Reference(ImagingStudy | ImagingManifest)"/>
+         <added-type name="Reference(ImagingStudy)"/>
+      </element>
+      <element old-name="image" path="DiagnosticReport.media"/>
+      <element old-name="codedDiagnosis" path="DiagnosticReport.conclusionCode"/>
+      <element path="DiagnosticReport.context" status="deleted"/>
+      <element path="DiagnosticReport.performer.role" status="deleted"/>
+      <element path="DiagnosticReport.performer.actor" status="deleted"/>
+   </type>
+</difference>

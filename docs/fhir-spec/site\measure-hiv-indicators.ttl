@@ -1,0 +1,484 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Measure/hiv-indicators> a fhir:Measure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "hiv-indicators"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: hiv-indicators</p><p><b>url</b>: <b>http://ohie.org/Measure/hiv-indicators</b></p><p><b>identifier</b>: hiv-indicators</p><p><b>version</b>: 0.0.0</p><p><b>name</b>: HIV</p><p><b>title</b>: HIV Indicators</p><p><b>status</b>: draft</p><p><b>experimental</b>: true</p><p><b>date</b>: 08/03/2018</p><p><b>publisher</b>: Open HIE</p><p><b>description</b>: This ADX-HIV measure defines a common set of HIV core indicators with data elements and associated stratifiers along with instructions regarding how to leverage these to generate and exchange conformant XML messages. Interoperable message exchange will be valuable to jurisdictions such as Ministries of Health, and WHO, and to health initiatives such as the U.S. President’s Emergency Plan for AIDS Relief (PEPFAR), the Global Fund, UNAIDS, and others.</p><p><b>relatedArtifact</b>: </p><p><b>library</b>: <a>http://ohie.org/Library/hiv-indicators</a></p><p><b>scoring</b>: cohort <span>(Details : {[not stated] code 'cohort' = 'cohort)</span></p><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_ART1_N <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_ART1_N' = 'QRPH_ADX_ART1_N)</span></p><p><b>description</b>: Number of adults and children newly enrolled on antiretroviral therapy (ART) in the reporting period</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>AGE_GROUP:SEX <span>(Details : {http://ihe.net/qrph/adx/ code 'AGE_GROUP:SEX' = 'AGE_GROUP:SEX)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_ART1_N_PREG_BF <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_ART1_N_PREG_BF' = 'QRPH_ADX_ART1_N_PREG_BF)</span></p><p><b>description</b>: Number of adults and children newly enrolled on ART in the reporting period_pregnant and breastfeeding</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>PREG_BF <span>(Details : {http://ihe.net/qrph/adx/ code 'PREG_BF' = 'PREG_BF)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_ART3_N <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_ART3_N' = 'QRPH_ADX_ART3_N)</span></p><p><b>description</b>: Number of adults and children currently receiving antiretroviral therapy (ART)</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_ART5_N <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_ART5_N' = 'QRPH_ADX_ART5_N)</span></p><p><b>description</b>: Number of adults and children who are still on treatment at 12 months after initiating ART</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><blockquote><p><b>stratifier</b></p><blockquote><p><b>component</b></p><p><b>code</b>: AGE_GROUP <span>(Details : {http://ihe.net/qrph/adx/ code 'AGE_GROUP' = 'AGE_GROUP)</span></p><p><b>criteria</b>: </p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: SEX <span>(Details : {http://ihe.net/qrph/adx/ code 'SEX' = 'SEX)</span></p><p><b>criteria</b>: </p></blockquote></blockquote></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_ART5_N_PREG_BF <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_ART5_N_PREG_BF' = 'QRPH_ADX_ART5_N_PREG_BF)</span></p><p><b>description</b>: Number of adults and children who are still on treatment at 12 months after initiating ART-pregnant and breastfeeding</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>PREG_BF <span>(Details : {http://ihe.net/qrph/adx/ code 'PREG_BF' = 'PREG_BF)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_ART5_D <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_ART5_D' = 'QRPH_ADX_ART5_D)</span></p><p><b>description</b>: Number of adults and children who initiated ART in the 12 months prior to the beginning of the reporting period</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>AGE_GROUP:SEX <span>(Details : {http://ihe.net/qrph/adx/ code 'AGE_GROUP:SEX' = 'AGE_GROUP:SEX)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_MTCT1_D <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_MTCT1_D' = 'QRPH_ADX_MTCT1_D)</span></p><p><b>description</b>: Number of pregnant women who attended ANC or had a facility-based delivery in the reporting period</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>PMTCT_HIV_STATUS <span>(Details : {http://ihe.net/qrph/adx/ code 'PMTCT_HIV_STATUS' = 'PMTCT_HIV_STATUS)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_MTCT2_D <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_MTCT2_D' = 'QRPH_ADX_MTCT2_D)</span></p><p><b>description</b>: Number of HIV positive pregnant women who attended ANC or had a facility-based delivery within the reporting period</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_MTCT2_N <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_MTCT2_N' = 'QRPH_ADX_MTCT2_N)</span></p><p><b>description</b>: Number of HIV-positive pregnant women who received ART to reduce the risk of mother-to-child-transmission during pregnancy</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>PMTCT_ART_STATUS <span>(Details : {http://ihe.net/qrph/adx/ code 'PMTCT_ART_STATUS' = 'PMTCT_ART_STATUS)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_VLS3_N <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_VLS3_N' = 'QRPH_ADX_VLS3_N)</span></p><p><b>description</b>: Number of people living with HIV and on ART who have a suppressed viral load results (&lt;1000 copies/mL)</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>AGE_GROUP:SEX <span>(Details : {http://ihe.net/qrph/adx/ code 'AGE_GROUP:SEX' = 'AGE_GROUP:SEX)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_HTS2_N <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_HTS2_N' = 'QRPH_ADX_HTS2_N)</span></p><p><b>description</b>: Number of individuals who received HIV Testing Services (HTS) and received their test results</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>AGE_GROUP:SEX:HIV_TEST_RESULTS <span>(Details : {http://ihe.net/qrph/adx/ code 'AGE_GROUP:SEX:HIV_TEST_RESULTS' = 'AGE_GROUP:SEX:HIV_TEST_RESULTS)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_MTCT1_N <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_MTCT1_N' = 'QRPH_ADX_MTCT1_N)</span></p><p><b>description</b>: Number of pregnant women with known HIV status at first antenatal care visit</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>PMTCT_HIV_STATUS <span>(Details : {http://ihe.net/qrph/adx/ code 'PMTCT_HIV_STATUS' = 'PMTCT_HIV_STATUS)</span></td><td/></tr></table></blockquote><blockquote><p><b>group</b></p><p><b>code</b>: QRPH_ADX_VLS3_D <span>(Details : {http://ihe.net/qrph/adx/ code 'QRPH_ADX_VLS3_D' = 'QRPH_ADX_VLS3_D)</span></p><p><b>description</b>: Number of people on ART who had a VL measurement in the past 12 months</p><h3>Populations</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>cohort <span>(Details )</span></td><td/></tr></table><h3>Stratifiers</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Criteria</b></td></tr><tr><td>*</td><td>AGE_GROUP:SEX <span>(Details : {http://ihe.net/qrph/adx/ code 'AGE_GROUP:SEX' = 'AGE_GROUP:SEX)</span></td><td/></tr></table></blockquote></div>"
+  ];
+  fhir:Measure.url [ fhir:value "http://ohie.org/Measure/hiv-indicators"];
+  fhir:Measure.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://ohie.org/Measure/" ];
+     fhir:Identifier.value [ fhir:value "hiv-indicators" ]
+  ];
+  fhir:Measure.version [ fhir:value "0.0.0"];
+  fhir:Measure.name [ fhir:value "HIV"];
+  fhir:Measure.title [ fhir:value "HIV Indicators"];
+  fhir:Measure.status [ fhir:value "draft"];
+  fhir:Measure.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:Measure.date [ fhir:value "2018-03-08"^^xsd:date];
+  fhir:Measure.publisher [ fhir:value "Open HIE"];
+  fhir:Measure.description [ fhir:value "This ADX-HIV measure defines a common set of HIV core indicators with data elements and associated stratifiers along with instructions regarding how to leverage these to generate and exchange conformant XML messages. Interoperable message exchange will be valuable to jurisdictions such as Ministries of Health, and WHO, and to health initiatives such as the U.S. President’s Emergency Plan for AIDS Relief (PEPFAR), the Global Fund, UNAIDS, and others."];
+  fhir:Measure.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "derived-from" ];
+     fhir:RelatedArtifact.url [ fhir:value "http://wiki.ihe.net/index.php/Aggregate_Data_Exchange_-_HIV" ]
+  ];
+  fhir:Measure.library [
+     fhir:value "http://ohie.org/Library/hiv-indicators";
+     fhir:index 0;
+     fhir:link <http://ohie.org/Library/hiv-indicators>
+  ];
+  fhir:Measure.scoring [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "cohort" ]
+     ]
+  ];
+  fhir:Measure.group [
+     fhir:index 0;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_ART1_N" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of adults and children newly enrolled on antiretroviral therapy (ART) in the reporting period" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Newly enrolled on antiretroviral therapy (ART) during measurement period" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "AGE_GROUP:SEX" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Age Group/Sex" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_ART1_N_PREG_BF" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of adults and children newly enrolled on ART in the reporting period_pregnant and breastfeeding" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Newly enrolled on antiretroviral therapy (ART) during measurement period (pregnant and breastfeeding)" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "PREG_BF" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Pregnant/Breastfeeding" ]
+       ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_ART3_N" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of adults and children currently receiving antiretroviral therapy (ART)" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Receiving antiretroviral therapy (ART) during measurement period" ]
+       ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_ART5_N" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of adults and children who are still on treatment at 12 months after initiating ART" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Receiving antiretroviral therapy (ART) at 12 months after initiating" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.component [
+         fhir:index 0;
+         fhir:Measure.group.stratifier.component.code [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+             fhir:Coding.code [ fhir:value "AGE_GROUP" ]
+           ]
+         ];
+         fhir:Measure.group.stratifier.component.criteria [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Age Group" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Measure.group.stratifier.component.code [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+             fhir:Coding.code [ fhir:value "SEX" ]
+           ]
+         ];
+         fhir:Measure.group.stratifier.component.criteria [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Sex" ]
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_ART5_N_PREG_BF" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of adults and children who are still on treatment at 12 months after initiating ART-pregnant and breastfeeding" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Receiving antiretroviral therapy (ART) at 12 months after initiating (pregnant and breastfeeding)" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "PREG_BF" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Pregnant/Breastfeeding" ]
+       ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_ART5_D" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of adults and children who initiated ART in the 12 months prior to the beginning of the reporting period" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Initiated antiretroviral therapy (ART) in the 12 months prior to measurement period" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "AGE_GROUP:SEX" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Age Group/Sex" ]
+       ]
+     ]
+  ], [
+     fhir:index 6;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_MTCT1_D" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of pregnant women who attended ANC or had a facility-based delivery in the reporting period" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Antenatal Care Visit or Live Birth during the Measurement Period" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "PMTCT_HIV_STATUS" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "PMTCT HIV Status" ]
+       ]
+     ]
+  ], [
+     fhir:index 7;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_MTCT2_D" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of HIV positive pregnant women who attended ANC or had a facility-based delivery within the reporting period" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Antenatal Care Visit or Live Birth during Measurement Period (HIV Positive)" ]
+       ]
+     ]
+  ], [
+     fhir:index 8;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_MTCT2_N" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of HIV-positive pregnant women who received ART to reduce the risk of mother-to-child-transmission during pregnancy" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "HIV-positive, pregnant, and receiving antiretroviral therapy (ART) to reduce the risk of mother-to-child-transmission during pregnancy" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "PMTCT_ART_STATUS" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "PMTCT ART Status" ]
+       ]
+     ]
+  ], [
+     fhir:index 9;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_VLS3_N" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of people living with HIV and on ART who have a suppressed viral load results (<1000 copies/mL)" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Living with HIV and on ART with suppressed viral load results (<1000 copies/mL)" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "AGE_GROUP:SEX" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Age Group/Sex" ]
+       ]
+     ]
+  ], [
+     fhir:index 10;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_HTS2_N" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of individuals who received HIV Testing Services (HTS) and received their test results" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Received HIV Testing Services (HTS) and Recevied Test Results" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "AGE_GROUP:SEX:HIV_TEST_RESULTS" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Age Group/Sex/HIV Test Results" ]
+       ]
+     ]
+  ], [
+     fhir:index 11;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_MTCT1_N" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of pregnant women with known HIV status at first antenatal care visit" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "HIV Status Known at First Antenatal Care Visit" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "PMTCT_HIV_STATUS" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "PMTCT HIV Status" ]
+       ]
+     ]
+  ], [
+     fhir:index 12;
+     fhir:Measure.group.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+         fhir:Coding.code [ fhir:value "QRPH_ADX_VLS3_D" ]
+       ]
+     ];
+     fhir:Measure.group.description [ fhir:value "Number of people on ART who had a VL measurement in the past 12 months" ];
+     fhir:Measure.group.population [
+       fhir:index 0;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.text [ fhir:value "cohort" ]
+       ];
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Receiving antiretroviral therapty (ART) and Viral Load Measurement in the past 12 months" ]
+       ]
+     ];
+     fhir:Measure.group.stratifier [
+       fhir:index 0;
+       fhir:Measure.group.stratifier.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ihe.net/qrph/adx/" ];
+           fhir:Coding.code [ fhir:value "AGE_GROUP:SEX" ]
+         ]
+       ];
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Age Group/Sex" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Measure/hiv-indicators.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Measure/hiv-indicators.ttl> .
+
+# -------------------------------------------------------------------------------------
+

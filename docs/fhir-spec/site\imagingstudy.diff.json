@@ -1,0 +1,161 @@
+﻿{
+  "types": [
+    "ImagingStudy"
+  ],
+  "ImagingStudy": {
+    "elements": {
+      "ImagingStudy.status": {
+        "status": "new"
+      },
+      "ImagingStudy.modality": {
+        "old-name": "modalityList",
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/dicom-cid29",
+          "strength": "extensible"
+        },
+        "new-binding": {
+          "reference": "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html",
+          "strength": "extensible"
+        }
+      },
+      "ImagingStudy.subject": {
+        "old-name": "patient",
+        "removed-types": [
+          "Reference(Patient)"
+        ],
+        "added-types": [
+          "Reference(Patient | Device | Group)"
+        ]
+      },
+      "ImagingStudy.encounter": {
+        "status": "new"
+      },
+      "ImagingStudy.basedOn": {
+        "removed-types": [
+          "Reference(ReferralRequest | CarePlan | ProcedureRequest)"
+        ],
+        "added-types": [
+          "Reference(CarePlan | ServiceRequest | Appointment | AppointmentResponse | Task)"
+        ]
+      },
+      "ImagingStudy.referrer": {
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole)"
+        ]
+      },
+      "ImagingStudy.interpreter": {
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole)"
+        ]
+      },
+      "ImagingStudy.procedureReference": {
+        "old-max": "*",
+        "new-max": "1"
+      },
+      "ImagingStudy.procedureCode": {
+        "binding-status": "added",
+        "new-binding": {
+          "reference": "http://www.rsna.org/RadLex_Playbook.aspx",
+          "strength": "extensible"
+        }
+      },
+      "ImagingStudy.location": {
+        "status": "new"
+      },
+      "ImagingStudy.reasonCode": {
+        "status": "new"
+      },
+      "ImagingStudy.reasonReference": {
+        "status": "new"
+      },
+      "ImagingStudy.note": {
+        "status": "new"
+      },
+      "ImagingStudy.series.uid": {
+        "removed-types": [
+          "oid"
+        ],
+        "added-types": [
+          "id"
+        ]
+      },
+      "ImagingStudy.series.modality": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/dicom-cid29",
+          "strength": "extensible"
+        },
+        "new-binding": {
+          "reference": "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html",
+          "strength": "extensible"
+        }
+      },
+      "ImagingStudy.series.specimen": {
+        "status": "new"
+      },
+      "ImagingStudy.series.performer": {
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "BackboneElement"
+        ]
+      },
+      "ImagingStudy.series.performer.function": {
+        "status": "new"
+      },
+      "ImagingStudy.series.performer.actor": {
+        "status": "new"
+      },
+      "ImagingStudy.series.instance.uid": {
+        "removed-types": [
+          "oid"
+        ],
+        "added-types": [
+          "id"
+        ]
+      },
+      "ImagingStudy.series.instance.sopClass": {
+        "removed-types": [
+          "oid"
+        ],
+        "added-types": [
+          "Coding"
+        ],
+        "binding-status": "added",
+        "new-binding": {
+          "reference": "http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1",
+          "strength": "extensible"
+        }
+      },
+      "ImagingStudy.uid": {
+        "status": "deleted"
+      },
+      "ImagingStudy.accession": {
+        "status": "deleted"
+      },
+      "ImagingStudy.availability": {
+        "status": "deleted"
+      },
+      "ImagingStudy.context": {
+        "status": "deleted"
+      },
+      "ImagingStudy.reason": {
+        "status": "deleted"
+      },
+      "ImagingStudy.series.availability": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

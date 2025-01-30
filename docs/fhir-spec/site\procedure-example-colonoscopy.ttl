@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/colonoscopy> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "colonoscopy"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Colonoscopy with complication</div>"
+  ];
+  fhir:Procedure.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:Procedure.status [ fhir:value "completed"];
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:73761001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "73761001" ];
+       fhir:Coding.display [ fhir:value "Colonoscopy (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Colonoscopy" ]
+  ];
+  fhir:Procedure.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+       fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+     ]
+  ];
+  fhir:Procedure.location [
+     fhir:link <http://hl7.org/fhir/Location/1>;
+     fhir:Reference.reference [ fhir:value "Location/1" ];
+     fhir:Reference.display [ fhir:value "Burgers University Medical Center, South Wing, second floor" ]
+  ];
+  fhir:Procedure.complicationDetail [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Perforated intestine condition" ]
+  ];
+  fhir:Procedure.usedReference [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Colonoscope device" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Location/1> a fhir:Location .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/colonoscopy.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Procedure/colonoscopy.ttl> .
+
+# -------------------------------------------------------------------------------------
+

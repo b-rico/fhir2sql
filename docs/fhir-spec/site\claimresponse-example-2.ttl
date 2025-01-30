@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ClaimResponse/R3501> a fhir:ClaimResponse;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "R3501"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the ClaimResponse that demonstrates returning errors</div>"
+  ];
+  fhir:ClaimResponse.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.BenefitsInc.com/fhir/remittance" ];
+     fhir:Identifier.value [ fhir:value "R3501" ]
+  ];
+  fhir:ClaimResponse.status [ fhir:value "active"];
+  fhir:ClaimResponse.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/claim-type" ];
+       fhir:Coding.code [ fhir:value "oral" ]
+     ]
+  ];
+  fhir:ClaimResponse.use [ fhir:value "claim"];
+  fhir:ClaimResponse.patient [
+     fhir:link <http://hl7.org/fhir/Patient/1>;
+     fhir:Reference.reference [ fhir:value "Patient/1" ]
+  ];
+  fhir:ClaimResponse.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:ClaimResponse.insurer [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://www.jurisdiction.org/insurers" ];
+       fhir:Identifier.value [ fhir:value "555123" ]
+     ]
+  ];
+  fhir:ClaimResponse.requestor [
+     fhir:link <http://hl7.org/fhir/Practitioner/1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/1" ]
+  ];
+  fhir:ClaimResponse.request [
+     fhir:link <http://hl7.org/fhir/Claim/100156>;
+     fhir:Reference.reference [ fhir:value "Claim/100156" ]
+  ];
+  fhir:ClaimResponse.outcome [ fhir:value "error"];
+  fhir:ClaimResponse.disposition [ fhir:value "Claim could not be processed"];
+  fhir:ClaimResponse.formCode [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/forms-codes" ];
+       fhir:Coding.code [ fhir:value "2" ]
+     ]
+  ];
+  fhir:ClaimResponse.processNote [
+     fhir:index 0;
+     fhir:ClaimResponse.processNote.number [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:ClaimResponse.processNote.type [ fhir:value "display" ];
+     fhir:ClaimResponse.processNote.text [ fhir:value "Invalid claim" ];
+     fhir:ClaimResponse.processNote.language [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "urn:ietf:bcp:47" ];
+         fhir:Coding.code [ fhir:value "en-CA" ]
+       ]
+     ]
+  ];
+  fhir:ClaimResponse.communicationRequest [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/CommunicationRequest/fm-solicit>;
+     fhir:Reference.reference [ fhir:value "CommunicationRequest/fm-solicit" ]
+  ];
+  fhir:ClaimResponse.error [
+     fhir:index 0;
+     fhir:ClaimResponse.error.itemSequence [ fhir:value "3"^^xsd:positiveInteger ];
+     fhir:ClaimResponse.error.detailSequence [ fhir:value "2"^^xsd:positiveInteger ];
+     fhir:ClaimResponse.error.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/adjudication-error" ];
+         fhir:Coding.code [ fhir:value "a002" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/1> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/1> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Claim/100156> a fhir:Claim .
+
+<http://hl7.org/fhir/CommunicationRequest/fm-solicit> a fhir:CommunicationRequest .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ClaimResponse/R3501.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ClaimResponse/R3501.ttl> .
+
+# -------------------------------------------------------------------------------------
+

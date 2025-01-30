@@ -1,0 +1,234 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Procedure {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  basedOn: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  category: CodeableConcept
+  code: CodeableConcept
+  subject: Reference!
+  encounter: Reference
+  performedDateTime: dateTime  _performedDateTime: ElementBase
+  performedPeriod: Period
+  performedString: String  _performedString: ElementBase
+  performedAge: Age
+  performedRange: Range
+  recorder: Reference
+  asserter: Reference
+  performer: [ProcedurePerformer]
+  location: Reference
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  bodySite: [CodeableConcept]
+  outcome: CodeableConcept
+  report: [Reference]
+  complication: [CodeableConcept]
+  complicationDetail: [Reference]
+  followUp: [CodeableConcept]
+  note: [Annotation]
+  focalDevice: [ProcedureFocalDevice]
+  usedReference: [Reference]
+  usedCode: [CodeableConcept]
+}
+
+type ProcedurePerformer {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  function: CodeableConcept
+  actor: Reference!
+  onBehalfOf: Reference
+}
+
+type ProcedureFocalDevice {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  action: CodeableConcept
+  manipulated: Reference!
+}
+
+input Procedure {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  basedOn: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  category: CodeableConcept
+  code: CodeableConcept
+  subject: Reference!
+  encounter: Reference
+  performedDateTime: dateTime  _performedDateTime: ElementBase
+  performedPeriod: Period
+  performedString: String  _performedString: ElementBase
+  performedAge: Age
+  performedRange: Range
+  recorder: Reference
+  asserter: Reference
+  performer: [ProcedurePerformer]
+  location: Reference
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  bodySite: [CodeableConcept]
+  outcome: CodeableConcept
+  report: [Reference]
+  complication: [CodeableConcept]
+  complicationDetail: [Reference]
+  followUp: [CodeableConcept]
+  note: [Annotation]
+  focalDevice: [ProcedureFocalDevice]
+  usedReference: [Reference]
+  usedCode: [CodeableConcept]
+}
+
+input ProcedurePerformer {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  function: CodeableConcept
+  actor: Reference!
+  onBehalfOf: Reference
+}
+
+input ProcedureFocalDevice {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  action: CodeableConcept
+  manipulated: Reference!
+}
+
+type ProcedureReadType {
+  Procedure(id : ID!) : Procedure
+}
+
+type ProcedureListType {
+  ProcedureList(_filter : String
+    based_on : [reference]
+    category : [token]
+    code : [token]
+    date : [date]
+    encounter : [reference]
+    identifier : [token]
+    instantiates_canonical : [reference]
+    instantiates_uri : [uri]
+    location : [reference]
+    part_of : [reference]
+    patient : [reference]
+    performer : [reference]
+    reason_code : [token]
+    reason_reference : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Procedure]
+}
+
+type ProcedureConnectionType {
+  ProcedureConection(_filter : String
+    based_on : [reference]
+    category : [token]
+    code : [token]
+    date : [date]
+    encounter : [reference]
+    identifier : [token]
+    instantiates_canonical : [reference]
+    instantiates_uri : [uri]
+    location : [reference]
+    part_of : [reference]
+    patient : [reference]
+    performer : [reference]
+    reason_code : [token]
+    reason_reference : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : ProcedureConnection
+}
+
+type ProcedureConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [ProcedureEdge]
+}
+
+type ProcedureEdge {
+  mode : String
+  score : Float
+  resource : Procedure
+}
+
+type ProcedureCreateType {
+  ProcedureCreate(resource : Procedure) : ProcedureCreation
+}
+
+type ProcedureCreation {
+  location : String
+  resource : Procedure
+  information : OperationOutcome
+}
+
+type ProcedureUpdateType {
+  ProcedureUpdate(id : IDresource : Procedure) : ProcedureUpdate
+}
+
+type ProcedureUpdate {
+  resource : Procedure
+  information : OperationOutcome
+}
+
+type ProcedureDeleteType {
+  ProcedureDelete(id : ID) : ProcedureDelete
+}
+
+type ProcedureDelete {
+  information : OperationOutcome
+}
+

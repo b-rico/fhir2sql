@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ValueSet/example-filter> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-filter"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <h2>ACME Codes for Cholesterol: Plasma only</h2>\n      <div>\n        <p>ACME Codes for Cholesterol: Plasma only - demonstrating the use of a filter defined in a CodeSystem</p>\n\n      </div>\n      <p>This value set includes codes from the following code systems:</p>\n      <ul>\n        <li>Include codes from \n          <a href=\"codesystem-example.html\">\n            <code>http://hl7.org/fhir/CodeSystem/example</code>\n          </a> where acme-plasma  =  true\n        </li>\n      </ul>\n    </div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://hl7.org/fhir/ValueSet/example-filter"];
+  fhir:ValueSet.version [ fhir:value "4.0.1"];
+  fhir:ValueSet.name [ fhir:value "ACMECholCodesPlasma"];
+  fhir:ValueSet.title [ fhir:value "ACME Codes for Cholesterol: Plasma only"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2018-11-01"^^xsd:date];
+  fhir:ValueSet.publisher [ fhir:value "HL7 International"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "FHIR project team" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "ACME Codes for Cholesterol: Plasma only - demonstrating the use of a filter defined in a CodeSystem"];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/CodeSystem/example" ];
+       fhir:ValueSet.compose.include.filter [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.filter.property [ fhir:value "acme-plasma" ];
+         fhir:ValueSet.compose.include.filter.op [ fhir:value "=" ];
+         fhir:ValueSet.compose.include.filter.value [ fhir:value "true" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ValueSet/example-filter.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ValueSet/example-filter.ttl> .
+
+# -------------------------------------------------------------------------------------
+

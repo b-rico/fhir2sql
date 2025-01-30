@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/ch-example> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ch-example"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2016-05-16T00:55:52Z"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table>\n        <tbody>\n          <tr>\n            <td>名字</td>\n            <td>张无忌</td> </tr>\n          <tr>\n            <td>地址</td>\n            <td>上海市黄埔区马当路190号, 1974年12月25日</td> \n          </tr>\n          <tr>\n            <td>联系方式</td>\n            <td>住宅: 不详。工作: 18337177888</td> \n          </tr>\n          <tr>\n            <td>Id</td>\n            <td>MRN: 3112219680806371X (市卫生局)</td> \n          </tr> \n        </tbody> \n      </table> \n    </div>"
+  ];
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "MR" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.36.146.595.217.0.1" ];
+     fhir:Identifier.value [ fhir:value "3112219680806371X" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2001-05-06"^^xsd:date ]
+     ];
+     fhir:Identifier.assigner [
+       fhir:Reference.display [ fhir:value "市卫生局" ]
+     ]
+  ];
+  fhir:Patient.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.text [ fhir:value "张无忌" ]
+  ];
+  fhir:Patient.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.use [ fhir:value "home" ]
+  ], [
+     fhir:index 1;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "18337177888" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ];
+  fhir:Patient.gender [ fhir:value "male"];
+  fhir:Patient.birthDate [ fhir:value "1974-12-25"^^xsd:date];
+  fhir:Patient.deceasedBoolean [ fhir:value "false"^^xsd:boolean];
+  fhir:Patient.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "home" ];
+     fhir:Address.type [ fhir:value "both" ];
+     fhir:Address.line [
+       fhir:value "马当路190号";
+       fhir:index 0
+     ];
+     fhir:Address.city [ fhir:value "上海市" ];
+     fhir:Address.district [ fhir:value "黄埔区" ];
+     fhir:Address.postalCode [ fhir:value "200000" ];
+     fhir:Address.period [
+       fhir:Period.start [ fhir:value "1974-12-25"^^xsd:date ]
+     ]
+  ];
+  fhir:Patient.managingOrganization [
+     fhir:link <http://hl7.org/fhir/Organization/1>;
+     fhir:Reference.reference [ fhir:value "Organization/1" ];
+     fhir:Reference.display [ fhir:value "上海东方医院" ]
+  ] .
+
+<http://hl7.org/fhir/Organization/1> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/ch-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Patient/ch-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

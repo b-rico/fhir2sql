@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="OperationDefinition" status="changed">
+      <element path="OperationDefinition.title" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="OperationDefinition.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/publication-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/publication-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="OperationDefinition.kind">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/operation-kind"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/operation-kind|4.0.1"
+                      strength="required"/>
+      </element>
+      <element modifier="removed" path="OperationDefinition.experimental"/>
+      <element old-name="idempotent" path="OperationDefinition.affectsState"/>
+      <element path="OperationDefinition.comment">
+         <removed-type name="string"/>
+         <added-type name="markdown"/>
+      </element>
+      <element path="OperationDefinition.base">
+         <removed-type name="Reference(OperationDefinition)"/>
+         <added-type name="canonical(OperationDefinition)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="OperationDefinition.resource">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/resource-types"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/resource-types|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="OperationDefinition.inputProfile" status="new"/>
+      <element path="OperationDefinition.outputProfile" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="OperationDefinition.parameter.use">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/operation-parameter-use"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/operation-parameter-use|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="OperationDefinition.parameter.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/all-types" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/all-types|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-max="*"
+               old-max="1"
+               old-name="profile"
+               path="OperationDefinition.parameter.targetProfile">
+         <removed-type name="Reference(StructureDefinition)"/>
+         <added-type name="canonical(StructureDefinition)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="OperationDefinition.parameter.searchType">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/search-param-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/search-param-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="OperationDefinition.parameter.binding.strength">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/binding-strength"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/binding-strength|4.0.1"
+                      strength="required"/>
+      </element>
+      <element old-name="valueSet[x]"
+               path="OperationDefinition.parameter.binding.valueSet">
+         <removed-type name="uri"/>
+         <removed-type name="Reference(ValueSet)"/>
+         <added-type name="canonical(ValueSet)"/>
+      </element>
+      <element path="OperationDefinition.parameter.referencedFrom" status="new"/>
+      <element path="OperationDefinition.parameter.referencedFrom.source" status="new"/>
+      <element path="OperationDefinition.parameter.referencedFrom.sourceId"
+               status="new"/>
+   </type>
+</difference>

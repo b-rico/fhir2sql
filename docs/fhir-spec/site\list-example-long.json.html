@@ -1,0 +1,1471 @@
+<!DOCTYPE HTML>
+<!-- template-example-json.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>List-example-long.json - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/list-example-long.json.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="foundation-module.html"><img src="foundation.png"/> Foundation</a></li>        <li><a href="list.html">List</a></li>        <li><b>Example Instance</b></li>        <!-- list-example-long.json.html / resource-instance:List / Example-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>List-example-long.json</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-device.html">Device</a>, <a href="compartmentdefinition-patient.html">Patient</a>, <a href="compartmentdefinition-practitioner.html">Practitioner</a></td></tr></table>
+
+<p>
+<a href="list-example-long.json">Raw JSON</a> (<a href="list-example-long.canonical.json">canonical form</a> + also see <a href="json.html">JSON Format Specification</a>)
+</p>
+
+<div class="example">
+<p>A long list with many entries for testing handling longer lists</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;List&quot;,
+  &quot;id&quot;: &quot;long&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: long&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: current&lt;/p&gt;&lt;p&gt;&lt;b&gt;mode&lt;/b&gt;: changes&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 21/02/2018 12:17:00 PM&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/pat1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/pat2&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/pat3&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/pat4&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/2&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/3&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/4&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/5&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/6&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/7&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/8&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/9&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/10&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/11&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/12&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/71&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/72&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/73&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/74&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/75&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/76&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/77&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/78&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/79&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/80&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/81&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/82&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/83&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/84&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/85&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/86&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/87&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/88&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/89&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/90&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/91&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/92&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/93&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/94&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/95&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/96&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/97&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/98&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/99&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/100&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/101&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/102&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/103&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/104&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/105&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/106&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/107&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/108&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/109&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/110&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/111&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/112&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/113&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/114&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/115&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/116&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/117&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/118&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/119&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/120&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/121&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/122&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/123&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/124&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/125&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/126&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/127&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/128&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/129&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/130&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/131&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/132&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/133&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/134&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/135&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/136&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/137&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/138&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/139&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/140&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/141&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/142&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/143&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/144&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/145&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/146&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/147&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/148&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/149&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/150&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/151&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/152&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/153&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/154&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/155&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/156&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/157&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/158&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/159&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/160&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/161&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/162&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/163&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/164&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/165&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/166&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/167&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/168&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/169&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/170&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/171&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/172&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/173&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/174&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/175&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/176&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/177&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/178&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/179&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/180&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/181&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/182&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/183&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/184&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/185&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/186&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/187&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/188&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/189&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/190&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/191&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/192&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/193&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/194&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/195&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/196&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/197&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/198&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/199&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/200&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/201&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/202&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/203&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/204&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/205&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/206&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/207&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/208&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/209&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/210&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/211&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/212&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/213&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/214&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/215&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/216&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/217&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/218&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/219&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/220&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/221&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/222&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/223&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/224&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/225&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/226&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/227&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/228&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/229&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/230&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/231&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/232&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/233&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/234&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/235&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/236&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/237&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/238&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/239&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/240&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/241&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/242&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/243&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/244&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/245&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/246&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/247&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/248&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/249&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/250&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/251&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/252&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/253&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/254&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/255&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/256&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/257&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/258&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/259&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/260&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/261&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/262&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/263&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/264&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/265&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/266&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/267&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/268&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/269&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/270&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/271&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/272&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/273&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/274&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/275&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/276&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/277&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/278&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/279&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/280&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/281&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/282&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/283&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/284&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/285&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/286&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/287&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/288&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/289&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/290&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/291&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/292&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/293&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/294&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/295&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/xcda&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/xds&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/animal&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/dicom&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/ihe-pcd&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/f001&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/f201&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/glossy&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/proband&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/genetics-example1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/ch-example&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/newborn&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/mom&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+  },
+  &quot;status&quot;: &quot;current&quot;,
+  &quot;mode&quot;: &quot;changes&quot;,
+  &quot;date&quot;: &quot;2018-02-21T12:17:00+11:00&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/example&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/pat1&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/pat2&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/pat3&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/pat4&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/1&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/2&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/3&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/4&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/5&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/6&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/7&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/8&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/9&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/10&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/11&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/12&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/71&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/72&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/73&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/74&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/75&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/76&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/77&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/78&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/79&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/80&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/81&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/82&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/83&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/84&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/85&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/86&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/87&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/88&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/89&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/90&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/91&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/92&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/93&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/94&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/95&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/96&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/97&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/98&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/99&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/100&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/101&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/102&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/103&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/104&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/105&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/106&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/107&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/108&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/109&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/110&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/111&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/112&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/113&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/114&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/115&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/116&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/117&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/118&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/119&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/120&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/121&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/122&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/123&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/124&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/125&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/126&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/127&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/128&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/129&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/130&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/131&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/132&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/133&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/134&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/135&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/136&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/137&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/138&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/139&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/140&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/141&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/142&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/143&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/144&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/145&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/146&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/147&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/148&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/149&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/150&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/151&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/152&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/153&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/154&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/155&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/156&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/157&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/158&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/159&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/160&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/161&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/162&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/163&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/164&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/165&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/166&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/167&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/168&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/169&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/170&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/171&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/172&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/173&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/174&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/175&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/176&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/177&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/178&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/179&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/180&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/181&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/182&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/183&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/184&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/185&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/186&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/187&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/188&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/189&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/190&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/191&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/192&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/193&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/194&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/195&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/196&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/197&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/198&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/199&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/200&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/201&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/202&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/203&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/204&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/205&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/206&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/207&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/208&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/209&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/210&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/211&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/212&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/213&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/214&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/215&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/216&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/217&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/218&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/219&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/220&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/221&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/222&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/223&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/224&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/225&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/226&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/227&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/228&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/229&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/230&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/231&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/232&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/233&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/234&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/235&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/236&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/237&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/238&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/239&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/240&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/241&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/242&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/243&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/244&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/245&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/246&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/247&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/248&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/249&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/250&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/251&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/252&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/253&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/254&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/255&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/256&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/257&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/258&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/259&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/260&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/261&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/262&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/263&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/264&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/265&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/266&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/267&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/268&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/269&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/270&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/271&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/272&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/273&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/274&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/275&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/276&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/277&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/278&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/279&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/280&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/281&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/282&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/283&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/284&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/285&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/286&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/287&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/288&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/289&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/290&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/291&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/292&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/293&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/294&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/295&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/xcda&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/xds&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/animal&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/dicom&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/ihe-pcd&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/f001&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/f201&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/glossy&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/proband&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/genetics-example1&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/ch-example&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/newborn&quot;
+      }
+    },
+    {
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Patient/mom&quot;
+      }
+    }
+  ]
+}
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Flist-example-long.json.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Flist-example-long.json.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

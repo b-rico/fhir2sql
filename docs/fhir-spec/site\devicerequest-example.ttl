@@ -1,0 +1,37 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceRequest/example> a fhir:DeviceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>status</b>: completed</p><p><b>intent</b>: original-order</p><p><b>code</b>: <a>Device/example</a></p><p><b>subject</b>: <a>Patient/example</a></p></div>"
+  ];
+  fhir:DeviceRequest.status [ fhir:value "completed"];
+  fhir:DeviceRequest.intent [ fhir:value "original-order"];
+  fhir:DeviceRequest.codeReference [
+     fhir:link <http://hl7.org/fhir/Device/example>;
+     fhir:Reference.reference [ fhir:value "Device/example" ]
+  ];
+  fhir:DeviceRequest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://hl7.org/fhir/Device/example> a fhir:Device .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DeviceRequest/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/DeviceRequest/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Account/ewg> a fhir:Account;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ewg"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Inpatient Admission for Peter James Chalmers Account</div>"
+  ];
+  fhir:Account.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:oid:0.1.2.3.4.5.6.7" ];
+     fhir:Identifier.value [ fhir:value "654321" ]
+  ];
+  fhir:Account.status [ fhir:value "active"];
+  fhir:Account.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "PBILLACCT" ];
+       fhir:Coding.display [ fhir:value "patient billing account" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "patient" ]
+  ];
+  fhir:Account.name [ fhir:value "Inpatient: Peter James Chalmers"];
+  fhir:Account.subject [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:Account.servicePeriod [
+     fhir:Period.start [ fhir:value "2016-01-01"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2016-06-30"^^xsd:date ]
+  ];
+  fhir:Account.coverage [
+     fhir:index 0;
+     fhir:Account.coverage.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ];
+     fhir:Account.coverage.priority [ fhir:value "1"^^xsd:positiveInteger ]
+  ], [
+     fhir:index 1;
+     fhir:Account.coverage.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/7546D>;
+       fhir:Reference.reference [ fhir:value "Coverage/7546D" ]
+     ];
+     fhir:Account.coverage.priority [ fhir:value "2"^^xsd:positiveInteger ]
+  ];
+  fhir:Account.owner [
+     fhir:link <http://hl7.org/fhir/Organization/f001>;
+     fhir:Reference.reference [ fhir:value "Organization/f001" ];
+     fhir:Reference.display [ fhir:value "Burgers University Medical Center" ]
+  ];
+  fhir:Account.description [ fhir:value "Hospital charges"];
+  fhir:Account.guarantor [
+     fhir:index 0;
+     fhir:Account.guarantor.party [
+       fhir:link <http://hl7.org/fhir/RelatedPerson/benedicte>;
+       fhir:Reference.reference [ fhir:value "RelatedPerson/benedicte" ];
+       fhir:Reference.display [ fhir:value "Bénédicte du Marché" ]
+     ];
+     fhir:Account.guarantor.onHold [ fhir:value "false"^^xsd:boolean ];
+     fhir:Account.guarantor.period [
+       fhir:Period.start [ fhir:value "2016-01-01"^^xsd:date ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+<http://hl7.org/fhir/Coverage/7546D> a fhir:Coverage .
+
+<http://hl7.org/fhir/Organization/f001> a fhir:Organization .
+
+<http://hl7.org/fhir/RelatedPerson/benedicte> a fhir:RelatedPerson .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Account/ewg.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Account/ewg.ttl> .
+
+# -------------------------------------------------------------------------------------
+

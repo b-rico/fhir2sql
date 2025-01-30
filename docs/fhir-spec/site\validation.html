@@ -1,0 +1,492 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Validation - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/validation.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="implsupport-module.html"><img src="implsupport.png"/> Implementation Support</a></li>
+        <li><b>Validating Resources</b></li>          <!-- validation.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+
+<h2 class="self-link-parent"><span class="sectioncount">7.5<a name="7.5"> </a></span> Validating Resources <a href="validation.html#7.5" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsi"><tr><td id="wg"><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm" _target="blank">FHIR Infrastructure <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:  <!-- !ns! --><a href="versions.html#std-process">Informative</a></td></tr></table>
+
+<p>
+This page provides an overview of how the FHIR specification supports validation of resources. 
+</p>
+
+<p>
+Validating a resource means, checking that the following aspects of the resource are valid:
+</p>
+<ul>
+<li><b>Structure</b>: Check that all the content in the resource is described by the specification, and nothing extra is present</li>
+<li><b>Cardinality</b>: Check that the cardinality of all properties is correct (min &amp; max)</li>
+<li><b>Value Domains</b>: Check that the values of all properties conform to the rules for the specified types (including checking that enumerated codes are valid)</li>
+<li><b>Coding/CodeableConcept bindings</b>: Check that codes/displays provided in the <a href="datatypes.html#Coding">Coding</a>/<a href="datatypes.html#CodeableConcept">CodeableConcept</a> types are valid</li>
+<li><b>Invariants</b>: Check that the <a href="conformance-rules.html#constraints">invariants</a> (co-occurrence rules, etc.) have been followed correctly</li>
+<li><b>Profiles</b>: Check that any rules in <a href="profiling.html">profiles have been followed</a> (including those listed in the 
+  <a href="resource.html#Meta">Resource.meta.profile</a>, or in <a href="profiling.html#profile-uses">CapabilityStatement</a>, or 
+  in an <a href="implementationguide.html">ImplementationGuide</a>, or otherwise required by context)</li>
+<li><b>Questionnaires</b>: Check that a <a href="questionnaireresponse.html">QuestionnaireResponse</a> is valid against its matching <a href="questionnaire.html">Questionnaire</a></li>
+<li><b>Business Rules</b>: Business rules are made outside the specification, such as checking for duplicates, checking that references resolve, checking that a user is authorized to do what they want to do, etc.</li>
+</ul>
+
+<p>
+There are multiple ways to validate resources. This table summarizes the options
+described in this specification, and which of the aspects above they can validate:
+</p>
+
+<table class="grid">
+ <tr>
+  <td><b>Method</b></td>
+  <td><b>XML</b></td>
+  <td><b>JSON</b></td>
+  <td><b>RDF</b></td>
+  <td><b>Structure</b></td>
+  <td><b>Cardinality</b></td>
+  <td><b>Values</b></td>
+  <td><b>Bindings</b></td>
+  <td><b>Invariants</b></td>
+  <td><b>Profiles</b></td>
+  <td><b>Questionnaires</b></td>
+  <td><b>Business Rules</b></td>
+ </tr>
+
+ <tr>
+  <td><a href="#schema">XML Schema</a></td>
+  <td><img src="assets/images/tick.png"/></td>   <!-- XML -->
+  <td></td>   <!-- JSON -->
+  <td></td>   <!-- RDF -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Structure -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Cardinality -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Values -->
+  <td></td>   <!-- Bindings -->
+  <td></td>   <!-- Invariants -->
+  <td></td>   <!-- Profiles -->
+  <td></td>   <!-- Questionnaires -->
+  <td></td>   <!-- Business Rules -->
+ </tr>
+
+ <tr>
+  <td><a href="#schema">XML Schema + Schematron</a></td>
+  <td><img src="assets/images/tick.png"/></td>   <!-- XML -->
+  <td></td>   <!-- JSON -->
+  <td></td>   <!-- RDF -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Structure -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Cardinality -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Values -->
+  <td></td>   <!-- Bindings -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Invariants -->
+  <td><img src="assets/images/tick.png"/><sup><b>1</b></sup></td>   <!-- Profiles -->
+  <td></td>   <!-- Questionnaires -->
+  <td></td>   <!-- Business Rules -->
+ </tr>
+ 
+ <tr>
+  <td><a href="#json-schema">JSON Schema</a></td>
+  <td></td>   <!-- XML -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- JSON -->
+  <td></td>   <!-- RDF -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Structure -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Cardinality -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Values -->
+  <td></td>   <!-- Bindings -->
+  <td></td>   <!-- Invariants -->
+  <td><img src="assets/images/tick.png"/><sup><b>2</b></sup></td>   <!-- Profiles -->
+  <td></td>   <!-- Questionnaires -->
+  <td></td>   <!-- Business Rules -->
+ </tr>
+
+ <tr>
+  <td><a href="rdf.html#schema">ShEx</a></td>
+  <td></td>   <!-- XML -->
+  <td></td>   <!-- JSON -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- RDF -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Structure -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Cardinality -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Values -->
+  <td><img src="assets/images/tick.png"/><sup><b>3</b></sup></td>   <!-- Bindings -->
+  <td></td>   <!-- Invariants -->
+  <td></td>   <!-- Profiles -->
+  <td></td>   <!-- Questionnaires -->
+  <td></td>   <!-- Business Rules -->
+ </tr>
+ <tr>
+  <td><a href="#jar">Validator</a></td>
+  <td><img src="assets/images/tick.png"/></td>   <!-- XML -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- JSON -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- RDF -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Structure -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Cardinality -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Values -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Bindings -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Invariants -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Profiles -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Questionnaires -->
+  <td></td>   <!-- Business Rules -->
+ </tr>
+ <tr>
+  <td><a href="#op">Validation Operation</a><sup><b>4</b></sup></td>
+  <td><img src="assets/images/tick.png"/></td>   <!-- XML -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- JSON -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- RDF -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Structure -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Cardinality -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Values -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Bindings -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Invariants -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Profiles -->
+  <td><img src="assets/images/tick.png"/></td>   <!-- Questionnaires -->
+  <td></td>   <!-- Business Rules -->
+ </tr>
+</table>
+<p>
+Notes:
+</p>
+<ol>
+ <li>Schematron generated for a profile can test cardinality and invariants, but not bindings, and slicing is not really supported well</li>
+ <li>JSON schema generated for a profile can test cardinality, and slicing is partially supported</li>
+ <li>ShEx can enforce some bindings for well understood terminologies, but this is an ongoing area of development</li>
+ <li>It is at the discretion of the server how much validation to perform, but most servers use the validation jar, 
+   or code derived from it, and offer the same services. Some servers also offer <a href="#web">a web interface</a></li>
+</ol>
+
+<p>
+Note that all these validation methods are incomplete; they 
+can only validate the computable aspects of conformance. There are always 
+additional rules made in narrative that they are not able to check (e.g. a rule 
+such as "All the clinically important content in the data SHALL be in the 
+narrative", which might be made in an implementation guide, but could never be checked 
+by a conformance tool).
+</p>
+<p>
+In case of disagreement between these conformance methods, note that:
+</p>
+<ul>
+ <li>The schema/schematron is the least capable - mainly because it is not connected to a terminology server</li>
+ <li>The java validator is only as good as the underlying definitions, and depends on whether the underlying terminology server supports all the relevant terminologies</li>
+ <li>In general, the server validation operations use or derive from the java validation code, so have the same caveats</li>
+ <li>The final arbiter is human inspection of the content of the resources, and the relevant implementation guides and base specification</li>
+</ul>
+
+<p>
+Also, note that static testing of resource content is not enough to
+prove conformance to the specification. For further information, see
+<a href="http://fhir.org/conformance-testing">FHIR Conformance Testing <img src="external.png" style="text-align: baseline"/></a>.
+</p>
+
+<a name="correct-use"></a>
+<h3 class="self-link-parent"><span class="sectioncount">7.5.1</span> Correct Use of Validation <a href="validation.html#correct-use" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+Servers and clients may be configured to validate content when it is received (e.g. some of 
+the public testing services validate resources on create/update). This can be done both 
+during development and in production use of applications in healthcare processes. 
+While use during the development cycle is highly recommended, use during production 
+might not always be a good idea:
+</p>
+<ul>
+ <li>Validation - particularly full validation including terminology - can be quite computationally demanding. 
+   This can impose unacceptable time delays in a production system</li>
+ <li>In production, validation can cause the loss of critical health care data (e.g. one field 
+    has an unexpected value due to poor data entry, so all data associated with the resource is lost)</li>
+ <li>Validation may fail poor historical data that cannot be fixed - and this is usually difficult to test (and poorly tested)</li>
+</ul>
+<p>
+On the other hand, validation during production use may be very important:
+</p>
+<ul>
+ <li>Validation may be required for security reasons.  In particular, validation of narrative may be required to prevent active content or external references.</li>
+ <li>Validating resources at specific control points in the data flow can allow for better detection and recovery as opposed to specific application logic failing on bad data</li>
+</ul>
+<p>
+Generally, following <a href="https://tools.ietf.org/html/rfc760">Postel's law <img src="external.png" style="text-align: baseline"/></a> is recommended:
+</p>
+<blockquote>
+An implementation should be conservative in its sending behavior, and liberal in its receiving behavior.
+</blockquote>
+<p>
+Applications should consider carefully how much validation beyond the security related issues to perform at run-time, and how errors will be handled.
+</p>
+
+<a name="schema"></a>
+<h3 class="self-link-parent"><span class="sectioncount">7.5.2</span> Using the XML schema <a href="validation.html#schema" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+The XML schema can be used to validate XML representations of the resources. 
+When validating a resource, you can nominate one of the following schema: 
+</p>
+<ul>
+ <li>fhir-all.xsd: links in all the individual modular schemas</li>
+ <li>fhir-single.xsd: a single large file, mainly provided for schema processors that can't support circular references</li>
+</ul>
+<p>
+In addition, the validation schema includes schematron
+that can be initiated with transform "iso_svrl_for_xslt2.xsl" included in the 
+<a href="downloads.html#refimpl">XML Tools</a> download. Note that 
+XSLT2 is required to run the schematrons. 
+</p>
+<p>
+When running the schematron, use the file "fhir-invariants.sch". This
+includes all the schematrons. The individual schematron files for each
+resource are provided to allow implementers to build their own smaller
+combined file that covers the relevant resource types for them.
+</p>
+
+<a name="json-schema"></a>
+<h3 class="self-link-parent"><span class="sectioncount">7.5.3</span> Using the JSON schema <a href="validation.html#json-schema" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+The JSON schema can be used with JSON schema validation software. 
+Links:
+</p>
+<ul>
+ <li><a href="http://hl7.org/fhir/R4/fhir.schema.json.zip">JSON Schema</a></li>
+ <li><a href="http://json-schema.org/implementations">JSON Validation Software <img src="external.png" style="text-align: baseline"/></a></li>
+</ul>
+
+
+<a name="jar"></a>
+<h3 class="self-link-parent"><span class="sectioncount">7.5.4</span> Using the FHIR Validator <a href="validation.html#jar" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+The FHIR Validator is a Java jar that is provided as part of the specification, and that is used 
+during the publication process to validate all the published examples. To 
+execute the FHIR validator, follow the following steps:
+</p>
+<ul>
+ <li><a href="downloads.html">Download</a> the FHIR Validator</li>
+ <li>(optional) <a href="downloads.html">Download</a> One of the FHIR definitions (with or without text)</li>
+ <li>Execute the validator, providing the path to the definitions, and a reference to the resource to validate</li>
+</ul>
+<p>
+Here is an example windows batch file that demonstrates the process (using the common utilities <a href="http://gnuwin32.sourceforge.net/packages/wget.htm">wget <img src="external.png" style="text-align: baseline"/></a> and <a href="http://www.7-zip.org/">7z <img src="external.png" style="text-align: baseline"/></a>):
+</p>
+<pre>
+@ECHO OFF
+
+ ECHO get the validator and unzip it 
+ wget http://build.fhir.org/validator.zip
+ 7z.exe x validator.zip
+
+ ECHO 1. First example shows how to validate against the base spec:
+ ECHO   a. get an example to validate
+ wget http://build.fhir.org/patient-example.xml -O pat-ex.xml
+
+ ECHO   b. validate it against FHIR R3 
+ java -jar org.hl7.fhir.validator.jar pat-ex.xml -version 3.0
+
+ ECHO 2. Second example shows how to validate against a profile in the spec:
+ ECHO   a. get an example to validate
+ wget http://build.fhir.org/observation-example-heart-rate.xml -O obs-ex.xml
+
+ ECHO   b. validate it
+ java -jar org.hl7.fhir.validator.jar obs-ex.xml -version 4.0.1 -profile http://hl7.org/fhir/StructureDefinition/heartrate
+
+ ECHO 3. Third example shows how to validate against a profile in an implementation guide:
+ ECHO   a. get an example to validate
+ wget http://build.fhir.org/observation-example-heart-rate.xml -O obs-ex.xml
+
+ ECHO   b. validate it. note that you have to tell the validator where to get the implementation guide information
+ java -jar org.hl7.fhir.validator.jar obs-ex.xml -version 3.0 -ig http://hl7.org/fhir/us/core -profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+
+ ECHO Press Any Key to Close
+ pause
+</pre>
+<p>
+Note that it is not necessary to download the resource first; the http address can be supplied directly:
+</p>
+<pre>
+ java -jar org.hl7.fhir.validator.jar http://build.fhir.org//patient-example.html -profile http://hl7.org/fhir/StructureDefinition/Patient
+</pre>
+<p>
+The validator requires an underlying terminology server. By default, this is http://fhir3.healthintersections.com.au. 
+For further details of the parameters supported by the validator, see <a href="https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator">Using the FHIR Validator <img src="external.png" style="text-align: baseline"/></a>
+</p>
+
+<a name="op"></a>
+<h3 class="self-link-parent"><span class="sectioncount">7.5.5</span> Asking a FHIR Server <a href="validation.html#op" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+The <a href="operations.html">operation</a> <a href="resource-operation-validate.html">validate</a> can 
+be used to check whether a resource conforms to a profile. The simplest way to execute this operation is
+to post the resource to a server:
+</p>
+<pre>
+ POST [base]/Observation/$validate?profile=http://hl7.org/fhir/StructureDefinition/heartrate
+ [other HTTP headers]
+ 
+ &lt;Observation&gt;... resource to check as the body
+</pre>
+<p>
+The server will return an <a href="operationoutcome.html">OperationOutcome</a> resource listing issues found in the resource.
+</p>
+<p>
+There are several things to consider when using this operation:
+</p>
+<ul>
+ <li>Not all servers support the $validate operation, though some of the public test servers do</li>
+ <li>Servers support the $validate operation generally will only validate against profiles already registered with the server</li>
+ <li>Servers may choose to support either XML, JSON, or both</li>
+</ul>
+
+<a name="web"></a>
+<h3 class="self-link-parent"><span class="sectioncount">7.5.6</span> Via a web interface <a href="validation.html#web" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+Some servers expose the $validate functionality 
+through a web page. For known public implementations,
+see the <a href="https://confluence.hl7.org/display/FHIR/Public+FHIR+Validation+Services">FHIR Confluence page <img src="external.png" style="text-align: baseline"/></a>
+</p>
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fvalidation.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fvalidation.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

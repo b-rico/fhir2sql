@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CodeSystem/example-supplement> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-supplement"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>A supplement pack for <code>http://hl7.org/fhir/CodeSystem/example</code> that defines the administrative property 'legacy' for whether the test is currently performed </p>\n      <table class=\"grid\">\n        <tr>\n          <td>\n            <b>Code</b>\n          </td>\n          <td>\n            <b>Legacy</b>\n          </td>\n        </tr>\n        <tr>\n          <td>chol-mmol</td>\n          <td>false</td>\n        </tr>\n        <tr>\n          <td>chol-mass</td>\n          <td>true</td>\n        </tr>\n        <tr>\n          <td>chol</td>\n          <td>true</td>\n        </tr>\n      </table>\n    </div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/CodeSystem/example-supplement"];
+  fhir:CodeSystem.version [ fhir:value "201801103"];
+  fhir:CodeSystem.name [ fhir:value "CholCodeLegacyStatus"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2016-01-28"^^xsd:date];
+  fhir:CodeSystem.publisher [ fhir:value "ACME Co"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "FHIR project team" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ]
+  ];
+  fhir:CodeSystem.content [ fhir:value "supplement"];
+  fhir:CodeSystem.supplements [
+     fhir:value "http://hl7.org/fhir/CodeSystem/example";
+     fhir:link <http://hl7.org/fhir/CodeSystem/example>
+  ];
+  fhir:CodeSystem.property [
+     fhir:index 0;
+     fhir:CodeSystem.property.code [ fhir:value "legacy" ];
+     fhir:CodeSystem.property.description [ fhir:value "hether the test is currently performed" ];
+     fhir:CodeSystem.property.type [ fhir:value "boolean" ]
+  ];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "chol-mmol" ];
+     fhir:CodeSystem.concept.property [
+       fhir:index 0;
+       fhir:CodeSystem.concept.property.code [ fhir:value "legacy" ];
+       fhir:CodeSystem.concept.property.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "chol-mass" ];
+     fhir:CodeSystem.concept.property [
+       fhir:index 0;
+       fhir:CodeSystem.concept.property.code [ fhir:value "legacy" ];
+       fhir:CodeSystem.concept.property.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "chol" ];
+     fhir:CodeSystem.concept.property [
+       fhir:index 0;
+       fhir:CodeSystem.concept.property.code [ fhir:value "legacy" ];
+       fhir:CodeSystem.concept.property.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CodeSystem/example-supplement.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CodeSystem/example-supplement.ttl> .
+
+# -------------------------------------------------------------------------------------
+

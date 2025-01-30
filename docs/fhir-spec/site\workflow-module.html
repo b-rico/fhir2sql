@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+  <!-- These elements SHALL always appear in this order. These basic elements shared by all resources come first
+in order to support consistent definitions for schema and UML derived code. --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+      <title>Workflow-module - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/workflow-module.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+
+<body>
+    	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><b><img src="workflow.png"/> Workflow</b></li>          <!-- workflow-module.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+    <div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+        <table class="colsi">
+            <tr>
+                <td id="wg">Work Group <a href="http://www.hl7.org/Special/committees/fiwg/index.cfm" _target="blank">FHIR Infrastructure <img src="external.png" style="text-align: baseline"/></a> </td>
+                <td id="ballot"><a href="versions.html#std-process">Standards Status</a>:
+                      <!-- !ns! --><a href="versions.html#std-process">Informative</a></td>
+            </tr>
+        </table>
+
+        <a name="root"></a>
+        <h2 class="self-link-parent"><span class="sectioncount">12.0<a name="12.0"> </a></span> Workflow Module <a href="workflow-module.html#12.0" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+        <p>
+            The workflow module focuses on the coordination of activities within and across systems. This includes three primary aspects:
+        </p>
+        <ul>
+            <li>How do we ask for another person, device or system to do something?</li>
+            <li>How do we track the linkages and dependencies between activities - actions to their authorizations, complex activities to individual steps, protocols to plans to orders, etc.?</li>
+            <li>How do we define what activities are possible and the expected order and dependencies of the steps within those activities? I.e. process/orchestration definition</li>
+        </ul>
+        <h2 class="self-link-parent"><span class="sectioncount">12.0<a name="12.0"> </a></span> Index <a href="workflow-module.html#12.0" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+
+        <table class="grid">
+            <tr>
+                <td>Infrastructure</td>
+                <td>
+                    <ul>
+                        <li>Start here: <a href="workflow.html">Overview</a></li>
+                        <li>Resource: <a href="task.html">Task</a></li>
+                        <li>Patterns: <a href="definition.html">Definition</a>, <a href="request.html">Request</a>, <a href="event.html">Event</a></li>
+                        <li>Documentation: <a href="workflow-communications.html">Communication Patterns</a>,
+                            <a href="workflow-ad-hoc.html">Ad-Hoc Patterns</a>, <a href="workflow-management.html">Management Patterns</a> &amp; <a href="workflow-examples.html">Examples</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Scheduling</td>
+                <td>
+                    <ul>
+                        <li>Appointments: <a href="appointment.html">Appointment</a> / <a href="appointmentresponse.html">AppointmentResponse</a></li>
+                        <li>Availability: <a href="schedule.html">Schedule</a> / <a href="slot.html">Slot</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Clinical Process</td>
+                <td>
+                    <ul>
+                        <li>Referrals: <a href="servicerequest.html">ServiceRequest</a></li>
+                        <li>Orders: <a href="nutritionorder.html">NutritionOrder</a>, <a href="visionprescription.html">VisionPrescription</a></li>
+                        <li>Definitions: <a href="activitydefinition.html">ActivityDefinition</a>, <a href="plandefinition.html">PlanDefinition</a></li>
+                        <li>Miscellaneous: 
+                            <a href="devicerequest.html">DeviceRequest</a> &amp; <a href="deviceusestatement.html">DeviceUseStatement</a>,
+                            <a href="supplyrequest.html">SupplyRequest</a> &amp; <a href="supplydelivery.html">SupplyDelivery</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <a name="intro"></a>
+        <h3 class="self-link-parent"><span class="sectioncount">12.0.1</span> Introduction <a href="workflow-module.html#intro" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+        <p>
+            Workflows can be performed through direct posting of resources to a target server (combined with a specific tag), by using the <a href="task.html">Task</a> resource, through the use of <a href="messaging.html">messaging</a> or via FHIR
+            <a href="services.html">services</a>. This specification includes a <a href="workflow.html">
+    workflow</a> page that describes the concepts underlying the discussion of workflows, and points to a number of different communication and architectural <a href="workflow-communications.html">workflow patterns</a>.
+        </p>
+        <p>
+            In addition to the <a href="task.html">Task</a> resource, this specification defines three logical models - <a href="definition.html">Definition</a>,
+            <a href="request.html">Request</a> and <a href="event.html">Event</a> that define the patterns for resources that are typically involved in workflow. These patterns include elements defining common attributes of each type of resource as well
+            as relationships between them. These relationships are summarized on the
+            <a href="workflow.html#relationships">workflow</a> page, along with a complete <a href="workflow.html#list">list</a> of resources that follow (or are hoped to soon follow) the request and event patterns.
+        </p>
+        <p>
+            Finally the <a href="plandefinition.html">PlanDefinition</a> and <a href="activitydefinition.html">ActivityDefinition</a> resources combine to support the creation of protocols, orders sets, guidelines and other workflow definitions by describing
+            the types of activities that can occur and setting rules about their composition, sequencing, interdependencies and flow.
+        </p>
+
+        <a name="uses"></a>
+        <h3 class="self-link-parent"><span class="sectioncount">12.0.2</span> Common use Cases <a href="workflow-module.html#uses" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+        <p>
+            Workflow manifests in many places in the healthcare environment:
+        </p>
+        <ul>
+            <li>Creating a <a href="servicerequest.html">lab order</a>, <a href="medicationrequest.html">drug prescription</a>, or other clinical order or an <a href="claim.html">insurance claim</a>,
+                <a href="enrollmentrequest.html">enrollment request</a>, <a href="appointment.html">Appointment</a> or similar administrative request and asking for it to be actioned by a specific organization or practitioner</li>
+            <li>Negotiating a fulfillment process, such as requesting further information before accepting a claim or referral or proposing an alternative therapy when processing an order</li>
+            <li>Letting an ordering physician know what the current progress is in fulfilling an order (e.g. blood has been drawn, sample is being processed, preliminary results are in, etc.)</li>
+            <li>Defining a <a href="careplan.html">plan</a> or recommendation for a set of clinical and/or administrative activities to manage a patient's care and then tracking how those plans and recommendations are (or are not) acted upon over time.</li>
+            <li>Communicating a state change to a request or order (e.g. suspension, update, cancellation, etc.) to a fulfilling system so that they can take appropriate action</li>
+            <li>Asking for a state change, requesting the merge of a couple of patients or the invoking of some operation or decision support in an asynchronous manner - for example, one where human intervention is required</li>
+            <li>Designing or adhering to a study protocol, chemotherapy protocol, instantiating an order set or other <a href="plandefinition.html">plan definition</a></li>
+        </ul>
+        <p>
+            FHIR provides multiple ways to enable these scenarios (and many others). Common mechanisms, along with their pros and cons can be found in the workflow sections on <a href="workflow-communications.html#commpatternslist">patterns</a>.
+        </p>
+
+        <a name="secpriv"></a>
+        <h3 class="self-link-parent"><span class="sectioncount">12.0.3</span> Security and Privacy <a href="workflow-module.html#secpriv" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+        <p>
+            Resources related to workflow need to adhere to the same <a href="security.html">security and privacy guidelines</a> that apply to all FHIR resources, including specific considerations for those that may contain personally-identifying information.
+            There are a couple of additional security and privacy considerations specific to workflow:
+        </p>
+        <p>
+            1. Some workflows are ad-hoc without pre-defined participants or flows. These can be challenging for security and privacy processes to manage appropriately
+        </p>
+        <p>
+            2. Workflow can drive automated behavior. I.e. The mere existence of an electronic record can cause information to flow, procedures to be performed, records to be changed and money to be transferred, potentially without any intervention, oversight or
+            sanity checking by a human being. As such, even greater care must be taken to ensure that:
+        </p>
+        <ul>
+            <li>constraints are placed on what systems (and users) can initiate workflow processes</li>
+            <li>requests for action are appropriately authenticated before action is taken</li>
+            <li>patient consents and other relevant policies are enforced either by the system storing the request or the system acting upon it (and that if enforcement is not performed by the actor, that they are confident that relevant policies have been
+                enforced on the request prior to action)</li>
+        </ul>
+        <p>
+            For more general considerations, see <a href="secpriv-module.html">the Security and Privacy module</a>.
+        </p>
+
+        <a name="roadmap"></a>
+        <h3 class="self-link-parent"><span class="sectioncount">12.0.4</span> Developmental Roadmap <a href="workflow-module.html#roadmap" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+        <p>
+            Initial work has taken place on aligning most (though not yet all) resources with the <a href="definition.html">Definition</a>, <a href="request.html">Request</a> and <a href="event.html">Event</a> patterns. In the lead-up to R5, we'll be
+            moving the alignment checks into the build process and more formally documenting (and potentially reporting) on variations along with their justifications.  Further alignment is also possible (where beneficial to implementers).
+            We'll also be examining the potential for exposing alignment with the patterns in a computably useful
+            manner (e.g. as interfaces). 
+        </p>
+        <p>
+            Work will continue on the workflow patterns, including vetting the patterns against various clinical scenarios and enhancing pattern documentation. We also hope to examine both messaging and services in more detail with further guidance about when and
+            how such mechanisms should be used for workflow and how they relate to the <a href="task.html">Task</a> resource. As well, we'll examine the possibility for developing "standardized" workflows for certain domains and how such patterns
+            might be documented, particularly through the use of the <a href="examplescenario.html">ExampleScenario</a> resource. We will look for implementer feedback to guide this work.
+        </p>
+        <p>
+            The <a href="plandefinition.html">PlanDefinition</a> and <a href="activitydefinition.html">ActivityDefinition</a> resources will continue to evolve based on feedback from the implementer community. We'll explore using them in a variety of
+            ways, including clinical order sets, medication protocols, workflow protocols, clinical pathways, administrative protocols, etc.  We hope to develop several example workflow protocols.
+        </p>
+        <p>Additional topics for future work include:</p>
+        <ul>
+            <li>The initial effort to align with workflow patterns has been a bit over-zealous for some resources, resulting in the loss of domain-specific context or occasionally the introduction of elements that might be more properly represented as extensions.
+                In R5, we'll continue to work on improving the balance, ensuring that consistency with patterns does not overshadow the essential requirements for implementer intuitiveness and simplicity</li>
+            <li>Resolving the overlap between the <a href="supplyrequest.html">SupplyRequest</a>, <a href="devicerequest.html">DeviceRequest</a> and
+                <a href="visionprescription.html">VisionPrescription</a> resources</li>
+            <li>Improving mapping and alignment of the elements and status codes of the <a href="task.html">Task</a> resource with the WS-HumanTask specification</li>
+            <li>Creating "best practice" guides for how to implement workflow for different business patterns</li>
+            <li>Examining how workflow is used for <a href="https://en.wikipedia.org/wiki/Compensating_transaction">compensating actions <img src="external.png" style="text-align: baseline"/></a> E.g. account transactions and reversals</li>
+        </ul>
+
+    </div>
+
+    
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fworkflow-module.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fworkflow-module.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+
+</html>

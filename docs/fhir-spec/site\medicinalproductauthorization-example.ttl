@@ -1,0 +1,127 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicinalProductAuthorization/example> a fhir:MedicinalProductAuthorization;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>identifier</b>: EU/1/11/999/001</p><p><b>country</b>: EU <span>(Details : {http://ema.europa.eu/example/country code 'EU' = 'EU)</span></p><p><b>status</b>: active <span>(Details : {http://ema.europa.eu/example/authorisationstatus code 'active' = 'active)</span></p><p><b>statusDate</b>: 14/01/2015</p><p><b>validityPeriod</b>: 16/08/2015 --&gt; 20/05/2020</p><p><b>dataExclusivityPeriod</b>: 15/08/2010 --&gt; 15/08/2020</p><p><b>dateOfFirstAuthorization</b>: 15/08/2010</p><p><b>internationalBirthDate</b>: 15/08/2010</p><blockquote><p><b>jurisdictionalAuthorization</b></p><p><b>identifier</b>: 123-456-789</p><p><b>country</b>: NO <span>(Details : {http://ema.europa.eu/example/countryCode code 'NO' = 'NO)</span></p></blockquote><blockquote><p><b>jurisdictionalAuthorization</b></p><p><b>identifier</b>: 123-456-123</p><p><b>country</b>: NO <span>(Details : {http://ema.europa.eu/example/countryCode code 'NO' = 'NO)</span></p></blockquote><p><b>holder</b>: <a>Organization/example</a></p><p><b>regulator</b>: <a>Organization/example</a></p><blockquote><p><b>procedure</b></p><p><b>identifier</b>: EMEA/H/C/009999/IA/0099/G</p><p><b>type</b>: VariationTypeIA <span>(Details : {http://ema.europa.eu/example/marketingAuthorisationProcedureType code 'VariationTypeIA' = 'VariationTypeIA)</span></p><p><b>date</b>: 02/08/2015 --&gt; 21/08/2015</p><h3>Applications</h3><table><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote></div>"
+  ];
+  fhir:MedicinalProductAuthorization.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://ema.europa.eu/example/marketingAuthorisationNumber" ];
+     fhir:Identifier.value [ fhir:value "EU/1/11/999/001" ]
+  ];
+  fhir:MedicinalProductAuthorization.country [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/country" ];
+       fhir:Coding.code [ fhir:value "EU" ]
+     ]
+  ];
+  fhir:MedicinalProductAuthorization.status [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/authorisationstatus" ];
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ];
+  fhir:MedicinalProductAuthorization.statusDate [ fhir:value "2015-01-14"^^xsd:date];
+  fhir:MedicinalProductAuthorization.validityPeriod [
+     fhir:Period.start [ fhir:value "2015-08-16"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2020-05-20"^^xsd:date ]
+  ];
+  fhir:MedicinalProductAuthorization.dataExclusivityPeriod [
+     fhir:Period.start [ fhir:value "2010-08-15"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2020-08-15"^^xsd:date ]
+  ];
+  fhir:MedicinalProductAuthorization.dateOfFirstAuthorization [ fhir:value "2010-08-15"^^xsd:date];
+  fhir:MedicinalProductAuthorization.internationalBirthDate [ fhir:value "2010-08-15"^^xsd:date];
+  fhir:MedicinalProductAuthorization.jurisdictionalAuthorization [
+     fhir:index 0;
+     fhir:Element.id [ fhir:value "1" ];
+     fhir:MedicinalProductAuthorization.jurisdictionalAuthorization.identifier [
+       fhir:index 0;
+       fhir:Identifier.system [ fhir:value "http://ema.europa.eu/example/marketingauthorisationnumber" ];
+       fhir:Identifier.value [ fhir:value "123-456-789" ]
+     ];
+     fhir:MedicinalProductAuthorization.jurisdictionalAuthorization.country [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/countryCode" ];
+         fhir:Coding.code [ fhir:value "NO" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Element.id [ fhir:value "2" ];
+     fhir:MedicinalProductAuthorization.jurisdictionalAuthorization.identifier [
+       fhir:index 0;
+       fhir:Identifier.system [ fhir:value "http://ema.europa.eu/example/marketingauthorisationnumber" ];
+       fhir:Identifier.value [ fhir:value "123-456-123" ]
+     ];
+     fhir:MedicinalProductAuthorization.jurisdictionalAuthorization.country [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/countryCode" ];
+         fhir:Coding.code [ fhir:value "NO" ]
+       ]
+     ]
+  ];
+  fhir:MedicinalProductAuthorization.holder [
+     fhir:link <http://hl7.org/fhir/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:MedicinalProductAuthorization.regulator [
+     fhir:link <http://hl7.org/fhir/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:MedicinalProductAuthorization.procedure [
+     fhir:MedicinalProductAuthorization.procedure.identifier [
+       fhir:Identifier.system [ fhir:value "http://ema.europa.eu/example/procedureidentifier-number" ];
+       fhir:Identifier.value [ fhir:value "EMEA/H/C/009999/IA/0099/G" ]
+     ];
+     fhir:MedicinalProductAuthorization.procedure.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/marketingAuthorisationProcedureType" ];
+         fhir:Coding.code [ fhir:value "VariationTypeIA" ]
+       ]
+     ];
+     fhir:MedicinalProductAuthorization.procedure.datePeriod [
+       fhir:Period.start [ fhir:value "2015-08-02"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2015-08-21"^^xsd:date ]
+     ];
+     fhir:MedicinalProductAuthorization.procedure.application [
+       fhir:index 0;
+       fhir:MedicinalProductAuthorization.procedure.identifier [
+         fhir:Identifier.system [ fhir:value "http://ema.europa.eu/example/applicationidentifier-number" ];
+         fhir:Identifier.value [ fhir:value "IA38G" ]
+       ];
+       fhir:MedicinalProductAuthorization.procedure.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/marketingAuthorisationApplicationType" ];
+           fhir:Coding.code [ fhir:value "GroupTypeIAVariationNotification" ]
+         ]
+       ];
+       fhir:MedicinalProductAuthorization.procedure.dateDateTime [ fhir:value "2015-08-01"^^xsd:date ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Organization/example> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicinalProductAuthorization/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MedicinalProductAuthorization/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

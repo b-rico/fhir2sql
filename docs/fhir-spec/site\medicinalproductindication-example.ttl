@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicinalProductIndication/example> a fhir:MedicinalProductIndication;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>diseaseSymptomProcedure</b>: Prevention of venous thromboembolic events (VTE) in adult patients who have undergone elective hip\\nor knee replacement surgery.\\nPrevention of stroke and systemic embolism in adult patients with non-valvular atrial fibrillation\\n(NVAF), with one or more risk factors, such as prior stroke or transient ischaemic attack (TIA); age\\n≥ 75 years; hypertension; diabetes mellitus; symptomatic heart failure (NYHA Class ≥ II).\\nTreatment of deep vein thrombosis (DVT) and pulmonary embolism (PE), and prevention of recurrent\\nDVT and PE in adults (see section 4.4 for haemodynamically unstable PE patients). <span>(Details : {http://ema.europa.eu/example/indicationasdisease-symptom-procedure code 'Venousthromboembolismprophylaxis' = 'Venousthromboembolismprophylaxis)</span></p><p><b>comorbidity</b>: Hipsurgery <span>(Details : {http://ema.europa.eu/example/comorbidity code 'Hipsurgery' = 'Hipsurgery)</span></p><p><b>intendedEffect</b>: PRYLX <span>(Details : {http://ema.europa.eu/example/intendedeffect code 'PRYLX' = 'PRYLX)</span></p><p><b>population</b>: </p></div>"
+  ];
+  fhir:MedicinalProductIndication.diseaseSymptomProcedure [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/indicationasdisease-symptom-procedure" ];
+       fhir:Coding.code [ fhir:value "Venousthromboembolismprophylaxis" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Prevention of venous thromboembolic events (VTE) in adult patients who have undergone elective hip\\nor knee replacement surgery.\\nPrevention of stroke and systemic embolism in adult patients with non-valvular atrial fibrillation\\n(NVAF), with one or more risk factors, such as prior stroke or transient ischaemic attack (TIA); age\\n≥ 75 years; hypertension; diabetes mellitus; symptomatic heart failure (NYHA Class ≥ II).\\nTreatment of deep vein thrombosis (DVT) and pulmonary embolism (PE), and prevention of recurrent\\nDVT and PE in adults (see section 4.4 for haemodynamically unstable PE patients)." ]
+  ];
+  fhir:MedicinalProductIndication.comorbidity [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/comorbidity" ];
+       fhir:Coding.code [ fhir:value "Hipsurgery" ]
+     ]
+  ];
+  fhir:MedicinalProductIndication.intendedEffect [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/intendedeffect" ];
+       fhir:Coding.code [ fhir:value "PRYLX" ]
+     ]
+  ];
+  fhir:MedicinalProductIndication.population [
+     fhir:index 0;
+     fhir:Population.ageRange [
+       fhir:Range.low [
+         fhir:Quantity.value [ fhir:value "18"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "a" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicinalProductIndication/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MedicinalProductIndication/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

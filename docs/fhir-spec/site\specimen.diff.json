@@ -1,0 +1,57 @@
+﻿{
+  "types": [
+    "Specimen"
+  ],
+  "Specimen": {
+    "elements": {
+      "Specimen.status": {
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/specimen-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/specimen-status|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Specimen.subject": {
+        "old-min": 1,
+        "new-min": 0,
+        "removed-types": [
+          "Reference(Patient | Group | Device | Substance)"
+        ],
+        "added-types": [
+          "Reference(Patient | Group | Device | Substance | Location)"
+        ]
+      },
+      "Specimen.request": {
+        "removed-types": [
+          "Reference(ProcedureRequest)"
+        ],
+        "added-types": [
+          "Reference(ServiceRequest)"
+        ]
+      },
+      "Specimen.collection.collector": {
+        "removed-types": [
+          "Reference(Practitioner)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole)"
+        ]
+      },
+      "Specimen.collection.duration": {
+        "status": "new"
+      },
+      "Specimen.collection.fastingStatus[x]": {
+        "status": "new"
+      },
+      "Specimen.condition": {
+        "status": "new"
+      }
+    },
+    "status": "changed"
+  }
+}

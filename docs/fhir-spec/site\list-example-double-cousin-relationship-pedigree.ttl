@@ -1,0 +1,342 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/List/example-double-cousin-relationship> a fhir:List;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-double-cousin-relationship"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-double-cousin-relationship</p><p><b>contained</b>: , , , , , </p><p><b>status</b>: current</p><p><b>mode</b>: snapshot</p><p><b>code</b>: TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal <span>(Details : {LOINC code '80738-8' = 'TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal', given as 'TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal'})</span></p><p><b>subject</b>: <a>Pam Taylor</a></p><blockquote><p><b>entry</b></p><p><b>item</b>: id: 1; status: completed; name: Mary; natural mother <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'NMTH' = 'natural mother', given as 'natural mother'})</span>; deceased</p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 2; status: completed; name: Bob; paternal uncle <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'PUNCLE' = 'paternal uncle', given as 'paternal uncle'})</span></p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 3; status: completed; name: Jon; maternal uncle <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'MUNCLE' = 'maternal uncle', given as 'maternal uncle'})</span></p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 4; status: completed; name: Alica; maternal grandmother <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'MGRMTH' = 'maternal grandmother', given as 'maternal grandmother'})</span>; 70 yr<span> (Details: UCUM code a = 'a')</span></p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 5; status: completed; name: Aunt with Parent ID; maternal aunt <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'MAUNT' = 'maternal aunt', given as 'maternal aunt'})</span>; Female <span>(Details : {http://hl7.org/fhir/administrative-gender code 'female' = 'Female', given as 'Female'})</span>; 55 yr<span> (Details: UCUM code a = 'a')</span></p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 6; status: completed; name: Paul; Paternal grandfather <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'PGRFTH' = 'paternal grandfather', given as 'Paternal grandfather'})</span>; 74 yr<span> (Details: UCUM code b = 'b')</span></p></blockquote></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:FamilyMemberHistory;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "1" ];
+     fhir:FamilyMemberHistory.status [ fhir:value "completed" ];
+     fhir:FamilyMemberHistory.patient [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Pam Taylor" ]
+     ];
+     fhir:FamilyMemberHistory.name [ fhir:value "Mary" ];
+     fhir:FamilyMemberHistory.relationship [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+         fhir:Coding.code [ fhir:value "NMTH" ];
+         fhir:Coding.display [ fhir:value "natural mother" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "natural mother" ]
+     ];
+     fhir:FamilyMemberHistory.deceasedBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:FamilyMemberHistory.condition [
+       fhir:index 0;
+       fhir:FamilyMemberHistory.condition.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:73211009;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "73211009" ];
+           fhir:Coding.display [ fhir:value "Diabetes mellitus" ]
+         ];
+         fhir:CodeableConcept.text [ fhir:value "Diabetes mellitus" ]
+       ];
+       fhir:FamilyMemberHistory.condition.onsetAge [
+         fhir:Quantity.value [ fhir:value "45"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "yr" ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "a" ]
+       ]
+     ]
+  ], [
+     a fhir:FamilyMemberHistory;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "2" ];
+     fhir:FamilyMemberHistory.status [ fhir:value "completed" ];
+     fhir:FamilyMemberHistory.patient [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Pam Taylor" ]
+     ];
+     fhir:FamilyMemberHistory.name [ fhir:value "Bob" ];
+     fhir:FamilyMemberHistory.relationship [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+         fhir:Coding.code [ fhir:value "PUNCLE" ];
+         fhir:Coding.display [ fhir:value "paternal uncle" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "paternal uncle" ]
+     ];
+     fhir:FamilyMemberHistory.condition [
+       fhir:index 0;
+       fhir:FamilyMemberHistory.condition.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:1481000119100;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "1481000119100" ];
+           fhir:Coding.display [ fhir:value "Diabetes mellitus type 2 without retinopathy" ]
+         ];
+         fhir:CodeableConcept.text [ fhir:value "Diabetes mellitus type 2 without retinopathy" ]
+       ];
+       fhir:FamilyMemberHistory.condition.onsetAge [
+         fhir:Quantity.value [ fhir:value "35"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "yr" ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "a" ]
+       ]
+     ]
+  ], [
+     a fhir:FamilyMemberHistory;
+     fhir:index 2;
+     fhir:Resource.id [ fhir:value "3" ];
+     fhir:FamilyMemberHistory.status [ fhir:value "completed" ];
+     fhir:FamilyMemberHistory.patient [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Pam Taylor" ]
+     ];
+     fhir:FamilyMemberHistory.name [ fhir:value "Jon" ];
+     fhir:FamilyMemberHistory.relationship [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+         fhir:Coding.code [ fhir:value "MUNCLE" ];
+         fhir:Coding.display [ fhir:value "maternal uncle" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "maternal uncle" ]
+     ]
+  ], [
+     a fhir:FamilyMemberHistory;
+     fhir:index 3;
+     fhir:Resource.id [ fhir:value "4" ];
+     fhir:DomainResource.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/family-member-history-genetics-sibling" ];
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "type" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+             fhir:Coding.code [ fhir:value "NSIS" ];
+             fhir:Coding.display [ fhir:value "natural sister" ]
+           ];
+           fhir:CodeableConcept.text [ fhir:value "natural sister" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "reference" ];
+         fhir:Extension.valueReference [
+           fhir:link <http://hl7.org/fhir/FamilyMemberHistory/mother>;
+           fhir:Reference.reference [ fhir:value "FamilyMemberHistory/mother" ];
+           fhir:Reference.display [ fhir:value "paternal grandmother" ]
+         ]
+       ]
+     ];
+     fhir:FamilyMemberHistory.status [ fhir:value "completed" ];
+     fhir:FamilyMemberHistory.patient [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Pam Taylor" ]
+     ];
+     fhir:FamilyMemberHistory.name [ fhir:value "Alica" ];
+     fhir:FamilyMemberHistory.relationship [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+         fhir:Coding.code [ fhir:value "MGRMTH" ];
+         fhir:Coding.display [ fhir:value "maternal grandmother" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "maternal grandmother" ]
+     ];
+     fhir:FamilyMemberHistory.ageAge [
+       fhir:Quantity.value [ fhir:value "70"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "yr" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "a" ]
+     ]
+  ], [
+     a fhir:FamilyMemberHistory;
+     fhir:index 4;
+     fhir:Resource.id [ fhir:value "5" ];
+     fhir:DomainResource.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/family-member-history-genetics-parent" ];
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "type" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+             fhir:Coding.code [ fhir:value "MTH" ];
+             fhir:Coding.display [ fhir:value "mother" ]
+           ];
+           fhir:CodeableConcept.text [ fhir:value "mother" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "reference" ];
+         fhir:Extension.valueReference [
+           fhir:link <http://hl7.org/fhir/FamilyMemberHistory/147146>;
+           fhir:Reference.reference [ fhir:value "FamilyMemberHistory/147146" ];
+           fhir:Reference.display [ fhir:value "maternal grandmother" ]
+         ]
+       ]
+     ];
+     fhir:FamilyMemberHistory.status [ fhir:value "completed" ];
+     fhir:FamilyMemberHistory.patient [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Pam Taylor" ]
+     ];
+     fhir:FamilyMemberHistory.name [ fhir:value "Aunt with Parent ID" ];
+     fhir:FamilyMemberHistory.relationship [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+         fhir:Coding.code [ fhir:value "MAUNT" ];
+         fhir:Coding.display [ fhir:value "maternal aunt" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "maternal aunt" ]
+     ];
+     fhir:FamilyMemberHistory.sex [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/administrative-gender" ];
+         fhir:Coding.code [ fhir:value "female" ];
+         fhir:Coding.display [ fhir:value "Female" ]
+       ]
+     ];
+     fhir:FamilyMemberHistory.ageAge [
+       fhir:Quantity.value [ fhir:value "55"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "yr" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "a" ]
+     ]
+  ], [
+     a fhir:FamilyMemberHistory;
+     fhir:index 5;
+     fhir:Resource.id [ fhir:value "6" ];
+     fhir:DomainResource.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/family-member-history-genetics-sibling" ];
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "type" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+             fhir:Coding.code [ fhir:value "NBRO" ];
+             fhir:Coding.display [ fhir:value "natural brother" ]
+           ];
+           fhir:CodeableConcept.text [ fhir:value "natural brother" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "reference" ];
+         fhir:Extension.valueReference [
+           fhir:link <http://hl7.org/fhir/FamilyMemberHistory/father>;
+           fhir:Reference.reference [ fhir:value "FamilyMemberHistory/father" ];
+           fhir:Reference.display [ fhir:value "maternal grandfather" ]
+         ]
+       ]
+     ];
+     fhir:FamilyMemberHistory.status [ fhir:value "completed" ];
+     fhir:FamilyMemberHistory.patient [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Pam Taylor" ]
+     ];
+     fhir:FamilyMemberHistory.name [ fhir:value "Paul" ];
+     fhir:FamilyMemberHistory.relationship [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+         fhir:Coding.code [ fhir:value "PGRFTH" ];
+         fhir:Coding.display [ fhir:value "Paternal grandfather" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Paternal grandfather" ]
+     ];
+     fhir:FamilyMemberHistory.ageAge [
+       fhir:Quantity.value [ fhir:value "74"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "yr" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "b" ]
+     ]
+  ];
+  fhir:List.status [ fhir:value "current"];
+  fhir:List.mode [ fhir:value "snapshot"];
+  fhir:List.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:80738-8;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "80738-8" ];
+       fhir:Coding.display [ fhir:value "TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal" ]
+  ];
+  fhir:List.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Pam Taylor" ]
+  ];
+  fhir:List.entry [
+     fhir:index 0;
+     fhir:List.entry.item [
+       fhir:Reference.reference [ fhir:value "#1" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:List.entry.item [
+       fhir:Reference.reference [ fhir:value "#2" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:List.entry.item [
+       fhir:Reference.reference [ fhir:value "#3" ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:List.entry.item [
+       fhir:Reference.reference [ fhir:value "#4" ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:List.entry.item [
+       fhir:Reference.reference [ fhir:value "#5" ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:List.entry.item [
+       fhir:Reference.reference [ fhir:value "#6" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/FamilyMemberHistory/mother> a fhir:FamilyMemberHistory .
+
+<http://hl7.org/fhir/FamilyMemberHistory/147146> a fhir:FamilyMemberHistory .
+
+<http://hl7.org/fhir/FamilyMemberHistory/father> a fhir:FamilyMemberHistory .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/List/example-double-cousin-relationship.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/List/example-double-cousin-relationship.ttl> .
+
+# -------------------------------------------------------------------------------------
+

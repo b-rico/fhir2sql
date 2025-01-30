@@ -1,0 +1,87 @@
+﻿{
+  "types": [
+    "Condition"
+  ],
+  "Condition": {
+    "elements": {
+      "Condition.clinicalStatus": {
+        "removed-types": [
+          "code"
+        ],
+        "added-types": [
+          "CodeableConcept"
+        ],
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/condition-clinical",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1",
+          "strength": "required"
+        }
+      },
+      "Condition.verificationStatus": {
+        "removed-types": [
+          "code"
+        ],
+        "added-types": [
+          "CodeableConcept"
+        ],
+        "binding-valueset-changed": true,
+        "binding-status": "changed",
+        "old-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/condition-ver-status",
+          "strength": "required"
+        },
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/condition-ver-status|4.0.1",
+          "strength": "required"
+        },
+        "default": "removed",
+        "old-default": "\"unknown\""
+      },
+      "Condition.category": {
+        "binding-status": "added",
+        "new-binding": {
+          "reference": "http://hl7.org/fhir/ValueSet/condition-category",
+          "strength": "extensible"
+        }
+      },
+      "Condition.encounter": {
+        "status": "new"
+      },
+      "Condition.abatement[x]": {
+        "removed-types": [
+          "boolean"
+        ]
+      },
+      "Condition.recordedDate": {
+        "old-name": "assertedDate"
+      },
+      "Condition.recorder": {
+        "status": "new"
+      },
+      "Condition.asserter": {
+        "removed-types": [
+          "Reference(Practitioner | Patient | RelatedPerson)"
+        ],
+        "added-types": [
+          "Reference(Practitioner | PractitionerRole | Patient | RelatedPerson)"
+        ]
+      },
+      "Condition.stage": {
+        "old-max": "1",
+        "new-max": "*"
+      },
+      "Condition.stage.type": {
+        "status": "new"
+      },
+      "Condition.context": {
+        "status": "deleted"
+      }
+    },
+    "status": "changed"
+  }
+}

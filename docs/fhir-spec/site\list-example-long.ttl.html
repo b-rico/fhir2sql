@@ -1,0 +1,2252 @@
+<!DOCTYPE HTML>
+
+<!-- template-example-ttl.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>List-example-long.ttl - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/list-example-long.ttl.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="foundation-module.html"><img src="foundation.png"/> Foundation</a></li>        <li><a href="list.html">List</a></li>        <li><b>Example Instance</b></li>        <!-- list-example-long.ttl.html / resource-instance:List / Example-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>List-example-long.ttl</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-device.html">Device</a>, <a href="compartmentdefinition-patient.html">Patient</a>, <a href="compartmentdefinition-practitioner.html">Practitioner</a></td></tr></table>
+
+</tbody></table>
+<p>
+<a href="list-example-long.ttl">Raw Turtle</a> (+ also see <a href="rdf.html">Turtle/RDF Format Specification</a>)
+</p>
+
+<div class="example">
+<p>A long list with many entries for testing handling longer lists</p>
+<pre class="rdf">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/List/long&gt; a fhir:List;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value &quot;long&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: long&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: current&lt;/p&gt;&lt;p&gt;&lt;b&gt;mode&lt;/b&gt;: changes&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 21/02/2018 12:17:00 PM&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/pat1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/pat2&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/pat3&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/pat4&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/2&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/3&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/4&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/5&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/6&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/7&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/8&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/9&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/10&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/11&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/12&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/71&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/72&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/73&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/74&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/75&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/76&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/77&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/78&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/79&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/80&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/81&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/82&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/83&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/84&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/85&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/86&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/87&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/88&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/89&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/90&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/91&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/92&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/93&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/94&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/95&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/96&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/97&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/98&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/99&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/100&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/101&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/102&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/103&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/104&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/105&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/106&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/107&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/108&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/109&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/110&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/111&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/112&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/113&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/114&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/115&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/116&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/117&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/118&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/119&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/120&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/121&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/122&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/123&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/124&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/125&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/126&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/127&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/128&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/129&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/130&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/131&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/132&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/133&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/134&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/135&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/136&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/137&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/138&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/139&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/140&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/141&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/142&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/143&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/144&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/145&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/146&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/147&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/148&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/149&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/150&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/151&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/152&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/153&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/154&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/155&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/156&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/157&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/158&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/159&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/160&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/161&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/162&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/163&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/164&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/165&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/166&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/167&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/168&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/169&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/170&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/171&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/172&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/173&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/174&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/175&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/176&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/177&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/178&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/179&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/180&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/181&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/182&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/183&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/184&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/185&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/186&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/187&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/188&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/189&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/190&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/191&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/192&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/193&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/194&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/195&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/196&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/197&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/198&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/199&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/200&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/201&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/202&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/203&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/204&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/205&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/206&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/207&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/208&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/209&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/210&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/211&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/212&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/213&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/214&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/215&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/216&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/217&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/218&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/219&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/220&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/221&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/222&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/223&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/224&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/225&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/226&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/227&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/228&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/229&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/230&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/231&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/232&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/233&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/234&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/235&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/236&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/237&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/238&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/239&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/240&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/241&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/242&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/243&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/244&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/245&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/246&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/247&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/248&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/249&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/250&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/251&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/252&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/253&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/254&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/255&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/256&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/257&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/258&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/259&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/260&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/261&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/262&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/263&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/264&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/265&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/266&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/267&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/268&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/269&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/270&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/271&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/272&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/273&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/274&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/275&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/276&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/277&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/278&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/279&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/280&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/281&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/282&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/283&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/284&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/285&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/286&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/287&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/288&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/289&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/290&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/291&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/292&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/293&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/294&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/295&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/xcda&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/xds&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/animal&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/dicom&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/ihe-pcd&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/f001&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/f201&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/glossy&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/proband&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/genetics-example1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/ch-example&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/newborn&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;entry&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;a&gt;Patient/mom&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+  ];
+  fhir:List.status [ fhir:value &quot;current&quot;];
+  fhir:List.mode [ fhir:value &quot;changes&quot;];
+  fhir:List.date [ fhir:value &quot;2018-02-21T12:17:00+11:00&quot;^^xsd:dateTime];
+  fhir:List.entry [
+     fhir:index 0;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/example&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/example&quot; ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/pat1&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/pat1&quot; ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/pat2&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/pat2&quot; ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/pat3&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/pat3&quot; ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/pat4&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/pat4&quot; ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/1&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/1&quot; ]
+     ]
+  ], [
+     fhir:index 6;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/2&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/2&quot; ]
+     ]
+  ], [
+     fhir:index 7;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/3&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/3&quot; ]
+     ]
+  ], [
+     fhir:index 8;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/4&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/4&quot; ]
+     ]
+  ], [
+     fhir:index 9;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/5&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/5&quot; ]
+     ]
+  ], [
+     fhir:index 10;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/6&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/6&quot; ]
+     ]
+  ], [
+     fhir:index 11;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/7&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/7&quot; ]
+     ]
+  ], [
+     fhir:index 12;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/8&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/8&quot; ]
+     ]
+  ], [
+     fhir:index 13;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/9&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/9&quot; ]
+     ]
+  ], [
+     fhir:index 14;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/10&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/10&quot; ]
+     ]
+  ], [
+     fhir:index 15;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/11&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/11&quot; ]
+     ]
+  ], [
+     fhir:index 16;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/12&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/12&quot; ]
+     ]
+  ], [
+     fhir:index 17;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/71&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/71&quot; ]
+     ]
+  ], [
+     fhir:index 18;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/72&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/72&quot; ]
+     ]
+  ], [
+     fhir:index 19;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/73&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/73&quot; ]
+     ]
+  ], [
+     fhir:index 20;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/74&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/74&quot; ]
+     ]
+  ], [
+     fhir:index 21;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/75&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/75&quot; ]
+     ]
+  ], [
+     fhir:index 22;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/76&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/76&quot; ]
+     ]
+  ], [
+     fhir:index 23;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/77&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/77&quot; ]
+     ]
+  ], [
+     fhir:index 24;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/78&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/78&quot; ]
+     ]
+  ], [
+     fhir:index 25;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/79&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/79&quot; ]
+     ]
+  ], [
+     fhir:index 26;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/80&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/80&quot; ]
+     ]
+  ], [
+     fhir:index 27;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/81&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/81&quot; ]
+     ]
+  ], [
+     fhir:index 28;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/82&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/82&quot; ]
+     ]
+  ], [
+     fhir:index 29;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/83&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/83&quot; ]
+     ]
+  ], [
+     fhir:index 30;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/84&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/84&quot; ]
+     ]
+  ], [
+     fhir:index 31;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/85&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/85&quot; ]
+     ]
+  ], [
+     fhir:index 32;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/86&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/86&quot; ]
+     ]
+  ], [
+     fhir:index 33;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/87&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/87&quot; ]
+     ]
+  ], [
+     fhir:index 34;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/88&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/88&quot; ]
+     ]
+  ], [
+     fhir:index 35;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/89&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/89&quot; ]
+     ]
+  ], [
+     fhir:index 36;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/90&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/90&quot; ]
+     ]
+  ], [
+     fhir:index 37;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/91&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/91&quot; ]
+     ]
+  ], [
+     fhir:index 38;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/92&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/92&quot; ]
+     ]
+  ], [
+     fhir:index 39;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/93&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/93&quot; ]
+     ]
+  ], [
+     fhir:index 40;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/94&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/94&quot; ]
+     ]
+  ], [
+     fhir:index 41;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/95&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/95&quot; ]
+     ]
+  ], [
+     fhir:index 42;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/96&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/96&quot; ]
+     ]
+  ], [
+     fhir:index 43;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/97&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/97&quot; ]
+     ]
+  ], [
+     fhir:index 44;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/98&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/98&quot; ]
+     ]
+  ], [
+     fhir:index 45;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/99&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/99&quot; ]
+     ]
+  ], [
+     fhir:index 46;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/100&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/100&quot; ]
+     ]
+  ], [
+     fhir:index 47;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/101&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/101&quot; ]
+     ]
+  ], [
+     fhir:index 48;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/102&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/102&quot; ]
+     ]
+  ], [
+     fhir:index 49;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/103&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/103&quot; ]
+     ]
+  ], [
+     fhir:index 50;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/104&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/104&quot; ]
+     ]
+  ], [
+     fhir:index 51;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/105&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/105&quot; ]
+     ]
+  ], [
+     fhir:index 52;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/106&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/106&quot; ]
+     ]
+  ], [
+     fhir:index 53;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/107&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/107&quot; ]
+     ]
+  ], [
+     fhir:index 54;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/108&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/108&quot; ]
+     ]
+  ], [
+     fhir:index 55;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/109&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/109&quot; ]
+     ]
+  ], [
+     fhir:index 56;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/110&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/110&quot; ]
+     ]
+  ], [
+     fhir:index 57;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/111&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/111&quot; ]
+     ]
+  ], [
+     fhir:index 58;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/112&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/112&quot; ]
+     ]
+  ], [
+     fhir:index 59;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/113&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/113&quot; ]
+     ]
+  ], [
+     fhir:index 60;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/114&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/114&quot; ]
+     ]
+  ], [
+     fhir:index 61;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/115&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/115&quot; ]
+     ]
+  ], [
+     fhir:index 62;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/116&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/116&quot; ]
+     ]
+  ], [
+     fhir:index 63;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/117&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/117&quot; ]
+     ]
+  ], [
+     fhir:index 64;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/118&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/118&quot; ]
+     ]
+  ], [
+     fhir:index 65;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/119&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/119&quot; ]
+     ]
+  ], [
+     fhir:index 66;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/120&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/120&quot; ]
+     ]
+  ], [
+     fhir:index 67;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/121&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/121&quot; ]
+     ]
+  ], [
+     fhir:index 68;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/122&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/122&quot; ]
+     ]
+  ], [
+     fhir:index 69;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/123&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/123&quot; ]
+     ]
+  ], [
+     fhir:index 70;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/124&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/124&quot; ]
+     ]
+  ], [
+     fhir:index 71;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/125&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/125&quot; ]
+     ]
+  ], [
+     fhir:index 72;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/126&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/126&quot; ]
+     ]
+  ], [
+     fhir:index 73;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/127&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/127&quot; ]
+     ]
+  ], [
+     fhir:index 74;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/128&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/128&quot; ]
+     ]
+  ], [
+     fhir:index 75;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/129&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/129&quot; ]
+     ]
+  ], [
+     fhir:index 76;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/130&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/130&quot; ]
+     ]
+  ], [
+     fhir:index 77;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/131&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/131&quot; ]
+     ]
+  ], [
+     fhir:index 78;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/132&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/132&quot; ]
+     ]
+  ], [
+     fhir:index 79;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/133&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/133&quot; ]
+     ]
+  ], [
+     fhir:index 80;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/134&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/134&quot; ]
+     ]
+  ], [
+     fhir:index 81;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/135&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/135&quot; ]
+     ]
+  ], [
+     fhir:index 82;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/136&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/136&quot; ]
+     ]
+  ], [
+     fhir:index 83;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/137&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/137&quot; ]
+     ]
+  ], [
+     fhir:index 84;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/138&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/138&quot; ]
+     ]
+  ], [
+     fhir:index 85;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/139&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/139&quot; ]
+     ]
+  ], [
+     fhir:index 86;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/140&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/140&quot; ]
+     ]
+  ], [
+     fhir:index 87;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/141&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/141&quot; ]
+     ]
+  ], [
+     fhir:index 88;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/142&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/142&quot; ]
+     ]
+  ], [
+     fhir:index 89;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/143&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/143&quot; ]
+     ]
+  ], [
+     fhir:index 90;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/144&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/144&quot; ]
+     ]
+  ], [
+     fhir:index 91;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/145&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/145&quot; ]
+     ]
+  ], [
+     fhir:index 92;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/146&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/146&quot; ]
+     ]
+  ], [
+     fhir:index 93;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/147&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/147&quot; ]
+     ]
+  ], [
+     fhir:index 94;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/148&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/148&quot; ]
+     ]
+  ], [
+     fhir:index 95;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/149&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/149&quot; ]
+     ]
+  ], [
+     fhir:index 96;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/150&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/150&quot; ]
+     ]
+  ], [
+     fhir:index 97;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/151&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/151&quot; ]
+     ]
+  ], [
+     fhir:index 98;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/152&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/152&quot; ]
+     ]
+  ], [
+     fhir:index 99;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/153&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/153&quot; ]
+     ]
+  ], [
+     fhir:index 100;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/154&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/154&quot; ]
+     ]
+  ], [
+     fhir:index 101;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/155&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/155&quot; ]
+     ]
+  ], [
+     fhir:index 102;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/156&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/156&quot; ]
+     ]
+  ], [
+     fhir:index 103;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/157&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/157&quot; ]
+     ]
+  ], [
+     fhir:index 104;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/158&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/158&quot; ]
+     ]
+  ], [
+     fhir:index 105;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/159&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/159&quot; ]
+     ]
+  ], [
+     fhir:index 106;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/160&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/160&quot; ]
+     ]
+  ], [
+     fhir:index 107;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/161&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/161&quot; ]
+     ]
+  ], [
+     fhir:index 108;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/162&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/162&quot; ]
+     ]
+  ], [
+     fhir:index 109;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/163&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/163&quot; ]
+     ]
+  ], [
+     fhir:index 110;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/164&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/164&quot; ]
+     ]
+  ], [
+     fhir:index 111;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/165&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/165&quot; ]
+     ]
+  ], [
+     fhir:index 112;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/166&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/166&quot; ]
+     ]
+  ], [
+     fhir:index 113;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/167&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/167&quot; ]
+     ]
+  ], [
+     fhir:index 114;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/168&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/168&quot; ]
+     ]
+  ], [
+     fhir:index 115;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/169&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/169&quot; ]
+     ]
+  ], [
+     fhir:index 116;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/170&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/170&quot; ]
+     ]
+  ], [
+     fhir:index 117;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/171&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/171&quot; ]
+     ]
+  ], [
+     fhir:index 118;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/172&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/172&quot; ]
+     ]
+  ], [
+     fhir:index 119;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/173&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/173&quot; ]
+     ]
+  ], [
+     fhir:index 120;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/174&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/174&quot; ]
+     ]
+  ], [
+     fhir:index 121;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/175&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/175&quot; ]
+     ]
+  ], [
+     fhir:index 122;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/176&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/176&quot; ]
+     ]
+  ], [
+     fhir:index 123;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/177&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/177&quot; ]
+     ]
+  ], [
+     fhir:index 124;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/178&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/178&quot; ]
+     ]
+  ], [
+     fhir:index 125;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/179&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/179&quot; ]
+     ]
+  ], [
+     fhir:index 126;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/180&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/180&quot; ]
+     ]
+  ], [
+     fhir:index 127;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/181&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/181&quot; ]
+     ]
+  ], [
+     fhir:index 128;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/182&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/182&quot; ]
+     ]
+  ], [
+     fhir:index 129;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/183&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/183&quot; ]
+     ]
+  ], [
+     fhir:index 130;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/184&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/184&quot; ]
+     ]
+  ], [
+     fhir:index 131;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/185&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/185&quot; ]
+     ]
+  ], [
+     fhir:index 132;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/186&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/186&quot; ]
+     ]
+  ], [
+     fhir:index 133;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/187&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/187&quot; ]
+     ]
+  ], [
+     fhir:index 134;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/188&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/188&quot; ]
+     ]
+  ], [
+     fhir:index 135;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/189&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/189&quot; ]
+     ]
+  ], [
+     fhir:index 136;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/190&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/190&quot; ]
+     ]
+  ], [
+     fhir:index 137;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/191&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/191&quot; ]
+     ]
+  ], [
+     fhir:index 138;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/192&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/192&quot; ]
+     ]
+  ], [
+     fhir:index 139;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/193&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/193&quot; ]
+     ]
+  ], [
+     fhir:index 140;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/194&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/194&quot; ]
+     ]
+  ], [
+     fhir:index 141;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/195&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/195&quot; ]
+     ]
+  ], [
+     fhir:index 142;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/196&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/196&quot; ]
+     ]
+  ], [
+     fhir:index 143;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/197&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/197&quot; ]
+     ]
+  ], [
+     fhir:index 144;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/198&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/198&quot; ]
+     ]
+  ], [
+     fhir:index 145;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/199&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/199&quot; ]
+     ]
+  ], [
+     fhir:index 146;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/200&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/200&quot; ]
+     ]
+  ], [
+     fhir:index 147;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/201&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/201&quot; ]
+     ]
+  ], [
+     fhir:index 148;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/202&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/202&quot; ]
+     ]
+  ], [
+     fhir:index 149;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/203&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/203&quot; ]
+     ]
+  ], [
+     fhir:index 150;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/204&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/204&quot; ]
+     ]
+  ], [
+     fhir:index 151;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/205&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/205&quot; ]
+     ]
+  ], [
+     fhir:index 152;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/206&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/206&quot; ]
+     ]
+  ], [
+     fhir:index 153;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/207&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/207&quot; ]
+     ]
+  ], [
+     fhir:index 154;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/208&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/208&quot; ]
+     ]
+  ], [
+     fhir:index 155;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/209&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/209&quot; ]
+     ]
+  ], [
+     fhir:index 156;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/210&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/210&quot; ]
+     ]
+  ], [
+     fhir:index 157;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/211&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/211&quot; ]
+     ]
+  ], [
+     fhir:index 158;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/212&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/212&quot; ]
+     ]
+  ], [
+     fhir:index 159;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/213&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/213&quot; ]
+     ]
+  ], [
+     fhir:index 160;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/214&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/214&quot; ]
+     ]
+  ], [
+     fhir:index 161;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/215&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/215&quot; ]
+     ]
+  ], [
+     fhir:index 162;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/216&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/216&quot; ]
+     ]
+  ], [
+     fhir:index 163;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/217&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/217&quot; ]
+     ]
+  ], [
+     fhir:index 164;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/218&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/218&quot; ]
+     ]
+  ], [
+     fhir:index 165;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/219&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/219&quot; ]
+     ]
+  ], [
+     fhir:index 166;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/220&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/220&quot; ]
+     ]
+  ], [
+     fhir:index 167;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/221&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/221&quot; ]
+     ]
+  ], [
+     fhir:index 168;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/222&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/222&quot; ]
+     ]
+  ], [
+     fhir:index 169;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/223&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/223&quot; ]
+     ]
+  ], [
+     fhir:index 170;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/224&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/224&quot; ]
+     ]
+  ], [
+     fhir:index 171;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/225&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/225&quot; ]
+     ]
+  ], [
+     fhir:index 172;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/226&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/226&quot; ]
+     ]
+  ], [
+     fhir:index 173;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/227&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/227&quot; ]
+     ]
+  ], [
+     fhir:index 174;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/228&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/228&quot; ]
+     ]
+  ], [
+     fhir:index 175;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/229&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/229&quot; ]
+     ]
+  ], [
+     fhir:index 176;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/230&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/230&quot; ]
+     ]
+  ], [
+     fhir:index 177;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/231&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/231&quot; ]
+     ]
+  ], [
+     fhir:index 178;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/232&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/232&quot; ]
+     ]
+  ], [
+     fhir:index 179;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/233&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/233&quot; ]
+     ]
+  ], [
+     fhir:index 180;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/234&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/234&quot; ]
+     ]
+  ], [
+     fhir:index 181;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/235&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/235&quot; ]
+     ]
+  ], [
+     fhir:index 182;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/236&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/236&quot; ]
+     ]
+  ], [
+     fhir:index 183;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/237&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/237&quot; ]
+     ]
+  ], [
+     fhir:index 184;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/238&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/238&quot; ]
+     ]
+  ], [
+     fhir:index 185;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/239&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/239&quot; ]
+     ]
+  ], [
+     fhir:index 186;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/240&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/240&quot; ]
+     ]
+  ], [
+     fhir:index 187;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/241&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/241&quot; ]
+     ]
+  ], [
+     fhir:index 188;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/242&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/242&quot; ]
+     ]
+  ], [
+     fhir:index 189;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/243&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/243&quot; ]
+     ]
+  ], [
+     fhir:index 190;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/244&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/244&quot; ]
+     ]
+  ], [
+     fhir:index 191;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/245&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/245&quot; ]
+     ]
+  ], [
+     fhir:index 192;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/246&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/246&quot; ]
+     ]
+  ], [
+     fhir:index 193;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/247&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/247&quot; ]
+     ]
+  ], [
+     fhir:index 194;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/248&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/248&quot; ]
+     ]
+  ], [
+     fhir:index 195;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/249&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/249&quot; ]
+     ]
+  ], [
+     fhir:index 196;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/250&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/250&quot; ]
+     ]
+  ], [
+     fhir:index 197;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/251&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/251&quot; ]
+     ]
+  ], [
+     fhir:index 198;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/252&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/252&quot; ]
+     ]
+  ], [
+     fhir:index 199;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/253&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/253&quot; ]
+     ]
+  ], [
+     fhir:index 200;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/254&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/254&quot; ]
+     ]
+  ], [
+     fhir:index 201;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/255&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/255&quot; ]
+     ]
+  ], [
+     fhir:index 202;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/256&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/256&quot; ]
+     ]
+  ], [
+     fhir:index 203;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/257&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/257&quot; ]
+     ]
+  ], [
+     fhir:index 204;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/258&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/258&quot; ]
+     ]
+  ], [
+     fhir:index 205;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/259&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/259&quot; ]
+     ]
+  ], [
+     fhir:index 206;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/260&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/260&quot; ]
+     ]
+  ], [
+     fhir:index 207;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/261&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/261&quot; ]
+     ]
+  ], [
+     fhir:index 208;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/262&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/262&quot; ]
+     ]
+  ], [
+     fhir:index 209;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/263&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/263&quot; ]
+     ]
+  ], [
+     fhir:index 210;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/264&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/264&quot; ]
+     ]
+  ], [
+     fhir:index 211;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/265&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/265&quot; ]
+     ]
+  ], [
+     fhir:index 212;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/266&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/266&quot; ]
+     ]
+  ], [
+     fhir:index 213;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/267&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/267&quot; ]
+     ]
+  ], [
+     fhir:index 214;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/268&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/268&quot; ]
+     ]
+  ], [
+     fhir:index 215;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/269&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/269&quot; ]
+     ]
+  ], [
+     fhir:index 216;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/270&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/270&quot; ]
+     ]
+  ], [
+     fhir:index 217;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/271&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/271&quot; ]
+     ]
+  ], [
+     fhir:index 218;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/272&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/272&quot; ]
+     ]
+  ], [
+     fhir:index 219;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/273&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/273&quot; ]
+     ]
+  ], [
+     fhir:index 220;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/274&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/274&quot; ]
+     ]
+  ], [
+     fhir:index 221;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/275&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/275&quot; ]
+     ]
+  ], [
+     fhir:index 222;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/276&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/276&quot; ]
+     ]
+  ], [
+     fhir:index 223;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/277&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/277&quot; ]
+     ]
+  ], [
+     fhir:index 224;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/278&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/278&quot; ]
+     ]
+  ], [
+     fhir:index 225;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/279&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/279&quot; ]
+     ]
+  ], [
+     fhir:index 226;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/280&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/280&quot; ]
+     ]
+  ], [
+     fhir:index 227;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/281&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/281&quot; ]
+     ]
+  ], [
+     fhir:index 228;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/282&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/282&quot; ]
+     ]
+  ], [
+     fhir:index 229;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/283&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/283&quot; ]
+     ]
+  ], [
+     fhir:index 230;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/284&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/284&quot; ]
+     ]
+  ], [
+     fhir:index 231;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/285&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/285&quot; ]
+     ]
+  ], [
+     fhir:index 232;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/286&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/286&quot; ]
+     ]
+  ], [
+     fhir:index 233;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/287&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/287&quot; ]
+     ]
+  ], [
+     fhir:index 234;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/288&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/288&quot; ]
+     ]
+  ], [
+     fhir:index 235;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/289&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/289&quot; ]
+     ]
+  ], [
+     fhir:index 236;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/290&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/290&quot; ]
+     ]
+  ], [
+     fhir:index 237;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/291&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/291&quot; ]
+     ]
+  ], [
+     fhir:index 238;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/292&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/292&quot; ]
+     ]
+  ], [
+     fhir:index 239;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/293&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/293&quot; ]
+     ]
+  ], [
+     fhir:index 240;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/294&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/294&quot; ]
+     ]
+  ], [
+     fhir:index 241;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/295&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/295&quot; ]
+     ]
+  ], [
+     fhir:index 242;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/xcda&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/xcda&quot; ]
+     ]
+  ], [
+     fhir:index 243;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/xds&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/xds&quot; ]
+     ]
+  ], [
+     fhir:index 244;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/animal&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/animal&quot; ]
+     ]
+  ], [
+     fhir:index 245;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/dicom&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/dicom&quot; ]
+     ]
+  ], [
+     fhir:index 246;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/ihe-pcd&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/ihe-pcd&quot; ]
+     ]
+  ], [
+     fhir:index 247;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/f001&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/f001&quot; ]
+     ]
+  ], [
+     fhir:index 248;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/f201&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/f201&quot; ]
+     ]
+  ], [
+     fhir:index 249;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/glossy&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/glossy&quot; ]
+     ]
+  ], [
+     fhir:index 250;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/proband&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/proband&quot; ]
+     ]
+  ], [
+     fhir:index 251;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/genetics-example1&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/genetics-example1&quot; ]
+     ]
+  ], [
+     fhir:index 252;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/ch-example&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/ch-example&quot; ]
+     ]
+  ], [
+     fhir:index 253;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/newborn&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/newborn&quot; ]
+     ]
+  ], [
+     fhir:index 254;
+     fhir:List.entry.item [
+       fhir:link &lt;http://hl7.org/fhir/Patient/mom&gt;;
+       fhir:Reference.reference [ fhir:value &quot;Patient/mom&quot; ]
+     ]
+  ] .
+
+&lt;http://hl7.org/fhir/Patient/example&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/pat1&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/pat2&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/pat3&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/pat4&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/1&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/2&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/3&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/4&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/5&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/6&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/7&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/8&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/9&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/10&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/11&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/12&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/71&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/72&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/73&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/74&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/75&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/76&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/77&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/78&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/79&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/80&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/81&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/82&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/83&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/84&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/85&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/86&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/87&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/88&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/89&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/90&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/91&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/92&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/93&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/94&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/95&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/96&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/97&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/98&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/99&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/100&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/101&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/102&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/103&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/104&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/105&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/106&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/107&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/108&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/109&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/110&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/111&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/112&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/113&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/114&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/115&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/116&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/117&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/118&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/119&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/120&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/121&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/122&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/123&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/124&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/125&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/126&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/127&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/128&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/129&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/130&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/131&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/132&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/133&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/134&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/135&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/136&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/137&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/138&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/139&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/140&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/141&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/142&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/143&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/144&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/145&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/146&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/147&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/148&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/149&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/150&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/151&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/152&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/153&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/154&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/155&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/156&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/157&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/158&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/159&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/160&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/161&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/162&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/163&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/164&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/165&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/166&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/167&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/168&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/169&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/170&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/171&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/172&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/173&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/174&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/175&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/176&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/177&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/178&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/179&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/180&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/181&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/182&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/183&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/184&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/185&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/186&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/187&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/188&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/189&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/190&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/191&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/192&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/193&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/194&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/195&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/196&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/197&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/198&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/199&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/200&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/201&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/202&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/203&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/204&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/205&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/206&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/207&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/208&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/209&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/210&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/211&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/212&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/213&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/214&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/215&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/216&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/217&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/218&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/219&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/220&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/221&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/222&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/223&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/224&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/225&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/226&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/227&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/228&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/229&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/230&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/231&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/232&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/233&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/234&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/235&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/236&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/237&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/238&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/239&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/240&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/241&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/242&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/243&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/244&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/245&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/246&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/247&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/248&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/249&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/250&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/251&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/252&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/253&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/254&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/255&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/256&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/257&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/258&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/259&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/260&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/261&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/262&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/263&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/264&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/265&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/266&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/267&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/268&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/269&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/270&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/271&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/272&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/273&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/274&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/275&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/276&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/277&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/278&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/279&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/280&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/281&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/282&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/283&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/284&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/285&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/286&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/287&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/288&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/289&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/290&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/291&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/292&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/293&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/294&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/295&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/xcda&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/xds&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/animal&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/dicom&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/ihe-pcd&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/f001&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/f201&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/glossy&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/proband&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/genetics-example1&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/ch-example&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/newborn&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Patient/mom&gt; a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/List/long.ttl&gt; a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI &lt;http://build.fhir.org/List/long.ttl&gt; .
+
+# -------------------------------------------------------------------------------------
+
+
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Flist-example-long.ttl.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Flist-example-long.ttl.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

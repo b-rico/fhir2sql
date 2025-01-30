@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CoverageEligibilityRequest/52346> a fhir:CoverageEligibilityRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "52346"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the CoverageEligibilityRequest</div>"
+  ];
+  fhir:CoverageEligibilityRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://happyvalley.com/coverageelegibilityrequest" ];
+     fhir:Identifier.value [ fhir:value "52346" ]
+  ];
+  fhir:CoverageEligibilityRequest.status [ fhir:value "active"];
+  fhir:CoverageEligibilityRequest.priority [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "normal" ]
+     ]
+  ];
+  fhir:CoverageEligibilityRequest.purpose [
+     fhir:value "validation";
+     fhir:index 0
+  ], [
+     fhir:value "benefits";
+     fhir:index 1
+  ];
+  fhir:CoverageEligibilityRequest.patient [
+     fhir:link <http://hl7.org/fhir/Patient/pat1>;
+     fhir:Reference.reference [ fhir:value "Patient/pat1" ]
+  ];
+  fhir:CoverageEligibilityRequest.servicedDate [ fhir:value "2014-09-17"^^xsd:date];
+  fhir:CoverageEligibilityRequest.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:CoverageEligibilityRequest.enterer [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://happyvalleyclinic.com/staff" ];
+       fhir:Identifier.value [ fhir:value "14" ]
+     ]
+  ];
+  fhir:CoverageEligibilityRequest.provider [
+     fhir:link <http://hl7.org/fhir/Organization/1>;
+     fhir:Reference.reference [ fhir:value "Organization/1" ]
+  ];
+  fhir:CoverageEligibilityRequest.insurer [
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:CoverageEligibilityRequest.facility [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://statecliniclicensor.com/clinicid" ];
+       fhir:Identifier.value [ fhir:value "G35B9" ]
+     ]
+  ];
+  fhir:CoverageEligibilityRequest.insurance [
+     fhir:index 0;
+     fhir:CoverageEligibilityRequest.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ];
+     fhir:CoverageEligibilityRequest.insurance.businessArrangement [ fhir:value "NB8742" ]
+  ];
+  fhir:CoverageEligibilityRequest.item [
+     fhir:index 0;
+     fhir:CoverageEligibilityRequest.item.category [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-benefitcategory" ];
+         fhir:Coding.code [ fhir:value "69" ];
+         fhir:Coding.display [ fhir:value "Maternity" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/pat1> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/1> a fhir:Organization .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CoverageEligibilityRequest/52346.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CoverageEligibilityRequest/52346.ttl> .
+
+# -------------------------------------------------------------------------------------
+

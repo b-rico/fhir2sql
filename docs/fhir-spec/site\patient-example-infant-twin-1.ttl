@@ -1,0 +1,99 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/infant-twin-1> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "infant-twin-1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: infant-twin-1</p><p><b>identifier</b>: Medical record number = MRN7465737865, 7465737865</p><p><b>name</b>: Jaina Solo (OFFICIAL)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 15/05/2017</p><p><b>multipleBirth</b>: 1</p><h3>Contacts</h3><table><tr><td>-</td><td><b>Relationship</b></td><td><b>Name</b></td><td><b>Telecom</b></td></tr><tr><td>*</td><td>Mother <span>(Details : {SNOMED CT code '72705000' = 'Mother', given as 'Mother'}; {http://terminology.hl7.org/CodeSystem/v2-0131 code 'N' = 'Next-of-Kin; {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'MTH' = 'mother)</span></td><td>Leia Organa (MAIDEN)</td><td>ph: +31201234567(MOBILE)</td></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName" ];
+     fhir:Extension.valueString [ fhir:value "Organa" ]
+  ];
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "MR" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://coruscanthealth.org/main-hospital/patient-identifier" ];
+     fhir:Identifier.value [ fhir:value "MRN7465737865" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.system [ fhir:value "http://new-republic.gov/galactic-citizen-identifier" ];
+     fhir:Identifier.value [ fhir:value "7465737865" ]
+  ];
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.family [ fhir:value "Solo" ];
+     fhir:HumanName.given [
+       fhir:value "Jaina";
+       fhir:index 0
+     ]
+  ];
+  fhir:Patient.gender [ fhir:value "female"];
+  fhir:Patient.birthDate [
+     fhir:value "2017-05-15"^^xsd:date;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/patient-birthTime" ];
+       fhir:Extension.valueDateTime [ fhir:value "2017-05-15T17:11:00+01:00"^^xsd:dateTime ]
+     ]
+  ];
+  fhir:Patient.multipleBirthInteger [ fhir:value "1"^^xsd:integer];
+  fhir:Patient.contact [
+     fhir:index 0;
+     fhir:Patient.contact.relationship [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:72705000;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "72705000" ];
+         fhir:Coding.display [ fhir:value "Mother" ]
+       ], [
+         fhir:index 1;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0131" ];
+         fhir:Coding.code [ fhir:value "N" ]
+       ], [
+         fhir:index 2;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+         fhir:Coding.code [ fhir:value "MTH" ]
+       ]
+     ];
+     fhir:Patient.contact.name [
+       fhir:HumanName.use [ fhir:value "maiden" ];
+       fhir:HumanName.family [ fhir:value "Organa" ];
+       fhir:HumanName.given [
+         fhir:value "Leia";
+         fhir:index 0
+       ]
+     ];
+     fhir:Patient.contact.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "+31201234567" ];
+       fhir:ContactPoint.use [ fhir:value "mobile" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/infant-twin-1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Patient/infant-twin-1.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,317 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CoverageEligibilityResponse/E2501> a fhir:CoverageEligibilityResponse;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "E2501"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the CoverageEligibilityResponse.</div>"
+  ];
+  fhir:CoverageEligibilityResponse.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.BenefitsInc.com/fhir/coverageeligibilityresponse" ];
+     fhir:Identifier.value [ fhir:value "881234" ]
+  ];
+  fhir:CoverageEligibilityResponse.status [ fhir:value "active"];
+  fhir:CoverageEligibilityResponse.purpose [
+     fhir:value "validation";
+     fhir:index 0
+  ], [
+     fhir:value "benefits";
+     fhir:index 1
+  ];
+  fhir:CoverageEligibilityResponse.patient [
+     fhir:link <http://hl7.org/fhir/Patient/pat1>;
+     fhir:Reference.reference [ fhir:value "Patient/pat1" ]
+  ];
+  fhir:CoverageEligibilityResponse.servicedDate [ fhir:value "2014-09-17"^^xsd:date];
+  fhir:CoverageEligibilityResponse.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:CoverageEligibilityResponse.request [
+     fhir:link <http://www.BenefitsInc.com/fhir/coverageeligibilityresponse/225476332402>;
+     fhir:Reference.reference [ fhir:value "http://www.BenefitsInc.com/fhir/coverageeligibilityresponse/225476332402" ]
+  ];
+  fhir:CoverageEligibilityResponse.outcome [ fhir:value "complete"];
+  fhir:CoverageEligibilityResponse.disposition [ fhir:value "Policy is currently in-force."];
+  fhir:CoverageEligibilityResponse.insurer [
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:CoverageEligibilityResponse.insurance [
+     fhir:index 0;
+     fhir:CoverageEligibilityResponse.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ];
+     fhir:CoverageEligibilityResponse.insurance.inforce [ fhir:value "true"^^xsd:boolean ];
+     fhir:CoverageEligibilityResponse.insurance.item [
+       fhir:index 0;
+       fhir:CoverageEligibilityResponse.insurance.item.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-benefitcategory" ];
+           fhir:Coding.code [ fhir:value "30" ];
+           fhir:Coding.display [ fhir:value "Health Benefit Plan Coverage" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.network [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-network" ];
+           fhir:Coding.code [ fhir:value "in" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.unit [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-unit" ];
+           fhir:Coding.code [ fhir:value "individual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.term [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-term" ];
+           fhir:Coding.code [ fhir:value "annual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.benefit [
+         fhir:index 0;
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "benefit" ]
+           ]
+         ];
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.allowedMoney [
+           fhir:Money.value [ fhir:value "500000"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "SAR" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "copay-maximum" ]
+           ]
+         ];
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.allowedMoney [
+           fhir:Money.value [ fhir:value "100"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "SAR" ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "copay-percent" ]
+           ]
+         ];
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.allowedUnsignedInt [ fhir:value "20"^^xsd:nonNegativeInteger ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:CoverageEligibilityResponse.insurance.item.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-benefitcategory" ];
+           fhir:Coding.code [ fhir:value "69" ];
+           fhir:Coding.display [ fhir:value "Maternity" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.network [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-network" ];
+           fhir:Coding.code [ fhir:value "in" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.unit [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-unit" ];
+           fhir:Coding.code [ fhir:value "individual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.term [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-term" ];
+           fhir:Coding.code [ fhir:value "annual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.benefit [
+         fhir:index 0;
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "benefit" ]
+           ]
+         ];
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.allowedMoney [
+           fhir:Money.value [ fhir:value "15000"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "SAR" ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:CoverageEligibilityResponse.insurance.item.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-benefitcategory" ];
+           fhir:Coding.code [ fhir:value "F3" ];
+           fhir:Coding.display [ fhir:value "Dental Coverage" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.network [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-network" ];
+           fhir:Coding.code [ fhir:value "in" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.unit [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-unit" ];
+           fhir:Coding.code [ fhir:value "individual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.term [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-term" ];
+           fhir:Coding.code [ fhir:value "annual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.benefit [
+         fhir:index 0;
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "benefit" ]
+           ]
+         ];
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.allowedMoney [
+           fhir:Money.value [ fhir:value "2000"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "SAR" ]
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:CoverageEligibilityResponse.insurance.item.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-benefitcategory" ];
+           fhir:Coding.code [ fhir:value "F6" ];
+           fhir:Coding.display [ fhir:value "Vision Coverage" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.network [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-network" ];
+           fhir:Coding.code [ fhir:value "in" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.unit [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-unit" ];
+           fhir:Coding.code [ fhir:value "individual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.term [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-term" ];
+           fhir:Coding.code [ fhir:value "annual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.benefit [
+         fhir:index 0;
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "benefit" ]
+           ]
+         ];
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.allowedMoney [
+           fhir:Money.value [ fhir:value "400"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "SAR" ]
+         ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:CoverageEligibilityResponse.insurance.item.category [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ex-benefitcategory" ];
+           fhir:Coding.code [ fhir:value "49" ];
+           fhir:Coding.display [ fhir:value "Hospital Room and Board" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.network [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-network" ];
+           fhir:Coding.code [ fhir:value "in" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.unit [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-unit" ];
+           fhir:Coding.code [ fhir:value "individual" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.term [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/benefit-term" ];
+           fhir:Coding.code [ fhir:value "day" ]
+         ]
+       ];
+       fhir:CoverageEligibilityResponse.insurance.item.benefit [
+         fhir:index 0;
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "room" ]
+           ]
+         ];
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.allowedString [ fhir:value "shared" ]
+       ], [
+         fhir:index 1;
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "benefit" ]
+           ]
+         ];
+         fhir:CoverageEligibilityResponse.insurance.item.benefit.allowedMoney [
+           fhir:Money.value [ fhir:value "600"^^xsd:decimal ];
+           fhir:Money.currency [ fhir:value "SAR" ]
+         ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/pat1> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Coverage/9876B1> a fhir:Coverage .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CoverageEligibilityResponse/E2501.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CoverageEligibilityResponse/E2501.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="HealthcareService" status="changed">
+      <element default="removed"
+               old-default="&#34;true&#34;"
+               path="HealthcareService.active"/>
+      <element new-max="*" old-max="1" path="HealthcareService.category"/>
+      <element path="HealthcareService.extraDetails">
+         <removed-type name="string"/>
+         <added-type name="markdown"/>
+      </element>
+      <element new-max="*" old-max="1" path="HealthcareService.eligibility">
+         <removed-type name="CodeableConcept"/>
+         <added-type name="BackboneElement"/>
+      </element>
+      <element path="HealthcareService.eligibility.code" status="new"/>
+      <element path="HealthcareService.eligibility.comment" status="new"/>
+      <element path="HealthcareService.program" status="new"/>
+      <element path="HealthcareService.communication" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="HealthcareService.availableTime.daysOfWeek">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/days-of-week"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/days-of-week|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="HealthcareService.eligibilityNote" status="deleted"/>
+      <element path="HealthcareService.programName" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,148 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ChargeItem/example> a fhir:ChargeItem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Example of ChargeItem Usage in Context of the German EBM Billing code system</div>"
+  ];
+  fhir:ChargeItem.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://myHospital.org/ChargeItems" ];
+     fhir:Identifier.value [ fhir:value "654321" ]
+  ];
+  fhir:ChargeItem.definitionUri [
+     fhir:value "http://www.kbv.de/tools/ebm/html/01520_2904360860826220813632.html";
+     fhir:index 0
+  ];
+  fhir:ChargeItem.status [ fhir:value "billable"];
+  fhir:ChargeItem.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "01510" ];
+       fhir:Coding.display [ fhir:value "Zusatzpauschale für Beobachtung nach diagnostischer Koronarangiografie" ]
+     ]
+  ];
+  fhir:ChargeItem.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ChargeItem.context [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:ChargeItem.occurrencePeriod [
+     fhir:Period.start [ fhir:value "2017-01-25T08:00:00+01:00"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2017-01-25T12:35:00+01:00"^^xsd:dateTime ]
+  ];
+  fhir:ChargeItem.performer [
+     fhir:index 0;
+     fhir:ChargeItem.performer.function [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:17561000;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "17561000" ];
+         fhir:Coding.display [ fhir:value "Cardiologist" ]
+       ]
+     ];
+     fhir:ChargeItem.performer.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ChargeItem.performer.function [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:224542009;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "224542009" ];
+         fhir:Coding.display [ fhir:value "Coronary Care Nurse" ]
+       ]
+     ];
+     fhir:ChargeItem.performer.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:ChargeItem.performingOrganization [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://myhospital/NamingSystem/departments" ];
+       fhir:Identifier.value [ fhir:value "CARD_INTERMEDIATE_CARE" ]
+     ]
+  ];
+  fhir:ChargeItem.requestingOrganization [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://myhospital/NamingSystem/departments" ];
+       fhir:Identifier.value [ fhir:value "CARD_U1" ]
+     ]
+  ];
+  fhir:ChargeItem.quantity [
+     fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+  ];
+  fhir:ChargeItem.factorOverride [ fhir:value "0.8"^^xsd:decimal];
+  fhir:ChargeItem.priceOverride [
+     fhir:Money.value [ fhir:value "40"^^xsd:decimal ];
+     fhir:Money.currency [ fhir:value "EUR" ]
+  ];
+  fhir:ChargeItem.overrideReason [ fhir:value "Patient is Cardiologist's golf buddy, so he gets a 20% discount!"];
+  fhir:ChargeItem.enterer [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ];
+  fhir:ChargeItem.enteredDate [ fhir:value "2017-01-25T23:55:04+01:00"^^xsd:dateTime];
+  fhir:ChargeItem.reason [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:Coding.code [ fhir:value "123456" ];
+       fhir:Coding.display [ fhir:value "DIAG-1" ]
+     ]
+  ];
+  fhir:ChargeItem.service [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Procedure/example>;
+     fhir:Reference.reference [ fhir:value "Procedure/example" ]
+  ];
+  fhir:ChargeItem.account [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Account/example>;
+     fhir:Reference.reference [ fhir:value "Account/example" ]
+  ];
+  fhir:ChargeItem.note [
+     fhir:index 0;
+     fhir:Annotation.authorReference [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ];
+     fhir:Annotation.time [ fhir:value "2017-01-25T23:55:04+01:00"^^xsd:dateTime ];
+     fhir:Annotation.text [ fhir:value "The code is only applicable for periods longer than 4h" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Procedure/example> a fhir:Procedure .
+
+<http://hl7.org/fhir/Account/example> a fhir:Account .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ChargeItem/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ChargeItem/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

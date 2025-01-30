@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Encounter" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Encounter.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/encounter-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/encounter-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Encounter.statusHistory.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/encounter-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/encounter-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-min="1" old-min="0" path="Encounter.class"/>
+      <element path="Encounter.serviceType" status="new"/>
+      <element old-name="incomingReferral" path="Encounter.basedOn">
+         <removed-type name="Reference(ReferralRequest)"/>
+         <added-type name="Reference(ServiceRequest)"/>
+      </element>
+      <element path="Encounter.participant.individual">
+         <removed-type name="Reference(Practitioner | RelatedPerson)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | RelatedPerson)"/>
+      </element>
+      <element new-max="*" old-max="1" path="Encounter.appointment"/>
+      <element path="Encounter.reasonCode" status="new"/>
+      <element path="Encounter.reasonReference" status="new"/>
+      <element path="Encounter.diagnosis.use" status="new"/>
+      <element path="Encounter.hospitalization.origin">
+         <removed-type name="Reference(Location)"/>
+         <added-type name="Reference(Location | Organization)"/>
+      </element>
+      <element path="Encounter.hospitalization.destination">
+         <removed-type name="Reference(Location)"/>
+         <added-type name="Reference(Location | Organization)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Encounter.location.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/encounter-location-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Encounter.location.physicalType" status="new"/>
+      <element path="Encounter.reason" status="deleted"/>
+      <element path="Encounter.diagnosis.role" status="deleted"/>
+   </type>
+</difference>

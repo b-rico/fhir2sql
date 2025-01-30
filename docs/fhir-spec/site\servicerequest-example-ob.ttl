@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/ob> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ob"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: ob</p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>category</b>: OB <span>(Details : {SNOMED CT code '386637004' = 'Obstetric procedure', given as 'Obstetric procedure (procedure)'})</span></p><p><b>code</b>: Vaginal delivery <span>(Details : {SNOMED CT code '22633006' = 'Vaginal delivery, medical personnel present', given as 'Vaginal delivery, medical personnel present (procedure)'})</span></p><p><b>subject</b>: Jane Doe</p><p><b>occurrence</b>: 02/06/2012</p><p><b>requester</b>: Women’s Hospital</p><p><b>performer</b>: Martha Midwife, RNP</p><p><b>reasonCode</b>: term pregnancy, active labor <span>(Details )</span></p></div>"
+  ];
+  fhir:ServiceRequest.status [ fhir:value "completed"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:386637004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "386637004" ];
+       fhir:Coding.display [ fhir:value "Obstetric procedure (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OB" ]
+  ];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:22633006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "22633006" ];
+       fhir:Coding.display [ fhir:value "Vaginal delivery, medical personnel present (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Vaginal delivery" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:Reference.display [ fhir:value "Jane Doe" ]
+  ];
+  fhir:ServiceRequest.occurrenceDateTime [ fhir:value "2012-06-02"^^xsd:date];
+  fhir:ServiceRequest.requester [
+     fhir:Reference.display [ fhir:value "Women’s Hospital" ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Martha Midwife, RNP" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "term pregnancy, active labor" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/ob.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/ob.ttl> .
+
+# -------------------------------------------------------------------------------------
+

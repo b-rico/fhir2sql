@@ -1,0 +1,264 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type CarePlan {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  basedOn: [Reference]
+  replaces: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  intent: code  _intent: ElementBase
+  category: [CodeableConcept]
+  title: String  _title: ElementBase
+  description: String  _description: ElementBase
+  subject: Reference!
+  encounter: Reference
+  period: Period
+  created: dateTime  _created: ElementBase
+  author: Reference
+  contributor: [Reference]
+  careTeam: [Reference]
+  addresses: [Reference]
+  supportingInfo: [Reference]
+  goal: [Reference]
+  activity: [CarePlanActivity]
+  note: [Annotation]
+}
+
+type CarePlanActivity {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  outcomeCodeableConcept: [CodeableConcept]
+  outcomeReference: [Reference]
+  progress: [Annotation]
+  reference: Reference
+  detail: CarePlanActivityDetail
+}
+
+type CarePlanActivityDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  kind: code  _kind: ElementBase
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  code: CodeableConcept
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  goal: [Reference]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  doNotPerform: Boolean  _doNotPerform: ElementBase
+  scheduledTiming: Timing
+  scheduledPeriod: Period
+  scheduledString: String  _scheduledString: ElementBase
+  location: Reference
+  performer: [Reference]
+  productCodeableConcept: CodeableConcept
+  productReference: Reference
+  dailyAmount: Quantity
+  quantity: Quantity
+  description: String  _description: ElementBase
+}
+
+input CarePlan {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  basedOn: [Reference]
+  replaces: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  intent: code  _intent: ElementBase
+  category: [CodeableConcept]
+  title: String  _title: ElementBase
+  description: String  _description: ElementBase
+  subject: Reference!
+  encounter: Reference
+  period: Period
+  created: dateTime  _created: ElementBase
+  author: Reference
+  contributor: [Reference]
+  careTeam: [Reference]
+  addresses: [Reference]
+  supportingInfo: [Reference]
+  goal: [Reference]
+  activity: [CarePlanActivity]
+  note: [Annotation]
+}
+
+input CarePlanActivity {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  outcomeCodeableConcept: [CodeableConcept]
+  outcomeReference: [Reference]
+  progress: [Annotation]
+  reference: Reference
+  detail: CarePlanActivityDetail
+}
+
+input CarePlanActivityDetail {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  kind: code  _kind: ElementBase
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  code: CodeableConcept
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  goal: [Reference]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  doNotPerform: Boolean  _doNotPerform: ElementBase
+  scheduledTiming: Timing
+  scheduledPeriod: Period
+  scheduledString: String  _scheduledString: ElementBase
+  location: Reference
+  performer: [Reference]
+  productCodeableConcept: CodeableConcept
+  productReference: Reference
+  dailyAmount: Quantity
+  quantity: Quantity
+  description: String  _description: ElementBase
+}
+
+type CarePlanReadType {
+  CarePlan(id : ID!) : CarePlan
+}
+
+type CarePlanListType {
+  CarePlanList(_filter : String
+    activity_code : [token]
+    activity_date : [date]
+    activity_reference : [reference]
+    based_on : [reference]
+    care_team : [reference]
+    category : [token]
+    condition : [reference]
+    date : [date]
+    encounter : [reference]
+    goal : [reference]
+    identifier : [token]
+    instantiates_canonical : [reference]
+    instantiates_uri : [uri]
+    intent : [token]
+    part_of : [reference]
+    patient : [reference]
+    performer : [reference]
+    replaces : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [CarePlan]
+}
+
+type CarePlanConnectionType {
+  CarePlanConection(_filter : String
+    activity_code : [token]
+    activity_date : [date]
+    activity_reference : [reference]
+    based_on : [reference]
+    care_team : [reference]
+    category : [token]
+    condition : [reference]
+    date : [date]
+    encounter : [reference]
+    goal : [reference]
+    identifier : [token]
+    instantiates_canonical : [reference]
+    instantiates_uri : [uri]
+    intent : [token]
+    part_of : [reference]
+    patient : [reference]
+    performer : [reference]
+    replaces : [reference]
+    status : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : CarePlanConnection
+}
+
+type CarePlanConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [CarePlanEdge]
+}
+
+type CarePlanEdge {
+  mode : String
+  score : Float
+  resource : CarePlan
+}
+
+type CarePlanCreateType {
+  CarePlanCreate(resource : CarePlan) : CarePlanCreation
+}
+
+type CarePlanCreation {
+  location : String
+  resource : CarePlan
+  information : OperationOutcome
+}
+
+type CarePlanUpdateType {
+  CarePlanUpdate(id : IDresource : CarePlan) : CarePlanUpdate
+}
+
+type CarePlanUpdate {
+  resource : CarePlan
+  information : OperationOutcome
+}
+
+type CarePlanDeleteType {
+  CarePlanDelete(id : ID) : CarePlanDelete
+}
+
+type CarePlanDelete {
+  information : OperationOutcome
+}
+

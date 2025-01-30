@@ -1,0 +1,205 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/opioidcds-11> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "opioidcds-11"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: opioidcds-11</p><p><b>url</b>: <b>http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/opioidcds-11</b></p><p><b>identifier</b>: cdc-opioid-guidance (OFFICIAL)</p><p><b>version</b>: 0.1.0</p><p><b>name</b>: cdc-opioid-11</p><p><b>title</b>: CDC Opioid Prescribing Guideline Recommendation #11</p><p><b>type</b>: ECA Rule <span>(Details : {http://terminology.hl7.org/CodeSystem/plan-definition-type code 'eca-rule' = 'ECA Rule', given as 'ECA Rule'})</span></p><p><b>status</b>: draft</p><p><b>date</b>: 19/03/2018</p><p><b>publisher</b>: Centers for Disease Control and Prevention (CDC)</p><p><b>description</b>: Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.</p><p><b>useContext</b>: , </p><p><b>jurisdiction</b>: United States of America <span>(Details : {urn:iso:std:iso:3166 code 'US' = 'United States of America', given as 'United States of America'})</span></p><p><b>purpose</b>: CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.</p><p><b>usage</b>: Clinicians should avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible.</p><p><b>copyright</b>: © CDC 2016+.</p><p><b>topic</b>: Opioid Prescribing <span>(Details )</span></p><p><b>author</b>: , , , </p><p><b>relatedArtifact</b>: , </p><p><b>library</b>: <a>Library/opioidcds-recommendation-11</a></p><blockquote><p><b>action</b></p><p><b>title</b>: Existing patient has concurrent opioid and benzodiazepine prescriptions.</p><p><b>description</b>: Checking if the trigger prescription meets the inclusion criteria for recommendation #11 workflow.</p><p><b>documentation</b>: </p><p><b>trigger</b>: </p><h3>Conditions</h3><table><tr><td>-</td><td><b>Kind</b></td><td><b>Expression</b></td></tr><tr><td>*</td><td>applicability</td><td/></tr></table><p><b>groupingBehavior</b>: visual-group</p><p><b>selectionBehavior</b>: exactly-one</p><blockquote><p><b>dynamicValue</b></p><p><b>path</b>: action.description</p><p><b>expression</b>: </p></blockquote><blockquote><p><b>dynamicValue</b></p><p><b>path</b>: action.title</p><p><b>expression</b>: </p></blockquote><blockquote><p><b>dynamicValue</b></p><p><b>path</b>: action.extension</p><p><b>expression</b>: </p></blockquote><h3>Actions</h3><table><tr><td>-</td></tr><tr><td>*</td></tr><tr><td>*</td></tr><tr><td>*</td></tr></table></blockquote></div>"
+  ];
+  fhir:PlanDefinition.url [ fhir:value "http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/opioidcds-11"];
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "cdc-opioid-guidance" ]
+  ];
+  fhir:PlanDefinition.version [ fhir:value "0.1.0"];
+  fhir:PlanDefinition.name [ fhir:value "cdc-opioid-11"];
+  fhir:PlanDefinition.title [ fhir:value "CDC Opioid Prescribing Guideline Recommendation #11"];
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ];
+       fhir:Coding.display [ fhir:value "ECA Rule" ]
+     ]
+  ];
+  fhir:PlanDefinition.status [ fhir:value "draft"];
+  fhir:PlanDefinition.date [ fhir:value "2018-03-19"^^xsd:date];
+  fhir:PlanDefinition.publisher [ fhir:value "Centers for Disease Control and Prevention (CDC)"];
+  fhir:PlanDefinition.description [ fhir:value "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient."];
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ];
+       fhir:Coding.display [ fhir:value "Clinical Focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:182888003;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "182888003" ];
+         fhir:Coding.display [ fhir:value "Medication requested (situation)" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ];
+       fhir:Coding.display [ fhir:value "Clinical Focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:82423001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "82423001" ];
+         fhir:Coding.display [ fhir:value "Chronic pain (finding)" ]
+       ]
+     ]
+  ];
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States of America" ]
+     ]
+  ];
+  fhir:PlanDefinition.purpose [ fhir:value "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care."];
+  fhir:PlanDefinition.usage [ fhir:value "Clinicians should avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible."];
+  fhir:PlanDefinition.copyright [ fhir:value "© CDC 2016+."];
+  fhir:PlanDefinition.topic [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Opioid Prescribing" ]
+  ];
+  fhir:PlanDefinition.author [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Kensaku Kawamoto, MD, PhD, MHS" ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "Bryn Rhodes" ]
+  ], [
+     fhir:index 2;
+     fhir:ContactDetail.name [ fhir:value "Floyd Eisenberg, MD, MPH" ]
+  ], [
+     fhir:index 3;
+     fhir:ContactDetail.name [ fhir:value "Robert McClure, MD, MPH" ]
+  ];
+  fhir:PlanDefinition.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+     fhir:RelatedArtifact.display [ fhir:value "CDC guideline for prescribing opioids for chronic pain" ];
+     fhir:RelatedArtifact.url [ fhir:value "https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420" ]
+  ], [
+     fhir:index 1;
+     fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+     fhir:RelatedArtifact.display [ fhir:value "MME Conversion Tables" ];
+     fhir:RelatedArtifact.url [ fhir:value "https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf" ]
+  ];
+  fhir:PlanDefinition.library [
+     fhir:value "Library/opioidcds-recommendation-11";
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Library/opioidcds-recommendation-11>
+  ];
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "Existing patient has concurrent opioid and benzodiazepine prescriptions." ];
+     fhir:PlanDefinition.action.description [ fhir:value "Checking if the trigger prescription meets the inclusion criteria for recommendation #11 workflow." ];
+     fhir:PlanDefinition.action.documentation [
+       fhir:index 0;
+       fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+       fhir:RelatedArtifact.document [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-strengthOfRecommendation" ];
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/recommendation-strength" ];
+               fhir:Coding.code [ fhir:value "strong" ];
+               fhir:Coding.display [ fhir:value "Strong" ]
+             ]
+           ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-qualityOfEvidence" ];
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0;
+               fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/evidence-quality" ];
+               fhir:Coding.code [ fhir:value "low" ];
+               fhir:Coding.display [ fhir:value "Low quality" ]
+             ]
+           ]
+         ]
+       ]
+     ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "medication-prescribe" ]
+     ];
+     fhir:PlanDefinition.action.condition [
+       fhir:index 0;
+       fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+       fhir:PlanDefinition.action.condition.expression [
+         fhir:Expression.description [ fhir:value "Check whether the existing patient is using opioids concurrently with benzodiazepines." ];
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Inclusion Criteria" ]
+       ]
+     ];
+     fhir:PlanDefinition.action.groupingBehavior [ fhir:value "visual-group" ];
+     fhir:PlanDefinition.action.selectionBehavior [ fhir:value "exactly-one" ];
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.description" ];
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Get Detail" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.title" ];
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Get Summary" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.extension" ];
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Get Indicator" ]
+       ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:PlanDefinition.action.description [ fhir:value "Will revise" ]
+     ], [
+       fhir:index 1;
+       fhir:PlanDefinition.action.description [ fhir:value "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo" ]
+     ], [
+       fhir:index 2;
+       fhir:PlanDefinition.action.description [ fhir:value "N/A - see comment; snooze 3 mo" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/PlanDefinition/opioidcds-11.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/PlanDefinition/opioidcds-11.ttl> .
+
+# -------------------------------------------------------------------------------------
+

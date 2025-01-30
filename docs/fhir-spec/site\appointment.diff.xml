@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Appointment" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Appointment.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/appointmentstatus"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/appointmentstatus|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Appointment.cancelationReason" status="new"/>
+      <element new-max="*" old-max="1" path="Appointment.serviceCategory"/>
+      <element path="Appointment.reasonCode" status="new"/>
+      <element path="Appointment.reasonReference" status="new"/>
+      <element path="Appointment.patientInstruction" status="new"/>
+      <element path="Appointment.basedOn" status="new"/>
+      <element path="Appointment.participant.actor">
+         <removed-type name="Reference(Patient | Practitioner | RelatedPerson | Device | HealthcareService | Location)"/>
+         <added-type name="Reference(Patient | Practitioner | PractitionerRole | RelatedPerson | Device | HealthcareService | Location)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Appointment.participant.required">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/participantrequired"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/participantrequired|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Appointment.participant.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/participationstatus"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/participationstatus|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Appointment.participant.period" status="new"/>
+      <element path="Appointment.reason" status="deleted"/>
+      <element path="Appointment.indication" status="deleted"/>
+      <element path="Appointment.incomingReferral" status="deleted"/>
+   </type>
+</difference>

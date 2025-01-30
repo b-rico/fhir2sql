@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DocumentManifest/example> a fhir:DocumentManifest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Text</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Practitioner;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "a1" ];
+     fhir:Practitioner.name [
+       fhir:index 0;
+       fhir:HumanName.family [ fhir:value "Dopplemeyer" ];
+       fhir:HumanName.given [
+         fhir:value "Sherry";
+         fhir:index 0
+       ]
+     ];
+     fhir:Practitioner.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "john.doe@healthcare.example.org" ]
+     ]
+  ];
+  fhir:DocumentManifest.masterIdentifier [
+     fhir:Identifier.system [ fhir:value "http://example.org/documents" ];
+     fhir:Identifier.value [ fhir:value "23425234234-2346" ]
+  ];
+  fhir:DocumentManifest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://example.org/documents" ];
+     fhir:Identifier.value [ fhir:value "23425234234-2347" ]
+  ];
+  fhir:DocumentManifest.status [ fhir:value "current"];
+  fhir:DocumentManifest.type [
+     fhir:CodeableConcept.text [ fhir:value "History and Physical" ]
+  ];
+  fhir:DocumentManifest.subject [
+     fhir:link <http://hl7.org/fhir/Patient/xcda>;
+     fhir:Reference.reference [ fhir:value "Patient/xcda" ]
+  ];
+  fhir:DocumentManifest.created [ fhir:value "2004-12-25T23:50:50-05:00"^^xsd:dateTime];
+  fhir:DocumentManifest.author [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#a1" ]
+  ];
+  fhir:DocumentManifest.recipient [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/xcda1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/xcda1" ]
+  ];
+  fhir:DocumentManifest.source [ fhir:value "urn:oid:1.3.6.1.4.1.21367.2009.1.2.1"];
+  fhir:DocumentManifest.description [ fhir:value "Physical"];
+  fhir:DocumentManifest.content [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/DocumentReference/example>;
+     fhir:Reference.reference [ fhir:value "DocumentReference/example" ]
+  ];
+  fhir:DocumentManifest.related [
+     fhir:index 0;
+     fhir:DocumentManifest.related.identifier [
+       fhir:Identifier.system [ fhir:value "http://example.org/documents" ];
+       fhir:Identifier.value [ fhir:value "23425234234-9999" ]
+     ];
+     fhir:DocumentManifest.related.ref [
+       fhir:link <http://hl7.org/fhir/DocumentReference/example>;
+       fhir:Reference.reference [ fhir:value "DocumentReference/example" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/xcda> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/xcda1> a fhir:Practitioner .
+
+<http://hl7.org/fhir/DocumentReference/example> a fhir:DocumentReference .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DocumentManifest/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/DocumentManifest/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

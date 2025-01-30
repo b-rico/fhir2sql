@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/AdverseEvent/example> a fhir:AdverseEvent;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>identifier</b>: 49476534</p><p><b>actuality</b>: actual</p><p><b>category</b>: Product Use Error <span>(Details : {http://terminology.hl7.org/CodeSystem/adverse-event-category code 'product-use-error' = 'Product Use Error', given as 'Product Use Error'})</span></p><p><b>event</b>: This was a mild rash on the left forearm <span>(Details : {SNOMED CT code '304386008' = 'O/E - itchy rash', given as 'O/E - itchy rash'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>date</b>: 29/01/2017 12:34:56 PM</p><p><b>seriousness</b>: Non-serious <span>(Details : {http://terminology.hl7.org/CodeSystem/adverse-event-seriousness code 'Non-serious' = 'Non-serious', given as 'Non-serious'})</span></p><p><b>severity</b>: Mild <span>(Details : {http://terminology.hl7.org/CodeSystem/adverse-event-severity code 'mild' = 'Mild', given as 'Mild'})</span></p><p><b>recorder</b>: <a>Practitioner/example</a></p><h3>SuspectEntities</h3><table><tr><td>-</td><td><b>Instance</b></td></tr><tr><td>*</td><td><a>Medication/example</a></td></tr></table></div>"
+  ];
+  fhir:AdverseEvent.identifier [
+     fhir:Identifier.system [ fhir:value "http://acme.com/ids/patients/risks" ];
+     fhir:Identifier.value [ fhir:value "49476534" ]
+  ];
+  fhir:AdverseEvent.actuality [ fhir:value "actual"];
+  fhir:AdverseEvent.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/adverse-event-category" ];
+       fhir:Coding.code [ fhir:value "product-use-error" ];
+       fhir:Coding.display [ fhir:value "Product Use Error" ]
+     ]
+  ];
+  fhir:AdverseEvent.event [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:304386008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "304386008" ];
+       fhir:Coding.display [ fhir:value "O/E - itchy rash" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "This was a mild rash on the left forearm" ]
+  ];
+  fhir:AdverseEvent.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:AdverseEvent.date [ fhir:value "2017-01-29T12:34:56+00:00"^^xsd:dateTime];
+  fhir:AdverseEvent.seriousness [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness" ];
+       fhir:Coding.code [ fhir:value "Non-serious" ];
+       fhir:Coding.display [ fhir:value "Non-serious" ]
+     ]
+  ];
+  fhir:AdverseEvent.severity [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/adverse-event-severity" ];
+       fhir:Coding.code [ fhir:value "mild" ];
+       fhir:Coding.display [ fhir:value "Mild" ]
+     ]
+  ];
+  fhir:AdverseEvent.recorder [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ];
+  fhir:AdverseEvent.suspectEntity [
+     fhir:index 0;
+     fhir:AdverseEvent.suspectEntity.instance [
+       fhir:link <http://hl7.org/fhir/Medication/example>;
+       fhir:Reference.reference [ fhir:value "Medication/example" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Medication/example> a fhir:Medication .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/AdverseEvent/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/AdverseEvent/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

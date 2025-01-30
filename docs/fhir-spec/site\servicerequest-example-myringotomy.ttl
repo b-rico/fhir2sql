@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/myringotomy> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "myringotomy"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: myringotomy</p><p><b>identifier</b>: ret4421</p><p><b>basedOn</b>: ServiceRequest for Myringotomy and insertion of tympanic ventilation tube</p><p><b>replaces</b>: prior ServiceRequest</p><p><b>requisition</b>: 1234</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Patient referral to specialist <span>(Details : {SNOMED CT code '103696004' = 'Patient referral to specialist', given as 'Patient referral to specialist'})</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Insertion of grommets <span>(Details : {SNOMED CT code '172676009' = 'Myringotomy and insertion of short-term grommet', given as 'Myringotomy and insertion of tympanic ventilation tube'})</span></p><p><b>subject</b>: <a>Beverly Weaver</a></p><p><b>encounter</b>: Beverly Waver's encounter on 2014-02-14</p><p><b>occurrence</b>: ?? --&gt; 14/03/2014</p><p><b>authoredOn</b>: 14/02/2014</p><p><b>requester</b>: <a>Serena Shrink</a></p><p><b>performerType</b>: ENT <span>(Details : {http://orionhealth.com/fhir/apps/specialties code 'ent' = 'ent', given as 'ENT'})</span></p><p><b>performer</b>: <a>Dr Dave</a></p><p><b>reasonCode</b>: For consideration of Grommets <span>(Details )</span></p><p><b>note</b>: In the past 2 years Beverly has had 6 instances of rt-sided Otitis media. She is     falling behind her peers at school, and displaying some learning difficulties.</p></div>"
+  ];
+  fhir:ServiceRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://orionhealth.com/fhir/apps/referralids" ];
+     fhir:Identifier.value [ fhir:value "ret4421" ]
+  ];
+  fhir:ServiceRequest.basedOn [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "ServiceRequest for Myringotomy and insertion of tympanic ventilation tube" ]
+  ];
+  fhir:ServiceRequest.replaces [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "prior ServiceRequest" ]
+  ];
+  fhir:ServiceRequest.requisition [
+     fhir:Identifier.value [ fhir:value "1234" ]
+  ];
+  fhir:ServiceRequest.status [ fhir:value "active"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:103696004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "103696004" ];
+       fhir:Coding.display [ fhir:value "Patient referral to specialist" ]
+     ]
+  ];
+  fhir:ServiceRequest.priority [ fhir:value "routine"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:172676009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "172676009" ];
+       fhir:Coding.display [ fhir:value "Myringotomy and insertion of tympanic ventilation tube" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Insertion of grommets" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:link <https://fhir.orionhealth.com/blaze/fhir/Patient/77662>;
+     fhir:Reference.reference [ fhir:value "https://fhir.orionhealth.com/blaze/fhir/Patient/77662" ];
+     fhir:Reference.display [ fhir:value "Beverly Weaver" ]
+  ];
+  fhir:ServiceRequest.encounter [
+     fhir:Reference.display [ fhir:value "Beverly Waver's encounter on 2014-02-14" ]
+  ];
+  fhir:ServiceRequest.occurrencePeriod [
+     fhir:Period.end [ fhir:value "2014-03-14"^^xsd:date ]
+  ];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2014-02-14"^^xsd:date];
+  fhir:ServiceRequest.requester [
+     fhir:link <https://fhir.orionhealth.com/blaze/fhir/Practitioner/77272>;
+     fhir:Reference.reference [ fhir:value "https://fhir.orionhealth.com/blaze/fhir/Practitioner/77272" ];
+     fhir:Reference.display [ fhir:value "Serena Shrink" ]
+  ];
+  fhir:ServiceRequest.performerType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://orionhealth.com/fhir/apps/specialties" ];
+       fhir:Coding.code [ fhir:value "ent" ];
+       fhir:Coding.display [ fhir:value "ENT" ]
+     ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:link <https://fhir.orionhealth.com/blaze/fhir/Practitioner/76597>;
+     fhir:Reference.reference [ fhir:value "https://fhir.orionhealth.com/blaze/fhir/Practitioner/76597" ];
+     fhir:Reference.display [ fhir:value "Dr Dave" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "For consideration of Grommets" ]
+  ];
+  fhir:ServiceRequest.note [
+     fhir:index 0;
+     fhir:Annotation.authorString [ fhir:value "Serena Shrink" ];
+     fhir:Annotation.time [ fhir:value "2014-02-14"^^xsd:date ];
+     fhir:Annotation.text [ fhir:value "In the past 2 years Beverly has had 6 instances of rt-sided Otitis media. She is     falling behind her peers at school, and displaying some learning difficulties." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ServiceRequest/myringotomy.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ServiceRequest/myringotomy.ttl> .
+
+# -------------------------------------------------------------------------------------
+

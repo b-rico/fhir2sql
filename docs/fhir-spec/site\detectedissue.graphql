@@ -1,0 +1,176 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type DetectedIssue {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  code: CodeableConcept
+  severity: code  _severity: ElementBase
+  patient: Reference
+  identifiedDateTime: dateTime  _identifiedDateTime: ElementBase
+  identifiedPeriod: Period
+  author: Reference
+  implicated: [Reference]
+  evidence: [DetectedIssueEvidence]
+  detail: String  _detail: ElementBase
+  reference: uri  _reference: ElementBase
+  mitigation: [DetectedIssueMitigation]
+}
+
+type DetectedIssueEvidence {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: [CodeableConcept]
+  detail: [Reference]
+}
+
+type DetectedIssueMitigation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  action: CodeableConcept!
+  date: dateTime  _date: ElementBase
+  author: Reference
+}
+
+input DetectedIssue {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  code: CodeableConcept
+  severity: code  _severity: ElementBase
+  patient: Reference
+  identifiedDateTime: dateTime  _identifiedDateTime: ElementBase
+  identifiedPeriod: Period
+  author: Reference
+  implicated: [Reference]
+  evidence: [DetectedIssueEvidence]
+  detail: String  _detail: ElementBase
+  reference: uri  _reference: ElementBase
+  mitigation: [DetectedIssueMitigation]
+}
+
+input DetectedIssueEvidence {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: [CodeableConcept]
+  detail: [Reference]
+}
+
+input DetectedIssueMitigation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  action: CodeableConcept!
+  date: dateTime  _date: ElementBase
+  author: Reference
+}
+
+type DetectedIssueReadType {
+  DetectedIssue(id : ID!) : DetectedIssue
+}
+
+type DetectedIssueListType {
+  DetectedIssueList(_filter : String
+    author : [reference]
+    code : [token]
+    identified : [date]
+    identifier : [token]
+    implicated : [reference]
+    patient : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [DetectedIssue]
+}
+
+type DetectedIssueConnectionType {
+  DetectedIssueConection(_filter : String
+    author : [reference]
+    code : [token]
+    identified : [date]
+    identifier : [token]
+    implicated : [reference]
+    patient : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : DetectedIssueConnection
+}
+
+type DetectedIssueConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [DetectedIssueEdge]
+}
+
+type DetectedIssueEdge {
+  mode : String
+  score : Float
+  resource : DetectedIssue
+}
+
+type DetectedIssueCreateType {
+  DetectedIssueCreate(resource : DetectedIssue) : DetectedIssueCreation
+}
+
+type DetectedIssueCreation {
+  location : String
+  resource : DetectedIssue
+  information : OperationOutcome
+}
+
+type DetectedIssueUpdateType {
+  DetectedIssueUpdate(id : IDresource : DetectedIssue) : DetectedIssueUpdate
+}
+
+type DetectedIssueUpdate {
+  resource : DetectedIssue
+  information : OperationOutcome
+}
+
+type DetectedIssueDeleteType {
+  DetectedIssueDelete(id : ID) : DetectedIssueDelete
+}
+
+type DetectedIssueDelete {
+  information : OperationOutcome
+}
+

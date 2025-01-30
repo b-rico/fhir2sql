@@ -1,0 +1,158 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type SupplyDelivery {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  basedOn: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  patient: Reference
+  type: CodeableConcept
+  suppliedItem: SupplyDeliverySuppliedItem
+  occurrenceDateTime: dateTime  _occurrenceDateTime: ElementBase
+  occurrencePeriod: Period
+  occurrenceTiming: Timing
+  supplier: Reference
+  destination: Reference
+  receiver: [Reference]
+}
+
+type SupplyDeliverySuppliedItem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  quantity: Quantity
+  itemCodeableConcept: CodeableConcept
+  itemReference: Reference
+}
+
+input SupplyDelivery {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  basedOn: [Reference]
+  partOf: [Reference]
+  status: code  _status: ElementBase
+  patient: Reference
+  type: CodeableConcept
+  suppliedItem: SupplyDeliverySuppliedItem
+  occurrenceDateTime: dateTime  _occurrenceDateTime: ElementBase
+  occurrencePeriod: Period
+  occurrenceTiming: Timing
+  supplier: Reference
+  destination: Reference
+  receiver: [Reference]
+}
+
+input SupplyDeliverySuppliedItem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  quantity: Quantity
+  itemCodeableConcept: CodeableConcept
+  itemReference: Reference
+}
+
+type SupplyDeliveryReadType {
+  SupplyDelivery(id : ID!) : SupplyDelivery
+}
+
+type SupplyDeliveryListType {
+  SupplyDeliveryList(_filter : String
+    identifier : [token]
+    patient : [reference]
+    receiver : [reference]
+    status : [token]
+    supplier : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [SupplyDelivery]
+}
+
+type SupplyDeliveryConnectionType {
+  SupplyDeliveryConection(_filter : String
+    identifier : [token]
+    patient : [reference]
+    receiver : [reference]
+    status : [token]
+    supplier : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : SupplyDeliveryConnection
+}
+
+type SupplyDeliveryConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [SupplyDeliveryEdge]
+}
+
+type SupplyDeliveryEdge {
+  mode : String
+  score : Float
+  resource : SupplyDelivery
+}
+
+type SupplyDeliveryCreateType {
+  SupplyDeliveryCreate(resource : SupplyDelivery) : SupplyDeliveryCreation
+}
+
+type SupplyDeliveryCreation {
+  location : String
+  resource : SupplyDelivery
+  information : OperationOutcome
+}
+
+type SupplyDeliveryUpdateType {
+  SupplyDeliveryUpdate(id : IDresource : SupplyDelivery) : SupplyDeliveryUpdate
+}
+
+type SupplyDeliveryUpdate {
+  resource : SupplyDelivery
+  information : OperationOutcome
+}
+
+type SupplyDeliveryDeleteType {
+  SupplyDeliveryDelete(id : ID) : SupplyDeliveryDelete
+}
+
+type SupplyDeliveryDelete {
+  information : OperationOutcome
+}
+

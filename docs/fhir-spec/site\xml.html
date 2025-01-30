@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+  <!-- These elements SHALL always appear in this order. These basic elements shared by all resources come first
+in order to support consistent definitions for schema and UML derived code. --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Xml - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/xml.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="foundation-module.html"><img src="foundation.png"/> Foundation</a></li>
+        <li><a href="formats.html">Formats</a></li>
+        <li><b>XML</b></li>          <!-- xml.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<ul class="nav nav-tabs"><li><a href="formats.html">Formats</a></li><li class="active"><a href="#">XML</a></li><li><a href="json.html">JSON</a></li><li><a href="nd-json.html">ND-JSON</a></li><li><a href="rdf.html">RDF</a></li></ul>
+
+
+<a name="root"></a>
+<h2 class="self-link-parent"><span class="sectioncount">2.6.1<a name="2.6.1"> </a></span> XML Representation of Resources <a href="xml.html#2.6.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+
+<table class="colsn"><tr><td id="wg"><a href="http://www.hl7.org/special/committees/xml/index.cfm" _target="blank">Implementable Technology Specifications <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: Normative</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:  <!-- !ns! --><a href="versions.html#std-process">Normative</a></td></tr></table>
+
+<table style="max-width: 790px; padding: 4px; border: 1px silver solid; background-color: #efffef" class="none">
+ <tr>
+  <td>
+   <img src="assets/images/ansi-approved.gif" width="55" height="35"/>
+  </td>
+  <td style="vertical-align: middle">
+   This page has been approved as part of an <a href="https://www.ansi.org/">ANSI <img src="external.png" style="text-align: baseline"/></a> standard.
+   See the <a href="ansi-infrastructure.html">Infrastructure</a> Package for further details.
+  </td>
+ </tr>
+</table>
+
+
+<p>
+The XML representation for a resource is described using this format: 
+</p>
+<pre class="spec">
+ &lt;<b>name</b> xmlns="http://hl7.org/fhir" (attrA="value")&gt;   <span style="float: right"><a href="xml.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+   <span style="color:gray">&lt;!-- from Resource: id, meta, implicitRules, and language --&gt;</span>
+   &lt;<u><b title="Formal Definition (must be supported or understood)">nameA</b></u>&gt;<font color="Gray">&lt;!-- </font><span style="color: brown" title="Inv-5: Some rule apples to this element"><b><img src="lock.png" alt="??"/> 1..1</b></span> <font color="Darkgreen">type</font> <font color="Navy">description of content</font> <font color="Gray"> --&gt;</font>&lt;nameA&gt;
+   &lt;<b title="Formal Definition">nameB[x]</b>&gt;<font color="Gray">&lt;!-- </font><font color="brown">0..1</font> <font color="darkgreen">type1</font>|<font color="darkgreen">type1</font> <font color="Navy">description</font> <font color="Gray"> --&gt;</font>&lt;/nameB[x]&gt;
+   &lt;<b>nameC</b>&gt; <font color="Brown"><font color="Gray">&lt;!-- </font> <b>1..*</b> --&gt;</font>
+     &lt;<b>nameD</b>&gt;<font color="Gray">&lt;!-- </font><font color="brown">1..1</font> <font color="darkgreen">type</font>&gt;<font color="navy">Relevant elements</font> <font color="Gray"> --&gt;</font>&lt;/nameD&gt;
+   &lt;/nameC&gt;
+ &lt;name&gt;
+</pre>
+<p>
+Using this format:
+</p>
+<ul>
+ <li>To build a valid XML instance of a resource, simply replace the contents of the elements and attributes with valid content 
+   as described by the cardinality, type rules and content description found in the comment in each element</li>
+ <li>Resource and Element names are case-sensitive (though duplicates that differ only in case are never defined)</li>
+ <li>Elements must always appear in the order documented</li>
+ <li>When an element is allowed to repeat, the elements are ordered, and the technical infrastructure needs to be able to access the items in the right order (see also <a href="conformance-rules.html#cardinality">Cardinality Rules</a> for a further description of elements with cardinality &gt; 1)</li>
+ <li>A few properties are represented as attributes: values of primitive types in a <code>value</code> attribute, extension URLs in the <code>url</code> attribute on an extension, and the <code>id</code> property on elements (but not on resources, where the resource id is an element)</li>
+ <li>Any of the XML elements may have an id attribute to serve as <a href="narrative.html#internal">the target of an internal reference</a>. The id attribute is not shown in this format</li>
+ <li>FHIR elements are always in the namespace <a href="http://hl7.org/fhir">http://hl7.org/fhir <img src="external.png" style="text-align: baseline"/></a>.  This is usually specified as the default namespace on the root element. 
+   The only other namespace that occurs in FHIR resources is the XHTML namespace - <a href="narrative.html">XHTML is found in most resources</a></li>
+ <li>Infrastructural elements must appear prior to any other defined child elements in the following order:
+	<ul>
+		<li>First, the elements from the <a href="resource.html">base resource</a>, in order</li>
+		<li>Second, the elements from the <a href="domainresource.html">domain resource</a>, in order</li>
+	</ul>
+ </li>
+ <li>FHIR elements are never empty. If an element is present in the resource, it SHALL have either a value attribute, child elements as defined for its type, or 1 or more <a href="extensibility.html">extensions</a></li>
+ <li>Attributes cannot be empty. Either they are absent, or they are present with at least one character of non-whitespace content</li>
+ <li><a name="whitepace"></a>Implementers SHOULD trim leading and trailing whitespace before writing and SHOULD trim leading and trailing whitespace when reading attribute values (for XML schema conformance)</li>
+ <li>The lock icon (<img src="lock.png" alt="??"/>) denotes that an element defines or is affected by <a href="conformance-rules.html#constraints">additional rules</a> that control its presence and/or content</li>
+ <li>XML comments, processing instructions and formatting are not part of the contents of a resource</li>
+ <li>There SHALL be no DTD references in FHIR resources (because of the <a href="https://en.wikipedia.org/wiki/XML_external_entity_attack">XXE security exploit <img src="external.png" style="text-align: baseline"/></a>)</li>
+ <li>XML resources SHALL be exchanged using UTF-8 encoding. Specifying the character encoding using an XML declaration (<code>&lt;?xml encoding="UTF-8" ?&gt;</code>) is optional but recommended</li>
+ <li>Other processing instructions SHOULD not be included and SHALL NOT be required to properly understand and/or present the data or narrative of the resource. 
+  Applications MAY preserve processing instructions when handling resources, but are not required to do so</li>
+ <li>The MIME-type for this format is <code>application/fhir+xml</code>.</li>
+</ul>
+
+<a name="schema"></a>
+<h3 class="self-link-parent"><span class="sectioncount">2.6.1.1</span> XML Schema and Schematron <a href="xml.html#schema" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+This specification provides schema definitions for all the resource and data type content models it describes. 
+</p>
+<p>
+The base schema is called "<a href="fhir-base.xsd">fhir-base.xsd</a>" and defines all the 
+datatypes and base infrastructure types. In addition, there 
+is a schema for each resource and a common schema <a href="fhir-all.xsd">fhir-all.xsd</a> 
+that includes all the resource schemas. For schema processors that do not like circular
+includes, there is <a href="fhir-single.xsd">a single schema</a> that contains everything.
+</p>
+<p>
+In addition to the w3c schema files, this specification also provides Schematron files that
+enforce most of the constraints defined for the datatypes and resources, though some are only 
+expressible and validatable using <a href="fhirpath.html">FHIRPath</a>. These are packaged
+as files for each resource.
+</p>
+<p>
+XML that is exchanged SHALL be valid against the w3c schema and Schematron, though being 
+valid against the schema and Schematron is not sufficient to be a conformant instance: 
+this specification makes several rules that cannot be checked by either mechanism. 
+Operational systems may choose to use schema tools to check validation, but are not 
+required to do so. Exchanged content SHALL NOT specify the schema or even contain the schema 
+instance namespace in the resource itself. 
+</p>
+<p>
+Given the way <a href="extensibility.html">extensions</a> work, applications reading
+XML resources will never encounter unknown elements. However, once an application 
+starts trading with other applications that conform to later versions of this specification,
+unknown XML elements may be encountered. Applications MAY choose to ignore unknown elements
+to foster forwards compatibility in this regard, but may also choose not to - which 
+would be the normal behavior for schema generated applications. 
+  <!-- Applications declare 
+their unknown elements behavior using <a href="capabilitystatement-definitions.html#CapabilityStatement.acceptUnknown">CapabilityStatement.acceptUnknown</a>. -->
+</p>
+
+<a name="schema-gen"></a>
+<h3 class="self-link-parent"><span class="sectioncount">2.6.1.2</span> Code Generation Schema <a href="xml.html#schema-gen" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+In addition to the validation schema, this specification provides a
+set of schemas suitable for code generation. These schemas describe
+the same XML syntax, but apply less validation to create 
+schemas that work better with code generation tooling. 
+</p>
+<p>
+Specifically, these schemas are generated without any <code>xsd:choice</code> elements, 
+for code generators that don't deal with choices well. Implementers that 
+use these schemas will need to enforce the correct usage of the 
+<a href="formats.html#choice">choice elements</a> without schema
+support.
+</p>
+<p>
+Implementers making use of schema-driven code generation tooling need
+to consider how to handle the <a href="datatypes.html#decimal">decimal</a>
+data type. The decimal data type is defined to be precision aware - that 
+is, that implementers need to preserve the difference between "2.0" and
+"2.00" - this is ubiquitously considered important in handling observed
+data in healthcare. Both schemas map this data type to a union of <code>xsd:decimal</code> and <code>xsd:double</code>, but
+the base <a href="http://www.w3.org/TR/xmlschema-2/#decimal">W3C schema decimal type <img src="external.png" style="text-align: baseline"/></a> is specified not to be precision aware. Schema
+driven implementations vary as to how precision is handled. Implementers
+will need to determine how their generated code handles decimals/doubles and 
+consider changing the type for decimal in their schema from <code>xsd:decimal/double</code>
+to <code>xsd:string</code>. Specifically, implementers may wish to change:
+</p>
+<pre>
+  &lt;xs:simpleType name="decimal-primitive"&gt;
+    &lt;xs:union memberTypes="xs:decimal xs:double"/&gt;
+  &lt;/xs:simpleType&gt;
+</pre>
+<p>
+to this:
+</p>
+<pre>
+  &lt;xs:simpleType name="decimal-primitive"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:pattern value="-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+</pre>
+<p>
+Alternatively, if supported, implementers may wish to use the 
+<a href="http://www.w3.org/TR/xsd-precisionDecimal/">precisionDecimal <img src="external.png" style="text-align: baseline"/></a> from the XSD 1.1 framework.
+</p>
+<p>
+Note that most code generation frameworks ignore the pattern restriction.
+</p>
+
+
+<a name="canonical"></a>
+<a name="digsig"></a>
+
+<h3 class="self-link-parent"><span class="sectioncount">2.6.1.3</span> Canonical XML <a href="xml.html#digsig" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+Resources and/or Bundles may be digitally signed (see <a href="bundle.html">Bundle</a> and <a href="provenance.html">Provenance</a>). 
+</p>
+<p>
+This specification defines the following method for canonicalizing FHIR resources, when represented as 
+XML:
+</p>
+<ul>
+ <li>No whitespace other than single spaces in attribute values and in the XHTML in the <a href="narrative.html">Narrative</a></li>
+ <li>Use default namespaces for the FHIR and XHTML namespaces</li>
+ <li>Omit all comments</li>
+ <li>Always use the Unicode character representation for any XML entities (e.g. <code>&amp;#39;</code> instead of <code>&amp;quot;</code>)</li>
+ <li>Include the XML processing instruction <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code></li>
+ <li>Using the XML canonical method <a href="http://www.w3.org/TR/xmldsig-core1/#sec-Canonical">Canonical XML 1.1 <img src="external.png" style="text-align: baseline"/></a> (<code>http://www.w3.org/2006/12/xml-c14n11</code>)</li>
+</ul>
+<p>
+This canonicalization method is identified by the URI <code>http://hl7.org/fhir/canonicalization/xml</code>. The 
+following additional canonicalization URIs are also defined:
+</p>
+<table class="grid">
+ <tr>
+  <td>http://hl7.org/fhir/canonicalization/xml#data</td>
+  <td>The narrative (<code>Resource.text</code>) is omitted prior to signing (note the deletion is at <code>Resource.text</code>, not <code>Resource.text.div</code>)</td>
+ </tr>
+ <tr>
+  <td>http://hl7.org/fhir/canonicalization/xml#static</td>
+  <td>In addition to narrative (Resource.text), the <code>Resource.meta</code> element is removed. This makes the signature robust as the content is moved from server to server, or workflow and access tags are added or removed.  Note that workflow and security tags may contain information important to the handling of the resource, so meta elements should be protected from tampering by other means if unsigned.</td>
+ </tr>
+ <tr>
+  <td>http://hl7.org/fhir/canonicalization/xml#narrative</td>
+  <td>The method only retains the <code>Resource.id</code> and Narrative (<code>Resource.text</code></td>
+ </tr>
+ <tr>
+  <td>http://hl7.org/fhir/canonicalization/xml#document</td>
+  <td>The signs everything in a Bundle, except for the Bundle.id and Bundle.metadata on the root Bundle (allows for a document to be copied from server to server)</td>
+ </tr>
+</table>
+<p>
+These canonicalization methods allow systems the flexibility to sign the various portions of 
+the resource that matter for the workflow the signature serves. These canonicalization algorithms 
+do not work for enveloped signatures. This will be researched and addressed in a future release. 
+This specification may define additional canonicalizations in the future, and other specifications might also define 
+additional canonicalization methods.
+</p>
+
+<blockquote><p> <b>Implementation Note:</b> 
+One consequence of signing the document is that URLs, identifiers and internal references are frozen and 
+cannot be changed. This might be a desired feature, but it may also cripple interoperability between closed 
+ecosystems where <a href="managing.html">re-identification</a> frequently occurs. For this reason, it is 
+recommended that systems consider carefully the impact of any signature processes. The impact of signatures
+on <a href="documents.html">Document bundles</a> and their related processes is the most well understood
+use of digital signatures.
+</p></blockquote>
+
+<p>
+Note that following common normalization procedures in XML causes consecutive whitespace within 
+attributes to be normalized. As a result, whitespace within <a href="datatypes.html#markdown">markdown</a> can be changed without 
+breaking a digital signature. For elements with a type of markdown, this means that, in some 
+cases, whitespace manipulation that results in significantly different visual rendering (e.g. changing 
+indentation levels, causing content to appear in separate paragraphs rather than part of a single 
+paragraph, etc.) might not be detected as a signature-breaking change. If this would present an 
+unacceptable risk, systems should use the <a href="json.html#canonical">JSON signature</a> approach as it does not normalize whitespace.
+</p>
+
+
+
+
+  <!-- Todo: Relax NG, RDF, eCore -->
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fxml.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fxml.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>PaymentNotice - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/paymentnotice.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="financial-module.html"><img src="financial.png"/> Financial</a></li>        <li><b>PaymentNotice</b></li>          <!-- paymentnotice.html / resource / PaymentNotice -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="paymentnotice-examples.html">Examples</a></li><li><a href="paymentnotice-definitions.html">Detailed Descriptions</a></li><li><a href="paymentnotice-mappings.html">Mappings</a></li><li><a href="paymentnotice-profiles.html">Profiles &amp; Extensions</a></li><li><a href="paymentnotice-version-maps.html">R3 Conversions</a></li></ul>
+
+<h1 class="self-link-parent"><span class="sectioncount">13.8<a name="13.8"> </a></span> Resource PaymentNotice - Content <a href="paymentnotice.html#13.8" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h1>
+
+<table class="colstu"><tr><td><a href="http://www.hl7.org/Special/committees/fm/index.cfm">Financial Management <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: 2</td><td>&nbsp;<a href="versions.html#std-process" title="Standard Status">Trial Use</a></td><td><a href="security.html#SecPrivConsiderations">Security Category</a>: Patient</td>  <!-- !ns! --><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-practitioner.html">Practitioner</a></td></tr></table>
+
+
+<p>
+<p>This resource provides the status of the payment for goods and services rendered, and the request and response resource references.</p>
+
+</p>
+
+<div>
+<a name="scope"></a>
+<h2 class="self-link-parent"><span class="sectioncount">13.8.1</span> Scope and Usage <a href="paymentnotice.html#scope" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<p>
+The PaymentNotice resource indicates the resource for which the payment has been indicated and 
+reports the current status information of that payment. The payment notice may be used by providers and payers 
+to advise the provider or regulatory bodies of the state of a payment (check in the mail/EFT sent, 
+payment cashed, payment canceled). Employers or Insurance Exchanges may use this to advise payers of 
+premium payment.
+</p>
+<p>
+Payers and/or providers may have the need to advise providers and/or regulators of the status of claim settlement and payment completion. 
+This same resource may be used by employers and insurance exchanges to advise payers that premium payments have been 
+issued and settled.
+</p>
+<p>
+  <!-- Describes some of the situations/use cases intended to be managed with the resource. May include a child div for "Storyboards" and "Related Specifications". The purpose of this section is to help implementers understand why the resource is needed and how it might be used. -->
+</p>
+
+		<p>The PaymentNotice resource is a "event" resource from a FHIR workflow perspective - see <a href="workflow.html#event">Workflow Event.</a></p>
+
+<h3 class="self-link-parent"><span class="sectioncount">13.8.1.1<a name="13.8.1.1"> </a></span> Additional Information <a href="paymentnotice.html#13.8.1.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>
+Additional information regarding electronic payment notice content and usage may be found at:
+</p>		
+<ul>
+<li><a href="financial-module.html#resource-status">Financial Resource Status Lifecycle</a>: how .status is used in the financial resources.</li>
+<li><a href="financial-module.html#batch">Batches</a>: how eClaims may handle batches of eligibility, claims, payments and responses.</li>
+</ul>
+
+</div>
+
+<div>
+<h2 class="self-link-parent"><span class="sectioncount">13.8.2<a name="13.8.2"> </a></span> Boundaries and Relationships <a href="paymentnotice.html#13.8.2" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<p>
+	The PaymentNotice resource is used to indicate that a payment is, or is about to occur. The resource is used commonly when tracking of payment occurences is required for regulatory or business purposes, such as ensuring that payment of claim adjudications occurs within a specific timeframe. The PaymentNotice is not used to report adjudicated amounts (see <a href="claimresponse.html">ClaimResponse</a>) or to reconcile adjudicated amounts against actual payment (see <a href="paymentreconciliation.html">PaymentReconciliation</a>) 
+</p>
+
+<p>
+The <a href="claimresponse.html">ClaimResponse</a> resource is an insurer's adjudication and/or authorization of a set of healthcare-related goods and services for a patient against the patient's insurance coverages and does not indicate that payment has occured.
+</p>
+
+<p>
+	The <a href="paymentreconciliation.html">PaymentReconciliation</a> resource serves to correlate payment amounts to the adjudicated claim amounts appearing on one or more <a href="claimresponse.html">ClaimResponses</a>.
+</p>
+
+		<p>
+			<b>The eClaim domain includes a number of related resources</b>
+		</p>
+		<table border="1" cellpadding="1" cellspacing="2" frame="box">
+			<tr>
+				<td>PaymentNotice</td>
+				<td>An indication that a payment has occured, is about to occur, or has been cancelled.</td>
+			</tr>
+			<tr>
+				<td><a href="claimresponse.html">ClaimResponse</a></td>
+				<td>A payor's adjudication and/or authorization response to the suite of services provided in a Claim. Typically the ClaimResponse references the Claim but does not duplicate
+		the clinical or financial information provided in the claim.</td>
+			</tr>
+			<tr>
+				<td><a href="paymentreconciliation.html">PaymentReconciliation</a></td>
+				<td>Provides the bulk payment details 
+associated with a payment by the payor for goods and services rendered by a provider to patients 
+covered by insurance plans offered by that payor.</td>
+			</tr>
+		</table>
+</div>
+
+  <!-- (optional):
+<div>
+<h2>Background and Context</h2>
+<p>
+Provides additional detail on exactly how the resource is to be used
+</p>
+</div> -->
+
+
+
+<a name="resource"></a>
+<h2 class="self-link-parent"><span class="sectioncount">13.8.3</span> 
+Resource Content
+ <a href="paymentnotice.html#resource" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<a name="def"></a>
+<a name="paymentnotice"></a>
+<a name="PaymentNotice"></a>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-struc">Structure</a></li>
+    <li><a href="#tabs-uml">UML</a></li>
+    <li><a href="#tabs-xml">XML</a></li>
+    <li><a href="#tabs-json">JSON</a></li>
+    <li><a href="#tabs-ttl">Turtle</a></li>
+    <li><a href="#tabs-diff">R3 Diff</a></li>
+    <li><a href="#tabs-all">All</a></li>
+  </ul>
+  <div id="tabs-struc">
+
+<div id="tbl">
+<p><b>Structure</b></p>
+ <div id="tbl-inner">
+  <table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance">Card.</a></th><th style="width: 100px" class="hierarchy"><a href="formats.html#table" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="formats.html#table" title="Legend for this format"><img src="help16.png" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="." style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice" title="PaymentNotice : This resource provides the status of the payment for goods and services rendered, and the request and response resource references.">PaymentNotice</a><a name="PaymentNotice"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; border: 1px grey solid; font-weight: bold; color: black; background-color: #fff5e6" href="versions.html#std-process" title="Standards Status = Trial Use">TU</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="domainresource.html">DomainResource</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">PaymentNotice request<br/>Elements defined in Ancestors: <a href="resource.html#Resource" title="The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.">id</a>, <a href="resource.html#Resource" title="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.">meta</a>, <a href="resource.html#Resource" title="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.">implicitRules</a>, <a href="resource.html#Resource" title="The base language in which the resource is written.">language</a>, <a href="domainresource.html#DomainResource" title="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.">text</a>, <a href="domainresource.html#DomainResource" title="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.">contained</a>, <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a>, <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).">modifierExtension</a></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.identifier" title="PaymentNotice.identifier : A unique identifier assigned to this payment notice.">identifier</a><a name="PaymentNotice.identifier"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Business Identifier for the payment noctice<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.status" title="PaymentNotice.status : The status of the resource instance.">status</a><a name="PaymentNotice.status"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="conformance-rules.html#isModifier" title="This element is a modifier element">?!</a><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">active | cancelled | draft | entered-in-error<br/><a href="valueset-fm-status.html" title="A code specifying the state of the resource instance.">Financial Resource Status Codes</a> (<a href="terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">Required</a>)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.request" title="PaymentNotice.request : Reference of resource for which payment is being made.">request</a><a name="PaymentNotice.request"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Request reference</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.response" title="PaymentNotice.response : Reference of response to resource for which payment is being made.">response</a><a name="PaymentNotice.response"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Response reference</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.created" title="PaymentNotice.created : The date when this resource was created.">created</a><a name="PaymentNotice.created"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#dateTime">dateTime</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Creation date</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.provider" title="PaymentNotice.provider : The practitioner who is responsible for the services rendered to the patient.">provider</a><a name="PaymentNotice.provider"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html">Practitioner</a> | <a href="practitionerrole.html">PractitionerRole</a> | <a href="organization.html">Organization</a>)</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Responsible practitioner</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.payment" title="PaymentNotice.payment : A reference to the payment which is the subject of this notice.">payment</a><a name="PaymentNotice.payment"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="paymentreconciliation.html">PaymentReconciliation</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Payment reference</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.paymentDate" title="PaymentNotice.paymentDate : The date when the above payment action occurred.">paymentDate</a><a name="PaymentNotice.paymentDate"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#date">date</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Payment or clearing date</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.payee" title="PaymentNotice.payee : The party who will receive or has received payment that is the subject of this notification.">payee</a><a name="PaymentNotice.payee"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html">Practitioner</a> | <a href="practitionerrole.html">PractitionerRole</a> | <a href="organization.html">Organization</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Party being paid</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.recipient" title="PaymentNotice.recipient : The party who is notified of the payment status.">recipient</a><a name="PaymentNotice.recipient"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="organization.html">Organization</a>)</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Party being notified</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.amount" title="PaymentNotice.amount : The amount sent to the payee.">amount</a><a name="PaymentNotice.amount"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Money">Money</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Monetary amount of the payment</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.paymentStatus" title="PaymentNotice.paymentStatus : A code indicating whether payment has been sent or cleared.">paymentStatus</a><a name="PaymentNotice.paymentStatus"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Issued or cleared Status of the payment<br/><a href="valueset-payment-status.html" title="The payment conveyance status codes.">Payment Status Codes</a> (<a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)</td></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="formats.html#table" title="Legend for this format"><img src="help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-uml">
+
+<div id="uml">
+<p><b>UML Diagram</b> (<a href="formats.html#uml">Legend</a>)</p>
+ <div id="uml-inner">
+ <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="368.40000000000003" id="n53" version="1.1" height="242.0">  <defs>
+    <filter x="0" width="200%" y="0" id="shadowA" height="200%">
+      <feOffset result="offOut" dx="3" in="SourceGraphic" dy="3"></feOffset>
+      <feColorMatrix result="matrixOut" in="offOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix"></feColorMatrix>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"></feGaussianBlur>
+      <feBlend mode="normal" in="SourceGraphic" in2="blurOut"></feBlend>
+    </filter>
+  </defs><g id="n54"><rect filter="url(#shadowA)" rx="4" ry="4" x="0.0" width="268.40000000000003" y="0.0" style="fill:#fff9ec;stroke:black;stroke-width:1" id="PaymentNotice" height="232.0"></rect><line y1="28.0" x1="0.0" y2="28.0" x2="268.40000000000003" style="stroke:dimgrey;stroke-width:1" id="n55"></line><text x="134.20000000000002" y="20.0" id="n56" fill="black" class="diagram-class-title  diagram-class-resource">PaymentNotice<tspan class="diagram-class-title-link"> (<a id="n57" class="diagram-class-reference" xlink:href="domainresource.html">DomainResource</a>)</tspan></text><text x="6.0" y="42.0" id="n58" fill="black" class="diagram-class-detail"><a id="n59" xlink:href="paymentnotice-definitions.html#PaymentNotice.identifier"><title>A unique identifier assigned to this payment notice</title>identifier</a> : <a id="n60" xlink:href="datatypes.html#Identifier">Identifier</a> [0..*]</text><text x="6.0" y="56.0" id="n64" fill="black" class="diagram-class-detail"><a id="n65" xlink:href="paymentnotice-definitions.html#PaymentNotice.status"><title>The status of the resource instance (this element modifies the meaning of other elements)</title>status</a> : <a id="n66" xlink:href="datatypes.html#code">code</a> [1..1] « <a id="n67" xlink:href="valueset-fm-status.html"><title id="n68">A code specifying the state of the resource instance. (Strength=Required)</title>FinancialResourceStatusCodes</a>! »</text><text x="6.0" y="70.0" id="n74" fill="black" class="diagram-class-detail"><a id="n75" xlink:href="paymentnotice-definitions.html#PaymentNotice.request"><title>Reference of resource for which payment is being made</title>request</a> : <a id="n76" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n77" xlink:href="resourcelist.html#Any">Any</a> »</text><text x="6.0" y="84.0" id="n82" fill="black" class="diagram-class-detail"><a id="n83" xlink:href="paymentnotice-definitions.html#PaymentNotice.response"><title>Reference of response to resource for which payment is being made</title>response</a> : <a id="n84" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n85" xlink:href="resourcelist.html#Any">Any</a> »</text><text x="6.0" y="98.0" id="n90" fill="black" class="diagram-class-detail"><a id="n91" xlink:href="paymentnotice-definitions.html#PaymentNotice.created"><title>The date when this resource was created</title>created</a> : <a id="n92" xlink:href="datatypes.html#dateTime">dateTime</a> [1..1]</text><text x="6.0" y="112.0" id="n96" fill="black" class="diagram-class-detail"><a id="n97" xlink:href="paymentnotice-definitions.html#PaymentNotice.provider"><title>The practitioner who is responsible for the services rendered to the patient</title>provider</a> : <a id="n98" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n99" xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a id="n100" xlink:href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|</text><text x="26.0" y="126.0" id="n101" fill="black" class="diagram-class-detail">      <a id="n102" xlink:href="organization.html#Organization">Organization</a> »</text><text x="6.0" y="140.0" id="n110" fill="black" class="diagram-class-detail"><a id="n111" xlink:href="paymentnotice-definitions.html#PaymentNotice.payment"><title>A reference to the payment which is the subject of this notice</title>payment</a> : <a id="n112" xlink:href="references.html#Reference">Reference</a> [1..1] « <a id="n113" xlink:href="paymentreconciliation.html#PaymentReconciliation">PaymentReconciliation</a> »</text><text x="6.0" y="154.0" id="n118" fill="black" class="diagram-class-detail"><a id="n119" xlink:href="paymentnotice-definitions.html#PaymentNotice.paymentDate"><title>The date when the above payment action occurred</title>paymentDate</a> : <a id="n120" xlink:href="datatypes.html#date">date</a> [0..1]</text><text x="6.0" y="168.0" id="n124" fill="black" class="diagram-class-detail"><a id="n125" xlink:href="paymentnotice-definitions.html#PaymentNotice.payee"><title>The party who will receive or has received payment that is the subject of this notification</title>payee</a> : <a id="n126" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n127" xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a id="n128" xlink:href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|</text><text x="26.0" y="182.0" id="n129" fill="black" class="diagram-class-detail">      <a id="n130" xlink:href="organization.html#Organization">Organization</a> »</text><text x="6.0" y="196.0" id="n138" fill="black" class="diagram-class-detail"><a id="n139" xlink:href="paymentnotice-definitions.html#PaymentNotice.recipient"><title>The party who is notified of the payment status</title>recipient</a> : <a id="n140" xlink:href="references.html#Reference">Reference</a> [1..1] « <a id="n141" xlink:href="organization.html#Organization">Organization</a> »</text><text x="6.0" y="210.0" id="n146" fill="black" class="diagram-class-detail"><a id="n147" xlink:href="paymentnotice-definitions.html#PaymentNotice.amount"><title>The amount sent to the payee</title>amount</a> : <a id="n148" xlink:href="datatypes.html#Money">Money</a> [1..1]</text><text x="6.0" y="224.0" id="n152" fill="black" class="diagram-class-detail"><a id="n153" xlink:href="paymentnotice-definitions.html#PaymentNotice.paymentStatus"><title>A code indicating whether payment has been sent or cleared</title>paymentStatus</a> : <a id="n154" xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> [0..1] « <a id="n155" xlink:href="valueset-payment-status.html"><title id="n156">The payment conveyance status codes. (Strength=Example)</title>PaymentStatusCodes</a>?? »</text></g></svg>
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-xml">
+
+<div id="xml">
+<p><b>XML Template</b></p>
+ <div id="xml-inner">
+  <pre class="spec">
+&lt;<a href="paymentnotice-definitions.html#PaymentNotice" title="This resource provides the status of the payment for goods and services rendered, and the request and response resource references." class="dict"><b>PaymentNotice</b></a> xmlns="http://hl7.org/fhir"&gt; <span style="float: right"><a href="xml.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+ &lt;!-- from <a href="resource.html">Resource</a>: <a href="resource.html#id">id</a>, <a href="resource.html#meta">meta</a>, <a href="resource.html#implicitRules">implicitRules</a>, and <a href="resource.html#language">language</a> --&gt;
+ &lt;!-- from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">text</a>, <a href="references.html#contained">contained</a>, <a href="extensibility.html">extension</a>, and <a href="extensibility.html#modifierExtension">modifierExtension</a> --&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.identifier" title="A unique identifier assigned to this payment notice." class="dict"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Business Identifier for the payment noctice</a></span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.status" title="The status of the resource instance (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline"><b>status</b></span></a> value="[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-fm-status.html">active | cancelled | draft | entered-in-error</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.request" title="Reference of resource for which payment is being made." class="dict"><b>request</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Request reference</a></span><span style="color: Gray"> --&gt;</span>&lt;/request&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.response" title="Reference of response to resource for which payment is being made." class="dict"><b>response</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Response reference</a></span><span style="color: Gray"> --&gt;</span>&lt;/response&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.created" title="The date when this resource was created." class="dict"><b>created</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Creation date</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.provider" title="The practitioner who is responsible for the services rendered to the patient." class="dict"><b>provider</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Responsible practitioner</a></span><span style="color: Gray"> --&gt;</span>&lt;/provider&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.payment" title="A reference to the payment which is the subject of this notice." class="dict"><b>payment</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="paymentreconciliation.html#PaymentReconciliation">PaymentReconciliation</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Payment reference</a></span><span style="color: Gray"> --&gt;</span>&lt;/payment&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.paymentDate" title="The date when the above payment action occurred." class="dict"><b>paymentDate</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Payment or clearing date</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.payee" title="The party who will receive or has received payment that is the subject of this notification." class="dict"><b>payee</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Party being paid</a></span><span style="color: Gray"> --&gt;</span>&lt;/payee&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.recipient" title="The party who is notified of the payment status." class="dict"><b>recipient</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Party being notified</a></span><span style="color: Gray"> --&gt;</span>&lt;/recipient&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.amount" title="The amount sent to the payee." class="dict"><b>amount</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Money">Money</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Monetary amount of the payment</a></span><span style="color: Gray"> --&gt;</span>&lt;/amount&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.paymentStatus" title="A code indicating whether payment has been sent or cleared." class="dict"><b>paymentStatus</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-payment-status.html">Issued or cleared Status of the payment</a></span><span style="color: Gray"> --&gt;</span>&lt;/paymentStatus&gt;
+&lt;/PaymentNotice&gt;
+</pre>
+
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-json">
+
+<div id="json">
+<p><b>JSON Template</b></p>
+ <div id="json-inner">
+  <pre class="spec">
+{<span style="float: right"><a href="json.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+  "resourceType" : "<a href="paymentnotice-definitions.html#PaymentNotice" title="This resource provides the status of the payment for goods and services rendered, and the request and response resource references." class="dict"><b>PaymentNotice</b></a>",
+  // from <a href="resource.html">Resource</a>: <a href="resource.html#id">id</a>, <a href="resource.html#meta">meta</a>, <a href="resource.html#implicitRules">implicitRules</a>, and <a href="resource.html#language">language</a>
+  // from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">text</a>, <a href="references.html#contained">contained</a>, <a href="extensibility.html">extension</a>, and <a href="extensibility.html#modifierExtension">modifierExtension</a>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.identifier" title="A unique identifier assigned to this payment notice." class="dict">identifier</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Business Identifier for the payment noctice</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.status" title="The status of the resource instance (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">status</span></a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="valueset-fm-status.html">active | cancelled | draft | entered-in-error</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.request" title="Reference of resource for which payment is being made." class="dict">request</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Request reference</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.response" title="Reference of response to resource for which payment is being made." class="dict">response</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Response reference</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.created" title="The date when this resource was created." class="dict">created</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Creation date</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.provider" title="The practitioner who is responsible for the services rendered to the patient." class="dict">provider</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Responsible practitioner</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.payment" title="A reference to the payment which is the subject of this notice." class="dict">payment</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="paymentreconciliation.html#PaymentReconciliation">PaymentReconciliation</a>)</span> }, <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Payment reference</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.paymentDate" title="The date when the above payment action occurred." class="dict">paymentDate</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Payment or clearing date</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.payee" title="The party who will receive or has received payment that is the subject of this notification." class="dict">payee</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Party being paid</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.recipient" title="The party who is notified of the payment status." class="dict">recipient</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>)</span> }, <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Party being notified</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.amount" title="The amount sent to the payee." class="dict">amount</a>" : { <span style="color: darkgreen"><a href="datatypes.html#Money">Money</a></span> }, <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Monetary amount of the payment</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.paymentStatus" title="A code indicating whether payment has been sent or cleared." class="dict">paymentStatus</a>" : { <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> } <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="valueset-payment-status.html">Issued or cleared Status of the payment</a></span>
+}
+</pre>
+
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-ttl">
+
+<div id="ttl">
+<p><b>Turtle Template</b></p>
+ <div id="json-inner">
+  <pre class="spec">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .<span style="float: right"><a href="rdf.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+
+
+[ a fhir:<a href="paymentnotice-definitions.html#PaymentNotice" title="This resource provides the status of the payment for goods and services rendered, and the request and response resource references." class="dict"><b>PaymentNotice</b></a>;
+  fhir:nodeRole fhir:treeRoot; # if this is the parser root
+
+  # from <a href="resource.html">Resource</a>: <a href="resource.html#id">.id</a>, <a href="resource.html#meta">.meta</a>, <a href="resource.html#implicitRules">.implicitRules</a>, and <a href="resource.html#language">.language</a>
+  # from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">.text</a>, <a href="references.html#contained">.contained</a>, <a href="extensibility.html">.extension</a>, and <a href="extensibility.html#modifierExtension">.modifierExtension</a>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.identifier" title="A unique identifier assigned to this payment notice." class="dict">PaymentNotice.identifier</a><a name="ttl-identifier"> </a>[ <a href="datatypes.html#Identifier">Identifier</a> ], ... ; # 0..* <span style="color: navy">Business Identifier for the payment noctice</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.status" title="The status of the resource instance (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">PaymentNotice.status</span></a><a name="ttl-status"> </a>[ <a href="datatypes.html#code">code</a> ]; # 1..1 <span style="color: navy">active | cancelled | draft | entered-in-error</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.request" title="Reference of resource for which payment is being made." class="dict">PaymentNotice.request</a><a name="ttl-request"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>) ]; # 0..1 <span style="color: navy">Request reference</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.response" title="Reference of response to resource for which payment is being made." class="dict">PaymentNotice.response</a><a name="ttl-response"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>) ]; # 0..1 <span style="color: navy">Response reference</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.created" title="The date when this resource was created." class="dict">PaymentNotice.created</a><a name="ttl-created"> </a>[ <a href="datatypes.html#dateTime">dateTime</a> ]; # 1..1 <span style="color: navy">Creation date</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.provider" title="The practitioner who is responsible for the services rendered to the patient." class="dict">PaymentNotice.provider</a><a name="ttl-provider"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>) ]; # 0..1 <span style="color: navy">Responsible practitioner</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.payment" title="A reference to the payment which is the subject of this notice." class="dict">PaymentNotice.payment</a><a name="ttl-payment"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="paymentreconciliation.html#PaymentReconciliation">PaymentReconciliation</a>) ]; # 1..1 <span style="color: navy">Payment reference</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.paymentDate" title="The date when the above payment action occurred." class="dict">PaymentNotice.paymentDate</a><a name="ttl-paymentDate"> </a>[ <a href="datatypes.html#date">date</a> ]; # 0..1 <span style="color: navy">Payment or clearing date</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.payee" title="The party who will receive or has received payment that is the subject of this notification." class="dict">PaymentNotice.payee</a><a name="ttl-payee"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>) ]; # 0..1 <span style="color: navy">Party being paid</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.recipient" title="The party who is notified of the payment status." class="dict">PaymentNotice.recipient</a><a name="ttl-recipient"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>) ]; # 1..1 <span style="color: navy">Party being notified</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.amount" title="The amount sent to the payee." class="dict">PaymentNotice.amount</a><a name="ttl-amount"> </a>[ <a href="datatypes.html#Money">Money</a> ]; # 1..1 <span style="color: navy">Monetary amount of the payment</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.paymentStatus" title="A code indicating whether payment has been sent or cleared." class="dict">PaymentNotice.paymentStatus</a><a name="ttl-paymentStatus"> </a>[ <a href="datatypes.html#CodeableConcept">CodeableConcept</a> ]; # 0..1 <span style="color: navy">Issued or cleared Status of the payment</span>
+]
+</pre>
+
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-diff">
+
+<div id="vdiff">
+<p><b>Changes since R3</b></p>
+ <div id="diff-inner">
+  <table class="grid">
+  <tr class="diff-item">
+    <td class="diff-left">
+      <a href="paymentnotice.html#PaymentNotice">PaymentNotice</a>
+    </td>
+    <td class="diff-right"></td>
+  </tr>
+  <tr class="diff-entry">
+    <td class="diff-left">PaymentNotice.status</td>
+    <td class="diff-right">
+      <ul>
+        <li>Min Cardinality changed from 0 to 1</li>
+        <li>Change value set from http://hl7.org/fhir/ValueSet/fm-status to http://hl7.org/fhir/ValueSet/fm-status|4.0.1</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-entry">
+    <td class="diff-left">PaymentNotice.created</td>
+    <td class="diff-right">
+      <ul>
+        <li>Min Cardinality changed from 0 to 1</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-changed-item">
+    <td class="diff-left">PaymentNotice.provider</td>
+    <td class="diff-right">
+      <ul>
+        <li>Renamed from organization to provider</li>
+        <li>Type Reference: Added Target Types Practitioner, PractitionerRole</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-new">
+    <td class="diff-left">PaymentNotice.payment</td>
+    <td class="diff-right">
+      <ul>
+        <li>
+          <b>Added Mandatory Element</b>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-changed-item">
+    <td class="diff-left">PaymentNotice.paymentDate</td>
+    <td class="diff-right">
+      <ul>
+        <li>Renamed from statusDate to paymentDate</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-new">
+    <td class="diff-left">PaymentNotice.payee</td>
+    <td class="diff-right">
+      <ul>
+        <li>Added Element</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-changed-item">
+    <td class="diff-left">PaymentNotice.recipient</td>
+    <td class="diff-right">
+      <ul>
+        <li>Renamed from target to recipient</li>
+        <li>Min Cardinality changed from 0 to 1</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-new">
+    <td class="diff-left">PaymentNotice.amount</td>
+    <td class="diff-right">
+      <ul>
+        <li>
+          <b>Added Mandatory Element</b>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-del">
+    <td class="diff-left">PaymentNotice.provider</td>
+    <td class="diff-right">
+      <ul>
+        <li>deleted</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p>See the <a href="diff.html">Full Difference</a> for further information</p>
+
+  <p>
+  This analysis is available as <a href="paymentnotice.diff.xml">XML</a> or <a href="paymentnotice.diff.json">JSON</a>.
+  </p>
+  <p>See <a href="paymentnotice-version-maps.html">R3 &lt;--&gt; R4 Conversion Maps</a> (status = 1 test that all execute ok. <span style="background-color: #ccffcc">1 fail round-trip testing</span> and <span style="background-color: #E0B0FF">1 r3 resources are invalid (0 errors).</span>)</p>
+
+ </div>
+</div>
+
+  </div>
+  <div id="tabs-all">
+
+<div id="tbl">
+<a name="tbl"></a>
+<p><b>Structure</b></p>
+ <div id="tbl-inner">
+  <table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance">Card.</a></th><th style="width: 100px" class="hierarchy"><a href="formats.html#table" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="formats.html#table" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="formats.html#table" title="Legend for this format"><img src="help16.png" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="." style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice" title="PaymentNotice : This resource provides the status of the payment for goods and services rendered, and the request and response resource references.">PaymentNotice</a><a name="PaymentNotice"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; border: 1px grey solid; font-weight: bold; color: black; background-color: #fff5e6" href="versions.html#std-process" title="Standards Status = Trial Use">TU</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="domainresource.html">DomainResource</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">PaymentNotice request<br/>Elements defined in Ancestors: <a href="resource.html#Resource" title="The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.">id</a>, <a href="resource.html#Resource" title="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.">meta</a>, <a href="resource.html#Resource" title="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.">implicitRules</a>, <a href="resource.html#Resource" title="The base language in which the resource is written.">language</a>, <a href="domainresource.html#DomainResource" title="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.">text</a>, <a href="domainresource.html#DomainResource" title="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.">contained</a>, <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a>, <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).">modifierExtension</a></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.identifier" title="PaymentNotice.identifier : A unique identifier assigned to this payment notice.">identifier</a><a name="PaymentNotice.identifier"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Business Identifier for the payment noctice<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.status" title="PaymentNotice.status : The status of the resource instance.">status</a><a name="PaymentNotice.status"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="conformance-rules.html#isModifier" title="This element is a modifier element">?!</a><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">active | cancelled | draft | entered-in-error<br/><a href="valueset-fm-status.html" title="A code specifying the state of the resource instance.">Financial Resource Status Codes</a> (<a href="terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">Required</a>)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.request" title="PaymentNotice.request : Reference of resource for which payment is being made.">request</a><a name="PaymentNotice.request"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Request reference</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.response" title="PaymentNotice.response : Reference of response to resource for which payment is being made.">response</a><a name="PaymentNotice.response"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Response reference</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.created" title="PaymentNotice.created : The date when this resource was created.">created</a><a name="PaymentNotice.created"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#dateTime">dateTime</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Creation date</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.provider" title="PaymentNotice.provider : The practitioner who is responsible for the services rendered to the patient.">provider</a><a name="PaymentNotice.provider"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html">Practitioner</a> | <a href="practitionerrole.html">PractitionerRole</a> | <a href="organization.html">Organization</a>)</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Responsible practitioner</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.payment" title="PaymentNotice.payment : A reference to the payment which is the subject of this notice.">payment</a><a name="PaymentNotice.payment"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="paymentreconciliation.html">PaymentReconciliation</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Payment reference</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.paymentDate" title="PaymentNotice.paymentDate : The date when the above payment action occurred.">paymentDate</a><a name="PaymentNotice.paymentDate"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#date">date</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Payment or clearing date</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.payee" title="PaymentNotice.payee : The party who will receive or has received payment that is the subject of this notification.">payee</a><a name="PaymentNotice.payee"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html">Practitioner</a> | <a href="practitionerrole.html">PractitionerRole</a> | <a href="organization.html">Organization</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Party being paid</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.recipient" title="PaymentNotice.recipient : The party who is notified of the payment status.">recipient</a><a name="PaymentNotice.recipient"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="references.html#Reference">Reference</a>(<a href="organization.html">Organization</a>)</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Party being notified</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.amount" title="PaymentNotice.amount : The amount sent to the payee.">amount</a><a name="PaymentNotice.amount"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="padding-left: 3px; padding-right: 3px; color: black; null" href="elementdefinition-definitions.html#ElementDefinition.isSummary" title="This element is included in summaries">Σ</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#Money">Money</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Monetary amount of the payment</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="paymentnotice-definitions.html#PaymentNotice.paymentStatus" title="PaymentNotice.paymentStatus : A code indicating whether payment has been sent or cleared.">paymentStatus</a><a name="PaymentNotice.paymentStatus"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Issued or cleared Status of the payment<br/><a href="valueset-payment-status.html" title="The payment conveyance status codes.">Payment Status Codes</a> (<a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)</td></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="formats.html#table" title="Legend for this format"><img src="help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
+ </div>
+</div>
+
+
+<div id="uml">
+<a name="uml"></a>
+<p><b>UML Diagram</b> (<a href="formats.html#uml">Legend</a>)</p>
+ <div id="uml-inner">
+ <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="368.40000000000003" id="n53" version="1.1" height="242.0">  <defs>
+    <filter x="0" width="200%" y="0" id="shadowB" height="200%">
+      <feOffset result="offOut" dx="3" in="SourceGraphic" dy="3"></feOffset>
+      <feColorMatrix result="matrixOut" in="offOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix"></feColorMatrix>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"></feGaussianBlur>
+      <feBlend mode="normal" in="SourceGraphic" in2="blurOut"></feBlend>
+    </filter>
+  </defs><g id="n54"><rect filter="url(#shadowB)" rx="4" ry="4" x="0.0" width="268.40000000000003" y="0.0" style="fill:#fff9ec;stroke:black;stroke-width:1" id="PaymentNotice" height="232.0"></rect><line y1="28.0" x1="0.0" y2="28.0" x2="268.40000000000003" style="stroke:dimgrey;stroke-width:1" id="n55"></line><text x="134.20000000000002" y="20.0" id="n56" fill="black" class="diagram-class-title  diagram-class-resource">PaymentNotice<tspan class="diagram-class-title-link"> (<a id="n57" class="diagram-class-reference" xlink:href="domainresource.html">DomainResource</a>)</tspan></text><text x="6.0" y="42.0" id="n58" fill="black" class="diagram-class-detail"><a id="n59" xlink:href="paymentnotice-definitions.html#PaymentNotice.identifier"><title>A unique identifier assigned to this payment notice</title>identifier</a> : <a id="n60" xlink:href="datatypes.html#Identifier">Identifier</a> [0..*]</text><text x="6.0" y="56.0" id="n64" fill="black" class="diagram-class-detail"><a id="n65" xlink:href="paymentnotice-definitions.html#PaymentNotice.status"><title>The status of the resource instance (this element modifies the meaning of other elements)</title>status</a> : <a id="n66" xlink:href="datatypes.html#code">code</a> [1..1] « <a id="n67" xlink:href="valueset-fm-status.html"><title id="n68">A code specifying the state of the resource instance. (Strength=Required)</title>FinancialResourceStatusCodes</a>! »</text><text x="6.0" y="70.0" id="n74" fill="black" class="diagram-class-detail"><a id="n75" xlink:href="paymentnotice-definitions.html#PaymentNotice.request"><title>Reference of resource for which payment is being made</title>request</a> : <a id="n76" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n77" xlink:href="resourcelist.html#Any">Any</a> »</text><text x="6.0" y="84.0" id="n82" fill="black" class="diagram-class-detail"><a id="n83" xlink:href="paymentnotice-definitions.html#PaymentNotice.response"><title>Reference of response to resource for which payment is being made</title>response</a> : <a id="n84" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n85" xlink:href="resourcelist.html#Any">Any</a> »</text><text x="6.0" y="98.0" id="n90" fill="black" class="diagram-class-detail"><a id="n91" xlink:href="paymentnotice-definitions.html#PaymentNotice.created"><title>The date when this resource was created</title>created</a> : <a id="n92" xlink:href="datatypes.html#dateTime">dateTime</a> [1..1]</text><text x="6.0" y="112.0" id="n96" fill="black" class="diagram-class-detail"><a id="n97" xlink:href="paymentnotice-definitions.html#PaymentNotice.provider"><title>The practitioner who is responsible for the services rendered to the patient</title>provider</a> : <a id="n98" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n99" xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a id="n100" xlink:href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|</text><text x="26.0" y="126.0" id="n101" fill="black" class="diagram-class-detail">      <a id="n102" xlink:href="organization.html#Organization">Organization</a> »</text><text x="6.0" y="140.0" id="n110" fill="black" class="diagram-class-detail"><a id="n111" xlink:href="paymentnotice-definitions.html#PaymentNotice.payment"><title>A reference to the payment which is the subject of this notice</title>payment</a> : <a id="n112" xlink:href="references.html#Reference">Reference</a> [1..1] « <a id="n113" xlink:href="paymentreconciliation.html#PaymentReconciliation">PaymentReconciliation</a> »</text><text x="6.0" y="154.0" id="n118" fill="black" class="diagram-class-detail"><a id="n119" xlink:href="paymentnotice-definitions.html#PaymentNotice.paymentDate"><title>The date when the above payment action occurred</title>paymentDate</a> : <a id="n120" xlink:href="datatypes.html#date">date</a> [0..1]</text><text x="6.0" y="168.0" id="n124" fill="black" class="diagram-class-detail"><a id="n125" xlink:href="paymentnotice-definitions.html#PaymentNotice.payee"><title>The party who will receive or has received payment that is the subject of this notification</title>payee</a> : <a id="n126" xlink:href="references.html#Reference">Reference</a> [0..1] « <a id="n127" xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a id="n128" xlink:href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|</text><text x="26.0" y="182.0" id="n129" fill="black" class="diagram-class-detail">      <a id="n130" xlink:href="organization.html#Organization">Organization</a> »</text><text x="6.0" y="196.0" id="n138" fill="black" class="diagram-class-detail"><a id="n139" xlink:href="paymentnotice-definitions.html#PaymentNotice.recipient"><title>The party who is notified of the payment status</title>recipient</a> : <a id="n140" xlink:href="references.html#Reference">Reference</a> [1..1] « <a id="n141" xlink:href="organization.html#Organization">Organization</a> »</text><text x="6.0" y="210.0" id="n146" fill="black" class="diagram-class-detail"><a id="n147" xlink:href="paymentnotice-definitions.html#PaymentNotice.amount"><title>The amount sent to the payee</title>amount</a> : <a id="n148" xlink:href="datatypes.html#Money">Money</a> [1..1]</text><text x="6.0" y="224.0" id="n152" fill="black" class="diagram-class-detail"><a id="n153" xlink:href="paymentnotice-definitions.html#PaymentNotice.paymentStatus"><title>A code indicating whether payment has been sent or cleared</title>paymentStatus</a> : <a id="n154" xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> [0..1] « <a id="n155" xlink:href="valueset-payment-status.html"><title id="n156">The payment conveyance status codes. (Strength=Example)</title>PaymentStatusCodes</a>?? »</text></g></svg>
+ </div>
+</div>
+
+<div id="xml">
+<a name="xml"></a>
+<p><b>XML Template</b></p>
+ <div id="xml-inner">
+  <pre class="spec">
+&lt;<a href="paymentnotice-definitions.html#PaymentNotice" title="This resource provides the status of the payment for goods and services rendered, and the request and response resource references." class="dict"><b>PaymentNotice</b></a> xmlns="http://hl7.org/fhir"&gt; <span style="float: right"><a href="xml.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+ &lt;!-- from <a href="resource.html">Resource</a>: <a href="resource.html#id">id</a>, <a href="resource.html#meta">meta</a>, <a href="resource.html#implicitRules">implicitRules</a>, and <a href="resource.html#language">language</a> --&gt;
+ &lt;!-- from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">text</a>, <a href="references.html#contained">contained</a>, <a href="extensibility.html">extension</a>, and <a href="extensibility.html#modifierExtension">modifierExtension</a> --&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.identifier" title="A unique identifier assigned to this payment notice." class="dict"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Business Identifier for the payment noctice</a></span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.status" title="The status of the resource instance (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline"><b>status</b></span></a> value="[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-fm-status.html">active | cancelled | draft | entered-in-error</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.request" title="Reference of resource for which payment is being made." class="dict"><b>request</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Request reference</a></span><span style="color: Gray"> --&gt;</span>&lt;/request&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.response" title="Reference of response to resource for which payment is being made." class="dict"><b>response</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Response reference</a></span><span style="color: Gray"> --&gt;</span>&lt;/response&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.created" title="The date when this resource was created." class="dict"><b>created</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Creation date</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.provider" title="The practitioner who is responsible for the services rendered to the patient." class="dict"><b>provider</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Responsible practitioner</a></span><span style="color: Gray"> --&gt;</span>&lt;/provider&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.payment" title="A reference to the payment which is the subject of this notice." class="dict"><b>payment</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="paymentreconciliation.html#PaymentReconciliation">PaymentReconciliation</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Payment reference</a></span><span style="color: Gray"> --&gt;</span>&lt;/payment&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.paymentDate" title="The date when the above payment action occurred." class="dict"><b>paymentDate</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Payment or clearing date</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.payee" title="The party who will receive or has received payment that is the subject of this notification." class="dict"><b>payee</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Party being paid</a></span><span style="color: Gray"> --&gt;</span>&lt;/payee&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.recipient" title="The party who is notified of the payment status." class="dict"><b>recipient</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Party being notified</a></span><span style="color: Gray"> --&gt;</span>&lt;/recipient&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.amount" title="The amount sent to the payee." class="dict"><b>amount</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Money">Money</a></span> <span style="color: navy"><a style="color: navy" href="terminologies.html#unbound">Monetary amount of the payment</a></span><span style="color: Gray"> --&gt;</span>&lt;/amount&gt;
+ &lt;<a href="paymentnotice-definitions.html#PaymentNotice.paymentStatus" title="A code indicating whether payment has been sent or cleared." class="dict"><b>paymentStatus</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-payment-status.html">Issued or cleared Status of the payment</a></span><span style="color: Gray"> --&gt;</span>&lt;/paymentStatus&gt;
+&lt;/PaymentNotice&gt;
+</pre>
+
+ </div>
+</div>
+
+<div id="json2">
+<a name="json"></a>
+<p><b>JSON Template</b></p>
+ <div id="json-inner">
+  <pre class="spec">
+{<span style="float: right"><a href="json.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+  "resourceType" : "<a href="paymentnotice-definitions.html#PaymentNotice" title="This resource provides the status of the payment for goods and services rendered, and the request and response resource references." class="dict"><b>PaymentNotice</b></a>",
+  // from <a href="resource.html">Resource</a>: <a href="resource.html#id">id</a>, <a href="resource.html#meta">meta</a>, <a href="resource.html#implicitRules">implicitRules</a>, and <a href="resource.html#language">language</a>
+  // from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">text</a>, <a href="references.html#contained">contained</a>, <a href="extensibility.html">extension</a>, and <a href="extensibility.html#modifierExtension">modifierExtension</a>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.identifier" title="A unique identifier assigned to this payment notice." class="dict">identifier</a>" : [{ <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> }], <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Business Identifier for the payment noctice</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.status" title="The status of the resource instance (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">status</span></a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="valueset-fm-status.html">active | cancelled | draft | entered-in-error</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.request" title="Reference of resource for which payment is being made." class="dict">request</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Request reference</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.response" title="Reference of response to resource for which payment is being made." class="dict">response</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Response reference</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.created" title="The date when this resource was created." class="dict">created</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Creation date</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.provider" title="The practitioner who is responsible for the services rendered to the patient." class="dict">provider</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Responsible practitioner</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.payment" title="A reference to the payment which is the subject of this notice." class="dict">payment</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="paymentreconciliation.html#PaymentReconciliation">PaymentReconciliation</a>)</span> }, <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Payment reference</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.paymentDate" title="The date when the above payment action occurred." class="dict">paymentDate</a>" : "&lt;<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Payment or clearing date</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.payee" title="The party who will receive or has received payment that is the subject of this notification." class="dict">payee</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>)</span> }, <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Party being paid</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.recipient" title="The party who is notified of the payment status." class="dict">recipient</a>" : { <span style="color: darkgreen"><a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>)</span> }, <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Party being notified</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.amount" title="The amount sent to the payee." class="dict">amount</a>" : { <span style="color: darkgreen"><a href="datatypes.html#Money">Money</a></span> }, <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>  <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="terminologies.html#unbound">Monetary amount of the payment</a></span>
+  "<a href="paymentnotice-definitions.html#PaymentNotice.paymentStatus" title="A code indicating whether payment has been sent or cleared." class="dict">paymentStatus</a>" : { <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> } <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a style="color: navy; opacity: 0.8" href="valueset-payment-status.html">Issued or cleared Status of the payment</a></span>
+}
+</pre>
+
+ </div>
+</div>
+
+<div id="ttl2">
+<a name="ttl"></a>
+<p><b>Turtle Template</b></p>
+ <div id="ttl-inner">
+  <pre class="spec">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .<span style="float: right"><a href="rdf.html" title="Documentation for this format"><img src="help.png" alt="doco"/></a></span>
+
+
+[ a fhir:<a href="paymentnotice-definitions.html#PaymentNotice" title="This resource provides the status of the payment for goods and services rendered, and the request and response resource references." class="dict"><b>PaymentNotice</b></a>;
+  fhir:nodeRole fhir:treeRoot; # if this is the parser root
+
+  # from <a href="resource.html">Resource</a>: <a href="resource.html#id">.id</a>, <a href="resource.html#meta">.meta</a>, <a href="resource.html#implicitRules">.implicitRules</a>, and <a href="resource.html#language">.language</a>
+  # from <a href="domainresource.html">DomainResource</a>: <a href="narrative.html#Narrative">.text</a>, <a href="references.html#contained">.contained</a>, <a href="extensibility.html">.extension</a>, and <a href="extensibility.html#modifierExtension">.modifierExtension</a>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.identifier" title="A unique identifier assigned to this payment notice." class="dict">PaymentNotice.identifier</a><a name="ttl-identifier"> </a>[ <a href="datatypes.html#Identifier">Identifier</a> ], ... ; # 0..* <span style="color: navy">Business Identifier for the payment noctice</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.status" title="The status of the resource instance (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">PaymentNotice.status</span></a><a name="ttl-status"> </a>[ <a href="datatypes.html#code">code</a> ]; # 1..1 <span style="color: navy">active | cancelled | draft | entered-in-error</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.request" title="Reference of resource for which payment is being made." class="dict">PaymentNotice.request</a><a name="ttl-request"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>) ]; # 0..1 <span style="color: navy">Request reference</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.response" title="Reference of response to resource for which payment is being made." class="dict">PaymentNotice.response</a><a name="ttl-response"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="resourcelist.html">Any</a>) ]; # 0..1 <span style="color: navy">Response reference</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.created" title="The date when this resource was created." class="dict">PaymentNotice.created</a><a name="ttl-created"> </a>[ <a href="datatypes.html#dateTime">dateTime</a> ]; # 1..1 <span style="color: navy">Creation date</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.provider" title="The practitioner who is responsible for the services rendered to the patient." class="dict">PaymentNotice.provider</a><a name="ttl-provider"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>) ]; # 0..1 <span style="color: navy">Responsible practitioner</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.payment" title="A reference to the payment which is the subject of this notice." class="dict">PaymentNotice.payment</a><a name="ttl-payment"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="paymentreconciliation.html#PaymentReconciliation">PaymentReconciliation</a>) ]; # 1..1 <span style="color: navy">Payment reference</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.paymentDate" title="The date when the above payment action occurred." class="dict">PaymentNotice.paymentDate</a><a name="ttl-paymentDate"> </a>[ <a href="datatypes.html#date">date</a> ]; # 0..1 <span style="color: navy">Payment or clearing date</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.payee" title="The party who will receive or has received payment that is the subject of this notification." class="dict">PaymentNotice.payee</a><a name="ttl-payee"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="practitionerrole.html#PractitionerRole">PractitionerRole</a>|<a href="organization.html#Organization">Organization</a>) ]; # 0..1 <span style="color: navy">Party being paid</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.recipient" title="The party who is notified of the payment status." class="dict">PaymentNotice.recipient</a><a name="ttl-recipient"> </a>[ <a href="references.html#Reference">Reference</a>(<a href="organization.html#Organization">Organization</a>) ]; # 1..1 <span style="color: navy">Party being notified</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.amount" title="The amount sent to the payee." class="dict">PaymentNotice.amount</a><a name="ttl-amount"> </a>[ <a href="datatypes.html#Money">Money</a> ]; # 1..1 <span style="color: navy">Monetary amount of the payment</span>
+  fhir:<a href="paymentnotice-definitions.html#PaymentNotice.paymentStatus" title="A code indicating whether payment has been sent or cleared." class="dict">PaymentNotice.paymentStatus</a><a name="ttl-paymentStatus"> </a>[ <a href="datatypes.html#CodeableConcept">CodeableConcept</a> ]; # 0..1 <span style="color: navy">Issued or cleared Status of the payment</span>
+]
+</pre>
+
+ </div>
+</div>
+
+<div id="vdiff2">
+<p><b>Changes since Release 3</b></p>
+ <div id="diff-inner2">
+  <table class="grid">
+  <tr class="diff-item">
+    <td class="diff-left">
+      <a href="paymentnotice.html#PaymentNotice">PaymentNotice</a>
+    </td>
+    <td class="diff-right"></td>
+  </tr>
+  <tr class="diff-entry">
+    <td class="diff-left">PaymentNotice.status</td>
+    <td class="diff-right">
+      <ul>
+        <li>Min Cardinality changed from 0 to 1</li>
+        <li>Change value set from http://hl7.org/fhir/ValueSet/fm-status to http://hl7.org/fhir/ValueSet/fm-status|4.0.1</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-entry">
+    <td class="diff-left">PaymentNotice.created</td>
+    <td class="diff-right">
+      <ul>
+        <li>Min Cardinality changed from 0 to 1</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-changed-item">
+    <td class="diff-left">PaymentNotice.provider</td>
+    <td class="diff-right">
+      <ul>
+        <li>Renamed from organization to provider</li>
+        <li>Type Reference: Added Target Types Practitioner, PractitionerRole</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-new">
+    <td class="diff-left">PaymentNotice.payment</td>
+    <td class="diff-right">
+      <ul>
+        <li>
+          <b>Added Mandatory Element</b>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-changed-item">
+    <td class="diff-left">PaymentNotice.paymentDate</td>
+    <td class="diff-right">
+      <ul>
+        <li>Renamed from statusDate to paymentDate</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-new">
+    <td class="diff-left">PaymentNotice.payee</td>
+    <td class="diff-right">
+      <ul>
+        <li>Added Element</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-changed-item">
+    <td class="diff-left">PaymentNotice.recipient</td>
+    <td class="diff-right">
+      <ul>
+        <li>Renamed from target to recipient</li>
+        <li>Min Cardinality changed from 0 to 1</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-new">
+    <td class="diff-left">PaymentNotice.amount</td>
+    <td class="diff-right">
+      <ul>
+        <li>
+          <b>Added Mandatory Element</b>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr class="diff-del">
+    <td class="diff-left">PaymentNotice.provider</td>
+    <td class="diff-right">
+      <ul>
+        <li>deleted</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p>See the <a href="diff.html">Full Difference</a> for further information</p>
+
+  <p>
+  This analysis is available as <a href="paymentnotice.diff.xml">XML</a> or <a href="paymentnotice.diff.json">JSON</a>.
+  </p>
+  <p>See <a href="paymentnotice-version-maps.html">R3 &lt;--&gt; R4 Conversion Maps</a> (status = 1 test that all execute ok. <span style="background-color: #ccffcc">1 fail round-trip testing</span> and <span style="background-color: #E0B0FF">1 r3 resources are invalid (0 errors).</span>)</p>
+
+ </div>
+</div>
+
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<p>See the <a href="paymentnotice-profiles.html">Profiles &amp; Extensions</a> and the alternate definitions:
+Master Definition <a href="paymentnotice.profile.xml.html">XML</a> + <a href="paymentnotice.profile.json.html">JSON</a>,
+<a href="xml.html">XML</a> <a href="paymentnotice.xsd">Schema</a>/<a href="paymentnotice.sch">Schematron</a> + <a href="json.html">JSON</a> 
+<a href="paymentnotice.schema.json.html">Schema</a>, <a href="paymentnotice.shex.html">ShEx</a> (for <a href="rdf.html">Turtle</a>)  + <a href="paymentnotice-profiles.html">see the extensions</a> &amp; the <a href="paymentnotice-dependencies.html">dependency analysis</a></p>
+
+<a name="tx"></a>
+<h3 class="self-link-parent"><span class="sectioncount">13.8.3.1</span> 
+Terminology Bindings
+ <a href="paymentnotice.html#tx" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td valign="top" title="Financial Resource Status Codes">PaymentNotice.status </td><td valign="top">A code specifying the state of the resource instance.</td><td><a href="terminologies.html#required">Required</a></td><td valign="top"><a href="valueset-fm-status.html">FinancialResourceStatusCodes</a>  <!-- b --></td> </tr>
+ <tr><td valign="top" title="Payment Status Codes">PaymentNotice.paymentStatus </td><td valign="top">The payment conveyance status codes.</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-payment-status.html">PaymentStatusCodes</a>  <!-- b --></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+  <!-- content goes here -->
+
+<a name="search"></a>
+<h2 class="self-link-parent"><span class="sectioncount">13.8.4</span> Search Parameters <a href="paymentnotice.html#search" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<p>Search parameters for this resource. The <a href="search.html#all">common parameters</a> also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Expression</b></td><td><b>In Common</b></td></tr>
+<tr><td><a name="sp-created"> </a>created</td><td><a href="search.html#date">date</a></td><td>Creation date fro the notice</td><td>PaymentNotice.created</td><td></td></tr>
+<tr><td><a name="sp-identifier"> </a>identifier</td><td><a href="search.html#token">token</a></td><td>The business identifier of the notice</td><td>PaymentNotice.identifier</td><td></td></tr>
+<tr><td><a name="sp-payment-status"> </a>payment-status</td><td><a href="search.html#token">token</a></td><td>The type of payment notice</td><td>PaymentNotice.paymentStatus</td><td></td></tr>
+<tr><td><a name="sp-provider"> </a>provider</td><td><a href="search.html#reference">reference</a></td><td>The reference to the provider</td><td>PaymentNotice.provider<br/>(<a href="practitioner.html">Practitioner</a>, <a href="organization.html">Organization</a>, <a href="practitionerrole.html">PractitionerRole</a>)</td><td></td></tr>
+<tr><td><a name="sp-request"> </a>request</td><td><a href="search.html#reference">reference</a></td><td>The Claim</td><td>PaymentNotice.request<br/>(Any)</td><td></td></tr>
+<tr><td><a name="sp-response"> </a>response</td><td><a href="search.html#reference">reference</a></td><td>The ClaimResponse</td><td>PaymentNotice.response<br/>(Any)</td><td></td></tr>
+<tr><td><a name="sp-status"> </a>status</td><td><a href="search.html#token">token</a></td><td>The status of the payment notice</td><td>PaymentNotice.status</td><td></td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:36+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fpaymentnotice.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fpaymentnotice.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+
+
+
+<script src="external/jquery/jquery.js"> </script>
+<script src="jquery-ui.min.js"> </script>
+<script>
+try {
+  var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
+}
+catch(exception){
+}
+
+if (!currentTabIndex)
+  currentTabIndex = '0';
+
+$( '#tabs' ).tabs({
+         active: currentTabIndex,
+         activate: function( event, ui ) {
+             var active = $('.selector').tabs('option', 'active');
+             currentTabIndex = ui.newTab.index();
+             document.activeElement.blur();
+             try {
+               sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
+             }
+             catch(exception){
+             }
+         }
+     });
+</script>
+
+</body>
+</html>

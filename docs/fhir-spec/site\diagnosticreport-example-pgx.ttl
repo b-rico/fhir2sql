@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DiagnosticReport/example-pgx> a fhir:DiagnosticReport;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-pgx"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-pgx</p><p><b>basedOn</b>: <a>ServiceRequest/example-pgx</a></p><p><b>status</b>: final</p><p><b>code</b>: Pharmacogenetics Report <span>(Details : {https://system/PGxReport code 'PGxReport' = 'PGxReport', given as 'Pharmacogenetics Report'})</span></p><p><b>subject</b>: <a>Bob Smith</a></p><p><b>effective</b>: 15/10/2016 12:34:56 PM</p><p><b>issued</b>: 20/10/2016 2:00:05 PM</p><p><b>performer</b>: <a>Organization/4829</a></p><p><b>result</b>: <a>Observation/example-phenotype</a></p><p><b>presentedForm</b>: </p></div>"
+  ];
+  fhir:DiagnosticReport.basedOn [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ServiceRequest/example-pgx>;
+     fhir:Reference.reference [ fhir:value "ServiceRequest/example-pgx" ]
+  ];
+  fhir:DiagnosticReport.status [ fhir:value "final"];
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://system/PGxReport" ];
+       fhir:Coding.code [ fhir:value "PGxReport" ];
+       fhir:Coding.display [ fhir:value "Pharmacogenetics Report" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Pharmacogenetics Report" ]
+  ];
+  fhir:DiagnosticReport.subject [
+     fhir:link <http://hl7.org/fhir/Patient/899962>;
+     fhir:Reference.reference [ fhir:value "Patient/899962" ];
+     fhir:Reference.display [ fhir:value "Bob Smith" ]
+  ];
+  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "2016-10-15T12:34:56+11:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.issued [ fhir:value "2016-10-20T14:00:05+11:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/4829>;
+     fhir:Reference.reference [ fhir:value "Organization/4829" ]
+  ];
+  fhir:DiagnosticReport.result [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Observation/example-phenotype>;
+     fhir:Reference.reference [ fhir:value "Observation/example-phenotype" ]
+  ];
+  fhir:DiagnosticReport.presentedForm [
+     fhir:index 0;
+     fhir:Attachment.contentType [ fhir:value "application/pdf" ];
+     fhir:Attachment.language [ fhir:value "en" ];
+     fhir:Attachment.data [ fhir:value "cGRmSW5CYXNlNjRCaW5hcnk="^^xsd:base64Binary ];
+     fhir:Attachment.hash [ fhir:value "571ef9c5655840f324e679072ed62b1b95eef8a0"^^xsd:base64Binary ];
+     fhir:Attachment.title [ fhir:value "Pharmacogenetics Report" ];
+     fhir:Attachment.creation [ fhir:value "2016-10-20T20:00:00+11:00"^^xsd:dateTime ]
+  ] .
+
+<http://hl7.org/fhir/ServiceRequest/example-pgx> a fhir:ServiceRequest .
+
+<http://hl7.org/fhir/Patient/899962> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/4829> a fhir:Organization .
+
+<http://hl7.org/fhir/Observation/example-phenotype> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DiagnosticReport/example-pgx.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/DiagnosticReport/example-pgx.ttl> .
+
+# -------------------------------------------------------------------------------------
+

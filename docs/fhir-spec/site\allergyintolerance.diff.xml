@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="AllergyIntolerance" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AllergyIntolerance.clinicalStatus">
+         <removed-type name="code"/>
+         <added-type name="CodeableConcept"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/allergy-clinical-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               new-min="0"
+               old-min="1"
+               path="AllergyIntolerance.verificationStatus">
+         <removed-type name="code"/>
+         <added-type name="CodeableConcept"/>
+         <old-binding reference="http://hl7.org/fhir/ValueSet/allergy-verification-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/allergyintolerance-verification|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AllergyIntolerance.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/allergy-intolerance-type"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/allergy-intolerance-type|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AllergyIntolerance.category">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/allergy-intolerance-category"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/allergy-intolerance-category|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AllergyIntolerance.criticality">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="AllergyIntolerance.encounter" status="new"/>
+      <element old-name="assertedDate" path="AllergyIntolerance.recordedDate"/>
+      <element path="AllergyIntolerance.recorder">
+         <removed-type name="Reference(Practitioner | Patient)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Patient | RelatedPerson)"/>
+      </element>
+      <element path="AllergyIntolerance.asserter">
+         <removed-type name="Reference(Patient | RelatedPerson | Practitioner)"/>
+         <added-type name="Reference(Patient | RelatedPerson | Practitioner | PractitionerRole)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="AllergyIntolerance.reaction.severity">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/reaction-event-severity"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/reaction-event-severity|4.0.1"
+                      strength="required"/>
+      </element>
+   </type>
+</difference>

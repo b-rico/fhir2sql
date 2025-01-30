@@ -1,0 +1,350 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type TerminologyCapabilities {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  url: uri  _url: ElementBase
+  version: String  _version: ElementBase
+  name: String  _name: ElementBase
+  title: String  _title: ElementBase
+  status: code  _status: ElementBase
+  experimental: Boolean  _experimental: ElementBase
+  date: dateTime  _date: ElementBase
+  publisher: String  _publisher: ElementBase
+  contact: [ContactDetail]
+  description: markdown  _description: ElementBase
+  useContext: [UsageContext]
+  jurisdiction: [CodeableConcept]
+  purpose: markdown  _purpose: ElementBase
+  copyright: markdown  _copyright: ElementBase
+  kind: code  _kind: ElementBase
+  software: TerminologyCapabilitiesSoftware
+  implementation: TerminologyCapabilitiesImplementation
+  lockedDate: Boolean  _lockedDate: ElementBase
+  codeSystem: [TerminologyCapabilitiesCodeSystem]
+  expansion: TerminologyCapabilitiesExpansion
+  codeSearch: code  _codeSearch: ElementBase
+  validateCode: TerminologyCapabilitiesValidateCode
+  translation: TerminologyCapabilitiesTranslation
+  closure: TerminologyCapabilitiesClosure
+}
+
+type TerminologyCapabilitiesSoftware {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  version: String  _version: ElementBase
+}
+
+type TerminologyCapabilitiesImplementation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  description: String  _description: ElementBase
+  url: url  _url: ElementBase
+}
+
+type TerminologyCapabilitiesCodeSystem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  uri: canonical  _uri: ElementBase
+  version: [TerminologyCapabilitiesCodeSystemVersion]
+  subsumption: Boolean  _subsumption: ElementBase
+}
+
+type TerminologyCapabilitiesCodeSystemVersion {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: String  _code: ElementBase
+  isDefault: Boolean  _isDefault: ElementBase
+  compositional: Boolean  _compositional: ElementBase
+  language: code  _language: [ElementBase]
+  filter: [TerminologyCapabilitiesCodeSystemVersionFilter]
+  property: code  _property: [ElementBase]
+}
+
+type TerminologyCapabilitiesCodeSystemVersionFilter {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: code  _code: ElementBase
+  op: code  _op: [ElementBase]
+}
+
+type TerminologyCapabilitiesExpansion {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  hierarchical: Boolean  _hierarchical: ElementBase
+  paging: Boolean  _paging: ElementBase
+  incomplete: Boolean  _incomplete: ElementBase
+  parameter: [TerminologyCapabilitiesExpansionParameter]
+  textFilter: markdown  _textFilter: ElementBase
+}
+
+type TerminologyCapabilitiesExpansionParameter {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: code  _name: ElementBase
+  documentation: String  _documentation: ElementBase
+}
+
+type TerminologyCapabilitiesValidateCode {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  translations: Boolean  _translations: ElementBase
+}
+
+type TerminologyCapabilitiesTranslation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  needsMap: Boolean  _needsMap: ElementBase
+}
+
+type TerminologyCapabilitiesClosure {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  translation: Boolean  _translation: ElementBase
+}
+
+input TerminologyCapabilities {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  url: uri  _url: ElementBase
+  version: String  _version: ElementBase
+  name: String  _name: ElementBase
+  title: String  _title: ElementBase
+  status: code  _status: ElementBase
+  experimental: Boolean  _experimental: ElementBase
+  date: dateTime  _date: ElementBase
+  publisher: String  _publisher: ElementBase
+  contact: [ContactDetail]
+  description: markdown  _description: ElementBase
+  useContext: [UsageContext]
+  jurisdiction: [CodeableConcept]
+  purpose: markdown  _purpose: ElementBase
+  copyright: markdown  _copyright: ElementBase
+  kind: code  _kind: ElementBase
+  software: TerminologyCapabilitiesSoftware
+  implementation: TerminologyCapabilitiesImplementation
+  lockedDate: Boolean  _lockedDate: ElementBase
+  codeSystem: [TerminologyCapabilitiesCodeSystem]
+  expansion: TerminologyCapabilitiesExpansion
+  codeSearch: code  _codeSearch: ElementBase
+  validateCode: TerminologyCapabilitiesValidateCode
+  translation: TerminologyCapabilitiesTranslation
+  closure: TerminologyCapabilitiesClosure
+}
+
+input TerminologyCapabilitiesSoftware {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  version: String  _version: ElementBase
+}
+
+input TerminologyCapabilitiesImplementation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  description: String  _description: ElementBase
+  url: url  _url: ElementBase
+}
+
+input TerminologyCapabilitiesCodeSystem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  uri: canonical  _uri: ElementBase
+  version: [TerminologyCapabilitiesCodeSystemVersion]
+  subsumption: Boolean  _subsumption: ElementBase
+}
+
+input TerminologyCapabilitiesCodeSystemVersion {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: String  _code: ElementBase
+  isDefault: Boolean  _isDefault: ElementBase
+  compositional: Boolean  _compositional: ElementBase
+  language: code  _language: [ElementBase]
+  filter: [TerminologyCapabilitiesCodeSystemVersionFilter]
+  property: code  _property: [ElementBase]
+}
+
+input TerminologyCapabilitiesCodeSystemVersionFilter {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: code  _code: ElementBase
+  op: code  _op: [ElementBase]
+}
+
+input TerminologyCapabilitiesExpansion {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  hierarchical: Boolean  _hierarchical: ElementBase
+  paging: Boolean  _paging: ElementBase
+  incomplete: Boolean  _incomplete: ElementBase
+  parameter: [TerminologyCapabilitiesExpansionParameter]
+  textFilter: markdown  _textFilter: ElementBase
+}
+
+input TerminologyCapabilitiesExpansionParameter {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: code  _name: ElementBase
+  documentation: String  _documentation: ElementBase
+}
+
+input TerminologyCapabilitiesValidateCode {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  translations: Boolean  _translations: ElementBase
+}
+
+input TerminologyCapabilitiesTranslation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  needsMap: Boolean  _needsMap: ElementBase
+}
+
+input TerminologyCapabilitiesClosure {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  translation: Boolean  _translation: ElementBase
+}
+
+type TerminologyCapabilitiesReadType {
+  TerminologyCapabilities(id : ID!) : TerminologyCapabilities
+}
+
+type TerminologyCapabilitiesListType {
+  TerminologyCapabilitiesList(_filter : String
+    context : [token]
+    context_quantity : [quantity]
+    context_type : [token]
+    context_type_quantity : [composite]
+    context_type_value : [composite]
+    date : [date]
+    description : [String]
+    jurisdiction : [token]
+    name : [String]
+    publisher : [String]
+    status : [token]
+    title : [String]
+    url : [uri]
+    version : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [TerminologyCapabilities]
+}
+
+type TerminologyCapabilitiesConnectionType {
+  TerminologyCapabilitiesConection(_filter : String
+    context : [token]
+    context_quantity : [quantity]
+    context_type : [token]
+    context_type_quantity : [composite]
+    context_type_value : [composite]
+    date : [date]
+    description : [String]
+    jurisdiction : [token]
+    name : [String]
+    publisher : [String]
+    status : [token]
+    title : [String]
+    url : [uri]
+    version : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : TerminologyCapabilitiesConnection
+}
+
+type TerminologyCapabilitiesConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [TerminologyCapabilitiesEdge]
+}
+
+type TerminologyCapabilitiesEdge {
+  mode : String
+  score : Float
+  resource : TerminologyCapabilities
+}
+
+type TerminologyCapabilitiesCreateType {
+  TerminologyCapabilitiesCreate(resource : TerminologyCapabilities) : TerminologyCapabilitiesCreation
+}
+
+type TerminologyCapabilitiesCreation {
+  location : String
+  resource : TerminologyCapabilities
+  information : OperationOutcome
+}
+
+type TerminologyCapabilitiesUpdateType {
+  TerminologyCapabilitiesUpdate(id : IDresource : TerminologyCapabilities) : TerminologyCapabilitiesUpdate
+}
+
+type TerminologyCapabilitiesUpdate {
+  resource : TerminologyCapabilities
+  information : OperationOutcome
+}
+
+type TerminologyCapabilitiesDeleteType {
+  TerminologyCapabilitiesDelete(id : ID) : TerminologyCapabilitiesDelete
+}
+
+type TerminologyCapabilitiesDelete {
+  information : OperationOutcome
+}
+

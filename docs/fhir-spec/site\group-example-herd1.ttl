@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Group/herd1> a fhir:Group;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "herd1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: herd1</p><p><b>identifier</b>: 20171120-1234</p><p><b>active</b>: true</p><p><b>type</b>: animal</p><p><b>actual</b>: true</p><p><b>code</b>: Porcine <span>(Details : {SNOMED CT code '388393002' = 'Genus Sus', given as 'Genus Sus (organism)'}; {https://www.aphis.usda.gov code 'POR' = 'POR', given as 'porcine'})</span></p><p><b>name</b>: Breeding herd</p><p><b>quantity</b>: 2500</p><h3>Characteristics</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Value[x]</b></td><td><b>Exclude</b></td></tr><tr><td>*</td><td>gender <span>(Details )</span></td><td>female <span>(Details )</span></td><td>false</td></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://example.org/fhir/StructureDefinition/owner" ];
+     fhir:Extension.valueReference [
+       fhir:link <http://hl7.org/fhir/RelatedPerson/peter>;
+       fhir:Reference.reference [ fhir:value "RelatedPerson/peter" ];
+       fhir:Reference.display [ fhir:value "Peter Chalmers" ]
+     ]
+  ];
+  fhir:Group.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "https://vetmed.iastate.edu/vdl" ];
+     fhir:Identifier.value [ fhir:value "20171120-1234" ]
+  ];
+  fhir:Group.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Group.type [ fhir:value "animal"];
+  fhir:Group.actual [ fhir:value "true"^^xsd:boolean];
+  fhir:Group.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:388393002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "388393002" ];
+       fhir:Coding.display [ fhir:value "Genus Sus (organism)" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "https://www.aphis.usda.gov" ];
+       fhir:Coding.code [ fhir:value "POR" ];
+       fhir:Coding.display [ fhir:value "porcine" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Porcine" ]
+  ];
+  fhir:Group.name [ fhir:value "Breeding herd"];
+  fhir:Group.quantity [ fhir:value "2500"^^xsd:nonNegativeInteger];
+  fhir:Group.characteristic [
+     fhir:index 0;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "gender" ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "female" ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ] .
+
+<http://hl7.org/fhir/RelatedPerson/peter> a fhir:RelatedPerson .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Group/herd1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Group/herd1.ttl> .
+
+# -------------------------------------------------------------------------------------
+

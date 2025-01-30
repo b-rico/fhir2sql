@@ -1,0 +1,1213 @@
+<!DOCTYPE HTML>
+
+<!-- template-example-ttl.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Definition.ttl - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/definition.ttl.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="workflow-module.html"><img src="workflow.png"/> Workflow</a></li>        <li><a href="definition.html">Definition Pattern</a></li>        <li><b>Logical Model</b></li>        <!-- definition.ttl.html / logical-model / Definition-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Definition.ttl</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm">FHIR Infrastructure</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td></td></tr></table>
+
+</tbody></table>
+<p>
+<a href="definition.ttl">Raw Turtle</a> (+ also see <a href="rdf.html">Turtle/RDF Format Specification</a>)
+</p>
+
+<div class="example">
+<p>Logical Model Definition</p>
+<pre class="turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+[] a fhir:StructureDefinition;
+  fhir:Resource.id [ fhir:value &quot;Definition&quot;];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot; ];
+     fhir:Extension.value [ fhir:value &quot;informative&quot; ]
+  ];
+  fhir:StructureDefinition.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Definition&quot;];
+  fhir:StructureDefinition.version [ fhir:value &quot;4.0.1&quot;];
+  fhir:StructureDefinition.name [ fhir:value &quot;Definition&quot;];
+  fhir:StructureDefinition.title [ fhir:value &quot;definition&quot;];
+  fhir:StructureDefinition.status [ fhir:value &quot;draft&quot;];
+  fhir:StructureDefinition.date [ fhir:value &quot;2019-11-01T09:29:23+11:00&quot;];
+  fhir:StructureDefinition.publisher [ fhir:value &quot;Health Level Seven International fhir&quot;];
+  fhir:StructureDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value &quot;url&quot; ];
+       fhir:ContactPoint.value [ fhir:value &quot;http://hl7.org/fhir&quot; ]
+     ]
+  ];
+  fhir:StructureDefinition.description [ fhir:value &quot;Logical Model: A pattern to be followed by resources that represent a specific proposal, plan and/or order for some sort of action or service.&quot;];
+  fhir:StructureDefinition.fhirVersion [ fhir:value &quot;4.0.1&quot;];
+  fhir:StructureDefinition.mapping [
+     fhir:index 0;
+     fhir:StructureDefinition.identity [ fhir:value &quot;rim&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/v3&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;RIM Mapping&quot; ]
+  ], [
+     fhir:index 1;
+     fhir:StructureDefinition.identity [ fhir:value &quot;w5&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/fhir/fivews&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;FiveWs Pattern Mapping&quot; ]
+  ], [
+     fhir:index 2;
+     fhir:StructureDefinition.identity [ fhir:value &quot;v2&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/v2&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;HL7 v2 Mapping&quot; ]
+  ];
+  fhir:StructureDefinition.kind [ fhir:value &quot;logical&quot;];
+  fhir:StructureDefinition.abstract [ fhir:value &quot;false&quot;];
+  fhir:StructureDefinition.type [ fhir:value &quot;Definition&quot;];
+  fhir:StructureDefinition.snapshot [
+     fhir:StructureDefinition.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value &quot;Definition&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Definition Pattern&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A pattern to be followed by resources that represent a specific proposal, plan and/or order for some sort of action or service.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Act[moodCode&lt;=DEFN]&quot; ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value &quot;Definition.url&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.url&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Logical canonical URL to reference this {{title}} (globally unique)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;An absolute URL that is used to identify this {{title}} when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this {{title}} is (or will be) published. The URL SHOULD include the major version of the {{title}}. For more information see [Technical and Business Versions](resource.html#versions).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Can be a urn:uuid: or a urn:oid:, but real http: addresses are preferred.  This is the URI that will be used when making canonical references to this resource.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Allows the {{title}} to be referenced by a single globally unique identifier.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.url&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;uri&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.identifier&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.identifier&quot; ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value &quot;Definition.identifier&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.identifier&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Business Identifier for {{title}}&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Business identifiers assigned to this {{title}} by the performer and/or other systems.  These identifiers remain constant as the resource is updated and propagates from server to server.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Allows identification of the {{title}} as it is known by various participating systems and in a way that remains consistent across servers.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.identifier&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Identifier&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.identifier&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.identifier&quot; ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value &quot;Definition.version&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.version&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Business version of the {{title}}&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The identifier that is used to identify this version of the {{title}} when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the {{title}} author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There may be multiple different instances of a {{title}} that have the same identifier but different versions.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.version&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A (to add?)&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.version&quot; ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value &quot;Definition.title&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.title&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Name for this {{title}} (Human friendly)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A short, descriptive, user-friendly title for the {{title}}.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.title&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.title&quot; ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value &quot;Definition.derivedFromCanonical&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.derivedFromCanonical&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Based on FHIR protocol or definition&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The canonical URL pointing to another FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this definition.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Protocols and order sets may be refinements of more generic protocols and order sets.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.derivedFromCanonical&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;canonical&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Definition&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Varies by domain&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.outboundRelationship[typeCode=DEFN].target&quot; ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value &quot;Definition.derivedFromUri&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.derivedFromUri&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Based on external protocol or definition&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The URL pointing to an externally-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this definition.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Protocols and order sets may be refinements of more generic protocols and order sets.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.derivedFromUri&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;uri&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;v2&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Varies by domain&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.outboundRelationship[typeCode=DEFN].target&quot; ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value &quot;Definition.partOf&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.partOf&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Part of referenced definition&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A larger definition of which this particular definition is a component or step.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;[The allowed reference resources may be adjusted as appropriate for the event resource].&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;E.g. Drug administration as part of a procedure, procedure as part of observation, etc.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;container&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.partOf&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;canonical&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Definition&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.inboundRelationship[typeCode=COMP].source[moodCode=DEFN]&quot; ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value &quot;Definition.replaces&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.replaces&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Request(s) replaced by this request&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Completed or terminated request(s) whose function is taken by this new request.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;As new versions of a protocol or guideline are defined, allows identification of what versions are replaced by a new instance.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;supersedes&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;prior&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;renewed order&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.replaces&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;canonical&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Definition&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.outboundRelationship[typeCode=RPLC].target&quot; ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value &quot;Definition.status&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.status&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;draft | active | retired | unknown&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The current state of the {{title}}.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;A nominal state-transition diagram can be found in the [[definition.html#statemachine | Definition pattern]] documentation\n\nUnknown does not represent \&quot;other\&quot; - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.status&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;code&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;This is labeled as \&quot;Is Modifier\&quot; because applications should not use a retired {{title}} without due consideration&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;PublicationStatus&quot; ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot; ];
+           fhir:Extension.value [ fhir:value &quot;true&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;required&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The lifecycle status of an artifact.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/publication-status|4.0.1&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.status&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.status&quot; ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value &quot;Definition.experimental&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.experimental&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;If for testing purposes, not real usage&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A flag to indicate that this {{title}} is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Allows filtering of {{title}} that are appropriate for use vs. not.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Enables experimental content to be developed following the same life-cycle as a production-level {{title}} would.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.experimental&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;boolean&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;This is labeled as \&quot;Is Modifier\&quot; because applications should not use an experimental {{title}} in production.&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A (to add?)&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.class&quot; ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value &quot;Definition.subject[x]&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.subject[x]&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Type of individual the defined service is for&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A code or group definition that describes the intended subject of instantiations of this definition.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Many protocols, order sets and guidelines are inted for use only with specific types of patients or subjects.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;Subject type&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.subject[x]&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Group&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DefinitionSubject&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Codes identifying the type of subject intended to be the recpient or focus of the defined action.  These should ideally be consistent across definition resources.&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=SBJ].role&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.subject&quot; ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value &quot;Definition.date&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.date&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Date status first applied&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;For draft definitions, indicates the date of initial creation.  For active definitions, represents the date of activation.  For withdrawn definitions, indicates the date of withdrawal.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;created&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.date&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;dateTime&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=AUT].time&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.recorded&quot; ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value &quot;Definition.publisher&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.publisher&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;The name of the individual or organization that published the {{title}}&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Helps establish the \&quot;authority/credibility\&quot; of the {{title}}.  May also allow for contact.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Usually an organization, but may be an individual. The publisher (or steward) of the {{title}} is the organization or individual primarily responsible for the maintenance and upkeep of the {{title}}. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the {{title}}. This item SHOULD be populated unless the information is available from context.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;author&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.publisher&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Practitioner&quot;;
+           fhir:index 0
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/PractitionerRole&quot;;
+           fhir:index 1
+         ], [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Organization&quot;;
+           fhir:index 2
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=AUT].role&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.author&quot; ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value &quot;Definition.contact&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.contact&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Contact details for the publisher&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Contact details to assist a user in finding and communicating with the publisher.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;May be a web site, an email address, a telephone number, etc.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.contact&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;ContactDetail&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=CALLBCK].role&quot; ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value &quot;Definition.description&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.description&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Natural language description of the {{title}}&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A free text natural language description of the {{title}} from the consumer's perspective.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This description can be used to capture details such as why the {{title}} was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the module as conveyed in the text field of the resource itself. This item SHOULD be populated unless the information is available from context.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.description&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;markdown&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.text&quot; ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value &quot;Definition.useContext&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.useContext&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Content intends to support these contexts&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;When multiple usageContexts are specified, there is no expectation for whether all or any of the contexts apply.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Assist in searching for appropriate content.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.useContext&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;UsageContext&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A (to add?)&quot; ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:Element.id [ fhir:value &quot;Definition.jurisdiction&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.jurisdiction&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Intended jurisdiction for {{title}} (if applicable)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A jurisdiction in which the {{title}} is intended to be used.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.jurisdiction&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;Jurisdiction&quot; ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot; ];
+           fhir:Extension.value [ fhir:value &quot;true&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;extensible&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Countries and regions within which this artifact is targeted for use.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/jurisdiction&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A (to add?)&quot; ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.id [ fhir:value &quot;Definition.purpose&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.purpose&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Why this {{title}} is defined&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Explains why this {{title}} is needed and why it has been designed as it has.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This element does not describe the usage of the {{title}}.  Rather it is for traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this {{title}}.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.purpose&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;markdown&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.reasonCode.text&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.why[x]&quot; ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.id [ fhir:value &quot;Definition.copyright&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.copyright&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Use and/or publishing restrictions&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A copyright statement relating to the {{title}} and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the {{title}}.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Consumers of the {{title}} must be able to determine any legal restrictions on the use of the artifact and/or its content.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;License&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;Restrictions&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.copyright&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;markdown&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A (to add?)&quot; ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:Element.id [ fhir:value &quot;Definition.approvalDate&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.approvalDate&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;When {{title}} approved by publisher&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The date may be more recent than the approval date because of minor changes / editorial corrections.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.approvalDate&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;date&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.outboundRelationship[typeCode=\&quot;SUBJ\&quot;].act[classCode=CACT;moodCode=EVN;code=\&quot;approval\&quot;].effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 21;
+       fhir:Element.id [ fhir:value &quot;Definition.lastReviewDate&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.lastReviewDate&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Last review date for the {{title}}&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;If specified, this is usually after the approval date.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.lastReviewDate&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;date&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.outboundRelationship[typeCode=\&quot;SUBJ\&quot;; subsetCode=\&quot;RECENT\&quot;].act[classCode=CACT;moodCode=EVN;code=\&quot;review\&quot;].effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 22;
+       fhir:Element.id [ fhir:value &quot;Definition.effectivePeriod&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.effectivePeriod&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;The effective date range for the {{title}}&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The period during which the {{title}} content was or is planned to be effective.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The effective period for a {{title}}  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.effectivePeriod&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Period&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A (to add?)&quot; ]
+       ]
+     ], [
+       fhir:index 23;
+       fhir:Element.id [ fhir:value &quot;Definition.performerType&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;Definition.performerType&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Desired kind of service performer&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The type of individual that is expected to act upon instances of this definition.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Definition.performerType&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;PerformerType&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Identifies types of practitioners, devices or other agents that are intended to perform a defined action.  While the detailed constraints of relevant agents will vary by resource, some degree of consistency around recommended codes across request and definition resources would be desirable.&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.participation[typeCode=PRF].role[scoper.determinerCode=KIND].code&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.actor&quot; ]
+       ]
+     ]
+  ] .
+
+# -------------------------------------------------------------------------------------
+
+
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:32+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fdefinition.ttl.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fdefinition.ttl.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

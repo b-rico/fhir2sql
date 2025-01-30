@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/bloodgroup> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "bloodgroup"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: bloodgroup</p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span>(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'})</span></p><p><b>code</b>: Blood Group <span>(Details : {LOINC code '883-9' = 'ABO group [Type] in Blood', given as 'ABO group [Type] in Blood'})</span></p><p><b>subject</b>: <a>Patient/infant</a></p><p><b>effective</b>: 11/03/2018 4:07:54 PM</p><p><b>value</b>: A <span>(Details : {SNOMED CT code '112144000' = 'Blood group A', given as 'Blood group A (finding)'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+       fhir:Coding.code [ fhir:value "laboratory" ];
+       fhir:Coding.display [ fhir:value "Laboratory" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Laboratory" ]
+  ];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:883-9;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "883-9" ];
+       fhir:Coding.display [ fhir:value "ABO group [Type] in Blood" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Blood Group" ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/infant>;
+     fhir:Reference.reference [ fhir:value "Patient/infant" ]
+  ];
+  fhir:Observation.effectiveDateTime [ fhir:value "2018-03-11T16:07:54+00:00"^^xsd:dateTime];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:112144000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "112144000" ];
+       fhir:Coding.display [ fhir:value "Blood group A (finding)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "A" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/infant> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/bloodgroup.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/bloodgroup.ttl> .
+
+# -------------------------------------------------------------------------------------
+

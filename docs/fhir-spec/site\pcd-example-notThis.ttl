@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Contract/pcd-example-notThis> a fhir:Contract;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "pcd-example-notThis"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">The following scenario is based on existing\n      jurisdictional policy and are realized in existing systems in Canada. The default policy is\n      one of implied consent for the provision of care, so these scenarios all deal with withdrawal\n      or withholding consent for that purpose. In other jurisdictions, where an express consent\n      model is used (Opt-In), these would examples would contain the phrase &quot;consent to&quot; rather than\n      &quot;withhold&quot; or &quot;withdraw&quot; consent for. <p> specific to use-case 2. Withhold or withdraw consent\n        for disclosure of a specific record (e.g. Lab Order/Result) </p><p> Patient &quot;P. van de\n        Heuvel&quot; Primary Care Provider, Dr. Philip Primary, has ordered a set of lab test which Adam\n        wishes to keep as private as possible. At the sample collection facility, he indicates that\n        he would like withhold consent to disclose the order and all results associated with that\n        specific order from all other providers </p>\n    </div>"
+  ];
+  fhir:Contract.issued [ fhir:value "2015-11-18"^^xsd:date];
+  fhir:Contract.subject [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Patient/f001>;
+     fhir:Reference.reference [ fhir:value "Patient/f001" ];
+     fhir:Reference.display [ fhir:value "P. van de Heuvel" ]
+  ];
+  fhir:Contract.authority [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/3>;
+     fhir:Reference.reference [ fhir:value "Organization/3" ];
+     fhir:Reference.display [ fhir:value "Michigan Health" ]
+  ];
+  fhir:Contract.domain [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Location/ukp>;
+     fhir:Reference.reference [ fhir:value "Location/ukp" ];
+     fhir:Reference.display [ fhir:value "UK Pharmacies" ]
+  ];
+  fhir:Contract.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:57016-8;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "57016-8" ]
+     ]
+  ];
+  fhir:Contract.subType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://www.infoway-inforoute.ca.org/Consent-subtype-codes" ];
+       fhir:Coding.code [ fhir:value "Opt-In" ];
+       fhir:Coding.display [ fhir:value "Default Authorization with exceptions." ]
+     ]
+  ];
+  fhir:Contract.term [
+     fhir:index 0;
+     fhir:Contract.term.identifier [
+       fhir:Identifier.system [ fhir:value "http://example.org/fhir/term-items" ];
+       fhir:Identifier.value [ fhir:value "3347689" ]
+     ];
+     fhir:Contract.term.issued [ fhir:value "2015-11-01"^^xsd:date ];
+     fhir:Contract.term.applies [
+       fhir:Period.start [ fhir:value "2015-11-18"^^xsd:date ]
+     ];
+     fhir:Contract.term.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://example.org/fhir/consent-term-type-codes" ];
+         fhir:Coding.code [ fhir:value "withhold-identified-object-and-related" ];
+         fhir:Coding.display [ fhir:value "Withhold the identified object and any other resources that are related to this object." ]
+       ]
+     ];
+     fhir:Contract.term.offer [
+       fhir:Contract.term.offer.topic [
+         fhir:link <http://hl7.org/fhir/ServiceRequest/lipid>;
+         fhir:Reference.reference [ fhir:value "ServiceRequest/lipid" ]
+       ];
+       fhir:Contract.term.offer.text [ fhir:value "Withhold this order and any results or related objects from any provider." ]
+     ]
+  ];
+  fhir:Contract.friendly [
+     fhir:index 0;
+     fhir:Contract.friendly.contentAttachment [
+       fhir:Attachment.title [ fhir:value "The terms of the consent in friendly consumer speak." ]
+     ]
+  ];
+  fhir:Contract.legal [
+     fhir:index 0;
+     fhir:Contract.legal.contentAttachment [
+       fhir:Attachment.title [ fhir:value "The terms of the consent in lawyer speak." ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f001> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/3> a fhir:Organization .
+
+<http://hl7.org/fhir/Location/ukp> a fhir:Location .
+
+<http://hl7.org/fhir/ServiceRequest/lipid> a fhir:ServiceRequest .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Contract/pcd-example-notThis.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Contract/pcd-example-notThis.ttl> .
+
+# -------------------------------------------------------------------------------------
+

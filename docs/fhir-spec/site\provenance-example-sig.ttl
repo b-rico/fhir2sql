@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Provenance/signature> a fhir:Provenance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "signature"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">procedure record authored on 27-June 2015 by Harold Hippocrates, MD Content extracted from Referral received 26-June</div>"
+  ];
+  fhir:Provenance.target [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/DocumentReference/example>;
+     fhir:Reference.reference [ fhir:value "DocumentReference/example" ]
+  ];
+  fhir:Provenance.recorded [ fhir:value "2015-08-27T08:39:24+10:00"^^xsd:dateTime];
+  fhir:Provenance.reason [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ];
+       fhir:Coding.code [ fhir:value "TREAT" ];
+       fhir:Coding.display [ fhir:value "treatment" ]
+     ]
+  ];
+  fhir:Provenance.activity [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-DocumentCompletion" ];
+       fhir:Coding.code [ fhir:value "AU" ];
+       fhir:Coding.display [ fhir:value "authenticated" ]
+     ]
+  ];
+  fhir:Provenance.agent [
+     fhir:index 0;
+     fhir:Provenance.agent.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/contractsignertypecodes" ];
+         fhir:Coding.code [ fhir:value "VERF" ]
+       ]
+     ];
+     fhir:Provenance.agent.who [
+       fhir:Reference.identifier [
+         fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+         fhir:Identifier.value [ fhir:value "mailto://hhd@ssa.gov" ]
+       ]
+     ]
+  ];
+  fhir:Provenance.signature [
+     fhir:index 0;
+     fhir:Signature.type [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso-astm:E1762-95:2013" ];
+       fhir:Coding.code [ fhir:value "1.2.840.10065.1.12.1.5" ];
+       fhir:Coding.display [ fhir:value "Verification Signature" ]
+     ];
+     fhir:Signature.when [ fhir:value "2015-08-27T08:39:24+10:00"^^xsd:dateTime ];
+     fhir:Signature.who [
+       fhir:link <http://hl7.org/fhir/Practitioner/xcda-author>;
+       fhir:Reference.reference [ fhir:value "Practitioner/xcda-author" ]
+     ];
+     fhir:Signature.targetFormat [ fhir:value "application/fhir+xml" ];
+     fhir:Signature.sigFormat [ fhir:value "application/signature+xml" ];
+     fhir:Signature.data [ fhir:value "Li4u"^^xsd:base64Binary ]
+  ] .
+
+<http://hl7.org/fhir/DocumentReference/example> a fhir:DocumentReference .
+
+<http://hl7.org/fhir/Practitioner/xcda-author> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Provenance/signature.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Provenance/signature.ttl> .
+
+# -------------------------------------------------------------------------------------
+

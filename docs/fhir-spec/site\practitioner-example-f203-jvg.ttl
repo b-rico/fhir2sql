@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Practitioner/f203> a fhir:Practitioner;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "f203"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: f203</p><p><b>identifier</b>: UZI-nummer = 12345678903 (OFFICIAL), BIG-nummer = 12345678903 (OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Juri van Gelder(OFFICIAL)</p><p><b>telecom</b>: ph: +31715269111(WORK)</p><p><b>address</b>: Walvisbaai 3 Den helder 2333ZA NLD (WORK)</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 20/04/1983</p></div>"
+  ];
+  fhir:Practitioner.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.text [ fhir:value "UZI-nummer" ]
+     ];
+     fhir:Identifier.system [ fhir:value "urn:oid:2.16.528.1.1007.3.1" ];
+     fhir:Identifier.value [ fhir:value "12345678903" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.text [ fhir:value "BIG-nummer" ]
+     ];
+     fhir:Identifier.system [ fhir:value "https://www.bigregister.nl/" ];
+     fhir:Identifier.value [ fhir:value "12345678903" ]
+  ];
+  fhir:Practitioner.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Practitioner.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.text [ fhir:value "Juri van Gelder" ]
+  ];
+  fhir:Practitioner.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "+31715269111" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ];
+  fhir:Practitioner.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "work" ];
+     fhir:Address.line [
+       fhir:value "Walvisbaai 3";
+       fhir:index 0
+     ];
+     fhir:Address.city [ fhir:value "Den helder" ];
+     fhir:Address.postalCode [ fhir:value "2333ZA" ];
+     fhir:Address.country [ fhir:value "NLD" ]
+  ];
+  fhir:Practitioner.gender [ fhir:value "male"];
+  fhir:Practitioner.birthDate [ fhir:value "1983-04-20"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Practitioner/f203.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Practitioner/f203.ttl> .
+
+# -------------------------------------------------------------------------------------
+

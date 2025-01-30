@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicinalProductIngredient/example> a fhir:MedicinalProductIngredient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>role</b>: ActiveBase <span>(Details : {http://ema.europa.eu/example/ingredientRole code 'ActiveBase' = 'ActiveBase)</span></p><p><b>manufacturer</b>: <a>Organization/example</a></p><h3>SpecifiedSubstances</h3><table><tr><td>-</td><td><b>Code</b></td><td><b>Group</b></td></tr><tr><td>*</td><td>equixabanCompanyequixaban1 <span>(Details : {http://ema.europa.eu/example/specifiedSubstance code 'equixabanCompanyequixaban1' = 'equixabanCompanyequixaban1)</span></td><td>2 <span>(Details : {http://ema.europa.eu/example/specifiedSubstanceGroup code '2' = '2)</span></td></tr></table><blockquote><p><b>substance</b></p><p><b>code</b>: EQUIXABAN <span>(Details : {http://ema.europa.eu/example/substance code 'EQUIXABAN' = 'EQUIXABAN)</span></p><h3>Strengths</h3><table><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote></div>"
+  ];
+  fhir:MedicinalProductIngredient.role [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/ingredientRole" ];
+       fhir:Coding.code [ fhir:value "ActiveBase" ]
+     ]
+  ];
+  fhir:MedicinalProductIngredient.manufacturer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:MedicinalProductIngredient.specifiedSubstance [
+     fhir:index 0;
+     fhir:MedicinalProductIngredient.specifiedSubstance.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/specifiedSubstance" ];
+         fhir:Coding.code [ fhir:value "equixabanCompanyequixaban1" ]
+       ]
+     ];
+     fhir:MedicinalProductIngredient.specifiedSubstance.group [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/specifiedSubstanceGroup" ];
+         fhir:Coding.code [ fhir:value "2" ]
+       ]
+     ]
+  ];
+  fhir:MedicinalProductIngredient.substance [
+     fhir:MedicinalProductIngredient.substance.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/substance" ];
+         fhir:Coding.code [ fhir:value "EQUIXABAN" ]
+       ]
+     ];
+     fhir:MedicinalProductIngredient.substance.strength [
+       fhir:index 0;
+       fhir:MedicinalProductIngredient.specifiedSubstance.strength.presentation [
+         fhir:Ratio.numerator [
+           fhir:Quantity.value [ fhir:value "2.5"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "mg" ]
+         ];
+         fhir:Ratio.denominator [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "{tablet}" ]
+         ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Organization/example> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicinalProductIngredient/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MedicinalProductIngredient/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Consent/consent-example-Emergency> a fhir:Consent;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "consent-example-Emergency"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n	Withhold Authorization for Treatment rule for Emegency Treatment\n	</p>\n      <p>\n    Patient &quot;P. van de Heuvel&quot; wishes to have no data at the Good Health Psychiatric Hospital \n   available rule for Emergency treatment use.\n   An overall Deny consent Directive, with an exception &quot;Permit&quot; of purposeOfUse &quot;ETREAT&quot; \n   at &quot;Good Health&quot; hospital, and exception &quot;Deny&quot; all other purposeOfUse from good health hospital.\n   </p>\n    </div>"
+  ];
+  fhir:Consent.status [ fhir:value "active"];
+  fhir:Consent.scope [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentscope" ];
+       fhir:Coding.code [ fhir:value "patient-privacy" ]
+     ]
+  ];
+  fhir:Consent.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "EMRGONLY" ]
+     ]
+  ];
+  fhir:Consent.patient [
+     fhir:link <http://hl7.org/fhir/Patient/f001>;
+     fhir:Reference.reference [ fhir:value "Patient/f001" ];
+     fhir:Reference.display [ fhir:value "P. van de Heuvel" ]
+  ];
+  fhir:Consent.dateTime [ fhir:value "2015-11-18"^^xsd:date];
+  fhir:Consent.organization [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/f001>;
+     fhir:Reference.reference [ fhir:value "Organization/f001" ]
+  ];
+  fhir:Consent.sourceAttachment [
+     fhir:Attachment.title [ fhir:value "The terms of the consent in lawyer speak." ]
+  ];
+  fhir:Consent.policyRule [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "OPTOUT" ]
+     ]
+  ];
+  fhir:Consent.provision [
+     fhir:Consent.provision.actor [
+       fhir:index 0;
+       fhir:Consent.provision.actor.role [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+           fhir:Coding.code [ fhir:value "CST" ]
+         ]
+       ];
+       fhir:Consent.provision.actor.reference [
+         fhir:link <http://hl7.org/fhir/Organization/f001>;
+         fhir:Reference.reference [ fhir:value "Organization/f001" ]
+       ]
+     ];
+     fhir:Consent.provision.purpose [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ];
+       fhir:Coding.code [ fhir:value "ETREAT" ]
+     ];
+     fhir:Consent.provision.provision [
+       fhir:index 0;
+       fhir:Consent.provision.type [ fhir:value "deny" ];
+       fhir:Consent.provision.actor [
+         fhir:index 0;
+         fhir:Consent.provision.actor.role [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+             fhir:Coding.code [ fhir:value "CST" ]
+           ]
+         ];
+         fhir:Consent.provision.actor.reference [
+           fhir:link <http://hl7.org/fhir/Organization/f001>;
+           fhir:Reference.reference [ fhir:value "Organization/f001" ]
+         ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f001> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/f001> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Consent/consent-example-Emergency.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Consent/consent-example-Emergency.ttl> .
+
+# -------------------------------------------------------------------------------------
+

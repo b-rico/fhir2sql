@@ -1,0 +1,107 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/biopsy> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "biopsy"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Biopsy of suspected melanoma L) arm</div>"
+  ];
+  fhir:Procedure.status [ fhir:value "completed"];
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:103693007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "103693007" ];
+       fhir:Coding.display [ fhir:value "Diagnostic procedure (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Diagnostic procedure" ]
+  ];
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:90105005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "90105005" ];
+       fhir:Coding.display [ fhir:value "Biopsy of soft tissue of forearm (Procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Biopsy of suspected melanoma L) arm" ]
+  ];
+  fhir:Procedure.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Procedure.performedDateTime [ fhir:value "2014-02-03"^^xsd:date];
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+       fhir:Reference.display [ fhir:value "Dr Bert Biopser" ]
+     ]
+  ];
+  fhir:Procedure.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Dark lesion l) forearm. getting darker last 3 months." ]
+  ];
+  fhir:Procedure.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:368225008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "368225008" ];
+       fhir:Coding.display [ fhir:value "Entire Left Forearm" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Left forearm" ]
+  ];
+  fhir:Procedure.complication [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:67750007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "67750007" ];
+       fhir:Coding.display [ fhir:value "Ineffective airway clearance (finding)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Ineffective airway clearance" ]
+  ];
+  fhir:Procedure.followUp [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Review in clinic" ]
+  ];
+  fhir:Procedure.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "Standard Biopsy" ]
+  ];
+  fhir:Procedure.usedCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:79068005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "79068005" ];
+       fhir:Coding.display [ fhir:value "Needle, device (physical object)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "30-guage needle" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/biopsy.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Procedure/biopsy.ttl> .
+
+# -------------------------------------------------------------------------------------
+

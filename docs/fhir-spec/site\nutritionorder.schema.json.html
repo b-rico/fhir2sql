@@ -1,0 +1,666 @@
+<!DOCTYPE HTML>
+  <!-- template-example-xml.html --><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>NutritionOrder - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/nutritionorder.schema.json.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="workflow-module.html"><img src="workflow.png"/> Workflow</a></li>        <li><a href="nutritionorder.html">NutritionOrder</a></li>        <li><b>schema</b></li>          <!-- nutritionorder.html / res-schema / NutritionOrder -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<h2 class="self-link-parent"><span class="sectioncount">12.15.12<a name="12.15.12"> </a></span> JSON Schema for NutritionOrder <a href="nutritionorder.schema.json.html#12.15.12" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/orders/index.cfm">Orders and Observations <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td>  <!-- !ns! --><td><a href="compartmentdefinition.html">Compartments</a>: <a href="compartmentdefinition-encounter.html">Encounter</a>, <a href="compartmentdefinition-patient.html">Patient</a>, <a href="compartmentdefinition-practitioner.html">Practitioner</a></td></tr></table>
+
+<p>
+This is a representation of the json schema for NutritionOrder, which is just a part of the <a href="http://hl7.org/fhir/R4/fhir.schema.json.zip">full JSON Schema</a>.
+</p>
+
+
+<pre>
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "id": "http://hl7.org/fhir/json-schema/NutritionOrder",
+  "$ref": "#/definitions/NutritionOrder",
+  "description": "see http://hl7.org/fhir/json.html#schema for information about the FHIR Json Schemas",
+  "definitions": {
+    "NutritionOrder": {
+      "description": "A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.",
+      "properties": {
+        "resourceType": {
+          "description": "This is a NutritionOrder resource",
+          "const": "NutritionOrder"
+        },
+        "id": {
+          "description": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+          "$ref": "id.schema.json#/definitions/id"
+        },
+        "meta": {
+          "description": "The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.",
+          "$ref": "Meta.schema.json#/definitions/Meta"
+        },
+        "implicitRules": {
+          "description": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
+          "$ref": "#/definitions/uri"
+        },
+        "_implicitRules": {
+          "description": "Extensions for implicitRules",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "language": {
+          "description": "The base language in which the resource is written.",
+          "$ref": "#/definitions/code"
+        },
+        "_language": {
+          "description": "Extensions for language",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "text": {
+          "description": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+          "$ref": "Narrative.schema.json#/definitions/Narrative"
+        },
+        "contained": {
+          "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+          "items": {
+            "$ref": "ResourceList.schema.json#/definitions/ResourceList"
+          },
+          "type": "array"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "identifier": {
+          "description": "Identifiers assigned to this order by the order sender or by the order receiver.",
+          "items": {
+            "$ref": "Identifier.schema.json#/definitions/Identifier"
+          },
+          "type": "array"
+        },
+        "instantiatesCanonical": {
+          "description": "The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.",
+          "items": {
+            "$ref": "canonical.schema.json#/definitions/canonical"
+          },
+          "type": "array"
+        },
+        "instantiatesUri": {
+          "description": "The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.",
+          "items": {
+            "$ref": "#/definitions/uri"
+          },
+          "type": "array"
+        },
+        "_instantiatesUri": {
+          "description": "Extensions for instantiatesUri",
+          "items": {
+            "$ref": "Element.schema.json#/definitions/Element"
+          },
+          "type": "array"
+        },
+        "instantiates": {
+          "description": "The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.",
+          "items": {
+            "$ref": "#/definitions/uri"
+          },
+          "type": "array"
+        },
+        "_instantiates": {
+          "description": "Extensions for instantiates",
+          "items": {
+            "$ref": "Element.schema.json#/definitions/Element"
+          },
+          "type": "array"
+        },
+        "status": {
+          "description": "The workflow status of the nutrition order/request.",
+          "$ref": "#/definitions/code"
+        },
+        "_status": {
+          "description": "Extensions for status",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "intent": {
+          "description": "Indicates the level of authority/intentionality associated with the NutrionOrder and where the request fits into the workflow chain.",
+          "$ref": "#/definitions/code"
+        },
+        "_intent": {
+          "description": "Extensions for intent",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "patient": {
+          "description": "The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.",
+          "$ref": "Reference.schema.json#/definitions/Reference"
+        },
+        "encounter": {
+          "description": "An encounter that provides additional information about the healthcare context in which this request is made.",
+          "$ref": "Reference.schema.json#/definitions/Reference"
+        },
+        "dateTime": {
+          "description": "The date and time that this nutrition order was requested.",
+          "$ref": "#/definitions/dateTime"
+        },
+        "_dateTime": {
+          "description": "Extensions for dateTime",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "orderer": {
+          "description": "The practitioner that holds legal responsibility for ordering the diet, nutritional supplement, or formula feedings.",
+          "$ref": "Reference.schema.json#/definitions/Reference"
+        },
+        "allergyIntolerance": {
+          "description": "A link to a record of allergies or intolerances  which should be included in the nutrition order.",
+          "items": {
+            "$ref": "Reference.schema.json#/definitions/Reference"
+          },
+          "type": "array"
+        },
+        "foodPreferenceModifier": {
+          "description": "This modifier is used to convey order-specific modifiers about the type of food that should be given. These can be derived from patient allergies, intolerances, or preferences such as Halal, Vegan or Kosher. This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.",
+          "items": {
+            "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+          },
+          "type": "array"
+        },
+        "excludeFoodModifier": {
+          "description": "This modifier is used to convey Order-specific modifier about the type of oral food or oral fluids that should not be given. These can be derived from patient allergies, intolerances, or preferences such as No Red Meat, No Soy or No Wheat or  Gluten-Free.  While it should not be necessary to repeat allergy or intolerance information captured in the referenced AllergyIntolerance resource in the excludeFoodModifier, this element may be used to convey additional specificity related to foods that should be eliminated from the patient’s diet for any reason.  This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.",
+          "items": {
+            "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+          },
+          "type": "array"
+        },
+        "oralDiet": {
+          "description": "Diet given orally in contrast to enteral (tube) feeding.",
+          "$ref": "#/definitions/NutritionOrder_OralDiet"
+        },
+        "supplement": {
+          "description": "Oral nutritional products given in order to add further nutritional value to the patient\u0027s diet.",
+          "items": {
+            "$ref": "#/definitions/NutritionOrder_Supplement"
+          },
+          "type": "array"
+        },
+        "enteralFormula": {
+          "description": "Feeding provided through the gastrointestinal tract via a tube, catheter, or stoma that delivers nutrition distal to the oral cavity.",
+          "$ref": "#/definitions/NutritionOrder_EnteralFormula"
+        },
+        "note": {
+          "description": "Comments made about the {{title}} by the requester, performer, subject or other participants.",
+          "items": {
+            "$ref": "Annotation.schema.json#/definitions/Annotation"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "patient",
+        "resourceType"
+      ]
+    },
+    "NutritionOrder_OralDiet": {
+      "description": "A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "type": {
+          "description": "The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.",
+          "items": {
+            "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+          },
+          "type": "array"
+        },
+        "schedule": {
+          "description": "The time period and frequency at which the diet should be given.  The diet should be given for the combination of all schedules if more than one schedule is present.",
+          "items": {
+            "$ref": "Timing.schema.json#/definitions/Timing"
+          },
+          "type": "array"
+        },
+        "nutrient": {
+          "description": "Class that defines the quantity and type of nutrient modifications (for example carbohydrate, fiber or sodium) required for the oral diet.",
+          "items": {
+            "$ref": "#/definitions/NutritionOrder_Nutrient"
+          },
+          "type": "array"
+        },
+        "texture": {
+          "description": "Class that describes any texture modifications required for the patient to safely consume various types of solid foods.",
+          "items": {
+            "$ref": "#/definitions/NutritionOrder_Texture"
+          },
+          "type": "array"
+        },
+        "fluidConsistencyType": {
+          "description": "The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of liquids or fluids served to the patient.",
+          "items": {
+            "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+          },
+          "type": "array"
+        },
+        "instruction": {
+          "description": "Free text or additional instructions or information pertaining to the oral diet.",
+          "$ref": "#/definitions/string"
+        },
+        "_instruction": {
+          "description": "Extensions for instruction",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NutritionOrder_Nutrient": {
+      "description": "A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifier": {
+          "description": "The nutrient that is being modified such as carbohydrate or sodium.",
+          "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+        },
+        "amount": {
+          "description": "The quantity of the specified nutrient to include in diet.",
+          "$ref": "Quantity.schema.json#/definitions/Quantity"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NutritionOrder_Texture": {
+      "description": "A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifier": {
+          "description": "Any texture modifications (for solid foods) that should be made, e.g. easy to chew, chopped, ground, and pureed.",
+          "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+        },
+        "foodType": {
+          "description": "The food type(s) (e.g. meats, all foods)  that the texture modification applies to.  This could be all foods types.",
+          "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NutritionOrder_Supplement": {
+      "description": "A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "type": {
+          "description": "The kind of nutritional supplement product required such as a high protein or pediatric clear liquid supplement.",
+          "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+        },
+        "productName": {
+          "description": "The product or brand name of the nutritional supplement such as \"Acme Protein Shake\".",
+          "$ref": "#/definitions/string"
+        },
+        "_productName": {
+          "description": "Extensions for productName",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "schedule": {
+          "description": "The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.",
+          "items": {
+            "$ref": "Timing.schema.json#/definitions/Timing"
+          },
+          "type": "array"
+        },
+        "quantity": {
+          "description": "The amount of the nutritional supplement to be given.",
+          "$ref": "Quantity.schema.json#/definitions/Quantity"
+        },
+        "instruction": {
+          "description": "Free text or additional instructions or information pertaining to the oral supplement.",
+          "$ref": "#/definitions/string"
+        },
+        "_instruction": {
+          "description": "Extensions for instruction",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NutritionOrder_EnteralFormula": {
+      "description": "A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "baseFormulaType": {
+          "description": "The type of enteral or infant formula such as an adult standard formula with fiber or a soy-based infant formula.",
+          "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+        },
+        "baseFormulaProductName": {
+          "description": "The product or brand name of the enteral or infant formula product such as \"ACME Adult Standard Formula\".",
+          "$ref": "#/definitions/string"
+        },
+        "_baseFormulaProductName": {
+          "description": "Extensions for baseFormulaProductName",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "additiveType": {
+          "description": "Indicates the type of modular component such as protein, carbohydrate, fat or fiber to be provided in addition to or mixed with the base formula.",
+          "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+        },
+        "additiveProductName": {
+          "description": "The product or brand name of the type of modular component to be added to the formula.",
+          "$ref": "#/definitions/string"
+        },
+        "_additiveProductName": {
+          "description": "Extensions for additiveProductName",
+          "$ref": "Element.schema.json#/definitions/Element"
+        },
+        "caloricDensity": {
+          "description": "The amount of energy (calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 calories per fluid ounce or an adult may require an enteral formula that provides 1.5 calorie/mL.",
+          "$ref": "Quantity.schema.json#/definitions/Quantity"
+        },
+        "routeofAdministration": {
+          "description": "The route or physiological path of administration into the patient\u0027s gastrointestinal  tract for purposes of providing the formula feeding, e.g. nasogastric tube.",
+          "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+        },
+        "administration": {
+          "description": "Formula administration instructions as structured data.  This repeating structure allows for changing the administration rate or volume over time for both bolus and continuous feeding.  An example of this would be an instruction to increase the rate of continuous feeding every 2 hours.",
+          "items": {
+            "$ref": "#/definitions/NutritionOrder_Administration"
+          },
+          "type": "array"
+        },
+        "maxVolumeToDeliver": {
+          "description": "The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.",
+          "$ref": "Quantity.schema.json#/definitions/Quantity"
+        },
+        "administrationInstruction": {
+          "description": "Free text formula administration, feeding instructions or additional instructions or information.",
+          "$ref": "#/definitions/string"
+        },
+        "_administrationInstruction": {
+          "description": "Extensions for administrationInstruction",
+          "$ref": "Element.schema.json#/definitions/Element"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NutritionOrder_Administration": {
+      "description": "A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.",
+      "properties": {
+        "id": {
+          "description": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+          "$ref": "string.schema.json#/definitions/string"
+        },
+        "extension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "modifierExtension": {
+          "description": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+          "items": {
+            "$ref": "Extension.schema.json#/definitions/Extension"
+          },
+          "type": "array"
+        },
+        "schedule": {
+          "description": "The time period and frequency at which the enteral formula should be delivered to the patient.",
+          "$ref": "Timing.schema.json#/definitions/Timing"
+        },
+        "quantity": {
+          "description": "The volume of formula to provide to the patient per the specified administration schedule.",
+          "$ref": "Quantity.schema.json#/definitions/Quantity"
+        },
+        "rateQuantity": {
+          "description": "The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule.",
+          "$ref": "Quantity.schema.json#/definitions/Quantity"
+        },
+        "rateRatio": {
+          "description": "The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule.",
+          "$ref": "Ratio.schema.json#/definitions/Ratio"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
+</pre>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:36+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fnutritionorder.schema.json.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fnutritionorder.schema.json.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

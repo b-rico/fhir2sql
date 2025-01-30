@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="MedicationAdministration" status="changed">
+      <element path="MedicationAdministration.instantiates" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="MedicationAdministration.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/medication-admin-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/medication-admin-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="MedicationAdministration.statusReason" status="new"/>
+      <element path="MedicationAdministration.performer.function" status="new"/>
+      <element path="MedicationAdministration.performer.actor">
+         <removed-type name="Reference(Practitioner | Patient | RelatedPerson | Device)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Patient | RelatedPerson | Device)"/>
+      </element>
+      <element path="MedicationAdministration.reasonReference">
+         <removed-type name="Reference(Condition | Observation)"/>
+         <added-type name="Reference(Condition | Observation | DiagnosticReport)"/>
+      </element>
+      <element path="MedicationAdministration.request" status="new"/>
+      <element path="MedicationAdministration.dosage.rate[x]">
+         <removed-type name="Quantity()"/>
+         <added-type name="Quantity()"/>
+      </element>
+      <element path="MedicationAdministration.definition" status="deleted"/>
+      <element path="MedicationAdministration.performer.onBehalfOf" status="deleted"/>
+      <element path="MedicationAdministration.notGiven" status="deleted"/>
+      <element path="MedicationAdministration.reasonNotGiven" status="deleted"/>
+      <element path="MedicationAdministration.prescription" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/SupplyDelivery/simpledelivery> a fhir:SupplyDelivery;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "simpledelivery"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: simpledelivery</p><p><b>identifier</b>: Order10284</p><p><b>basedOn</b>: <a>SupplyRequest/simpleorder</a></p><p><b>partOf</b>: Central Supply Restock</p><p><b>status</b>: completed</p><p><b>type</b>: Blood collect tubes blue cap <span>(Details : {http://terminology.hl7.org/CodeSystem/supply-item-type code 'device' = 'Device)</span></p><h3>SuppliedItems</h3><table><tr><td>-</td><td><b>Quantity</b></td><td><b>Item[x]</b></td></tr><tr><td>*</td><td>10</td><td>Blood collect tubes blue cap <span>(Details : {[not stated] code 'BlueTubes' = 'BlueTubes', given as 'Blood collect tubes blue cap'})</span></td></tr></table><p><b>occurrence</b>: 31/12/2016</p><p><b>supplier</b>: Vendor1</p><p><b>destination</b>: Location 1</p></div>"
+  ];
+  fhir:SupplyDelivery.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "Order10284" ]
+  ];
+  fhir:SupplyDelivery.basedOn [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/SupplyRequest/simpleorder>;
+     fhir:Reference.reference [ fhir:value "SupplyRequest/simpleorder" ]
+  ];
+  fhir:SupplyDelivery.partOf [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Central Supply Restock" ]
+  ];
+  fhir:SupplyDelivery.status [ fhir:value "completed"];
+  fhir:SupplyDelivery.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/supply-item-type" ];
+       fhir:Coding.code [ fhir:value "device" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Blood collect tubes blue cap" ]
+  ];
+  fhir:SupplyDelivery.suppliedItem [
+     fhir:SupplyDelivery.suppliedItem.quantity [
+       fhir:Quantity.value [ fhir:value "10"^^xsd:decimal ]
+     ];
+     fhir:SupplyDelivery.suppliedItem.itemCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "BlueTubes" ];
+         fhir:Coding.display [ fhir:value "Blood collect tubes blue cap" ]
+       ]
+     ]
+  ];
+  fhir:SupplyDelivery.occurrenceDateTime [ fhir:value "2016-12-31"^^xsd:date];
+  fhir:SupplyDelivery.supplier [
+     fhir:Reference.display [ fhir:value "Vendor1" ]
+  ];
+  fhir:SupplyDelivery.destination [
+     fhir:Reference.display [ fhir:value "Location 1" ]
+  ] .
+
+<http://hl7.org/fhir/SupplyRequest/simpleorder> a fhir:SupplyRequest .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/SupplyDelivery/simpledelivery.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/SupplyDelivery/simpledelivery.ttl> .
+
+# -------------------------------------------------------------------------------------
+

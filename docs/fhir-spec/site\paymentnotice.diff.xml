@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="PaymentNotice" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               new-min="1"
+               old-min="0"
+               path="PaymentNotice.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/fm-status" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/fm-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-min="1" old-min="0" path="PaymentNotice.created"/>
+      <element old-name="organization" path="PaymentNotice.provider">
+         <removed-type name="Reference(Organization)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element path="PaymentNotice.payment" status="new"/>
+      <element old-name="statusDate" path="PaymentNotice.paymentDate"/>
+      <element path="PaymentNotice.payee" status="new"/>
+      <element new-min="1"
+               old-min="0"
+               old-name="target"
+               path="PaymentNotice.recipient"/>
+      <element path="PaymentNotice.amount" status="new"/>
+      <element path="PaymentNotice.provider" status="deleted"/>
+   </type>
+</difference>

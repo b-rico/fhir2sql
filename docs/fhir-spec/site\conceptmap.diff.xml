@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="ConceptMap" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="ConceptMap.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/publication-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/publication-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element modifier="removed" path="ConceptMap.experimental"/>
+      <element path="ConceptMap.source[x]">
+         <removed-type name="Reference(ValueSet)"/>
+         <added-type name="canonical(ValueSet)"/>
+      </element>
+      <element path="ConceptMap.target[x]">
+         <removed-type name="Reference(ValueSet)"/>
+         <added-type name="canonical(ValueSet)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               default="removed"
+               new-min="1"
+               old-default="&#34;equivalent&#34;"
+               old-min="0"
+               path="ConceptMap.group.element.target.equivalence">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/concept-map-equivalence"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/concept-map-equivalence|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="ConceptMap.group.element.target.dependsOn.system">
+         <removed-type name="uri"/>
+         <added-type name="canonical(CodeSystem)"/>
+      </element>
+      <element old-name="code" path="ConceptMap.group.element.target.dependsOn.value"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="ConceptMap.group.unmapped.mode">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/conceptmap-unmapped-mode"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/conceptmap-unmapped-mode|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="ConceptMap.group.unmapped.url">
+         <removed-type name="uri"/>
+         <added-type name="canonical(ConceptMap)"/>
+      </element>
+   </type>
+</difference>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Claim" status="changed">
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               new-min="1"
+               old-min="0"
+               path="Claim.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/fm-status" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/fm-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element binding-status="changed"
+               binding-strength-changed="true"
+               new-min="1"
+               old-min="0"
+               path="Claim.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/claim-type" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/claim-type"
+                      strength="extensible"/>
+      </element>
+      <element new-max="1" old-max="*" path="Claim.subType"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               new-min="1"
+               old-min="0"
+               path="Claim.use">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/claim-use" strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/claim-use|4.0.1"
+                      strength="required"/>
+      </element>
+      <element new-min="1" old-min="0" path="Claim.patient"/>
+      <element new-min="1" old-min="0" path="Claim.created"/>
+      <element path="Claim.enterer">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole)"/>
+      </element>
+      <element new-min="1" old-min="0" path="Claim.provider">
+         <removed-type name="Reference(Practitioner)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element new-min="1" old-min="0" path="Claim.priority"/>
+      <element path="Claim.prescription">
+         <removed-type name="Reference(MedicationRequest | VisionPrescription)"/>
+         <added-type name="Reference(DeviceRequest | MedicationRequest | VisionPrescription)"/>
+      </element>
+      <element path="Claim.originalPrescription">
+         <removed-type name="Reference(MedicationRequest)"/>
+         <added-type name="Reference(DeviceRequest | MedicationRequest | VisionPrescription)"/>
+      </element>
+      <element path="Claim.payee.party">
+         <removed-type name="Reference(Practitioner | Organization | Patient | RelatedPerson)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson)"/>
+      </element>
+      <element path="Claim.referral">
+         <removed-type name="Reference(ReferralRequest)"/>
+         <added-type name="Reference(ServiceRequest)"/>
+      </element>
+      <element path="Claim.careTeam.provider">
+         <removed-type name="Reference(Practitioner | Organization)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization)"/>
+      </element>
+      <element old-name="information" path="Claim.supportingInfo"/>
+      <element path="Claim.supportingInfo.value[x]">
+         <added-type name="boolean"/>
+      </element>
+      <element path="Claim.diagnosis.onAdmission" status="new"/>
+      <element path="Claim.procedure.type" status="new"/>
+      <element path="Claim.procedure.udi" status="new"/>
+      <element new-min="1" old-min="0" path="Claim.insurance"/>
+      <element path="Claim.insurance.identifier" status="new"/>
+      <element binding-status="changed"
+               binding-strength-changed="true"
+               path="Claim.accident.type">
+         <old-binding reference="http://terminology.hl7.org/ValueSet/v3-ActIncidentCode"
+                      strength="required"/>
+         <new-binding reference="http://terminology.hl7.org/ValueSet/v3-ActIncidentCode"
+                      strength="extensible"/>
+      </element>
+      <element old-name="careTeamLinkId" path="Claim.item.careTeamSequence"/>
+      <element old-name="diagnosisLinkId" path="Claim.item.diagnosisSequence"/>
+      <element old-name="procedureLinkId" path="Claim.item.procedureSequence"/>
+      <element old-name="informationLinkId" path="Claim.item.informationSequence"/>
+      <element new-min="1"
+               old-min="0"
+               old-name="service"
+               path="Claim.item.productOrService"/>
+      <element new-min="1"
+               old-min="0"
+               old-name="service"
+               path="Claim.item.detail.productOrService"/>
+      <element new-min="1"
+               old-min="0"
+               old-name="service"
+               path="Claim.item.detail.subDetail.productOrService"/>
+      <element path="Claim.organization" status="deleted"/>
+      <element path="Claim.payee.resourceType" status="deleted"/>
+      <element path="Claim.employmentImpacted" status="deleted"/>
+      <element path="Claim.hospitalization" status="deleted"/>
+   </type>
+</difference>

@@ -1,0 +1,823 @@
+<!DOCTYPE HTML>
+
+<!-- template-example-xml.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Library-opioidcds-common.xml - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/library-opioidcds-common.xml.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="clinicalreasoning-module.html"><img src="reasoning.png"/> Clinical Reasoning</a></li>        <li><a href="library.html">Library</a></li>        <li><b>Example Instance</b></li>        <!-- library-opioidcds-common.xml.html / resource-instance:Library / Example-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Library-opioidcds-common.xml</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/dss/index.cfm">Clinical Decision Support</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+<p>
+<a href="library-opioidcds-common.xml">Raw XML</a> (<a href="library-opioidcds-common.canonical.xml">canonical form</a> + also see <a href="xml.html">XML Format Specification</a>)
+</p>
+<p><a href="#DomainResource.text.div-end">Jump past Narrative</a></p>
+
+<div class="example">
+<p>Opioid CDS Common Library (id = &quot;opioidcds-common&quot;)</p>
+<pre class="xml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+<span class="xmltag">&lt;<a href="library-definitions.html" class="xmltag">Library</a></span><span class="xmlattr"><a name="Library"> </a>xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+   </b><span class="xmltag">&lt;<a href="resource-definitions.html#Resource.id" class="xmltag">id</a></span><span class="xmlattr"><a name="Library.id"> </a>value="<span class="xmlattrvalue">opioidcds-common</span>"</span><span class="xmltag">/&gt;</span><a name="Library.id-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="domainresource-definitions.html#DomainResource.text" class="xmltag">text</a></span><span class="xmltag">&gt;</span><a name="Library.text"> </a><span class="xmltag">&lt;<a href="narrative-definitions.html#Narrative.status" class="xmltag">status</a></span><span class="xmlattr"><a name="DomainResource.text.status"> </a>value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><a name="DomainResource.text.status-end"> </a><span class="xmltag">&lt;<a href="narrative-definitions.html#Narrative.div" class="xmltag">div</a></span><span class="xmlattr"><a name="DomainResource.text.div"> </a>xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>Generated Narrative with Details</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>id</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: opioidcds-common</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>identifier</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: OpioidCDS_Common (OFFICIAL)</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>version</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: 0.1.0</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>title</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: Opioid CDS Common Logic</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>status</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: active</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>experimental</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: false</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>type</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: Logic Library </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>(Details : {http://terminology.hl7.org/CodeSystem/library-type code &apos;logic-library&apos; =
+           &apos;Logic Library&apos;, given as &apos;Logic Library&apos;})</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>date</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: 25/03/2018 1:49:09 PM</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>publisher</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: Centers for Disease Control and Prevention (CDC)</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>description</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: Common Opioid Decision Support Logic for use in implementing CDC Opioid Prescribing
+         Guidelines.</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>useContext</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: , </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>jurisdiction</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: United States of America </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>(Details : {urn:iso:std:iso:3166 code &apos;US&apos; = &apos;United States of America&apos;, given as &apos;United
+           States of America&apos;})</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>purpose</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: This library contains common logic across recommendations including MME calculations,
+         conversions, and looking up codes in valuesets.</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>usage</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: This library is used for decision support for opioid guideline recommendations when
+         applying PlanDefinitions.</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>copyright</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: Â© CDC 2016+.</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>topic</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: Opioid Prescribing </b><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">span</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.span"> </a><b>(Details )</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">span</a>&gt;</span><a name="Narrative.div.span-end"> </a><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>author</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: , , , </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>relatedArtifact</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: , , </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">p</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.p"> </a><span class="xmltag">&lt;<a href="narrative.html" class="xmltag">b</a></span><span class="xmltag">&gt;</span><a name="Narrative.div.b"> </a><b>content</b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">b</a>&gt;</span><a name="Narrative.div.b-end"> </a><b>: </b><span class="xmltag">&lt;/<a href="narrative.html" class="xmltag">p</a>&gt;</span><a name="Narrative.div.p-end"> </a><span class="xmltag">&lt;/<a href="narrative-definitions.html#Narrative.div" class="xmltag">div</a>&gt;</span><a name="DomainResource.text.div-end"> </a><span class="xmltag">&lt;/<a href="domainresource-definitions.html#DomainResource.text" class="xmltag">text</a>&gt;</span><a name="Library.text-end"> </a><span class="xmltag">&lt;<a href="library-definitions.html#Library.identifier" class="xmltag">identifier</a></span><span class="xmltag">&gt;</span><a name="Library.identifier"> </a><b>
+      </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Identifier.use" class="xmltag">use</a></span><span class="xmlattr"><a name="Library.identifier.use"> </a>value="<span class="xmlattrvalue">official</span>"</span><span class="xmltag">/&gt;</span><a name="Library.identifier.use-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Identifier.value" class="xmltag">value</a></span><span class="xmlattr"><a name="Library.identifier.value"> </a>value="<span class="xmlattrvalue">OpioidCDS_Common</span>"</span><span class="xmltag">/&gt;</span><a name="Library.identifier.value-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.identifier" class="xmltag">identifier</a>&gt;</span><a name="Library.identifier-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.version" class="xmltag">version</a></span><span class="xmlattr"><a name="Library.version"> </a>value="<span class="xmlattrvalue">0.1.0</span>"</span><span class="xmltag">/&gt;</span><a name="Library.version-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.title" class="xmltag">title</a></span><span class="xmlattr"><a name="Library.title"> </a>value="<span class="xmlattrvalue">Opioid CDS Common Logic</span>"</span><span class="xmltag">/&gt;</span><a name="Library.title-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.status" class="xmltag">status</a></span><span class="xmlattr"><a name="Library.status"> </a>value="<span class="xmlattrvalue">active</span>"</span><span class="xmltag">/&gt;</span><a name="Library.status-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.experimental" class="xmltag">experimental</a></span><span class="xmlattr"><a name="Library.experimental"> </a>value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><a name="Library.experimental-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.type" class="xmltag">type</a></span><span class="xmltag">&gt;</span><a name="Library.type"> </a><b>
+      </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#CodeableConcept.coding" class="xmltag">coding</a></span><span class="xmltag">&gt;</span><a name="Library.type.coding"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.system" class="xmltag">system</a></span><span class="xmlattr"><a name="CodeableConcept.coding.system"> </a>value="<span class="xmlattrvalue">http://terminology.hl7.org/CodeSystem/library-type</span>"</span><span class="xmltag">/&gt;</span><a name="CodeableConcept.coding.system-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.code" class="xmltag">code</a></span><span class="xmlattr"><a name="CodeableConcept.coding.code"> </a>value="<span class="xmlattrvalue">logic-library</span>"</span><span class="xmltag">/&gt;</span><a name="CodeableConcept.coding.code-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.display" class="xmltag">display</a></span><span class="xmlattr"><a name="CodeableConcept.coding.display"> </a>value="<span class="xmlattrvalue">Logic Library</span>"</span><span class="xmltag">/&gt;</span><a name="CodeableConcept.coding.display-end"> </a><b>
+      </b><span class="xmltag">&lt;/<a href="datatypes-definitions.html#CodeableConcept.coding" class="xmltag">coding</a>&gt;</span><a name="Library.type.coding-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.type" class="xmltag">type</a>&gt;</span><a name="Library.type-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.date" class="xmltag">date</a></span><span class="xmlattr"><a name="Library.date"> </a>value="<span class="xmlattrvalue">2018-03-25T13:49:09-06:00</span>"</span><span class="xmltag">/&gt;</span><a name="Library.date-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.publisher" class="xmltag">publisher</a></span><span class="xmlattr"><a name="Library.publisher"> </a>value="<span class="xmlattrvalue">Centers for Disease Control and Prevention (CDC)</span>"</span><span class="xmltag">/&gt;</span><a name="Library.publisher-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.description" class="xmltag">description</a></span><span class="xmlattr"><a name="Library.description"> </a>value="<span class="xmlattrvalue">Common Opioid Decision Support Logic for use in implementing CDC Opioid Prescribing Guidelines.</span>"</span><span class="xmltag">/&gt;</span><a name="Library.description-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.useContext" class="xmltag">useContext</a></span><span class="xmltag">&gt;</span><a name="Library.useContext"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#UsageContext.code" class="xmltag">code</a></span><span class="xmltag">&gt;</span><a name="Library.useContext.code"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.system" class="xmltag">system</a></span><span class="xmlattr"><a name="UsageContext.code.system"> </a>value="<span class="xmlattrvalue">http://terminology.hl7.org/CodeSystem/usage-context-type</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.code.system-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.code" class="xmltag">code</a></span><span class="xmlattr"><a name="UsageContext.code.code"> </a>value="<span class="xmlattrvalue">focus</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.code.code-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.display" class="xmltag">display</a></span><span class="xmlattr"><a name="UsageContext.code.display"> </a>value="<span class="xmlattrvalue">Clinical Focus</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.code.display-end"> </a><b>
+      </b><span class="xmltag">&lt;/<a href="metadatatypes-definitions.html#UsageContext.code" class="xmltag">code</a>&gt;</span><a name="Library.useContext.code-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#UsageContext.value[x]" class="xmltag">valueCodeableConcept</a></span><span class="xmltag">&gt;</span><a name="Library.useContext.valueCodeableConcept"> </a><b>
+         </b><span class="xmltagred">&lt;coding</span><span class="xmltag">&gt;</span><a name="UsageContext.value[x].coding"> </a><b>
+            </b><span class="xmltagred">&lt;system</span><span class="xmlattr"><a name="UsageContext.value[x].system"> </a>value="<span class="xmlattrvalue">http://snomed.info/sct</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.value[x].system-end"> </a><b>
+            </b><span class="xmltagred">&lt;code</span><span class="xmlattr"><a name="UsageContext.value[x].code"> </a>value="<span class="xmlattrvalue">182888003</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.value[x].code-end"> </a><b>
+            </b><span class="xmltagred">&lt;display</span><span class="xmlattr"><a name="UsageContext.value[x].display"> </a>value="<span class="xmlattrvalue">Medication requested (situation)</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.value[x].display-end"> </a><b>
+         </b><span class="xmltag">&lt;/coding&gt;</span><a name="UsageContext.value[x].coding-end"> </a><b>
+      </b><span class="xmltag">&lt;/<a href="metadatatypes-definitions.html#UsageContext.value[x]" class="xmltag">valueCodeableConcept</a>&gt;</span><a name="Library.useContext.valueCodeableConcept-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.useContext" class="xmltag">useContext</a>&gt;</span><a name="Library.useContext-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.useContext" class="xmltag">useContext</a></span><span class="xmltag">&gt;</span><a name="Library.useContext"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#UsageContext.code" class="xmltag">code</a></span><span class="xmltag">&gt;</span><a name="Library.useContext.code"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.system" class="xmltag">system</a></span><span class="xmlattr"><a name="UsageContext.code.system"> </a>value="<span class="xmlattrvalue">http://terminology.hl7.org/CodeSystem/usage-context-type</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.code.system-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.code" class="xmltag">code</a></span><span class="xmlattr"><a name="UsageContext.code.code"> </a>value="<span class="xmlattrvalue">focus</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.code.code-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.display" class="xmltag">display</a></span><span class="xmlattr"><a name="UsageContext.code.display"> </a>value="<span class="xmlattrvalue">Clinical Focus</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.code.display-end"> </a><b>
+      </b><span class="xmltag">&lt;/<a href="metadatatypes-definitions.html#UsageContext.code" class="xmltag">code</a>&gt;</span><a name="Library.useContext.code-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#UsageContext.value[x]" class="xmltag">valueCodeableConcept</a></span><span class="xmltag">&gt;</span><a name="Library.useContext.valueCodeableConcept"> </a><b>
+         </b><span class="xmltagred">&lt;coding</span><span class="xmltag">&gt;</span><a name="UsageContext.value[x].coding"> </a><b>
+            </b><span class="xmltagred">&lt;system</span><span class="xmlattr"><a name="UsageContext.value[x].system"> </a>value="<span class="xmlattrvalue">http://snomed.info/sct</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.value[x].system-end"> </a><b>
+            </b><span class="xmltagred">&lt;code</span><span class="xmlattr"><a name="UsageContext.value[x].code"> </a>value="<span class="xmlattrvalue">82423001</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.value[x].code-end"> </a><b>
+            </b><span class="xmltagred">&lt;display</span><span class="xmlattr"><a name="UsageContext.value[x].display"> </a>value="<span class="xmlattrvalue">Chronic pain (finding)</span>"</span><span class="xmltag">/&gt;</span><a name="UsageContext.value[x].display-end"> </a><b>
+         </b><span class="xmltag">&lt;/coding&gt;</span><a name="UsageContext.value[x].coding-end"> </a><b>
+      </b><span class="xmltag">&lt;/<a href="metadatatypes-definitions.html#UsageContext.value[x]" class="xmltag">valueCodeableConcept</a>&gt;</span><a name="Library.useContext.valueCodeableConcept-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.useContext" class="xmltag">useContext</a>&gt;</span><a name="Library.useContext-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.jurisdiction" class="xmltag">jurisdiction</a></span><span class="xmltag">&gt;</span><a name="Library.jurisdiction"> </a><b>
+      </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#CodeableConcept.coding" class="xmltag">coding</a></span><span class="xmltag">&gt;</span><a name="Library.jurisdiction.coding"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.system" class="xmltag">system</a></span><span class="xmlattr"><a name="CodeableConcept.coding.system"> </a>value="<span class="xmlattrvalue">urn:iso:std:iso:3166</span>"</span><span class="xmltag">/&gt;</span><a name="CodeableConcept.coding.system-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.code" class="xmltag">code</a></span><span class="xmlattr"><a name="CodeableConcept.coding.code"> </a>value="<span class="xmlattrvalue">US</span>"</span><span class="xmltag">/&gt;</span><a name="CodeableConcept.coding.code-end"> </a><b>
+         </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Coding.display" class="xmltag">display</a></span><span class="xmlattr"><a name="CodeableConcept.coding.display"> </a>value="<span class="xmlattrvalue">United States of America</span>"</span><span class="xmltag">/&gt;</span><a name="CodeableConcept.coding.display-end"> </a><b>
+      </b><span class="xmltag">&lt;/<a href="datatypes-definitions.html#CodeableConcept.coding" class="xmltag">coding</a>&gt;</span><a name="Library.jurisdiction.coding-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.jurisdiction" class="xmltag">jurisdiction</a>&gt;</span><a name="Library.jurisdiction-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.purpose" class="xmltag">purpose</a></span><span class="xmlattr"><a name="Library.purpose"> </a>value="<span class="xmlattrvalue">This library contains common logic across recommendations including MME calculations,
+   conversions, and looking up codes in valuesets.</span>"</span><span class="xmltag">/&gt;</span><a name="Library.purpose-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.usage" class="xmltag">usage</a></span><span class="xmlattr"><a name="Library.usage"> </a>value="<span class="xmlattrvalue">This library is used for decision support for opioid guideline recommendations when applying
+   PlanDefinitions.</span>"</span><span class="xmltag">/&gt;</span><a name="Library.usage-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.copyright" class="xmltag">copyright</a></span><span class="xmlattr"><a name="Library.copyright"> </a>value="<span class="xmlattrvalue">Â© CDC 2016+.</span>"</span><span class="xmltag">/&gt;</span><a name="Library.copyright-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.topic" class="xmltag">topic</a></span><span class="xmltag">&gt;</span><a name="Library.topic"> </a><b>
+      </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#CodeableConcept.text" class="xmltag">text</a></span><span class="xmlattr"><a name="Library.topic.text"> </a>value="<span class="xmlattrvalue">Opioid Prescribing</span>"</span><span class="xmltag">/&gt;</span><a name="Library.topic.text-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.topic" class="xmltag">topic</a>&gt;</span><a name="Library.topic-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.author" class="xmltag">author</a></span><span class="xmltag">&gt;</span><a name="Library.author"> </a><b>
+        </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#ContactDetail.name" class="xmltag">name</a></span><span class="xmlattr"><a name="Library.author.name"> </a>value="<span class="xmlattrvalue">Kensaku Kawamoto, MD, PhD, MHS</span>"</span><span class="xmltag">/&gt;</span><a name="Library.author.name-end"> </a><b>
+    </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.author" class="xmltag">author</a>&gt;</span><a name="Library.author-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.author" class="xmltag">author</a></span><span class="xmltag">&gt;</span><a name="Library.author"> </a><b>
+        </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#ContactDetail.name" class="xmltag">name</a></span><span class="xmlattr"><a name="Library.author.name"> </a>value="<span class="xmlattrvalue">Bryn Rhodes</span>"</span><span class="xmltag">/&gt;</span><a name="Library.author.name-end"> </a><b>
+    </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.author" class="xmltag">author</a>&gt;</span><a name="Library.author-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.author" class="xmltag">author</a></span><span class="xmltag">&gt;</span><a name="Library.author"> </a><b>
+        </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#ContactDetail.name" class="xmltag">name</a></span><span class="xmlattr"><a name="Library.author.name"> </a>value="<span class="xmlattrvalue">Floyd Eisenberg, MD, MPH</span>"</span><span class="xmltag">/&gt;</span><a name="Library.author.name-end"> </a><b>
+    </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.author" class="xmltag">author</a>&gt;</span><a name="Library.author-end"> </a><b>
+    </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.author" class="xmltag">author</a></span><span class="xmltag">&gt;</span><a name="Library.author"> </a><b>
+        </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#ContactDetail.name" class="xmltag">name</a></span><span class="xmlattr"><a name="Library.author.name"> </a>value="<span class="xmlattrvalue">Robert McClure, MD, MPH</span>"</span><span class="xmltag">/&gt;</span><a name="Library.author.name-end"> </a><b>
+    </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.author" class="xmltag">author</a>&gt;</span><a name="Library.author-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a></span><span class="xmltag">&gt;</span><a name="Library.relatedArtifact"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.type" class="xmltag">type</a></span><span class="xmlattr"><a name="Library.relatedArtifact.type"> </a>value="<span class="xmlattrvalue">documentation</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.type-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.display" class="xmltag">display</a></span><span class="xmlattr"><a name="Library.relatedArtifact.display"> </a>value="<span class="xmlattrvalue">CDC guideline for prescribing opioids for chronic pain</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.display-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.url" class="xmltag">url</a></span><span class="xmlattr"><a name="Library.relatedArtifact.url"> </a>value="<span class="xmlattrvalue">https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pai
+    n---united-states-2016#420</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.url-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a>&gt;</span><a name="Library.relatedArtifact-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a></span><span class="xmltag">&gt;</span><a name="Library.relatedArtifact"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.type" class="xmltag">type</a></span><span class="xmlattr"><a name="Library.relatedArtifact.type"> </a>value="<span class="xmlattrvalue">depends-on</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.type-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.resource" class="xmltag">resource</a></span><span class="xmlattr"><a name="Library.relatedArtifact.resource"> </a>value="<span class="xmlattrvalue">Library/omtk-logic</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.resource-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a>&gt;</span><a name="Library.relatedArtifact-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a></span><span class="xmltag">&gt;</span><a name="Library.relatedArtifact"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.type" class="xmltag">type</a></span><span class="xmlattr"><a name="Library.relatedArtifact.type"> </a>value="<span class="xmlattrvalue">documentation</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.type-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.display" class="xmltag">display</a></span><span class="xmlattr"><a name="Library.relatedArtifact.display"> </a>value="<span class="xmlattrvalue">MME Conversion Tables</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.display-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="metadatatypes-definitions.html#RelatedArtifact.url" class="xmltag">url</a></span><span class="xmlattr"><a name="Library.relatedArtifact.url"> </a>value="<span class="xmlattrvalue">https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf</span>"</span><span class="xmltag">/&gt;</span><a name="Library.relatedArtifact.url-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.relatedArtifact" class="xmltag">relatedArtifact</a>&gt;</span><a name="Library.relatedArtifact-end"> </a><b>
+   </b><span class="xmltag">&lt;<a href="library-definitions.html#Library.content" class="xmltag">content</a></span><span class="xmltag">&gt;</span><a name="Library.content"> </a><b>
+      </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Attachment.contentType" class="xmltag">contentType</a></span><span class="xmlattr"><a name="Library.content.contentType"> </a>value="<span class="xmlattrvalue">application/elm+xml</span>"</span><span class="xmltag">/&gt;</span><a name="Library.content.contentType-end"> </a><b>
+      </b><span class="xmltag">&lt;<a href="datatypes-definitions.html#Attachment.data" class="xmltag">data</a></span><span class="xmlattr"><a name="Library.content.data"> </a>value="<span class="xmlattrvalue">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGxpYnJhcnkgeG1sbnM9InVybjpobDctb3JnOmVsbTpyMSIg
+    eG1sbnM6dD0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZ
+    W1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczpmaGlyPSJodHRwOi
+    8vaGw3Lm9yZy9maGlyIiB4bWxuczpxZG00Mz0idXJuOmhlYWx0aGl0LWdvdjpxZG06djRfMyIgeG1sbnM6cWRtNTM9InVybjpoZWF
+    sdGhpdC1nb3Y6cWRtOnY1XzMiIHhtbG5zOmE9InVybjpobDctb3JnOmNxbC1hbm5vdGF0aW9uczpyMSI+CiAgIDxpZGVudGlmaWVy
+    IGlkPSJPcGlvaWRDRFNfU1RVNF9Db21tb24iIHZlcnNpb249IjAuMS4wIi8+CiAgIDxzY2hlbWFJZGVudGlmaWVyIGlkPSJ1cm46a
+    Gw3LW9yZzplbG0iIHZlcnNpb249InIxIi8+CiAgIDx1c2luZ3M+CiAgICAgIDxkZWYgbG9jYWxJZGVudGlmaWVyPSJTeXN0ZW0iIH
+    VyaT0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIi8+CiAgICAgIDxkZWYgbG9jYWxJZGVudGlmaWVyPSJGSElSIiB1cmk9Imh0dHA
+    6Ly9obDcub3JnL2ZoaXIiIHZlcnNpb249IjMuMi4wIi8+CiAgIDwvdXNpbmdzPgogICA8aW5jbHVkZXM+CiAgICAgIDxkZWYgbG9j
+    YWxJZGVudGlmaWVyPSJPTVRLTG9naWMiIHBhdGg9Ik9NVEtMb2dpYyIgdmVyc2lvbj0iMC4xLjAiLz4KICAgPC9pbmNsdWRlcz4KI
+    CAgPHZhbHVlU2V0cz4KICAgICAgPGRlZiBuYW1lPSJCZW56b2RpYXplcGluZXMiIGlkPSJiZW56b2RpYXplcGluZXMiIGFjY2Vzc0
+    xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBuYW1lPSJOYWxveG9uZSIgaWQ9Im5hbG94b25lIiBhY2Nlc3NMZXZlbD0iUHVibGl
+    jIi8+CiAgICAgIDxkZWYgbmFtZT0iQW1idWxhdG9yeSBBYnVzZSBQb3RlbnRpYWwgT3Bpb2lkcyIgaWQ9Im9waW9pZHMtYWJ1c2Vk
+    LWluLWFtYnVsYXRvcnktY2FyZSIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgogICAgICA8ZGVmIG5hbWU9IkVuZCBPZiBMaWZlIE9wa
+    W9pZHMiIGlkPSJvcGlvaWRzLWluZGljYXRpbmctZW5kLW9mLWxpZmUiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZi
+    BuYW1lPSJMb25nIEFjdGluZyBPcGlvaWRzIiBpZD0ibG9uZy1hY3Rpbmctb3Bpb2lkcyIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgo
+    gICAgICA8ZGVmIG5hbWU9IklsbGljaXQgRHJ1ZyBTY3JlZW5pbmciIGlkPSJpbGxpY2l0LWRydWctdXJpbmUtc2NyZWVuaW5nIiBh
+    Y2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbmFtZT0iT3Bpb2lkIERydWcgU2NyZWVuaW5nIiBpZD0ib3Bpb2lkLXVya
+    W5lLXNjcmVlbmluZyIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgogICAgICA8ZGVmIG5hbWU9Ik9waW9pZHMiIGlkPSJvcGlvaWRzIi
+    BhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbmFtZT0iQ29kZWluZSBDb3VnaCBNZWRzIiBpZD0ib3Bpb2lkcy1jb2R
+    laW5lLWNvdWdoLW1lZHMiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBuYW1lPSJTaG9ydCBBY3RpbmcgT3Bpb2lk
+    cyIgaWQ9InNob3J0LWFjdGluZy1vcGlvaWRzIiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgIDwvdmFsdWVTZXRzPgogICA8c3Rhd
+    GVtZW50cz4KICAgICAgPGRlZiBuYW1lPSJJc0ZvckNocm9uaWNQYWluIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUH
+    VibGljIj4KICAgICAgICAgPGV4cHJlc3Npb24gdmFsdWVUeXBlPSJ0OkJvb2xlYW4iIHZhbHVlPSJ0cnVlIiB4c2k6dHlwZT0iTGl
+    0ZXJhbCIvPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBuYW1lPSJIYXNNZXRhc3RhdGljQ2FuY2VyIiBjb250ZXh0PSJQYXRpZW50
+    IiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGV4cHJlc3Npb24gdmFsdWVUeXBlPSJ0OkJvb2xlYW4iIHZhbHVlPSJmY
+    WxzZSIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iVG9Db2RlIiBjb250ZXh0PSJQYX
+    RpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIiB4c2k6dHlwZT0iRnVuY3Rpb25EZWYiPgogICAgICAgICA8ZXhwcmVzc2lvbiBjbGF
+    zc1R5cGU9InQ6Q29kZSIgeHNpOnR5cGU9Ikluc3RhbmNlIj4KICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0iY29kZSI+CiAgICAg
+    ICAgICAgICAgIDx2YWx1ZSBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgPHNvdXJjZ
+    SBwYXRoPSJjb2RlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9ImNvZGluZy
+    IgeHNpOnR5cGU9Ik9wZXJhbmRSZWYiLz4KICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgIDwvdmFsdWU
+    +CiAgICAgICAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0ic3lzdGVtIj4KICAgICAgICAgICAgICAg
+    PHZhbHVlIHBhdGg9InZhbHVlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9InN5c
+    3RlbSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJjb2RpbmciIHhzaTp0eX
+    BlPSJPcGVyYW5kUmVmIi8+CiAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICA8L3ZhbHVlPgogICAgICA
+    gICAgICA8L2VsZW1lbnQ+CiAgICAgICAgICAgIDxlbGVtZW50IG5hbWU9InZlcnNpb24iPgogICAgICAgICAgICAgICA8dmFsdWUg
+    cGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0idmVyc2lvbiIge
+    HNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJjb2RpbmciIHhzaTp0eXBlPSJPcG
+    VyYW5kUmVmIi8+CiAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICA8L3ZhbHVlPgogICAgICAgICAgICA
+    8L2VsZW1lbnQ+CiAgICAgICAgICAgIDxlbGVtZW50IG5hbWU9ImRpc3BsYXkiPgogICAgICAgICAgICAgICA8dmFsdWUgcGF0aD0i
+    dmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0iZGlzcGxheSIgeHNpOnR5c
+    GU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJjb2RpbmciIHhzaTp0eXBlPSJPcGVyYW5kUm
+    VmIi8+CiAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICA8L3ZhbHVlPgogICAgICAgICAgICA8L2VsZW1
+    lbnQ+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0iY29kaW5nIj4KICAgICAgICAgICAgPG9w
+    ZXJhbmRUeXBlU3BlY2lmaWVyIG5hbWU9ImZoaXI6Q29kaW5nIiB4c2k6dHlwZT0iTmFtZWRUeXBlU3BlY2lmaWVyIi8+CiAgICAgI
+    CAgIDwvb3BlcmFuZD4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iVG9RdWFudGl0eSIgY29udGV4dD0iUGF0aWVudCIgYW
+    NjZXNzTGV2ZWw9IlB1YmxpYyIgeHNpOnR5cGU9IkZ1bmN0aW9uRGVmIj4KICAgICAgICAgPGV4cHJlc3Npb24gY2xhc3NUeXBlPSJ
+    0OlF1YW50aXR5IiB4c2k6dHlwZT0iSW5zdGFuY2UiPgogICAgICAgICAgICA8ZWxlbWVudCBuYW1lPSJ2YWx1ZSI+CiAgICAgICAg
+    ICAgICAgIDx2YWx1ZSBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwY
+    XRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJxdWFudGl0eS
+    IgeHNpOnR5cGU9Ik9wZXJhbmRSZWYiLz4KICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgIDwvdmFsdWU
+    +CiAgICAgICAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0idW5pdCI+CiAgICAgICAgICAgICAgIDx2
+    YWx1ZSBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJ1bml0I
+    iB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9InF1YW50aXR5IiB4c2k6dHlwZT
+    0iT3BlcmFuZFJlZiIvPgogICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgPC92YWx1ZT4KICAgICAgICA
+    gICAgPC9lbGVtZW50PgogICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgIDxvcGVyYW5kIG5hbWU9InF1YW50aXR5Ij4KICAg
+    ICAgICAgICAgPG9wZXJhbmRUeXBlU3BlY2lmaWVyIG5hbWU9ImZoaXI6UXVhbnRpdHkiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcGVja
+    WZpZXIiLz4KICAgICAgICAgPC9vcGVyYW5kPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBuYW1lPSJQcmVzY3JpcHRpb25zIiBjb2
+    50ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIiB4c2k6dHlwZT0iRnVuY3Rpb25EZWYiPgogICAgICAgICA8ZXhwcmV
+    zc2lvbiB4c2k6dHlwZT0iUXVlcnkiPgogICAgICAgICAgICA8c291cmNlIGFsaWFzPSJPIj4KICAgICAgICAgICAgICAgPGV4cHJl
+    c3Npb24gbmFtZT0iT3JkZXJzIiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgogICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgI
+    CAgPGxldCBpZGVudGlmaWVyPSJyeE5vcm1Db2RlIj4KICAgICAgICAgICAgICAgPGV4cHJlc3Npb24gbmFtZT0iVG9Db2RlIiB4c2
+    k6dHlwZT0iRnVuY3Rpb25SZWYiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iSW5kZXhlciI+CiAgICAgICA
+    gICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9ImNvZGluZyIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAg
+    ICAgICAgPHNvdXJjZSBwYXRoPSJtZWRpY2F0aW9uIiBzY29wZT0iTyIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgI
+    CAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OkludGVnZXIiIHZhbH
+    VlPSIwIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgIDwvZXh
+    wcmVzc2lvbj4KICAgICAgICAgICAgPC9sZXQ+CiAgICAgICAgICAgIDxsZXQgaWRlbnRpZmllcj0ibWVkaWNhdGlvbk5hbWUiPgog
+    ICAgICAgICAgICAgICA8ZXhwcmVzc2lvbiBuYW1lPSJHZXRNZWRpY2F0aW9uTmFtZSIgbGlicmFyeU5hbWU9Ik9NVEtMb2dpYyIge
+    HNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0icnhOb3JtQ29kZSIgeHNpOnR5cG
+    U9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgPC9sZXQ+CiAgICAgICAgICA
+    gIDxsZXQgaWRlbnRpZmllcj0iZG9zYWdlSW5zdHJ1Y3Rpb24iPgogICAgICAgICAgICAgICA8ZXhwcmVzc2lvbiB4c2k6dHlwZT0i
+    SW5kZXhlciI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9ImRvc2FnZUluc3RydWN0aW9uIiBzY29wZT0iTyIgeHNpO
+    nR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVHlwZT0idDpJbnRlZ2VyIiB2YWx1ZT0iMC
+    IgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgPC9leHByZXNzaW9uPgogICAgICAgICAgICA8L2xldD4KICAgICA
+    gICAgICAgPGxldCBpZGVudGlmaWVyPSJyZXBlYXQiPgogICAgICAgICAgICAgICA8ZXhwcmVzc2lvbiBwYXRoPSJyZXBlYXQiIHhz
+    aTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0idGltaW5nIiB4c2k6dHlwZT0iUHJvcGVyd
+    HkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9ImRvc2FnZUluc3RydWN0aW9uIiB4c2k6dHlwZT0iUXVlcnlMZX
+    RSZWYiLz4KICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICA
+    gPC9sZXQ+CiAgICAgICAgICAgIDxsZXQgaWRlbnRpZmllcj0iZnJlcXVlbmN5Ij4KICAgICAgICAgICAgICAgPGV4cHJlc3Npb24g
+    eHNpOnR5cGU9IkNvYWxlc2NlIj4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZ
+    XJ0eSI+CiAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0iZnJlcXVlbmN5TWF4IiB4c2k6dHlwZT0iUHJvcGVydHkiPg
+    ogICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9InJlcGVhdCIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICA
+    gICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgIDxv
+    cGVyYW5kIHBhdGg9InZhbHVlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9I
+    mZyZXF1ZW5jeSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJyZXBlYX
+    QiIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICA
+    gPC9vcGVyYW5kPgogICAgICAgICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgICAgIDwvbGV0PgogICAgICAgICAgICA8bGV0
+    IGlkZW50aWZpZXI9InBlcmlvZCI+CiAgICAgICAgICAgICAgIDxleHByZXNzaW9uIGNsYXNzVHlwZT0idDpRdWFudGl0eSIgeHNpO
+    nR5cGU9Ikluc3RhbmNlIj4KICAgICAgICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0idmFsdWUiPgogICAgICAgICAgICAgICAgIC
+    AgICA8dmFsdWUgcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2U
+    gcGF0aD0icGVyaW9kIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9
+    InJlcGVhdCIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgI
+    CAgICAgICAgICAgICA8L3ZhbHVlPgogICAgICAgICAgICAgICAgICA8L2VsZW1lbnQ+CiAgICAgICAgICAgICAgICAgIDxlbGVtZW
+    50IG5hbWU9InVuaXQiPgogICAgICAgICAgICAgICAgICAgICA8dmFsdWUgcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI
+    +CiAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0icGVyaW9kVW5pdCIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAg
+    ICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJyZXBlYXQiIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgI
+    CAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgICAgPC92YWx1ZT4KICAgICAgICAgICAgICAgIC
+    AgPC9lbGVtZW50PgogICAgICAgICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgICAgIDwvbGV0PgogICAgICAgICAgICA8bGV
+    0IGlkZW50aWZpZXI9ImRvc2VEZXNjcmlwdGlvbiI+CiAgICAgICAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJDb2FsZXNj
+    ZSI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJUb0xpc3QiPgogICAgICAgICAgICAgICAgICAgICA8b3Blc
+    mFuZCB4c2k6dHlwZT0iSWYiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y29uZGl0aW9uIGFzVHlwZT0idDpCb29sZWFuIiB4c2
+    k6dHlwZT0iQXMiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iSXMiPgogICAgICAgICAgICA
+    gICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJkb3NlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAg
+    ICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9ImRvc2FnZUluc3RydWN0aW9uIiB4c2k6dHlwZT0iUXVlcnlMZXRSZWYiLz4KI
+    CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aXNUeX
+    BlU3BlY2lmaWVyIG5hbWU9ImZoaXI6UmFuZ2UiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcGVjaWZpZXIiLz4KICAgICAgICAgICAgICA
+    gICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICA8L2NvbmRpdGlvbj4KICAgICAgICAgICAgICAg
+    ICAgICAgICAgPHRoZW4geHNpOnR5cGU9IkNvbmNhdGVuYXRlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQge
+    HNpOnR5cGU9IkNvbmNhdGVuYXRlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IkNvbm
+    NhdGVuYXRlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IlRvU3RyaW5nIj4KICA
+    gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iVG9RdWFudGl0eSIgeHNpOnR5cGU9IkZ1bmN0
+    aW9uUmVmIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0ibG93IiB4c2k6dHlwZ
+    T0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9ImRvc2UiIH
+    hzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgbmF
+    tZT0iZG9zYWdlSW5zdHJ1Y3Rpb24iIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+    ICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogI
+    CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC
+    AgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OlN0cmluZyI
+    gdmFsdWU9Ii0iIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAg
+    ICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IlRvU3RyaW5nIj4KICAgICAgICAgICAgICAgICAgI
+    CAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iVG9RdWFudGl0eSIgeHNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgICAgIC
+    AgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0iaGlnaCIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICA
+    gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJkb3NlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAg
+    ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9ImRvc2FnZUluc3RydWN0aW9uIiB4c2k6d
+    HlwZT0iUXVlcnlMZXRSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgIC
+    AgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9
+    vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAg
+    IDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZ
+    XJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0idW5pdCIgeHNpOnR5cGU9IlByb3BlcnR5Ij
+    4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJoaWdoIiB4c2k6dHlwZT0iUHJvcGVydHkiPgo
+    gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9ImRvc2UiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+
+    CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgbmFtZT0iZG9zYWdlSW5zdHJ1Y3Rpb24iIHhza
+    Tp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgIC
+    AgICAgICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvc291cmNlPgo
+    gICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvdGhlbj4KICAgICAg
+    ICAgICAgICAgICAgICAgICAgPGVsc2UgeHNpOnR5cGU9IlRvU3RyaW5nIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZ
+    XJhbmQgbmFtZT0iVG9RdWFudGl0eSIgeHNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIC
+    AgPG9wZXJhbmQgYXNUeXBlPSJmaGlyOlF1YW50aXR5IiB4c2k6dHlwZT0iQXMiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA
+    gICAgICA8b3BlcmFuZCBwYXRoPSJkb3NlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+    ICAgICAgICA8c291cmNlIG5hbWU9ImRvc2FnZUluc3RydWN0aW9uIiB4c2k6dHlwZT0iUXVlcnlMZXRSZWYiLz4KICAgICAgICAgI
+    CAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+Ci
+    AgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgPC9lbHNlPgogICAgICA
+    gICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPC9leHBy
+    ZXNzaW9uPgogICAgICAgICAgICA8L2xldD4KICAgICAgICAgICAgPGxldCBpZGVudGlmaWVyPSJmcmVxdWVuY3lEZXNjcmlwdGlvb
+    iI+CiAgICAgICAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJDb25jYXRlbmF0ZSI+CiAgICAgICAgICAgICAgICAgIDxvcG
+    VyYW5kIHhzaTp0eXBlPSJUb1N0cmluZyI+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9InZhbHVlIiB4c2k6dHl
+    wZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9ImZyZXF1ZW5jeSIgeHNpOnR5cGU9IlBy
+    b3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJyZXBlYXQiIHhzaTp0eXBlPSJQcm9wZXJ0e
+    SI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0idGltaW5nIiB4c2k6dHlwZT0iUHJvcGVydHkiPg
+    ogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9ImRvc2FnZUluc3RydWN0aW9uIiB4c2k6dHlwZT0
+    iUXVlcnlMZXRSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAg
+    ICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgICAgPC9vc
+    GVyYW5kPgogICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJDb2
+    FsZXNjZSI+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJDb25jYXRlbmF0ZSI+CiAgICAgICAgICAgICA
+    gICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVHlwZT0idDpTdHJpbmciIHZhbHVlPSItIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAg
+    ICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iVG9TdHJpbmciPgogICAgICAgICAgICAgICAgICAgICAgICAgI
+    CA8b3BlcmFuZCBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPH
+    NvdXJjZSBwYXRoPSJmcmVxdWVuY3lNYXgiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA
+    gICAgIDxzb3VyY2UgcGF0aD0icmVwZWF0IiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+    ICAgICAgICA8c291cmNlIHBhdGg9InRpbWluZyIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgI
+    CAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJkb3NhZ2VJbnN0cnVjdGlvbiIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgIC
+    AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA
+    8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgICAgICAg
+    IDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICA8L29wZXJhb
+    mQ+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVHlwZT0idDpTdHJpbmciIHZhbHVlPSIiIHhzaTp0eXBlPSJMaX
+    RlcmFsIi8+CiAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPC9leHByZXNzaW9uPgogICAgICAgICA
+    gICA8L2xldD4KICAgICAgICAgICAgPHJldHVybj4KICAgICAgICAgICAgICAgPGV4cHJlc3Npb24geHNpOnR5cGU9IlR1cGxlIj4K
+    ICAgICAgICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0icnhOb3JtQ29kZSI+CiAgICAgICAgICAgICAgICAgICAgIDx2YWx1ZSBuY
+    W1lPSJyeE5vcm1Db2RlIiB4c2k6dHlwZT0iUXVlcnlMZXRSZWYiLz4KICAgICAgICAgICAgICAgICAgPC9lbGVtZW50PgogICAgIC
+    AgICAgICAgICAgICA8ZWxlbWVudCBuYW1lPSJpc0RyYWZ0Ij4KICAgICAgICAgICAgICAgICAgICAgPHZhbHVlIHhzaTp0eXBlPSJ
+    FcXVhbCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9InZhbHVlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgog
+    ICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9InN0YXR1cyIgc2NvcGU9Ik8iIHhzaTp0eXBlPSJQcm9wZXJ0e
+    SIvPgogICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbH
+    VlVHlwZT0idDpTdHJpbmciIHZhbHVlPSJkcmFmdCIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgICAgICAgPC9
+    2YWx1ZT4KICAgICAgICAgICAgICAgICAgPC9lbGVtZW50PgogICAgICAgICAgICAgICAgICA8ZWxlbWVudCBuYW1lPSJpc1BSTiI+
+    CiAgICAgICAgICAgICAgICAgICAgIDx2YWx1ZSBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgI
+    CAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJhc05lZWRlZCIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgIC
+    AgICAgICAgPHNvdXJjZSBuYW1lPSJkb3NhZ2VJbnN0cnVjdGlvbiIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICA
+    gICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICAgICAgICA8L3ZhbHVlPgogICAgICAgICAgICAgICAgICA8L2Vs
+    ZW1lbnQ+CiAgICAgICAgICAgICAgICAgIDxlbGVtZW50IG5hbWU9InByZXNjcmlwdGlvbiI+CiAgICAgICAgICAgICAgICAgICAgI
+    Dx2YWx1ZSB4c2k6dHlwZT0iSWYiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y29uZGl0aW9uIGFzVHlwZT0idDpCb29sZWFuIi
+    B4c2k6dHlwZT0iQXMiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iTm90Ij4KICAgICAgICA
+    gICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IklzTnVsbCI+CiAgICAgICAgICAgICAgICAgICAgICAgICAg
+    ICAgICAgIDxvcGVyYW5kIHBhdGg9InRleHQiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgI
+    CAgICAgICAgIDxzb3VyY2UgbmFtZT0iZG9zYWdlSW5zdHJ1Y3Rpb24iIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgICAgIC
+    AgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4
+    KICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICA8L2NvbmRpdGlvbj4K
+    ICAgICAgICAgICAgICAgICAgICAgICAgPHRoZW4geHNpOnR5cGU9IkNvbmNhdGVuYXRlIj4KICAgICAgICAgICAgICAgICAgICAgI
+    CAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IkNvbmNhdGVuYXRlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbm
+    QgbmFtZT0ibWVkaWNhdGlvbk5hbWUiIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICA
+    gICA8b3BlcmFuZCB2YWx1ZVR5cGU9InQ6U3RyaW5nIiB2YWx1ZT0iICIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAg
+    ICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJ2YWx1ZSIge
+    HNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJ0ZXh0IiB4c2k6dH
+    lwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9ImRvc2FnZUluc3RydWN
+    0aW9uIiB4c2k6dHlwZT0iUXVlcnlMZXRSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAg
+    ICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgPC90aGVuPgogICAgICAgICAgI
+    CAgICAgICAgICAgICA8ZWxzZSB4c2k6dHlwZT0iQ29uY2F0ZW5hdGUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3Blcm
+    FuZCB4c2k6dHlwZT0iQ29uY2F0ZW5hdGUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0
+    iQ29uY2F0ZW5hdGUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iQ29uY2F0ZW5h
+    dGUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iQ29uY2F0ZW5hdGUiPgogI
+    CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJtZWRpY2F0aW9uTmFtZSIgeHNpOnR5cG
+    U9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVHlwZT0
+    idDpTdHJpbmciIHZhbHVlPSIgIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+    ICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9ImRvc2VEZXNjcmlwd
+    GlvbiIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KIC
+    AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OlN0cmluZyIgdmFsdWU9IiBxIiB4c2k
+    6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAg
+    ICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9ImZyZXF1ZW5jeURlc2NyaXB0aW9uIiB4c2k6dHlwZT0iUXVlcnlMZXRSZWYiLz4KI
+    CAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2
+    k6dHlwZT0iSWYiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8Y29uZGl0aW9uIGFzVHlwZT0idDpCb29sZWFuIiB4c2k
+    6dHlwZT0iQXMiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9
+    IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJhc05lZWRlZCIgeHNpO
+    nR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJkb3NhZ2
+    VJbnN0cnVjdGlvbiIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDw
+    vc291cmNlPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAg
+    ICAgICAgIDwvY29uZGl0aW9uPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGhlbiB2YWx1ZVR5cGU9InQ6U3RyaW5nI
+    iB2YWx1ZT0iIFBSTiIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGVsc2UgdmFsdW
+    VUeXBlPSJ0OlN0cmluZyIgdmFsdWU9IiIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9
+    vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICA8L2Vsc2U+CiAgICAgICAgICAgICAgICAgICAgIDwvdmFsdWU+CiAgICAg
+    ICAgICAgICAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0iZG9zZSI+CiAgICAgICAgICAgI
+    CAgICAgICAgIDx2YWx1ZSB4c2k6dHlwZT0iSWYiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y29uZGl0aW9uIGFzVHlwZT0idD
+    pCb29sZWFuIiB4c2k6dHlwZT0iQXMiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iSXMiPgo
+    gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJkb3NlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAg
+    ICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9ImRvc2FnZUluc3RydWN0aW9uIiB4c2k6dHlwZT0iUXVlc
+    nlMZXRSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgIC
+    AgICAgICA8aXNUeXBlU3BlY2lmaWVyIG5hbWU9ImZoaXI6UmFuZ2UiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcGVjaWZpZXIiLz4KICA
+    gICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICA8L2NvbmRpdGlvbj4KICAg
+    ICAgICAgICAgICAgICAgICAgICAgPHRoZW4gbmFtZT0iVG9RdWFudGl0eSIgeHNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgI
+    CAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0iaGlnaCIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgIC
+    AgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJkb3NlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICA
+    gICAgICAgICAgICAgICA8c291cmNlIG5hbWU9ImRvc2FnZUluc3RydWN0aW9uIiB4c2k6dHlwZT0iUXVlcnlMZXRSZWYiLz4KICAg
+    ICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KI
+    CAgICAgICAgICAgICAgICAgICAgICAgPC90aGVuPgogICAgICAgICAgICAgICAgICAgICAgICA8ZWxzZSBuYW1lPSJUb1F1YW50aX
+    R5IiB4c2k6dHlwZT0iRnVuY3Rpb25SZWYiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBhc1R5cGU9ImZoaXI
+    6UXVhbnRpdHkiIHhzaTp0eXBlPSJBcyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9ImRvc2Ui
+    IHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgbmFtZT0iZG9zYWdlS
+    W5zdHJ1Y3Rpb24iIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbm
+    Q+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgPC9lbHNlPgogICA
+    gICAgICAgICAgICAgICAgICA8L3ZhbHVlPgogICAgICAgICAgICAgICAgICA8L2VsZW1lbnQ+CiAgICAgICAgICAgICAgICAgIDxl
+    bGVtZW50IG5hbWU9ImRvc2VzUGVyRGF5Ij4KICAgICAgICAgICAgICAgICAgICAgPHZhbHVlIHhzaTp0eXBlPSJDb2FsZXNjZSI+C
+    iAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9IlRvRGFpbHkiIGxpYnJhcnlOYW1lPSJPTVRLTG9naWMiIHhzaT
+    p0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9ImZyZXF1ZW5jeSIgeHN
+    pOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9InBlcmlvZCIgeHNp
+    OnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgI
+    CAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OkRlY2ltYWwiIHZhbHVlPSIxLjAiIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiAgICAgIC
+    AgICAgICAgICAgICAgIDwvdmFsdWU+CiAgICAgICAgICAgICAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgICAgPC9leHByZXN
+    zaW9uPgogICAgICAgICAgICA8L3JldHVybj4KICAgICAgICAgPC9leHByZXNzaW9uPgogICAgICAgICA8b3BlcmFuZCBuYW1lPSJP
+    cmRlcnMiPgogICAgICAgICAgICA8b3BlcmFuZFR5cGVTcGVjaWZpZXIgeHNpOnR5cGU9Ikxpc3RUeXBlU3BlY2lmaWVyIj4KICAgI
+    CAgICAgICAgICAgPGVsZW1lbnRUeXBlIG5hbWU9ImZoaXI6TWVkaWNhdGlvblJlcXVlc3QiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcG
+    VjaWZpZXIiLz4KICAgICAgICAgICAgPC9vcGVyYW5kVHlwZVNwZWNpZmllcj4KICAgICAgICAgPC9vcGVyYW5kPgogICAgICA8L2R
+    lZj4KICAgICAgPGRlZiBuYW1lPSJNTUUiIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiIHhzaTp0eXBlPSJG
+    dW5jdGlvbkRlZiI+CiAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJRdWVyeSI+CiAgICAgICAgICAgIDxzb3VyY2UgYWxpY
+    XM9IlAiPgogICAgICAgICAgICAgICA8ZXhwcmVzc2lvbiBuYW1lPSJQcmVzY3JpcHRpb25zIiB4c2k6dHlwZT0iRnVuY3Rpb25SZW
+    YiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJwcmVzY3JpcHRpb25zIiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgo
+    gICAgICAgICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICA8bGV0IGlkZW50aWZp
+    ZXI9Im1tZSI+CiAgICAgICAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJTaW5nbGV0b25Gcm9tIj4KICAgICAgICAgICAgI
+    CAgICAgPG9wZXJhbmQgbmFtZT0iQ2FsY3VsYXRlTU1FcyIgbGlicmFyeU5hbWU9Ik9NVEtMb2dpYyIgeHNpOnR5cGU9IkZ1bmN0aW
+    9uUmVmIj4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9Ikxpc3QiPgogICAgICAgICAgICAgICAgICAgICA
+    gICA8ZWxlbWVudCB4c2k6dHlwZT0iVHVwbGUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8ZWxlbWVudCBuYW1lPSJyeE5v
+    cm1Db2RlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHZhbHVlIHBhdGg9InJ4Tm9ybUNvZGUiIHNjb3BlPSJQIiB4c
+    2k6dHlwZT0iUHJvcGVydHkiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9lbGVtZW50PgogICAgICAgICAgICAgICAgIC
+    AgICAgICAgICA8ZWxlbWVudCBuYW1lPSJkb3NlUXVhbnRpdHkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dmFsdWU
+    gcGF0aD0iZG9zZSIgc2NvcGU9IlAiIHhzaTp0eXBlPSJQcm9wZXJ0eSIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Vs
+    ZW1lbnQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxlbGVtZW50IG5hbWU9ImRvc2VzUGVyRGF5Ij4KICAgICAgICAgICAgI
+    CAgICAgICAgICAgICAgICAgPHZhbHVlIHBhdGg9ImRvc2VzUGVyRGF5IiBzY29wZT0iUCIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+Ci
+    AgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgICAgICAgICAgICAgPC9lbGVtZW50PgogICA
+    gICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPC9l
+    eHByZXNzaW9uPgogICAgICAgICAgICA8L2xldD4KICAgICAgICAgICAgPHJldHVybj4KICAgICAgICAgICAgICAgPGV4cHJlc3Npb
+    24geHNpOnR5cGU9IlR1cGxlIj4KICAgICAgICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0icnhOb3JtQ29kZSI+CiAgICAgICAgIC
+    AgICAgICAgICAgIDx2YWx1ZSBwYXRoPSJyeE5vcm1Db2RlIiBzY29wZT0iUCIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICA
+    gICAgICAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0iaXNEcmFmdCI+CiAgICAgICAgICAg
+    ICAgICAgICAgIDx2YWx1ZSBwYXRoPSJpc0RyYWZ0IiBzY29wZT0iUCIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgI
+    CAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0iaXNQUk4iPgogICAgICAgICAgICAgICAgIC
+    AgICA8dmFsdWUgcGF0aD0iaXNQUk4iIHNjb3BlPSJQIiB4c2k6dHlwZT0iUHJvcGVydHkiLz4KICAgICAgICAgICAgICAgICAgPC9
+    lbGVtZW50PgogICAgICAgICAgICAgICAgICA8ZWxlbWVudCBuYW1lPSJwcmVzY3JpcHRpb24iPgogICAgICAgICAgICAgICAgICAg
+    ICA8dmFsdWUgcGF0aD0icHJlc2NyaXB0aW9uIiBzY29wZT0iUCIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgICAgI
+    CAgIDwvZWxlbWVudD4KICAgICAgICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0iZGFpbHlEb3NlIj4KICAgICAgICAgICAgICAgIC
+    AgICAgPHZhbHVlIHBhdGg9ImRhaWx5RG9zZURlc2NyaXB0aW9uIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICA
+    gICAgICAgICA8c291cmNlIG5hbWU9Im1tZSIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgIDwv
+    dmFsdWU+CiAgICAgICAgICAgICAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgICAgICAgPGVsZW1lbnQgbmFtZT0iY29udmVyc
+    2lvbkZhY3RvciI+CiAgICAgICAgICAgICAgICAgICAgIDx2YWx1ZSBwYXRoPSJjb252ZXJzaW9uRmFjdG9yIiB4c2k6dHlwZT0iUH
+    JvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9Im1tZSIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8
+    +CiAgICAgICAgICAgICAgICAgICAgIDwvdmFsdWU+CiAgICAgICAgICAgICAgICAgIDwvZWxlbWVudD4KICAgICAgICAgICAgICAg
+    ICAgPGVsZW1lbnQgbmFtZT0ibW1lIj4KICAgICAgICAgICAgICAgICAgICAgPHZhbHVlIHBhdGg9Im1tZSIgeHNpOnR5cGU9IlByb
+    3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJtbWUiIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPg
+    ogICAgICAgICAgICAgICAgICAgICA8L3ZhbHVlPgogICAgICAgICAgICAgICAgICA8L2VsZW1lbnQ+CiAgICAgICAgICAgICAgIDw
+    vZXhwcmVzc2lvbj4KICAgICAgICAgICAgPC9yZXR1cm4+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgPG9wZXJhbmQg
+    bmFtZT0icHJlc2NyaXB0aW9ucyI+CiAgICAgICAgICAgIDxvcGVyYW5kVHlwZVNwZWNpZmllciB4c2k6dHlwZT0iTGlzdFR5cGVTc
+    GVjaWZpZXIiPgogICAgICAgICAgICAgICA8ZWxlbWVudFR5cGUgbmFtZT0iZmhpcjpNZWRpY2F0aW9uUmVxdWVzdCIgeHNpOnR5cG
+    U9Ik5hbWVkVHlwZVNwZWNpZmllciIvPgogICAgICAgICAgICA8L29wZXJhbmRUeXBlU3BlY2lmaWVyPgogICAgICAgICA8L29wZXJ
+    hbmQ+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIG5hbWU9IlRvdGFsTU1FIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0i
+    UHVibGljIiB4c2k6dHlwZT0iRnVuY3Rpb25EZWYiPgogICAgICAgICA8ZXhwcmVzc2lvbiBjbGFzc1R5cGU9InQ6UXVhbnRpdHkiI
+    HhzaTp0eXBlPSJJbnN0YW5jZSI+CiAgICAgICAgICAgIDxlbGVtZW50IG5hbWU9InZhbHVlIj4KICAgICAgICAgICAgICAgPHZhbH
+    VlIHhzaTp0eXBlPSJTdW0iPgogICAgICAgICAgICAgICAgICA8c291cmNlIHhzaTp0eXBlPSJRdWVyeSI+CiAgICAgICAgICAgICA
+    gICAgICAgIDxzb3VyY2UgYWxpYXM9Ik0iPgogICAgICAgICAgICAgICAgICAgICAgICA8ZXhwcmVzc2lvbiBuYW1lPSJNTUUiIHhz
+    aTp0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9InByZXNjcmlwdGlvb
+    nMiIHhzaTp0eXBlPSJPcGVyYW5kUmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgIC
+    AgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgIDxyZXR1cm4+CiAgICAgICAgICAgICAgICAgICAgICAgIDx
+    leHByZXNzaW9uIHBhdGg9InZhbHVlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8c291
+    cmNlIHBhdGg9Im1tZSIgc2NvcGU9Ik0iIHhzaTp0eXBlPSJQcm9wZXJ0eSIvPgogICAgICAgICAgICAgICAgICAgICAgICA8L2V4c
+    HJlc3Npb24+CiAgICAgICAgICAgICAgICAgICAgIDwvcmV0dXJuPgogICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgIC
+    AgICAgICAgPC92YWx1ZT4KICAgICAgICAgICAgPC9lbGVtZW50PgogICAgICAgICAgICA8ZWxlbWVudCBuYW1lPSJ1bml0Ij4KICA
+    gICAgICAgICAgICAgPHZhbHVlIHZhbHVlVHlwZT0idDpTdHJpbmciIHZhbHVlPSJtZy9kIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgog
+    ICAgICAgICAgICA8L2VsZW1lbnQ+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0icHJlc2Nya
+    XB0aW9ucyI+CiAgICAgICAgICAgIDxvcGVyYW5kVHlwZVNwZWNpZmllciB4c2k6dHlwZT0iTGlzdFR5cGVTcGVjaWZpZXIiPgogIC
+    AgICAgICAgICAgICA8ZWxlbWVudFR5cGUgbmFtZT0iZmhpcjpNZWRpY2F0aW9uUmVxdWVzdCIgeHNpOnR5cGU9Ik5hbWVkVHlwZVN
+    wZWNpZmllciIvPgogICAgICAgICAgICA8L29wZXJhbmRUeXBlU3BlY2lmaWVyPgogICAgICAgICA8L29wZXJhbmQ+CiAgICAgIDwv
+    ZGVmPgogICAgICA8ZGVmIG5hbWU9IkdldFBlcmlvZERheXMiIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiI
+    HhzaTp0eXBlPSJGdW5jdGlvbkRlZiI+CiAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJDYXNlIj4KICAgICAgICAgICAgPG
+    Nhc2VJdGVtPgogICAgICAgICAgICAgICA8d2hlbiB4c2k6dHlwZT0iU3RhcnRzV2l0aCI+CiAgICAgICAgICAgICAgICAgIDxvcGV
+    yYW5kIG5hbWU9InZhbHVlIiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB2YWx1ZVR5
+    cGU9InQ6U3RyaW5nIiB2YWx1ZT0ieWVhciIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgPC93aGVuPgogICAgI
+    CAgICAgICAgICA8dGhlbiB2YWx1ZVR5cGU9InQ6RGVjaW1hbCIgdmFsdWU9IjM2NS4wIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogIC
+    AgICAgICAgICA8L2Nhc2VJdGVtPgogICAgICAgICAgICA8Y2FzZUl0ZW0+CiAgICAgICAgICAgICAgIDx3aGVuIHhzaTp0eXBlPSJ
+    TdGFydHNXaXRoIj4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0idmFsdWUiIHhzaTp0eXBlPSJPcGVyYW5kUmVmIi8+
+    CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVHlwZT0idDpTdHJpbmciIHZhbHVlPSJtb250aCIgeHNpOnR5cGU9Ikxpd
+    GVyYWwiLz4KICAgICAgICAgICAgICAgPC93aGVuPgogICAgICAgICAgICAgICA8dGhlbiB2YWx1ZVR5cGU9InQ6RGVjaW1hbCIgdm
+    FsdWU9IjMwLjAiIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiAgICAgICAgICAgIDwvY2FzZUl0ZW0+CiAgICAgICAgICAgIDxjYXNlSXR
+    lbT4KICAgICAgICAgICAgICAgPHdoZW4geHNpOnR5cGU9IlN0YXJ0c1dpdGgiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBu
+    YW1lPSJ2YWx1ZSIgeHNpOnR5cGU9Ik9wZXJhbmRSZWYiLz4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0O
+    lN0cmluZyIgdmFsdWU9ImhvdXIiIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiAgICAgICAgICAgICAgIDwvd2hlbj4KICAgICAgICAgIC
+    AgICAgPHRoZW4geHNpOnR5cGU9IkRpdmlkZSI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVHlwZT0idDpEZWNpbWF
+    sIiB2YWx1ZT0iMS4wIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB2YWx1ZVR5cGU9InQ6
+    RGVjaW1hbCIgdmFsdWU9IjI0LjAiIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiAgICAgICAgICAgICAgIDwvdGhlbj4KICAgICAgICAgI
+    CAgPC9jYXNlSXRlbT4KICAgICAgICAgICAgPGNhc2VJdGVtPgogICAgICAgICAgICAgICA8d2hlbiB4c2k6dHlwZT0iU3RhcnRzV2
+    l0aCI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9InZhbHVlIiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgogICAgICA
+    gICAgICAgICAgICA8b3BlcmFuZCB2YWx1ZVR5cGU9InQ6U3RyaW5nIiB2YWx1ZT0ibWludXRlIiB4c2k6dHlwZT0iTGl0ZXJhbCIv
+    PgogICAgICAgICAgICAgICA8L3doZW4+CiAgICAgICAgICAgICAgIDx0aGVuIHhzaTp0eXBlPSJNdWx0aXBseSI+CiAgICAgICAgI
+    CAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJEaXZpZGUiPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB2YWx1ZVR5cG
+    U9InQ6RGVjaW1hbCIgdmFsdWU9IjEuMCIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQ
+    gdmFsdWVUeXBlPSJ0OkRlY2ltYWwiIHZhbHVlPSIyNC4wIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICAgICAgICA8
+    L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVHlwZT0idDpEZWNpbWFsIiB2YWx1ZT0iNjAuMCIgeHNpO
+    nR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgPC90aGVuPgogICAgICAgICAgICA8L2Nhc2VJdGVtPgogICAgICAgICAgIC
+    A8ZWxzZSB2YWx1ZVR5cGU9InQ6RGVjaW1hbCIgdmFsdWU9IjEuMCIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgPC9leHB
+    yZXNzaW9uPgogICAgICAgICA8b3BlcmFuZCBuYW1lPSJ2YWx1ZSI+CiAgICAgICAgICAgIDxvcGVyYW5kVHlwZVNwZWNpZmllciBu
+    YW1lPSJ0OlN0cmluZyIgeHNpOnR5cGU9Ik5hbWVkVHlwZVNwZWNpZmllciIvPgogICAgICAgICA8L29wZXJhbmQ+CiAgICAgIDwvZ
+    GVmPgogICAgICA8ZGVmIG5hbWU9IkdldER1cmF0aW9uSW5EYXlzIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibG
+    ljIiB4c2k6dHlwZT0iRnVuY3Rpb25EZWYiPgogICAgICAgICA8ZXhwcmVzc2lvbiB4c2k6dHlwZT0iQ2FzZSI+CiAgICAgICAgICA
+    gIDxjYXNlSXRlbT4KICAgICAgICAgICAgICAgPHdoZW4geHNpOnR5cGU9IlN0YXJ0c1dpdGgiPgogICAgICAgICAgICAgICAgICA8
+    b3BlcmFuZCBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoP
+    SJ1bml0IiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9InZhbHVlIiB4c2
+    k6dHlwZT0iT3BlcmFuZFJlZiIvPgogICAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgPC9vcGV
+    yYW5kPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB2YWx1ZVR5cGU9InQ6U3RyaW5nIiB2YWx1ZT0ieWVhciIgeHNpOnR5cGU9
+    IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgPC93aGVuPgogICAgICAgICAgICAgICA8dGhlbiB4c2k6dHlwZT0iTXVsdGlwbHkiP
+    gogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgIC
+    AgICAgICAgPHNvdXJjZSBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPHN
+    vdXJjZSBuYW1lPSJ2YWx1ZSIgeHNpOnR5cGU9Ik9wZXJhbmRSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAg
+    ICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OkRlY2ltYWwiI
+    HZhbHVlPSIzNjUuMCIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgPC90aGVuPgogICAgICAgICAgICA8L2Nhc2
+    VJdGVtPgogICAgICAgICAgICA8Y2FzZUl0ZW0+CiAgICAgICAgICAgICAgIDx3aGVuIHhzaTp0eXBlPSJTdGFydHNXaXRoIj4KICA
+    gICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAg
+    ICAgIDxzb3VyY2UgcGF0aD0idW5pdCIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZ
+    SBuYW1lPSJ2YWx1ZSIgeHNpOnR5cGU9Ik9wZXJhbmRSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgIC
+    AgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OlN0cmluZyIgdmFsdWU
+    9Im1vbnRoIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICAgICA8L3doZW4+CiAgICAgICAgICAgICAgIDx0aGVuIHhz
+    aTp0eXBlPSJNdWx0aXBseSI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9InZhbHVlIiB4c2k6dHlwZT0iUHJvcGVyd
+    HkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9InZhbHVlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgIC
+    AgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9InZhbHVlIiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgogICAgICAgICAgICAgICA
+    gICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB2YWx1
+    ZVR5cGU9InQ6RGVjaW1hbCIgdmFsdWU9IjMwLjAiIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiAgICAgICAgICAgICAgIDwvdGhlbj4KI
+    CAgICAgICAgICAgPC9jYXNlSXRlbT4KICAgICAgICAgICAgPGVsc2UgcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+Ci
+    AgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgIDx
+    zb3VyY2UgbmFtZT0idmFsdWUiIHhzaTp0eXBlPSJPcGVyYW5kUmVmIi8+CiAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAg
+    ICAgICA8L2Vsc2U+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0idmFsdWUiPgogICAgICAgI
+    CAgICA8b3BlcmFuZFR5cGVTcGVjaWZpZXIgbmFtZT0iZmhpcjpEdXJhdGlvbiIgeHNpOnR5cGU9Ik5hbWVkVHlwZVNwZWNpZmllci
+    IvPgogICAgICAgICA8L29wZXJhbmQ+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIG5hbWU9IlByb2JhYmxlRGF5c0luUmFuZ2UiIGN
+    vbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiIHhzaTp0eXBlPSJGdW5jdGlvbkRlZiI+CiAgICAgICAgIDxleHBy
+    ZXNzaW9uIHhzaTp0eXBlPSJRdWVyeSI+CiAgICAgICAgICAgIDxzb3VyY2UgYWxpYXM9Im9yZGVycyI+CiAgICAgICAgICAgICAgI
+    DxleHByZXNzaW9uIG5hbWU9Ik9yZGVycyIgeHNpOnR5cGU9Ik9wZXJhbmRSZWYiLz4KICAgICAgICAgICAgPC9zb3VyY2U+CiAgIC
+    AgICAgICAgIDxsZXQgaWRlbnRpZmllcj0iZnJlcXVlbmN5Ij4KICAgICAgICAgICAgICAgPGV4cHJlc3Npb24gcGF0aD0idmFsdWU
+    iIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0iZnJlcXVlbmN5IiB4c2k6dHlwZT0i
+    UHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9InJlcGVhdCIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KI
+    CAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJ0aW1pbmciIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgIC
+    AgICAgICAgICAgICAgICAgIDxzb3VyY2UgeHNpOnR5cGU9IkluZGV4ZXIiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA
+    8b3BlcmFuZCBwYXRoPSJkb3NhZ2VJbnN0cnVjdGlvbiIgc2NvcGU9Im9yZGVycyIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAg
+    ICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVHlwZT0idDpJbnRlZ2VyIiB2YWx1ZT0iMCIgeHNpOnR5cGU9I
+    kxpdGVyYWwiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvc2
+    91cmNlPgogICAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICA
+    gICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgPC9sZXQ+CiAgICAgICAgICAgIDxsZXQgaWRlbnRpZmllcj0icGVyaW9kIj4K
+    ICAgICAgICAgICAgICAgPGV4cHJlc3Npb24gcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgI
+    CAgIDxzb3VyY2UgcGF0aD0icGVyaW9kIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIH
+    BhdGg9InJlcGVhdCIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJ0aW1
+    pbmciIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgeHNpOnR5cGU9IkluZGV4
+    ZXIiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJkb3NhZ2VJbnN0cnVjdGlvbiIgc2NvcGU9I
+    m9yZGVycyIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlVH
+    lwZT0idDpJbnRlZ2VyIiB2YWx1ZT0iMCIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9
+    zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAg
+    ICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgPC9sZXQ+CiAgI
+    CAgICAgICAgIDxsZXQgaWRlbnRpZmllcj0icGVyaW9kRGF5cyI+CiAgICAgICAgICAgICAgIDxleHByZXNzaW9uIG5hbWU9IkdldF
+    BlcmlvZERheXMiIHhzaTp0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9InZhbHVlIiB
+    4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9InBlcmlvZFVuaXQiIHhzaTp0eXBl
+    PSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0icmVwZWF0IiB4c2k6dHlwZT0iUHJvcGVyd
+    HkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9InRpbWluZyIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KIC
+    AgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSB4c2k6dHlwZT0iSW5kZXhlciI+CiAgICAgICAgICAgICAgICAgICA
+    gICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9ImRvc2FnZUluc3RydWN0aW9uIiBzY29wZT0ib3JkZXJzIiB4c2k6dHlwZT0iUHJv
+    cGVydHkiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OkludGVnZXIiIHZhb
+    HVlPSIwIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgIC
+    AgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICA
+    gICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICA8L2V4cHJlc3Npb24+
+    CiAgICAgICAgICAgIDwvbGV0PgogICAgICAgICAgICA8bGV0IGlkZW50aWZpZXI9ImRvc2VzUGVyRGF5Ij4KICAgICAgICAgICAgI
+    CAgPGV4cHJlc3Npb24geHNpOnR5cGU9IklmIj4KICAgICAgICAgICAgICAgICAgPGNvbmRpdGlvbiBhc1R5cGU9InQ6Qm9vbGVhbi
+    IgeHNpOnR5cGU9IkFzIj4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IkdyZWF0ZXJPckVxdWFsIj4KICA
+    gICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IkRpdmlkZSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAg
+    IDxvcGVyYW5kIHhzaTp0eXBlPSJUb0RlY2ltYWwiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lP
+    SJmcmVxdWVuY3kiIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+Ci
+    AgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJNdWx0aXBseSI+CiAgICAgICAgICAgICAgICAgICA
+    gICAgICAgICAgIDxvcGVyYW5kIG5hbWU9InBlcmlvZCIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAg
+    ICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9InBlcmlvZERheXMiIHhzaTp0eXBlPSJRdWVyeUxldFJlZiIvPgogICAgICAgICAgI
+    CAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgIC
+    AgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OkRlY2ltYWwiIHZhbHVlPSIxLjAiIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiA
+    gICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgPC9jb25kaXRpb24+CiAgICAgICAgICAgICAg
+    ICAgIDx0aGVuIHZhbHVlVHlwZT0idDpEZWNpbWFsIiB2YWx1ZT0iMS4wIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgI
+    CAgICAgICA8ZWxzZSB4c2k6dHlwZT0iRGl2aWRlIj4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IlRvRG
+    VjaW1hbCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9ImZyZXF1ZW5jeSIgeHNpOnR5cGU9IlF1ZXJ5TGV
+    0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5
+    cGU9Ik11bHRpcGx5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0icGVyaW9kIiB4c2k6dHlwZT0iUXVlc
+    nlMZXRSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0icGVyaW9kRGF5cyIgeHNpOnR5cGU9IlF1ZX
+    J5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgPC9lbHNlPgogICAgICA
+    gICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgICAgIDwvbGV0PgogICAgICAgICAgICA8bGV0IGlkZW50aWZpZXI9InJlcGVh
+    dCI+CiAgICAgICAgICAgICAgIDxleHByZXNzaW9uIHBhdGg9InZhbHVlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgI
+    CAgICAgICA8c291cmNlIHBhdGg9Im51bWJlck9mUmVwZWF0c0FsbG93ZWQiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgIC
+    AgICAgICAgICAgIDxzb3VyY2UgcGF0aD0iZGlzcGVuc2VSZXF1ZXN0IiBzY29wZT0ib3JkZXJzIiB4c2k6dHlwZT0iUHJvcGVydHk
+    iLz4KICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgPC9s
+    ZXQ+CiAgICAgICAgICAgIDxsZXQgaWRlbnRpZmllcj0ic3VwcGx5RHVyYXRpb24iPgogICAgICAgICAgICAgICA8ZXhwcmVzc2lvb
+    iBuYW1lPSJHZXREdXJhdGlvbkluRGF5cyIgeHNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgICAgICAgICAgICAgPG9wZXJhbm
+    QgcGF0aD0iZXhwZWN0ZWRTdXBwbHlEdXJhdGlvbiIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgPHN
+    vdXJjZSBwYXRoPSJkaXNwZW5zZVJlcXVlc3QiIHNjb3BlPSJvcmRlcnMiIHhzaTp0eXBlPSJQcm9wZXJ0eSIvPgogICAgICAgICAg
+    ICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgPC9sZXQ+CiAgICAgICAgI
+    CAgIDxsZXQgaWRlbnRpZmllcj0idmFsaWRpdHlQZXJpb2QiPgogICAgICAgICAgICAgICA8ZXhwcmVzc2lvbiBwcmVjaXNpb249Ik
+    RheSIgeHNpOnR5cGU9IkR1cmF0aW9uQmV0d2VlbiI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9InZhbHVlIiB4c2k
+    6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9InN0YXJ0IiB4c2k6dHlwZT0iUHJvcGVy
+    dHkiPgogICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9InZhbGlkaXR5UGVyaW9kIiB4c2k6dHlwZT0iUHJvcGVyd
+    HkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9ImRpc3BlbnNlUmVxdWVzdCIgc2NvcGU9Im9yZGVycy
+    IgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICAgICA
+    gICA8L3NvdXJjZT4KICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlw
+    ZT0iVG9kYXkiLz4KICAgICAgICAgICAgICAgPC9leHByZXNzaW9uPgogICAgICAgICAgICA8L2xldD4KICAgICAgICAgICAgPGxld
+    CBpZGVudGlmaWVyPSJlbmREaWZmZXJlbmNlIj4KICAgICAgICAgICAgICAgPGV4cHJlc3Npb24geHNpOnR5cGU9IklmIj4KICAgIC
+    AgICAgICAgICAgICAgPGNvbmRpdGlvbiBhc1R5cGU9InQ6Qm9vbGVhbiIgeHNpOnR5cGU9IkFzIj4KICAgICAgICAgICAgICAgICA
+    gICAgPG9wZXJhbmQgeHNpOnR5cGU9Ikxlc3MiPgogICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJ2YWx1ZSIg
+    eHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJlbmQiIHhzaTp0eXBlP
+    SJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0idmFsaWRpdHlQZXJpb2QiIHhzaT
+    p0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgcGF0aD0iZGlzcGVuc2VSZXF
+    1ZXN0IiBzY29wZT0ib3JkZXJzIiB4c2k6dHlwZT0iUHJvcGVydHkiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9z
+    b3VyY2U+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhb
+    mQ+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJUb2RheSIvPgogICAgICAgICAgICAgICAgICAgIC
+    A8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgIDwvY29uZGl0aW9uPgogICAgICAgICAgICAgICAgICA8dGhlbiBwcmVjaXNpb24
+    9IkRheSIgeHNpOnR5cGU9IkR1cmF0aW9uQmV0d2VlbiI+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9InZhbHVl
+    IiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHBhdGg9ImVuZCIgeHNpOnR5cGU9I
+    lByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJ2YWxpZGl0eVBlcmlvZCIgeHNpOnR5cG
+    U9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBwYXRoPSJkaXNwZW5zZVJlcXVlc3QiIHN
+    jb3BlPSJvcmRlcnMiIHhzaTp0eXBlPSJQcm9wZXJ0eSIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NvdXJjZT4KICAg
+    ICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgI
+    CAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IlRvZGF5Ii8+CiAgICAgICAgICAgICAgICAgIDwvdGhlbj4KICAgICAgICAgICAgIC
+    AgICAgPGVsc2UgdmFsdWVUeXBlPSJ0OkludGVnZXIiIHZhbHVlPSIwIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICA
+    gICA8L2V4cHJlc3Npb24+CiAgICAgICAgICAgIDwvbGV0PgogICAgICAgICAgICA8cmV0dXJuPgogICAgICAgICAgICAgICA8ZXhw
+    cmVzc2lvbiB4c2k6dHlwZT0iR3JlYXRlck9yRXF1YWwiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iTXVsd
+    GlwbHkiPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iTXVsdGlwbHkiPgogICAgICAgICAgICAgICAgIC
+    AgICAgICA8b3BlcmFuZCBuYW1lPSJkb3Nlc1BlckRheSIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICA
+    gICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJEaXZpZGUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6
+    dHlwZT0iTXVsdGlwbHkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iVG9EZWNpbWFsI
+    j4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0icmVwZWF0IiB4c2k6dHlwZT0iUXVlcnlMZX
+    RSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICAgICA
+    gICA8b3BlcmFuZCBuYW1lPSJzdXBwbHlEdXJhdGlvbiIgeHNpOnR5cGU9IlF1ZXJ5TGV0UmVmIi8+CiAgICAgICAgICAgICAgICAg
+    ICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IlRvRGVjaW1hb
+    CI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9InZhbGlkaXR5UGVyaW9kIiB4c2k6dHlwZT0iUX
+    VlcnlMZXRSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICA
+    8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNp
+    OnR5cGU9IlRvRGVjaW1hbCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJTdWJ0cmFjdCI+CiAgI
+    CAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9ImRheXNQYXN0IiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgogIC
+    AgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJlbmREaWZmZXJlbmNlIiB4c2k6dHlwZT0iUXVlcnlMZXRSZWY
+    iLz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAg
+    ICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IlRvRGVjaW1hbCI+CiAgI
+    CAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9Im51bURheXNJbkRheXNQYXN0IiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPg
+    ogICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgPC9yZXR
+    1cm4+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0iT3JkZXJzIj4KICAgICAgICAgICAgPG9w
+    ZXJhbmRUeXBlU3BlY2lmaWVyIHhzaTp0eXBlPSJMaXN0VHlwZVNwZWNpZmllciI+CiAgICAgICAgICAgICAgIDxlbGVtZW50VHlwZ
+    SBuYW1lPSJmaGlyOk1lZGljYXRpb25SZXF1ZXN0IiB4c2k6dHlwZT0iTmFtZWRUeXBlU3BlY2lmaWVyIi8+CiAgICAgICAgICAgID
+    wvb3BlcmFuZFR5cGVTcGVjaWZpZXI+CiAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0iZGF5c1Bhc3Q
+    iPgogICAgICAgICAgICA8b3BlcmFuZFR5cGVTcGVjaWZpZXIgbmFtZT0idDpJbnRlZ2VyIiB4c2k6dHlwZT0iTmFtZWRUeXBlU3Bl
+    Y2lmaWVyIi8+CiAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0ibnVtRGF5c0luRGF5c1Bhc3QiPgogI
+    CAgICAgICAgICA8b3BlcmFuZFR5cGVTcGVjaWZpZXIgbmFtZT0idDpJbnRlZ2VyIiB4c2k6dHlwZT0iTmFtZWRUeXBlU3BlY2lmaW
+    VyIi8+CiAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iSXNOYWxveG9uZSIgY29udGV4dD0
+    iUGF0aWVudCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIgeHNpOnR5cGU9IkZ1bmN0aW9uRGVmIj4KICAgICAgICAgPGV4cHJlc3Npb24g
+    eHNpOnR5cGU9IkluVmFsdWVTZXQiPgogICAgICAgICAgICA8Y29kZSBuYW1lPSJyeE5vcm1Db2RlIiB4c2k6dHlwZT0iT3BlcmFuZ
+    FJlZiIvPgogICAgICAgICAgICA8dmFsdWVzZXQgbmFtZT0iTmFsb3hvbmUiLz4KICAgICAgICAgPC9leHByZXNzaW9uPgogICAgIC
+    AgICA8b3BlcmFuZCBuYW1lPSJyeE5vcm1Db2RlIj4KICAgICAgICAgICAgPG9wZXJhbmRUeXBlU3BlY2lmaWVyIG5hbWU9InQ6Q29
+    kZSIgeHNpOnR5cGU9Ik5hbWVkVHlwZVNwZWNpZmllciIvPgogICAgICAgICA8L29wZXJhbmQ+CiAgICAgIDwvZGVmPgogICAgICA8
+    ZGVmIG5hbWU9IklzQmVuem9kaWF6ZXBpbmUiIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiIHhzaTp0eXBlP
+    SJGdW5jdGlvbkRlZiI+CiAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJJblZhbHVlU2V0Ij4KICAgICAgICAgICAgPGNvZG
+    UgbmFtZT0icnhOb3JtQ29kZSIgeHNpOnR5cGU9Ik9wZXJhbmRSZWYiLz4KICAgICAgICAgICAgPHZhbHVlc2V0IG5hbWU9IkJlbnp
+    vZGlhemVwaW5lcyIvPgogICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgIDxvcGVyYW5kIG5hbWU9InJ4Tm9ybUNvZGUiPgog
+    ICAgICAgICAgICA8b3BlcmFuZFR5cGVTcGVjaWZpZXIgbmFtZT0idDpDb2RlIiB4c2k6dHlwZT0iTmFtZWRUeXBlU3BlY2lmaWVyI
+    i8+CiAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iSXNPcGlvaWRXaXRoQW1idWxhdG9yeU
+    FidXNlUG90ZW50aWFsIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIiB4c2k6dHlwZT0iRnVuY3Rpb25EZWY
+    iPgogICAgICAgICA8ZXhwcmVzc2lvbiB4c2k6dHlwZT0iSW5WYWx1ZVNldCI+CiAgICAgICAgICAgIDxjb2RlIG5hbWU9InJ4Tm9y
+    bUNvZGUiIHhzaTp0eXBlPSJPcGVyYW5kUmVmIi8+CiAgICAgICAgICAgIDx2YWx1ZXNldCBuYW1lPSJBbWJ1bGF0b3J5IEFidXNlI
+    FBvdGVudGlhbCBPcGlvaWRzIi8+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0icnhOb3JtQ2
+    9kZSI+CiAgICAgICAgICAgIDxvcGVyYW5kVHlwZVNwZWNpZmllciBuYW1lPSJ0OkNvZGUiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcGV
+    jaWZpZXIiLz4KICAgICAgICAgPC9vcGVyYW5kPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBuYW1lPSJJc0xvbmdBY3RpbmdPcGlv
+    aWQiIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiIHhzaTp0eXBlPSJGdW5jdGlvbkRlZiI+CiAgICAgICAgI
+    DxleHByZXNzaW9uIHhzaTp0eXBlPSJJblZhbHVlU2V0Ij4KICAgICAgICAgICAgPGNvZGUgbmFtZT0icnhOb3JtQ29kZSIgeHNpOn
+    R5cGU9Ik9wZXJhbmRSZWYiLz4KICAgICAgICAgICAgPHZhbHVlc2V0IG5hbWU9IkxvbmcgQWN0aW5nIE9waW9pZHMiLz4KICAgICA
+    gICAgPC9leHByZXNzaW9uPgogICAgICAgICA8b3BlcmFuZCBuYW1lPSJyeE5vcm1Db2RlIj4KICAgICAgICAgICAgPG9wZXJhbmRU
+    eXBlU3BlY2lmaWVyIG5hbWU9InQ6Q29kZSIgeHNpOnR5cGU9Ik5hbWVkVHlwZVNwZWNpZmllciIvPgogICAgICAgICA8L29wZXJhb
+    mQ+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIG5hbWU9IklzRW5kT2ZMaWZlT3Bpb2lkIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3
+    NMZXZlbD0iUHVibGljIiB4c2k6dHlwZT0iRnVuY3Rpb25EZWYiPgogICAgICAgICA8ZXhwcmVzc2lvbiB4c2k6dHlwZT0iSW5WYWx
+    1ZVNldCI+CiAgICAgICAgICAgIDxjb2RlIG5hbWU9InJ4Tm9ybUNvZGUiIHhzaTp0eXBlPSJPcGVyYW5kUmVmIi8+CiAgICAgICAg
+    ICAgIDx2YWx1ZXNldCBuYW1lPSJFbmQgT2YgTGlmZSBPcGlvaWRzIi8+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgP
+    G9wZXJhbmQgbmFtZT0icnhOb3JtQ29kZSI+CiAgICAgICAgICAgIDxvcGVyYW5kVHlwZVNwZWNpZmllciBuYW1lPSJ0OkNvZGUiIH
+    hzaTp0eXBlPSJOYW1lZFR5cGVTcGVjaWZpZXIiLz4KICAgICAgICAgPC9vcGVyYW5kPgogICAgICA8L2RlZj4KICAgICAgPGRlZiB
+    uYW1lPSJJc09waW9pZERydWdTY3JlZW4iIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiIHhzaTp0eXBlPSJG
+    dW5jdGlvbkRlZiI+CiAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJJblZhbHVlU2V0Ij4KICAgICAgICAgICAgPGNvZGUgb
+    mFtZT0ib2JzZXJ2YXRpb25Db2RlIiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgogICAgICAgICAgICA8dmFsdWVzZXQgbmFtZT0iT3
+    Bpb2lkIERydWcgU2NyZWVuaW5nIi8+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0ib2JzZXJ
+    2YXRpb25Db2RlIj4KICAgICAgICAgICAgPG9wZXJhbmRUeXBlU3BlY2lmaWVyIG5hbWU9InQ6Q29kZSIgeHNpOnR5cGU9Ik5hbWVk
+    VHlwZVNwZWNpZmllciIvPgogICAgICAgICA8L29wZXJhbmQ+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIG5hbWU9IklzSWxsaWNpd
+    ERydWdTY3JlZW4iIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiIHhzaTp0eXBlPSJGdW5jdGlvbkRlZiI+Ci
+    AgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJJblZhbHVlU2V0Ij4KICAgICAgICAgICAgPGNvZGUgbmFtZT0ib2JzZXJ2YXR
+    pb25Db2RlIiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgogICAgICAgICAgICA8dmFsdWVzZXQgbmFtZT0iSWxsaWNpdCBEcnVnIFNj
+    cmVlbmluZyIvPgogICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgIDxvcGVyYW5kIG5hbWU9Im9ic2VydmF0aW9uQ29kZSI+C
+    iAgICAgICAgICAgIDxvcGVyYW5kVHlwZVNwZWNpZmllciBuYW1lPSJ0OkNvZGUiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcGVjaWZpZX
+    IiLz4KICAgICAgICAgPC9vcGVyYW5kPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBuYW1lPSJHZXRJbmdyZWRpZW50IiBjb250ZXh
+    0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIiB4c2k6dHlwZT0iRnVuY3Rpb25EZWYiPgogICAgICAgICA8ZXhwcmVzc2lv
+    biB4c2k6dHlwZT0iUXVlcnkiPgogICAgICAgICAgICA8c291cmNlIGFsaWFzPSIkdGhpcyI+CiAgICAgICAgICAgICAgIDxleHByZ
+    XNzaW9uIG5hbWU9IkdldEluZ3JlZGllbnRzIiBsaWJyYXJ5TmFtZT0iT01US0xvZ2ljIiB4c2k6dHlwZT0iRnVuY3Rpb25SZWYiPg
+    ogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJyeE5vcm1Db2RlIiB4c2k6dHlwZT0iT3BlcmFuZFJlZiIvPgogICAgICA
+    gICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICA8d2hlcmUgeHNpOnR5cGU9Ik5v
+    dCI+CiAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJJc051bGwiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwY
+    XRoPSJpbmdyZWRpZW50TmFtZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPS
+    IkdGhpcyIgeHNpOnR5cGU9IkFsaWFzUmVmIi8+CiAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPC9
+    vcGVyYW5kPgogICAgICAgICAgICA8L3doZXJlPgogICAgICAgICAgICA8cmV0dXJuPgogICAgICAgICAgICAgICA8ZXhwcmVzc2lv
+    biBwYXRoPSJpbmdyZWRpZW50TmFtZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lP
+    SIkdGhpcyIgeHNpOnR5cGU9IkFsaWFzUmVmIi8+CiAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgPC9yZX
+    R1cm4+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgPG9wZXJhbmQgbmFtZT0icnhOb3JtQ29kZSI+CiAgICAgICAgICA
+    gIDxvcGVyYW5kVHlwZVNwZWNpZmllciBuYW1lPSJ0OkNvZGUiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcGVjaWZpZXIiLz4KICAgICAg
+    ICAgPC9vcGVyYW5kPgogICAgICA8L2RlZj4KICAgPC9zdGF0ZW1lbnRzPgo8L2xpYnJhcnk+Cg==</span>"</span><span class="xmltag">/&gt;</span><a name="Library.content.data-end"> </a><b>
+   </b><span class="xmltag">&lt;/<a href="library-definitions.html#Library.content" class="xmltag">content</a>&gt;</span><a name="Library.content-end"> </a><b>
+</b><span class="xmltag">&lt;/<a href="library-definitions.html" class="xmltag">Library</a>&gt;</span><a name="Library-end"> </a></pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the 
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Flibrary-opioidcds-common.xml.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Flibrary-opioidcds-common.xml.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

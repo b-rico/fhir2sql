@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/vitals-panel> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "vitals-panel"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/vitalsigns";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/vitalsigns>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: vitals-panel</p><p><b>meta</b>: </p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span>(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'vital-signs' = 'Vital Signs', given as 'Vital Signs'})</span></p><p><b>code</b>: Vital signs Panel <span>(Details : {LOINC code '85353-1' = 'Vital signs, weight, height, head circumference, oxygen saturation &amp; BMI panel', given as 'Vital signs, weight, height, head circumference, oxygen saturation and BMI panel'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>effective</b>: 02/07/1999</p><p><b>hasMember</b>: </p><ul><li><a>Respiratory Rate</a></li><li><a>Heart Rate</a></li><li><a>Blood Pressure</a></li><li><a>Body Temperature</a></li></ul></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+       fhir:Coding.code [ fhir:value "vital-signs" ];
+       fhir:Coding.display [ fhir:value "Vital Signs" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Vital Signs" ]
+  ];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:85353-1;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "85353-1" ];
+       fhir:Coding.display [ fhir:value "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Vital signs Panel" ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Observation.effectiveDateTime [ fhir:value "1999-07-02"^^xsd:date];
+  fhir:Observation.hasMember [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Observation/respiratory-rate>;
+     fhir:Reference.reference [ fhir:value "Observation/respiratory-rate" ];
+     fhir:Reference.display [ fhir:value "Respiratory Rate" ]
+  ], [
+     fhir:index 1;
+     fhir:link <http://hl7.org/fhir/Observation/heart-rate>;
+     fhir:Reference.reference [ fhir:value "Observation/heart-rate" ];
+     fhir:Reference.display [ fhir:value "Heart Rate" ]
+  ], [
+     fhir:index 2;
+     fhir:link <http://hl7.org/fhir/Observation/blood-pressure>;
+     fhir:Reference.reference [ fhir:value "Observation/blood-pressure" ];
+     fhir:Reference.display [ fhir:value "Blood Pressure" ]
+  ], [
+     fhir:index 3;
+     fhir:link <http://hl7.org/fhir/Observation/body-temperature>;
+     fhir:Reference.reference [ fhir:value "Observation/body-temperature" ];
+     fhir:Reference.display [ fhir:value "Body Temperature" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Observation/respiratory-rate> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/heart-rate> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/blood-pressure> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/body-temperature> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/vitals-panel.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/vitals-panel.ttl> .
+
+# -------------------------------------------------------------------------------------
+

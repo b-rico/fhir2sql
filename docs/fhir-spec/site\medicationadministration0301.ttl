@@ -1,0 +1,157 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicationAdministration/medadmin0301> a fhir:MedicationAdministration;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "medadmin0301"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: medadmin0301</p><p><b>contained</b>: , </p><p><b>status</b>: in-progress</p><p><b>medication</b>: id: med0301; Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE) <span>(Details : {http://hl7.org/fhir/sid/ndc code '0069-2587-10' = 'n/a', given as 'Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)'})</span></p><p><b>subject</b>: <a>Donald Duck</a></p><p><b>context</b>: <a>encounter who leads to this prescription</a></p><p><b>effective</b>: 15/01/2015 2:30:00 PM --&gt; (ongoing)</p><h3>Performers</h3><table><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a>Patrick Pump</a></td></tr></table><p><b>reasonCode</b>: Given as Ordered <span>(Details : {http://terminology.hl7.org/CodeSystem/reason-medication-given code 'b' = 'Given as Ordered', given as 'Given as Ordered'})</span></p><p><b>request</b>: <a>MedicationRequest/medrx0318</a></p><h3>Dosages</h3><table><tr><td>-</td><td><b>Text</b></td><td><b>Route</b></td><td><b>Method</b></td><td><b>Dose</b></td></tr><tr><td>*</td><td>500mg IV q6h x 3 days</td><td>Intravenous route (qualifier value) <span>(Details : {SNOMED CT code '47625008' = 'Intravenous route', given as 'Intravenous route (qualifier value)'})</span></td><td>IV Push <span>(Details )</span></td><td>500 mg<span> (Details: UCUM code mg = 'mg')</span></td></tr></table><p><b>eventHistory</b>: Author's Signature. Generated Summary: id: signature; recorded: 01/02/2017 5:23:07 PM; </p></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Medication;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "med0301" ];
+     fhir:Medication.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/ndc" ];
+         fhir:Coding.code [ fhir:value "0069-2587-10" ];
+         fhir:Coding.display [ fhir:value "Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)" ]
+       ]
+     ]
+  ], [
+     a fhir:Provenance;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "signature" ];
+     fhir:Provenance.target [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ServiceRequest/physiotherapy>;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/physiotherapy" ]
+     ];
+     fhir:Provenance.recorded [ fhir:value "2017-02-01T17:23:07Z"^^xsd:dateTime ];
+     fhir:Provenance.agent [
+       fhir:index 0;
+       fhir:Provenance.agent.role [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+           fhir:Coding.code [ fhir:value "AUT" ]
+         ]
+       ];
+       fhir:Provenance.agent.who [
+         fhir:link <http://hl7.org/fhir/Practitioner/example>;
+         fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+         fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+       ]
+     ];
+     fhir:Provenance.signature [
+       fhir:index 0;
+       fhir:Signature.type [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "urn:iso-astm:E1762-95:2013" ];
+         fhir:Coding.code [ fhir:value "1.2.840.10065.1.12.1.1" ];
+         fhir:Coding.display [ fhir:value "Author's Signature" ]
+       ];
+       fhir:Signature.when [ fhir:value "2017-02-01T17:23:07Z"^^xsd:dateTime ];
+       fhir:Signature.who [
+         fhir:link <http://hl7.org/fhir/Practitioner/example>;
+         fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+         fhir:Reference.display [ fhir:value "Dr Adam Careful" ]
+       ];
+       fhir:Signature.targetFormat [ fhir:value "application/fhir+xml" ];
+       fhir:Signature.sigFormat [ fhir:value "application/signature+xml" ];
+       fhir:Signature.data [ fhir:value "dGhpcyBibG9iIGlzIHNuaXBwZWQ="^^xsd:base64Binary ]
+     ]
+  ];
+  fhir:MedicationAdministration.status [ fhir:value "in-progress"];
+  fhir:MedicationAdministration.medicationReference [
+     fhir:Reference.reference [ fhir:value "#med0301" ]
+  ];
+  fhir:MedicationAdministration.subject [
+     fhir:link <http://hl7.org/fhir/Patient/pat1>;
+     fhir:Reference.reference [ fhir:value "Patient/pat1" ];
+     fhir:Reference.display [ fhir:value "Donald Duck" ]
+  ];
+  fhir:MedicationAdministration.context [
+     fhir:link <http://hl7.org/fhir/Encounter/f001>;
+     fhir:Reference.reference [ fhir:value "Encounter/f001" ];
+     fhir:Reference.display [ fhir:value "encounter who leads to this prescription" ]
+  ];
+  fhir:MedicationAdministration.effectivePeriod [
+     fhir:Period.start [ fhir:value "2015-01-15T14:30:00+01:00"^^xsd:dateTime ]
+  ];
+  fhir:MedicationAdministration.performer [
+     fhir:index 0;
+     fhir:MedicationAdministration.performer.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/f007>;
+       fhir:Reference.reference [ fhir:value "Practitioner/f007" ];
+       fhir:Reference.display [ fhir:value "Patrick Pump" ]
+     ]
+  ];
+  fhir:MedicationAdministration.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/reason-medication-given" ];
+       fhir:Coding.code [ fhir:value "b" ];
+       fhir:Coding.display [ fhir:value "Given as Ordered" ]
+     ]
+  ];
+  fhir:MedicationAdministration.request [
+     fhir:link <http://hl7.org/fhir/MedicationRequest/medrx0318>;
+     fhir:Reference.reference [ fhir:value "MedicationRequest/medrx0318" ]
+  ];
+  fhir:MedicationAdministration.dosage [
+     fhir:MedicationAdministration.dosage.text [ fhir:value "500mg IV q6h x 3 days" ];
+     fhir:MedicationAdministration.dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:47625008;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "47625008" ];
+         fhir:Coding.display [ fhir:value "Intravenous route (qualifier value)" ]
+       ]
+     ];
+     fhir:MedicationAdministration.dosage.method [
+       fhir:CodeableConcept.text [ fhir:value "IV Push" ]
+     ];
+     fhir:MedicationAdministration.dosage.dose [
+       fhir:Quantity.value [ fhir:value "500"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "mg" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "mg" ]
+     ]
+  ];
+  fhir:MedicationAdministration.eventHistory [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#signature" ];
+     fhir:Reference.display [ fhir:value "Author's Signature" ]
+  ] .
+
+<http://hl7.org/fhir/ServiceRequest/physiotherapy> a fhir:ServiceRequest .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Patient/pat1> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/f001> a fhir:Encounter .
+
+<http://hl7.org/fhir/Practitioner/f007> a fhir:Practitioner .
+
+<http://hl7.org/fhir/MedicationRequest/medrx0318> a fhir:MedicationRequest .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicationAdministration/medadmin0301.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MedicationAdministration/medadmin0301.ttl> .
+
+# -------------------------------------------------------------------------------------
+

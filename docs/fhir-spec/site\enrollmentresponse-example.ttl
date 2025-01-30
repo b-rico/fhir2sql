@@ -1,0 +1,48 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/EnrollmentResponse/ER2500> a fhir:EnrollmentResponse;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ER2500"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the EnrollmentResponse</div>"
+  ];
+  fhir:EnrollmentResponse.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.BenefitsInc.com/fhir/enrollmentresponse" ];
+     fhir:Identifier.value [ fhir:value "781234" ]
+  ];
+  fhir:EnrollmentResponse.status [ fhir:value "active"];
+  fhir:EnrollmentResponse.request [
+     fhir:link <http://www.BenefitsInc.com/fhir/eligibility/225476332402>;
+     fhir:Reference.reference [ fhir:value "http://www.BenefitsInc.com/fhir/eligibility/225476332402" ]
+  ];
+  fhir:EnrollmentResponse.outcome [ fhir:value "complete"];
+  fhir:EnrollmentResponse.disposition [ fhir:value "Dependant added to policy."];
+  fhir:EnrollmentResponse.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:EnrollmentResponse.organization [
+     fhir:link <http://hl7.org/fhir/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:EnrollmentResponse.requestProvider [
+     fhir:link <http://hl7.org/fhir/Organization/1>;
+     fhir:Reference.reference [ fhir:value "Organization/1" ]
+  ] .
+
+<http://hl7.org/fhir/Organization/2> a fhir:Organization .
+
+<http://hl7.org/fhir/Organization/1> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/EnrollmentResponse/ER2500.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/EnrollmentResponse/ER2500.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/CareTeam/example> a fhir:CareTeam;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Care Team</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Practitioner;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "pr1" ];
+     fhir:Practitioner.name [
+       fhir:index 0;
+       fhir:HumanName.family [ fhir:value "Dietician" ];
+       fhir:HumanName.given [
+         fhir:value "Dorothy";
+         fhir:index 0
+       ]
+     ]
+  ];
+  fhir:CareTeam.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:CareTeam.status [ fhir:value "active"];
+  fhir:CareTeam.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:LA27976-2;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "LA27976-2" ];
+       fhir:Coding.display [ fhir:value "Encounter-focused care team" ]
+     ]
+  ];
+  fhir:CareTeam.name [ fhir:value "Peter James Charlmers Care Plan for Inpatient Encounter"];
+  fhir:CareTeam.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:CareTeam.encounter [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:CareTeam.period [
+     fhir:Period.end [ fhir:value "2013-01-01"^^xsd:date ]
+  ];
+  fhir:CareTeam.participant [
+     fhir:index 0;
+     fhir:CareTeam.participant.role [
+       fhir:index 0;
+       fhir:CodeableConcept.text [ fhir:value "responsiblePerson" ]
+     ];
+     fhir:CareTeam.participant.member [
+       fhir:link <http://hl7.org/fhir/Patient/example>;
+       fhir:Reference.reference [ fhir:value "Patient/example" ];
+       fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CareTeam.participant.role [
+       fhir:index 0;
+       fhir:CodeableConcept.text [ fhir:value "adviser" ]
+     ];
+     fhir:CareTeam.participant.member [
+       fhir:Reference.reference [ fhir:value "#pr1" ];
+       fhir:Reference.display [ fhir:value "Dorothy Dietition" ]
+     ];
+     fhir:CareTeam.participant.onBehalfOf [
+       fhir:link <http://hl7.org/fhir/Organization/f001>;
+       fhir:Reference.reference [ fhir:value "Organization/f001" ]
+     ];
+     fhir:CareTeam.participant.period [
+       fhir:Period.end [ fhir:value "2013-01-01"^^xsd:date ]
+     ]
+  ];
+  fhir:CareTeam.managingOrganization [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/f001>;
+     fhir:Reference.reference [ fhir:value "Organization/f001" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+<http://hl7.org/fhir/Organization/f001> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/CareTeam/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/CareTeam/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

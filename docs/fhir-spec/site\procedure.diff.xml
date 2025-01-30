@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Procedure" status="changed">
+      <element path="Procedure.instantiatesCanonical" status="new"/>
+      <element path="Procedure.instantiatesUri" status="new"/>
+      <element path="Procedure.basedOn">
+         <removed-type name="Reference(CarePlan | ProcedureRequest | ReferralRequest)"/>
+         <added-type name="Reference(CarePlan | ServiceRequest)"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Procedure.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/event-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/event-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Procedure.statusReason" status="new"/>
+      <element path="Procedure.encounter" status="new"/>
+      <element path="Procedure.performed[x]">
+         <added-type name="string"/>
+         <added-type name="Age"/>
+         <added-type name="Range"/>
+      </element>
+      <element path="Procedure.recorder" status="new"/>
+      <element path="Procedure.asserter" status="new"/>
+      <element path="Procedure.performer.function" status="new"/>
+      <element path="Procedure.performer.actor">
+         <removed-type name="Reference(Practitioner | Organization | Patient | RelatedPerson | Device)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device)"/>
+      </element>
+      <element path="Procedure.reasonReference">
+         <removed-type name="Reference(Condition | Observation)"/>
+         <added-type name="Reference(Condition | Observation | Procedure | DiagnosticReport | DocumentReference)"/>
+      </element>
+      <element path="Procedure.report">
+         <removed-type name="Reference(DiagnosticReport)"/>
+         <added-type name="Reference(DiagnosticReport | DocumentReference | Composition)"/>
+      </element>
+      <element path="Procedure.definition" status="deleted"/>
+      <element path="Procedure.notDone" status="deleted"/>
+      <element path="Procedure.notDoneReason" status="deleted"/>
+      <element path="Procedure.context" status="deleted"/>
+      <element path="Procedure.performer.role" status="deleted"/>
+   </type>
+</difference>

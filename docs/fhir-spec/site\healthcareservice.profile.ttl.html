@@ -1,0 +1,2989 @@
+<!DOCTYPE HTML>
+
+<!-- template-example-ttl.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Healthcareservice.profile.ttl - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="Prev" href="http://hl7.org/fhir/healthcareservice.profile.ttl.html"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="fhir-pub.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" height="60" width="249"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="./assets/images/search.png"/></a></div> 
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="administration-module.html"><img src="administration.jpg"/> Administration</a></li>          <li><a href="healthcareservice.html">HealthcareService</a></li>        <li><b>Profile Instance</b></li>        <!-- healthcareservice.profile.ttl.html / profile-instance:resource:HealthcareService / Profile-->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+
+<h1>Healthcareservice.profile.ttl</h1>
+<table class="colsi"><tr><td><a href="http://www.hl7.org/Special/committees/pafm/index.cfm">Patient Administration</a> Work Group</td><td><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>: Informative</td><!--!ns!--><td><a href="compartmentdefinition.html">Compartments</a>: Not linked to any defined compartments</td></tr></table>
+
+</tbody></table>
+<p>
+<a href="healthcareservice.profile.ttl">Raw Turtle</a> (+ also see <a href="rdf.html">Turtle/RDF Format Specification</a>)
+</p>
+
+<div class="example">
+<p>StructureDefinition for healthcareservice</p>
+<pre class="turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+[] a fhir:StructureDefinition;
+  fhir:Resource.id [ fhir:value &quot;HealthcareService&quot;];
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value &quot;2019-11-01T09:29:23.356+11:00&quot; ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value &quot;generated&quot; ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-category&quot; ];
+     fhir:Extension.value [ fhir:value &quot;Base.Entities&quot; ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot; ];
+     fhir:Extension.value [ fhir:value &quot;trial-use&quot; ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot; ];
+     fhir:Extension.value [ fhir:value &quot;2&quot; ]
+  ], [
+     fhir:index 3;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category&quot; ];
+     fhir:Extension.value [ fhir:value &quot;business&quot; ]
+  ], [
+     fhir:index 4;
+     fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot; ];
+     fhir:Extension.value [ fhir:value &quot;pa&quot; ]
+  ];
+  fhir:StructureDefinition.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/HealthcareService&quot;];
+  fhir:StructureDefinition.version [ fhir:value &quot;4.0.1&quot;];
+  fhir:StructureDefinition.name [ fhir:value &quot;HealthcareService&quot;];
+  fhir:StructureDefinition.status [ fhir:value &quot;draft&quot;];
+  fhir:StructureDefinition.date [ fhir:value &quot;2019-11-01T09:29:23+11:00&quot;];
+  fhir:StructureDefinition.publisher [ fhir:value &quot;Health Level Seven International (Patient Administration)&quot;];
+  fhir:StructureDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value &quot;url&quot; ];
+       fhir:ContactPoint.value [ fhir:value &quot;http://hl7.org/fhir&quot; ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value &quot;url&quot; ];
+       fhir:ContactPoint.value [ fhir:value &quot;http://www.hl7.org/Special/committees/pafm/index.cfm&quot; ]
+     ]
+  ];
+  fhir:StructureDefinition.description [ fhir:value &quot;The details of a healthcare service available at a location.&quot;];
+  fhir:StructureDefinition.fhirVersion [ fhir:value &quot;4.0.1&quot;];
+  fhir:StructureDefinition.mapping [
+     fhir:index 0;
+     fhir:StructureDefinition.identity [ fhir:value &quot;rim&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/v3&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;RIM Mapping&quot; ]
+  ], [
+     fhir:index 1;
+     fhir:StructureDefinition.identity [ fhir:value &quot;w5&quot; ];
+     fhir:StructureDefinition.uri [ fhir:value &quot;http://hl7.org/fhir/fivews&quot; ];
+     fhir:StructureDefinition.name [ fhir:value &quot;FiveWs Pattern Mapping&quot; ]
+  ];
+  fhir:StructureDefinition.kind [ fhir:value &quot;resource&quot;];
+  fhir:StructureDefinition.abstract [ fhir:value &quot;false&quot;];
+  fhir:StructureDefinition.type [ fhir:value &quot;HealthcareService&quot;];
+  fhir:StructureDefinition.baseDefinition [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot;];
+  fhir:StructureDefinition.derivation [ fhir:value &quot;specialization&quot;];
+  fhir:StructureDefinition.snapshot [
+     fhir:StructureDefinition.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value &quot;HealthcareService&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;The details of a healthcare service available at a location&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The details of a healthcare service available at a location.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-2&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;If the resource is contained in another resource, it SHALL NOT contain nested Resources&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;contained.contained.empty()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;not(parent::f:contained and f:contained)&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-3&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ], [
+         fhir:index 2;
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-4&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ], [
+         fhir:index 3;
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-5&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;If a resource is contained in another resource, it SHALL NOT have a security label&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;contained.meta.security.empty()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;not(exists(f:contained/*/f:meta/f:security))&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ], [
+         fhir:index 4;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice&quot; ];
+           fhir:Extension.value [ fhir:value &quot;true&quot; ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation&quot; ];
+           fhir:Extension.value [ fhir:value &quot;When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time.&quot; ]
+         ];
+         fhir:ElementDefinition.key [ fhir:value &quot;dom-6&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;warning&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;A resource should have narrative for robust management&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;text.`div`.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:text/h:div)&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/DomainResource&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Entity. Role, or Act&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;act[classCode=ACT][moodCode=DEF]&quot; ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.id&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.id&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Logical id of this artifact&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The only time that a resource does not have an id is when it is being submitted to the server using a create operation.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Resource.id&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot; ];
+           fhir:Extension.value [ fhir:value &quot;string&quot; ]
+         ];
+         fhir:ElementDefinition.code [ fhir:value &quot;http://hl7.org/fhirpath/System.String&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.meta&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.meta&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Metadata about the resource&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Resource.meta&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Meta&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.implicitRules&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.implicitRules&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;A set of rules under which this content was created&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Resource.implicitRules&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;uri&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.language&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.language&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Language of the resource content&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The base language in which the resource is written.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Resource.language&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;code&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet&quot; ];
+           fhir:Extension.value [ fhir:value &quot;http://hl7.org/fhir/ValueSet/all-languages&quot; ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;Language&quot; ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot; ];
+           fhir:Extension.value [ fhir:value &quot;true&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;preferred&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A human language.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/languages&quot; ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.text&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.text&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Text summary of the resource, for human interpretation&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \&quot;clinically safe\&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a \&quot;text blob\&quot; or where text is additionally entered raw or narrated and encoded information is added later.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;narrative&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;html&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;xhtml&quot;;
+         fhir:index 2
+       ], [
+         fhir:value &quot;display&quot;;
+         fhir:index 3
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DomainResource.text&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Narrative&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;Act.text?&quot; ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.contained&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.contained&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Contained, inline Resources&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;inline resources&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;anonymous resources&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;contained resources&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DomainResource.contained&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Resource&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.extension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.extension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Additional content defined by implementations&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DomainResource.extension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.modifierExtension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.modifierExtension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Extensions that cannot be ignored&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;DomainResource.modifierExtension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.identifier&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.identifier&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;External identifiers for this item&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;External identifiers for this item.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.identifier&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Identifier&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.identifier&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.id&quot; ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.active&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.active&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Whether this HealthcareService record is in active use&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This element is labeled as a modifier because it may be used to mark that the resource was created in error.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.active&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;boolean&quot; ]
+       ];
+       fhir:ElementDefinition.meaningWhenMissing [ fhir:value &quot;This resource is generally assumed to be active if no value is provided for the active element&quot; ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;This element is labelled as a modifier because it is a status element that can indicate that a record should not be treated as valid&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.status&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.statusCode&quot; ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.providedBy&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.providedBy&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Organization that provides this service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The organization that provides this healthcare service.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.providedBy&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Organization&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.scopingRole.Organization&quot; ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.category&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.category&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Broad category of service being performed or delivered&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Identifies the broad category of service being performed or delivered.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;service category&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.category&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;service-category&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A category of the service(s) that could be provided.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/service-category&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.class&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.code&quot; ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.type&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.type&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Type of service that may be delivered or performed&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The specific type of service that may be delivered or performed.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;service type&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.type&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;service-type&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Additional details about where the content was created (e.g. clinical specialty).&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/service-type&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code&quot; ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.specialty&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.specialty&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Specialties handled by the HealthcareService&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Collection of specialties handled by the service site. This is more of a medical term.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.specialty&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;service-specialty&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;preferred&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A specialty that a healthcare service may provide.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/c80-practice-codes&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code&quot; ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.location&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.location&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Location(s) where service may be provided&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The location(s) where this healthcare service may be provided.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.location&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Location&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.where[x]&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.location.role[classCode=SDLOC]&quot; ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.name&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.name&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Description of service as presented to a consumer while searching&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Further description of the service as it would be presented to a consumer while searching.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.name&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.name&quot; ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.comment&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.comment&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Additional description and/or any specific issues not covered elsewhere&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Would expect that a user would not see this information on a search results, and it would only be available when viewing the complete details of the service.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.comment&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.location.role[classCode=SDLOC].desc&quot; ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.extraDetails&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.extraDetails&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Extra details about the service that can't be placed in the other fields&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Extra details about the service that can't be placed in the other fields.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.extraDetails&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;markdown&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].text&quot; ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.photo&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.photo&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Facilitates quick identification of the service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.photo&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Attachment&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=SBJ].observation.value&quot; ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.telecom&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.telecom&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Contacts related to the healthcare service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;List of contacts related to this specific healthcare service.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;If this is empty, then refer to the location's contacts.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.telecom&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;ContactPoint&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.telecom&quot; ]
+       ]
+     ], [
+       fhir:index 21;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.coverageArea&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.coverageArea&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Location(s) service is intended for/available to&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The location(s) that this service is available to (not where the service is provided).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The locations referenced by the coverage area can include both specific locations, including areas, and also conceptual domains too (mode = kind), such as a physical area (tri-state area) and some other attribute (covered by Example Care Organization). These types of Locations are often not managed by any specific organization. This could also include generic locations such as \&quot;in-home\&quot;.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.coverageArea&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Location&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.location.role[classCode=SDLOC].subjectOf.A_SpatialCoordinate&quot; ]
+       ]
+     ], [
+       fhir:index 22;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.serviceProvisionCode&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.serviceProvisionCode&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Conditions under which service is available/offered&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The code(s) that detail the conditions under which the healthcare service is available/offered.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The provision means being commissioned by, contractually obliged or financially sourced. Types of costings that may apply to this healthcare service, such if the service may be available for free, some discounts available, or fees apply.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.serviceProvisionCode&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;ServiceProvisionConditions&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The code(s) that detail the conditions under which the healthcare service is available/offered.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/service-provision-conditions&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]&quot; ]
+       ]
+     ], [
+       fhir:index 23;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Specific eligibility requirements required to use the service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Does this service have specific eligibility requirements that need to be met in order to use the service?&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;BackboneElement&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ]
+     ], [
+       fhir:index 24;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility.id&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.id&quot; ];
+       fhir:ElementDefinition.representation [
+         fhir:value &quot;xmlAttr&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Unique id for inter-element referencing&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Element.id&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot; ];
+           fhir:Extension.value [ fhir:value &quot;string&quot; ]
+         ];
+         fhir:ElementDefinition.code [ fhir:value &quot;http://hl7.org/fhirpath/System.String&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 25;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility.extension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.extension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Additional content defined by implementations&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Element.extension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 26;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility.modifierExtension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.modifierExtension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Extensions that cannot be ignored even if unrecognized&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;modifiers&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;BackboneElement.modifierExtension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;Modifier extensions are expected to modify the meaning or interpretation of the element that contains them&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 27;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility.code&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.code&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Coded value for the eligibility&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Coded value for the eligibility.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.code&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;ServiceEligibility&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Coded values underwhich a specific service is made available.&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]&quot; ]
+       ]
+     ], [
+       fhir:index 28;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility.comment&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.comment&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Describes the eligibility conditions for the service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Describes the eligibility conditions for the service.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The description of service eligibility should, in general, not exceed one or two paragraphs. It should be sufficient for a prospective consumer to determine if they are likely to be eligible or not. Where eligibility requirements and conditions are complex, it may simply be noted that an eligibility assessment is required. Where eligibility is determined by an outside source, such as an Act of Parliament, this should be noted, preferably with a reference to a commonly available copy of the source document such as a web page.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.comment&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;markdown&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT].text&quot; ]
+       ]
+     ], [
+       fhir:index 29;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.program&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.program&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Programs that this service is applicable to&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Programs that this service is applicable to.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Programs are often defined externally to an Organization, commonly by governments; e.g. Home and Community Care Programs, Homeless Program, â€¦.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.program&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;Program&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Government or local programs that this service applies to.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/program&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PERT].observation&quot; ]
+       ]
+     ], [
+       fhir:index 30;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.characteristic&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.characteristic&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Collection of characteristics (attributes)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Collection of characteristics (attributes).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;These could be such things as is wheelchair accessible.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.characteristic&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;ServiceCharacteristic&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A custom attribute that could be provided at a service (e.g. Wheelchair accessibiliy).&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PERT].observation&quot; ]
+       ]
+     ], [
+       fhir:index 31;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.communication&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.communication&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;The language that this service is offered in&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Some services are specifically made available in multiple languages, this property permits a directory to declare the languages this is offered in. Typically this is only provided where a service operates in communities with mixed languages used.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;When using this property it indicates that the service is available with this language, it is not derived from the practitioners, and not all are required to use this language, just that this language is available while scheduling.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.communication&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet&quot; ];
+           fhir:Extension.value [ fhir:value &quot;http://hl7.org/fhir/ValueSet/all-languages&quot; ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;Language&quot; ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot; ];
+           fhir:Extension.value [ fhir:value &quot;true&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;preferred&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A human language.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/languages&quot; ]
+       ]
+     ], [
+       fhir:index 32;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.referralMethod&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.referralMethod&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Ways that the service accepts referrals&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.referralMethod&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;ReferralMethod&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The methods of referral can be used when referring to a specific HealthCareService resource.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/service-referral-method&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PERT].observation&quot; ]
+       ]
+     ], [
+       fhir:index 33;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.appointmentRequired&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.appointmentRequired&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;If an appointment is required for access to this service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.appointmentRequired&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;boolean&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PERT].observation&quot; ]
+       ]
+     ], [
+       fhir:index 34;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Times the Service Site is available&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A collection of times that the Service Site is available.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;More detailed availability information may be provided in associated Schedule/Slot resources.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;BackboneElement&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 35;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.id&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.id&quot; ];
+       fhir:ElementDefinition.representation [
+         fhir:value &quot;xmlAttr&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Unique id for inter-element referencing&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Element.id&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot; ];
+           fhir:Extension.value [ fhir:value &quot;string&quot; ]
+         ];
+         fhir:ElementDefinition.code [ fhir:value &quot;http://hl7.org/fhirpath/System.String&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 36;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.extension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.extension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Additional content defined by implementations&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Element.extension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 37;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.modifierExtension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.modifierExtension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Extensions that cannot be ignored even if unrecognized&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;modifiers&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;BackboneElement.modifierExtension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;Modifier extensions are expected to modify the meaning or interpretation of the element that contains them&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 38;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.daysOfWeek&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.daysOfWeek&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;mon | tue | wed | thu | fri | sat | sun&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Indicates which days of the week are available between the start and end Times.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.daysOfWeek&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;code&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DaysOfWeek&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;required&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The days of the week.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/days-of-week|4.0.1&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 39;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.allDay&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.allDay&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Always available? e.g. 24 hour service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Is this always available? (hence times are irrelevant) e.g. 24 hour service.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.allDay&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;boolean&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 40;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.availableStartTime&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.availableStartTime&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Opening time of day (ignored if allDay = true)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The opening time of day. Note: If the AllDay flag is set, then this time is ignored.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The time zone is expected to be for where this HealthcareService is provided at.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.availableStartTime&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;time&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 41;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.availableEndTime&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.availableEndTime&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Closing time of day (ignored if allDay = true)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The closing time of day. Note: If the AllDay flag is set, then this time is ignored.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The time zone is expected to be for where this HealthcareService is provided at.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.availableEndTime&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;time&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 42;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Not available during this time due to provided reason&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The HealthcareService is not available during this period of time due to the provided reason.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;BackboneElement&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 43;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable.id&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.id&quot; ];
+       fhir:ElementDefinition.representation [
+         fhir:value &quot;xmlAttr&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Unique id for inter-element referencing&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Element.id&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type&quot; ];
+           fhir:Extension.value [ fhir:value &quot;string&quot; ]
+         ];
+         fhir:ElementDefinition.code [ fhir:value &quot;http://hl7.org/fhirpath/System.String&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 44;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable.extension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.extension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Additional content defined by implementations&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;Element.extension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 45;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable.modifierExtension&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.modifierExtension&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Extensions that cannot be ignored even if unrecognized&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.&quot; ];
+       fhir:ElementDefinition.requirements [ fhir:value &quot;Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;extensions&quot;;
+         fhir:index 0
+       ], [
+         fhir:value &quot;user content&quot;;
+         fhir:index 1
+       ], [
+         fhir:value &quot;modifiers&quot;;
+         fhir:index 2
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;BackboneElement.modifierExtension&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Extension&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.key [ fhir:value &quot;ext-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;Must have either extensions or value[x], not both&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;extension.exists() != value.exists()&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Extension&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;Modifier extensions are expected to modify the meaning or interpretation of the element that contains them&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;N/A&quot; ]
+       ]
+     ], [
+       fhir:index 46;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable.description&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.description&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Reason presented to the user explaining why time not available&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The reason that can be presented to the user as to why this time is not available.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.description&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 47;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable.during&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.during&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Service not available from this date&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Service is not available (seasonally or for a public holiday) from this date.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.during&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Period&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 48;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availabilityExceptions&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availabilityExceptions&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Description of availability exceptions&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availabilityExceptions&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 49;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.endpoint&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.endpoint&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Technical endpoints providing access to electronic services operated for the healthcare service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.endpoint&quot; ];
+         fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+         fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Endpoint&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.constraint [
+         fhir:index 0;
+         fhir:ElementDefinition.key [ fhir:value &quot;ele-1&quot; ];
+         fhir:ElementDefinition.severity [ fhir:value &quot;error&quot; ];
+         fhir:ElementDefinition.human [ fhir:value &quot;All FHIR elements must have a @value or children&quot; ];
+         fhir:ElementDefinition.expression [ fhir:value &quot;hasValue() or (children().count() &gt; id.count())&quot; ];
+         fhir:ElementDefinition.xpath [ fhir:value &quot;@value|f:*|h:div&quot; ];
+         fhir:ElementDefinition.source [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Element&quot; ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;false&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ]
+  ];
+  fhir:StructureDefinition.differential [
+     fhir:StructureDefinition.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value &quot;HealthcareService&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;The details of a healthcare service available at a location&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The details of a healthcare service available at a location.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;act[classCode=ACT][moodCode=DEF]&quot; ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.identifier&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.identifier&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;External identifiers for this item&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;External identifiers for this item.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Identifier&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.identifier&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.id&quot; ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.active&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.active&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Whether this HealthcareService record is in active use&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This element is labeled as a modifier because it may be used to mark that the resource was created in error.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;boolean&quot; ]
+       ];
+       fhir:ElementDefinition.meaningWhenMissing [ fhir:value &quot;This resource is generally assumed to be active if no value is provided for the active element&quot; ];
+       fhir:ElementDefinition.isModifier [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.isModifierReason [ fhir:value &quot;This element is labelled as a modifier because it is a status element that can indicate that a record should not be treated as valid&quot; ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.status&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.statusCode&quot; ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.providedBy&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.providedBy&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Organization that provides this service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The organization that provides this healthcare service.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Organization&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.scopingRole.Organization&quot; ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.category&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.category&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Broad category of service being performed or delivered&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Identifies the broad category of service being performed or delivered.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;service category&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;service-category&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A category of the service(s) that could be provided.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/service-category&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.class&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.code&quot; ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.type&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.type&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Type of service that may be delivered or performed&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The specific type of service that may be delivered or performed.&quot; ];
+       fhir:ElementDefinition.alias [
+         fhir:value &quot;service type&quot;;
+         fhir:index 0
+       ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;service-type&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Additional details about where the content was created (e.g. clinical specialty).&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/service-type&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code&quot; ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.specialty&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.specialty&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Specialties handled by the HealthcareService&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Collection of specialties handled by the service site. This is more of a medical term.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;service-specialty&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;preferred&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A specialty that a healthcare service may provide.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/c80-practice-codes&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code&quot; ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.location&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.location&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Location(s) where service may be provided&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The location(s) where this healthcare service may be provided.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Location&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;w5&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;FiveWs.where[x]&quot; ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.location.role[classCode=SDLOC]&quot; ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.name&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.name&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Description of service as presented to a consumer while searching&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Further description of the service as it would be presented to a consumer while searching.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.name&quot; ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.comment&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.comment&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Additional description and/or any specific issues not covered elsewhere&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Would expect that a user would not see this information on a search results, and it would only be available when viewing the complete details of the service.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.location.role[classCode=SDLOC].desc&quot; ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.extraDetails&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.extraDetails&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Extra details about the service that can't be placed in the other fields&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Extra details about the service that can't be placed in the other fields.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;markdown&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].text&quot; ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.photo&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.photo&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Facilitates quick identification of the service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Attachment&quot; ]
+       ];
+       fhir:ElementDefinition.isSummary [ fhir:value &quot;true&quot; ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=SBJ].observation.value&quot; ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.telecom&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.telecom&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Contacts related to the healthcare service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;List of contacts related to this specific healthcare service.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;If this is empty, then refer to the location's contacts.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;ContactPoint&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.telecom&quot; ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.coverageArea&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.coverageArea&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Location(s) service is intended for/available to&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The location(s) that this service is available to (not where the service is provided).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The locations referenced by the coverage area can include both specific locations, including areas, and also conceptual domains too (mode = kind), such as a physical area (tri-state area) and some other attribute (covered by Example Care Organization). These types of Locations are often not managed by any specific organization. This could also include generic locations such as \&quot;in-home\&quot;.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Location&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.location.role[classCode=SDLOC].subjectOf.A_SpatialCoordinate&quot; ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.serviceProvisionCode&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.serviceProvisionCode&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Conditions under which service is available/offered&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The code(s) that detail the conditions under which the healthcare service is available/offered.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The provision means being commissioned by, contractually obliged or financially sourced. Types of costings that may apply to this healthcare service, such if the service may be available for free, some discounts available, or fees apply.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;ServiceProvisionConditions&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The code(s) that detail the conditions under which the healthcare service is available/offered.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/service-provision-conditions&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]&quot; ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Specific eligibility requirements required to use the service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Does this service have specific eligibility requirements that need to be met in order to use the service?&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;BackboneElement&quot; ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility.code&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.code&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Coded value for the eligibility&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Coded value for the eligibility.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;ServiceEligibility&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Coded values underwhich a specific service is made available.&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]&quot; ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.eligibility.comment&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.eligibility.comment&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Describes the eligibility conditions for the service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Describes the eligibility conditions for the service.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The description of service eligibility should, in general, not exceed one or two paragraphs. It should be sufficient for a prospective consumer to determine if they are likely to be eligible or not. Where eligibility requirements and conditions are complex, it may simply be noted that an eligibility assessment is required. Where eligibility is determined by an outside source, such as an Act of Parliament, this should be noted, preferably with a reference to a commonly available copy of the source document such as a web page.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;markdown&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT].text&quot; ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.program&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.program&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Programs that this service is applicable to&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Programs that this service is applicable to.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;Programs are often defined externally to an Organization, commonly by governments; e.g. Home and Community Care Programs, Homeless Program, â€¦.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;Program&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;Government or local programs that this service applies to.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/program&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PERT].observation&quot; ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.characteristic&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.characteristic&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Collection of characteristics (attributes)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Collection of characteristics (attributes).&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;These could be such things as is wheelchair accessible.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;ServiceCharacteristic&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A custom attribute that could be provided at a service (e.g. Wheelchair accessibiliy).&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PERT].observation&quot; ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.communication&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.communication&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;The language that this service is offered in&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Some services are specifically made available in multiple languages, this property permits a directory to declare the languages this is offered in. Typically this is only provided where a service operates in communities with mixed languages used.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;When using this property it indicates that the service is available with this language, it is not derived from the practitioners, and not all are required to use this language, just that this language is available while scheduling.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet&quot; ];
+           fhir:Extension.value [ fhir:value &quot;http://hl7.org/fhir/ValueSet/all-languages&quot; ]
+         ], [
+           fhir:index 1;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;Language&quot; ]
+         ], [
+           fhir:index 2;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding&quot; ];
+           fhir:Extension.value [ fhir:value &quot;true&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;preferred&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;A human language.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/languages&quot; ]
+       ]
+     ], [
+       fhir:index 21;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.referralMethod&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.referralMethod&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Ways that the service accepts referrals&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;CodeableConcept&quot; ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;ReferralMethod&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;example&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The methods of referral can be used when referring to a specific HealthCareService resource.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/service-referral-method&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PERT].observation&quot; ]
+       ]
+     ], [
+       fhir:index 22;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.appointmentRequired&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.appointmentRequired&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;If an appointment is required for access to this service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;boolean&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.actrelationship[typeCode=PERT].observation&quot; ]
+       ]
+     ], [
+       fhir:index 23;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Times the Service Site is available&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A collection of times that the Service Site is available.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;More detailed availability information may be provided in associated Schedule/Slot resources.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;BackboneElement&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 24;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.daysOfWeek&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.daysOfWeek&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;mon | tue | wed | thu | fri | sat | sun&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Indicates which days of the week are available between the start and end Times.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;code&quot; ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value &quot;http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName&quot; ];
+           fhir:Extension.value [ fhir:value &quot;DaysOfWeek&quot; ]
+         ];
+         fhir:ElementDefinition.strength [ fhir:value &quot;required&quot; ];
+         fhir:ElementDefinition.description [ fhir:value &quot;The days of the week.&quot; ];
+         fhir:ElementDefinition.valueSet [ fhir:value &quot;http://hl7.org/fhir/ValueSet/days-of-week|4.0.1&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 25;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.allDay&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.allDay&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Always available? e.g. 24 hour service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Is this always available? (hence times are irrelevant) e.g. 24 hour service.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;boolean&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 26;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.availableStartTime&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.availableStartTime&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Opening time of day (ignored if allDay = true)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The opening time of day. Note: If the AllDay flag is set, then this time is ignored.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The time zone is expected to be for where this HealthcareService is provided at.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;time&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 27;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availableTime.availableEndTime&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availableTime.availableEndTime&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Closing time of day (ignored if allDay = true)&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The closing time of day. Note: If the AllDay flag is set, then this time is ignored.&quot; ];
+       fhir:ElementDefinition.comment [ fhir:value &quot;The time zone is expected to be for where this HealthcareService is provided at.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;time&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 28;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Not available during this time due to provided reason&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The HealthcareService is not available during this period of time due to the provided reason.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;BackboneElement&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 29;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable.description&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.description&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Reason presented to the user explaining why time not available&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;The reason that can be presented to the user as to why this time is not available.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ], [
+       fhir:index 30;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.notAvailable.during&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.notAvailable.during&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Service not available from this date&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Service is not available (seasonally or for a public holiday) from this date.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Period&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 31;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.availabilityExceptions&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.availabilityExceptions&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Description of availability exceptions&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;1&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;string&quot; ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;.effectiveTime&quot; ]
+       ]
+     ], [
+       fhir:index 32;
+       fhir:Element.id [ fhir:value &quot;HealthcareService.endpoint&quot; ];
+       fhir:ElementDefinition.path [ fhir:value &quot;HealthcareService.endpoint&quot; ];
+       fhir:ElementDefinition.short [ fhir:value &quot;Technical endpoints providing access to electronic services operated for the healthcare service&quot; ];
+       fhir:ElementDefinition.definition [ fhir:value &quot;Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.&quot; ];
+       fhir:ElementDefinition.min [ fhir:value &quot;0&quot; ];
+       fhir:ElementDefinition.max [ fhir:value &quot;*&quot; ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.code [ fhir:value &quot;Reference&quot; ];
+         fhir:ElementDefinition.targetProfile [
+           fhir:value &quot;http://hl7.org/fhir/StructureDefinition/Endpoint&quot;;
+           fhir:index 0
+         ]
+       ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.identity [ fhir:value &quot;rim&quot; ];
+         fhir:ElementDefinition.map [ fhir:value &quot;n/a&quot; ]
+       ]
+     ]
+  ] .
+
+# -------------------------------------------------------------------------------------
+
+
+</pre>
+</div>
+
+
+<p>
+Usage note: every effort has been made to ensure that the
+examples are correct and useful, but they are not a normative part 
+of the specification. 
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;© HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:35+1100. <a  style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search</a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fhealthcareservice.profile.ttl.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fhealthcareservice.profile.ttl.html">Compare to R3</a> |                
+               <a style="color: #b8dcf9" rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+               <a style="color: #b8dcf9" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>   
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

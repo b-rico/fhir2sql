@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/example-genetics-brcapat> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-genetics-brcapat"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-genetics-brcapat</p><p><b>status</b>: final</p><p><b>code</b>: BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal <span>(Details : {LOINC code '59041-4' = 'BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal', given as 'BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal'})</span></p><p><b>subject</b>: <a>Patient1 with Breast Cancer FamilyHistory</a></p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ncbi.nlm.nih.gov/nuccore" ];
+         fhir:Coding.code [ fhir:value "KX470182.1" ];
+         fhir:Coding.display [ fhir:value "BRCA" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://browser.ihtsdotools.org/" ];
+         fhir:Coding.code [ fhir:value "413581001" ];
+         fhir:Coding.display [ fhir:value "Unknown racial group" ]
+       ]
+     ]
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:59041-4;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "59041-4" ];
+       fhir:Coding.display [ fhir:value "BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal" ]
+     ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/brcapat>;
+     fhir:Reference.reference [ fhir:value "Patient/brcapat" ];
+     fhir:Reference.display [ fhir:value "Patient1 with Breast Cancer FamilyHistory" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/brcapat> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/example-genetics-brcapat.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/example-genetics-brcapat.ttl> .
+
+# -------------------------------------------------------------------------------------
+

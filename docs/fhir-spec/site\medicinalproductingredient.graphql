@@ -1,0 +1,200 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicinalProductIngredient {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  role: CodeableConcept!
+  allergenicIndicator: Boolean  _allergenicIndicator: ElementBase
+  manufacturer: [Reference]
+  specifiedSubstance: [MedicinalProductIngredientSpecifiedSubstance]
+  substance: MedicinalProductIngredientSubstance
+}
+
+type MedicinalProductIngredientSpecifiedSubstance {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  group: CodeableConcept!
+  confidentiality: CodeableConcept
+  strength: [MedicinalProductIngredientSpecifiedSubstanceStrength]
+}
+
+type MedicinalProductIngredientSpecifiedSubstanceStrength {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  presentation: Ratio!
+  presentationLowLimit: Ratio
+  concentration: Ratio
+  concentrationLowLimit: Ratio
+  measurementPoint: String  _measurementPoint: ElementBase
+  country: [CodeableConcept]
+  referenceStrength: [MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength]
+}
+
+type MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  substance: CodeableConcept
+  strength: Ratio!
+  strengthLowLimit: Ratio
+  measurementPoint: String  _measurementPoint: ElementBase
+  country: [CodeableConcept]
+}
+
+type MedicinalProductIngredientSubstance {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  strength: [MedicinalProductIngredientSpecifiedSubstanceStrength]
+}
+
+input MedicinalProductIngredient {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: Identifier
+  role: CodeableConcept!
+  allergenicIndicator: Boolean  _allergenicIndicator: ElementBase
+  manufacturer: [Reference]
+  specifiedSubstance: [MedicinalProductIngredientSpecifiedSubstance]
+  substance: MedicinalProductIngredientSubstance
+}
+
+input MedicinalProductIngredientSpecifiedSubstance {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  group: CodeableConcept!
+  confidentiality: CodeableConcept
+  strength: [MedicinalProductIngredientSpecifiedSubstanceStrength]
+}
+
+input MedicinalProductIngredientSpecifiedSubstanceStrength {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  presentation: Ratio!
+  presentationLowLimit: Ratio
+  concentration: Ratio
+  concentrationLowLimit: Ratio
+  measurementPoint: String  _measurementPoint: ElementBase
+  country: [CodeableConcept]
+  referenceStrength: [MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength]
+}
+
+input MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  substance: CodeableConcept
+  strength: Ratio!
+  strengthLowLimit: Ratio
+  measurementPoint: String  _measurementPoint: ElementBase
+  country: [CodeableConcept]
+}
+
+input MedicinalProductIngredientSubstance {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  code: CodeableConcept!
+  strength: [MedicinalProductIngredientSpecifiedSubstanceStrength]
+}
+
+type MedicinalProductIngredientReadType {
+  MedicinalProductIngredient(id : ID!) : MedicinalProductIngredient
+}
+
+type MedicinalProductIngredientListType {
+  MedicinalProductIngredientList(_filter : String
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicinalProductIngredient]
+}
+
+type MedicinalProductIngredientConnectionType {
+  MedicinalProductIngredientConection(_filter : String
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicinalProductIngredientConnection
+}
+
+type MedicinalProductIngredientConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicinalProductIngredientEdge]
+}
+
+type MedicinalProductIngredientEdge {
+  mode : String
+  score : Float
+  resource : MedicinalProductIngredient
+}
+
+type MedicinalProductIngredientCreateType {
+  MedicinalProductIngredientCreate(resource : MedicinalProductIngredient) : MedicinalProductIngredientCreation
+}
+
+type MedicinalProductIngredientCreation {
+  location : String
+  resource : MedicinalProductIngredient
+  information : OperationOutcome
+}
+
+type MedicinalProductIngredientUpdateType {
+  MedicinalProductIngredientUpdate(id : IDresource : MedicinalProductIngredient) : MedicinalProductIngredientUpdate
+}
+
+type MedicinalProductIngredientUpdate {
+  resource : MedicinalProductIngredient
+  information : OperationOutcome
+}
+
+type MedicinalProductIngredientDeleteType {
+  MedicinalProductIngredientDelete(id : ID) : MedicinalProductIngredientDelete
+}
+
+type MedicinalProductIngredientDelete {
+  information : OperationOutcome
+}
+

@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Versioning - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/versioning.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="foundation-module.html"><img src="foundation.png"/> Foundation</a></li>
+        <li><b>Managing Multiple FHIR Versions</b></li>          <!-- versioning.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<h2 class="self-link-parent"><span class="sectioncount">2.8<a name="2.8"> </a></span> Managing Multiple FHIR Versions <a href="versioning.html#2.8" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colsi"><tr><td id="wg"><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm" _target="blank">FHIR Infrastructure <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:  <!-- !ns! --><a href="versions.html#std-process">Informative</a></td></tr></table>
+
+<p>
+This FHIR specification is one in a <a href="http://hl7.org/fhir/directory.html">series of publications of the FHIR specification <img src="external.png" style="text-align: baseline"/></a>.
+There have been previous releases, and there will be subsequent releases. Each release (or "version")
+introduces new features, and changes from the previous releases. 
+</p>
+<p>
+Implementers should be familiar with the kind of changes that can be made, 
+and the change processes that apply - see the FHIR <a href="versions.html">Version Management Policy</a> for 
+further information
+</p>
+<p>
+Ongoing change to the specification means that implementers must be able to 
+determine which version is in use in their context and implement accordingly.
+</p>
+<p>There are 3 ways to determine the version of FHIR in use:</p>
+<ul>
+<li>The <a href="capabilitystatement-definitions.html#CapabilityStatement.fhirVersion">fhirVersion</a> element in the applicable <a href="capabilitystatement-definitions.html">CapabilityStatement</a></li>
+<li>The <a href="http.html#version-parameter">fhirVersion parameter</a> on the MIME-type that applies to the resource</li>
+<li>Specifying a version specific profile on the resource itself</li>
+</ul>
+
+<a name="cs-version"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">2.8.1</span> CapabilityStatement.fhirVersion <a href="versioning.html#cs-version" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+Whenever resources are exchanged, the applicable FHIR version applies to the 
+entire interaction, not just the resources. The semantics of the mime types, 
+the RESTful URLs, the search parameters, and the overall interaction are bound 
+to a particular FHIR version. The resource versions must be consistent with the 
+overall interaction. It's not possible for client/server (or, for messaging, 
+sender/receiver) to have a coherent conversation without first agreeing on 
+the version. The version of the interaction is specified in the CapabilityStatement 
+resource. The sequence works this way:
+</p>
+<ul>
+<li>The server decides what version it is implementing, and states this in it's CapabilityStatement</li>
+<li>The client knows what FHIR version it uses</li>
+<li>The first time the client connects to the server, it <a href="http.html#capabilities">retrieves that CapabilityStatement</a> 
+  and checks that the server version is the same</li>
+<li>All interactions between the client and server use the same version</li>
+</ul>
+<p>
+Clients are advised to check the server's capability statement before first using the 
+server, but how often is at the discretion of the implementer, and this varies 
+wildly. Some implementers only check the statement during the development cycle, 
+while others check on the first connection for each process. Which is appropriate 
+depends on a variety of circumstances, but implementers should note that the 
+CapabilityStatement can change over time - even changing FHIR versions as the 
+system is subject to ongoing development.
+</p>
+<p>
+Note that there are related places where the FHIR version in use can also be 
+stated, and these may be consulted at different points in the development cycle
+in place (or as well as) CapabilityStatement.fhirVersion:
+</p>
+<ul>
+ <li><a href="implementationguide.html#versions">ImplementationGuide.fhirVersion</a>: specifies which FHIR versions(s) apply for a particular solution. This may
+   imply a particular version for a server, or an exchange</li>
+ <li><a href="structuredefinition-definitions.html#StructureDefinition.fhirVersion">StructureDefinition.fhirVersion</a>: may specify which 
+   version a resource conforms to - or, at least, what version it should be expected to conform to</li>
+</ul>
+
+<a name="mt-version"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">2.8.2</span> Mime Type Parameter <a href="versioning.html#mt-version" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+The most common strategy for handling change between versions of FHIR is to use different end-points for different versions. 
+e.g. http://acme.com/fhir/r2 and http://acme.com/fhir/r3. However, this can be 
+problematic because it means that the same record has a different identity depending on 
+the version of FHIR in use - though this can also be useful; it depends on the context.
+</p>
+<p>
+A server can support multiple versions on the same end-point, if the client specifies 
+which version to support using the <a href="http.html#version-parameter">fhirVersion mime type parameter</a>:
+</p>
+<pre>
+GET [base]/metadata
+Accept: application/fhir+json; fhirVersion=3.0
+</pre>
+<p>
+This is a request to return the CapabilityStatement for the server's 
+support of FHIR Release 3. The client will know that the server doesn't 
+support R3 if it gets an error in return, or if the capability statement 
+that comes back has a different fhirVersion (which would mean that the 
+server does not support the fhirVersion parameter).
+</p>
+<p>
+Notes:
+</p>
+<ul>
+ <li>The client must include the fhirVersion parameter on all following interactions.</li>
+ <li>The same parameter can be used anywhere Mime type is used to describe that a content contains a FHIR resource - such as in an Email attachment:
+   <pre>
+   --MIME_boundary
+   Content-Type: application/fhir+xml; fhirVersion=1.0
+   </pre>
+ </li>
+</ul>
+
+<p>
+Clients can determine what versions a server supports by using the <a href="capabilitystatement-operation-versions.html">$versions</a> operation.
+</p>
+
+<p><b>Storage</b></p>
+
+<p>
+The same technique can be used in a database, or any other kind of storage - just 
+store the mime type (or just the version) alongside the resource. This means that 
+when reading resources, the application knows what version the resource has, and 
+therefore what parser to use, before reading the resource.
+</p>
+
+<a name="mp-version"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">2.8.3</span> Version Specific Profile <a href="versioning.html#mp-version" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+There are some circumstances where applications handle 'naked' resources - that 
+is, resources where there is no wrapping envelope to carry a mimetype version 
+parameter, nor any suitable parallel location to store the version. The most 
+obvious circumstance is when resources are stored in files, though this may arise 
+in other circumstances due to (legacy) application or protocol design.
+</p>
+<p>
+When there's no other alternative, the version has to be in the resources itself, 
+and applications reading the resource have to scan the resource to determine 
+the version and then read the resource as the correct version.
+</p>
+<p>
+In these cases where the version must be placed in the resource itself, this 
+is done by indicating that the resource conforms to specific version in 
+<a href="resource-definitions.html#Meta.profile">meta.profile</a>:
+</p>
+<pre class="json">
+{
+  "resourceType" : "Patient",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/3.0/StructureDefinition/Patient"]
+  }
+}
+</pre>
+<p>
+This technique can be used with all versions of FHIR, including R2 and R3:
+</p>
+<table class="grid">
+<tr>
+<td><a href="http://hl7.org/fhir/DSTU1">FHIR R1 <img src="external.png" style="text-align: baseline"/></a> (DSTU 1)</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td><a href="http://hl7.org/fhir/DSTU2">FHIR R2 <img src="external.png" style="text-align: baseline"/></a> (DSTU 2)</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><a href="http://hl7.org/fhir/STU3">FHIR R3 <img src="external.png" style="text-align: baseline"/></a> (STU3, or just R3)</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td><a href="http://hl7.org/fhir/r4">FHIR R4 <img src="external.png" style="text-align: baseline"/></a> (this version)</td>
+<td>4.0 (once published)</td>
+</tr>
+</table>
+
+<a name="managing"> </a>
+
+<h3 class="self-link-parent"><span class="sectioncount">2.8.4</span> Managing Version Identification <a href="versioning.html#managing" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+This means that there are 3 different methods for determining version, 
+all of which may be applicable when exchanging data. Implementers 
+are advised to adopt their use in the order documented:
+</p>
+<ol>
+<li>All exchange of FHIR resources will have a known version from the metadata - this always applies, and 
+   implementers are encouraged to prefer this method whenever possible.</li>
+<li>When this is not enough, or when resources are not exchanged under the rules of a <code>CapabilityStatement</code>, 
+   a version parameter should be stored alongside the resource, preferably using the mime type parameter documented above</li>
+<li>When there's no other choice, use the meta.profile to indicate which version(s) a resource conforms to</li>
+</ol>
+<p>
+When determining the version, there's no order of preference between these methods: 
+if the version of a resource or interaction is specified more than one way, the version 
+statements must all agree with each other, or it is an error, and applications can process 
+a request/resource how they wish - usually, with some kind of error.
+</p>
+
+<a name="changes"></a>
+<h3 class="self-link-parent"><span class="sectioncount">2.8.5</span> Strategies for handling Changes Between Versions <a href="versioning.html#changes" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+
+<p>
+All parts of the FHIR specification are subject to ongoing change. The types of changes allowed,
+and the change control process vary, as detailed in the <a href="versions.html#changecontrol">Version Management Policy</a>. 
+Implementers need to be aware of what kind of changes are made and have a strategy for dealing with them.  Where possible,  
+implementers should design their solutions to be able to manage changes to the specification and, where necessary, to 
+manage interoperability with systems that may be using different versions of the specification.
+</p>
+<p>
+A key aspect of the FHIR specification development process is gaining feedback from implementers making 
+use of the specification. As well, the process is conditional on real world implementation in order to 
+move through the maturity cycle. For this reason, all FHIR implementers are encouraged to register their 
+usage <a href="http://fhir.org/implementations/usage">here <img src="external.png" style="text-align: baseline"/></a>, which captures contact and other information 
+that will allow HL7 to perform appropriate monitoring of FHIR usage. Survey information is confidential and reported in aggregate only.
+(Note that implementers can advertise their use of FHIR <a href="http://fhir.org/implementations/usage">here <img src="external.png" style="text-align: baseline"/></a>.
+</p>
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fversioning.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fversioning.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

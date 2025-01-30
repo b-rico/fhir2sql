@@ -1,0 +1,274 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type Immunization {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  vaccineCode: CodeableConcept!
+  patient: Reference!
+  encounter: Reference
+  occurrenceDateTime: dateTime  _occurrenceDateTime: ElementBase
+  occurrenceString: String  _occurrenceString: ElementBase
+  recorded: dateTime  _recorded: ElementBase
+  primarySource: Boolean  _primarySource: ElementBase
+  reportOrigin: CodeableConcept
+  location: Reference
+  manufacturer: Reference
+  lotNumber: String  _lotNumber: ElementBase
+  expirationDate: date  _expirationDate: ElementBase
+  site: CodeableConcept
+  route: CodeableConcept
+  doseQuantity: Quantity
+  performer: [ImmunizationPerformer]
+  note: [Annotation]
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  isSubpotent: Boolean  _isSubpotent: ElementBase
+  subpotentReason: [CodeableConcept]
+  education: [ImmunizationEducation]
+  programEligibility: [CodeableConcept]
+  fundingSource: CodeableConcept
+  reaction: [ImmunizationReaction]
+  protocolApplied: [ImmunizationProtocolApplied]
+}
+
+type ImmunizationPerformer {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  function: CodeableConcept
+  actor: Reference!
+}
+
+type ImmunizationEducation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  documentType: String  _documentType: ElementBase
+  reference: uri  _reference: ElementBase
+  publicationDate: dateTime  _publicationDate: ElementBase
+  presentationDate: dateTime  _presentationDate: ElementBase
+}
+
+type ImmunizationReaction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  date: dateTime  _date: ElementBase
+  detail: Reference
+  reported: Boolean  _reported: ElementBase
+}
+
+type ImmunizationProtocolApplied {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  series: String  _series: ElementBase
+  authority: Reference
+  targetDisease: [CodeableConcept]
+  doseNumberPositiveInt: positiveInt  _doseNumberPositiveInt: ElementBase
+  doseNumberString: String  _doseNumberString: ElementBase
+  seriesDosesPositiveInt: positiveInt  _seriesDosesPositiveInt: ElementBase
+  seriesDosesString: String  _seriesDosesString: ElementBase
+}
+
+input Immunization {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  status: code  _status: ElementBase
+  statusReason: CodeableConcept
+  vaccineCode: CodeableConcept!
+  patient: Reference!
+  encounter: Reference
+  occurrenceDateTime: dateTime  _occurrenceDateTime: ElementBase
+  occurrenceString: String  _occurrenceString: ElementBase
+  recorded: dateTime  _recorded: ElementBase
+  primarySource: Boolean  _primarySource: ElementBase
+  reportOrigin: CodeableConcept
+  location: Reference
+  manufacturer: Reference
+  lotNumber: String  _lotNumber: ElementBase
+  expirationDate: date  _expirationDate: ElementBase
+  site: CodeableConcept
+  route: CodeableConcept
+  doseQuantity: Quantity
+  performer: [ImmunizationPerformer]
+  note: [Annotation]
+  reasonCode: [CodeableConcept]
+  reasonReference: [Reference]
+  isSubpotent: Boolean  _isSubpotent: ElementBase
+  subpotentReason: [CodeableConcept]
+  education: [ImmunizationEducation]
+  programEligibility: [CodeableConcept]
+  fundingSource: CodeableConcept
+  reaction: [ImmunizationReaction]
+  protocolApplied: [ImmunizationProtocolApplied]
+}
+
+input ImmunizationPerformer {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  function: CodeableConcept
+  actor: Reference!
+}
+
+input ImmunizationEducation {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  documentType: String  _documentType: ElementBase
+  reference: uri  _reference: ElementBase
+  publicationDate: dateTime  _publicationDate: ElementBase
+  presentationDate: dateTime  _presentationDate: ElementBase
+}
+
+input ImmunizationReaction {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  date: dateTime  _date: ElementBase
+  detail: Reference
+  reported: Boolean  _reported: ElementBase
+}
+
+input ImmunizationProtocolApplied {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  series: String  _series: ElementBase
+  authority: Reference
+  targetDisease: [CodeableConcept]
+  doseNumberPositiveInt: positiveInt  _doseNumberPositiveInt: ElementBase
+  doseNumberString: String  _doseNumberString: ElementBase
+  seriesDosesPositiveInt: positiveInt  _seriesDosesPositiveInt: ElementBase
+  seriesDosesString: String  _seriesDosesString: ElementBase
+}
+
+type ImmunizationReadType {
+  Immunization(id : ID!) : Immunization
+}
+
+type ImmunizationListType {
+  ImmunizationList(_filter : String
+    date : [date]
+    identifier : [token]
+    location : [reference]
+    lot_number : [String]
+    manufacturer : [reference]
+    patient : [reference]
+    performer : [reference]
+    reaction : [reference]
+    reaction_date : [date]
+    reason_code : [token]
+    reason_reference : [reference]
+    series : [String]
+    status : [token]
+    status_reason : [token]
+    target_disease : [token]
+    vaccine_code : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [Immunization]
+}
+
+type ImmunizationConnectionType {
+  ImmunizationConection(_filter : String
+    date : [date]
+    identifier : [token]
+    location : [reference]
+    lot_number : [String]
+    manufacturer : [reference]
+    patient : [reference]
+    performer : [reference]
+    reaction : [reference]
+    reaction_date : [date]
+    reason_code : [token]
+    reason_reference : [reference]
+    series : [String]
+    status : [token]
+    status_reason : [token]
+    target_disease : [token]
+    vaccine_code : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : ImmunizationConnection
+}
+
+type ImmunizationConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [ImmunizationEdge]
+}
+
+type ImmunizationEdge {
+  mode : String
+  score : Float
+  resource : Immunization
+}
+
+type ImmunizationCreateType {
+  ImmunizationCreate(resource : Immunization) : ImmunizationCreation
+}
+
+type ImmunizationCreation {
+  location : String
+  resource : Immunization
+  information : OperationOutcome
+}
+
+type ImmunizationUpdateType {
+  ImmunizationUpdate(id : IDresource : Immunization) : ImmunizationUpdate
+}
+
+type ImmunizationUpdate {
+  resource : Immunization
+  information : OperationOutcome
+}
+
+type ImmunizationDeleteType {
+  ImmunizationDelete(id : ID) : ImmunizationDelete
+}
+
+type ImmunizationDelete {
+  information : OperationOutcome
+}
+

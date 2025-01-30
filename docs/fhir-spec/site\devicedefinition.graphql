@@ -1,0 +1,258 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type DeviceDefinition {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  udiDeviceIdentifier: [DeviceDefinitionUdiDeviceIdentifier]
+  manufacturerString: String  _manufacturerString: ElementBase
+  manufacturerReference: Reference
+  deviceName: [DeviceDefinitionDeviceName]
+  modelNumber: String  _modelNumber: ElementBase
+  type: CodeableConcept
+  specialization: [DeviceDefinitionSpecialization]
+  version: String  _version: [ElementBase]
+  safety: [CodeableConcept]
+  shelfLifeStorage: [ProductShelfLife]
+  physicalCharacteristics: ProdCharacteristic
+  languageCode: [CodeableConcept]
+  capability: [DeviceDefinitionCapability]
+  property: [DeviceDefinitionProperty]
+  owner: Reference
+  contact: [ContactPoint]
+  url: uri  _url: ElementBase
+  onlineInformation: uri  _onlineInformation: ElementBase
+  note: [Annotation]
+  quantity: Quantity
+  parentDevice: Reference
+  material: [DeviceDefinitionMaterial]
+}
+
+type DeviceDefinitionUdiDeviceIdentifier {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  deviceIdentifier: String  _deviceIdentifier: ElementBase
+  issuer: uri  _issuer: ElementBase
+  jurisdiction: uri  _jurisdiction: ElementBase
+}
+
+type DeviceDefinitionDeviceName {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  type: code  _type: ElementBase
+}
+
+type DeviceDefinitionSpecialization {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  systemType: String  _systemType: ElementBase
+  version: String  _version: ElementBase
+}
+
+type DeviceDefinitionCapability {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  description: [CodeableConcept]
+}
+
+type DeviceDefinitionProperty {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  valueQuantity: [Quantity]
+  valueCode: [CodeableConcept]
+}
+
+type DeviceDefinitionMaterial {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  substance: CodeableConcept!
+  alternate: Boolean  _alternate: ElementBase
+  allergenicIndicator: Boolean  _allergenicIndicator: ElementBase
+}
+
+input DeviceDefinition {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  udiDeviceIdentifier: [DeviceDefinitionUdiDeviceIdentifier]
+  manufacturerString: String  _manufacturerString: ElementBase
+  manufacturerReference: Reference
+  deviceName: [DeviceDefinitionDeviceName]
+  modelNumber: String  _modelNumber: ElementBase
+  type: CodeableConcept
+  specialization: [DeviceDefinitionSpecialization]
+  version: String  _version: [ElementBase]
+  safety: [CodeableConcept]
+  shelfLifeStorage: [ProductShelfLife]
+  physicalCharacteristics: ProdCharacteristic
+  languageCode: [CodeableConcept]
+  capability: [DeviceDefinitionCapability]
+  property: [DeviceDefinitionProperty]
+  owner: Reference
+  contact: [ContactPoint]
+  url: uri  _url: ElementBase
+  onlineInformation: uri  _onlineInformation: ElementBase
+  note: [Annotation]
+  quantity: Quantity
+  parentDevice: Reference
+  material: [DeviceDefinitionMaterial]
+}
+
+input DeviceDefinitionUdiDeviceIdentifier {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  deviceIdentifier: String  _deviceIdentifier: ElementBase
+  issuer: uri  _issuer: ElementBase
+  jurisdiction: uri  _jurisdiction: ElementBase
+}
+
+input DeviceDefinitionDeviceName {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: String  _name: ElementBase
+  type: code  _type: ElementBase
+}
+
+input DeviceDefinitionSpecialization {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  systemType: String  _systemType: ElementBase
+  version: String  _version: ElementBase
+}
+
+input DeviceDefinitionCapability {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  description: [CodeableConcept]
+}
+
+input DeviceDefinitionProperty {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept!
+  valueQuantity: [Quantity]
+  valueCode: [CodeableConcept]
+}
+
+input DeviceDefinitionMaterial {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  substance: CodeableConcept!
+  alternate: Boolean  _alternate: ElementBase
+  allergenicIndicator: Boolean  _allergenicIndicator: ElementBase
+}
+
+type DeviceDefinitionReadType {
+  DeviceDefinition(id : ID!) : DeviceDefinition
+}
+
+type DeviceDefinitionListType {
+  DeviceDefinitionList(_filter : String
+    identifier : [token]
+    parent : [reference]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [DeviceDefinition]
+}
+
+type DeviceDefinitionConnectionType {
+  DeviceDefinitionConection(_filter : String
+    identifier : [token]
+    parent : [reference]
+    type : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : DeviceDefinitionConnection
+}
+
+type DeviceDefinitionConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [DeviceDefinitionEdge]
+}
+
+type DeviceDefinitionEdge {
+  mode : String
+  score : Float
+  resource : DeviceDefinition
+}
+
+type DeviceDefinitionCreateType {
+  DeviceDefinitionCreate(resource : DeviceDefinition) : DeviceDefinitionCreation
+}
+
+type DeviceDefinitionCreation {
+  location : String
+  resource : DeviceDefinition
+  information : OperationOutcome
+}
+
+type DeviceDefinitionUpdateType {
+  DeviceDefinitionUpdate(id : IDresource : DeviceDefinition) : DeviceDefinitionUpdate
+}
+
+type DeviceDefinitionUpdate {
+  resource : DeviceDefinition
+  information : OperationOutcome
+}
+
+type DeviceDefinitionDeleteType {
+  DeviceDefinitionDelete(id : ID) : DeviceDefinitionDelete
+}
+
+type DeviceDefinitionDelete {
+  information : OperationOutcome
+}
+

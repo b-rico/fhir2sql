@@ -1,0 +1,782 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Sc - FHIR v4.0.1</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/fhir/sc.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="fhir-pub.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir" width="249" height="60"/> </a>
+			<div id="hl7-status">
+				<b>Release 4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50"/>
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="./assets/images/search.png" alt="Search FHIR"/></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./modules.html">Getting Started</a></li>
+              <li><a href="./documentation.html">Documentation</a></li>
+              <li><a href="./resourcelist.html">Resources</a></li>
+              <li><a href="./profilelist.html">Profiles</a></li>
+              <li><a href="./extensibility-registry.html">Extensions</a></li>
+              <li><a href="./operationslist.html">Operations</a></li>
+              <li><a href="./terminologies-systems.html">Terminologies</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="exchange-module.html"><img src="exchange.png"/> Exchange</a></li>
+        <li><b>Status Code Map</b></li>          <!-- sc.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+
+<div class="col-12">  <!-- ReleaseHeader --><p id="publish-box"> <b>This page is part of a downloaded copy of this specification.</b> This page is part of the FHIR Specification (v4.0.1: R4 - Mixed <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>).   For a full list of available versions, see the <a href="http://hl7.org/fhir/directory.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+
+<h1 class="self-link-parent"><span class="sectioncount">3.7<a name="3.7"> </a></span> FHIR Status Codes Grid <a href="sc.html#3.7" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h1>
+
+<table class="colsi"><tbody><tr><td id="wg"><a href="http://www.hl7.org/Special/committees/fiwg/index.cfm" _target="blank">FHIR Infrastructure  <img src="external.png" style="text-align: baseline"/></a> Work Group</td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:    <!-- !ns! --><a href="versions.html#std-process">Informative</a></td></tr></tbody></table>
+
+<p>
+This is an internal QA page. The intent of this table is to help 
+reviewers compare the mappings between the general resource 
+status codes and the status codes on particular resources. 
+</p>
+
+<p>
+Note: This page is not proscriptive; it's descriptive and comparative,
+to assist with review. The FHIR methodology says that if two domains
+use different terms for the same concept (e.g. 'withdrawn' and 'cancelled') 
+then the domain concept name should be used. Conversely, where there 
+is no explicit reason for the codes to differ based on domain usage, 
+they should not.
+</p>
+
+<p>
+All status codes must be mapped to one of the general status codes,
+which are found in the <a href="codesystem-resource-status.html">Resource Status</a> code system.
+</p>
+
+<p>
+Note: <b>Bold</b> indicates that the element is marked as a modifier.
+</p>
+
+<table border="1">
+<tr><td><b>code</b></td><td><b><a href="codesystem-resource-status.html#resource-status-error">error</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-proposed">proposed</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-planned">planned</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-draft">draft</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-requested">requested</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-received">received</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-declined">declined</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-accepted">accepted</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-arrived">arrived</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-active">active</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-suspended">suspended</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-failed">failed</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-replaced">replaced</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-complete">complete</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-inactive">inactive</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-abandoned">abandoned</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-unknown">unknown</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-unconfirmed">unconfirmed</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-confirmed">confirmed</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-resolved">resolved</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-refuted">refuted</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-differential">differential</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-partial">partial</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-busy-unavailable">busy-unavailable</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-free">free</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-on-target">on-target</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-ahead-of-target">ahead-of-target</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-behind-target">behind-target</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-not-ready">not-ready</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-transduc-discon">transduc-discon</a></b></td><td><b><a href="codesystem-resource-status.html#resource-status-hw-discon">hw-discon</a></b></td></tr>
+<tr><td><b>stated codes</b></td><td>entered-in-error, marked deleted</td><td>proposed</td><td>planned</td><td>tentative, draft</td><td>requested</td><td>received</td><td>refused, declined, rejected</td><td>accepted, scheduled, booked, reserved</td><td>arrived</td><td>active, in-progress, published</td><td>on hold, onleave suspended</td><td>stopped, aborted, failed</td><td>Amended, replaced</td><td>completed, final, finished, achieved, done, dispensed, delivered</td><td>superseded, retired, not in use, inactive, off, refuted</td><td>cancelled, withdrawn, not done, abandoned</td><td>unknown</td><td>unconfirmed</td><td>confirmed</td><td>resolved</td><td>refuted</td><td>differential</td><td>partial</td><td>busy-unavailable</td><td>free</td><td>on-target</td><td>ahead-of-target</td><td>behind-target</td><td>not-ready</td><td>transduc-disconnected</td><td>hardware-disconnected</td></tr>
+<tr><td>actual codes</td><td>entered-in-error</td><td>offered, proposed, proposed,waitlist</td><td>draft, intended, planned, preparation</td><td>attested, candidate, screening, eligible, potential-candidate, data-requested, draft, in-review, negotiable,policy, not-started, partial,preliminary, pending, preliminary, tentative, test, waitlist</td><td>requested</td><td>received, registered</td><td>data-required, declined, disapproved, ineligible, not-billable, rejected</td><td>accepted, approved, booked, busy, reserved, scheduled, triaged, validated</td><td>active, arrived</td><td>active, active, closed-to-accrual, closed-to-accrual-and-intervention, available, billable, current, executable,resolved, in-process, in-progress, in-progress, sustaining, improving, worsening, no-change, issued, on, on-study, on-study-intervention, on-study-observation, pending, successful</td><td>disputed, noshow, on-hold, onhold, onleave, pending-on-study, standby, suspended, temporarily-closed-to-accrual, temporarily-closed-to-accrual-and-intervention, waiting</td><td>aborted, cancelled, error, failed, failure, needs-action, revoked, stopped, unsatisfactory, val-fail, reval-fail, withdrawn</td><td>amended, amended,appended, amended,appended,renewed, corrected, amended, corrected, amended, appended, follow-up, req-revalid</td><td>achieved, balanced, billed, complete, completed, completed, administratively-completed, executed, final, finished, fulfilled, off-study, retired, success</td><td>inactive, off, retired, superseded, unavailable</td><td>abandoned, cancelled, cancelled,rejected,terminated, not-attainable, not-done, not-registered, unknown, withdrawn</td><td>health-unknown, needs-action, unknown</td><td>busy-tentative, unconfirmed, unconfirmed, provisional</td><td>confirmed</td><td>resolved</td><td>refuted</td><td>differential</td><td>checked-in, partial</td><td>busy-unavailable, unavailable</td><td>free</td><td>ready</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>Issues?</b></td><td></td><td></td><td></td><td style="background-color: #ffcccc">check test</td><td style="background-color: #ffcccc">in the Event pattern</td><td></td><td style="background-color: #ffcccc">check data required</td><td style="background-color: #ffcccc">check busy</td><td></td><td style="background-color: #ffcccc">check on, check Goal</td><td style="background-color: #ffcccc">check no-show</td><td style="background-color: #ffcccc">check needs-action</td><td></td><td></td><td></td><td></td><td style="background-color: #ffcccc">check needs action</td><td style="background-color: #ffcccc">check busy-tentative</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="account-definitions.html#Account.status">Account.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td></td><td></td><td></td><td>inactive</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="activitydefinition-definitions.html#ActivityDefinition.status">ActivityDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="allergyintolerance-definitions.html#AllergyIntolerance.clinicalStatus">AllergyIntolerance.clinicalStatus</a></b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>inactive</td><td></td><td></td><td></td><td></td><td>resolved</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="allergyintolerance-definitions.html#AllergyIntolerance.verificationStatus">AllergyIntolerance.verificationStatus</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>unconfirmed</td><td>confirmed</td><td></td><td>refuted</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="appointment-definitions.html#Appointment.participant.status">Appointment.participant.status</a></td><td>entered-in-error</td><td></td><td></td><td>tentative</td><td></td><td></td><td>declined</td><td>accepted</td><td></td><td></td><td></td><td>needs-action</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="appointment-definitions.html#Appointment.status">Appointment.status</a></b></td><td>entered-in-error</td><td>proposed,waitlist</td><td></td><td>pending</td><td></td><td></td><td></td><td>booked</td><td>arrived</td><td></td><td>noshow</td><td></td><td></td><td>fulfilled</td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td>checked-in</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="appointmentresponse-definitions.html#AppointmentResponse.participantStatus">AppointmentResponse.participantStatus</a></b></td><td>entered-in-error</td><td></td><td></td><td>tentative</td><td></td><td></td><td>declined</td><td>accepted</td><td></td><td>in-process</td><td></td><td></td><td></td><td>completed</td><td></td><td></td><td>needs-action</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="biologicallyderivedproduct-definitions.html#BiologicallyDerivedProduct.status">BiologicallyDerivedProduct.status</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>available</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>unavailable</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="capabilitystatement-definitions.html#CapabilityStatement.status">CapabilityStatement.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="careplan-definitions.html#CarePlan.activity.detail.status">CarePlan.activity.detail.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>not-started</td><td></td><td></td><td></td><td>scheduled</td><td></td><td>in-progress</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="careplan-definitions.html#CarePlan.status">CarePlan.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>revoked</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="careteam-definitions.html#CareTeam.status">CareTeam.status</a></b></td><td>entered-in-error</td><td>proposed</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>suspended</td><td></td><td></td><td></td><td>inactive</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="catalogentry-definitions.html#CatalogEntry.status">CatalogEntry.status</a></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="chargeitem-definitions.html#ChargeItem.status">ChargeItem.status</a></b></td><td>entered-in-error</td><td></td><td>planned</td><td></td><td></td><td></td><td>not-billable</td><td></td><td></td><td>billable</td><td></td><td>aborted</td><td></td><td>billed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="chargeitemdefinition-definitions.html#ChargeItemDefinition.status">ChargeItemDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="claim-definitions.html#Claim.status">Claim.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="claimresponse-definitions.html#ClaimResponse.status">ClaimResponse.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="clinicalimpression-definitions.html#ClinicalImpression.status">ClinicalImpression.status</a></b></td><td>entered-in-error</td><td></td><td>preparation</td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td>not-done</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="codesystem-definitions.html#CodeSystem.status">CodeSystem.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="communication-definitions.html#Communication.status">Communication.status</a></b></td><td>entered-in-error</td><td></td><td>preparation</td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td>not-done</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="communicationrequest-definitions.html#CommunicationRequest.status">CommunicationRequest.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>revoked</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="compartmentdefinition-definitions.html#CompartmentDefinition.status">CompartmentDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="composition-definitions.html#Composition.status">Composition.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>preliminary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>amended,appended</td><td>final</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="conceptmap-definitions.html#ConceptMap.status">ConceptMap.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="condition-definitions.html#Condition.verificationStatus">Condition.verificationStatus</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>unknown</td><td>unconfirmed, provisional</td><td>confirmed</td><td></td><td>refuted</td><td>differential</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="consent-definitions.html#Consent.status">Consent.status</a></b></td><td>entered-in-error</td><td>proposed</td><td></td><td>draft</td><td></td><td></td><td>rejected</td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>inactive</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="contract-definitions.html#Contract.contentDefinition.publicationStatus">Contract.contentDefinition.publicationStatus</a></td><td>entered-in-error</td><td>offered</td><td></td><td>negotiable,policy</td><td></td><td></td><td></td><td></td><td></td><td>executable,resolved</td><td>disputed</td><td>revoked</td><td>amended,appended,renewed</td><td>executed</td><td></td><td>cancelled,rejected,terminated</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="contract-definitions.html#Contract.status">Contract.status</a></b></td><td>entered-in-error</td><td>offered</td><td></td><td>negotiable,policy</td><td></td><td></td><td></td><td></td><td></td><td>executable,resolved</td><td>disputed</td><td>revoked</td><td>amended,appended,renewed</td><td>executed</td><td></td><td>cancelled,rejected,terminated</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="coverage-definitions.html#Coverage.status">Coverage.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="coverageeligibilityrequest-definitions.html#CoverageEligibilityRequest.status">CoverageEligibilityRequest.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="coverageeligibilityresponse-definitions.html#CoverageEligibilityResponse.status">CoverageEligibilityResponse.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="detectedissue-definitions.html#DetectedIssue.status">DetectedIssue.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>preliminary</td><td></td><td>registered</td><td></td><td></td><td></td><td></td><td></td><td></td><td>corrected, amended</td><td>final</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="device-definitions.html#Device.status">Device.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>inactive</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="devicemetric-definitions.html#DeviceMetric.operationalStatus">DeviceMetric.operationalStatus</a></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>on</td><td>standby</td><td></td><td></td><td></td><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="devicerequest-definitions.html#DeviceRequest.status">DeviceRequest.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>revoked</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="deviceusestatement-definitions.html#DeviceUseStatement.status">DeviceUseStatement.status</a></b></td><td>entered-in-error</td><td></td><td>intended</td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="diagnosticreport-definitions.html#DiagnosticReport.status">DiagnosticReport.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>partial,preliminary</td><td></td><td>registered</td><td></td><td></td><td></td><td></td><td></td><td></td><td>corrected, amended, appended</td><td>final</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="documentmanifest-definitions.html#DocumentManifest.status">DocumentManifest.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>current</td><td></td><td></td><td></td><td></td><td>superseded</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="documentreference-definitions.html#DocumentReference.docStatus">DocumentReference.docStatus</a></td><td>entered-in-error</td><td></td><td></td><td>preliminary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>amended</td><td>final</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="documentreference-definitions.html#DocumentReference.status">DocumentReference.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>current</td><td></td><td></td><td></td><td></td><td>superseded</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="effectevidencesynthesis-definitions.html#EffectEvidenceSynthesis.status">EffectEvidenceSynthesis.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="encounter-definitions.html#Encounter.location.status">Encounter.location.status</a></td><td></td><td></td><td>planned</td><td></td><td></td><td></td><td></td><td>reserved</td><td></td><td>active</td><td></td><td></td><td></td><td>completed</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="encounter-definitions.html#Encounter.status">Encounter.status</a></b></td><td>entered-in-error</td><td></td><td>planned</td><td></td><td></td><td></td><td></td><td>triaged</td><td>arrived</td><td>in-progress</td><td>onleave</td><td></td><td></td><td>finished</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="encounter-definitions.html#Encounter.statusHistory.status">Encounter.statusHistory.status</a></td><td>entered-in-error</td><td></td><td>planned</td><td></td><td></td><td></td><td></td><td>triaged</td><td>arrived</td><td>in-progress</td><td>onleave</td><td></td><td></td><td>finished</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="endpoint-definitions.html#Endpoint.status">Endpoint.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>test</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>suspended</td><td>error</td><td></td><td></td><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="enrollmentrequest-definitions.html#EnrollmentRequest.status">EnrollmentRequest.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="enrollmentresponse-definitions.html#EnrollmentResponse.status">EnrollmentResponse.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="episodeofcare-definitions.html#EpisodeOfCare.status">EpisodeOfCare.status</a></b></td><td>entered-in-error</td><td></td><td>planned</td><td>waitlist</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>onhold</td><td></td><td></td><td>finished</td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="episodeofcare-definitions.html#EpisodeOfCare.statusHistory.status">EpisodeOfCare.statusHistory.status</a></td><td>entered-in-error</td><td></td><td>planned</td><td>waitlist</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>onhold</td><td></td><td></td><td>finished</td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="eventdefinition-definitions.html#EventDefinition.status">EventDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="evidence-definitions.html#Evidence.status">Evidence.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="evidencevariable-definitions.html#EvidenceVariable.status">EvidenceVariable.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="examplescenario-definitions.html#ExampleScenario.status">ExampleScenario.status</a></b></td><td></td><td>proposed</td><td>planned</td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td>finished</td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="explanationofbenefit-definitions.html#ExplanationOfBenefit.status">ExplanationOfBenefit.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="familymemberhistory-definitions.html#FamilyMemberHistory.status">FamilyMemberHistory.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>completed</td><td></td><td></td><td>health-unknown</td><td></td><td></td><td></td><td></td><td></td><td>partial</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="flag-definitions.html#Flag.status">Flag.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>inactive</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="goal-definitions.html#Goal.achievementStatus">Goal.achievementStatus</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress, sustaining, improving, worsening, no-change</td><td></td><td></td><td></td><td>achieved</td><td></td><td>not-attainable</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="goal-definitions.html#Goal.lifecycleStatus">Goal.lifecycleStatus</a></b></td><td>entered-in-error</td><td>proposed</td><td>planned</td><td></td><td></td><td></td><td>rejected</td><td>accepted</td><td></td><td>active</td><td>on-hold</td><td></td><td></td><td>completed</td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="graphdefinition-definitions.html#GraphDefinition.status">GraphDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="guidanceresponse-definitions.html#GuidanceResponse.status">GuidanceResponse.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>data-requested</td><td></td><td></td><td>data-required</td><td></td><td></td><td>in-progress</td><td></td><td>failure</td><td></td><td>success</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="imagingstudy-definitions.html#ImagingStudy.status">ImagingStudy.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td>registered</td><td></td><td></td><td></td><td>available</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="immunization-definitions.html#Immunization.status">Immunization.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>completed</td><td></td><td>not-done</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="immunizationevaluation-definitions.html#ImmunizationEvaluation.status">ImmunizationEvaluation.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>completed</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="implementationguide-definitions.html#ImplementationGuide.status">ImplementationGuide.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="insuranceplan-definitions.html#InsurancePlan.status">InsurancePlan.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="invoice-definitions.html#Invoice.status">Invoice.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>issued</td><td></td><td>cancelled</td><td></td><td>balanced</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="library-definitions.html#Library.status">Library.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="list-definitions.html#List.status">List.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>current</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="location-definitions.html#Location.status">Location.status</a></b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>suspended</td><td></td><td></td><td></td><td>inactive</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="measure-definitions.html#Measure.status">Measure.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="measurereport-definitions.html#MeasureReport.status">MeasureReport.status</a></b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>pending</td><td></td><td>error</td><td></td><td>complete</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="media-definitions.html#Media.status">Media.status</a></b></td><td>entered-in-error</td><td></td><td>preparation</td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td>inactive</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="medication-definitions.html#Medication.status">Medication.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>inactive</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="medicationadministration-definitions.html#MedicationAdministration.status">MedicationAdministration.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="medicationdispense-definitions.html#MedicationDispense.status">MedicationDispense.status</a></b></td><td>entered-in-error</td><td></td><td>preparation</td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="medicationknowledge-definitions.html#MedicationKnowledge.status">MedicationKnowledge.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>inactive</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="medicationrequest-definitions.html#MedicationRequest.status">MedicationRequest.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="medicationstatement-definitions.html#MedicationStatement.status">MedicationStatement.status</a></b></td><td>entered-in-error</td><td></td><td>intended</td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="messagedefinition-definitions.html#MessageDefinition.status">MessageDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="namingsystem-definitions.html#NamingSystem.status">NamingSystem.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="nutritionorder-definitions.html#NutritionOrder.status">NutritionOrder.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>revoked</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="observation-definitions.html#Observation.status">Observation.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>preliminary</td><td></td><td>registered</td><td></td><td></td><td></td><td></td><td></td><td></td><td>corrected, amended</td><td>final</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="operationdefinition-definitions.html#OperationDefinition.status">OperationDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="paymentnotice-definitions.html#PaymentNotice.status">PaymentNotice.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="paymentreconciliation-definitions.html#PaymentReconciliation.status">PaymentReconciliation.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="plandefinition-definitions.html#PlanDefinition.status">PlanDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="procedure-definitions.html#Procedure.status">Procedure.status</a></b></td><td>entered-in-error</td><td></td><td>preparation</td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td>on-hold</td><td>stopped</td><td></td><td>completed</td><td></td><td>not-done</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="questionnaire-definitions.html#Questionnaire.status">Questionnaire.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="questionnaireresponse-definitions.html#QuestionnaireResponse.status">QuestionnaireResponse.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td></td><td>stopped</td><td>amended</td><td>completed</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="requestgroup-definitions.html#RequestGroup.status">RequestGroup.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>revoked</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="researchdefinition-definitions.html#ResearchDefinition.status">ResearchDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="researchelementdefinition-definitions.html#ResearchElementDefinition.status">ResearchElementDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="researchstudy-definitions.html#ResearchStudy.status">ResearchStudy.status</a></b></td><td></td><td></td><td></td><td>in-review</td><td></td><td></td><td>disapproved</td><td>approved</td><td></td><td>active, closed-to-accrual, closed-to-accrual-and-intervention</td><td>temporarily-closed-to-accrual, temporarily-closed-to-accrual-and-intervention</td><td></td><td></td><td>completed, administratively-completed</td><td></td><td>withdrawn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="researchsubject-definitions.html#ResearchSubject.status">ResearchSubject.status</a></b></td><td></td><td></td><td></td><td>candidate, screening, eligible, potential-candidate</td><td></td><td></td><td>ineligible</td><td></td><td></td><td>on-study, on-study-intervention, on-study-observation</td><td>pending-on-study</td><td>withdrawn</td><td>follow-up</td><td>off-study</td><td></td><td>not-registered</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="riskassessment-definitions.html#RiskAssessment.status">RiskAssessment.status</a></td><td>entered-in-error</td><td></td><td></td><td>preliminary</td><td></td><td>registered</td><td></td><td></td><td></td><td></td><td></td><td></td><td>corrected, amended</td><td>final</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="riskevidencesynthesis-definitions.html#RiskEvidenceSynthesis.status">RiskEvidenceSynthesis.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="searchparameter-definitions.html#SearchParameter.status">SearchParameter.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="servicerequest-definitions.html#ServiceRequest.status">ServiceRequest.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>on-hold</td><td>revoked</td><td></td><td>completed</td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="slot-definitions.html#Slot.status">Slot.status</a></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td>busy</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>busy-tentative</td><td></td><td></td><td></td><td></td><td></td><td>busy-unavailable</td><td>free</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="specimen-definitions.html#Specimen.status">Specimen.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>available</td><td></td><td>unsatisfactory</td><td></td><td></td><td>unavailable</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="structuredefinition-definitions.html#StructureDefinition.status">StructureDefinition.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="structuremap-definitions.html#StructureMap.status">StructureMap.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="subscription-definitions.html#Subscription.status">Subscription.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td>requested</td><td></td><td></td><td></td><td></td><td>active</td><td></td><td>error</td><td></td><td></td><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="substance-definitions.html#Substance.status">Substance.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>inactive</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="supplydelivery-definitions.html#SupplyDelivery.status">SupplyDelivery.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td></td><td></td><td></td><td>completed</td><td></td><td>abandoned</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="supplyrequest-definitions.html#SupplyRequest.status">SupplyRequest.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td>suspended</td><td></td><td></td><td>completed</td><td></td><td>cancelled</td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="task-definitions.html#Task.status">Task.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td>requested</td><td>received</td><td>rejected</td><td>accepted</td><td></td><td>in-progress</td><td>on-hold</td><td>failed</td><td></td><td>completed</td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>ready</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="terminologycapabilities-definitions.html#TerminologyCapabilities.status">TerminologyCapabilities.status</a></b></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="testreport-definitions.html#TestReport.status">TestReport.status</a></b></td><td>entered-in-error</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>in-progress</td><td>waiting</td><td>stopped</td><td></td><td>completed</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="testscript-definitions.html#TestScript.status">TestScript.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="valueset-definitions.html#ValueSet.status">ValueSet.status</a></b></td><td></td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td>retired</td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="verificationresult-definitions.html#VerificationResult.primarySource.validationStatus">VerificationResult.primarySource.validationStatus</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>successful</td><td></td><td>failed</td><td></td><td></td><td></td><td></td><td>unknown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><a href="verificationresult-definitions.html#VerificationResult.status">VerificationResult.status</a></td><td></td><td></td><td></td><td>attested</td><td></td><td></td><td></td><td>validated</td><td></td><td>in-process</td><td></td><td>val-fail, reval-fail</td><td>req-revalid</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b><a href="visionprescription-definitions.html#VisionPrescription.status">VisionPrescription.status</a></b></td><td>entered-in-error</td><td></td><td></td><td>draft</td><td></td><td></td><td></td><td></td><td></td><td>active</td><td></td><td></td><td></td><td></td><td></td><td>cancelled</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.1<a name="3.7.0.0.1"> </a></span> error <a href="sc.html#3.7.0.0.1" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The resource was created in error, and should not be treated as valid (note: in many cases, for various data integrity related reasons, the information cannot be removed from the record)</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>Care plan activity was entered in error and voided.</li>
+<li>Contract was created in error. No Precedence Order.  Status may be applied to a Contract with any status.</li>
+<li>Some of the actions that are implied by the medication request may have occurred.  For example, the medication may have been dispensed and the patient may have taken some of the medication.  Clinical decision support systems should take this status into account</li>
+<li>Some of the actions that are implied by the medication statement may have occurred.  For example, the patient may have taken some of the medication.  Clinical decision support systems should take this status into account.</li>
+<li>The DeviceMetric was entered in error.</li>
+<li>The administration was entered in error and therefore nullified.</li>
+<li>The care team should have never existed.</li>
+<li>The charge item has been entered in error and should not be processed for billing.</li>
+<li>The composition or document was originally created/issued in error, and this is an amendment that marks that the entire series should not be considered as valid.</li>
+<li>The consent was created wrongly (e.g. wrong patient) and should be ignored.</li>
+<li>The device was entered in error and voided.</li>
+<li>The dispense was entered in error and therefore nullified.</li>
+<li>The flag was added in error and should no longer be displayed.</li>
+<li>The goal was entered in error and voided.</li>
+<li>The imaging study has been withdrawn following a previous final release.  This electronic record should never have existed, though it is possible that real-world decisions were based on it. (If real-world activity has occurred, the status should be "cancelled" rather than "entered-in-error".).</li>
+<li>The instance was entered in error.</li>
+<li>The list was never accurate.  It is retained for medico-legal purposes only.</li>
+<li>The medication was entered in error.</li>
+<li>The observation has been withdrawn following previous final release.  This electronic record should never have existed, though it is possible that real-world decisions were based on it. (If real-world activity has occurred, the status should be "cancelled" rather than "entered-in-error".).</li>
+<li>The report has been withdrawn following a previous final release.  This electronic record should never have existed, though it is possible that real-world decisions were based on it. (If real-world activity has occurred, the status should be "cancelled" rather than "entered-in-error".).</li>
+<li>The resource instance was entered in error.</li>
+<li>The response was entered in error.</li>
+<li>The specimen was entered in error and therefore nullified.</li>
+<li>The statement was entered in error and is not valid.</li>
+<li>The statement was recorded incorrectly.</li>
+<li>The substance was entered in error.</li>
+<li>The task should never have existed and is retained only because of the possibility it may have used.</li>
+<li>This QuestionnaireResponse was entered in error and voided.</li>
+<li>This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be "cancelled" rather than "entered-in-error".).</li>
+<li>This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be "stopped" rather than "entered-in-error".).</li>
+<li>This electronic record should never have existed, though it is possible that real-world decisions were based on it. (If real-world activity has occurred, the status should be "abandoned" rather than "entered-in-error".).</li>
+<li>This instance should not have been part of this patient's medical record.</li>
+<li>This reference was created in error.</li>
+<li>This request should never have existed and should be considered 'void'.  (It is possible that real-world decisions were based on it.  If real-world activity has occurred, the status should be "revoked" rather than "entered-in-error".).</li>
+<li>This test report was entered or created in error.</li>
+<li>the invoice was determined as entered in error before it was issued.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.2<a name="3.7.0.0.2"> </a></span> proposed <a href="sc.html#3.7.0.0.2" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The resource describes an action or plan that is proposed, and not yet approved by the participants</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A goal is proposed for this patient.</li>
+<li>Contract is a proposal by either the Grantor or the Grantee. Aka - A Contract hard copy or electronic 'template', 'form' or 'application'. E.g., health insurance application; consent directive form. Usage: Beginning of contract negotiation, which may have been completed as a precondition because used for 0..* contracts. Precedence Order = 2. Comparable FHIR and v.3 status codes: requested; new.</li>
+<li>The care team has been drafted and proposed, but not yet participating in the coordination and delivery of patient care.</li>
+<li>The consent has been proposed but not yet agreed to by all parties. The negotiation stage.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.3<a name="3.7.0.0.3"> </a></span> planned <a href="sc.html#3.7.0.0.3" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The resource describes a course of action that is planned and agreed/approved, but at the time of recording was still future</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A goal is planned for this patient.</li>
+<li>The Encounter has not yet started.</li>
+<li>The charge item has been entered, but the charged service is not  yet complete, so it shall not be billed yet but might be used in the context of pre-authorization.</li>
+<li>The core event has not started yet, but some staging activities have begun (e.g. initial compounding or packaging of medication). Preparation stages may be tracked for billing purposes.</li>
+<li>The core event has not started yet, but some staging activities have begun (e.g. surgical suite preparation).  Preparation stages may be tracked for billing purposes.</li>
+<li>The device may be used at some time in the future.</li>
+<li>The medication may be taken at some time in the future.</li>
+<li>The patient is planned to be moved to this location at some point in the future.</li>
+<li>This episode of care is planned to start at the date specified in the period.start. During this status, an organization may perform assessments to determine if the patient is eligible to receive services, or be organizing to make resources available to provide care services.</li>
+<li>This resource is still under development and is not yet considered to be ready for normal use.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.4<a name="3.7.0.0.4"> </a></span> draft <a href="sc.html#3.7.0.0.4" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The information in the resource is still being prepared and edited</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>***TODO***</li>
+<li>A new instance the contents of which is not complete.</li>
+<li>A new resource instance the contents of which is not complete.</li>
+<li>Care plan activity is planned but no action has yet been taken.</li>
+<li>Protocol is submitted to the review board for approval.</li>
+<li>Some or all of the participant(s) have not finalized their acceptance of the appointment request.</li>
+<li>The consent is in development or awaiting use but is not yet intended to be acted upon.</li>
+<li>The participant has  tentatively accepted the appointment. This could be automatically created by a system and requires further processing before it can be accepted. There is no commitment that attendance will occur.</li>
+<li>The prescription is not yet 'actionable', e.g. it is a work in progress, requires sign-off, verification&nbsp;or&nbsp;needs to be run through decision support process.</li>
+<li>The request has been created but is not yet complete or ready for action.</li>
+<li>The request was processed successfully, but more data may result in a more complete evaluation.</li>
+<li>The task is not yet ready to be acted upon.</li>
+<li>This endpoint is not intended for production usage.</li>
+<li>This episode has been placed on a waitlist, pending the episode being made active (or cancelled).</li>
+<li>This is a preliminary composition or document (also known as initial or interim). The content may be incomplete or unverified.</li>
+<li>This is an initial or interim observation: data may be incomplete or unverified.</li>
+<li>This resource is still under development and is not yet considered to be ready for normal use.</li>
+<li>the invoice has been prepared but not yet finalized.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.5<a name="3.7.0.0.5"> </a></span> requested <a href="sc.html#3.7.0.0.5" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>A fulfiller has been asked to perform this action, but it has not yet occurred</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>The client has requested the subscription, and the server has not yet set it up.</li>
+<li>The task is ready to be acted upon and action is sought.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.6<a name="3.7.0.0.6"> </a></span> received <a href="sc.html#3.7.0.0.6" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The fulfiller has received the request, but not yet agreed to carry out the action</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A potential performer has claimed ownership of the task and is evaluating whether to perform it.</li>
+<li>The existence of the imaging study is registered, but there is nothing yet available.</li>
+<li>The existence of the observation is registered, but there is no result yet available.</li>
+<li>The existence of the report is registered, but there is nothing yet available.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.7<a name="3.7.0.0.7"> </a></span> declined <a href="sc.html#3.7.0.0.7" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The fulfiller chose not to perform the action</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A person who did not meet one or more criteria required for participation in a study is considered to have failed screening or
+is ineligible for the study.</li>
+<li>A proposed goal was rejected.</li>
+<li>Protocol was disapproved by the review board.</li>
+<li>The charge item has been determined to be not billable (e.g. due to rules associated with the billing code).</li>
+<li>The consent has been rejected by one or more of the parties.</li>
+<li>The participant has declined the appointment and will not participate in the appointment.</li>
+<li>The potential performer who claimed ownership of the task has decided not to execute it prior to performing any action.</li>
+<li>The request was processed, but more data is required to complete the evaluation.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.8<a name="3.7.0.0.8"> </a></span> accepted <a href="sc.html#3.7.0.0.8" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The fulfiller has decided to perform the action, and plans are in train to do this in the future</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>***TODO***</li>
+<li>A proposed goal was accepted or acknowledged.</li>
+<li>All participant(s) have been considered and the appointment is confirmed to go ahead at the date/times specified.</li>
+<li>Appointment or other booking has occurred but activity has not yet begun.</li>
+<li>Indicates that the time interval is busy because one  or more events have been scheduled for that interval.</li>
+<li>Protocol is approved by the review board.</li>
+<li>The participant has accepted the appointment.</li>
+<li>The patient has been assessed for the priority of their treatment based on the severity of their condition.</li>
+<li>The potential performer has agreed to execute the task but has not yet started work.</li>
+<li>This location is held empty for this patient.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.9<a name="3.7.0.0.9"> </a></span> arrived <a href="sc.html#3.7.0.0.9" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The pre-conditions for the action are all fulfilled, and it is imminent</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>The Patient is present for the encounter, however is not currently meeting with a practitioner.</li>
+<li>The patient/patients has/have arrived and is/are waiting to be seen.</li>
+<li>This resource is ready for normal use.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.10<a name="3.7.0.0.10"> </a></span> active <a href="sc.html#3.7.0.0.10" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The resource describes information that is currently valid or a process that is presently occuring</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>***TODO***</li>
+<li>A current flag that should be displayed to a user. A system may use the category to determine which user roles should view the flag.</li>
+<li>A test operations is currently executing.</li>
+<li>At least one instance has been associated with this imaging study.</li>
+<li>Care plan activity has been started but is not yet complete.</li>
+<li>Product is currently available for use.</li>
+<li>Supply has been requested, but not delivered.</li>
+<li>The DeviceMetric is operating and will generate DeviceObservations.</li>
+<li>The Encounter has begun and the patient is present / the practitioner and the patient are meeting.</li>
+<li>The administration has started but has not yet completed.</li>
+<li>The care team is currently participating in the coordination and delivery of care.</li>
+<li>The charge item is ready for billing.</li>
+<li>The consent is to be followed and enforced.</li>
+<li>The device is available for use.  Note: For *implanted devices*  this means that the device is implanted in the patient.</li>
+<li>The device is still being used.</li>
+<li>The dispensed product is ready for pickup.</li>
+<li>The event is currently occurring.</li>
+<li>The goal is being sought actively.</li>
+<li>The instance is currently in-force.</li>
+<li>The list is considered to be an active part of the patient's record.</li>
+<li>The location is operational.</li>
+<li>The medication is available for use.</li>
+<li>The medication is still being taken.</li>
+<li>The patient is currently at this location, or was between the period specified.A system may update these records when the patient leaves the location to either reserved, or completed.</li>
+<li>The physical specimen is present and in good condition.</li>
+<li>The prescription is 'actionable', but not all actions that are implied by it have occurred yet.</li>
+<li>The report is currently being generated.</li>
+<li>The request is currently being processed.</li>
+<li>The request is in force and ready to be acted upon.</li>
+<li>The request is ready to be acted upon.</li>
+<li>The resource instance is currently in-force.</li>
+<li>The subject is currently experiencing, or is at risk of, a reaction to the identified substance.</li>
+<li>The subscription is active.</li>
+<li>The substance is considered for use or reference.</li>
+<li>The task has been started but is not yet complete.</li>
+<li>This QuestionnaireResponse has been partially filled out with answers but changes or additions are still expected to be made to it.</li>
+<li>This account is active and may be used.</li>
+<li>This endpoint is expected to be active and can be used.</li>
+<li>This episode of care is current.</li>
+<li>This is the current reference for this document.</li>
+<li>This resource is ready for normal use.</li>
+<li>the invoice has been finalized and sent to the recipient.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.11<a name="3.7.0.0.11"> </a></span> suspended <a href="sc.html#3.7.0.0.11" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The process described/requested in this resource has been halted for some reason</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A person is pre-registered for a study.</li>
+<li>A test operation is waiting for an external client request.</li>
+<li>Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called 'suspended'.</li>
+<li>Actions implied by the prescription are to be temporarily halted, but are expected to continue later.  May also be called 'suspended'.</li>
+<li>Actions implied by the statement have been temporarily halted, but are expected to continue later. May also be called "suspended".</li>
+<li>Actions implied by the statement have been temporarily halted, but are expected to continue later. May also be called 'suspended'.</li>
+<li>Care plan activity was started but has temporarily ceased with an expectation of resumption at a future time.</li>
+<li>Contract is pended to rectify failure of the Grantor or the Grantee to fulfil contract provision(s). E.g., Grantee complaint about Grantor's failure to comply with contract provisions. Usage: Contract pended. Precedence Order = 7. Comparable FHIR and v.3 status codes: on hold; pended; suspended.</li>
+<li>Some or all of the participant(s) have not/did not appear for the appointment (usually the patient).</li>
+<li>The DeviceMetric is operating, but will not generate any DeviceObservations.</li>
+<li>The Encounter has begun, but the patient is temporarily on leave.</li>
+<li>The authorization/request to act has been temporarily withdrawn but is expected to resume in the future.</li>
+<li>The care team is temporarily on hold or suspended and not participating in the coordination and delivery of care.</li>
+<li>The dispense process is paused while waiting for an external event to reactivate the dispense.  For example, new stock has arrived or the prescriber has called.</li>
+<li>The event has been temporarily stopped but is expected to resume in the future.</li>
+<li>The goal remains a long term objective but is no longer being actively pursued for a temporary period of time.</li>
+<li>The location is temporarily closed.</li>
+<li>The request (and any implicit authorization to act) has been temporarily withdrawn but is expected to resume in the future.</li>
+<li>The task has been started but work has been paused.</li>
+<li>This account is on hold.</li>
+<li>This endpoint is temporarily unavailable.</li>
+<li>This episode of care is on hold; the organization has limited responsibility for the patient (such as while on respite).</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.12<a name="3.7.0.0.12"> </a></span> failed <a href="sc.html#3.7.0.0.12" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The process described/requested in the resource could not be completed, and no further action is planned</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A Contract that is rescinded.  May be required prior to replacing with an updated Contract. Comparable FHIR and v.3 status codes: nullified.</li>
+<li>Actions implied by the administration have been permanently halted, before all of them occurred.</li>
+<li>Actions implied by the dispense have been permanently halted, before all of them occurred.</li>
+<li>Actions implied by the prescription are to be permanently halted, before all of the administrations occurred. This should not be used if the original order was entered in error</li>
+<li>Actions implied by the statement have been permanently halted, before all of them occurred.</li>
+<li>Actions implied by the statement have been permanently halted, before all of them occurred. This should not be used if the statement was entered in error.</li>
+<li>An error occurred attempting to generate the report.</li>
+<li>The event was terminated prior to the full completion of the intended activity but after at least some of the 'main' activity (beyond preparation) has occurred.</li>
+<li>The participant needs to indicate if they accept the appointment by changing this status to one of the other statuses.</li>
+<li>The person has withdrawn their participation in the study before registration.</li>
+<li>The planned care plan activity has been ended prior to completion after the activity was started.</li>
+<li>The processing of the charge was aborted.</li>
+<li>The request (and any implicit authorization to act) has been terminated prior to the known full completion of the intended actions.  No further activity should occur.</li>
+<li>The request was not processed successfully.</li>
+<li>The server has an error executing the notification.</li>
+<li>The specimen cannot be used because of a quality issue such as a broken container, contamination, or too old.</li>
+<li>The task was attempted but could not be completed due to some error.</li>
+<li>The test script execution was manually stopped.</li>
+<li>This QuestionnaireResponse has been partially filled out with answers but has been abandoned. It is unknown whether changes or additions are expected to be made to it.</li>
+<li>This endpoint has exceeded connectivity thresholds and is considered in an error state and should no longer be attempted to connect to until corrective action is taken.</li>
+<li>the invoice was cancelled.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.13<a name="3.7.0.0.13"> </a></span> replaced <a href="sc.html#3.7.0.0.13" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The information in this resource has been replaced by information in another resource</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>***TODO***</li>
+<li>A person is no longer receiving study intervention and/or being evaluated with tests and procedures according to the protocol, but they are being monitored on a protocol-prescribed schedule.</li>
+<li>The composition content or the referenced resources have been modified (edited or added to) subsequent to being released as "final" and the composition is complete and verified by an authorized person.</li>
+<li>This QuestionnaireResponse has been filled out with answers, then marked as complete, yet changes or additions have been made to it afterwards.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.14<a name="3.7.0.0.14"> </a></span> complete <a href="sc.html#3.7.0.0.14" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The process described/requested in the resource has been completed, and no further action is planned</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A person that has ended their participation on a study either because their treatment/observation is complete or through not
+responding, withdrawal, non-compliance and/or adverse event.</li>
+<li>Activity against the request has been sufficiently completed to the satisfaction of the requester.</li>
+<li>All actions that are implied by the administration have occurred.</li>
+<li>All actions that are implied by the prescription have occurred.</li>
+<li>All available related health information is captured as of the date (and possibly time) when the family member history was taken.</li>
+<li>All test operations have completed.</li>
+<li>Care plan activity has been completed (more or less) as planned.</li>
+<li>Contract is activated for period stipulated when both the Grantor and Grantee have signed it. Usage: Required state for normal completion of contracting activity.  Precedence Order = 6. Comparable FHIR and v.3 status codes: accepted; completed.</li>
+<li>Supply has been delivered ("completed").</li>
+<li>The Encounter has ended.</li>
+<li>The activity described by the request has been fully performed.  No further activity will occur.</li>
+<li>The charge item has been billed (e.g. a billing engine has generated financial transactions by applying the associated ruled for the charge item to the context of the Encounter, and placed them into Claims/Invoices.</li>
+<li>The device is no longer being used.</li>
+<li>The dispensed product has been picked up.</li>
+<li>The event has now concluded.</li>
+<li>The goal has been met.</li>
+<li>The goal is no longer being sought.</li>
+<li>The medication is no longer being taken.</li>
+<li>The observation is complete and there are no further actions needed. Additional information such "released", "signed", etc would be represented using [Provenance](provenance.html) which provides not only the act but also the actors and dates and other related data. These act states would be associated with an observation status of `preliminary` until they are all completed and then a status of `final` would be applied.</li>
+<li>The patient was at this location during the period specified.Not to be used when the patient is currently at the location.</li>
+<li>The planning stages of the appointment are now complete, the encounter resource will exist and will track further status changes. Note that an encounter may exist before the appointment status is fulfilled for many reasons.</li>
+<li>The report is complete and ready for use.</li>
+<li>The report is complete and verified by an authorized person.</li>
+<li>The request was processed successfully.</li>
+<li>The task has been completed.</li>
+<li>This QuestionnaireResponse has been filled out with answers and the current content is regarded as definitive.</li>
+<li>This episode of care is finished and the organization is not expecting to be providing further care to the patient. Can also be known as "closed", "completed" or other similar terms.</li>
+<li>This resource has been withdrawn or superseded and should no longer be used.</li>
+<li>This version of the composition is complete and verified by an appropriate person and no further work is planned. Any subsequent updates would be on a new version of the composition.</li>
+<li>the invoice has been balaced / completely paid.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.15<a name="3.7.0.0.15"> </a></span> inactive <a href="sc.html#3.7.0.0.15" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The resource describes information that is no longer valid or a process that is stopped occurring</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>The DeviceMetric is not operating.</li>
+<li>The care team was, but is no longer, participating in the coordination and delivery of care.</li>
+<li>The consent is terminated or replaced.</li>
+<li>The device is no longer available for use (e.g. lost, expired, damaged).  Note: For *implanted devices*  this means that the device has been removed from the patient.</li>
+<li>The flag no longer needs to be displayed.</li>
+<li>The list is "old" and should no longer be considered accurate or relevant.</li>
+<li>The location is no longer used.</li>
+<li>The medication is not available for use.</li>
+<li>The subject is no longer at risk of a reaction to the identified substance.</li>
+<li>The substance is considered for reference, but not for use.</li>
+<li>There is no physical specimen because it is either lost, destroyed or consumed.</li>
+<li>This account is inactive and should not be used to track financial information.</li>
+<li>This endpoint is no longer to be used.</li>
+<li>This reference has been superseded by another reference.</li>
+<li>This resource has been withdrawn or superseded and should no longer be used.</li>
+<li>Too many errors have occurred or the subscription has expired.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.16<a name="3.7.0.0.16"> </a></span> abandoned <a href="sc.html#3.7.0.0.16" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The process described/requested in the resource did not complete - usually due to some workflow error, and no further action is planned</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A person for whom registration was not completed.</li>
+<li>Delivery was not completed.</li>
+<li>Protocol was withdrawn by the lead organization.</li>
+<li>The Encounter has ended before it has begun.</li>
+<li>The appointment has been cancelled.</li>
+<li>The authoring system does not know which of the status values currently applies for this resource.  Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, it's just not known which one.</li>
+<li>The authorization/request to act has been terminated prior to the full completion of the intended actions.  No further activity should occur.</li>
+<li>The episode of care was cancelled, or withdrawn from service, often selected during the planned stage as the patient may have gone elsewhere, or the circumstances have changed and the organization is unable to provide the care. It indicates that services terminated outside the planned/expected workflow.</li>
+<li>The event was terminated prior to any activity beyond preparation.  I.e. The 'main' activity has not yet begun.  The boundary between preparatory and the 'main' activity is context-specific.</li>
+<li>The goal has been abandoned.</li>
+<li>The goal is not possible to be met.</li>
+<li>The imaging study is unavailable because the imaging study was not started or not completed (also sometimes called "aborted").</li>
+<li>The instance is withdrawn, rescinded or reversed.</li>
+<li>The observation is unavailable because the measurement was not started or not completed (also sometimes called "aborted").</li>
+<li>The planned care plan activity has been withdrawn.</li>
+<li>The prescription has been withdrawn before any administrations have occurred</li>
+<li>The report is unavailable because the measurement was not started or not completed (also sometimes called "aborted").</li>
+<li>The resource instance is withdrawn, rescinded or reversed.</li>
+<li>The task was not completed.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.17<a name="3.7.0.0.17"> </a></span> unknown <a href="sc.html#3.7.0.0.17" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>Authoring system does not know the status</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>Health information for this family member is unavailable/unknown.</li>
+<li>The account status is unknown.</li>
+<li>The authoring system does not know which of the status values applies for this medication dispense.  Note: this concept is not to be used for other - one of the listed statuses is presumed to apply, it's just now known which one.</li>
+<li>The authoring system does not know which of the status values currently applies for this charge item  Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, it's just not known which one.</li>
+<li>The authoring system does not know which of the status values currently applies for this request. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, it's just not known which one.</li>
+<li>The authoring system does not know which of the status values currently applies for this resource.  Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, it's just not known which one.</li>
+<li>The authoring/source system does not know which of the status values currently applies for this event.  Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply,  but the authoring/source system does not know which.</li>
+<li>The authoring/source system does not know which of the status values currently applies for this observation. Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, but the authoring/source system does not know which.</li>
+<li>The authoring/source system does not know which of the status values currently applies for this observation. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, but the authoring/source system does not know which.</li>
+<li>The authoring/source system does not know which of the status values currently applies for this request.  Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply,  but the authoring/source system does not know which.</li>
+<li>The current state of the care plan activity is not known.  Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, but the authoring/source system does not know which one.</li>
+<li>The encounter status is unknown. Note that "unknown" is a value of last resort and every attempt should be made to provide a meaningful value other than "unknown".</li>
+<li>The participant needs to indicate if they accept the appointment by changing this status to one of the other statuses.</li>
+<li>The state of the medication use is not currently known.</li>
+<li>The status of the device has not been determined.</li>
+<li>The system does not know which of the status values currently applies for this request. Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, it's just not known which one.</li>
+<li>The validations status has not been determined yet</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.18<a name="3.7.0.0.18"> </a></span> unconfirmed <a href="sc.html#3.7.0.0.18" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The information in this resource is not yet approved</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A low level of certainty about the propensity for a reaction to the identified substance.</li>
+<li>Indicates that the time interval is busy because one or more events have been tentatively scheduled for that interval.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.19<a name="3.7.0.0.19"> </a></span> confirmed <a href="sc.html#3.7.0.0.19" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The information in this resource is approved</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A high level of certainty about the propensity for a reaction to the identified substance, which may include clinical evidence by testing or rechallenge.</li>
+<li>There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.20<a name="3.7.0.0.20"> </a></span> resolved <a href="sc.html#3.7.0.0.20" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The issue identified by this resource is no longer of concern</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A reaction to the identified substance has been clinically reassessed by testing or re-exposure and is considered no longer to be present. Re-exposure could be accidental, unplanned, or outside of any clinical setting.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.21<a name="3.7.0.0.21"> </a></span> refuted <a href="sc.html#3.7.0.0.21" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>This information has been ruled out by testing and evaluation</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>A propensity for a reaction to the identified substance has been disputed or disproven with a sufficient level of clinical certainty to justify invalidating the assertion. This might or might not include testing or rechallenge.</li>
+<li>This condition has been ruled out by diagnostic and clinical evidence.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.22<a name="3.7.0.0.22"> </a></span> differential <a href="sc.html#3.7.0.0.22" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>Potentially true?</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>One of a set of potential (and typically mutually exclusive) diagnoses asserted to further guide the diagnostic process and preliminary treatment.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.23<a name="3.7.0.0.23"> </a></span> partial <a href="sc.html#3.7.0.0.23" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>This information is still being assembled</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>Some health information is known and captured, but not complete - see notes for details.</li>
+<li>When checked in, all pre-encounter administrative work is complete, and the encounter may begin. (where multiple patients are involved, they are all present).</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.24<a name="3.7.0.0.24"> </a></span> busy-unavailable <a href="sc.html#3.7.0.0.24" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>not available at this time/location</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>Indicates that the time interval is busy and that the interval cannot be scheduled.</li>
+<li>Product is not currently available for use.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.25<a name="3.7.0.0.25"> </a></span> free <a href="sc.html#3.7.0.0.25" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>Free for scheduling</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>Indicates that the time interval is free for scheduling.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.26<a name="3.7.0.0.26"> </a></span> on-target <a href="sc.html#3.7.0.0.26" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>Ready to act</p>
+<p>Definitions for matching codes:</p>
+<ul>
+<li>The task is ready to be performed, but no action has yet been taken.  Used in place of requested/received/accepted/rejected when request assignment and acceptance is a given.</li>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.27<a name="3.7.0.0.27"> </a></span> ahead-of-target <a href="sc.html#3.7.0.0.27" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>Ahead of the planned timelines</p>
+<p>Definitions for matching codes:</p>
+<ul>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.28<a name="3.7.0.0.28"> </a></span> behind-target <a href="sc.html#3.7.0.0.28" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p></p>
+<p>Definitions for matching codes:</p>
+<ul>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.29<a name="3.7.0.0.29"> </a></span> not-ready <a href="sc.html#3.7.0.0.29" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>Behind the planned timelines</p>
+<p>Definitions for matching codes:</p>
+<ul>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.30<a name="3.7.0.0.30"> </a></span> transduc-discon <a href="sc.html#3.7.0.0.30" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The device transducer is disconnected</p>
+<p>Definitions for matching codes:</p>
+<ul>
+</ul>
+<hr/>
+<h4 class="self-link-parent"><span class="sectioncount">3.7.0.0.31<a name="3.7.0.0.31"> </a></span> hw-discon <a href="sc.html#3.7.0.0.31" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="20" class="self-link" height="20"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<p>The hardware is disconnected</p>
+<p>Definitions for matching codes:</p>
+<ul>
+</ul>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &reg;&copy; HL7.org 2011+. FHIR Release 4 (Technical Correction #1) (v4.0.1) generated on Fri, Nov 1, 2019 09:37+1100. <a style="color: #ffffff" href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #b8dcf9" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> | 
+               <a style="color: #b8dcf9" href="history.html">Version History</a> | 
+               <a style="color: #b8dcf9" href="toc.html">Table of Contents</a> | 
+               <a style="color: #b8dcf9" href="credits.html">Credits</a> | 
+               <a style="color: #b8dcf9" href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fsc.html&amp;doc2=http%3A%2F%2Fbuild.fhir.org%2Fsc.html">Compare to R3 <img src="external.png" style="text-align: baseline"/></a> |                
+               <a rel="license" style="color: #b8dcf9" href="license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> | 
+               <a style="color: #b8dcf9" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+
+</body>
+
+</html>

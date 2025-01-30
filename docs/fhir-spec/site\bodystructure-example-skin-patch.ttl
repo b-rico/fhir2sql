@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/BodyStructure/skin-patch> a fhir:BodyStructure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "skin-patch"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: skin-patch</p><p><b>identifier</b>: 12345</p><p><b>active</b>: false</p><p><b>morphology</b>: Skin patch <span>(Details )</span></p><p><b>location</b>: Forearm <span>(Details : {SNOMED CT code '14975008' = 'Forearm', given as 'Forearm'})</span></p><p><b>locationQualifier</b>: Left <span>(Details : {SNOMED CT code '419161000' = 'Unilateral left', given as 'Unilateral left'})</span>, Volar <span>(Details : {SNOMED CT code '263929005' = 'Volar', given as 'Volar'})</span></p><p><b>description</b>: inner surface (volar) of the left forearm</p><p><b>patient</b>: <a>Patient/example</a></p></div>"
+  ];
+  fhir:BodyStructure.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://goodhealth.org/bodystructure/identifiers" ];
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:BodyStructure.active [ fhir:value "false"^^xsd:boolean];
+  fhir:BodyStructure.morphology [
+     fhir:CodeableConcept.text [ fhir:value "Skin patch" ]
+  ];
+  fhir:BodyStructure.location [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:14975008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "14975008" ];
+       fhir:Coding.display [ fhir:value "Forearm" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Forearm" ]
+  ];
+  fhir:BodyStructure.locationQualifier [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:419161000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "419161000" ];
+       fhir:Coding.display [ fhir:value "Unilateral left" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Left" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:263929005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "263929005" ];
+       fhir:Coding.display [ fhir:value "Volar" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Volar" ]
+  ];
+  fhir:BodyStructure.description [ fhir:value "inner surface (volar) of the left forearm"];
+  fhir:BodyStructure.patient [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/BodyStructure/skin-patch.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/BodyStructure/skin-patch.ttl> .
+
+# -------------------------------------------------------------------------------------
+

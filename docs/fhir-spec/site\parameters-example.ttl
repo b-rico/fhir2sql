@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+[a fhir:Parameters;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Parameters.parameter [
+     fhir:index 0;
+     fhir:Parameters.parameter.name [ fhir:value "exact" ];
+     fhir:Parameters.parameter.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 1;
+     fhir:Parameters.parameter.name [ fhir:value "property" ];
+     fhir:Parameters.parameter.part [
+       fhir:index 0;
+       fhir:Parameters.parameter.name [ fhir:value "code" ];
+       fhir:Parameters.parameter.valueCode [ fhir:value "focus" ]
+     ], [
+       fhir:index 1;
+       fhir:Parameters.parameter.name [ fhir:value "value" ];
+       fhir:Parameters.parameter.valueCode [ fhir:value "top" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Parameters.parameter.name [ fhir:value "patient" ];
+     fhir:Parameters.parameter.resource [
+       a fhir:Patient;
+       fhir:Resource.id [ fhir:value "example" ];
+       fhir:Patient.name [
+         fhir:index 0;
+         fhir:HumanName.use [ fhir:value "official" ];
+         fhir:HumanName.family [ fhir:value "Chalmers" ];
+         fhir:HumanName.given [
+           fhir:value "Peter";
+           fhir:index 0
+         ], [
+           fhir:value "James";
+           fhir:index 1
+         ]
+       ]
+     ]
+  ]] .
+
+# - ontology header ------------------------------------------------------------
+
+[a owl:Ontology;
+  owl:imports fhir:fhir.ttl] .
+
+# -------------------------------------------------------------------------------------
+

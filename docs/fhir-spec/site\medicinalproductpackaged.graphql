@@ -1,0 +1,178 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type MedicinalProductPackaged {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  subject: [Reference]
+  description: String  _description: ElementBase
+  legalStatusOfSupply: CodeableConcept
+  marketingStatus: [MarketingStatus]
+  marketingAuthorization: Reference
+  manufacturer: [Reference]
+  batchIdentifier: [MedicinalProductPackagedBatchIdentifier]
+  packageItem: [MedicinalProductPackagedPackageItem]!
+}
+
+type MedicinalProductPackagedBatchIdentifier {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  outerPackaging: Identifier!
+  immediatePackaging: Identifier
+}
+
+type MedicinalProductPackagedPackageItem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  type: CodeableConcept!
+  quantity: Quantity!
+  material: [CodeableConcept]
+  alternateMaterial: [CodeableConcept]
+  device: [Reference]
+  manufacturedItem: [Reference]
+  packageItem: [MedicinalProductPackagedPackageItem]
+  physicalCharacteristics: ProdCharacteristic
+  otherCharacteristics: [CodeableConcept]
+  shelfLifeStorage: [ProductShelfLife]
+  manufacturer: [Reference]
+}
+
+input MedicinalProductPackaged {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  subject: [Reference]
+  description: String  _description: ElementBase
+  legalStatusOfSupply: CodeableConcept
+  marketingStatus: [MarketingStatus]
+  marketingAuthorization: Reference
+  manufacturer: [Reference]
+  batchIdentifier: [MedicinalProductPackagedBatchIdentifier]
+  packageItem: [MedicinalProductPackagedPackageItem]!
+}
+
+input MedicinalProductPackagedBatchIdentifier {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  outerPackaging: Identifier!
+  immediatePackaging: Identifier
+}
+
+input MedicinalProductPackagedPackageItem {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  type: CodeableConcept!
+  quantity: Quantity!
+  material: [CodeableConcept]
+  alternateMaterial: [CodeableConcept]
+  device: [Reference]
+  manufacturedItem: [Reference]
+  packageItem: [MedicinalProductPackagedPackageItem]
+  physicalCharacteristics: ProdCharacteristic
+  otherCharacteristics: [CodeableConcept]
+  shelfLifeStorage: [ProductShelfLife]
+  manufacturer: [Reference]
+}
+
+type MedicinalProductPackagedReadType {
+  MedicinalProductPackaged(id : ID!) : MedicinalProductPackaged
+}
+
+type MedicinalProductPackagedListType {
+  MedicinalProductPackagedList(_filter : String
+    identifier : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [MedicinalProductPackaged]
+}
+
+type MedicinalProductPackagedConnectionType {
+  MedicinalProductPackagedConection(_filter : String
+    identifier : [token]
+    subject : [reference]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : MedicinalProductPackagedConnection
+}
+
+type MedicinalProductPackagedConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [MedicinalProductPackagedEdge]
+}
+
+type MedicinalProductPackagedEdge {
+  mode : String
+  score : Float
+  resource : MedicinalProductPackaged
+}
+
+type MedicinalProductPackagedCreateType {
+  MedicinalProductPackagedCreate(resource : MedicinalProductPackaged) : MedicinalProductPackagedCreation
+}
+
+type MedicinalProductPackagedCreation {
+  location : String
+  resource : MedicinalProductPackaged
+  information : OperationOutcome
+}
+
+type MedicinalProductPackagedUpdateType {
+  MedicinalProductPackagedUpdate(id : IDresource : MedicinalProductPackaged) : MedicinalProductPackagedUpdate
+}
+
+type MedicinalProductPackagedUpdate {
+  resource : MedicinalProductPackaged
+  information : OperationOutcome
+}
+
+type MedicinalProductPackagedDeleteType {
+  MedicinalProductPackagedDelete(id : ID) : MedicinalProductPackagedDelete
+}
+
+type MedicinalProductPackagedDelete {
+  information : OperationOutcome
+}
+

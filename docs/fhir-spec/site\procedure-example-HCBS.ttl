@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/HCBS> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "HCBS"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<p>\n				<b> Personal care services provided at person's home</b>\n			</p>\n			<p>\n				<b> Based On</b> : Peter's Long Term Services and Supports (LTSS) care plan</p>\n			<p>\n				<b> Status</b> : completed</p>\n			<p>\n				<b> Beneficiary</b> : Peter James</p>\n			<p>\n				<b> Service Name/Code</b> : Personal care services <span> (Details : {HCPCS code 'T1019' = 'Personal care services, per 15 minutes'})</span>\n			</p>\n			<p>\n				<b> Service Date</b> : Apr 5, 2018</p>\n			<p>\n				<b> Service Provider</b> : Adam Careful</p>\n			<p>\n				<b> Service Delivery Address</b> : Peter's home</p>\n			<p>\n				<b> Service Comment</b> : Assisted with bathing and dressing, doing laundry, and meal preparation</p>\n		</div>"
+  ];
+  fhir:Procedure.basedOn [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Peter's Long Term Service and Supports (LTSS) Care Plan" ]
+  ];
+  fhir:Procedure.status [ fhir:value "completed"];
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets/Alpha-Numeric-HCPCS.html" ];
+       fhir:Coding.code [ fhir:value "T1019" ];
+       fhir:Coding.display [ fhir:value "Personal care services, per 15 minutes, not for an inpatient or resident of a hospital, nursing facility, icf/mr or imd, part of the individualized plan of treatment." ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Personal care services" ]
+  ];
+  fhir:Procedure.subject [
+     fhir:link <http://hl7.org/fhir/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James" ]
+  ];
+  fhir:Procedure.performedDateTime [ fhir:value "2018-04-05"^^xsd:date];
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+       fhir:Reference.display [ fhir:value "Adam Careful" ]
+     ]
+  ];
+  fhir:Procedure.location [
+     fhir:link <http://hl7.org/fhir/Location/ph>;
+     fhir:Reference.reference [ fhir:value "Location/ph" ];
+     fhir:Reference.display [ fhir:value "Peter's Home" ]
+  ];
+  fhir:Procedure.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "Assisted with bathing and dressing, doing laundry, and meal preparation" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/example> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Location/ph> a fhir:Location .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Procedure/HCBS.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Procedure/HCBS.ttl> .
+
+# -------------------------------------------------------------------------------------
+

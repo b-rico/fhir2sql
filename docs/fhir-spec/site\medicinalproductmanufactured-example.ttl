@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicinalProductManufactured/example> a fhir:MedicinalProductManufactured;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>manufacturedDoseForm</b>: Film-coatedtablet <span>(Details : {http://ema.europa.eu/example/manufactureddoseform code 'Film-coatedtablet' = 'Film-coatedtablet)</span></p><p><b>unitOfPresentation</b>: Tablet <span>(Details : {http://ema.europa.eu/example/unitofpresentation code 'Tablet' = 'Tablet)</span></p><p><b>quantity</b>: 10 1</p><p><b>manufacturer</b>: <a>Organization/example</a></p><p><b>ingredient</b>: <a>MedicinalProductIngredient/example</a></p><p><b>physicalCharacteristics</b>: </p></div>"
+  ];
+  fhir:MedicinalProductManufactured.manufacturedDoseForm [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/manufactureddoseform" ];
+       fhir:Coding.code [ fhir:value "Film-coatedtablet" ]
+     ]
+  ];
+  fhir:MedicinalProductManufactured.unitOfPresentation [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://ema.europa.eu/example/unitofpresentation" ];
+       fhir:Coding.code [ fhir:value "Tablet" ]
+     ]
+  ];
+  fhir:MedicinalProductManufactured.quantity [
+     fhir:Quantity.value [ fhir:value "10"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "1" ]
+  ];
+  fhir:MedicinalProductManufactured.manufacturer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:MedicinalProductManufactured.ingredient [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/MedicinalProductIngredient/example>;
+     fhir:Reference.reference [ fhir:value "MedicinalProductIngredient/example" ]
+  ];
+  fhir:MedicinalProductManufactured.physicalCharacteristics [
+     fhir:ProdCharacteristic.shape [ fhir:value "Oval" ];
+     fhir:ProdCharacteristic.color [
+       fhir:value "Pink";
+       fhir:index 0
+     ];
+     fhir:ProdCharacteristic.imprint [
+       fhir:value "894";
+       fhir:index 0
+     ]
+  ] .
+
+<http://hl7.org/fhir/Organization/example> a fhir:Organization .
+
+<http://hl7.org/fhir/MedicinalProductIngredient/example> a fhir:MedicinalProductIngredient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/MedicinalProductManufactured/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/MedicinalProductManufactured/example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

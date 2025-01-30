@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ActivityDefinition/serum-zika-dengue-virus-igm> a fhir:ActivityDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "serum-zika-dengue-virus-igm"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Id: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">ActivityDefinition/serum-zika-dengue-virus-igm</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Status: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">draft</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Description: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">Order Serum Zika and Dengue Virus IgM</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Related: </b>\n               </td>\n            </tr>\n            <tr style=\"vertical-align: top;\">\n               <td style=\"padding-left: 25px; padding-right: 25px;\">\n                  <p style=\"margin-top: 5px;\">\n                     <b>type: </b>\n                     <span>documentation</span>\n                  </p>\n                  <p style=\"margin-top: 5px;\">\n                     <b>display: </b>\n                     <span>Explanation of diagnostic tests for Zika virus and which to use based on the patients clinical and exposure history.</span>\n                  </p>\n                  <p style=\"margin-top: 5px;\">\n                     <b>url: </b>\n                     <span>http://www.cdc.gov/zika/hc-providers/diagnostic.html</span>\n                  </p>\n               </td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Category: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">diagnostic</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Code: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-right: 25px;\">\n                  <span style=\"padding-left: 25px;\">\n                     <b>text: </b>\n                     <span>Serum Zika and Dengue Virus IgM</span>\n                     <br/>\n                  </span>\n               </td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Participant: </b>\n               </td>\n            </tr>\n            <tr style=\"vertical-align: top;\">\n               <td style=\"padding-left: 25px; padding-right: 25px;\">practitioner</td>\n            </tr>\n         </table>\n      </div>"
+  ];
+  fhir:ActivityDefinition.url [ fhir:value "http://example.org/ActivityDefinition/serum-zika-dengue-virus-igm"];
+  fhir:ActivityDefinition.status [ fhir:value "draft"];
+  fhir:ActivityDefinition.description [ fhir:value "Order Serum Zika and Dengue Virus IgM"];
+  fhir:ActivityDefinition.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+     fhir:RelatedArtifact.display [ fhir:value "Explanation of diagnostic tests for Zika virus and which to use based on the patient’s clinical and exposure history." ];
+     fhir:RelatedArtifact.url [ fhir:value "http://www.cdc.gov/zika/hc-providers/diagnostic.html" ]
+  ], [
+     fhir:index 1;
+     fhir:RelatedArtifact.type [ fhir:value "derived-from" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "ActivityDefinition/serum-dengue-virus-igm";
+       fhir:link <http://hl7.org/fhir/ActivityDefinition/serum-dengue-virus-igm>
+     ]
+  ];
+  fhir:ActivityDefinition.library [
+     fhir:value "Library/zika-virus-intervention-logic";
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Library/zika-virus-intervention-logic>
+  ];
+  fhir:ActivityDefinition.kind [ fhir:value "ServiceRequest"];
+  fhir:ActivityDefinition.code [
+     fhir:CodeableConcept.text [ fhir:value "Serum Zika and Dengue Virus IgM" ]
+  ];
+  fhir:ActivityDefinition.timingTiming [
+     fhir:Timing.event [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-expression" ];
+         fhir:Extension.valueExpression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Now()" ]
+         ]
+       ]
+     ]
+  ];
+  fhir:ActivityDefinition.participant [
+     fhir:index 0;
+     fhir:ActivityDefinition.participant.type [ fhir:value "practitioner" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ActivityDefinition/serum-zika-dengue-virus-igm.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ActivityDefinition/serum-zika-dengue-virus-igm.ttl> .
+
+# -------------------------------------------------------------------------------------
+

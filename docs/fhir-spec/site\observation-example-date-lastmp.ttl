@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/date-lastmp> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "date-lastmp"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: date-lastmp</p><p><b>status</b>: final</p><p><b>category</b>: AOE <span>(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'survey' = 'Survey', given as 'Survey'})</span></p><p><b>code</b>: Date last menstrual period <span>(Details : {LOINC code '8665-2' = 'Last menstrual period start date', given as 'Date last menstrual period'})</span></p><p><b>subject</b>: <a>Patient/pat2</a></p><p><b>effective</b>: 24/01/2016</p><p><b>value</b>: 30/12/2016</p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+       fhir:Coding.code [ fhir:value "survey" ];
+       fhir:Coding.display [ fhir:value "Survey" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "AOE" ]
+  ];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:8665-2;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "8665-2" ];
+       fhir:Coding.display [ fhir:value "Date last menstrual period" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Date last menstrual period" ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/pat2>;
+     fhir:Reference.reference [ fhir:value "Patient/pat2" ]
+  ];
+  fhir:Observation.effectiveDateTime [ fhir:value "2016-01-24"^^xsd:date];
+  fhir:Observation.valueDateTime [ fhir:value "2016-12-30"^^xsd:date] .
+
+<http://hl7.org/fhir/Patient/pat2> a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/date-lastmp.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/date-lastmp.ttl> .
+
+# -------------------------------------------------------------------------------------
+

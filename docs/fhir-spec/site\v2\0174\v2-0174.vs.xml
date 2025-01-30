@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="v2-0174"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="additional"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>Nature of Service/Test/Observation</p>
+
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Description</b>
+          </td>
+          <td>
+            <b>Comment</b>
+          </td>
+          <td>
+            <b>Version</b>
+          </td>
+        </tr>
+        <tr>
+          <td>A
+            <a name="A"> </a>
+          </td>
+          <td>Atomic service/test/observation (test code or treatment code)</td>
+          <td>can be associated with one or more OM4 (specimen) segments
+a single direct observation and would usually be associated with an OM2 and/or OM3 segments</td>
+          <td>added v2.2</td>
+        </tr>
+        <tr>
+          <td>C
+            <a name="C"> </a>
+          </td>
+          <td>Single observation calculated via a rule or formula from other independent observations (e.g., Alveolar-arterial ratio, cardiac output)</td>
+          <td>can be associated with one or more OM4 (specimen) segments
+a derived quantity and would usually be associated with an OM6 segment</td>
+          <td>added v2.2</td>
+        </tr>
+        <tr>
+          <td>F
+            <a name="F"> </a>
+          </td>
+          <td>Functional procedure that may consist of one or more interrelated measures (e.g., glucose tolerance test, creatinine clearance), usually done at different times and/or on different specimens</td>
+          <td>can be associated with one or more OM4 (specimen) segments
+See comment for value S</td>
+          <td>added v2.2</td>
+        </tr>
+        <tr>
+          <td>P
+            <a name="P"> </a>
+          </td>
+          <td>Profile or battery consisting of many independent atomic observations (e.g., SMA12, electrolytes), usually done at one instrument on one specimen</td>
+          <td>can be associated with one or more OM4 (specimen) segments
+See comment for value S</td>
+          <td>added v2.2</td>
+        </tr>
+        <tr>
+          <td>S
+            <a name="S"> </a>
+          </td>
+          <td>Superset-a set of batteries or procedures ordered under a single code unit but processed as separate batteries (e.g., routines = CBC, UA, electrolytes)&lt;p&gt;This set indicates that the code being described is used to order multiple service/test/observation b</td>
+          <td>can be associated with one or more OM4 (specimen) segments
+Codes P, F, and S identify sets (batteries) and should be associated with an OM5 segment that defines the list of elements.  The definitions for the contained elements would have to be sent in other independent OMx segments, one for each contained element.  In the ASTM context, most text reports &#x2013; such as discharge summaries, admission H&amp;Ps, and chest X-ray reports &#x2013; are considered as sets, in which each section of the report (e.g., description, impression, and recommendation of an X-ray report) is considered a separate observation</td>
+          <td>added v2.2</td>
+        </tr>
+      </table>
+
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="external"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
+  <url value="http://terminology.hl7.org/ValueSet/v2-0174"/>
+  <version value="2.9"/>
+  <name value="v2.0174"/>
+  <title value="v2 NATURE OF TEST/OBSERVATION"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <publisher value="HL7, Inc"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org"/>
+    </telecom>
+  </contact>
+  <description value="FHIR Value set/code system definition for HL7 v2 table 0174 ( NATURE OF TEST/OBSERVATION)"/>
+  <immutable value="true"/>
+  <compose>
+    <include>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0174"/>
+    </include>
+  </compose>
+</ValueSet>

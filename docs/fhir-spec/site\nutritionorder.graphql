@@ -1,0 +1,290 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type NutritionOrder {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  instantiates: uri  _instantiates: [ElementBase]
+  status: code  _status: ElementBase
+  intent: code  _intent: ElementBase
+  patient: Reference!
+  encounter: Reference
+  dateTime: dateTime  _dateTime: ElementBase
+  orderer: Reference
+  allergyIntolerance: [Reference]
+  foodPreferenceModifier: [CodeableConcept]
+  excludeFoodModifier: [CodeableConcept]
+  oralDiet: NutritionOrderOralDiet
+  supplement: [NutritionOrderSupplement]
+  enteralFormula: NutritionOrderEnteralFormula
+  note: [Annotation]
+}
+
+type NutritionOrderOralDiet {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: [CodeableConcept]
+  schedule: [Timing]
+  nutrient: [NutritionOrderOralDietNutrient]
+  texture: [NutritionOrderOralDietTexture]
+  fluidConsistencyType: [CodeableConcept]
+  instruction: String  _instruction: ElementBase
+}
+
+type NutritionOrderOralDietNutrient {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  modifier: CodeableConcept
+  amount: Quantity
+}
+
+type NutritionOrderOralDietTexture {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  modifier: CodeableConcept
+  foodType: CodeableConcept
+}
+
+type NutritionOrderSupplement {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  productName: String  _productName: ElementBase
+  schedule: [Timing]
+  quantity: Quantity
+  instruction: String  _instruction: ElementBase
+}
+
+type NutritionOrderEnteralFormula {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  baseFormulaType: CodeableConcept
+  baseFormulaProductName: String  _baseFormulaProductName: ElementBase
+  additiveType: CodeableConcept
+  additiveProductName: String  _additiveProductName: ElementBase
+  caloricDensity: Quantity
+  routeofAdministration: CodeableConcept
+  administration: [NutritionOrderEnteralFormulaAdministration]
+  maxVolumeToDeliver: Quantity
+  administrationInstruction: String  _administrationInstruction: ElementBase
+}
+
+type NutritionOrderEnteralFormulaAdministration {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  schedule: Timing
+  quantity: Quantity
+  rateQuantity: Quantity
+  rateRatio: Ratio
+}
+
+input NutritionOrder {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  identifier: [Identifier]
+  instantiatesCanonical: canonical  _instantiatesCanonical: [ElementBase]
+  instantiatesUri: uri  _instantiatesUri: [ElementBase]
+  instantiates: uri  _instantiates: [ElementBase]
+  status: code  _status: ElementBase
+  intent: code  _intent: ElementBase
+  patient: Reference!
+  encounter: Reference
+  dateTime: dateTime  _dateTime: ElementBase
+  orderer: Reference
+  allergyIntolerance: [Reference]
+  foodPreferenceModifier: [CodeableConcept]
+  excludeFoodModifier: [CodeableConcept]
+  oralDiet: NutritionOrderOralDiet
+  supplement: [NutritionOrderSupplement]
+  enteralFormula: NutritionOrderEnteralFormula
+  note: [Annotation]
+}
+
+input NutritionOrderOralDiet {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: [CodeableConcept]
+  schedule: [Timing]
+  nutrient: [NutritionOrderOralDietNutrient]
+  texture: [NutritionOrderOralDietTexture]
+  fluidConsistencyType: [CodeableConcept]
+  instruction: String  _instruction: ElementBase
+}
+
+input NutritionOrderOralDietNutrient {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  modifier: CodeableConcept
+  amount: Quantity
+}
+
+input NutritionOrderOralDietTexture {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  modifier: CodeableConcept
+  foodType: CodeableConcept
+}
+
+input NutritionOrderSupplement {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  type: CodeableConcept
+  productName: String  _productName: ElementBase
+  schedule: [Timing]
+  quantity: Quantity
+  instruction: String  _instruction: ElementBase
+}
+
+input NutritionOrderEnteralFormula {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  baseFormulaType: CodeableConcept
+  baseFormulaProductName: String  _baseFormulaProductName: ElementBase
+  additiveType: CodeableConcept
+  additiveProductName: String  _additiveProductName: ElementBase
+  caloricDensity: Quantity
+  routeofAdministration: CodeableConcept
+  administration: [NutritionOrderEnteralFormulaAdministration]
+  maxVolumeToDeliver: Quantity
+  administrationInstruction: String  _administrationInstruction: ElementBase
+}
+
+input NutritionOrderEnteralFormulaAdministration {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  schedule: Timing
+  quantity: Quantity
+  rateQuantity: Quantity
+  rateRatio: Ratio
+}
+
+type NutritionOrderReadType {
+  NutritionOrder(id : ID!) : NutritionOrder
+}
+
+type NutritionOrderListType {
+  NutritionOrderList(_filter : String
+    additive : [token]
+    datetime : [date]
+    encounter : [reference]
+    formula : [token]
+    identifier : [token]
+    instantiates_canonical : [reference]
+    instantiates_uri : [uri]
+    oraldiet : [token]
+    patient : [reference]
+    provider : [reference]
+    status : [token]
+    supplement : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [NutritionOrder]
+}
+
+type NutritionOrderConnectionType {
+  NutritionOrderConection(_filter : String
+    additive : [token]
+    datetime : [date]
+    encounter : [reference]
+    formula : [token]
+    identifier : [token]
+    instantiates_canonical : [reference]
+    instantiates_uri : [uri]
+    oraldiet : [token]
+    patient : [reference]
+    provider : [reference]
+    status : [token]
+    supplement : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : NutritionOrderConnection
+}
+
+type NutritionOrderConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [NutritionOrderEdge]
+}
+
+type NutritionOrderEdge {
+  mode : String
+  score : Float
+  resource : NutritionOrder
+}
+
+type NutritionOrderCreateType {
+  NutritionOrderCreate(resource : NutritionOrder) : NutritionOrderCreation
+}
+
+type NutritionOrderCreation {
+  location : String
+  resource : NutritionOrder
+  information : OperationOutcome
+}
+
+type NutritionOrderUpdateType {
+  NutritionOrderUpdate(id : IDresource : NutritionOrder) : NutritionOrderUpdate
+}
+
+type NutritionOrderUpdate {
+  resource : NutritionOrder
+  information : OperationOutcome
+}
+
+type NutritionOrderDeleteType {
+  NutritionOrderDelete(id : ID) : NutritionOrderDelete
+}
+
+type NutritionOrderDelete {
+  information : OperationOutcome
+}
+

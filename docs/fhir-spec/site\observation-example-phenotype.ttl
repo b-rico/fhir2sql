@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/example-phenotype> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-phenotype"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-phenotype</p><p><b>status</b>: final</p><p><b>code</b>: CYP2C9 gene product metabolic activity interpretation <span>(Details : {LOINC code '79716-7' = 'CYP2C9 gene product metabolic activity interpretation in Blood or Tissue Qualitative by CPIC', given as 'CYP2C9 gene product metabolic activity interpretation'})</span></p><p><b>subject</b>: <a>J*********** C***********</a></p><p><b>issued</b>: 03/04/2013 3:30:10 PM</p><p><b>value</b>: Normal metabolizer <span>(Details : {LOINC code 'LA25391-6' = 'Normal metabolizer', given as 'Normal metabolizer'})</span></p><p><b>specimen</b>: <a>Molecular Specimen ID: MLD45-Z4-1234</a></p><p><b>derivedFrom</b>: <a>Observation/example-diplotype1</a></p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.genenames.org" ];
+         fhir:Coding.code [ fhir:value "2623" ];
+         fhir:Coding.display [ fhir:value "CYP2C9" ]
+       ]
+     ]
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:79716-7;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "79716-7" ];
+       fhir:Coding.display [ fhir:value "CYP2C9 gene product metabolic activity interpretation" ]
+     ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://hl7.org/fhir/Patient/727127>;
+     fhir:Reference.reference [ fhir:value "Patient/727127" ];
+     fhir:Reference.display [ fhir:value "J*********** C***********" ]
+  ];
+  fhir:Observation.issued [ fhir:value "2013-04-03T15:30:10+01:00"^^xsd:dateTime];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:LA25391-6;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "LA25391-6" ];
+       fhir:Coding.display [ fhir:value "Normal metabolizer" ]
+     ]
+  ];
+  fhir:Observation.specimen [
+     fhir:link <http://hl7.org/fhir/Specimen/genetics-example1-somatic>;
+     fhir:Reference.reference [ fhir:value "Specimen/genetics-example1-somatic" ];
+     fhir:Reference.display [ fhir:value "Molecular Specimen ID: MLD45-Z4-1234" ]
+  ];
+  fhir:Observation.derivedFrom [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Observation/example-diplotype1>;
+     fhir:Reference.reference [ fhir:value "Observation/example-diplotype1" ]
+  ] .
+
+<http://hl7.org/fhir/Patient/727127> a fhir:Patient .
+
+<http://hl7.org/fhir/Specimen/genetics-example1-somatic> a fhir:Specimen .
+
+<http://hl7.org/fhir/Observation/example-diplotype1> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Observation/example-phenotype.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Observation/example-phenotype.ttl> .
+
+# -------------------------------------------------------------------------------------
+

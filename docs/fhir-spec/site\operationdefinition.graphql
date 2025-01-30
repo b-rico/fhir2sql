@@ -1,0 +1,282 @@
+# FHIR GraphQL Schema. Version 4.0.1
+
+type OperationDefinition {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  url: uri  _url: ElementBase
+  version: String  _version: ElementBase
+  name: String  _name: ElementBase
+  title: String  _title: ElementBase
+  status: code  _status: ElementBase
+  kind: code  _kind: ElementBase
+  experimental: Boolean  _experimental: ElementBase
+  date: dateTime  _date: ElementBase
+  publisher: String  _publisher: ElementBase
+  contact: [ContactDetail]
+  description: markdown  _description: ElementBase
+  useContext: [UsageContext]
+  jurisdiction: [CodeableConcept]
+  purpose: markdown  _purpose: ElementBase
+  affectsState: Boolean  _affectsState: ElementBase
+  code: code  _code: ElementBase
+  comment: markdown  _comment: ElementBase
+  base: canonical  _base: ElementBase
+  resource: code  _resource: [ElementBase]
+  system: Boolean  _system: ElementBase
+  type: Boolean  _type: ElementBase
+  instance: Boolean  _instance: ElementBase
+  inputProfile: canonical  _inputProfile: ElementBase
+  outputProfile: canonical  _outputProfile: ElementBase
+  parameter: [OperationDefinitionParameter]
+  overload: [OperationDefinitionOverload]
+}
+
+type OperationDefinitionParameter {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: code  _name: ElementBase
+  use: code  _use: ElementBase
+  min: Int  _min: ElementBase
+  max: String  _max: ElementBase
+  documentation: String  _documentation: ElementBase
+  type: code  _type: ElementBase
+  targetProfile: canonical  _targetProfile: [ElementBase]
+  searchType: code  _searchType: ElementBase
+  binding: OperationDefinitionParameterBinding
+  referencedFrom: [OperationDefinitionParameterReferencedFrom]
+  part: [OperationDefinitionParameter]
+}
+
+type OperationDefinitionParameterBinding {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  strength: code  _strength: ElementBase
+  valueSet: canonical  _valueSet: ElementBase
+}
+
+type OperationDefinitionParameterReferencedFrom {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  source: String  _source: ElementBase
+  sourceId: String  _sourceId: ElementBase
+}
+
+type OperationDefinitionOverload {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  parameterName: String  _parameterName: [ElementBase]
+  comment: String  _comment: ElementBase
+}
+
+input OperationDefinition {
+  id: String
+  meta: Meta
+  implicitRules: uri  _implicitRules: ElementBase
+  language: code  _language: ElementBase
+  text: Narrative
+  contained: [Resource]
+  extension: [Extension]
+  modifierExtension: [Extension]
+  url: uri  _url: ElementBase
+  version: String  _version: ElementBase
+  name: String  _name: ElementBase
+  title: String  _title: ElementBase
+  status: code  _status: ElementBase
+  kind: code  _kind: ElementBase
+  experimental: Boolean  _experimental: ElementBase
+  date: dateTime  _date: ElementBase
+  publisher: String  _publisher: ElementBase
+  contact: [ContactDetail]
+  description: markdown  _description: ElementBase
+  useContext: [UsageContext]
+  jurisdiction: [CodeableConcept]
+  purpose: markdown  _purpose: ElementBase
+  affectsState: Boolean  _affectsState: ElementBase
+  code: code  _code: ElementBase
+  comment: markdown  _comment: ElementBase
+  base: canonical  _base: ElementBase
+  resource: code  _resource: [ElementBase]
+  system: Boolean  _system: ElementBase
+  type: Boolean  _type: ElementBase
+  instance: Boolean  _instance: ElementBase
+  inputProfile: canonical  _inputProfile: ElementBase
+  outputProfile: canonical  _outputProfile: ElementBase
+  parameter: [OperationDefinitionParameter]
+  overload: [OperationDefinitionOverload]
+}
+
+input OperationDefinitionParameter {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  name: code  _name: ElementBase
+  use: code  _use: ElementBase
+  min: Int  _min: ElementBase
+  max: String  _max: ElementBase
+  documentation: String  _documentation: ElementBase
+  type: code  _type: ElementBase
+  targetProfile: canonical  _targetProfile: [ElementBase]
+  searchType: code  _searchType: ElementBase
+  binding: OperationDefinitionParameterBinding
+  referencedFrom: [OperationDefinitionParameterReferencedFrom]
+  part: [OperationDefinitionParameter]
+}
+
+input OperationDefinitionParameterBinding {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  strength: code  _strength: ElementBase
+  valueSet: canonical  _valueSet: ElementBase
+}
+
+input OperationDefinitionParameterReferencedFrom {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  source: String  _source: ElementBase
+  sourceId: String  _sourceId: ElementBase
+}
+
+input OperationDefinitionOverload {
+  id: String
+  extension: [Extension]
+  modifierExtension: [Extension]
+  parameterName: String  _parameterName: [ElementBase]
+  comment: String  _comment: ElementBase
+}
+
+type OperationDefinitionReadType {
+  OperationDefinition(id : ID!) : OperationDefinition
+}
+
+type OperationDefinitionListType {
+  OperationDefinitionList(_filter : String
+    base : [reference]
+    code : [token]
+    context : [token]
+    context_quantity : [quantity]
+    context_type : [token]
+    context_type_quantity : [composite]
+    context_type_value : [composite]
+    date : [date]
+    description : [String]
+    input_profile : [reference]
+    instance : [token]
+    jurisdiction : [token]
+    kind : [token]
+    name : [String]
+    output_profile : [reference]
+    publisher : [String]
+    status : [token]
+    system : [token]
+    title : [String]
+    type : [token]
+    url : [uri]
+    version : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : [OperationDefinition]
+}
+
+type OperationDefinitionConnectionType {
+  OperationDefinitionConection(_filter : String
+    base : [reference]
+    code : [token]
+    context : [token]
+    context_quantity : [quantity]
+    context_type : [token]
+    context_type_quantity : [composite]
+    context_type_value : [composite]
+    date : [date]
+    description : [String]
+    input_profile : [reference]
+    instance : [token]
+    jurisdiction : [token]
+    kind : [token]
+    name : [String]
+    output_profile : [reference]
+    publisher : [String]
+    status : [token]
+    system : [token]
+    title : [String]
+    type : [token]
+    url : [uri]
+    version : [token]
+    _text : [String]
+    _content : [String]
+    _id : [token]
+    _lastUpdated : [date]
+    _profile : [uri]
+    _query : [token]
+    _security : [token]
+    _source : [uri]
+    _tag : [token]
+    _sort : String
+    _count : Int
+    _cursor : String) : OperationDefinitionConnection
+}
+
+type OperationDefinitionConnection {
+  count : Int
+  offset : Int
+  pagesize : Int
+  first : ID
+  previous : ID
+  next : ID
+  last : ID
+  edges : [OperationDefinitionEdge]
+}
+
+type OperationDefinitionEdge {
+  mode : String
+  score : Float
+  resource : OperationDefinition
+}
+
+type OperationDefinitionCreateType {
+  OperationDefinitionCreate(resource : OperationDefinition) : OperationDefinitionCreation
+}
+
+type OperationDefinitionCreation {
+  location : String
+  resource : OperationDefinition
+  information : OperationOutcome
+}
+
+type OperationDefinitionUpdateType {
+  OperationDefinitionUpdate(id : IDresource : OperationDefinition) : OperationDefinitionUpdate
+}
+
+type OperationDefinitionUpdate {
+  resource : OperationDefinition
+  information : OperationOutcome
+}
+
+type OperationDefinitionDeleteType {
+  OperationDefinitionDelete(id : ID) : OperationDefinitionDelete
+}
+
+type OperationDefinitionDelete {
+  information : OperationOutcome
+}
+

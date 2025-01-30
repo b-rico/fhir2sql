@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Provenance/example-biocompute-object> a fhir:Provenance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-biocompute-object"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<p>\n				<b>Generated Narrative with Details</b>\n			</p><p>\n				<b>id</b>: example-biocompute-object</p><p>\n				<b>target</b>: <a href=\"http://build.fhir.org/sequence-example.html\">MolecularSequence/example</a>\n			</p><p>\n				<b>period</b>: 2017-6-6 --&gt; (ongoing)</p><p>\n				<b>recorded</b>: 2016-6-9 8:12:14</p><p>\n				<b>reason</b>: antiviral resistance detection (Details: [not stated] code null = 'null', stated as\n         'antiviral resistance detection')</p>\n			<h3>Agents</h3>\n			<table>\n				<tr>\n					<td>-</td>\n					<td>\n						<b>Role</b>\n					</td>\n					<td>\n						<b>Who</b>\n					</td>\n				</tr>\n				<tr>\n					<td>*</td>\n					<td>Author (Details: http://hl7.org/fhir/provenance-participant-role code author = 'Author',\n             stated as 'null')</td>\n					<td>\n						<a href=\"http://build.fhir.org/practitioner-example.html\">Practitioner/example</a>\n					</td>\n				</tr>\n			</table>\n			<h3>Entities</h3>\n			<table>\n				<tr>\n					<td>-</td>\n					<td>\n						<b>Role</b>\n					</td>\n					<td>\n						<b>Reference</b>\n					</td>\n				</tr>\n				<tr>\n					<td>*</td>\n					<td>source</td>\n					<td>\n						<a href=\"https://hive.biochemistry.gwu.edu/cgi-bin/prd/htscsrs/servlet.cgi?pageid=bcoexample_1\">Biocompute example</a>\n					</td>\n				</tr>\n			</table>\n		</div>"
+  ];
+  fhir:Provenance.target [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/MolecularSequence/example>;
+     fhir:Reference.reference [ fhir:value "MolecularSequence/example" ]
+  ];
+  fhir:Provenance.occurredPeriod [
+     fhir:Period.start [ fhir:value "2017-06-06"^^xsd:date ]
+  ];
+  fhir:Provenance.recorded [ fhir:value "2016-06-09T08:12:14+10:00"^^xsd:dateTime];
+  fhir:Provenance.reason [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "antiviral resistance detection" ]
+  ];
+  fhir:Provenance.agent [
+     fhir:index 0;
+     fhir:Provenance.agent.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "AUT" ]
+       ]
+     ];
+     fhir:Provenance.agent.who [
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:Provenance.entity [
+     fhir:index 0;
+     fhir:Provenance.entity.role [ fhir:value "source" ];
+     fhir:Provenance.entity.what [
+       fhir:Reference.identifier [
+         fhir:Identifier.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "https://hive.biochemistry.gwu.edu" ];
+             fhir:Coding.code [ fhir:value "biocompute" ];
+             fhir:Coding.display [ fhir:value "obj.1001" ]
+           ]
+         ];
+         fhir:Identifier.value [ fhir:value "https://hive.biochemistry.gwu.edu/cgi-bin/prd/htscsrs/servlet.cgi?pageid=bcoexample_1" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/MolecularSequence/example> a fhir:MolecularSequence .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Provenance/example-biocompute-object.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Provenance/example-biocompute-object.ttl> .
+
+# -------------------------------------------------------------------------------------
+

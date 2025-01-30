@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Goal" status="changed">
+      <element path="Goal.lifecycleStatus" status="new"/>
+      <element path="Goal.achievementStatus" status="new"/>
+      <element new-min="1" old-min="0" path="Goal.subject"/>
+      <element new-max="*" old-max="1" path="Goal.target"/>
+      <element path="Goal.target.detail[x]">
+         <added-type name="string"/>
+         <added-type name="boolean"/>
+         <added-type name="integer"/>
+         <added-type name="Ratio"/>
+      </element>
+      <element path="Goal.expressedBy">
+         <removed-type name="Reference(Patient | Practitioner | RelatedPerson)"/>
+         <added-type name="Reference(Patient | Practitioner | PractitionerRole | RelatedPerson)"/>
+      </element>
+      <element path="Goal.addresses">
+         <removed-type name="Reference(Condition | Observation | MedicationStatement | NutritionOrder | ProcedureRequest | RiskAssessment)"/>
+         <added-type name="Reference(Condition | Observation | MedicationStatement | NutritionOrder | ServiceRequest | RiskAssessment)"/>
+      </element>
+      <element path="Goal.status" status="deleted"/>
+   </type>
+</difference>

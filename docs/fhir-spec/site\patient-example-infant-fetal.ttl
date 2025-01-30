@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/infant-fetal> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "infant-fetal"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: infant-fetal</p><p><b>identifier</b>: Medical record number = MRN657865757378</p><p><b>gender</b>: male</p><h3>Contacts</h3><table><tr><td>-</td><td><b>Relationship</b></td><td><b>Name</b></td><td><b>Telecom</b></td></tr><tr><td>*</td><td>Mother <span>(Details : {SNOMED CT code '72705000' = 'Mother', given as 'Mother'}; {http://terminology.hl7.org/CodeSystem/v2-0131 code 'N' = 'Next-of-Kin; {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'MTH' = 'mother)</span></td><td>Leia Organa (MAIDEN)</td><td>ph: +31201234567(MOBILE)</td></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName" ];
+     fhir:Extension.valueString [ fhir:value "Organa" ]
+  ];
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "MR" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://coruscanthealth.org/main-hospital/patient-identifier" ];
+     fhir:Identifier.value [ fhir:value "MRN657865757378" ]
+  ];
+  fhir:Patient.gender [ fhir:value "male"];
+  fhir:Patient.contact [
+     fhir:index 0;
+     fhir:Patient.contact.relationship [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:72705000;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "72705000" ];
+         fhir:Coding.display [ fhir:value "Mother" ]
+       ], [
+         fhir:index 1;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0131" ];
+         fhir:Coding.code [ fhir:value "N" ]
+       ], [
+         fhir:index 2;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+         fhir:Coding.code [ fhir:value "MTH" ]
+       ]
+     ];
+     fhir:Patient.contact.name [
+       fhir:HumanName.use [ fhir:value "maiden" ];
+       fhir:HumanName.family [ fhir:value "Organa" ];
+       fhir:HumanName.given [
+         fhir:value "Leia";
+         fhir:index 0
+       ]
+     ];
+     fhir:Patient.contact.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "+31201234567" ];
+       fhir:ContactPoint.use [ fhir:value "mobile" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Patient/infant-fetal.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Patient/infant-fetal.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,234 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ActivityDefinition/referralPrimaryCareMentalHealth> a fhir:ActivityDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "referralPrimaryCareMentalHealth"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Id: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">ActivityDefinition/referralPrimaryCareMentalHealth</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Status: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">draft</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Description: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">refer to primary care mental-health integrated care program for evaluation and treatment of mental health conditions now</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Category: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-left: 25px; padding-right: 25px;\">referral</td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Code: </b>\n               </td>\n            </tr>\n            <tr>\n               <td style=\"padding-right: 25px;\">\n                  <span style=\"padding-left: 25px;\">\n                     <b>text: </b>\n                     <span>Referral to service (procedure)</span>\n                     <br/>\n                  </span>\n                  <span>\n                     <span>\n                        <span style=\"padding-left: 25px;\">\n                           <b>system: </b>\n                           <span>http://snomed.info/sct</span>\n                           <br/>\n                        </span>\n                        <span style=\"padding-left: 25px;\">\n                           <b>code: </b>\n                           <span>306206005</span>\n                           <br/>\n                        </span>\n                     </span>\n                  </span>\n               </td>\n            </tr>\n         </table>\n         <p/>\n         <table class=\"grid dict\">\n            <tr>\n               <td>\n                  <b>Participant: </b>\n               </td>\n            </tr>\n            <tr style=\"vertical-align: top;\">\n               <td style=\"padding-left: 25px; padding-right: 25px;\">practitioner</td>\n            </tr>\n         </table>\n      </div>"
+  ];
+  fhir:ActivityDefinition.url [ fhir:value "http://motivemi.com/artifacts/ActivityDefinition/referralPrimaryCareMentalHealth"];
+  fhir:ActivityDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://motivemi.com/artifacts" ];
+     fhir:Identifier.value [ fhir:value "referralPrimaryCareMentalHealth" ]
+  ];
+  fhir:ActivityDefinition.version [ fhir:value "1.1.0"];
+  fhir:ActivityDefinition.name [ fhir:value "ReferralPrimaryCareMentalHealth"];
+  fhir:ActivityDefinition.title [ fhir:value "Referral to Primary Care Mental Health"];
+  fhir:ActivityDefinition.status [ fhir:value "active"];
+  fhir:ActivityDefinition.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ActivityDefinition.date [ fhir:value "2017-03-03T14:06:00Z"^^xsd:dateTime];
+  fhir:ActivityDefinition.publisher [ fhir:value "Motive Medical Intelligence"];
+  fhir:ActivityDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "415-362-4007" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "info@motivemi.com" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ];
+  fhir:ActivityDefinition.description [ fhir:value "refer to primary care mental-health integrated care program for evaluation and treatment of mental health conditions now"];
+  fhir:ActivityDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "age" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://meshb.nlm.nih.gov" ];
+         fhir:Coding.code [ fhir:value "D000328" ];
+         fhir:Coding.display [ fhir:value "Adult" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:87512008;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "87512008" ];
+         fhir:Coding.display [ fhir:value "Mild major depression" ]
+       ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:40379007;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "40379007" ];
+         fhir:Coding.display [ fhir:value "Major depression, recurrent, mild" ]
+       ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:225444004;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "225444004" ];
+         fhir:Coding.display [ fhir:value "At risk for suicide (finding)" ]
+       ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "focus" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:306206005;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "306206005" ];
+         fhir:Coding.display [ fhir:value "Referral to service (procedure)" ]
+       ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "user" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:309343006;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "309343006" ];
+         fhir:Coding.display [ fhir:value "Physician" ]
+       ]
+     ]
+  ], [
+     fhir:index 6;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "venue" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:440655000;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "440655000" ];
+         fhir:Coding.display [ fhir:value "Outpatient environment" ]
+       ]
+     ]
+  ];
+  fhir:ActivityDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ]
+     ]
+  ];
+  fhir:ActivityDefinition.purpose [ fhir:value "Defines a referral to a mental-health integrated care program for use in suicide risk order sets. The definition is independent of the order set in which it appears to allow reuse of the general definition of the referrral."];
+  fhir:ActivityDefinition.usage [ fhir:value "This activity definition is used as the definition of a referral request within various suicide risk order sets. Elements that apply universally are defined here, while elements that apply to the specific setting of a referral within a particular order set are defined in the order set."];
+  fhir:ActivityDefinition.copyright [ fhir:value "© Copyright 2016 Motive Medical Intelligence. All rights reserved."];
+  fhir:ActivityDefinition.approvalDate [ fhir:value "2017-03-01"^^xsd:date];
+  fhir:ActivityDefinition.lastReviewDate [ fhir:value "2017-03-01"^^xsd:date];
+  fhir:ActivityDefinition.effectivePeriod [
+     fhir:Period.start [ fhir:value "2017-03-01"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2017-12-31"^^xsd:date ]
+  ];
+  fhir:ActivityDefinition.topic [
+     fhir:index 0;
+     fhir:CodeableConcept.text [ fhir:value "Mental Health Referral" ]
+  ];
+  fhir:ActivityDefinition.author [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Motive Medical Intelligence" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "415-362-4007" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "info@motivemi.com" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ];
+  fhir:ActivityDefinition.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "citation" ];
+     fhir:RelatedArtifact.display [ fhir:value "Practice Guideline for the Treatment of Patients with Major Depressive Disorder" ];
+     fhir:RelatedArtifact.url [ fhir:value "http://psychiatryonline.org/pb/assets/raw/sitewide/practice_guidelines/guidelines/mdd.pdf" ]
+  ], [
+     fhir:index 1;
+     fhir:RelatedArtifact.type [ fhir:value "predecessor" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "ActivityDefinition/referralPrimaryCareMentalHealth-initial";
+       fhir:link <http://hl7.org/fhir/ActivityDefinition/referralPrimaryCareMentalHealth-initial>
+     ]
+  ];
+  fhir:ActivityDefinition.kind [ fhir:value "ServiceRequest"];
+  fhir:ActivityDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:306206005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "306206005" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Referral to service (procedure)" ]
+  ];
+  fhir:ActivityDefinition.timingTiming [
+     fhir:Timing.event [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-expression" ];
+         fhir:Extension.valueExpression [
+           fhir:Expression.language [ fhir:value "text/cql" ];
+           fhir:Expression.expression [ fhir:value "Now()" ]
+         ]
+       ]
+     ]
+  ];
+  fhir:ActivityDefinition.participant [
+     fhir:index 0;
+     fhir:ActivityDefinition.participant.type [ fhir:value "practitioner" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ActivityDefinition/referralPrimaryCareMentalHealth.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ActivityDefinition/referralPrimaryCareMentalHealth.ttl> .
+
+# -------------------------------------------------------------------------------------
+

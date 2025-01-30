@@ -1,0 +1,100 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ChargeItemDefinition/device> a fhir:ChargeItemDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "device"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: device</p><p><b>url</b>: <b>http://sap.org/ChargeItemDefinition/device-123</b></p><p><b>status</b>: active</p><p><b>description</b>: Financial details for  custom made device</p><p><b>instance</b>: <a>Device/12345</a></p><h3>Applicabilities</h3><table><tr><td>-</td><td><b>Description</b></td><td><b>Language</b></td><td><b>Expression</b></td></tr><tr><td>*</td><td>Verify ChargeItem pertains to Device 12345</td><td>text/fhirpath</td><td>%context.service.suppliedItem='Device/12345'</td></tr></table><blockquote><p><b>propertyGroup</b></p><h3>PriceComponents</h3><table><tr><td>-</td><td><b>Type</b></td><td><b>Code</b></td><td><b>Amount</b></td></tr><tr><td>*</td><td>base</td><td>Verkaufspreis (netto) <span>(Details : {http://fhir.de/CodeSystem/billing-attributes code 'VK' = 'VK', given as 'Verkaufspreis (netto)'})</span></td><td/></tr></table></blockquote><blockquote><p><b>propertyGroup</b></p><h3>Applicabilities</h3><table><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>PriceComponents</h3><table><tr><td>-</td><td><b>Type</b></td><td><b>Code</b></td><td><b>Factor</b></td></tr><tr><td>*</td><td>tax</td><td>Mehrwersteuersatz <span>(Details : {http://fhir.de/CodeSystem/billing-attributes code 'MWST' = 'MWST', given as 'Mehrwersteuersatz'})</span></td><td>1.19</td></tr></table></blockquote><blockquote><p><b>propertyGroup</b></p><h3>Applicabilities</h3><table><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>PriceComponents</h3><table><tr><td>-</td><td><b>Type</b></td><td><b>Code</b></td><td><b>Factor</b></td></tr><tr><td>*</td><td>tax</td><td>Mehrwersteuersatz <span>(Details : {http://fhir.de/CodeSystem/billing-attributes code 'MWST' = 'MWST', given as 'Mehrwersteuersatz'})</span></td><td>1.07</td></tr></table></blockquote></div>"
+  ];
+  fhir:ChargeItemDefinition.url [ fhir:value "http://sap.org/ChargeItemDefinition/device-123"];
+  fhir:ChargeItemDefinition.status [ fhir:value "active"];
+  fhir:ChargeItemDefinition.description [ fhir:value "Financial details for  custom made device"];
+  fhir:ChargeItemDefinition.instance [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Device/12345>;
+     fhir:Reference.reference [ fhir:value "Device/12345" ]
+  ];
+  fhir:ChargeItemDefinition.applicability [
+     fhir:index 0;
+     fhir:ChargeItemDefinition.applicability.description [ fhir:value "Verify ChargeItem pertains to Device 12345" ];
+     fhir:ChargeItemDefinition.applicability.language [ fhir:value "text/fhirpath" ];
+     fhir:ChargeItemDefinition.applicability.expression [ fhir:value "%context.service.suppliedItem='Device/12345'" ]
+  ];
+  fhir:ChargeItemDefinition.propertyGroup [
+     fhir:index 0;
+     fhir:ChargeItemDefinition.propertyGroup.priceComponent [
+       fhir:index 0;
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.type [ fhir:value "base" ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/billing-attributes" ];
+           fhir:Coding.code [ fhir:value "VK" ];
+           fhir:Coding.display [ fhir:value "Verkaufspreis (netto)" ]
+         ]
+       ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.amount [
+         fhir:Money.value [ fhir:value "67.44"^^xsd:decimal ];
+         fhir:Money.currency [ fhir:value "EUR" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ChargeItemDefinition.propertyGroup.applicability [
+       fhir:index 0;
+       fhir:ChargeItemDefinition.applicability.description [ fhir:value "Gültigkeit Steuersatz" ];
+       fhir:ChargeItemDefinition.applicability.language [ fhir:value "text/fhirpath" ];
+       fhir:ChargeItemDefinition.applicability.expression [ fhir:value "%context.occurenceDateTime > '2018-04-01'" ]
+     ];
+     fhir:ChargeItemDefinition.propertyGroup.priceComponent [
+       fhir:index 0;
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.type [ fhir:value "tax" ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/billing-attributes" ];
+           fhir:Coding.code [ fhir:value "MWST" ];
+           fhir:Coding.display [ fhir:value "Mehrwersteuersatz" ]
+         ]
+       ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.factor [ fhir:value "1.19"^^xsd:decimal ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:ChargeItemDefinition.propertyGroup.applicability [
+       fhir:index 0;
+       fhir:ChargeItemDefinition.applicability.description [ fhir:value "Gültigkeit Steuersatz" ];
+       fhir:ChargeItemDefinition.applicability.language [ fhir:value "text/fhirpath" ];
+       fhir:ChargeItemDefinition.applicability.expression [ fhir:value "%context.occurenceDateTime <= '2018-04-01'" ]
+     ];
+     fhir:ChargeItemDefinition.propertyGroup.priceComponent [
+       fhir:index 0;
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.type [ fhir:value "tax" ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/billing-attributes" ];
+           fhir:Coding.code [ fhir:value "MWST" ];
+           fhir:Coding.display [ fhir:value "Mehrwersteuersatz" ]
+         ]
+       ];
+       fhir:ChargeItemDefinition.propertyGroup.priceComponent.factor [ fhir:value "1.07"^^xsd:decimal ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Device/12345> a fhir:Device .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ChargeItemDefinition/device.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ChargeItemDefinition/device.ttl> .
+
+# -------------------------------------------------------------------------------------
+

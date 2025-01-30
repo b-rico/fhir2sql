@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<difference>
+   <type name="Observation" status="changed">
+      <element path="Observation.basedOn">
+         <removed-type name="Reference(CarePlan | DeviceRequest | ImmunizationRecommendation | MedicationRequest | NutritionOrder | ProcedureRequest | ReferralRequest)"/>
+         <added-type name="Reference(CarePlan | DeviceRequest | ImmunizationRecommendation | MedicationRequest | NutritionOrder | ServiceRequest)"/>
+      </element>
+      <element path="Observation.partOf" status="new"/>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Observation.status">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/observation-status"
+                      strength="required"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/observation-status|4.0.1"
+                      strength="required"/>
+      </element>
+      <element path="Observation.focus" status="new"/>
+      <element old-name="context" path="Observation.encounter">
+         <removed-type name="Reference(Encounter | EpisodeOfCare)"/>
+         <added-type name="Reference(Encounter)"/>
+      </element>
+      <element path="Observation.effective[x]">
+         <added-type name="Timing"/>
+         <added-type name="instant"/>
+      </element>
+      <element path="Observation.performer">
+         <removed-type name="Reference(Practitioner | Organization | Patient | RelatedPerson)"/>
+         <added-type name="Reference(Practitioner | PractitionerRole | Organization | CareTeam | Patient | RelatedPerson)"/>
+      </element>
+      <element path="Observation.value[x]">
+         <removed-type name="Attachment"/>
+         <added-type name="integer"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Observation.dataAbsentReason">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/observation-valueabsentreason"
+                      strength="extensible"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/data-absent-reason"
+                      strength="extensible"/>
+      </element>
+      <element new-max="*" old-max="1" path="Observation.interpretation"/>
+      <element new-max="*"
+               old-max="1"
+               old-name="comment"
+               path="Observation.note">
+         <removed-type name="string"/>
+         <added-type name="Annotation"/>
+      </element>
+      <element binding-status="removed" path="Observation.referenceRange.type">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/referencerange-meaning"
+                      strength="extensible"/>
+      </element>
+      <element path="Observation.hasMember" status="new"/>
+      <element path="Observation.derivedFrom" status="new"/>
+      <element path="Observation.component.value[x]">
+         <removed-type name="Attachment"/>
+         <added-type name="boolean"/>
+         <added-type name="integer"/>
+      </element>
+      <element binding-status="changed"
+               binding-valueset-changed="true"
+               path="Observation.component.dataAbsentReason">
+         <old-binding reference="http://hl7.org/fhir/ValueSet/observation-valueabsentreason"
+                      strength="extensible"/>
+         <new-binding reference="http://hl7.org/fhir/ValueSet/data-absent-reason"
+                      strength="extensible"/>
+      </element>
+      <element new-max="*" old-max="1" path="Observation.component.interpretation"/>
+      <element path="Observation.related" status="deleted"/>
+   </type>
+</difference>

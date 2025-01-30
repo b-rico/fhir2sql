@@ -1,0 +1,509 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/Bundle/report> a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "report"];
+  fhir:Bundle.type [ fhir:value "collection"];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/DiagnosticReport/report" ];
+     fhir:Bundle.entry.resource <https://example.com/base/DiagnosticReport/report>
+  ], [
+     fhir:index 1;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o1>
+  ], [
+     fhir:index 2;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o2" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o2>
+  ], [
+     fhir:index 3;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o3" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o3>
+  ], [
+     fhir:index 4;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o4" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o4>
+  ], [
+     fhir:index 5;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o5" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o5>
+  ], [
+     fhir:index 6;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o6" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o6>
+  ], [
+     fhir:index 7;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o7" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o7>
+  ], [
+     fhir:index 8;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o8" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o8>
+  ], [
+     fhir:index 9;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o9" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o9>
+  ], [
+     fhir:index 10;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o10" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o10>
+  ], [
+     fhir:index 11;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o11" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o11>
+  ], [
+     fhir:index 12;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o12" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o12>
+  ], [
+     fhir:index 13;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Observation/o13" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Observation/o13>
+  ] .
+
+<https://example.com/base/DiagnosticReport/report> a fhir:DiagnosticReport;
+  fhir:Resource.id [ fhir:value "report"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: report</p><p><b>status</b>: final</p><p><b>code</b>: comprehensive bone marrow report <span>(Details )</span></p><p><b>subject</b>: <a>Everywoman, Eve A, MRN: 123456789</a></p><p><b>effective</b>: 02/01/2015 1:20:10 PM</p><p><b>issued</b>: 06/01/2015 1:20:10 PM</p><p><b>performer</b>: <a>Molecular Diagnostic Laboratory</a></p><p><b>specimen</b>: <a>Bone marrow ID: MLD45-Z4-1234</a></p><p><b>result</b>: </p><ul><li><a>Observation/o1</a></li><li><a>Observation/o2</a></li><li><a>Observation/o3</a></li><li><a>Observation/o4</a></li><li><a>Observation/o5</a></li><li><a>Observation/o6</a></li><li><a>Observation/o7</a></li><li><a>Observation/o8</a></li><li><a>Observation/o9</a></li><li><a>Observation/o10</a></li><li><a>Observation/o11</a></li><li><a>Observation/o12</a></li><li><a>Observation/o13</a></li></ul></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/DiagnosticReport-geneticsAssessedCondition" ];
+     fhir:Extension.valueReference [
+       fhir:link <http://hl7.org/fhir/Condition/c1>;
+       fhir:Reference.reference [ fhir:value "Condition/c1" ]
+     ]
+  ];
+  fhir:DiagnosticReport.status [ fhir:value "final"];
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.text [ fhir:value "comprehensive bone marrow report" ]
+  ];
+  fhir:DiagnosticReport.subject [
+     fhir:link <http://hl7.org/fhir/Patient/genetics-example1>;
+     fhir:Reference.reference [ fhir:value "Patient/genetics-example1" ];
+     fhir:Reference.display [ fhir:value "Everywoman, Eve A, MRN: 123456789" ]
+  ];
+  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "2015-01-02T13:20:10+01:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.issued [ fhir:value "2015-01-06T13:20:10+01:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.performer [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/genetics-example1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/genetics-example1" ];
+     fhir:Reference.display [ fhir:value "Molecular Diagnostic Laboratory" ]
+  ];
+  fhir:DiagnosticReport.specimen [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Specimen/genetics-example1>;
+     fhir:Reference.reference [ fhir:value "Specimen/genetics-example1" ];
+     fhir:Reference.display [ fhir:value "Bone marrow ID: MLD45-Z4-1234" ]
+  ];
+  fhir:DiagnosticReport.result [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Observation/o1>;
+     fhir:Reference.reference [ fhir:value "Observation/o1" ]
+  ], [
+     fhir:index 1;
+     fhir:link <http://hl7.org/fhir/Observation/o2>;
+     fhir:Reference.reference [ fhir:value "Observation/o2" ]
+  ], [
+     fhir:index 2;
+     fhir:link <http://hl7.org/fhir/Observation/o3>;
+     fhir:Reference.reference [ fhir:value "Observation/o3" ]
+  ], [
+     fhir:index 3;
+     fhir:link <http://hl7.org/fhir/Observation/o4>;
+     fhir:Reference.reference [ fhir:value "Observation/o4" ]
+  ], [
+     fhir:index 4;
+     fhir:link <http://hl7.org/fhir/Observation/o5>;
+     fhir:Reference.reference [ fhir:value "Observation/o5" ]
+  ], [
+     fhir:index 5;
+     fhir:link <http://hl7.org/fhir/Observation/o6>;
+     fhir:Reference.reference [ fhir:value "Observation/o6" ]
+  ], [
+     fhir:index 6;
+     fhir:link <http://hl7.org/fhir/Observation/o7>;
+     fhir:Reference.reference [ fhir:value "Observation/o7" ]
+  ], [
+     fhir:index 7;
+     fhir:link <http://hl7.org/fhir/Observation/o8>;
+     fhir:Reference.reference [ fhir:value "Observation/o8" ]
+  ], [
+     fhir:index 8;
+     fhir:link <http://hl7.org/fhir/Observation/o9>;
+     fhir:Reference.reference [ fhir:value "Observation/o9" ]
+  ], [
+     fhir:index 9;
+     fhir:link <http://hl7.org/fhir/Observation/o10>;
+     fhir:Reference.reference [ fhir:value "Observation/o10" ]
+  ], [
+     fhir:index 10;
+     fhir:link <http://hl7.org/fhir/Observation/o11>;
+     fhir:Reference.reference [ fhir:value "Observation/o11" ]
+  ], [
+     fhir:index 11;
+     fhir:link <http://hl7.org/fhir/Observation/o12>;
+     fhir:Reference.reference [ fhir:value "Observation/o12" ]
+  ], [
+     fhir:index 12;
+     fhir:link <http://hl7.org/fhir/Observation/o13>;
+     fhir:Reference.reference [ fhir:value "Observation/o13" ]
+  ] .
+
+<http://hl7.org/fhir/Condition/c1> a fhir:Condition .
+
+<http://hl7.org/fhir/Patient/genetics-example1> a fhir:Patient .
+
+<http://hl7.org/fhir/Practitioner/genetics-example1> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Specimen/genetics-example1> a fhir:Specimen .
+
+<http://hl7.org/fhir/Observation/o1> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o2> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o3> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o4> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o5> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o6> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o7> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o8> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o9> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o10> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o11> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o12> a fhir:Observation .
+
+<http://hl7.org/fhir/Observation/o13> a fhir:Observation .
+
+<https://example.com/base/Observation/o1> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o1</p><p><b>status</b>: final</p><p><b>code</b>: Leukocytes [#/volume] in Blood <span>(Details : {LOINC code '26464-8' = 'Leukocytes [#/volume] in Blood', given as 'Leukocytes [#/volume] in Blood'})</span></p><p><b>value</b>: 31.9 K/ul</p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:26464-8;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "26464-8" ];
+       fhir:Coding.display [ fhir:value "Leukocytes [#/volume] in Blood" ]
+     ]
+  ];
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "31.9"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "K/ul" ]
+  ] .
+
+<https://example.com/base/Observation/o2> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o2"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o2</p><p><b>status</b>: final</p><p><b>code</b>: Hematocrit [Volume Fraction] of Blood <span>(Details : {LOINC code '20570-8' = 'Hematocrit [Volume Fraction] of Blood', given as 'Hematocrit [Volume Fraction] of Blood'})</span></p><p><b>value</b>: 27 %</p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:20570-8;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "20570-8" ];
+       fhir:Coding.display [ fhir:value "Hematocrit [Volume Fraction] of Blood" ]
+     ]
+  ];
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "27"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "%" ]
+  ] .
+
+<https://example.com/base/Observation/o3> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o3"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o3</p><p><b>status</b>: final</p><p><b>code</b>: Platelets [#/volume] in Blood <span>(Details : {LOINC code '26515-7' = 'Platelets [#/volume] in Blood', given as 'Platelets [#/volume] in Blood'})</span></p><p><b>value</b>: 84 K/ul</p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:26515-7;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "26515-7" ];
+       fhir:Coding.display [ fhir:value "Platelets [#/volume] in Blood" ]
+     ]
+  ];
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "84"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "K/ul" ]
+  ] .
+
+<https://example.com/base/Observation/o4> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o4"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o4</p><p><b>status</b>: final</p><p><b>code</b>: NPM1 gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal <span>(Details : {LOINC code '75034-9' = 'NPM1 gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal', given as 'NPM1 gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal'})</span></p><p><b>value</b>: Positive <span>(Details : {SNOMED CT code '10828004' = 'Positive', given as 'Positive'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:75034-9;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "75034-9" ];
+       fhir:Coding.display [ fhir:value "NPM1 gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal" ]
+     ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:10828004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "10828004" ];
+       fhir:Coding.display [ fhir:value "Positive" ]
+     ]
+  ] .
+
+<https://example.com/base/Observation/o5> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o5"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o5</p><p><b>status</b>: final</p><p><b>code</b>: FLT3 gene mutation analysis in Bone marrow by Molecular genetics method Narrative <span>(Details : {LOINC code '54447-8' = 'FLT3 gene mutation analysis in Bone marrow by Molecular genetics method Narrative', given as 'FLT3 gene mutation analysis in Bone marrow by Molecular genetics method Narrative'})</span></p><p><b>value</b>: Negative <span>(Details : {SNOMED CT code '260385009' = 'Negative', given as 'Negative'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:54447-8;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "54447-8" ];
+       fhir:Coding.display [ fhir:value "FLT3 gene mutation analysis in Bone marrow by Molecular genetics method Narrative" ]
+     ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:260385009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "260385009" ];
+       fhir:Coding.display [ fhir:value "Negative" ]
+     ]
+  ] .
+
+<https://example.com/base/Observation/o6> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o6"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o6</p><p><b>status</b>: final</p><p><b>code</b>: KIT gene mutation analysis in Bone marrow by Molecular genetics method Narrative <span>(Details : {LOINC code '55201-8' = 'KIT gene mutation analysis in Blood or Tissue by Molecular genetics method Narrative', given as 'KIT gene mutation analysis in Bone marrow by Molecular genetics method Narrative'})</span></p><p><b>value</b>: Negative <span>(Details : {SNOMED CT code '260385009' = 'Negative', given as 'Negative'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:55201-8;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "55201-8" ];
+       fhir:Coding.display [ fhir:value "KIT gene mutation analysis in Bone marrow by Molecular genetics method Narrative" ]
+     ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:260385009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "260385009" ];
+       fhir:Coding.display [ fhir:value "Negative" ]
+     ]
+  ] .
+
+<https://example.com/base/Observation/o7> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o7"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o7</p><p><b>status</b>: final</p><p><b>code</b>: Myeloblasts [#/volume] in Blood <span>(Details : {LOINC code '30444-4' = 'Myeloblasts [#/volume] in Blood', given as 'Myeloblasts [#/volume] in Blood'})</span></p><p><b>value</b>: Positive <span>(Details : {SNOMED CT code '10828004' = 'Positive', given as 'Positive'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:30444-4;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "30444-4" ];
+       fhir:Coding.display [ fhir:value "Myeloblasts [#/volume] in Blood" ]
+     ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:10828004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "10828004" ];
+       fhir:Coding.display [ fhir:value "Positive" ]
+     ]
+  ] .
+
+<https://example.com/base/Observation/o8> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o8"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o8</p><p><b>status</b>: final</p><p><b>code</b>: CD4 Ag [Presence] in Tissue by Immune stain <span>(Details : {LOINC code '47016-1' = 'CD4 Ag [Presence] in Tissue by Immune stain', given as 'CD4 Ag [Presence] in Tissue by Immune stain'})</span></p><p><b>value</b>: Positive <span>(Details : {SNOMED CT code '10828004' = 'Positive', given as 'Positive'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:47016-1;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "47016-1" ];
+       fhir:Coding.display [ fhir:value "CD4 Ag [Presence] in Tissue by Immune stain" ]
+     ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:10828004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "10828004" ];
+       fhir:Coding.display [ fhir:value "Positive" ]
+     ]
+  ] .
+
+<https://example.com/base/Observation/o9> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o9"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o9</p><p><b>status</b>: final</p><p><b>code</b>: CD13 Ag [Presence] in Tissue by Immune stain <span>(Details : {LOINC code '49464-1' = 'CD13 Ag [Presence] in Tissue by Immune stain', given as 'CD13 Ag [Presence] in Tissue by Immune stain'})</span></p><p><b>value</b>: Positive <span>(Details : {SNOMED CT code '10828004' = 'Positive', given as 'Positive'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:49464-1;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "49464-1" ];
+       fhir:Coding.display [ fhir:value "CD13 Ag [Presence] in Tissue by Immune stain" ]
+     ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:10828004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "10828004" ];
+       fhir:Coding.display [ fhir:value "Positive" ]
+     ]
+  ] .
+
+<https://example.com/base/Observation/o10> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o10"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o10</p><p><b>status</b>: final</p><p><b>code</b>: CD2 Ag [Presence] in Tissue by Immune stain <span>(Details : {LOINC code '49466-6' = 'CD2 Ag [Presence] in Tissue by Immune stain', given as 'CD2 Ag [Presence] in Tissue by Immune stain'})</span></p><p><b>value</b>: Negative <span>(Details : {SNOMED CT code '260385009' = 'Negative', given as 'Negative'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:49466-6;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "49466-6" ];
+       fhir:Coding.display [ fhir:value "CD2 Ag [Presence] in Tissue by Immune stain" ]
+     ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:260385009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "260385009" ];
+       fhir:Coding.display [ fhir:value "Negative" ]
+     ]
+  ] .
+
+<https://example.com/base/Observation/o11> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o11"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o11</p><p><b>status</b>: final</p><p><b>code</b>: Karyotype [Identifier] in Bone marrow Nominal <span>(Details : {LOINC code '33893-9' = 'Karyotype [Identifier] in Bone marrow Nominal', given as 'Karyotype [Identifier] in Bone marrow Nominal'})</span></p><p><b>value</b>: 46,XX[20] <span>(Details )</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:33893-9;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "33893-9" ];
+       fhir:Coding.display [ fhir:value "Karyotype [Identifier] in Bone marrow Nominal" ]
+     ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.text [ fhir:value "46,XX[20]" ]
+  ] .
+
+<https://example.com/base/Observation/o12> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o12"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o12</p><p><b>status</b>: final</p><p><b>code</b>: MDS-associated genetic abnormalities <span>(Details )</span></p><p><b>value</b>: Negative <span>(Details : {SNOMED CT code '260385009' = 'Negative', given as 'Negative'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "MDS-associated genetic abnormalities" ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:260385009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "260385009" ];
+       fhir:Coding.display [ fhir:value "Negative" ]
+     ]
+  ] .
+
+<https://example.com/base/Observation/o13> a fhir:Observation;
+  fhir:Resource.id [ fhir:value "o13"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: o13</p><p><b>status</b>: final</p><p><b>code</b>: AML-associated genetic abnormalities <span>(Details )</span></p><p><b>value</b>: Negative <span>(Details : {SNOMED CT code '260385009' = 'Negative', given as 'Negative'})</span></p></div>"
+  ];
+  fhir:Observation.status [ fhir:value "final"];
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "AML-associated genetic abnormalities" ]
+  ];
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:260385009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "260385009" ];
+       fhir:Coding.display [ fhir:value "Negative" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/Bundle/report.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/Bundle/report.ttl> .
+
+# -------------------------------------------------------------------------------------
+
