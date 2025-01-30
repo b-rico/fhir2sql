@@ -1,0 +1,27 @@
+#text for https://sequencediagram.org/
+# add viewbox attribute to svg file for img sizing viewBox="0.0 0.0 829.0 740.0">
+
+title Task Based Approach
+
+participant Data Consumer
+
+participant Data Source
+
+actor Practitioner
+
+
+note over Data Consumer:1) Data Consumer needs Clinical Information
+
+Data Consumer->Data Source:2) POST Task to indicating\n the "type" of data needed
+
+Data Source-->Data Consumer:3) Return HTTP 200 code to indicate acceptance
+
+note over Data Consumer,Data Source: 4) Data Consumer polls or subscribes to Task to see if data request is completed
+
+note over Data Source, Practitioner:5) Locates requested data\nif necessary with human involvement\n to find/aggregate/filter/approve it
+
+Data Consumer->Data Source:6) GET updated Task when request is completed
+
+Data Source->Data Consumer:7) Return Task with either\n a) contained Bundle or \n b) references to FHIR resources \n representing the clinical data
+
+note over Data Consumer:8) Process Search Results

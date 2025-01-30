@@ -1,0 +1,27 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Subscription/cdex-task-inline-scenario1-subscription-active> a fhir:Subscription ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-task-inline-scenario1-subscription-active"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:reason [ fhir:v "R4 Example Topic-Based Subscription for CD Task based Queries"] ; # 
+  fhir:criteria [ fhir:v "http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task"] ; # 
+  fhir:channel [
+     fhir:type [ fhir:v "rest-hook" ] ;
+     fhir:endpoint [ fhir:v "http://example.org/FHIR/Payer/cdex-task-watch"^^xsd:anyURI ] ;
+     fhir:payload [
+       fhir:v "application/fhir+json" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "id-only" ]
+       ] )
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

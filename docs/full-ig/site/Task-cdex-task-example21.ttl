@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Task/cdex-task-example21> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-task-example21"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task cdex-task-example21</b></p><a name=\"cdex-task-example21\"> </a><a name=\"hccdex-task-example21\"> </a><a name=\"cdex-task-example21-en-US\"> </a><p><b>status</b>: Requested</p><p><b>intent</b>: order</p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp data-request-code}\">Data Request Code</span></p><p><b>for</b>: <a href=\"http://example.org/fhir/Patient/cdex-example-patient\">http://example.org/fhir/Patient/cdex-example-patient</a></p><p><b>authoredOn</b>: 2020-10-27 11:05:34-0700</p><p><b>lastModified</b>: 2020-10-27 11:05:34-0700</p><p><b>requester</b>: <a href=\"http://example.org/fhir/Organization/cdex-example-payer\">http://example.org/fhir/Organization/cdex-example-payer</a></p><p><b>owner</b>: <a href=\"http://example.org/fhir/Organization/cdex-example-provider\">http://example.org/fhir/Organization/cdex-example-provider</a></p><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp data-code}\">data code input</span></p><p><b>value</b>: <span title=\"Codes:{http://loinc.org 11504-8}\">Surgical operation note</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp purpose-of-use}\">Purpose Of Use</span></p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActReason COC}\">coordination of care</span></p></blockquote></div>"
+  ] ; # 
+  fhir:status [ fhir:v "requested"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "data-request-code" ]
+     ] )
+  ] ; # 
+  fhir:for [
+     fhir:link <http://example.org/fhir/Patient/cdex-example-patient> ;
+     fhir:reference [ fhir:v "http://example.org/fhir/Patient/cdex-example-patient" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2020-10-27T11:05:34-07:00"^^xsd:dateTime] ; # 
+  fhir:lastModified [ fhir:v "2020-10-27T11:05:34-07:00"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:link <http://example.org/fhir/Organization/cdex-example-payer> ;
+     fhir:reference [ fhir:v "http://example.org/fhir/Organization/cdex-example-payer" ]
+  ] ; # 
+  fhir:owner [
+     fhir:link <http://example.org/fhir/Organization/cdex-example-provider> ;
+     fhir:reference [ fhir:v "http://example.org/fhir/Organization/cdex-example-provider" ]
+  ] ; # 
+  fhir:input ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "data-code" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a loinc:11504-8 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "11504-8" ]
+       ] ) ;
+       fhir:text [ fhir:v "Surgical operation note" ]
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "purpose-of-use" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "COC" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

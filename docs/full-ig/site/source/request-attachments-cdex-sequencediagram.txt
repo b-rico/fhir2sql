@@ -1,0 +1,23 @@
+#request-attachments-cdex-sequencediagram.txt
+#text for https://sequencediagram.org/
+#for input/images/request-attachments-cdex-sequencediagram.svg
+
+title Requesting Attachments Using Attachment Codes
+participant Payer
+participant Provider
+actor Practitioner
+autonumber
+Payer -> Payer: Prepare Task\nincluding attachment codes
+Payer->Provider: POST CDEX Task\nto solicit attachments
+Provider -> Provider: Gathers attachments\nbased on attachment codes
+opt
+Provider -> Practitioner: Manual Review and\nComplete request
+autonumber off
+Practitioner-->Provider:
+end
+autonumber
+Provider -> Provider: Update Task with links to\nattachments\nand "completed" status
+Provider->Payer: POST $submit-attachment
+autonumber off
+Payer-->Provider: Return HTTP 200 OK +/- OperationOutcome
+note over Payer:  Associates submitted data\n with existing or future\nclaim/prior authorization and processes

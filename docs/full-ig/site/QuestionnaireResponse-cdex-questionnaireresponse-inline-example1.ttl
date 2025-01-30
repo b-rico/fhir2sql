@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/QuestionnaireResponse/cdex-questionnaireresponse-inline-example1> a fhir:QuestionnaireResponse ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:questionnaire [
+     fhir:v "http://example.org/cdex-questionnaire-example1"^^xsd:anyURI ;
+     fhir:link <http://example.org/cdex-questionnaire-example1>
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "MB" ] ;
+           fhir:display [ fhir:v "Member Number" ]
+         ] ) ;
+         fhir:text [ fhir:v "Member Number" ]
+       ] ;
+       fhir:system [ fhir:v "http://example.org/cdex/payer/member-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Member123" ]
+     ] ;
+     fhir:display [ fhir:v "Amy Shaw" ]
+  ] ; # 
+  fhir:authored [ fhir:v "2022-06-17"^^xsd:date] ; # 
+  fhir:author [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "9941339100" ]
+     ]
+  ] ; # 
+  fhir:item ( [
+     fhir:linkId [ fhir:v "1" ] ;
+     fhir:text [ fhir:v "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)" ] ;
+     fhir:answer ( [
+       fhir:value [ fhir:v "Examplitis" ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "2" ] ;
+     fhir:text [ fhir:v "Order Reason" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://example.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "4" ] ;
+         fhir:display [ fhir:v "Replacement" ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

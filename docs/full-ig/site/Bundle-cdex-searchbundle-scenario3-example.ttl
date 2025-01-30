@@ -1,0 +1,94 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Bundle/cdex-searchbundle-scenario3-example> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-searchbundle-scenario3-example"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2020-10-23T20:29:25.663+00:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "http://hapi.fhir.org/baseR4/DocumentReference?_count=1&_sort=-period&patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b&type=34117-2"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "http://hapi.fhir.org/baseR4/DocumentReference/cdex-HP-example1"^^xsd:anyURI ] ;
+     fhir:resource ( <http://hapi.fhir.org/baseR4/DocumentReference/cdex-HP-example1> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] ) . # 
+
+<http://hapi.fhir.org/baseR4/DocumentReference/cdex-HP-example1> a fhir:DocumentReference ;
+  fhir:id [ fhir:v "cdex-HP-example1"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2020-10-23T20:27:18.976+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#XOrE2IwfLwl5C1RV"^^xsd:anyURI ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"DocumentReference_cdex-HP-example1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: DocumentReference cdex-HP-example1</b></p><a name=\"cdex-HP-example1\"> </a><a name=\"hccdex-HP-example1\"> </a><a name=\"cdex-HP-example1-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2020-10-23 20:27:18+0000; </p><p style=\"margin-bottom: 0px\">Information Source: #XOrE2IwfLwl5C1RV</p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: \r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:oid:2.16.840.1.113883.19.5.99999.2</p><p><b>status</b>: Current</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 34117-2}\">History and physical note</span></p><p><b>category</b>: <span title=\"Codes:{http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category clinical-note}\">Clinical Note</span></p><p><b>subject</b>: <a href=\"http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b\">Elden718 Halvorson124</a></p><p><b>date</b>: 2020-10-23 10:21:08-0700</p><p><b>author</b>: <a href=\"http://example.org/cdex/provider/fhir/Practitioner/0000016f-57cb-cdac-0000-00000000014a\">Janeth814 Jakubowski832, MD</a></p><p><b>description</b>: Pulmonology clinic acute visit</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Url</b></td><td><b>Title</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>/Binary/cdex-example-hpnote</td><td>Uri where the data can be found: [base]/Binary/1-note</td></tr></table><p><b>format</b>: <a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-v3-HL7DocumentFormatCodes.html#v3-HL7DocumentFormatCodes-urn.58hl7-org.58sdwg.58ccda-structuredBody.582.461\">HL7 Document Format Codes urn:hl7-org:sdwg:ccda-structuredBody:2.1</a>: ccda-structuredBody:2.1</p></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Period</b></td></tr><tr><td style=\"display: none\">*</td><td>2020-10-23 10:21:06-0700 --&gt; 2020-10-23 10:21:08-0700</td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "urn:oid:2.16.840.1.113883.19.5.99999.2" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:34117-2 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "34117-2" ] ;
+       fhir:display [ fhir:v "History and physical note" ]
+     ] ) ;
+     fhir:text [ fhir:v "History and physical note" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ] ;
+       fhir:display [ fhir:v "Clinical Note" ]
+     ] ) ;
+     fhir:text [ fhir:v "Clinical Note" ]
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b" ] ;
+     fhir:display [ fhir:v "Elden718 Halvorson124" ]
+  ] ; # 
+  fhir:date [ fhir:v "2020-10-23T10:21:08-07:00"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:link <http://example.org/cdex/provider/fhir/Practitioner/0000016f-57cb-cdac-0000-00000000014a> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Practitioner/0000016f-57cb-cdac-0000-00000000014a" ] ;
+     fhir:display [ fhir:v "Janeth814 Jakubowski832, MD" ]
+  ] ) ; # 
+  fhir:description [ fhir:v "Pulmonology clinic acute visit"] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:url [ fhir:v "/Binary/cdex-example-hpnote"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Uri where the data can be found: [base]/Binary/1-note" ]
+     ] ;
+     fhir:format [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "urn:hl7-org:sdwg:ccda-structuredBody:2.1" ] ;
+       fhir:display [ fhir:v "ccda-structuredBody:2.1" ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:period [
+       fhir:start [ fhir:v "2020-10-23T10:21:06-07:00"^^xsd:dateTime ] ;
+       fhir:end [ fhir:v "2020-10-23T10:21:08-07:00"^^xsd:dateTime ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

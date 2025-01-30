@@ -1,0 +1,43 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Provenance/cdex-provenance-inline-example-858> a fhir:Provenance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-provenance-inline-example-858"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Provenance cdex-provenance-inline-example-858</b></p><a name=\"cdex-provenance-inline-example-858\"> </a><a name=\"hccdex-provenance-inline-example-858\"> </a><a name=\"cdex-provenance-inline-example-858-en-US\"> </a><p>Provenance for <a href=\"Condition-cdex-condition-inline-example-858.html\">Condition Type 2 Diabetes Mellitus</a></p><p>Summary</p><table class=\"grid\"><tr><td>Recorded</td><td>2021-12-01 22:34:05-0800</td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>Type</b></td><td><b>who</b></td><td><b>On Behalf Of</b></td></tr><tr><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/provenance-participant-type author}\">Author</span></td><td><a href=\"http://example.org/fhir/Practitioner/123\">http://example.org/fhir/Practitioner/123</a></td><td><a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1.1/Organization-min.html\">Organization New Health Plan</a></td></tr></table></div>"
+  ] ; # 
+  fhir:target ( [
+     fhir:link <http://hl7.org/fhir/us/davinci-cdex/Condition/cdex-condition-inline-example-858> ;
+     fhir:reference [ fhir:v "Condition/cdex-condition-inline-example-858" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "2021-12-01T22:34:05-08:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "author" ] ;
+         fhir:display [ fhir:v "Author" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:link <http://example.org/fhir/Practitioner/123> ;
+       fhir:reference [ fhir:v "http://example.org/fhir/Practitioner/123" ]
+     ] ;
+     fhir:onBehalfOf [
+       fhir:link <http://hl7.org/fhir/us/davinci-cdex/Organization/min> ;
+       fhir:reference [ fhir:v "Organization/min" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-cdex/Condition/cdex-condition-inline-example-858> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-cdex/Organization/min> a fhir:us .
+
+# -------------------------------------------------------------------------------------
+

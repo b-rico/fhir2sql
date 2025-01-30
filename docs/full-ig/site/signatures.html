@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Signatures - Da Vinci Clinical Data Exchange (CDex) v2.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"13"}
+    h3,h4,h5,h6{--heading-prefix:"13"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Clinical Data Exchange (CDex)</span>
+            <br/>
+            <span style="display:inline-block;">2.1.0 - STU 2.1
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">IG Home
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="index.html">Introduction</a>
+      </li>
+      <li>
+        <a href="index.html#about-this-guide">About This Guide</a>
+      </li>
+      <li>
+        <a href="index.html#how-to-read-this-guide">How to read this Guide</a>
+      </li>
+      <li>
+        <a href="index.html#credits">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">About the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#what-do-payers-do-with-clinical-information">What Do Payers Do with Clinical Information</a>
+      </li>
+      <li>
+        <a href="background.html#provider-to-provider-data-exchange">Provider to Provider Data Exchange</a>
+      </li>
+      <li>
+        <a href="background.html#what-information-is-needed">What Information is Needed</a>
+      </li>
+      <li>
+        <a href="background.html#where-does-cdex-fit-in-the-da-vinci-project">Where Does CDEX Fit in the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#workflow-overview">Workflow Overview</a>
+      </li>
+      <li>
+        <a href="background.html#architectural-approach">Architectural Approach</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Direct Query
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="direct-query.html">Introduction</a>
+      </li>
+      <li>
+        <a href="direct-query.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="direct-query.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="direct-query.html#discovery-of-patient-fhir-ids">Discovery of Patient FHIR IDs</a>
+      </li>
+      <li>
+        <a href="direct-query.html#direct-query-transaction-scenarios">Direct Query Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="direct-query.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="direct-query.html#signatures">Signatures</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Task Based Approach
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="task-based-approach.html">Introduction</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#the-task-resource">The Task Resource</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#discovery-of-identifiers">Discovery of Identifiers</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#task-state-machine">Task State Machine</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#fetching-the-data">Fetching the Data</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#example-transactions-based-on-query-code-and-free-text-inputs">Task Based Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#using-questionnaire-as-task-input">Using Questionnaire as Task Input</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#when-the-task-cannot-be-completed">When The Task Cannot Be Completed</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#polling-vs-subscriptions">Polling vs Subscriptions</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#formal-authorization">Formal Authorization</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#signatures">Signatures</a>
+      </li>
+      <li>
+        <a href="task-based-conformance.html">Conforming to CDex Task Based Approach</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Attachments
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="solicited-unsolicited-attachments.html">Solicited and Unsolicited Attachments</a>
+      </li>
+      <li>
+        <a href="sending-attachments.html">Sending Attachments</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-questionnaire.html">Requesting Attachments Using Questionnaires</a>
+      </li>
+      <li>
+        <a href="burden-reduction.html">Using CDex Attachments with DaVinci PAS</a>
+      </li>
+      <li>
+        <a href="attachments-conformance.html">Conforming to CDex Attachments</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Signatures
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="signatures.html">About Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#the-signer">The Signer</a>
+      </li>
+      <li>
+        <a href="signatures.html#what-is-signed">What is Signed</a>
+      </li>
+      <li>
+        <a href="signatures.html#cdex-enveloped-signatures">CDex Enveloped Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#electronic-signatures">Electronic Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#digital-signatures">Digital Signatures</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="security.html">Security and Privacy</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="artifacts.html#1">CDex Capability Statements</a>
+      </li>
+      <li>
+        <a href="artifacts.html#2">Attachments Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#3">Attachments Operations</a>
+      </li>
+      <li>
+        <a href="artifacts.html#4">Attachments Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#5">Attachments Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#6">Task Based Approach Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#7">Task Based Approach Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#8">Task Based Approach Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#9">Direct Query Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Questionnaire Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#11">Questionnaire Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#12">Signature Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#13">Signature Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Signature Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#15">Common Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#16">Inline Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex">Discussion Forum</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=40738757">Project Page</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/display/DVP/CDex+Implementer+Support?src=contextnavpagetreemode">Implementer Support</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801">Specification Dashboard</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/">Propose a Change</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="changes.html">Change Log</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Signatures</b></li>
+
+          <span style="float:right;">
+
+            <a href="attachments-conformance.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="signed-searchset-bundle-example.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Clinical Data Exchange (CDex), published by HL7 International / Payer/Provider Information Exchange Work Group. This guide is not an authorized publication; it is the continuous build for version 2.1.0 built by the FHIR (HL7® FHIR® Standard) CI Build. This version is based on the current content of <a href="https://github.com/HL7/davinci-ecdx/">https://github.com/HL7/davinci-ecdx/</a> and changes regularly. See the <a href="http://hl7.org/fhir/us/davinci-cdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Signatures</h2>
+  
+
+
+
+
+
+  <table class="colsi">
+    <tr>
+  
+      <td>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
+        
+      </td>
+  
+  
+    </tr>
+  </table>
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#about-signatures" id="markdown-toc-about-signatures">About Signatures</a></li>
+  <li><a href="#the-signer" id="markdown-toc-the-signer">The Signer</a></li>
+  <li><a href="#what-is-signed" id="markdown-toc-what-is-signed">What is Signed</a></li>
+  <li><a href="#cdex-enveloped-signatures" id="markdown-toc-cdex-enveloped-signatures">CDex <em>Enveloped</em> Signatures</a></li>
+  <li><a href="#electronic-signatures" id="markdown-toc-electronic-signatures">Electronic Signatures</a></li>
+  <li><a href="#digital-signatures" id="markdown-toc-digital-signatures">Digital Signatures</a></li>
+</ul>
+
+</div>
+
+<h3 id="about-signatures">About Signatures</h3>
+
+<!--  {% include signature-support.md %}  -->
+<p class="bg-info">This specification does not require signatures but supports the transmission of signatures if business agreements require them.</p>
+
+<p>Data Consumers such as Payers may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider's claim, the submitted information needs to be signed.<sup id="fnref:first" role="doc-noteref"><a href="#fn:first" class="footnote" rel="footnote">1</a></sup><sup id="fnref:second" role="doc-noteref"><a href="#fn:second" class="footnote" rel="footnote">2</a></sup>  In direct query transactions without human intervention, Data Consumers may require signatures from Data Sources attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions.</p>
+
+<h3 id="the-signer">The Signer</h3>
+
+<p>As illustrated in the table below, the signatory depends on the transaction. For synchronous or automated transactions, it is a system-level signature; for asynchronous transactions involving a human, it is a provider signature.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Direct Query</th>
+      <th>Task Based Query</th>
+      <th>Attachments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>System Level</td>
+      <td>X</td>
+      <td>X</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Human Provider</td>
+      <td> </td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>System-level and provider signatures represent different levels of attestation:</p>
+
+<ul>
+  <li>The signature represents a provider signature attesting that the information is true and accurate to the best of their knowledge.*</li>
+  <li>The signature representing the sending system is a <em>system-level</em> attestation by the sending organization that they supplied the information. It is a complete and accurate representation of the shareable information from that system, meeting the requested criteria. This signature does NOT attest that the information is accurate because the system can't make that determination.*</li>
+</ul>
+
+<p>* Consult with your Payer and your legal team for questions regarding legal liability associated with sharing and signing data.</p>
+
+<h3 id="what-is-signed">What is Signed</h3>
+
+<p>The data returned in CDEX is not limited to FHIR resources but may also include C-CDA documents, PDFs, text files, and other formats. Depending on the data type and format returned, the signature may be in the actual payload or a <a href="http://hl7.org/fhir/R4/datatypes.html#signature">FHIR Signature</a> in the Bundle that envelopes the payload. The following table summarizes what artifacts are signed:</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data Type Returned</th>
+      <th>Location of Signature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Non-FHIR data formats attached to or referenced by DocumentReference (e.g., CCDA)</td>
+      <td>Referenced or attached data</td>
+    </tr>
+    <tr>
+      <td>FHIR Documents (e.g., CCDA on FHIR, Task-based request*, Unsolicited Attachment*)</td>
+      <td>Document Bundle</td>
+    </tr>
+    <tr>
+      <td>FHIR Search Bundle (e.g., a query response)</td>
+      <td>Search Bundle</td>
+    </tr>
+    <tr>
+      <td>FHIR QuestionnaireResponse (e.g., a query response)</td>
+      <td>QuestionnaireResponse</td>
+    </tr>
+    <tr>
+      <td>Combination of above  (e.g., FHIR Search Bundle, FHIR Documents, or binary files referenced by DocumentReference)</td>
+      <td>Combination of Above</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>* A <em>signed <a href="http://hl7.org/fhir/R4/documents.html">FHIR Document</a></em> is sent for task-based requests and some attachments transactions when the artifact would otherwise, if unsigned, be individual FHIR resources.</p>
+
+<p>The corresponding sections on signatures for <a href="direct-query.html">Direct Query</a>, <a href="task-based-approach.html">Task Based Approach</a>, <a href="sending-attachments.html">Sending attachments</a>, <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a>, and <a href="requesting-attachments-questionnaire.html">Requesting Attachments Using Questionnaires</a> document how to indicate the signature requirement and how to respond with signed transactions. The sections below define the requirements for using <em>FHIR Signatures</em> to sign a Bundle or QuestionnaireResponse with electronic or digital signatures. Refer to the appropriate specifications for guidance on signing other documents, such as CDA or CCDA on FHIR Documents.</p>
+
+<h3 id="cdex-enveloped-signatures">CDex <em>Enveloped</em> Signatures</h3>
+
+<p>Signatures in CDex are an element in the signed Bundle or QuestionnaireResponse resource. This type of signature is referred to as an <a href="http://www.w3.org/TR/xmldsig-core/#def-SignatureEnveloped">enveloped signature</a>. The FHIR Bundle is the envelope for Bundles, and the signature populates the <a href="http://hl7.org/fhir/R4/bundle-definitions.html#Bundle.signature"><code class="language-plaintext highlighter-rouge">Bundle.signature</code></a> element. For QuestionnaireResponse, The envelope can be the resource, individual <code class="language-plaintext highlighter-rouge">QuestionnaireResponse.item</code> elements, or both, and the signature populates the QuestionnaireResponse's signature extension.* The enveloped signatures must avoid including the signature element in calculating the digital signature.</p>
+
+<p class="bg-warning">* When using a FHIR Questionnaire to request data, the [DTR SDC Questionnaire] Profile is used to profile the Questionnaire. Both <a href="StructureDefinition-cdex-task-attachment-request.html">CDex Task Attachment Request Profile</a> and the [DTR SDC Questionnaire] profile have the overlapping capability to indicate that a signature is required. Signers must meet both the Task <em>and</em> Questionnaire signature expectations. The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The <a href="http://hl7.org/fhir/us/davinci-dtr/STU2.1StructureDefinition-dtr-std-questionnaire.html">DTR Standard Questionnaire</a> profile supports many reasons for signatures, including verification signatures using the FHIR standard <a href="http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired">signatureRequired</a> extension at the QuestionnaireResponse resource or <code class="language-plaintext highlighter-rouge">QuestionnareiResponse.item</code> level.</p>
+
+<h4 id="cdex-signature-profiles">CDex Signature Profiles</h4>
+
+<p>This guide defines three profiles for using signatures:</p>
+
+<ol>
+  <li><a href="StructureDefinition-cdex-signature.html">CDex Signature Profile</a></li>
+  <li><a href="StructureDefinition-cdex-signature-bundle.html">CDex Signature Bundle Profile</a></li>
+  <li><a href="StructureDefinition-cdex-sdc-questionnaireresponse.html">CDex SDC QuestionnaireResponse Profile</a></li>
+</ol>
+
+<h5 id="cdex-signature-datatype-profile">CDex Signature Datatype Profile</h5>
+
+<p>This Signature DataType profile enforces the various elements of <a href="https://hl7.org/fhir/us/davinci-cdex/signatures.html">signature</a> documented in the CDex guide. It adds the following <em>mandatory</em> (min=1) constraints:</p>
+
+<ul>
+  <li>A <code class="language-plaintext highlighter-rouge">Signature.type</code> fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)</li>
+  <li>A <code class="language-plaintext highlighter-rouge">Signature.who</code> for the organization or practitioner who signed the Bundle which is either:
+    <ol>
+      <li>a reference to US-Core Practitioner, US-Core PractitionerRole, or US-Core Organization or</li>
+      <li>an NPI or Tax ID and name of the organization or practitioner</li>
+    </ol>
+  </li>
+  <li>A <code class="language-plaintext highlighter-rouge">Signature.data</code> representing the base64 encoded Signature (JWS, image, etc)</li>
+</ul>
+
+<p>In addition, the following <em>mandatory</em> (min=1) element is inherited from the base standard:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Signature.when</code> - a system timestamp when the signature was created</li>
+</ul>
+
+<p>See the <a href="StructureDefinition-cdex-signature.html">CDex Signature Profile</a> formal definition for further details.</p>
+
+<h5 id="cdex-signature-bundle-profile">CDex Signature Bundle Profile</h5>
+
+<p>This Bundle profile enforces the various elements of <a href="https://hl7.org/fhir/us/davinci-cdex/signatures.html">signature</a> documented in the CDex guide to represent an enveloped signature. It adds the following <em>mandatory</em> (min=1) constraint:</p>
+
+<ul>
+  <li>A <code class="language-plaintext highlighter-rouge">Bundle.signature</code> element using the <a href="https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-signature.html">CDex Signature Profile</a></li>
+</ul>
+
+<p>See the <a href="StructureDefinition-cdex-signature-bundle.html">CDex Signature Bundle Profile</a> formal definition for further details.</p>
+
+<h5 id="cdex-sdc-questionnaire-response-profile">CDex SDC Questionnaire Response Profile</h5>
+
+<p>This profile is derived from the <a href="https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html">US Core QuestionnaireResponse Profile</a> profile and enforces the various elements of <a href="https://hl7.org/fhir/us/davinci-cdex/signatures.html">signature</a> documented in the CDex guide to represent an enveloped signature. It adds the following constraints:</p>
+<ul>
+  <li>The signature extensions use the CDex Signature Profile</li>
+</ul>
+
+<p>See the <a href="StructureDefinition-cdex-sdc-questionnaireresponse.html">CDex SDC QuestionnaireResponse Profile</a> formal definition for further details.</p>
+
+<h3 id="electronic-signatures">Electronic Signatures</h3>
+
+<blockquote>
+  <p>The term "electronic signature" means an electronic sound, symbol, or process attached to or logically associated with a contract or other record and executed or adopted by a person with the intent to sign the record.<sup id="fnref:third" role="doc-noteref"><a href="#fn:third" class="footnote" rel="footnote">3</a></sup></p>
+</blockquote>
+
+<p>The various forms of electronic signatures include:</p>
+<ul>
+  <li>a typed-out name</li>
+  <li>a graphical image that represents a handwritten signature</li>
+  <li>a digitized handwritten signature</li>
+  <li>digital signature using encryption technology</li>
+</ul>
+
+<p>This guide specifies how to implement digital signatures in the following sections. Specific guidance for other electronic signatures is an implementation detail that is out of scope for this guide.</p>
+
+<h4 id="electronic-signature-example">Electronic Signature Example</h4>
+
+<p>In this example, a <code class="language-plaintext highlighter-rouge">Bundle.signature</code> is added to a FHIR Document. The electronic signature is a JPG Image that represents this handwritten signature:</p>
+
+<!-- all this Bootstrap html for getting an narrow image to fit nicely in text - 640 pix wide -->
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong></strong></figcaption>
+  <img src="jh-signature.jpg" class="figure-img img-responsive img-rounded center-block" alt="jh-signature.jpg" />
+</figure>
+
+<p></p>
+</div>
+
+<p>
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#electronic-sig-example" aria-expanded="false" aria-controls="collapseExample">
+    Click Here To See Electronic Signature Example
+  </button>
+</p>
+
+<div class="collapse" id="electronic-sig-example">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+
+    <!-- input/includes/electronic-sig-example.md -->
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0  {
+1    "resourceType" : "Bundle",
+2    "id" : "cdex-electronic-sig-example",
+3    "meta" : {
+4      "lastUpdated" : "2021-10-25T20:16:29-07:00"
+5    },
+6    "identifier" : {
+7      "system" : "urn:ietf:rfc:3986",
+8      "value" : "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
+9    },
+10    "type" : "document",
+11    "timestamp" : "2021-10-25T20:16:29-07:00",
+12    "entry" : [{
+13      "fullUrl" : "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
+14      "resource" : {
+15        "resourceType" : "Composition",
+16        "id" : "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
+17        "text" : {
+18          "status" : "generated",
+19          "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Composition 17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&lt;/b&gt;&lt;/p&gt;&lt;a name=\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;a name=\"hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;a name=\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76-en-US\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Final&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes:{http://loinc.org 11503-0}\"&gt;Medical records&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;encounter&lt;/b&gt;: &lt;a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-5ce5c83a-000f-47d2-941c-039358cc9112\"&gt;Example Encounter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2021-10-25 20:16:29-0700&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: &lt;a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt;Example Practitioner&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Active Conditions&lt;/p&gt;&lt;h3&gt;Attesters&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Mode&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Time&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Party&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;*&lt;/td&gt;&lt;td&gt;Legal&lt;/td&gt;&lt;td&gt;2021-10-25 20:16:29-0700&lt;/td&gt;&lt;td&gt;&lt;a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt;Example Practitioner&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+20        },
+21        "status" : "final",
+22        "type" : {
+23          "coding" : [{
+24            "system" : "http://loinc.org",
+25            "code" : "11503-0"
+26          }],
+27          "text" : "Medical records"
+28        },
+29        "subject" : {
+30          "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+31          "display" : "Example Patient"
+32        },
+33        "encounter" : {
+34          "reference" : "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
+35          "display" : "Example Encounter"
+36        },
+37        "date" : "2021-10-25T20:16:29-07:00",
+38        "author" : [{
+39          "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+40          "display" : "Example Practitioner"
+41        }],
+42        "title" : "Active Conditions",
+43        "attester" : [{
+44          "mode" : "legal",
+45          "time" : "2021-10-25T20:16:29-07:00",
+46          "party" : {
+47            "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+48            "display" : "Example Practitioner"
+49          }
+50        }],
+51        "section" : [{
+52          "title" : "Active Condition 1",
+53          "entry" : [{
+54            "reference" : "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"
+55          }]
+56        }]
+57      }
+58    },
+59    {
+60      "fullUrl" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+61      "resource" : {
+62        "resourceType" : "Practitioner",
+63        "id" : "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+64        "meta" : {
+65          "lastUpdated" : "2013-05-05T16:13:03Z"
+66        },
+67        "text" : {
+68          "status" : "generated",
+69          "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Practitioner 0820c16d-91de-4dfa-a3a6-f140a516a9bc&lt;/b&gt;&lt;/p&gt;&lt;a name=\"0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;a name=\"hc0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;a name=\"0820c16d-91de-4dfa-a3a6-f140a516a9bc-en-US\"&gt; &lt;/a&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Last updated: 2013-05-05 16:13:03+0000&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\"&gt;United States National Provider Identifier&lt;/a&gt;/9941339100&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: John Hancock &lt;/p&gt;&lt;/div&gt;"
+70        },
+71        "identifier" : [{
+72          "system" : "http://hl7.org/fhir/sid/us-npi",
+73          "value" : "9941339100"
+74        }],
+75        "name" : [{
+76          "family" : "Hancock",
+77          "given" : ["John"]
+78        }]
+79      }
+80    },
+81    {
+82      "fullUrl" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+83      "resource" : {
+84        "resourceType" : "Patient",
+85        "id" : "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+86        "text" : {
+87          "status" : "generated",
+88          "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Patient 970af6c9-5bbd-4067-b6c1-d9b2c823aece&lt;/b&gt;&lt;/p&gt;&lt;a name=\"970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;a name=\"hc970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;a name=\"970af6c9-5bbd-4067-b6c1-d9b2c823aece-en-US\"&gt; &lt;/a&gt;&lt;p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"&gt;CDEX Example Patient Male, DoB Unknown ( Member Number)&lt;/p&gt;&lt;hr/&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"background-color: #f3f5da\" title=\"Record is active\"&gt;Active:&lt;/td&gt;&lt;td colspan=\"3\"&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+89        },
+90        "identifier" : [{
+91          "type" : {
+92            "coding" : [{
+93              "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+94              "code" : "MB"
+95            }]
+96          },
+97          "system" : "http://example.org/cdex/payer/member-ids",
+98          "value" : "Member123"
+99        }],
+100        "active" : true,
+101        "name" : [{
+102          "text" : "CDEX Example Patient",
+103          "family" : "Patient",
+104          "given" : ["CDEX Example"]
+105        }],
+106        "gender" : "male"
+107      }
+108    },
+109    {
+110      "fullUrl" : "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570",
+111      "resource" : {
+112        "resourceType" : "Condition",
+113        "id" : "014a68ec-d691-49e0-b980-91b0d924e570",
+114        "text" : {
+115          "status" : "generated",
+116          "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Condition_014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Condition 014a68ec-d691-49e0-b980-91b0d924e570&lt;/b&gt;&lt;/p&gt;&lt;a name=\"014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;a name=\"hc014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;a name=\"014a68ec-d691-49e0-b980-91b0d924e570-en-US\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1&lt;/code&gt;/1&lt;/p&gt;&lt;p&gt;&lt;b&gt;clinicalStatus&lt;/b&gt;: &lt;span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\"&gt;Active&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: &lt;span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\"&gt;Problem List Item&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=\"Codes:{http://snomed.info/sct 44054006}\"&gt;Type 2 Diabetes Mellitus&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt;Bundle: identifier = UUID:c173535e-135e-48e3-ab64-38bacc68dba8; type = document; timestamp = 2021-10-25 20:16:29-0700&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;onset&lt;/b&gt;: 2006&lt;/p&gt;&lt;p&gt;&lt;b&gt;asserter&lt;/b&gt;: &lt;a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt;Bundle: identifier = UUID:c173535e-135e-48e3-ab64-38bacc68dba8; type = document; timestamp = 2021-10-25 20:16:29-0700&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;"
+117        },
+118        "identifier" : [{
+119          "system" : "urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1",
+120          "value" : "1"
+121        }],
+122        "clinicalStatus" : {
+123          "coding" : [{
+124            "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+125            "code" : "active"
+126          }]
+127        },
+128        "category" : [{
+129          "coding" : [{
+130            "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+131            "code" : "problem-list-item",
+132            "display" : "Problem List Item"
+133          }],
+134          "text" : "Problem List Item"
+135        }],
+136        "code" : {
+137          "coding" : [{
+138            "system" : "http://snomed.info/sct",
+139            "code" : "44054006",
+140            "display" : "Type 2 Diabetes Mellitus"
+141          }]
+142        },
+143        "subject" : {
+144          "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
+145        },
+146        "onsetDateTime" : "2006",
+147        "asserter" : {
+148          "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+149        }
+150      }
+151    },
+152    {
+153      "fullUrl" : "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
+154      "resource" : {
+155        "resourceType" : "Encounter",
+156        "id" : "5ce5c83a-000f-47d2-941c-039358cc9112",
+157        "text" : {
+158          "status" : "generated",
+159          "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Encounter 5ce5c83a-000f-47d2-941c-039358cc9112&lt;/b&gt;&lt;/p&gt;&lt;a name=\"5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;a name=\"hc5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;a name=\"5ce5c83a-000f-47d2-941c-039358cc9112-en-US\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Finished&lt;/p&gt;&lt;p&gt;&lt;b&gt;class&lt;/b&gt;: &lt;a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-v3-ActCode.html#v3-ActCode-EMER\"&gt;ActCode EMER&lt;/a&gt;: emergency&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes:{http://snomed.info/sct 261665006}\"&gt;Unknown (qualifier value)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt;CDEX Example Patient&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Participants&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Individual&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;*&lt;/td&gt;&lt;td&gt;&lt;a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt;John Hancock&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;period&lt;/b&gt;: 2021-10-25 20:10:29-0700 --&amp;gt; 2021-10-25 20:16:29-0700&lt;/p&gt;&lt;p&gt;&lt;b&gt;serviceProvider&lt;/b&gt;: &lt;a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-e37f004b-dc10-422b-b833-cdaa10a055a3\"&gt;CDEX Example Organization&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;"
+160        },
+161        "status" : "finished",
+162        "class" : {
+163          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+164          "code" : "EMER"
+165        },
+166        "type" : [{
+167          "coding" : [{
+168            "system" : "http://snomed.info/sct",
+169            "code" : "261665006",
+170            "display" : "Unknown (qualifier value)"
+171          }],
+172          "text" : "Unknown (qualifier value)"
+173        }],
+174        "subject" : {
+175          "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+176          "display" : "CDEX Example Patient"
+177        },
+178        "participant" : [{
+179          "individual" : {
+180            "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+181            "display" : "John Hancock"
+182          }
+183        }],
+184        "period" : {
+185          "start" : "2021-10-25T20:10:29-07:00",
+186          "end" : "2021-10-25T20:16:29-07:00"
+187        },
+188        "serviceProvider" : {
+189          "reference" : "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
+190          "display" : "CDEX Example Organization"
+191        }
+192      }
+193    },
+194    {
+195      "fullUrl" : "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
+196      "resource" : {
+197        "resourceType" : "Organization",
+198        "id" : "e37f004b-dc10-422b-b833-cdaa10a055a3",
+199        "text" : {
+200          "status" : "generated",
+201          "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Organization e37f004b-dc10-422b-b833-cdaa10a055a3&lt;/b&gt;&lt;/p&gt;&lt;a name=\"e37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;a name=\"hce37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;a name=\"e37f004b-dc10-422b-b833-cdaa10a055a3-en-US\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\"&gt;United States National Provider Identifier&lt;/a&gt;/1234567893&lt;/p&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Organization&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: ph: (+1) 555-555-5555, &lt;a href=\"mailto:customer-service@example.org\"&gt;customer-service@example.org&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 1 CDEX Lane Boston MA 01002 USA &lt;/p&gt;&lt;/div&gt;"
+202        },
+203        "identifier" : [{
+204          "system" : "http://hl7.org/fhir/sid/us-npi",
+205          "value" : "1234567893"
+206        }],
+207        "active" : true,
+208        "name" : "CDEX Example Organization",
+209        "telecom" : [{
+210          "system" : "phone",
+211          "value" : "(+1) 555-555-5555"
+212        },
+213        {
+214          "system" : "email",
+215          "value" : "customer-service@example.org"
+216        }],
+217        "address" : [{
+218          "line" : ["1 CDEX Lane"],
+219          "city" : "Boston",
+220          "state" : "MA",
+221          "postalCode" : "01002",
+222          "country" : "USA"
+223        }]
+224      }
+225    }],
+226    "signature" : {
+227      "type" : [{
+228        "system" : "urn:iso-astm:E1762-95:2013",
+229        "code" : "1.2.840.10065.1.12.1.5",
+230        "display" : "Verification Signature"
+231      }],
+232      "when" : "2021-10-05T22:42:19-07:00",
+233      "who" : {
+234        "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+235        "display" : "CDEX Example Practitioner"
+236      },
+237      "onBehalfOf" : {
+238        "reference" : "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
+239        "display" : "CDEX Example Organization"
+240      },
+241      "sigFormat" : "image/jpg",
+242      "data" : "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"
+243    }
+244  }
+
+</code></pre></div>    </div>
+
+  </div>
+</div>
+<p><br /></p>
+
+<h3 id="digital-signatures">Digital Signatures</h3>
+
+<p><em>Digital Signatures</em> are a type of <em>Electronic signature</em> that meet the following functional requirements:</p>
+
+<ol>
+  <li>authentication  - They verify the identity of a person.</li>
+  <li>integrity -  They ensure the signed document has not been altered.</li>
+  <li>non-repudiation - The signer can not dispute their authorship (For example, if there is subsequent legal activity related to the signed document).</li>
+</ol>
+
+<p>Digital Signatures employ encryption technology and a digital certificate issued by a certification authority (CA). The encryption ensures the signee has attested to the integrity of the data. A certificate issued by a CA that the Data Consumer trusts, ensures that the Data Consumer can trust that the signature is authentic and non-repudiable.</p>
+
+<h4 id="digital-signature-rules-for-cdex-fhir-bundle-and-questionnaireresponse">Digital Signature Rules For CDEX FHIR Bundle and QuestionnaireResponse</h4>
+
+<ol>
+  <li><strong>SHALL</strong> use the <a href="StructureDefinition-cdex-signature-bundle.html">CDex Signature Bundle Profile</a> or <a href="StructureDefinition-cdex-sdc-questionnaireresponse.html">CDex SDC QuestionnaireResponse Profile</a></li>
+  <li><strong>SHALL</strong> use JSON Web Signature (JWS)(see <a href="https://tools.ietf.org/html/rfc7515">RFC 7515</a>)
+    <blockquote>
+      <p>JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). <sup id="fnref:fourth" role="doc-noteref"><a href="#fn:fourth" class="footnote" rel="footnote">4</a></sup></p>
+    </blockquote>
+
+    <p class="bg-warning">Implementers that support XML must be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.</p>
+  </li>
+  <li><a href="http://hl7.org/fhir/datatypes.html#JSON">JSON Signature rules</a> specified in the FHIR specification. (reproduced below for reader convenience):
+    <blockquote>
+      <p>When the signature is a JSON Digital Signature (contentType = application/jose), the following rules apply:</p>
+      <ul>
+        <li>The Signature.data is base64 encoded JWS-Signature <a href="https://tools.ietf.org/html/rfc7515">RFC 7515: JSON Web Signature (JWS)</a></li>
+        <li>The signature is a <a href="https://tools.ietf.org/html/rfc7515#appendix-F">Detached</a> Signature (where the content that is signed is removed from the JWS)</li>
+        <li>When FHIR Resources are signed, the signature is across the <a href="http://hl7.org/fhir/R4/json.html#canonical">Canonical JSON</a> form of the resource(s)</li>
+        <li>The Signature <strong>SHOULD</strong> use the hashing algorithm SHA256. The signature validation policy will apply to the signature and determine the acceptability</li>
+        <li>The Signature <strong>SHALL</strong> include a "CommitmentTypeIndication" element for the purpose(s) of the signature. The Purpose can be the action being attested to or the role associated with the signature. The value shall come from ASTM E1762-95(2013). The <code class="language-plaintext highlighter-rouge">Signature.type</code> shall contain the same values as the CommitmentTypeIndication element.</li>
+      </ul>
+    </blockquote>
+
+    <p class="stu-note">There is no "CommitmentTypeIndication" element in JWS, and a tracker (<a href="https://jira.hl7.org/browse/FHIR-36158">FHIR-36158</a>) has been logged to update the FHIR specification. As documented in the CDex Profiles, <code class="language-plaintext highlighter-rouge">Signature.type</code> shall contain the value "1.2.840.10065.1.12.1.5" (Verification Signature).</p>
+  </li>
+  <li>Additional JWS rules for this guide:
+    <ul>
+      <li><strong>SHALL</strong> support JWS compact serialization format for single signatures
+        <ul>
+          <li>Note that the complete JWS is in the form <em>Header.Payload.Signature</em> with a period <code class="language-plaintext highlighter-rouge">.</code> character between the base64_url encoded parts. This <code class="language-plaintext highlighter-rouge">Signature.data</code> value must be base64 encoded <em>again</em> as indicated above. Otherwise, it will fail validation since the base64Binary regex: (\s<em>([0-9a-zA-Z+=]){4}\s</em>)+ does not include the period <code class="language-plaintext highlighter-rouge">.</code> character.</li>
+        </ul>
+      </li>
+      <li><strong>SHOULD</strong> support <a href="https://datatracker.ietf.org/doc/html/rfc7515#section-3.2">JWS JSON Serialization</a> format to represent multiple signatures with identical parameter values except <code class="language-plaintext highlighter-rouge">"x5c"</code>.
+        <ul>
+          <li>The signer may have more than one certificate (for example, the signer participates in more than one trust community)</li>
+        </ul>
+      </li>
+      <li><strong>SHALL</strong> use <a href="https://www.itu.int/rec/T-REC-X.509">X.509 certificates</a> to verify the identity of the entity signing the Bundle or QuestionnaireResponse
+        <ul>
+          <li>The KeyUsage <strong>SHOULD</strong> include 'DigitalSignature'</li>
+          <li>The Issuer <strong>SHOULD</strong> be a trusted CA for the Consumer</li>
+          <li>The Subject (or Subject Alternative Name (SAN)) <strong>SHOULD</strong> match the Data Source</li>
+          <li>The Validity Dates <strong>SHOULD</strong> be appropriate/long enough as determined by the business partners.</li>
+        </ul>
+      </li>
+      <li><strong>SHALL</strong> use the IETF JSON Canonicalization Scheme (JCS) (see <a href="https://datatracker.ietf.org/doc/rfc8785">RFC 8785</a>) to generate the canonical form of the resource. JCS is a well-documented standardized canonicalization algorithm with multiple open-source implementations across several programming languages.
+        <ul>
+          <li>The <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">meta</code>, and <code class="language-plaintext highlighter-rouge">signature</code> elements on the root Bundle resource <strong>SHALL</strong> be removed before canonicalization. In other words, everything in a Bundle is signed <em>except</em> for these elements.</li>
+          <li>For signatures representing the entire QuestionnaireResponse, the <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">meta</code>, and the signature extension on the root QuestionnaireResponse resource <strong>SHALL</strong> be removed before canonicalization. In other words, everything in a QuestionnaireResponse is signed <em>except</em> for these elements.</li>
+          <li>For signatures representing an item in the QuestionnaireResponse, the <code class="language-plaintext highlighter-rouge">id</code> and the signature extension on the item resource <strong>SHALL</strong> be removed before canonicalization. In other words, everything in the <code class="language-plaintext highlighter-rouge">QuestionnaireResponse.item</code> is signed <em>except</em> for these elements.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h5 id="sendersigner-steps">Sender/Signer Steps</h5>
+
+<p>The following steps outline the process for creating the Signature.</p>
+
+<ol>
+  <li>Prepare JWS Header
+    <ol>
+      <li><strong>SHALL</strong> have <code class="language-plaintext highlighter-rouge">"alg": "RS256"</code> (preferred) or some other JSON Web Algorithms (JWA) (see <a href="https://tools.ietf.org/html/rfc7518">RFC 7518</a>)</li>
+      <li><strong>SHALL</strong> have <code class="language-plaintext highlighter-rouge">"kty": "RS"</code></li>
+      <li><strong>SHALL</strong> have <code class="language-plaintext highlighter-rouge">"x5c"</code> (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see <a href="https://tools.ietf.org/html/rfc7517">RFC 7517</a>).
+The public key is listed in the first certificate in the <code class="language-plaintext highlighter-rouge">"x5c"</code> specified by the entry's "Modulus" and "Exponent" parameters.</li>
+    </ol>
+  </li>
+  <li>Prepare JWS Payload
+    <ol>
+      <li>Prepare a valid FHIR Bundle or QuestionnaireResponse or QuestionnaireResponse.item</li>
+      <li>Remove the <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">meta</code> elements.</li>
+      <li>Canonicalize the Bundle or QuestionnaireResponse or QuestionnaireResponse.item</li>
+      <li>base64_url encode the payload</li>
+    </ol>
+  </li>
+  <li>Create the JWS signature using the supported algorithm.</li>
+  <li>Remove the payload element from the JWS.</li>
+  <li>base64 encode the JWS</li>
+  <li>Add the Signature element to the Bundle or the signature extension in the QuestionnaireResponse or QuestionnaireResponse.item and populate the mandatory Signature datatype elements and actual signature content:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Signature.type</code>  - Fixed to code =  "1.2.840.10065.1.12.1.5" <a href="http://hl7.org/fhir/valueset-signature-type.html">(Verification Signature)</a></li>
+      <li><code class="language-plaintext highlighter-rouge">Signature.when</code> - System timestamp when signature created</li>
+      <li><code class="language-plaintext highlighter-rouge">Signature.who</code>  -  Reference or identifier of the organization or practitioner who signed it</li>
+      <li><code class="language-plaintext highlighter-rouge">Signature.data</code>  - base64 encoded JWS</li>
+    </ul>
+  </li>
+  <li>Send data to the consumer:
+    <ol>
+      <li>The search set Bundle is returned directly as the payload for direct queries.</li>
+      <li>For Task-based requests and Attachments, the document Bundle or QuestionnaireResponse is used</li>
+    </ol>
+  </li>
+</ol>
+
+<h5 id="receivervalidation-steps">Receiver/Validation Steps</h5>
+
+<p>The following steps outline the process for verifying the Signature.</p>
+
+<ol>
+  <li>Retrieve and store the Bundle or QuestionnaireResponse :
+    <ol>
+      <li>The search set Bundle is the response for a direct query.</li>
+      <li>For Task-based requests, the completed <code class="language-plaintext highlighter-rouge">Task.output</code> is either:
+        <ul>
+          <li>a contained FHIR Document that must be extracted from the containing Task resource.</li>
+          <li>a reference to a FHIR Document that must be fetched from the referenced endpoint.</li>
+        </ul>
+      </li>
+      <li>A FHIR Document Bundle or QuestionnaireResponse is submitted as part of the operation payload for Attachments.</li>
+    </ol>
+  </li>
+  <li>Remove the <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">meta</code> and <code class="language-plaintext highlighter-rouge">Bundle.signature</code> element from the Bundle resource or the signature extension(s) from the QuestionnaireResponse or QuestionnaireResponse.item.</li>
+  <li>Canonicalize the resource.</li>
+  <li>Transform the canonicalized JSON to a base64-url format.</li>
+  <li>Get the base64 encoded JWS  from the <code class="language-plaintext highlighter-rouge">signature.data</code>  element</li>
+  <li>Base64 decode the encoded JWS</li>
+  <li>Insert the base64 encoded Bundle, QuestionnaireResponse, or QuestionnaireResponse.item into the JWS payload element.</li>
+  <li>Obtain the public key from the first certificate in the JWS header <code class="language-plaintext highlighter-rouge">"x5c"</code> key
+    <ul>
+      <li>base64 decode the key value</li>
+      <li>Use the "Subject Public Key Info"</li>
+    </ul>
+  </li>
+  <li>Verify Issuer, Validity Dates, Subject, and KeyUsage of the certificate,</li>
+  <li>Validate the JWS using the public key or the X.509 Certificate</li>
+</ol>
+
+<h5 id="step-by-step-examples">Step-by-Step Examples</h5>
+
+<p class="bg-warning">Although <a href="https://en.wikipedia.org/wiki/Self-signed_certificate"><em>self-signed</em> certificates</a> are used for these examples, they are not recommended for production systems.</p>
+
+<p>In these examples, a detached JWS signature is created using a signer's private key and self-signed certificate. Then, the <code class="language-plaintext highlighter-rouge">Bundle.signature</code> element is added to the Bundle with the base64 encoded JWS Signature as the <code class="language-plaintext highlighter-rouge">signature.data</code> property value. Finally, the signature is verified.</p>
+
+<ul>
+  <li>
+    <p><a href="signed-searchset-bundle-example.html">Signed SearchSet Bundle Example</a> : FHIR search-set bundle signatures occur when performing direct queries where signatures are required on the returned results.   In this case, the digital signature represents a system-level attestation by the sending organization that they are the source of the information.</p>
+  </li>
+  <li>
+    <p><a href="signed-document-bundle-example.html">Signed Document Bundle Example</a> : FHIR Document bundle signatures occur when performing Task-based requests or Attachment transactions where signatures are required. The returned results are individual FHIR resources (in other words, not C-CDA, C-CDA on FHIR, or other binary formats referenced by DocumentReference). In this case, the digital signature represents a practitioner attesting that the information is true and accurate to the best of their knowledge.</p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:first" role="doc-endnote">
+      <p>MLN Fact Sheet: Complying with Medicare Signature Requirements MLN Fact Sheet <a href="https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Signature_Requirements_Fact_Sheet_ICN905364.pdf">https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Signature_Requirements_Fact_Sheet_ICN905364.pdf</a> <a href="#fnref:first" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:second" role="doc-endnote">
+      <p>CMS signature requirements outlined in the Medicare Program Integrity Manual (CMS Pub.100-08), Chapter 3, Section 3.3.2.4. <a href="https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Downloads/pim83c03.pdf#page=44">https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Downloads/pim83c03.pdf#page=44</a> <a href="#fnref:second" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:third" role="doc-endnote">
+      <p>"15 U.S. Code § 7006 - Definitions", LII / Legal Information Institute". Law.cornell.edu. Retrieved 2021-10-06. <a href="https://www.law.cornell.edu/uscode/text/15/7006#5">https://www.law.cornell.edu/uscode/text/15/7006#5</a> <a href="#fnref:third" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:fourth" role="doc-endnote">
+      <p><a href="https://tools.ietf.org/html/rfc7515">RFC 7515</a> Jones, M., et al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015, <a href="https://tools.ietf.org/html/rfc7515">https://tools.ietf.org/html/rfc7515</a> <a href="#fnref:fourth" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="attachments-conformance.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="signed-searchset-bundle-example.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/claims">HL7 International / Payer/Provider Information Exchange Work Group</a>.  Package hl7.fhir.us.davinci-cdex#2.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 9, 2025 20:34+0000">2025-01-09</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-cdex/history.html">Version History</a> |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

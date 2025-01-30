@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Task/cdex-task-inline-example10> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:status [ fhir:v "requested"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "data-request-query" ]
+     ] )
+  ] ; # 
+  fhir:for [
+     fhir:link <http://example.org/fhir/Patient/cdex-example-patient> ;
+     fhir:reference [ fhir:v "http://example.org/fhir/Patient/cdex-example-patient" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2020-10-27T11:05:34-07:00"^^xsd:dateTime] ; # 
+  fhir:lastModified [ fhir:v "2020-10-27T11:05:34-07:00"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:link <http://example.org/fhir/Organization/cdex-example-payer> ;
+     fhir:reference [ fhir:v "http://example.org/fhir/Organization/cdex-example-payer" ]
+  ] ; # 
+  fhir:owner [
+     fhir:link <http://example.org/fhir/Organization/cdex-example-provider> ;
+     fhir:reference [ fhir:v "http://example.org/fhir/Organization/cdex-example-provider" ]
+  ] ; # 
+  fhir:input ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "data-query" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "Observation?patient=cdex-example-patient&date=gt2018-01-01&code=4548-4" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "purpose-of-use" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "HQUALIMP" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

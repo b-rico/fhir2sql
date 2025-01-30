@@ -1,0 +1,247 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Parameters/cdex-parameters-example4> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:parameter ( [
+     fhir:name [ fhir:v "TrackingId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://example.org/provider"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "trackingid456" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "AttachTo" ] ;
+     fhir:value [ fhir:v "claim" ]
+  ] [
+     fhir:name [ fhir:v "PayerId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://example.org/cdex/payer-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Payer123" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "OrganizationId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "1407071236" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "ProviderId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "9941339108" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "MemberId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://example.org/cdex/member-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Member123" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "ServiceDate" ] ;
+     fhir:value [ fhir:v "2022-06-16"^^xsd:date ]
+  ] [
+     fhir:name [ fhir:v "Attachment" ] ;
+     fhir:part ( [
+       fhir:name [ fhir:v "LineItem" ] ;
+       fhir:value [ fhir:v "1" ]
+     ] [
+       fhir:name [ fhir:v "Code" ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           a loinc:11502-2 ;
+           fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "11502-2" ] ;
+           fhir:display [ fhir:v "Laboratory report" ]
+         ] ) ;
+         fhir:text [ fhir:v "Laboratory report" ]
+       ]
+     ] [
+       fhir:name [ fhir:v "Content" ] ;
+       fhir:Parameters.parameter.resource ( [
+         a fhir:Observation ;
+         fhir:id [ fhir:v "cdex-2020-04-23-hba1c-example" ] ;
+         fhir:status [ fhir:v "final" ] ;
+         fhir:category ( [
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "laboratory" ] ;
+             fhir:display [ fhir:v "Laboratory" ]
+           ] ) ;
+           fhir:text [ fhir:v "Laboratory" ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             a loinc:4548-4 ;
+             fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "4548-4" ] ;
+             fhir:display [ fhir:v "Hemoglobin A1c/Hemoglobin.total in Blood" ]
+           ] [
+             fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "83036" ] ;
+             fhir:display [ fhir:v "Hemoglobin; glycosylated (A1c)" ]
+           ] [
+             fhir:system [ fhir:v "http://example.org/lab-results"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "HBA1C" ] ;
+             fhir:display [ fhir:v "Glycated hemoglobin (HbA1c)" ]
+           ] ) ;
+           fhir:text [ fhir:v "glycated hemoglobin (HbA1c)" ]
+         ] ;
+         fhir:subject [
+           fhir:display [ fhir:v "Elden718 Halvorson124" ]
+         ] ;
+         fhir:effective [ fhir:v "2022-06-16T10:21:08-07:00"^^xsd:dateTime ] ;
+         fhir:performer ( [
+           fhir:display [ fhir:v "Dr. John Doe" ]
+         ] ) ;
+         fhir:value [
+           a fhir:Quantity ;
+           fhir:value [ fhir:v "7.2"^^xsd:decimal ] ;
+           fhir:unit [ fhir:v "%" ] ;
+           fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "%" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "Attachment" ] ;
+     fhir:part ( [
+       fhir:name [ fhir:v "LineItem" ] ;
+       fhir:value [ fhir:v "1" ]
+     ] [
+       fhir:name [ fhir:v "Code" ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           a loinc:11502-2 ;
+           fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "11502-2" ] ;
+           fhir:display [ fhir:v "Laboratory report" ]
+         ] ) ;
+         fhir:text [ fhir:v "Laboratory report" ]
+       ]
+     ] [
+       fhir:name [ fhir:v "Content" ] ;
+       fhir:Parameters.parameter.resource ( [
+         a fhir:Observation ;
+         fhir:id [ fhir:v "cdex-2020-10-23-hba1c-example" ] ;
+         fhir:status [ fhir:v "final" ] ;
+         fhir:category ( [
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "laboratory" ] ;
+             fhir:display [ fhir:v "Laboratory" ]
+           ] ) ;
+           fhir:text [ fhir:v "Laboratory" ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             a loinc:4548-4 ;
+             fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "4548-4" ] ;
+             fhir:display [ fhir:v "Hemoglobin A1c/Hemoglobin.total in Blood" ]
+           ] [
+             fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "83036" ] ;
+             fhir:display [ fhir:v "Hemoglobin; glycosylated (A1c)" ]
+           ] [
+             fhir:system [ fhir:v "http://example.org/lab-results"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "HBA1C" ] ;
+             fhir:display [ fhir:v "Glycated hemoglobin (HbA1c)" ]
+           ] ) ;
+           fhir:text [ fhir:v "glycated hemoglobin (HbA1c)" ]
+         ] ;
+         fhir:subject [
+           fhir:display [ fhir:v "Elden718 Halvorson124" ]
+         ] ;
+         fhir:effective [ fhir:v "2022-05-16T10:21:08-07:00"^^xsd:dateTime ] ;
+         fhir:performer ( [
+           fhir:display [ fhir:v "Dr. John Doe" ]
+         ] ) ;
+         fhir:value [
+           a fhir:Quantity ;
+           fhir:value [ fhir:v "7"^^xsd:decimal ] ;
+           fhir:unit [ fhir:v "%" ] ;
+           fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "%" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "Attachment" ] ;
+     fhir:part ( [
+       fhir:name [ fhir:v "LineItem" ] ;
+       fhir:value [ fhir:v "1" ]
+     ] [
+       fhir:name [ fhir:v "Code" ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           a loinc:11502-2 ;
+           fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "11502-2" ] ;
+           fhir:display [ fhir:v "Laboratory report" ]
+         ] ) ;
+         fhir:text [ fhir:v "Laboratory report" ]
+       ]
+     ] [
+       fhir:name [ fhir:v "Content" ] ;
+       fhir:Parameters.parameter.resource ( [
+         a fhir:Observation ;
+         fhir:id [ fhir:v "cdex-2020-07-23-hba1c-example" ] ;
+         fhir:status [ fhir:v "final" ] ;
+         fhir:category ( [
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "laboratory" ] ;
+             fhir:display [ fhir:v "Laboratory" ]
+           ] ) ;
+           fhir:text [ fhir:v "Laboratory" ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             a loinc:4548-4 ;
+             fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "4548-4" ] ;
+             fhir:display [ fhir:v "Hemoglobin A1c/Hemoglobin.total in Blood" ]
+           ] [
+             fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "83036" ] ;
+             fhir:display [ fhir:v "Hemoglobin; glycosylated (A1c)" ]
+           ] [
+             fhir:system [ fhir:v "http://example.org/lab-results"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "HBA1C" ] ;
+             fhir:display [ fhir:v "Glycated hemoglobin (HbA1c)" ]
+           ] ) ;
+           fhir:text [ fhir:v "glycated hemoglobin (HbA1c)" ]
+         ] ;
+         fhir:subject [
+           fhir:display [ fhir:v "Elden718 Halvorson124" ]
+         ] ;
+         fhir:effective [ fhir:v "2022-04-16T10:21:08-07:00"^^xsd:dateTime ] ;
+         fhir:performer ( [
+           fhir:display [ fhir:v "Dr. John Doe" ]
+         ] ) ;
+         fhir:value [
+           a fhir:Quantity ;
+           fhir:value [ fhir:v "7"^^xsd:decimal ] ;
+           fhir:unit [ fhir:v "%" ] ;
+           fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "%" ]
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

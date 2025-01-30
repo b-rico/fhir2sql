@@ -1,0 +1,118 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Task/cdex-task-example5> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-task-example5"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "3" ] ;
+     fhir:lastUpdated [ fhir:v "2020-10-26T04:04:52.000+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#tgH2FoPFuCq0yjw5"^^xsd:anyURI ] ;
+     fhir:tag ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "claims-processing" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task cdex-task-example5</b></p><a name=\"cdex-task-example5\"> </a><a name=\"hccdex-task-example5\"> </a><a name=\"cdex-task-example5-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 3; Last updated: 2020-10-26 04:04:52+0000; </p><p style=\"margin-bottom: 0px\">Information Source: #tgH2FoPFuCq0yjw5</p><p style=\"margin-bottom: 0px\">Tag: Claim Processing (Details: CDex Temporary Code System code claims-processing = 'Claim Processing')</p></div><p><b>status</b>: Completed</p><p><b>businessStatus</b>: <span title=\"Codes:\">Results reviewed for release</span></p><p><b>intent</b>: order</p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp data-request-code}\">Data Request Code</span></p><p><b>for</b>: Identifier: Member Number/Member123</p><p><b>authoredOn</b>: 2020-10-26 02:58:55+0000</p><p><b>lastModified</b>: 2020-10-26 04:04:52+0000</p><p><b>requester</b>: Identifier: <code>http://example.org/cdex/payer/payer-ids</code>/Payer123</p><p><b>owner</b>: Identifier: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/9941339108</p><p><b>reasonReference</b>: Identifier: Payer Claim ID/Claim123</p><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp data-code}\">data code input</span></p><p><b>value</b>: <span title=\"Codes:\">request for patient's active conditions</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp purpose-of-use}\">Purpose Of Use</span></p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActReason COVERAGE}\">coverage under policy or program</span></p></blockquote><h3>Outputs</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Value[x]</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp data-value}\">data values output</span></td><td><a href=\"http://example.org/fhir/Condition/858\">http://example.org/fhir/Condition/858</a></td></tr></table></div>"
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:businessStatus [
+     fhir:text [ fhir:v "Results reviewed for release" ]
+  ] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "data-request-code" ]
+     ] )
+  ] ; # 
+  fhir:for [
+     fhir:identifier [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "MB" ] ;
+           fhir:display [ fhir:v "Member Number" ]
+         ] ) ;
+         fhir:text [ fhir:v "Member Number" ]
+       ] ;
+       fhir:system [ fhir:v "http://example.org/cdex/payer/member-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Member123" ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2020-10-26T02:58:55.179Z"^^xsd:dateTime] ; # 
+  fhir:lastModified [ fhir:v "2020-10-26T04:04:52.019Z"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://example.org/cdex/payer/payer-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Payer123" ]
+     ]
+  ] ; # 
+  fhir:owner [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "9941339108" ]
+     ]
+  ] ; # 
+  fhir:reasonReference [
+     fhir:identifier [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "FILL" ] ;
+           fhir:display [ fhir:v "Filler Identifier" ]
+         ] ) ;
+         fhir:text [ fhir:v "Payer Claim ID" ]
+       ] ;
+       fhir:system [ fhir:v "http://example.org/cdex/payer/claim-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Claim123" ]
+     ]
+  ] ; # 
+  fhir:input ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "data-code" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "request for patient's active conditions" ]
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "purpose-of-use" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "COVERAGE" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:output ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "data-value" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://example.org/fhir/Condition/858> ;
+       fhir:reference [ fhir:v "http://example.org/fhir/Condition/858" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

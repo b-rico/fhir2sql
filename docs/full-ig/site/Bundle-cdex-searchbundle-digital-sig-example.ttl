@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Bundle/cdex-searchbundle-digital-sig-example> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-searchbundle-digital-sig-example"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f"^^xsd:anyURI ] ;
+     fhir:resource ( <http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] ) ; # 
+  fhir:signature [
+     fhir:type ( [
+       fhir:system [ fhir:v "urn:iso-astm:E1762-95:2013"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "1.2.840.10065.1.12.1.5" ] ;
+       fhir:display [ fhir:v "Verification Signature" ]
+     ] ) ;
+     fhir:when [ fhir:v "2020-10-23T04:54:56.048+00:00"^^xsd:dateTime ] ;
+     fhir:who [
+       fhir:link <http://hl7.org/fhir/us/davinci-cdex/Organization/min> ;
+       fhir:reference [ fhir:v "Organization/min" ]
+     ] ;
+     fhir:data [ fhir:v "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWRYTmxJam9pYzJsbklpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuLlN4eW5HX25kcFRaT09TeHJnWXo4YWpPQlZnYmd4dmIwMjJBaUdqenA3dEVWdWVvZ3A5R18yY3FKZEtYSDQ4bzdVUGJNSVhvQk56UWtkRnRhX1ZRamh5V1paS2t4djBCVG5Ra0xpUElvcTYxYkYybEFvXzJZbzFCd3AtSFF0Z0dud3JNckdaaWNqMVZpajBpMG82YlZOT1RKamo4WWlhR0Z2RUZrbEMxazRIcTVYbHlwb2NrNjBjREV5Qll6cDdva2tER0RYV0dsZ1FCRFdZR0hjeHphR0Z3T0ZRNnhaWjRVeU5FeUN3M3RSLVVIcEJfNnJBNGhZWERVVkpPdU96TEJmaW9HRU55Q09OMEV5QVZUVlZselE2V1JJM1M2OS01WkVNSjFxLUk2aUUxd29YQUNHaVY3M2FJdVNKb2hXUnNlUEpHUXgwQlZ1eFlTVk5Yejh0bnJoU3NDa24xNk5ZbXJDN19zV1dZSTE2dGlLZ1d5d0ZyaThfeExycENfTGc0LVpMVTQwYml1cFhZVXE1STRIdzZQNkZVSzVabXp6aVRQNXdyQ09MdkVCWTlLT29NTE12d08ySW93M0pQcTFTUmFlRFdKMWxvYkdxaEZPcVRWbVRvWDNwZzYzTWktMFBrZnRGN0F0dVVSMTUwYUhjWjJaSE1SQl9WczN0MVllbHAz"^^xsd:base64Binary ]
+  ] . # 
+
+<http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f> a fhir:Condition ;
+  fhir:id [ fhir:v "4ac41715-fcbd-421c-8796-9b2c9706dd3f"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "10" ] ;
+     fhir:lastUpdated [ fhir:v "2020-04-28T20:28:00.008+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#cabiJIK51sD2iz4N"^^xsd:anyURI ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_4ac41715-fcbd-421c-8796-9b2c9706dd3f\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 4ac41715-fcbd-421c-8796-9b2c9706dd3f</b></p><a name=\"4ac41715-fcbd-421c-8796-9b2c9706dd3f\"> </a><a name=\"hc4ac41715-fcbd-421c-8796-9b2c9706dd3f\"> </a><a name=\"4ac41715-fcbd-421c-8796-9b2c9706dd3f-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 10; Last updated: 2020-04-28 20:28:00+0000; </p><p style=\"margin-bottom: 0px\">Information Source: #cabiJIK51sD2iz4N</p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category encounter-diagnosis}\">Encounter Diagnosis</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 122481008}\">Hammer Toe</span></p><p><b>subject</b>: <a href=\"http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b\">http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b</a></p><p><b>encounter</b>: <a href=\"http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82\">http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82</a></p><p><b>onset</b>: 2018-10-21 21:22:15-0700</p><p><b>recordedDate</b>: 2018-10-21 21:22:15-0700</p></div>"
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "encounter-diagnosis" ] ;
+       fhir:display [ fhir:v "Encounter Diagnosis" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:122481008 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "122481008" ] ;
+       fhir:display [ fhir:v "Hammer toe (disorder)" ]
+     ] ) ;
+     fhir:text [ fhir:v "Hammer Toe" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82" ]
+  ] ; # 
+  fhir:onset [ fhir:v "2018-10-21T21:22:15-07:00"^^xsd:dateTime] ; # 
+  fhir:recordedDate [ fhir:v "2018-10-21T21:22:15-07:00"^^xsd:dateTime] . # 
+
+<http://hl7.org/fhir/us/davinci-cdex/Organization/min> a fhir:us .
+
+# -------------------------------------------------------------------------------------
+

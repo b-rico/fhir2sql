@@ -1,0 +1,2279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Sending Attachments - Da Vinci Clinical Data Exchange (CDex) v2.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Clinical Data Exchange (CDex)</span>
+            <br/>
+            <span style="display:inline-block;">2.1.0 - STU 2.1
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">IG Home
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="index.html">Introduction</a>
+      </li>
+      <li>
+        <a href="index.html#about-this-guide">About This Guide</a>
+      </li>
+      <li>
+        <a href="index.html#how-to-read-this-guide">How to read this Guide</a>
+      </li>
+      <li>
+        <a href="index.html#credits">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">About the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#what-do-payers-do-with-clinical-information">What Do Payers Do with Clinical Information</a>
+      </li>
+      <li>
+        <a href="background.html#provider-to-provider-data-exchange">Provider to Provider Data Exchange</a>
+      </li>
+      <li>
+        <a href="background.html#what-information-is-needed">What Information is Needed</a>
+      </li>
+      <li>
+        <a href="background.html#where-does-cdex-fit-in-the-da-vinci-project">Where Does CDEX Fit in the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#workflow-overview">Workflow Overview</a>
+      </li>
+      <li>
+        <a href="background.html#architectural-approach">Architectural Approach</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Direct Query
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="direct-query.html">Introduction</a>
+      </li>
+      <li>
+        <a href="direct-query.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="direct-query.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="direct-query.html#discovery-of-patient-fhir-ids">Discovery of Patient FHIR IDs</a>
+      </li>
+      <li>
+        <a href="direct-query.html#direct-query-transaction-scenarios">Direct Query Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="direct-query.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="direct-query.html#signatures">Signatures</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Task Based Approach
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="task-based-approach.html">Introduction</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#the-task-resource">The Task Resource</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#discovery-of-identifiers">Discovery of Identifiers</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#task-state-machine">Task State Machine</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#fetching-the-data">Fetching the Data</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#example-transactions-based-on-query-code-and-free-text-inputs">Task Based Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#using-questionnaire-as-task-input">Using Questionnaire as Task Input</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#when-the-task-cannot-be-completed">When The Task Cannot Be Completed</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#polling-vs-subscriptions">Polling vs Subscriptions</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#formal-authorization">Formal Authorization</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#signatures">Signatures</a>
+      </li>
+      <li>
+        <a href="task-based-conformance.html">Conforming to CDex Task Based Approach</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Attachments
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="solicited-unsolicited-attachments.html">Solicited and Unsolicited Attachments</a>
+      </li>
+      <li>
+        <a href="sending-attachments.html">Sending Attachments</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-questionnaire.html">Requesting Attachments Using Questionnaires</a>
+      </li>
+      <li>
+        <a href="burden-reduction.html">Using CDex Attachments with DaVinci PAS</a>
+      </li>
+      <li>
+        <a href="attachments-conformance.html">Conforming to CDex Attachments</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Signatures
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="signatures.html">About Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#the-signer">The Signer</a>
+      </li>
+      <li>
+        <a href="signatures.html#what-is-signed">What is Signed</a>
+      </li>
+      <li>
+        <a href="signatures.html#cdex-enveloped-signatures">CDex Enveloped Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#electronic-signatures">Electronic Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#digital-signatures">Digital Signatures</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="security.html">Security and Privacy</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="artifacts.html#1">CDex Capability Statements</a>
+      </li>
+      <li>
+        <a href="artifacts.html#2">Attachments Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#3">Attachments Operations</a>
+      </li>
+      <li>
+        <a href="artifacts.html#4">Attachments Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#5">Attachments Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#6">Task Based Approach Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#7">Task Based Approach Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#8">Task Based Approach Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#9">Direct Query Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Questionnaire Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#11">Questionnaire Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#12">Signature Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#13">Signature Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Signature Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#15">Common Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#16">Inline Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex">Discussion Forum</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=40738757">Project Page</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/display/DVP/CDex+Implementer+Support?src=contextnavpagetreemode">Implementer Support</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801">Specification Dashboard</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/">Propose a Change</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="changes.html">Change Log</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Sending Attachments</b></li>
+
+          <span style="float:right;">
+
+            <a href="solicited-unsolicited-attachments.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="requesting-attachments-code.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Clinical Data Exchange (CDex), published by HL7 International / Payer/Provider Information Exchange Work Group. This guide is not an authorized publication; it is the continuous build for version 2.1.0 built by the FHIR (HL7® FHIR® Standard) CI Build. This version is based on the current content of <a href="https://github.com/HL7/davinci-ecdx/">https://github.com/HL7/davinci-ecdx/</a> and changes regularly. See the <a href="http://hl7.org/fhir/us/davinci-cdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Sending Attachments</h2>
+  
+
+
+
+
+
+  <table class="colsi">
+    <tr>
+  
+      <td>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
+        
+      </td>
+  
+  
+    </tr>
+  </table>
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#submit-attachment-operation" id="markdown-toc-submit-attachment-operation"><code class="language-plaintext highlighter-rouge">$submit-attachment</code> Operation</a></li>
+  <li><a href="#technical-workflow" id="markdown-toc-technical-workflow">Technical Workflow</a></li>
+  <li><a href="#data-elements-for-sending-attachments" id="markdown-toc-data-elements-for-sending-attachments">Data Elements for Sending Attachments</a></li>
+  <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+  <li><a href="#signatures" id="markdown-toc-signatures">Signatures</a></li>
+</ul>
+
+</div>
+
+<p>This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.* This transaction is used for both <em>solicited</em> and <em>unsolicited</em> attachments. It is intended to be compatible with the X12n 275 transaction, the X12 N 837I and 837P for claims purposes, and the 278 response for authorizations (for more information on X12 defined transactions, see <a href="https://x12.org/products/transaction-sets">X12 Transaction Sets</a>). Compatibility assumes that the appropriate identifiers are supported in the submission to facilitate the association of the attachment with the claim submission or authorization request.</p>
+
+<!-- input/includes/see-conf.md -->
+<p>See the <a href="attachments-conformance.html">Conforming to CDex Attachments</a> page for how systems declare what they support for the various actors and roles in CDex Attachments.</p>
+
+<h3 id="submit-attachment-operation"><code class="language-plaintext highlighter-rouge">$submit-attachment</code> Operation</h3>
+
+<p>This guide defines <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a>, a simple RESTful interaction for exchanging attachments using a FHIR <a href="http://hl7.org/fhir/R4/operations.html">Operation</a>. Providers use this <a href="http://hl7.org/fhir/operations.html">operation</a> to submit <em>solicited</em> and <em>unsolicited</em> attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For <em>unsolicited</em> attachments, the Provider invokes this operation <em>before, concurrently, or after</em>  the claim or pre-authorization transaction. For <em>solicited</em> attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's <em>Unsolicited</em> Attachments <strong>SHOULD</strong> support the <a href="https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html">Endpoint Discovery Strategy</a> defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For <em>Solicited Attachments</em>, the $submit-attachment endpoint is supplied in the <a href="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request">CDex Task Attachment Request Profile</a></p>
+
+<p>The input parameters are:</p>
+<ol>
+  <li>One or more attachments as FHIR Resources
+    <ul>
+      <li>Optionally, one or more unique line item numbers associated with the attachment</li>
+      <li>Optionally, the attachment code used to request the information</li>
+    </ul>
+  </li>
+  <li>Data elements for the association to the claim/prior authorization
+    <ul>
+      <li>A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")</li>
+      <li>What are the attachments for:
+        <ul>
+          <li>Claims</li>
+          <li>Prior Authorizations</li>
+        </ul>
+      </li>
+      <li>Optionally, a unique payer identifier</li>
+      <li>A unique organization/location identifier (e.g., <a href="https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf">Type 2 NPI</a>) or unique provider identifier (e.g., <a href="https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf">Type 1 NPI</a>)</li>
+      <li>A unique Patient member identifier</li>
+      <li>A Date of Service</li>
+      <li>A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>There are no output parameters.</p>
+
+<p>See the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation definition for further details.</p>
+
+<div class="stu-note ">
+  <p>Based upon additional testing, we intend to to upgrade the Endpoint Discovery Strategy guidance (<strong>SHOULD</strong>) to  a requirement (<strong>SHALL</strong>) in the next version of CDex</p>
+</div>
+<!-- stu-note -->
+
+<h3 id="technical-workflow">Technical Workflow</h3>
+
+<p>As shown below in Figure 13, the attachments are "pushed" using the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation directly to the Payer or an Intermediary.</p>
+
+<!-- all this Bootstrap html for getting an narrow image to fit nicely in text - 640 pix wide -->
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 13</strong></figcaption>
+  <img src="attachments-sequencediagram.svg" class="figure-img img-responsive img-rounded center-block" alt="attachments-sequencediagram.svg" />
+</figure>
+
+<p></p>
+</div>
+
+<ol>
+  <li>The Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization</li>
+  <li>The Provider invokes <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation to submit attachments to the Payer</li>
+  <li>The Payer responds with an HTTP response that accepts or rejects the transaction.
+    <ul>
+      <li>The Payer <strong>SHOULD</strong> return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a <em>current</em> claim or prior authorization and are being held for association with a <em>future</em> claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.</li>
+    </ul>
+  </li>
+  <li>The Payer associates the attachments to the claim or prior authorization and processes the claim.</li>
+</ol>
+
+<h3 id="data-elements-for-sending-attachments">Data Elements for Sending Attachments</h3>
+
+<p>When sending attachments, the following data elements are needed to associate an attachment to a claim or prior authorization. They are mapped to the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> parameters and their corresponding x12n 275 elements in the following table. Express permission to use X12 copyrighted materials within this document has been granted.</p>
+
+<!-- More information is available at https://x12.org/products/ip-use but the general citation requirement is included below.
+
+Citation Format
+
+The basic style below is adapted from the Modern Language Association (MLA) Style Manual and by convention includes line breaks and an indent for each successive line:
+
+Author Name. "Title: Subtitle, Figure number, 
+if appropriate, Segment ID - Name, if appropriate." 
+Title of Book, identifier.
+Publisher, Date of publication. <URL>. Page Number(s) [if applicable]. -->
+
+<!-- attachments_to_275.md
+  *****************************************************************************************************
+  *                                  WARNING: DO NOT EDIT THIS FILE                                   *
+  *                                                                                                   *
+  * This file is generated by csv_to_markdown_tabler.ipynb. Any edits you make to this file will be   *
+  * overwritten                                                                                       *
+  * To change the contents of this file, edit input/images/data-element-mapping.csv                     *
+  *****************************************************************************************************
+  -->
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data Element</th>
+      <th>CDex $submit-attachment Parameter</th>
+      <th>X12n 275-v6020</th>
+      <th>Submit Attachments Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tracking ID</td>
+      <td>TrackingId</td>
+      <td>Loop: 2000A Segment: TRN02</td>
+      <td>For <em>unsolicited</em> attachments, this is the provider-assigned tracking/control number. For <em>solicited</em> attachments, this is the payer-assigned tracking/control number.</td>
+    </tr>
+    <tr>
+      <td>Use</td>
+      <td>AttachTo</td>
+      <td>Claim</td>
+      <td>Choice of "claim" or "preauthorization"</td>
+    </tr>
+    <tr>
+      <td>Payer ID</td>
+      <td>PayerId</td>
+      <td>Loop: 1000A Segment: NM109</td>
+      <td>Payer ID</td>
+    </tr>
+    <tr>
+      <td>Payer URL</td>
+      <td>(operation endpoint)</td>
+      <td>-</td>
+      <td>Payer endpoint where the attachments are submitted using the $submit-attachment operation</td>
+    </tr>
+    <tr>
+      <td>Organization ID</td>
+      <td>OrganizationId</td>
+      <td>Loop: 1000B Segment: NM109 Notes: NM108="46"</td>
+      <td>Organization of provider who submitted claim/prior authorization</td>
+    </tr>
+    <tr>
+      <td>Provider ID</td>
+      <td>ProviderId</td>
+      <td>Loop: 1000C Segment: NM109 Notes: NM108="XX"</td>
+      <td>Provider who submitted claim/prior authorization</td>
+    </tr>
+    <tr>
+      <td>Line Item(s)</td>
+      <td>Attachment.LineItem</td>
+      <td>Loop: 2000A Segment: STC10 Notes: Used to convey status of the entire claim or a specific service line</td>
+      <td>Claim/prior authorization line item numbers</td>
+    </tr>
+    <tr>
+      <td>Attachment Code<!-- new-content --></td>
+      <td>Attachment.Code</td>
+      <td>Loop: 2000A Segment: STC01-01</td>
+      <td>LOINC Attachment Code. For prior authorization, <a href="https://x12.org/">X12</a> PWK01 Report Type Codes may also be used.</td>
+    </tr>
+    <tr>
+      <td>Date of Service</td>
+      <td>ServiceDate</td>
+      <td>Loop: 2100A Segment: DTP03</td>
+      <td>Date of service for claim/prior authorization</td>
+    </tr>
+    <tr>
+      <td>Member ID</td>
+      <td>MemberId</td>
+      <td>Loop: 1000D Segment: NM109 Notes: NM108="MI"</td>
+      <td>Payer assigned patient identifier</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The data element mapping table is available as a <a href="data-element-mapping.csv">CSV</a> and <a href="data-element-mapping.xlsx">Excel</a> file.</p>
+
+<p>For <em>solicited</em> attachments, the Payer sends the same data elements in the request for attachments. See the <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a> and <a href="requesting-attachments-questionnaire.html">Requesting Attachments Using Questionnaires</a> pages for a detailed discussion on how these data elements are used in the CDex Attachment Request Profile to request attachments and in the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> response to the Payer.</p>
+
+<h3 id="examples">Examples</h3>
+
+<p>In the following examples, a Provider creates a claim and sends <em>unsolicited attachments</em> using the FHIR operation, <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a>. For <em>solicited attachments</em> examples, see the <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a> and <a href="requesting-attachments-questionnaire.html">Requesting Attachments Using Questionnaires</a> pages.</p>
+
+<p><code class="language-plaintext highlighter-rouge">POST [base]/$submit-attachment</code></p>
+
+<h5 id="scenario-1a-ccda-document-attachments">Scenario 1a: CCDA Document Attachments</h5>
+
+<ul>
+  <li>Based on the Payer's pre-defined rules, the Provider submits C-CDA Documents as additional documentation for a claim.
+    <ul>
+      <li>Typically, when the attachments are C-CDA documents, as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.</li>
+    </ul>
+  </li>
+  <li>The Provider knows the Payer's endpoint for sending attachments. Note that the Provider can POST the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation to endpoints that are not FHIR RESTful servers.</li>
+  <li>An unsolicited workflow implies that the <em>Provider</em> assigns the claim and line item identifiers upon claim generation.</li>
+  <li>The Payer associates attachments to the claim.</li>
+</ul>
+
+<p>
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#unsolicited-attachment-scenario1a" aria-expanded="false" aria-controls="collapseExample">
+    Click Here To See Example CCDA Document Attachments
+  </button>
+</p>
+
+<div class="collapse" id="unsolicited-attachment-scenario1a">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/$submit-attachment
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "TrackingId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/provider",
+      "value" : "11234657"
+    }
+  },
+  {
+    "name" : "AttachTo",
+    "valueCode" : "claim"
+  },
+  {
+    "name" : "PayerId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/payer-ids",
+      "value" : "payer123"
+    }
+  },
+  {
+    "name" : "OrganizationId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1407071236"
+    }
+  },
+  {
+    "name" : "ProviderId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339108"
+    }
+  },
+  {
+    "name" : "MemberId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/member-ids",
+      "value" : "234567"
+    }
+  },
+  {
+    "name" : "ServiceDate",
+    "valueDateTime" : "2022-06-16"
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "LineItem",
+      "valueString" : "2"
+    },
+    {
+      "name" : "LineItem",
+      "valueString" : "3"
+    },
+    {
+      "name" : "Code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11504-8",
+          "display" : "Surgical operation note"
+        }],
+        "text" : "Surgical operation note"
+      }
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "DocumentReference",
+        "status" : "current",
+        "type" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11504-8",
+            "display" : "Surgical operation note"
+          }],
+          "text" : "Surgical operation note"
+        },
+        "category" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+            "code" : "clinical-note",
+            "display" : "Clinical Note"
+          }],
+          "text" : "Clinical Note 1"
+        }],
+        "subject" : {
+          "identifier" : {
+            "system" : "http://example.org/cdex/member-ids",
+            "value" : "234567"
+          }
+        },
+        "date" : "2022-07-13T10:30:00-05:00",
+        "content" : [{
+          "attachment" : {
+            "contentType" : "text/xml",
+            "data" : "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUyIiA/PjxDbGluaWNhbERvY3VtZW50IHhtbG5zPSJ1cm46aGw3LW9yZzp2MyI+PHJlYWxtQ29kZSBjb2RlPSJVUyIgLz48dHlwZUlkIGV4dGVuc2lvbj0iUE9DRF9IRDAwMDA0MCIgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMS4zIiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuNzIuMS41MTY5MyIgLz48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4xLjEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS4xIiBleHRlbnNpb249IjIwMTUtMDgtMDEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS43IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjEuNyIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxpZCBhc3NpZ25pbmdBdXRob3JpdHlOYW1lPSJFUEMiIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMTMuNDUxLjIuNy44LjY4ODg4My4xMzE2MDAyMDciIC8+PGNvZGUgY29kZT0iMTE1MDQtOCIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4xIiBjb2RlU3lzdGVtTmFtZT0iTE9JTkMiIGRpc3BsYXlOYW1lPSJQcm92aWRlciB1bnNwZWNpZmllZCBPcGVyYXRpb24gTm90ZSIgLz48dGl0bGU+T3BlcmF0aXZlIE5vdGU8L3RpdGxlPjxlZmZlY3RpdmVUaW1lIHZhbHVlPSIyMDIwMDIyMDAxMjcxNS0wNjAwIiAvPjxjb25maWRlbnRpYWxpdHlDb2RlIGNvZGU9Ik4iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMjUiIGRpc3BsYXlOYW1lPSJOb3JtYWwiIC8+PGxhbmd1YWdlQ29kZSBjb2RlPSJlbi1VUyIgLz48c2V0SWQgYXNzaWduaW5nQXV0aG9yaXR5TmFtZT0iRVBDIiBleHRlbnNpb249IjZhZTI2M2RhLTUzYjItMTFlYS04MDk5LTAwNTA1Njg2MWJjNiIgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjEuMSIgLz48dmVyc2lvbk51bWJlciB2YWx1ZT0iMSIgLz48cmVjb3JkVGFyZ2V0PjxwYXRpZW50Um9sZT48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjMuNjg4ODg0LjEwMCIgZXh0ZW5zaW9uPSJNQVk0NjgyODMwIiAvPjxhZGRyIHVzZT0iSFAiPjxzdHJlZXRBZGRyZXNzTGluZT4xIE4gUmhvZGUgSXNsYW5kIEF2ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5DRVJSTyBHT1JEPC9jb3VudHk+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB2YWx1ZT0ibWFpbHRvOmpvaG50ZXN0MUB0ZXN0LmNvbSIgLz48cGF0aWVudD48bmFtZSB1c2U9IkwiPjxwcmVmaXggcXVhbGlmaWVyPSJUSVRMRSI+TXIuIDwvcHJlZml4PjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+VEVTVDwvZ2l2ZW4+PGZhbWlseT5URVNUPC9mYW1pbHk+PC9uYW1lPjxuYW1lIHVzZT0iUCI+PGdpdmVuPkpvaG48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48bmFtZSB1c2U9IlAiPjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+UC48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48YWRtaW5pc3RyYXRpdmVHZW5kZXJDb2RlIGNvZGU9Ik0iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMSIgY29kZVN5c3RlbU5hbWU9IkFkbWluaXN0cmF0aXZlR2VuZGVyQ29kZSIgZGlzcGxheU5hbWU9Ik1hbGUiIC8+PGJpcnRoVGltZSB2YWx1ZT0iMTk1MzA5MjAiIC8+PHNkdGM6ZGVjZWFzZWRJbmQgdmFsdWU9ImZhbHNlIiB4bWxuczpzZHRjPSJ1cm46aGw3LW9yZzpzZHRjIiAvPjxtYXJpdGFsU3RhdHVzQ29kZSBjb2RlPSJNIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjIiIGNvZGVTeXN0ZW1OYW1lPSJNYXJpdGFsU3RhdHVzQ29kZSIgZGlzcGxheU5hbWU9Ik1hcnJpZWQiIC8+PHJlbGlnaW91c0FmZmlsaWF0aW9uQ29kZSBjb2RlPSIxMDI4IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjEwNzYiIGNvZGVTeXN0ZW1OYW1lPSJSZWxpZ2lvdXNBZmZpbGlhdGlvbiIgLz48cmFjZUNvZGUgY29kZT0iMjEwNi0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjIzOCIgY29kZVN5c3RlbU5hbWU9IkNEQyBSYWNlIGFuZCBFdGhuaWNpdHkiIGRpc3BsYXlOYW1lPSJXaGl0ZSIgLz48ZXRobmljR3JvdXBDb2RlIGNvZGU9IjIxODYtNSIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4yMzgiIGNvZGVTeXN0ZW1OYW1lPSJDREMgUmFjZSBhbmQgRXRobmljaXR5IiBkaXNwbGF5TmFtZT0iTm90IEhpc3BhbmljIG9yIExhdGlubyIgLz48bGFuZ3VhZ2VDb21tdW5pY2F0aW9uPjxsYW5ndWFnZUNvZGUgY29kZT0iZW5nIiAvPjxtb2RlQ29kZSBjb2RlPSJFV1IiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuNjAiIGRpc3BsYXlOYW1lPSJFeHByZXNzZWQgV3JpdHRlbiIgLz48cHJlZmVyZW5jZUluZCB2YWx1ZT0idHJ1ZSIgLz48L2xhbmd1YWdlQ29tbXVuaWNhdGlvbj48L3BhdGllbnQ+PHByb3ZpZGVyT3JnYW5pemF0aW9uPjxpZCByb290PSIxLjIuODQwLjExNDM1MC4xLjEzLjQ1MS4yLjcuMi42ODg4NzkiIGV4dGVuc2lvbj0iMzcyMDAiIC8+PG5hbWU+UFJPVklERVIgQ2xpbmljPC9uYW1lPjx0ZWxlY29tIG51bGxGbGF2b3I9Ik5BIiAvPjxhZGRyIHVzZT0iV1AiPjxzdHJlZXRBZGRyZXNzTGluZT4yIDFzdCBTdCBTVzwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5PTE1TVEVEPC9jb3VudHk+PGNpdHk+Uk9DSEVTVEVSPC9jaXR5PjxzdGF0ZT5NTjwvc3RhdGU+PHBvc3RhbENvZGU+NTU5MDU8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48L3Byb3ZpZGVyT3JnYW5pemF0aW9uPjwvcGF0aWVudFJvbGU+PC9yZWNvcmRUYXJnZXQ+PGF1dGhvcj48dGltZSB2YWx1ZT0iMjAyMDAyMjAwMTI3MTUtMDYwMCIgLz48YXNzaWduZWRBdXRob3I+PGlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMSIgZXh0ZW5zaW9uPSI4LjkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iTkEiIC8+PHRlbGVjb20gbnVsbEZsYXZvcj0iTkEiIC8+PGFzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxtYW51ZmFjdHVyZXJNb2RlbE5hbWU+RXBpYyAtIFZlcnNpb24gOC45PC9tYW51ZmFjdHVyZXJNb2RlbE5hbWU+PHNvZnR3YXJlTmFtZT5FcGljIC0gVmVyc2lvbiA4Ljk8L3NvZnR3YXJlTmFtZT48L2Fzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxyZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQXV0aG9yPjwvYXV0aG9yPjxjdXN0b2RpYW4+PGFzc2lnbmVkQ3VzdG9kaWFuPjxyZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQ3VzdG9kaWFuPjwvY3VzdG9kaWFuPjxsZWdhbEF1dGhlbnRpY2F0b3I+PHRpbWUgdmFsdWU9IjIwMjAwMjIwMDEyNzE1LTA2MDAiIC8+PHNpZ25hdHVyZUNvZGUgY29kZT0iUyIgLz48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgZXh0ZW5zaW9uPSIxMTExMTExMTExIiAvPjxjb2RlIG51bGxGbGF2b3I9IlVOSyIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJvY2hlc3RlcjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1LTAwMDE8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IldQIiB2YWx1ZT0idGVsOisxLTUwNy02NjYtNjY2NiIgLz48YXNzaWduZWRQZXJzb24+PG5hbWUgdXNlPSJMIj48Z2l2ZW4+Sm9objwvZ2l2ZW4+PGdpdmVuPkg8L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjxzdWZmaXggcXVhbGlmaWVyPSJBQyI+IE0uRC48L3N1ZmZpeD48L25hbWU+PC9hc3NpZ25lZFBlcnNvbj48L2Fzc2lnbmVkRW50aXR5PjwvbGVnYWxBdXRoZW50aWNhdG9yPjxwYXJ0aWNpcGFudCB0eXBlQ29kZT0iSU5EIj48dGltZSB2YWx1ZT0iMjAxODA4MTAiIC8+PGFzc29jaWF0ZWRFbnRpdHkgY2xhc3NDb2RlPSJFQ09OIj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuODI3NjY1IiBleHRlbnNpb249IjExMTExMTExIiAvPjxjb2RlIGNvZGU9IlNQUyIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNS4xMTEiIGNvZGVTeXN0ZW1OYW1lPSJSb2xlQ29kZSIgZGlzcGxheU5hbWU9IlNwb3VzZSI+PG9yaWdpbmFsVGV4dD5TcG91c2U8L29yaWdpbmFsVGV4dD48L2NvZGU+PGFkZHIgdXNlPSJIUCI+PHN0cmVldEFkZHJlc3NMaW5lPjEgTm9ydGggSXNsYW5kIEF2ZW51ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IkhQIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48YXNzb2NpYXRlZFBlcnNvbj48bmFtZT5DYXJvbCBNZXllcjwvbmFtZT48L2Fzc29jaWF0ZWRQZXJzb24+PC9hc3NvY2lhdGVkRW50aXR5PjwvcGFydGljaXBhbnQ+PGRvY3VtZW50YXRpb25PZiB0eXBlQ29kZT0iRE9DIj48c2VydmljZUV2ZW50IGNsYXNzQ29kZT0iUFJPQyI+PGNvZGUgY29kZT0iNzc3Nzc3NzIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuOTYiIGNvZGVTeXN0ZW1OYW1lPSJTTk9NRUQgQ1QiIGRpc3BsYXlOYW1lPSJQcm9jZWR1cmUiIC8+PGVmZmVjdGl2ZVRpbWU+PGxvdyBudWxsRmxhdm9yPSJVTksiIC8+PGhpZ2ggbnVsbEZsYXZvcj0iVU5LIiAvPjwvZWZmZWN0aXZlVGltZT48cGVyZm9ybWVyIHR5cGVDb2RlPSJQUFJGIj48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgLz48Y29kZSBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My4zLjg4LjEyLjMyMjEuNC4yIiBjb2RlU3lzdGVtTmFtZT0iTlVDQyIgbnVsbEZsYXZvcj0iTkkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iVU5LIiAvPjx0ZWxlY29tIG51bGxGbGF2b3I9IlVOSyIgLz48L2Fzc2lnbmVkRW50aXR5PjwvcGVyZm9ybWVyPjwvc2VydmljZUV2ZW50PjwvZG9jdW1lbnRhdGlvbk9mPjxjb21wb25lbnQ+PHN0cnVjdHVyZWRCb2R5Pjxjb21wb25lbnQ+PHNlY3Rpb24+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4yNyIgLz48Y29kZSBjb2RlPSIyOTU1NC0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlNVUkdFUlkgUFJPQ0VEVVJFIiAvPjx0aXRsZT5TdXJnZXJ5IERldGFpbHM8L3RpdGxlPjx0ZXh0Pjx0YWJsZT48Y29sZ3JvdXA+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjE1JSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48L2NvbGdyb3VwPjx0aGVhZD48dHI+PHRoPkRhdGUvVGltZTwvdGg+PHRoPlN0YXR1czwvdGg+PHRoPkxvY2F0aW9uPC90aD48dGg+T1I8L3RoPjx0aD5TZXJ2aWNlPC90aD48dGg+UGF0aWVudCBDbGFzczwvdGg+PHRoPkNhc2UgQ2xhc3M8L3RoPjx0aD5DYXNlIFR5cGU8L3RoPjx0aD5UcmF1bWEgQ2FzZT88L3RoPjwvdHI+PC90aGVhZD48dGJvZHk+PHRyPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjwvdHI+PC90Ym9keT48L3RhYmxlPjxiciAvPjxsaXN0PjxjYXB0aW9uPkFkZGl0b25hbCBOb3RlczwvY2FwdGlvbj48aXRlbT48Y2FwdGlvbj5URVNULCBKT0hOIEggLSAwMi8xNy8yMDIwIDExOjE1IEFNIENTVDwvY2FwdGlvbj48cGFyYWdyYXBoPiA8YnIgLz4gPGJyIC8+UFJPQ0VEVVJFKFMpPGJyIC8+T3BlbiB0YWtlZG93biBvZiBhZGhlc2lvbnMgKDEgaG91cikuIDxiciAvPlJlc2VjdGlvbiBhcHByb3hpbWF0ZWx5IDc1IGNtICBvZiB0ZXJtaW5hbCBpbGV1bSBhbmQgY2VjdW0gYW5kIHBvcnRpb24gb2YgYXNjZW5kaW5nIGNvbG9uLiA8YnIgLz5JbGVvYXNjZW5kaW5nIGNvbG9zdG9teSB3aXRoIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgcnVubmluZyBvZiB0aGUgc21hbGwgYm93ZWwuPGJyIC8+PGJyIC8+U1VSR0VPTihTKTxiciAvPkRyLiBKb2huIFRFU1QuIDxiciAvPjxiciAvPkdFTkVSQUwgU1VSR0VSWSBSRVNJREVOVDogRHIuIFRFU1QuPGJyIC8+PGJyIC8+QU5FU1RIRVNJQSBUWVBFPGJyIC8+R2VuZXJhbC48YnIgLz48YnIgLz5QUkUtT1BFUkFUSVZFIERJQUdOT1NJUzxiciAvPkNyb2huJ3MgZGlzZWFzZSwgc3RyaWN0dXJpbmcgb2YgYW4gYXJlYSBhbmQgQ1QgZW50ZXJvZ3JhcGh5IGV2aWRlbmNlIG9mIENyb2huJ3MgZGlzZWFzZSBpbiB0aGUgdGVybWluYWwgNzUgY20gb2YgaWxldW0uPGJyIC8+PGJyIC8+UE9TVC1PUEVSQVRJVkUgRElBR05PU0lTPGJyIC8+Q3JvaG4ncyBkaXNlYXNlLCBzdHJpY3R1cmluZyBvZiBhbiBhcmVhIGFuZCBDVCBlbnRlcm9ncmFwaHkgZXZpZGVuY2Ugb2YgQ3JvaG4ncyBkaXNlYXNlIGluIHRoZSB0ZXJtaW5hbCA3NSBjbSBvZiBpbGV1bS48YnIgLz48YnIgLz5GSU5ESU5HUzxiciAvPlNlZSBiZWxvdy48YnIgLz48YnIgLz5ERVNDUklQVElPTiBPRiBQUk9DRURVUkU8YnIgLz5VbmRlciBnZW5lcmFsIGFuZXN0aGVzaWEgaW4gdGhlIHN1cGluZSBwb3NpdGlvbiwgcGF0aWVudCBwcmVwcGVkIGFuZCBkcmFwZWQuIEEgbWlkLW1pZGxpbmUgaW5jaXNpb24gbWFkZSBsYXJnZSBlbm91Z2ggZm9yIHRoZSBIYW5kUG9ydCB0byBiZSBwbGFjZWQgZXhjZXB0IHdlIHJhbiBpbnRvIG1hbnkgYWRoZXNpb25zLiBXZSB0aGVuIGRlY2lkZWQgdG8gcHJvY2VlZCBvcGVuLiBXZSByZWFsbHkgZGlkIG5vdCBldmVuIGJlZ2luIHRvIGRvIHRoZSBsYXBhcm9zY29waWMgcHJvY2VkdXJlLiBUYWtlZG93biBvZiBhZGhlc2lvbnMgdG9vayBhYm91dCA0NSBtaW51dGVzIHRvIDEgaG91ci4gVGhlIGFuYXRvbXkgd2FzIG9yaWVudGVkIGNvcnJlY3RseS4gVXJldGVycyB3ZXJlIG5vdCBzZWVuLiBUaGUgdGVybWluYWwgaWxldW0gd2FzIGNhdWdodCBkb3duIGludG8gdGhlIHBlbHZpcy4gVGhpcyB3YXMgYWxsIG1vYmlsaXplZC4gQSBwb2ludCB3YXMgY2hvc2VuIG9uIHRoZSB0ZXJtaW5hbCBpbGV1bSBhYm92ZSB0aGUgZXZpZGVuY2Ugb2YgZGlzZWFzZSAoNzUgY20pIGFuZCBhIHBvaW50IGNob3NlbiBvbiB0aGUgYXNjZW5kaW5nIGNvbG9uIGp1c3QgYWJvdmUgdGhlIGNlY3VtIGFzIHRoZSBsaW5lIG9mIGRpc3RhbCB0cmFuc2VjdGlvbi4gVGhlIGludGVydmVuaW5nIG1lc2VudGVyeSB3YXMgYWx0ZXJuYXRpdmVseSBjbGFtcGVkLCB0aWVkLCBhbmQgTGlnYVN1cmVkLiBUaGUgc3BlY2ltZW4gd2FzIHJlbW92ZWQsIGFuZCBhIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgaWxlb2FzY2VuZGluZyBjb2xvc3RvbXkgd2FzIHRoZW4gY29uc3RydWN0ZWQgd2l0aG91dCBkaWZmaWN1bHR5LiBQb3N0IHN0YXBsaW5nLCB2aXN1YWxpemF0aW9uIHJldmVhbGVkIGV4Y2VsbGVudCBibG9vZCBzdXBwbHksIG5vIHRlbnNpb24sIGJpZyBhbmFzdG9tb3Npcy4gVGhlIG1lc2VudGVyeSBkZWZlY3Qgd2FzIHJlbGF0aXZlbHkgc21hbGwgYW5kIGNsb3NlZCB3aXRoIHJ1bm5pbmcgMy0wIGNocm9taWMuIFRoZSBhYmRvbWVuIHdhcyB0aG9yb3VnaGx5IGlycmlnYXRlZCBudW1lcm91cyB0aW1lcyB3aXRoIG5vcm1hbCBzYWxpbmUsIGJsZWVkaW5nIGNvbnRyb2xsZWQgd2l0aCBjYXV0ZXJ5LCBhbmQgdGhlIGFiZG9tZW4gd2FzIGFnYWluIGlycmlnYXRlZCB3aXRoIG5vcm1hbCBzYWxpbmUuIFRoZSBzbWFsbCBib3dlbCB3YXMgcnVuIGJhY2sgdG8gdGhlIGxpZ2FtZW50IG9mIFRyZWl0eiwgYW5kIHRoZXJlIHdhcyBubyBvdGhlciBldmlkZW5jZSBvZiBDcm9obidzIGRpc2Vhc2UuIFRoZSBhYmRvbWVuIHdhcyB0aGVuIGNsb3NlZCBvdmVyIFNlcHJhZmlsbSB1c2luZyBhIGNvbWJpbmF0aW9uIG9mIHJ1bm5pbmcgZG91YmxlIFBEUyBpbiB0aGUgbWlkbGluZSBmYXNjaWEgYW5kIGludGVycnVwdGVkICMxIFZpY3J5bCBpbiB0aGUgYXJlYSBvZiB0aGUgb2xkIG1lc2guIFRoZSBza2luIHdhcyBjbG9zZWQgd2l0aCBhIHJ1bm5pbmcgc3ViY3V0aWN1bGFyIFZpY3J5bC48YnIgLz48YnIgLz5TUEVDSU1FTlM8YnIgLz5UZXJtaW5hbCBpbGV1bSwgY2VjdW0sIGFwcGVuZGl4LCBwb3J0aW9uIGFzY2VuZGluZyBjb2xvbjxiciAvPjxiciAvPkRSQUlOUzxiciAvPk5vIGRyYWlucy4gPGJyIC8+PGJyIC8+Tm8gc3RvbWFzLjxiciAvPjxiciAvPkVTVElNQVRFRCBCTE9PRCBMT1NTPGJyIC8+TGVzcyB0aGFuIDEwMCBjYy48YnIgLz48YnIgLz5UUFI6ICAyICAgPGJyIC8+PGJyIC8+PGJyIC8+Sm9obiBILiBURVNULCBNLkQuPGJyIC8+REQ6ICAwMi8xNy8yMDIwIDExOjAyOjQxIENUPGJyIC8+RFQ6ICAwMi8xNy8yMDIwIDExOjI4OjU4IENUPGJyIC8+Sm9iIElEOiAgODcxNjIyMDAyL3NqcDxiciAvPjxiciAvPjwvcGFyYWdyYXBoPjwvaXRlbT48L2xpc3Q+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uIG51bGxGbGF2b3I9Ik5JIj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI1IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjUiIGV4dGVuc2lvbj0iMjAxNC0wNi0wOSIgLz48Y29kZSBjb2RlPSI1OTc3NC0wIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkFuZXN0aGVzaWEgUmVjb3JkcyIgLz48dGl0bGU+QW5lc3RoZXNpYSBSZWNvcmQ8L3RpdGxlPjx0ZXh0Pjxjb250ZW50IElEPSJub2YxIj5Ob3Qgb24gZmlsZTwvY29udGVudD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjxjb21wb25lbnQ+PHNlY3Rpb24gbnVsbEZsYXZvcj0iTkkiPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzQiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNCIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxjb2RlIGNvZGU9IjEwMjE5LTQiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJlb3BlcmF0aXZlIERpYWdub3NpcyIgLz48dGl0bGU+UHJlb3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjIiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbiBudWxsRmxhdm9yPSJOSSI+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNSIgLz48Y29kZSBjb2RlPSIxMDIxOC02IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlBvc3RvcGVyYXRpdmUgRGlhZ25vc2lzIiAvPjx0aXRsZT5Qb3N0b3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjMiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjM3IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzciIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1NTEwOS0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkNvbXBsaWNhdGlvbnMiIC8+PHRpdGxlPkNvbXBsaWNhdGlvbnM8L3RpdGxlPjx0ZXh0PjxwYXJhZ3JhcGg+Q2hlY2sgU3VyZ2VyeSBEZXRhaWxzIHNlY3Rpb24uPC9wYXJhZ3JhcGg+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjE4LjIuOSIgLz48Y29kZSBjb2RlPSI1OTc3MC04IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBFc3RpbWF0ZWQgQmxvb2QgTG9zcyIgLz48dGl0bGU+UHJvY2VkdXJlIEVzdGltYXRlZCBCbG9vZCBMb3NzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI4IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjgiIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1OTc3Ni01IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBGaW5kaW5ncyIgLz48dGl0bGU+UHJvY2VkdXJlIEZpbmRpbmdzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjMxIiAvPjxjb2RlIGNvZGU9IjU5NzczLTIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbiIgLz48dGl0bGU+UHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbjwvdGl0bGU+PHRleHQ+PHBhcmFncmFwaD5DaGVjayBTdXJnZXJ5IERldGFpbHMgc2VjdGlvbi48L3BhcmFncmFwaD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjwvc3RydWN0dXJlZEJvZHk+PC9jb21wb25lbnQ+PC9DbGluaWNhbERvY3VtZW50Pg0K",
+            "hash" : "026d568297832e6e083e96549041a72aa383bb23",
+            "title" : "Example CCDA"
+          }
+        }]
+      }
+    }]
+  }]
+}
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Server: nginx/1.14.0 (Ubuntu)
+Date: Fri, 23 Oct 2020 04:54:56 GMT
+Content-Type: application/fhir+json;charset=utf-8
+...(other headers)
+</code></pre></div>    </div>
+
+    <h5 id="rendered-documents">Rendered Documents</h5>
+
+    <p><em>This is the default view using a HTML5 browser. The content may not render correctly in HTML 4.0 and older browsers. Typically a CCDA stylesheet is used to make this data easier to read and arrange according to provider preferences</em></p>
+
+    <embed type="text/html" frameborder="1" width="640" height="480" src="data:text/html;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUyIiA/PjxDbGluaWNhbERvY3VtZW50IHhtbG5zPSJ1cm46aGw3LW9yZzp2MyI+PHJlYWxtQ29kZSBjb2RlPSJVUyIgLz48dHlwZUlkIGV4dGVuc2lvbj0iUE9DRF9IRDAwMDA0MCIgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMS4zIiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuNzIuMS41MTY5MyIgLz48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4xLjEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS4xIiBleHRlbnNpb249IjIwMTUtMDgtMDEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS43IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjEuNyIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxpZCBhc3NpZ25pbmdBdXRob3JpdHlOYW1lPSJFUEMiIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMTMuNDUxLjIuNy44LjY4ODg4My4xMzE2MDAyMDciIC8+PGNvZGUgY29kZT0iMTE1MDQtOCIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4xIiBjb2RlU3lzdGVtTmFtZT0iTE9JTkMiIGRpc3BsYXlOYW1lPSJQcm92aWRlciB1bnNwZWNpZmllZCBPcGVyYXRpb24gTm90ZSIgLz48dGl0bGU+T3BlcmF0aXZlIE5vdGU8L3RpdGxlPjxlZmZlY3RpdmVUaW1lIHZhbHVlPSIyMDIwMDIyMDAxMjcxNS0wNjAwIiAvPjxjb25maWRlbnRpYWxpdHlDb2RlIGNvZGU9Ik4iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMjUiIGRpc3BsYXlOYW1lPSJOb3JtYWwiIC8+PGxhbmd1YWdlQ29kZSBjb2RlPSJlbi1VUyIgLz48c2V0SWQgYXNzaWduaW5nQXV0aG9yaXR5TmFtZT0iRVBDIiBleHRlbnNpb249IjZhZTI2M2RhLTUzYjItMTFlYS04MDk5LTAwNTA1Njg2MWJjNiIgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjEuMSIgLz48dmVyc2lvbk51bWJlciB2YWx1ZT0iMSIgLz48cmVjb3JkVGFyZ2V0PjxwYXRpZW50Um9sZT48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjMuNjg4ODg0LjEwMCIgZXh0ZW5zaW9uPSJNQVk0NjgyODMwIiAvPjxhZGRyIHVzZT0iSFAiPjxzdHJlZXRBZGRyZXNzTGluZT4xIE4gUmhvZGUgSXNsYW5kIEF2ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5DRVJSTyBHT1JEPC9jb3VudHk+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB2YWx1ZT0ibWFpbHRvOmpvaG50ZXN0MUB0ZXN0LmNvbSIgLz48cGF0aWVudD48bmFtZSB1c2U9IkwiPjxwcmVmaXggcXVhbGlmaWVyPSJUSVRMRSI+TXIuIDwvcHJlZml4PjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+VEVTVDwvZ2l2ZW4+PGZhbWlseT5URVNUPC9mYW1pbHk+PC9uYW1lPjxuYW1lIHVzZT0iUCI+PGdpdmVuPkpvaG48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48bmFtZSB1c2U9IlAiPjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+UC48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48YWRtaW5pc3RyYXRpdmVHZW5kZXJDb2RlIGNvZGU9Ik0iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMSIgY29kZVN5c3RlbU5hbWU9IkFkbWluaXN0cmF0aXZlR2VuZGVyQ29kZSIgZGlzcGxheU5hbWU9Ik1hbGUiIC8+PGJpcnRoVGltZSB2YWx1ZT0iMTk1MzA5MjAiIC8+PHNkdGM6ZGVjZWFzZWRJbmQgdmFsdWU9ImZhbHNlIiB4bWxuczpzZHRjPSJ1cm46aGw3LW9yZzpzZHRjIiAvPjxtYXJpdGFsU3RhdHVzQ29kZSBjb2RlPSJNIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjIiIGNvZGVTeXN0ZW1OYW1lPSJNYXJpdGFsU3RhdHVzQ29kZSIgZGlzcGxheU5hbWU9Ik1hcnJpZWQiIC8+PHJlbGlnaW91c0FmZmlsaWF0aW9uQ29kZSBjb2RlPSIxMDI4IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjEwNzYiIGNvZGVTeXN0ZW1OYW1lPSJSZWxpZ2lvdXNBZmZpbGlhdGlvbiIgLz48cmFjZUNvZGUgY29kZT0iMjEwNi0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjIzOCIgY29kZVN5c3RlbU5hbWU9IkNEQyBSYWNlIGFuZCBFdGhuaWNpdHkiIGRpc3BsYXlOYW1lPSJXaGl0ZSIgLz48ZXRobmljR3JvdXBDb2RlIGNvZGU9IjIxODYtNSIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4yMzgiIGNvZGVTeXN0ZW1OYW1lPSJDREMgUmFjZSBhbmQgRXRobmljaXR5IiBkaXNwbGF5TmFtZT0iTm90IEhpc3BhbmljIG9yIExhdGlubyIgLz48bGFuZ3VhZ2VDb21tdW5pY2F0aW9uPjxsYW5ndWFnZUNvZGUgY29kZT0iZW5nIiAvPjxtb2RlQ29kZSBjb2RlPSJFV1IiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuNjAiIGRpc3BsYXlOYW1lPSJFeHByZXNzZWQgV3JpdHRlbiIgLz48cHJlZmVyZW5jZUluZCB2YWx1ZT0idHJ1ZSIgLz48L2xhbmd1YWdlQ29tbXVuaWNhdGlvbj48L3BhdGllbnQ+PHByb3ZpZGVyT3JnYW5pemF0aW9uPjxpZCByb290PSIxLjIuODQwLjExNDM1MC4xLjEzLjQ1MS4yLjcuMi42ODg4NzkiIGV4dGVuc2lvbj0iMzcyMDAiIC8+PG5hbWU+UFJPVklERVIgQ2xpbmljPC9uYW1lPjx0ZWxlY29tIG51bGxGbGF2b3I9Ik5BIiAvPjxhZGRyIHVzZT0iV1AiPjxzdHJlZXRBZGRyZXNzTGluZT4yIDFzdCBTdCBTVzwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5PTE1TVEVEPC9jb3VudHk+PGNpdHk+Uk9DSEVTVEVSPC9jaXR5PjxzdGF0ZT5NTjwvc3RhdGU+PHBvc3RhbENvZGU+NTU5MDU8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48L3Byb3ZpZGVyT3JnYW5pemF0aW9uPjwvcGF0aWVudFJvbGU+PC9yZWNvcmRUYXJnZXQ+PGF1dGhvcj48dGltZSB2YWx1ZT0iMjAyMDAyMjAwMTI3MTUtMDYwMCIgLz48YXNzaWduZWRBdXRob3I+PGlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMSIgZXh0ZW5zaW9uPSI4LjkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iTkEiIC8+PHRlbGVjb20gbnVsbEZsYXZvcj0iTkEiIC8+PGFzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxtYW51ZmFjdHVyZXJNb2RlbE5hbWU+RXBpYyAtIFZlcnNpb24gOC45PC9tYW51ZmFjdHVyZXJNb2RlbE5hbWU+PHNvZnR3YXJlTmFtZT5FcGljIC0gVmVyc2lvbiA4Ljk8L3NvZnR3YXJlTmFtZT48L2Fzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxyZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQXV0aG9yPjwvYXV0aG9yPjxjdXN0b2RpYW4+PGFzc2lnbmVkQ3VzdG9kaWFuPjxyZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQ3VzdG9kaWFuPjwvY3VzdG9kaWFuPjxsZWdhbEF1dGhlbnRpY2F0b3I+PHRpbWUgdmFsdWU9IjIwMjAwMjIwMDEyNzE1LTA2MDAiIC8+PHNpZ25hdHVyZUNvZGUgY29kZT0iUyIgLz48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgZXh0ZW5zaW9uPSIxMTExMTExMTExIiAvPjxjb2RlIG51bGxGbGF2b3I9IlVOSyIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJvY2hlc3RlcjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1LTAwMDE8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IldQIiB2YWx1ZT0idGVsOisxLTUwNy02NjYtNjY2NiIgLz48YXNzaWduZWRQZXJzb24+PG5hbWUgdXNlPSJMIj48Z2l2ZW4+Sm9objwvZ2l2ZW4+PGdpdmVuPkg8L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjxzdWZmaXggcXVhbGlmaWVyPSJBQyI+IE0uRC48L3N1ZmZpeD48L25hbWU+PC9hc3NpZ25lZFBlcnNvbj48L2Fzc2lnbmVkRW50aXR5PjwvbGVnYWxBdXRoZW50aWNhdG9yPjxwYXJ0aWNpcGFudCB0eXBlQ29kZT0iSU5EIj48dGltZSB2YWx1ZT0iMjAxODA4MTAiIC8+PGFzc29jaWF0ZWRFbnRpdHkgY2xhc3NDb2RlPSJFQ09OIj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuODI3NjY1IiBleHRlbnNpb249IjExMTExMTExIiAvPjxjb2RlIGNvZGU9IlNQUyIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNS4xMTEiIGNvZGVTeXN0ZW1OYW1lPSJSb2xlQ29kZSIgZGlzcGxheU5hbWU9IlNwb3VzZSI+PG9yaWdpbmFsVGV4dD5TcG91c2U8L29yaWdpbmFsVGV4dD48L2NvZGU+PGFkZHIgdXNlPSJIUCI+PHN0cmVldEFkZHJlc3NMaW5lPjEgTm9ydGggSXNsYW5kIEF2ZW51ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IkhQIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48YXNzb2NpYXRlZFBlcnNvbj48bmFtZT5DYXJvbCBNZXllcjwvbmFtZT48L2Fzc29jaWF0ZWRQZXJzb24+PC9hc3NvY2lhdGVkRW50aXR5PjwvcGFydGljaXBhbnQ+PGRvY3VtZW50YXRpb25PZiB0eXBlQ29kZT0iRE9DIj48c2VydmljZUV2ZW50IGNsYXNzQ29kZT0iUFJPQyI+PGNvZGUgY29kZT0iNzc3Nzc3NzIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuOTYiIGNvZGVTeXN0ZW1OYW1lPSJTTk9NRUQgQ1QiIGRpc3BsYXlOYW1lPSJQcm9jZWR1cmUiIC8+PGVmZmVjdGl2ZVRpbWU+PGxvdyBudWxsRmxhdm9yPSJVTksiIC8+PGhpZ2ggbnVsbEZsYXZvcj0iVU5LIiAvPjwvZWZmZWN0aXZlVGltZT48cGVyZm9ybWVyIHR5cGVDb2RlPSJQUFJGIj48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgLz48Y29kZSBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My4zLjg4LjEyLjMyMjEuNC4yIiBjb2RlU3lzdGVtTmFtZT0iTlVDQyIgbnVsbEZsYXZvcj0iTkkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iVU5LIiAvPjx0ZWxlY29tIG51bGxGbGF2b3I9IlVOSyIgLz48L2Fzc2lnbmVkRW50aXR5PjwvcGVyZm9ybWVyPjwvc2VydmljZUV2ZW50PjwvZG9jdW1lbnRhdGlvbk9mPjxjb21wb25lbnQ+PHN0cnVjdHVyZWRCb2R5Pjxjb21wb25lbnQ+PHNlY3Rpb24+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4yNyIgLz48Y29kZSBjb2RlPSIyOTU1NC0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlNVUkdFUlkgUFJPQ0VEVVJFIiAvPjx0aXRsZT5TdXJnZXJ5IERldGFpbHM8L3RpdGxlPjx0ZXh0Pjx0YWJsZT48Y29sZ3JvdXA+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjE1JSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48L2NvbGdyb3VwPjx0aGVhZD48dHI+PHRoPkRhdGUvVGltZTwvdGg+PHRoPlN0YXR1czwvdGg+PHRoPkxvY2F0aW9uPC90aD48dGg+T1I8L3RoPjx0aD5TZXJ2aWNlPC90aD48dGg+UGF0aWVudCBDbGFzczwvdGg+PHRoPkNhc2UgQ2xhc3M8L3RoPjx0aD5DYXNlIFR5cGU8L3RoPjx0aD5UcmF1bWEgQ2FzZT88L3RoPjwvdHI+PC90aGVhZD48dGJvZHk+PHRyPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjwvdHI+PC90Ym9keT48L3RhYmxlPjxiciAvPjxsaXN0PjxjYXB0aW9uPkFkZGl0b25hbCBOb3RlczwvY2FwdGlvbj48aXRlbT48Y2FwdGlvbj5URVNULCBKT0hOIEggLSAwMi8xNy8yMDIwIDExOjE1IEFNIENTVDwvY2FwdGlvbj48cGFyYWdyYXBoPiA8YnIgLz4gPGJyIC8+UFJPQ0VEVVJFKFMpPGJyIC8+T3BlbiB0YWtlZG93biBvZiBhZGhlc2lvbnMgKDEgaG91cikuIDxiciAvPlJlc2VjdGlvbiBhcHByb3hpbWF0ZWx5IDc1IGNtICBvZiB0ZXJtaW5hbCBpbGV1bSBhbmQgY2VjdW0gYW5kIHBvcnRpb24gb2YgYXNjZW5kaW5nIGNvbG9uLiA8YnIgLz5JbGVvYXNjZW5kaW5nIGNvbG9zdG9teSB3aXRoIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgcnVubmluZyBvZiB0aGUgc21hbGwgYm93ZWwuPGJyIC8+PGJyIC8+U1VSR0VPTihTKTxiciAvPkRyLiBKb2huIFRFU1QuIDxiciAvPjxiciAvPkdFTkVSQUwgU1VSR0VSWSBSRVNJREVOVDogRHIuIFRFU1QuPGJyIC8+PGJyIC8+QU5FU1RIRVNJQSBUWVBFPGJyIC8+R2VuZXJhbC48YnIgLz48YnIgLz5QUkUtT1BFUkFUSVZFIERJQUdOT1NJUzxiciAvPkNyb2huJ3MgZGlzZWFzZSwgc3RyaWN0dXJpbmcgb2YgYW4gYXJlYSBhbmQgQ1QgZW50ZXJvZ3JhcGh5IGV2aWRlbmNlIG9mIENyb2huJ3MgZGlzZWFzZSBpbiB0aGUgdGVybWluYWwgNzUgY20gb2YgaWxldW0uPGJyIC8+PGJyIC8+UE9TVC1PUEVSQVRJVkUgRElBR05PU0lTPGJyIC8+Q3JvaG4ncyBkaXNlYXNlLCBzdHJpY3R1cmluZyBvZiBhbiBhcmVhIGFuZCBDVCBlbnRlcm9ncmFwaHkgZXZpZGVuY2Ugb2YgQ3JvaG4ncyBkaXNlYXNlIGluIHRoZSB0ZXJtaW5hbCA3NSBjbSBvZiBpbGV1bS48YnIgLz48YnIgLz5GSU5ESU5HUzxiciAvPlNlZSBiZWxvdy48YnIgLz48YnIgLz5ERVNDUklQVElPTiBPRiBQUk9DRURVUkU8YnIgLz5VbmRlciBnZW5lcmFsIGFuZXN0aGVzaWEgaW4gdGhlIHN1cGluZSBwb3NpdGlvbiwgcGF0aWVudCBwcmVwcGVkIGFuZCBkcmFwZWQuIEEgbWlkLW1pZGxpbmUgaW5jaXNpb24gbWFkZSBsYXJnZSBlbm91Z2ggZm9yIHRoZSBIYW5kUG9ydCB0byBiZSBwbGFjZWQgZXhjZXB0IHdlIHJhbiBpbnRvIG1hbnkgYWRoZXNpb25zLiBXZSB0aGVuIGRlY2lkZWQgdG8gcHJvY2VlZCBvcGVuLiBXZSByZWFsbHkgZGlkIG5vdCBldmVuIGJlZ2luIHRvIGRvIHRoZSBsYXBhcm9zY29waWMgcHJvY2VkdXJlLiBUYWtlZG93biBvZiBhZGhlc2lvbnMgdG9vayBhYm91dCA0NSBtaW51dGVzIHRvIDEgaG91ci4gVGhlIGFuYXRvbXkgd2FzIG9yaWVudGVkIGNvcnJlY3RseS4gVXJldGVycyB3ZXJlIG5vdCBzZWVuLiBUaGUgdGVybWluYWwgaWxldW0gd2FzIGNhdWdodCBkb3duIGludG8gdGhlIHBlbHZpcy4gVGhpcyB3YXMgYWxsIG1vYmlsaXplZC4gQSBwb2ludCB3YXMgY2hvc2VuIG9uIHRoZSB0ZXJtaW5hbCBpbGV1bSBhYm92ZSB0aGUgZXZpZGVuY2Ugb2YgZGlzZWFzZSAoNzUgY20pIGFuZCBhIHBvaW50IGNob3NlbiBvbiB0aGUgYXNjZW5kaW5nIGNvbG9uIGp1c3QgYWJvdmUgdGhlIGNlY3VtIGFzIHRoZSBsaW5lIG9mIGRpc3RhbCB0cmFuc2VjdGlvbi4gVGhlIGludGVydmVuaW5nIG1lc2VudGVyeSB3YXMgYWx0ZXJuYXRpdmVseSBjbGFtcGVkLCB0aWVkLCBhbmQgTGlnYVN1cmVkLiBUaGUgc3BlY2ltZW4gd2FzIHJlbW92ZWQsIGFuZCBhIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgaWxlb2FzY2VuZGluZyBjb2xvc3RvbXkgd2FzIHRoZW4gY29uc3RydWN0ZWQgd2l0aG91dCBkaWZmaWN1bHR5LiBQb3N0IHN0YXBsaW5nLCB2aXN1YWxpemF0aW9uIHJldmVhbGVkIGV4Y2VsbGVudCBibG9vZCBzdXBwbHksIG5vIHRlbnNpb24sIGJpZyBhbmFzdG9tb3Npcy4gVGhlIG1lc2VudGVyeSBkZWZlY3Qgd2FzIHJlbGF0aXZlbHkgc21hbGwgYW5kIGNsb3NlZCB3aXRoIHJ1bm5pbmcgMy0wIGNocm9taWMuIFRoZSBhYmRvbWVuIHdhcyB0aG9yb3VnaGx5IGlycmlnYXRlZCBudW1lcm91cyB0aW1lcyB3aXRoIG5vcm1hbCBzYWxpbmUsIGJsZWVkaW5nIGNvbnRyb2xsZWQgd2l0aCBjYXV0ZXJ5LCBhbmQgdGhlIGFiZG9tZW4gd2FzIGFnYWluIGlycmlnYXRlZCB3aXRoIG5vcm1hbCBzYWxpbmUuIFRoZSBzbWFsbCBib3dlbCB3YXMgcnVuIGJhY2sgdG8gdGhlIGxpZ2FtZW50IG9mIFRyZWl0eiwgYW5kIHRoZXJlIHdhcyBubyBvdGhlciBldmlkZW5jZSBvZiBDcm9obidzIGRpc2Vhc2UuIFRoZSBhYmRvbWVuIHdhcyB0aGVuIGNsb3NlZCBvdmVyIFNlcHJhZmlsbSB1c2luZyBhIGNvbWJpbmF0aW9uIG9mIHJ1bm5pbmcgZG91YmxlIFBEUyBpbiB0aGUgbWlkbGluZSBmYXNjaWEgYW5kIGludGVycnVwdGVkICMxIFZpY3J5bCBpbiB0aGUgYXJlYSBvZiB0aGUgb2xkIG1lc2guIFRoZSBza2luIHdhcyBjbG9zZWQgd2l0aCBhIHJ1bm5pbmcgc3ViY3V0aWN1bGFyIFZpY3J5bC48YnIgLz48YnIgLz5TUEVDSU1FTlM8YnIgLz5UZXJtaW5hbCBpbGV1bSwgY2VjdW0sIGFwcGVuZGl4LCBwb3J0aW9uIGFzY2VuZGluZyBjb2xvbjxiciAvPjxiciAvPkRSQUlOUzxiciAvPk5vIGRyYWlucy4gPGJyIC8+PGJyIC8+Tm8gc3RvbWFzLjxiciAvPjxiciAvPkVTVElNQVRFRCBCTE9PRCBMT1NTPGJyIC8+TGVzcyB0aGFuIDEwMCBjYy48YnIgLz48YnIgLz5UUFI6ICAyICAgPGJyIC8+PGJyIC8+PGJyIC8+Sm9obiBILiBURVNULCBNLkQuPGJyIC8+REQ6ICAwMi8xNy8yMDIwIDExOjAyOjQxIENUPGJyIC8+RFQ6ICAwMi8xNy8yMDIwIDExOjI4OjU4IENUPGJyIC8+Sm9iIElEOiAgODcxNjIyMDAyL3NqcDxiciAvPjxiciAvPjwvcGFyYWdyYXBoPjwvaXRlbT48L2xpc3Q+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uIG51bGxGbGF2b3I9Ik5JIj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI1IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjUiIGV4dGVuc2lvbj0iMjAxNC0wNi0wOSIgLz48Y29kZSBjb2RlPSI1OTc3NC0wIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkFuZXN0aGVzaWEgUmVjb3JkcyIgLz48dGl0bGU+QW5lc3RoZXNpYSBSZWNvcmQ8L3RpdGxlPjx0ZXh0Pjxjb250ZW50IElEPSJub2YxIj5Ob3Qgb24gZmlsZTwvY29udGVudD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjxjb21wb25lbnQ+PHNlY3Rpb24gbnVsbEZsYXZvcj0iTkkiPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzQiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNCIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxjb2RlIGNvZGU9IjEwMjE5LTQiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJlb3BlcmF0aXZlIERpYWdub3NpcyIgLz48dGl0bGU+UHJlb3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjIiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbiBudWxsRmxhdm9yPSJOSSI+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNSIgLz48Y29kZSBjb2RlPSIxMDIxOC02IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlBvc3RvcGVyYXRpdmUgRGlhZ25vc2lzIiAvPjx0aXRsZT5Qb3N0b3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjMiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjM3IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzciIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1NTEwOS0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkNvbXBsaWNhdGlvbnMiIC8+PHRpdGxlPkNvbXBsaWNhdGlvbnM8L3RpdGxlPjx0ZXh0PjxwYXJhZ3JhcGg+Q2hlY2sgU3VyZ2VyeSBEZXRhaWxzIHNlY3Rpb24uPC9wYXJhZ3JhcGg+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjE4LjIuOSIgLz48Y29kZSBjb2RlPSI1OTc3MC04IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBFc3RpbWF0ZWQgQmxvb2QgTG9zcyIgLz48dGl0bGU+UHJvY2VkdXJlIEVzdGltYXRlZCBCbG9vZCBMb3NzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI4IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjgiIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1OTc3Ni01IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBGaW5kaW5ncyIgLz48dGl0bGU+UHJvY2VkdXJlIEZpbmRpbmdzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjMxIiAvPjxjb2RlIGNvZGU9IjU5NzczLTIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbiIgLz48dGl0bGU+UHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbjwvdGl0bGU+PHRleHQ+PHBhcmFncmFwaD5DaGVjayBTdXJnZXJ5IERldGFpbHMgc2VjdGlvbi48L3BhcmFncmFwaD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjwvc3RydWN0dXJlZEJvZHk+PC9jb21wb25lbnQ+PC9DbGluaWNhbERvY3VtZW50Pg0K" />
+
+  </div>
+</div>
+<p><br /></p>
+
+<h4 id="scenario-1b-ccda-document-attachments-submitted-prior-to-claim">Scenario 1b: CCDA Document Attachments Submitted <em>Prior</em> to claim</h4>
+
+<p>This scenario is the same as Scenario 1a above, except the attachments are submitted <em>prior</em> to the claim. The Payer accepts the attachments and returns an OperationOutcome informing the Provider system that the attachments are waiting for the claim.</p>
+
+<p>
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#unsolicited-attachment-scenario1b" aria-expanded="false" aria-controls="collapseExample">
+    Click Here To See Example CCDA Document Attachments
+  </button>
+</p>
+
+<div class="collapse" id="unsolicited-attachment-scenario1b">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/$submit-attachment
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "TrackingId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/provider",
+      "value" : "11234657"
+    }
+  },
+  {
+    "name" : "AttachTo",
+    "valueCode" : "claim"
+  },
+  {
+    "name" : "PayerId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/payer-ids",
+      "value" : "payer123"
+    }
+  },
+  {
+    "name" : "OrganizationId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1407071236"
+    }
+  },
+  {
+    "name" : "ProviderId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339108"
+    }
+  },
+  {
+    "name" : "MemberId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/member-ids",
+      "value" : "234567"
+    }
+  },
+  {
+    "name" : "ServiceDate",
+    "valueDateTime" : "2022-06-16"
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "LineItem",
+      "valueString" : "2"
+    },
+    {
+      "name" : "LineItem",
+      "valueString" : "3"
+    },
+    {
+      "name" : "Code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11504-8",
+          "display" : "Surgical operation note"
+        }],
+        "text" : "Surgical operation note"
+      }
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "DocumentReference",
+        "status" : "current",
+        "type" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11504-8",
+            "display" : "Surgical operation note"
+          }],
+          "text" : "Surgical operation note"
+        },
+        "category" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+            "code" : "clinical-note",
+            "display" : "Clinical Note"
+          }],
+          "text" : "Clinical Note 1"
+        }],
+        "subject" : {
+          "identifier" : {
+            "system" : "http://example.org/cdex/member-ids",
+            "value" : "234567"
+          }
+        },
+        "date" : "2022-07-13T10:30:00-05:00",
+        "content" : [{
+          "attachment" : {
+            "contentType" : "text/xml",
+            "data" : "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUyIiA/PjxDbGluaWNhbERvY3VtZW50IHhtbG5zPSJ1cm46aGw3LW9yZzp2MyI+PHJlYWxtQ29kZSBjb2RlPSJVUyIgLz48dHlwZUlkIGV4dGVuc2lvbj0iUE9DRF9IRDAwMDA0MCIgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMS4zIiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuNzIuMS41MTY5MyIgLz48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4xLjEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS4xIiBleHRlbnNpb249IjIwMTUtMDgtMDEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS43IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjEuNyIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxpZCBhc3NpZ25pbmdBdXRob3JpdHlOYW1lPSJFUEMiIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMTMuNDUxLjIuNy44LjY4ODg4My4xMzE2MDAyMDciIC8+PGNvZGUgY29kZT0iMTE1MDQtOCIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4xIiBjb2RlU3lzdGVtTmFtZT0iTE9JTkMiIGRpc3BsYXlOYW1lPSJQcm92aWRlciB1bnNwZWNpZmllZCBPcGVyYXRpb24gTm90ZSIgLz48dGl0bGU+T3BlcmF0aXZlIE5vdGU8L3RpdGxlPjxlZmZlY3RpdmVUaW1lIHZhbHVlPSIyMDIwMDIyMDAxMjcxNS0wNjAwIiAvPjxjb25maWRlbnRpYWxpdHlDb2RlIGNvZGU9Ik4iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMjUiIGRpc3BsYXlOYW1lPSJOb3JtYWwiIC8+PGxhbmd1YWdlQ29kZSBjb2RlPSJlbi1VUyIgLz48c2V0SWQgYXNzaWduaW5nQXV0aG9yaXR5TmFtZT0iRVBDIiBleHRlbnNpb249IjZhZTI2M2RhLTUzYjItMTFlYS04MDk5LTAwNTA1Njg2MWJjNiIgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjEuMSIgLz48dmVyc2lvbk51bWJlciB2YWx1ZT0iMSIgLz48cmVjb3JkVGFyZ2V0PjxwYXRpZW50Um9sZT48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjMuNjg4ODg0LjEwMCIgZXh0ZW5zaW9uPSJNQVk0NjgyODMwIiAvPjxhZGRyIHVzZT0iSFAiPjxzdHJlZXRBZGRyZXNzTGluZT4xIE4gUmhvZGUgSXNsYW5kIEF2ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5DRVJSTyBHT1JEPC9jb3VudHk+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB2YWx1ZT0ibWFpbHRvOmpvaG50ZXN0MUB0ZXN0LmNvbSIgLz48cGF0aWVudD48bmFtZSB1c2U9IkwiPjxwcmVmaXggcXVhbGlmaWVyPSJUSVRMRSI+TXIuIDwvcHJlZml4PjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+VEVTVDwvZ2l2ZW4+PGZhbWlseT5URVNUPC9mYW1pbHk+PC9uYW1lPjxuYW1lIHVzZT0iUCI+PGdpdmVuPkpvaG48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48bmFtZSB1c2U9IlAiPjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+UC48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48YWRtaW5pc3RyYXRpdmVHZW5kZXJDb2RlIGNvZGU9Ik0iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMSIgY29kZVN5c3RlbU5hbWU9IkFkbWluaXN0cmF0aXZlR2VuZGVyQ29kZSIgZGlzcGxheU5hbWU9Ik1hbGUiIC8+PGJpcnRoVGltZSB2YWx1ZT0iMTk1MzA5MjAiIC8+PHNkdGM6ZGVjZWFzZWRJbmQgdmFsdWU9ImZhbHNlIiB4bWxuczpzZHRjPSJ1cm46aGw3LW9yZzpzZHRjIiAvPjxtYXJpdGFsU3RhdHVzQ29kZSBjb2RlPSJNIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjIiIGNvZGVTeXN0ZW1OYW1lPSJNYXJpdGFsU3RhdHVzQ29kZSIgZGlzcGxheU5hbWU9Ik1hcnJpZWQiIC8+PHJlbGlnaW91c0FmZmlsaWF0aW9uQ29kZSBjb2RlPSIxMDI4IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjEwNzYiIGNvZGVTeXN0ZW1OYW1lPSJSZWxpZ2lvdXNBZmZpbGlhdGlvbiIgLz48cmFjZUNvZGUgY29kZT0iMjEwNi0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjIzOCIgY29kZVN5c3RlbU5hbWU9IkNEQyBSYWNlIGFuZCBFdGhuaWNpdHkiIGRpc3BsYXlOYW1lPSJXaGl0ZSIgLz48ZXRobmljR3JvdXBDb2RlIGNvZGU9IjIxODYtNSIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4yMzgiIGNvZGVTeXN0ZW1OYW1lPSJDREMgUmFjZSBhbmQgRXRobmljaXR5IiBkaXNwbGF5TmFtZT0iTm90IEhpc3BhbmljIG9yIExhdGlubyIgLz48bGFuZ3VhZ2VDb21tdW5pY2F0aW9uPjxsYW5ndWFnZUNvZGUgY29kZT0iZW5nIiAvPjxtb2RlQ29kZSBjb2RlPSJFV1IiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuNjAiIGRpc3BsYXlOYW1lPSJFeHByZXNzZWQgV3JpdHRlbiIgLz48cHJlZmVyZW5jZUluZCB2YWx1ZT0idHJ1ZSIgLz48L2xhbmd1YWdlQ29tbXVuaWNhdGlvbj48L3BhdGllbnQ+PHByb3ZpZGVyT3JnYW5pemF0aW9uPjxpZCByb290PSIxLjIuODQwLjExNDM1MC4xLjEzLjQ1MS4yLjcuMi42ODg4NzkiIGV4dGVuc2lvbj0iMzcyMDAiIC8+PG5hbWU+UFJPVklERVIgQ2xpbmljPC9uYW1lPjx0ZWxlY29tIG51bGxGbGF2b3I9Ik5BIiAvPjxhZGRyIHVzZT0iV1AiPjxzdHJlZXRBZGRyZXNzTGluZT4yIDFzdCBTdCBTVzwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5PTE1TVEVEPC9jb3VudHk+PGNpdHk+Uk9DSEVTVEVSPC9jaXR5PjxzdGF0ZT5NTjwvc3RhdGU+PHBvc3RhbENvZGU+NTU5MDU8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48L3Byb3ZpZGVyT3JnYW5pemF0aW9uPjwvcGF0aWVudFJvbGU+PC9yZWNvcmRUYXJnZXQ+PGF1dGhvcj48dGltZSB2YWx1ZT0iMjAyMDAyMjAwMTI3MTUtMDYwMCIgLz48YXNzaWduZWRBdXRob3I+PGlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMSIgZXh0ZW5zaW9uPSI4LjkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iTkEiIC8+PHRlbGVjb20gbnVsbEZsYXZvcj0iTkEiIC8+PGFzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxtYW51ZmFjdHVyZXJNb2RlbE5hbWU+RXBpYyAtIFZlcnNpb24gOC45PC9tYW51ZmFjdHVyZXJNb2RlbE5hbWU+PHNvZnR3YXJlTmFtZT5FcGljIC0gVmVyc2lvbiA4Ljk8L3NvZnR3YXJlTmFtZT48L2Fzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxyZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQXV0aG9yPjwvYXV0aG9yPjxjdXN0b2RpYW4+PGFzc2lnbmVkQ3VzdG9kaWFuPjxyZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQ3VzdG9kaWFuPjwvY3VzdG9kaWFuPjxsZWdhbEF1dGhlbnRpY2F0b3I+PHRpbWUgdmFsdWU9IjIwMjAwMjIwMDEyNzE1LTA2MDAiIC8+PHNpZ25hdHVyZUNvZGUgY29kZT0iUyIgLz48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgZXh0ZW5zaW9uPSIxMTExMTExMTExIiAvPjxjb2RlIG51bGxGbGF2b3I9IlVOSyIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJvY2hlc3RlcjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1LTAwMDE8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IldQIiB2YWx1ZT0idGVsOisxLTUwNy02NjYtNjY2NiIgLz48YXNzaWduZWRQZXJzb24+PG5hbWUgdXNlPSJMIj48Z2l2ZW4+Sm9objwvZ2l2ZW4+PGdpdmVuPkg8L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjxzdWZmaXggcXVhbGlmaWVyPSJBQyI+IE0uRC48L3N1ZmZpeD48L25hbWU+PC9hc3NpZ25lZFBlcnNvbj48L2Fzc2lnbmVkRW50aXR5PjwvbGVnYWxBdXRoZW50aWNhdG9yPjxwYXJ0aWNpcGFudCB0eXBlQ29kZT0iSU5EIj48dGltZSB2YWx1ZT0iMjAxODA4MTAiIC8+PGFzc29jaWF0ZWRFbnRpdHkgY2xhc3NDb2RlPSJFQ09OIj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuODI3NjY1IiBleHRlbnNpb249IjExMTExMTExIiAvPjxjb2RlIGNvZGU9IlNQUyIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNS4xMTEiIGNvZGVTeXN0ZW1OYW1lPSJSb2xlQ29kZSIgZGlzcGxheU5hbWU9IlNwb3VzZSI+PG9yaWdpbmFsVGV4dD5TcG91c2U8L29yaWdpbmFsVGV4dD48L2NvZGU+PGFkZHIgdXNlPSJIUCI+PHN0cmVldEFkZHJlc3NMaW5lPjEgTm9ydGggSXNsYW5kIEF2ZW51ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IkhQIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48YXNzb2NpYXRlZFBlcnNvbj48bmFtZT5DYXJvbCBNZXllcjwvbmFtZT48L2Fzc29jaWF0ZWRQZXJzb24+PC9hc3NvY2lhdGVkRW50aXR5PjwvcGFydGljaXBhbnQ+PGRvY3VtZW50YXRpb25PZiB0eXBlQ29kZT0iRE9DIj48c2VydmljZUV2ZW50IGNsYXNzQ29kZT0iUFJPQyI+PGNvZGUgY29kZT0iNzc3Nzc3NzIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuOTYiIGNvZGVTeXN0ZW1OYW1lPSJTTk9NRUQgQ1QiIGRpc3BsYXlOYW1lPSJQcm9jZWR1cmUiIC8+PGVmZmVjdGl2ZVRpbWU+PGxvdyBudWxsRmxhdm9yPSJVTksiIC8+PGhpZ2ggbnVsbEZsYXZvcj0iVU5LIiAvPjwvZWZmZWN0aXZlVGltZT48cGVyZm9ybWVyIHR5cGVDb2RlPSJQUFJGIj48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgLz48Y29kZSBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My4zLjg4LjEyLjMyMjEuNC4yIiBjb2RlU3lzdGVtTmFtZT0iTlVDQyIgbnVsbEZsYXZvcj0iTkkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iVU5LIiAvPjx0ZWxlY29tIG51bGxGbGF2b3I9IlVOSyIgLz48L2Fzc2lnbmVkRW50aXR5PjwvcGVyZm9ybWVyPjwvc2VydmljZUV2ZW50PjwvZG9jdW1lbnRhdGlvbk9mPjxjb21wb25lbnQ+PHN0cnVjdHVyZWRCb2R5Pjxjb21wb25lbnQ+PHNlY3Rpb24+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4yNyIgLz48Y29kZSBjb2RlPSIyOTU1NC0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlNVUkdFUlkgUFJPQ0VEVVJFIiAvPjx0aXRsZT5TdXJnZXJ5IERldGFpbHM8L3RpdGxlPjx0ZXh0Pjx0YWJsZT48Y29sZ3JvdXA+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjE1JSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48L2NvbGdyb3VwPjx0aGVhZD48dHI+PHRoPkRhdGUvVGltZTwvdGg+PHRoPlN0YXR1czwvdGg+PHRoPkxvY2F0aW9uPC90aD48dGg+T1I8L3RoPjx0aD5TZXJ2aWNlPC90aD48dGg+UGF0aWVudCBDbGFzczwvdGg+PHRoPkNhc2UgQ2xhc3M8L3RoPjx0aD5DYXNlIFR5cGU8L3RoPjx0aD5UcmF1bWEgQ2FzZT88L3RoPjwvdHI+PC90aGVhZD48dGJvZHk+PHRyPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjwvdHI+PC90Ym9keT48L3RhYmxlPjxiciAvPjxsaXN0PjxjYXB0aW9uPkFkZGl0b25hbCBOb3RlczwvY2FwdGlvbj48aXRlbT48Y2FwdGlvbj5URVNULCBKT0hOIEggLSAwMi8xNy8yMDIwIDExOjE1IEFNIENTVDwvY2FwdGlvbj48cGFyYWdyYXBoPiA8YnIgLz4gPGJyIC8+UFJPQ0VEVVJFKFMpPGJyIC8+T3BlbiB0YWtlZG93biBvZiBhZGhlc2lvbnMgKDEgaG91cikuIDxiciAvPlJlc2VjdGlvbiBhcHByb3hpbWF0ZWx5IDc1IGNtICBvZiB0ZXJtaW5hbCBpbGV1bSBhbmQgY2VjdW0gYW5kIHBvcnRpb24gb2YgYXNjZW5kaW5nIGNvbG9uLiA8YnIgLz5JbGVvYXNjZW5kaW5nIGNvbG9zdG9teSB3aXRoIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgcnVubmluZyBvZiB0aGUgc21hbGwgYm93ZWwuPGJyIC8+PGJyIC8+U1VSR0VPTihTKTxiciAvPkRyLiBKb2huIFRFU1QuIDxiciAvPjxiciAvPkdFTkVSQUwgU1VSR0VSWSBSRVNJREVOVDogRHIuIFRFU1QuPGJyIC8+PGJyIC8+QU5FU1RIRVNJQSBUWVBFPGJyIC8+R2VuZXJhbC48YnIgLz48YnIgLz5QUkUtT1BFUkFUSVZFIERJQUdOT1NJUzxiciAvPkNyb2huJ3MgZGlzZWFzZSwgc3RyaWN0dXJpbmcgb2YgYW4gYXJlYSBhbmQgQ1QgZW50ZXJvZ3JhcGh5IGV2aWRlbmNlIG9mIENyb2huJ3MgZGlzZWFzZSBpbiB0aGUgdGVybWluYWwgNzUgY20gb2YgaWxldW0uPGJyIC8+PGJyIC8+UE9TVC1PUEVSQVRJVkUgRElBR05PU0lTPGJyIC8+Q3JvaG4ncyBkaXNlYXNlLCBzdHJpY3R1cmluZyBvZiBhbiBhcmVhIGFuZCBDVCBlbnRlcm9ncmFwaHkgZXZpZGVuY2Ugb2YgQ3JvaG4ncyBkaXNlYXNlIGluIHRoZSB0ZXJtaW5hbCA3NSBjbSBvZiBpbGV1bS48YnIgLz48YnIgLz5GSU5ESU5HUzxiciAvPlNlZSBiZWxvdy48YnIgLz48YnIgLz5ERVNDUklQVElPTiBPRiBQUk9DRURVUkU8YnIgLz5VbmRlciBnZW5lcmFsIGFuZXN0aGVzaWEgaW4gdGhlIHN1cGluZSBwb3NpdGlvbiwgcGF0aWVudCBwcmVwcGVkIGFuZCBkcmFwZWQuIEEgbWlkLW1pZGxpbmUgaW5jaXNpb24gbWFkZSBsYXJnZSBlbm91Z2ggZm9yIHRoZSBIYW5kUG9ydCB0byBiZSBwbGFjZWQgZXhjZXB0IHdlIHJhbiBpbnRvIG1hbnkgYWRoZXNpb25zLiBXZSB0aGVuIGRlY2lkZWQgdG8gcHJvY2VlZCBvcGVuLiBXZSByZWFsbHkgZGlkIG5vdCBldmVuIGJlZ2luIHRvIGRvIHRoZSBsYXBhcm9zY29waWMgcHJvY2VkdXJlLiBUYWtlZG93biBvZiBhZGhlc2lvbnMgdG9vayBhYm91dCA0NSBtaW51dGVzIHRvIDEgaG91ci4gVGhlIGFuYXRvbXkgd2FzIG9yaWVudGVkIGNvcnJlY3RseS4gVXJldGVycyB3ZXJlIG5vdCBzZWVuLiBUaGUgdGVybWluYWwgaWxldW0gd2FzIGNhdWdodCBkb3duIGludG8gdGhlIHBlbHZpcy4gVGhpcyB3YXMgYWxsIG1vYmlsaXplZC4gQSBwb2ludCB3YXMgY2hvc2VuIG9uIHRoZSB0ZXJtaW5hbCBpbGV1bSBhYm92ZSB0aGUgZXZpZGVuY2Ugb2YgZGlzZWFzZSAoNzUgY20pIGFuZCBhIHBvaW50IGNob3NlbiBvbiB0aGUgYXNjZW5kaW5nIGNvbG9uIGp1c3QgYWJvdmUgdGhlIGNlY3VtIGFzIHRoZSBsaW5lIG9mIGRpc3RhbCB0cmFuc2VjdGlvbi4gVGhlIGludGVydmVuaW5nIG1lc2VudGVyeSB3YXMgYWx0ZXJuYXRpdmVseSBjbGFtcGVkLCB0aWVkLCBhbmQgTGlnYVN1cmVkLiBUaGUgc3BlY2ltZW4gd2FzIHJlbW92ZWQsIGFuZCBhIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgaWxlb2FzY2VuZGluZyBjb2xvc3RvbXkgd2FzIHRoZW4gY29uc3RydWN0ZWQgd2l0aG91dCBkaWZmaWN1bHR5LiBQb3N0IHN0YXBsaW5nLCB2aXN1YWxpemF0aW9uIHJldmVhbGVkIGV4Y2VsbGVudCBibG9vZCBzdXBwbHksIG5vIHRlbnNpb24sIGJpZyBhbmFzdG9tb3Npcy4gVGhlIG1lc2VudGVyeSBkZWZlY3Qgd2FzIHJlbGF0aXZlbHkgc21hbGwgYW5kIGNsb3NlZCB3aXRoIHJ1bm5pbmcgMy0wIGNocm9taWMuIFRoZSBhYmRvbWVuIHdhcyB0aG9yb3VnaGx5IGlycmlnYXRlZCBudW1lcm91cyB0aW1lcyB3aXRoIG5vcm1hbCBzYWxpbmUsIGJsZWVkaW5nIGNvbnRyb2xsZWQgd2l0aCBjYXV0ZXJ5LCBhbmQgdGhlIGFiZG9tZW4gd2FzIGFnYWluIGlycmlnYXRlZCB3aXRoIG5vcm1hbCBzYWxpbmUuIFRoZSBzbWFsbCBib3dlbCB3YXMgcnVuIGJhY2sgdG8gdGhlIGxpZ2FtZW50IG9mIFRyZWl0eiwgYW5kIHRoZXJlIHdhcyBubyBvdGhlciBldmlkZW5jZSBvZiBDcm9obidzIGRpc2Vhc2UuIFRoZSBhYmRvbWVuIHdhcyB0aGVuIGNsb3NlZCBvdmVyIFNlcHJhZmlsbSB1c2luZyBhIGNvbWJpbmF0aW9uIG9mIHJ1bm5pbmcgZG91YmxlIFBEUyBpbiB0aGUgbWlkbGluZSBmYXNjaWEgYW5kIGludGVycnVwdGVkICMxIFZpY3J5bCBpbiB0aGUgYXJlYSBvZiB0aGUgb2xkIG1lc2guIFRoZSBza2luIHdhcyBjbG9zZWQgd2l0aCBhIHJ1bm5pbmcgc3ViY3V0aWN1bGFyIFZpY3J5bC48YnIgLz48YnIgLz5TUEVDSU1FTlM8YnIgLz5UZXJtaW5hbCBpbGV1bSwgY2VjdW0sIGFwcGVuZGl4LCBwb3J0aW9uIGFzY2VuZGluZyBjb2xvbjxiciAvPjxiciAvPkRSQUlOUzxiciAvPk5vIGRyYWlucy4gPGJyIC8+PGJyIC8+Tm8gc3RvbWFzLjxiciAvPjxiciAvPkVTVElNQVRFRCBCTE9PRCBMT1NTPGJyIC8+TGVzcyB0aGFuIDEwMCBjYy48YnIgLz48YnIgLz5UUFI6ICAyICAgPGJyIC8+PGJyIC8+PGJyIC8+Sm9obiBILiBURVNULCBNLkQuPGJyIC8+REQ6ICAwMi8xNy8yMDIwIDExOjAyOjQxIENUPGJyIC8+RFQ6ICAwMi8xNy8yMDIwIDExOjI4OjU4IENUPGJyIC8+Sm9iIElEOiAgODcxNjIyMDAyL3NqcDxiciAvPjxiciAvPjwvcGFyYWdyYXBoPjwvaXRlbT48L2xpc3Q+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uIG51bGxGbGF2b3I9Ik5JIj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI1IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjUiIGV4dGVuc2lvbj0iMjAxNC0wNi0wOSIgLz48Y29kZSBjb2RlPSI1OTc3NC0wIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkFuZXN0aGVzaWEgUmVjb3JkcyIgLz48dGl0bGU+QW5lc3RoZXNpYSBSZWNvcmQ8L3RpdGxlPjx0ZXh0Pjxjb250ZW50IElEPSJub2YxIj5Ob3Qgb24gZmlsZTwvY29udGVudD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjxjb21wb25lbnQ+PHNlY3Rpb24gbnVsbEZsYXZvcj0iTkkiPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzQiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNCIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxjb2RlIGNvZGU9IjEwMjE5LTQiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJlb3BlcmF0aXZlIERpYWdub3NpcyIgLz48dGl0bGU+UHJlb3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjIiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbiBudWxsRmxhdm9yPSJOSSI+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNSIgLz48Y29kZSBjb2RlPSIxMDIxOC02IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlBvc3RvcGVyYXRpdmUgRGlhZ25vc2lzIiAvPjx0aXRsZT5Qb3N0b3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjMiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjM3IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzciIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1NTEwOS0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkNvbXBsaWNhdGlvbnMiIC8+PHRpdGxlPkNvbXBsaWNhdGlvbnM8L3RpdGxlPjx0ZXh0PjxwYXJhZ3JhcGg+Q2hlY2sgU3VyZ2VyeSBEZXRhaWxzIHNlY3Rpb24uPC9wYXJhZ3JhcGg+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjE4LjIuOSIgLz48Y29kZSBjb2RlPSI1OTc3MC04IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBFc3RpbWF0ZWQgQmxvb2QgTG9zcyIgLz48dGl0bGU+UHJvY2VkdXJlIEVzdGltYXRlZCBCbG9vZCBMb3NzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI4IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjgiIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1OTc3Ni01IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBGaW5kaW5ncyIgLz48dGl0bGU+UHJvY2VkdXJlIEZpbmRpbmdzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjMxIiAvPjxjb2RlIGNvZGU9IjU5NzczLTIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbiIgLz48dGl0bGU+UHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbjwvdGl0bGU+PHRleHQ+PHBhcmFncmFwaD5DaGVjayBTdXJnZXJ5IERldGFpbHMgc2VjdGlvbi48L3BhcmFncmFwaD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjwvc3RydWN0dXJlZEJvZHk+PC9jb21wb25lbnQ+PC9DbGluaWNhbERvY3VtZW50Pg0K",
+            "hash" : "026d568297832e6e083e96549041a72aa383bb23",
+            "title" : "Example CCDA"
+          }
+        }]
+      }
+    }]
+  }]
+}
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Server: nginx/1.14.0 (Ubuntu)
+Date: Fri, 23 Oct 2020 04:54:56 GMT
+Content-Type: application/fhir+json;charset=utf-8
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Response Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType" : "OperationOutcome",
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n      &lt;p&gt;The attachments can not be associated with a current claim or prior authorization and are being held for association with a future claim or prior authorization.&lt;/p&gt;\n    &lt;/div&gt;"
+  },
+  "issue" : [{
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "The attachments can not be associated with a current claim or prior authorization and are being held for association with a future claim or prior authorization."
+    }
+  }]
+}
+</code></pre></div>    </div>
+
+    <h5 id="rendered-documents-1">Rendered Documents</h5>
+
+    <p><em>This is the default view using a HTML5 browser. The content may not render correctly in HTML 4.0 and older browsers. Typically a CCDA stylesheet is used to make this data easier to read and arrange according to provider preferences</em></p>
+
+    <embed type="text/html" frameborder="1" width="640" height="480" src="data:text/html;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUyIiA/PjxDbGluaWNhbERvY3VtZW50IHhtbG5zPSJ1cm46aGw3LW9yZzp2MyI+PHJlYWxtQ29kZSBjb2RlPSJVUyIgLz48dHlwZUlkIGV4dGVuc2lvbj0iUE9DRF9IRDAwMDA0MCIgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMS4zIiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuNzIuMS41MTY5MyIgLz48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4xLjEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS4xIiBleHRlbnNpb249IjIwMTUtMDgtMDEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS43IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjEuNyIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxpZCBhc3NpZ25pbmdBdXRob3JpdHlOYW1lPSJFUEMiIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMTMuNDUxLjIuNy44LjY4ODg4My4xMzE2MDAyMDciIC8+PGNvZGUgY29kZT0iMTE1MDQtOCIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4xIiBjb2RlU3lzdGVtTmFtZT0iTE9JTkMiIGRpc3BsYXlOYW1lPSJQcm92aWRlciB1bnNwZWNpZmllZCBPcGVyYXRpb24gTm90ZSIgLz48dGl0bGU+T3BlcmF0aXZlIE5vdGU8L3RpdGxlPjxlZmZlY3RpdmVUaW1lIHZhbHVlPSIyMDIwMDIyMDAxMjcxNS0wNjAwIiAvPjxjb25maWRlbnRpYWxpdHlDb2RlIGNvZGU9Ik4iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMjUiIGRpc3BsYXlOYW1lPSJOb3JtYWwiIC8+PGxhbmd1YWdlQ29kZSBjb2RlPSJlbi1VUyIgLz48c2V0SWQgYXNzaWduaW5nQXV0aG9yaXR5TmFtZT0iRVBDIiBleHRlbnNpb249IjZhZTI2M2RhLTUzYjItMTFlYS04MDk5LTAwNTA1Njg2MWJjNiIgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjEuMSIgLz48dmVyc2lvbk51bWJlciB2YWx1ZT0iMSIgLz48cmVjb3JkVGFyZ2V0PjxwYXRpZW50Um9sZT48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjMuNjg4ODg0LjEwMCIgZXh0ZW5zaW9uPSJNQVk0NjgyODMwIiAvPjxhZGRyIHVzZT0iSFAiPjxzdHJlZXRBZGRyZXNzTGluZT4xIE4gUmhvZGUgSXNsYW5kIEF2ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5DRVJSTyBHT1JEPC9jb3VudHk+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB2YWx1ZT0ibWFpbHRvOmpvaG50ZXN0MUB0ZXN0LmNvbSIgLz48cGF0aWVudD48bmFtZSB1c2U9IkwiPjxwcmVmaXggcXVhbGlmaWVyPSJUSVRMRSI+TXIuIDwvcHJlZml4PjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+VEVTVDwvZ2l2ZW4+PGZhbWlseT5URVNUPC9mYW1pbHk+PC9uYW1lPjxuYW1lIHVzZT0iUCI+PGdpdmVuPkpvaG48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48bmFtZSB1c2U9IlAiPjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+UC48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48YWRtaW5pc3RyYXRpdmVHZW5kZXJDb2RlIGNvZGU9Ik0iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMSIgY29kZVN5c3RlbU5hbWU9IkFkbWluaXN0cmF0aXZlR2VuZGVyQ29kZSIgZGlzcGxheU5hbWU9Ik1hbGUiIC8+PGJpcnRoVGltZSB2YWx1ZT0iMTk1MzA5MjAiIC8+PHNkdGM6ZGVjZWFzZWRJbmQgdmFsdWU9ImZhbHNlIiB4bWxuczpzZHRjPSJ1cm46aGw3LW9yZzpzZHRjIiAvPjxtYXJpdGFsU3RhdHVzQ29kZSBjb2RlPSJNIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjIiIGNvZGVTeXN0ZW1OYW1lPSJNYXJpdGFsU3RhdHVzQ29kZSIgZGlzcGxheU5hbWU9Ik1hcnJpZWQiIC8+PHJlbGlnaW91c0FmZmlsaWF0aW9uQ29kZSBjb2RlPSIxMDI4IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjEwNzYiIGNvZGVTeXN0ZW1OYW1lPSJSZWxpZ2lvdXNBZmZpbGlhdGlvbiIgLz48cmFjZUNvZGUgY29kZT0iMjEwNi0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjIzOCIgY29kZVN5c3RlbU5hbWU9IkNEQyBSYWNlIGFuZCBFdGhuaWNpdHkiIGRpc3BsYXlOYW1lPSJXaGl0ZSIgLz48ZXRobmljR3JvdXBDb2RlIGNvZGU9IjIxODYtNSIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4yMzgiIGNvZGVTeXN0ZW1OYW1lPSJDREMgUmFjZSBhbmQgRXRobmljaXR5IiBkaXNwbGF5TmFtZT0iTm90IEhpc3BhbmljIG9yIExhdGlubyIgLz48bGFuZ3VhZ2VDb21tdW5pY2F0aW9uPjxsYW5ndWFnZUNvZGUgY29kZT0iZW5nIiAvPjxtb2RlQ29kZSBjb2RlPSJFV1IiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuNjAiIGRpc3BsYXlOYW1lPSJFeHByZXNzZWQgV3JpdHRlbiIgLz48cHJlZmVyZW5jZUluZCB2YWx1ZT0idHJ1ZSIgLz48L2xhbmd1YWdlQ29tbXVuaWNhdGlvbj48L3BhdGllbnQ+PHByb3ZpZGVyT3JnYW5pemF0aW9uPjxpZCByb290PSIxLjIuODQwLjExNDM1MC4xLjEzLjQ1MS4yLjcuMi42ODg4NzkiIGV4dGVuc2lvbj0iMzcyMDAiIC8+PG5hbWU+UFJPVklERVIgQ2xpbmljPC9uYW1lPjx0ZWxlY29tIG51bGxGbGF2b3I9Ik5BIiAvPjxhZGRyIHVzZT0iV1AiPjxzdHJlZXRBZGRyZXNzTGluZT4yIDFzdCBTdCBTVzwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5PTE1TVEVEPC9jb3VudHk+PGNpdHk+Uk9DSEVTVEVSPC9jaXR5PjxzdGF0ZT5NTjwvc3RhdGU+PHBvc3RhbENvZGU+NTU5MDU8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48L3Byb3ZpZGVyT3JnYW5pemF0aW9uPjwvcGF0aWVudFJvbGU+PC9yZWNvcmRUYXJnZXQ+PGF1dGhvcj48dGltZSB2YWx1ZT0iMjAyMDAyMjAwMTI3MTUtMDYwMCIgLz48YXNzaWduZWRBdXRob3I+PGlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMSIgZXh0ZW5zaW9uPSI4LjkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iTkEiIC8+PHRlbGVjb20gbnVsbEZsYXZvcj0iTkEiIC8+PGFzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxtYW51ZmFjdHVyZXJNb2RlbE5hbWU+RXBpYyAtIFZlcnNpb24gOC45PC9tYW51ZmFjdHVyZXJNb2RlbE5hbWU+PHNvZnR3YXJlTmFtZT5FcGljIC0gVmVyc2lvbiA4Ljk8L3NvZnR3YXJlTmFtZT48L2Fzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxyZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQXV0aG9yPjwvYXV0aG9yPjxjdXN0b2RpYW4+PGFzc2lnbmVkQ3VzdG9kaWFuPjxyZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQ3VzdG9kaWFuPjwvY3VzdG9kaWFuPjxsZWdhbEF1dGhlbnRpY2F0b3I+PHRpbWUgdmFsdWU9IjIwMjAwMjIwMDEyNzE1LTA2MDAiIC8+PHNpZ25hdHVyZUNvZGUgY29kZT0iUyIgLz48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgZXh0ZW5zaW9uPSIxMTExMTExMTExIiAvPjxjb2RlIG51bGxGbGF2b3I9IlVOSyIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJvY2hlc3RlcjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1LTAwMDE8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IldQIiB2YWx1ZT0idGVsOisxLTUwNy02NjYtNjY2NiIgLz48YXNzaWduZWRQZXJzb24+PG5hbWUgdXNlPSJMIj48Z2l2ZW4+Sm9objwvZ2l2ZW4+PGdpdmVuPkg8L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjxzdWZmaXggcXVhbGlmaWVyPSJBQyI+IE0uRC48L3N1ZmZpeD48L25hbWU+PC9hc3NpZ25lZFBlcnNvbj48L2Fzc2lnbmVkRW50aXR5PjwvbGVnYWxBdXRoZW50aWNhdG9yPjxwYXJ0aWNpcGFudCB0eXBlQ29kZT0iSU5EIj48dGltZSB2YWx1ZT0iMjAxODA4MTAiIC8+PGFzc29jaWF0ZWRFbnRpdHkgY2xhc3NDb2RlPSJFQ09OIj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuODI3NjY1IiBleHRlbnNpb249IjExMTExMTExIiAvPjxjb2RlIGNvZGU9IlNQUyIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNS4xMTEiIGNvZGVTeXN0ZW1OYW1lPSJSb2xlQ29kZSIgZGlzcGxheU5hbWU9IlNwb3VzZSI+PG9yaWdpbmFsVGV4dD5TcG91c2U8L29yaWdpbmFsVGV4dD48L2NvZGU+PGFkZHIgdXNlPSJIUCI+PHN0cmVldEFkZHJlc3NMaW5lPjEgTm9ydGggSXNsYW5kIEF2ZW51ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IkhQIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48YXNzb2NpYXRlZFBlcnNvbj48bmFtZT5DYXJvbCBNZXllcjwvbmFtZT48L2Fzc29jaWF0ZWRQZXJzb24+PC9hc3NvY2lhdGVkRW50aXR5PjwvcGFydGljaXBhbnQ+PGRvY3VtZW50YXRpb25PZiB0eXBlQ29kZT0iRE9DIj48c2VydmljZUV2ZW50IGNsYXNzQ29kZT0iUFJPQyI+PGNvZGUgY29kZT0iNzc3Nzc3NzIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuOTYiIGNvZGVTeXN0ZW1OYW1lPSJTTk9NRUQgQ1QiIGRpc3BsYXlOYW1lPSJQcm9jZWR1cmUiIC8+PGVmZmVjdGl2ZVRpbWU+PGxvdyBudWxsRmxhdm9yPSJVTksiIC8+PGhpZ2ggbnVsbEZsYXZvcj0iVU5LIiAvPjwvZWZmZWN0aXZlVGltZT48cGVyZm9ybWVyIHR5cGVDb2RlPSJQUFJGIj48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgLz48Y29kZSBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My4zLjg4LjEyLjMyMjEuNC4yIiBjb2RlU3lzdGVtTmFtZT0iTlVDQyIgbnVsbEZsYXZvcj0iTkkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iVU5LIiAvPjx0ZWxlY29tIG51bGxGbGF2b3I9IlVOSyIgLz48L2Fzc2lnbmVkRW50aXR5PjwvcGVyZm9ybWVyPjwvc2VydmljZUV2ZW50PjwvZG9jdW1lbnRhdGlvbk9mPjxjb21wb25lbnQ+PHN0cnVjdHVyZWRCb2R5Pjxjb21wb25lbnQ+PHNlY3Rpb24+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4yNyIgLz48Y29kZSBjb2RlPSIyOTU1NC0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlNVUkdFUlkgUFJPQ0VEVVJFIiAvPjx0aXRsZT5TdXJnZXJ5IERldGFpbHM8L3RpdGxlPjx0ZXh0Pjx0YWJsZT48Y29sZ3JvdXA+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjE1JSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48L2NvbGdyb3VwPjx0aGVhZD48dHI+PHRoPkRhdGUvVGltZTwvdGg+PHRoPlN0YXR1czwvdGg+PHRoPkxvY2F0aW9uPC90aD48dGg+T1I8L3RoPjx0aD5TZXJ2aWNlPC90aD48dGg+UGF0aWVudCBDbGFzczwvdGg+PHRoPkNhc2UgQ2xhc3M8L3RoPjx0aD5DYXNlIFR5cGU8L3RoPjx0aD5UcmF1bWEgQ2FzZT88L3RoPjwvdHI+PC90aGVhZD48dGJvZHk+PHRyPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjwvdHI+PC90Ym9keT48L3RhYmxlPjxiciAvPjxsaXN0PjxjYXB0aW9uPkFkZGl0b25hbCBOb3RlczwvY2FwdGlvbj48aXRlbT48Y2FwdGlvbj5URVNULCBKT0hOIEggLSAwMi8xNy8yMDIwIDExOjE1IEFNIENTVDwvY2FwdGlvbj48cGFyYWdyYXBoPiA8YnIgLz4gPGJyIC8+UFJPQ0VEVVJFKFMpPGJyIC8+T3BlbiB0YWtlZG93biBvZiBhZGhlc2lvbnMgKDEgaG91cikuIDxiciAvPlJlc2VjdGlvbiBhcHByb3hpbWF0ZWx5IDc1IGNtICBvZiB0ZXJtaW5hbCBpbGV1bSBhbmQgY2VjdW0gYW5kIHBvcnRpb24gb2YgYXNjZW5kaW5nIGNvbG9uLiA8YnIgLz5JbGVvYXNjZW5kaW5nIGNvbG9zdG9teSB3aXRoIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgcnVubmluZyBvZiB0aGUgc21hbGwgYm93ZWwuPGJyIC8+PGJyIC8+U1VSR0VPTihTKTxiciAvPkRyLiBKb2huIFRFU1QuIDxiciAvPjxiciAvPkdFTkVSQUwgU1VSR0VSWSBSRVNJREVOVDogRHIuIFRFU1QuPGJyIC8+PGJyIC8+QU5FU1RIRVNJQSBUWVBFPGJyIC8+R2VuZXJhbC48YnIgLz48YnIgLz5QUkUtT1BFUkFUSVZFIERJQUdOT1NJUzxiciAvPkNyb2huJ3MgZGlzZWFzZSwgc3RyaWN0dXJpbmcgb2YgYW4gYXJlYSBhbmQgQ1QgZW50ZXJvZ3JhcGh5IGV2aWRlbmNlIG9mIENyb2huJ3MgZGlzZWFzZSBpbiB0aGUgdGVybWluYWwgNzUgY20gb2YgaWxldW0uPGJyIC8+PGJyIC8+UE9TVC1PUEVSQVRJVkUgRElBR05PU0lTPGJyIC8+Q3JvaG4ncyBkaXNlYXNlLCBzdHJpY3R1cmluZyBvZiBhbiBhcmVhIGFuZCBDVCBlbnRlcm9ncmFwaHkgZXZpZGVuY2Ugb2YgQ3JvaG4ncyBkaXNlYXNlIGluIHRoZSB0ZXJtaW5hbCA3NSBjbSBvZiBpbGV1bS48YnIgLz48YnIgLz5GSU5ESU5HUzxiciAvPlNlZSBiZWxvdy48YnIgLz48YnIgLz5ERVNDUklQVElPTiBPRiBQUk9DRURVUkU8YnIgLz5VbmRlciBnZW5lcmFsIGFuZXN0aGVzaWEgaW4gdGhlIHN1cGluZSBwb3NpdGlvbiwgcGF0aWVudCBwcmVwcGVkIGFuZCBkcmFwZWQuIEEgbWlkLW1pZGxpbmUgaW5jaXNpb24gbWFkZSBsYXJnZSBlbm91Z2ggZm9yIHRoZSBIYW5kUG9ydCB0byBiZSBwbGFjZWQgZXhjZXB0IHdlIHJhbiBpbnRvIG1hbnkgYWRoZXNpb25zLiBXZSB0aGVuIGRlY2lkZWQgdG8gcHJvY2VlZCBvcGVuLiBXZSByZWFsbHkgZGlkIG5vdCBldmVuIGJlZ2luIHRvIGRvIHRoZSBsYXBhcm9zY29waWMgcHJvY2VkdXJlLiBUYWtlZG93biBvZiBhZGhlc2lvbnMgdG9vayBhYm91dCA0NSBtaW51dGVzIHRvIDEgaG91ci4gVGhlIGFuYXRvbXkgd2FzIG9yaWVudGVkIGNvcnJlY3RseS4gVXJldGVycyB3ZXJlIG5vdCBzZWVuLiBUaGUgdGVybWluYWwgaWxldW0gd2FzIGNhdWdodCBkb3duIGludG8gdGhlIHBlbHZpcy4gVGhpcyB3YXMgYWxsIG1vYmlsaXplZC4gQSBwb2ludCB3YXMgY2hvc2VuIG9uIHRoZSB0ZXJtaW5hbCBpbGV1bSBhYm92ZSB0aGUgZXZpZGVuY2Ugb2YgZGlzZWFzZSAoNzUgY20pIGFuZCBhIHBvaW50IGNob3NlbiBvbiB0aGUgYXNjZW5kaW5nIGNvbG9uIGp1c3QgYWJvdmUgdGhlIGNlY3VtIGFzIHRoZSBsaW5lIG9mIGRpc3RhbCB0cmFuc2VjdGlvbi4gVGhlIGludGVydmVuaW5nIG1lc2VudGVyeSB3YXMgYWx0ZXJuYXRpdmVseSBjbGFtcGVkLCB0aWVkLCBhbmQgTGlnYVN1cmVkLiBUaGUgc3BlY2ltZW4gd2FzIHJlbW92ZWQsIGFuZCBhIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgaWxlb2FzY2VuZGluZyBjb2xvc3RvbXkgd2FzIHRoZW4gY29uc3RydWN0ZWQgd2l0aG91dCBkaWZmaWN1bHR5LiBQb3N0IHN0YXBsaW5nLCB2aXN1YWxpemF0aW9uIHJldmVhbGVkIGV4Y2VsbGVudCBibG9vZCBzdXBwbHksIG5vIHRlbnNpb24sIGJpZyBhbmFzdG9tb3Npcy4gVGhlIG1lc2VudGVyeSBkZWZlY3Qgd2FzIHJlbGF0aXZlbHkgc21hbGwgYW5kIGNsb3NlZCB3aXRoIHJ1bm5pbmcgMy0wIGNocm9taWMuIFRoZSBhYmRvbWVuIHdhcyB0aG9yb3VnaGx5IGlycmlnYXRlZCBudW1lcm91cyB0aW1lcyB3aXRoIG5vcm1hbCBzYWxpbmUsIGJsZWVkaW5nIGNvbnRyb2xsZWQgd2l0aCBjYXV0ZXJ5LCBhbmQgdGhlIGFiZG9tZW4gd2FzIGFnYWluIGlycmlnYXRlZCB3aXRoIG5vcm1hbCBzYWxpbmUuIFRoZSBzbWFsbCBib3dlbCB3YXMgcnVuIGJhY2sgdG8gdGhlIGxpZ2FtZW50IG9mIFRyZWl0eiwgYW5kIHRoZXJlIHdhcyBubyBvdGhlciBldmlkZW5jZSBvZiBDcm9obidzIGRpc2Vhc2UuIFRoZSBhYmRvbWVuIHdhcyB0aGVuIGNsb3NlZCBvdmVyIFNlcHJhZmlsbSB1c2luZyBhIGNvbWJpbmF0aW9uIG9mIHJ1bm5pbmcgZG91YmxlIFBEUyBpbiB0aGUgbWlkbGluZSBmYXNjaWEgYW5kIGludGVycnVwdGVkICMxIFZpY3J5bCBpbiB0aGUgYXJlYSBvZiB0aGUgb2xkIG1lc2guIFRoZSBza2luIHdhcyBjbG9zZWQgd2l0aCBhIHJ1bm5pbmcgc3ViY3V0aWN1bGFyIFZpY3J5bC48YnIgLz48YnIgLz5TUEVDSU1FTlM8YnIgLz5UZXJtaW5hbCBpbGV1bSwgY2VjdW0sIGFwcGVuZGl4LCBwb3J0aW9uIGFzY2VuZGluZyBjb2xvbjxiciAvPjxiciAvPkRSQUlOUzxiciAvPk5vIGRyYWlucy4gPGJyIC8+PGJyIC8+Tm8gc3RvbWFzLjxiciAvPjxiciAvPkVTVElNQVRFRCBCTE9PRCBMT1NTPGJyIC8+TGVzcyB0aGFuIDEwMCBjYy48YnIgLz48YnIgLz5UUFI6ICAyICAgPGJyIC8+PGJyIC8+PGJyIC8+Sm9obiBILiBURVNULCBNLkQuPGJyIC8+REQ6ICAwMi8xNy8yMDIwIDExOjAyOjQxIENUPGJyIC8+RFQ6ICAwMi8xNy8yMDIwIDExOjI4OjU4IENUPGJyIC8+Sm9iIElEOiAgODcxNjIyMDAyL3NqcDxiciAvPjxiciAvPjwvcGFyYWdyYXBoPjwvaXRlbT48L2xpc3Q+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uIG51bGxGbGF2b3I9Ik5JIj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI1IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjUiIGV4dGVuc2lvbj0iMjAxNC0wNi0wOSIgLz48Y29kZSBjb2RlPSI1OTc3NC0wIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkFuZXN0aGVzaWEgUmVjb3JkcyIgLz48dGl0bGU+QW5lc3RoZXNpYSBSZWNvcmQ8L3RpdGxlPjx0ZXh0Pjxjb250ZW50IElEPSJub2YxIj5Ob3Qgb24gZmlsZTwvY29udGVudD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjxjb21wb25lbnQ+PHNlY3Rpb24gbnVsbEZsYXZvcj0iTkkiPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzQiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNCIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxjb2RlIGNvZGU9IjEwMjE5LTQiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJlb3BlcmF0aXZlIERpYWdub3NpcyIgLz48dGl0bGU+UHJlb3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjIiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbiBudWxsRmxhdm9yPSJOSSI+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNSIgLz48Y29kZSBjb2RlPSIxMDIxOC02IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlBvc3RvcGVyYXRpdmUgRGlhZ25vc2lzIiAvPjx0aXRsZT5Qb3N0b3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjMiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjM3IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzciIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1NTEwOS0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkNvbXBsaWNhdGlvbnMiIC8+PHRpdGxlPkNvbXBsaWNhdGlvbnM8L3RpdGxlPjx0ZXh0PjxwYXJhZ3JhcGg+Q2hlY2sgU3VyZ2VyeSBEZXRhaWxzIHNlY3Rpb24uPC9wYXJhZ3JhcGg+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjE4LjIuOSIgLz48Y29kZSBjb2RlPSI1OTc3MC04IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBFc3RpbWF0ZWQgQmxvb2QgTG9zcyIgLz48dGl0bGU+UHJvY2VkdXJlIEVzdGltYXRlZCBCbG9vZCBMb3NzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI4IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjgiIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1OTc3Ni01IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBGaW5kaW5ncyIgLz48dGl0bGU+UHJvY2VkdXJlIEZpbmRpbmdzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjMxIiAvPjxjb2RlIGNvZGU9IjU5NzczLTIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbiIgLz48dGl0bGU+UHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbjwvdGl0bGU+PHRleHQ+PHBhcmFncmFwaD5DaGVjayBTdXJnZXJ5IERldGFpbHMgc2VjdGlvbi48L3BhcmFncmFwaD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjwvc3RydWN0dXJlZEJvZHk+PC9jb21wb25lbnQ+PC9DbGluaWNhbERvY3VtZW50Pg0K" />
+
+  </div>
+</div>
+<p><br /></p>
+
+<h5 id="scenario-2-laboratory-results-attachments">Scenario 2: Laboratory Results Attachments</h5>
+
+<p>This scenario is the same as Scenario 1a, except the Provider submits laboratory results supporting a claim. There are multiple attachments, each populated with a FHIR Observation resource. If a signature were required, the provider system would convert it to a signed FHIR document, as shown in the example in the signatures section.</p>
+
+<p>
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#unsolicited-attachment-scenario2" aria-expanded="false" aria-controls="collapseExample">
+    Click Here To See Example Laboratory Results Attachments
+  </button>
+</p>
+
+<div class="collapse" id="unsolicited-attachment-scenario2">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  # unsolicited-attachment-scenario2
+</code></pre></div>    </div>
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/$submit-attachment
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "TrackingId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/provider",
+      "value" : "trackingid456"
+    }
+  },
+  {
+    "name" : "AttachTo",
+    "valueCode" : "claim"
+  },
+  {
+    "name" : "PayerId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/payer-ids",
+      "value" : "Payer123"
+    }
+  },
+  {
+    "name" : "OrganizationId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1407071236"
+    }
+  },
+  {
+    "name" : "ProviderId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339108"
+    }
+  },
+  {
+    "name" : "MemberId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/member-ids",
+      "value" : "Member123"
+    }
+  },
+  {
+    "name" : "ServiceDate",
+    "valueDateTime" : "2022-06-16"
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "Code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11502-2",
+          "display" : "Laboratory report"
+        }],
+        "text" : "Laboratory report"
+      }
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "Observation",
+        "id" : "cdex-2020-04-23-hba1c-example",
+        "status" : "final",
+        "category" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code" : "laboratory",
+            "display" : "Laboratory"
+          }],
+          "text" : "Laboratory"
+        }],
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "4548-4",
+            "display" : "Hemoglobin A1c/Hemoglobin.total in Blood"
+          },
+          {
+            "system" : "http://www.ama-assn.org/go/cpt",
+            "code" : "83036",
+            "display" : "Hemoglobin; glycosylated (A1c)"
+          },
+          {
+            "system" : "http://example.org/lab-results",
+            "code" : "HBA1C",
+            "display" : "Glycated hemoglobin (HbA1c)"
+          }],
+          "text" : "glycated hemoglobin (HbA1c)"
+        },
+        "subject" : {
+          "display" : "Elden718 Halvorson124"
+        },
+        "effectiveDateTime" : "2022-06-16T10:21:08-07:00",
+        "performer" : [{
+          "display" : "Dr. John Doe"
+        }],
+        "valueQuantity" : {
+          "value" : 7.2,
+          "unit" : "%",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "%"
+        }
+      }
+    }]
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "Code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11502-2",
+          "display" : "Laboratory report"
+        }],
+        "text" : "Laboratory report"
+      }
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "Observation",
+        "id" : "cdex-2020-10-23-hba1c-example",
+        "status" : "final",
+        "category" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code" : "laboratory",
+            "display" : "Laboratory"
+          }],
+          "text" : "Laboratory"
+        }],
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "4548-4",
+            "display" : "Hemoglobin A1c/Hemoglobin.total in Blood"
+          },
+          {
+            "system" : "http://www.ama-assn.org/go/cpt",
+            "code" : "83036",
+            "display" : "Hemoglobin; glycosylated (A1c)"
+          },
+          {
+            "system" : "http://example.org/lab-results",
+            "code" : "HBA1C",
+            "display" : "Glycated hemoglobin (HbA1c)"
+          }],
+          "text" : "glycated hemoglobin (HbA1c)"
+        },
+        "subject" : {
+          "display" : "Elden718 Halvorson124"
+        },
+        "effectiveDateTime" : "2022-05-16T10:21:08-07:00",
+        "performer" : [{
+          "display" : "Dr. John Doe"
+        }],
+        "valueQuantity" : {
+          "value" : 7,
+          "unit" : "%",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "%"
+        }
+      }
+    }]
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "Code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11502-2",
+          "display" : "Laboratory report"
+        }],
+        "text" : "Laboratory report"
+      }
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "Observation",
+        "id" : "cdex-2020-07-23-hba1c-example",
+        "status" : "final",
+        "category" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code" : "laboratory",
+            "display" : "Laboratory"
+          }],
+          "text" : "Laboratory"
+        }],
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "4548-4",
+            "display" : "Hemoglobin A1c/Hemoglobin.total in Blood"
+          },
+          {
+            "system" : "http://www.ama-assn.org/go/cpt",
+            "code" : "83036",
+            "display" : "Hemoglobin; glycosylated (A1c)"
+          },
+          {
+            "system" : "http://example.org/lab-results",
+            "code" : "HBA1C",
+            "display" : "Glycated hemoglobin (HbA1c)"
+          }],
+          "text" : "glycated hemoglobin (HbA1c)"
+        },
+        "subject" : {
+          "display" : "Elden718 Halvorson124"
+        },
+        "effectiveDateTime" : "2022-04-16T10:21:08-07:00",
+        "performer" : [{
+          "display" : "Dr. John Doe"
+        }],
+        "valueQuantity" : {
+          "value" : 7,
+          "unit" : "%",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "%"
+        }
+      }
+    }]
+  }]
+}
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Server: nginx/1.14.0 (Ubuntu)
+Date: Fri, 23 Oct 2020 04:54:56 GMT
+Content-Type: application/fhir+json;charset=utf-8
+...(other headers)
+</code></pre></div>    </div>
+
+  </div>
+</div>
+<p><br /></p>
+
+<hr />
+
+<h3 id="signatures">Signatures</h3>
+
+<!--  {% include signature-support.md %}  -->
+<p class="bg-info">This specification does not require signatures but supports the transmission of signatures if business agreements require them.</p>
+
+<p>Some data consumers may require that the data they receive be signed. When signatures are required, the following general rules apply:</p>
+
+<ul>
+  <li>The signature represents a provider signature attesting that the information is true and accurate to the best of their knowledge.*</li>
+  <li>The returned information is either:
+    <ul>
+      <li>inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA)</li>
+      <li>or Transformed into a signed <a href="http://hl7.org/fhir/R4/documents.html">FHIR Document</a> with the signature in the <code class="language-plaintext highlighter-rouge">Bundle.signature</code></li>
+      <li>or a signed <a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a> with the signature in the  <a href="http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature">Signature Extension</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>* Consult with your Payer and your legal team for questions regarding legal liability associated with sharing and signing data.</p>
+
+<h4 id="the-payer-requirements">The Payer Requirements</h4>
+
+<ul>
+  <li>For <em>Unsolicited</em> Attachments, the Payer <em>pre-negotiates</em> with the Provider whether electronic or digital signatures are required. If signatures are required, <em>all</em> attachments will be signed by the provider submitting them.</li>
+  <li>For <em>Solicited</em> Attachments, the Payer <em>pre-negotiates</em> with the Provider whether electronic or digital signatures are required for:
+    <ol>
+      <li><em>all</em> attachments</li>
+      <li>or <em>only</em> for attachments where the attachment request communicates the signature requirement using the <code class="language-plaintext highlighter-rouge">Task.input</code> "signature" input parameter.</li>
+    </ol>
+  </li>
+  <li>The Payer/Requester follows the documentation on the <a href="signatures.html">Signatures</a> page to validate signatures.
+    <ul>
+      <li>If the signatures fail verification when processing the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation, the Data Source/Responder <strong>SHALL</strong> return an HTTP <code class="language-plaintext highlighter-rouge">400 Bad Request</code> <em>and</em> an OperationOutcome declaring that the signature was invalid.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="provider-requirements">Provider Requirements</h4>
+
+<ul>
+  <li>The Data Source follows the documentation on the <a href="signatures.html">Signatures</a> page for producing signatures.</li>
+  <li>When an electronic or digital signature is required, the Data Source returns either:
+    <ol>
+      <li>document(s) that are already inherently signed</li>
+      <li>FHIR resource(s) transformed into a <em>signed</em> FHIR Document.</li>
+      <li>or for requests using Questionnaire, a <em>signed</em> FHIR QuestionnaireResponse.</li>
+    </ol>
+  </li>
+  <li>if multiple documents need to be signed, systems should minimize the number of interactions required by the user</li>
+  <li>
+    <p>As discussed in the <a href="signatures.html#what-is-signed">What is Signed</a> section, a signed FHIR document could have objects that are individually signed within it as well. Therefore, if the Consumer/Requester incorrectly assumed there would be a signature (wet, electronic, or digital) on an individual returned object (e.g., CCDA, PDF, Image, CDA on FHIR, QuestionnaireResponse ), they can <em>re-request</em> the data using a Task-based request and use the <code class="language-plaintext highlighter-rouge">Task.input</code> signature flag to indicate that the Data Source needs to sign it.</p>
+  </li>
+  <li>In this example, the Provider submits a patient's active conditions to the Payer to support a claim.
+Unlike Scenario 1, which uses DocumentReference resources to index the C-CDA attachment, FHIR resources representing the patient's active conditions are transformed into a digitally signed FHIR Document bundle.</li>
+  <li>See the <a href="signatures.html">Signatures</a> page for a detailed explanation of how the signature was created and verified.</li>
+</ul>
+
+<p>
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#unsolicited-attachment-scenario3" aria-expanded="false" aria-controls="collapseExample">
+    Click Here To See Example Signed FHIR Resource Attachments
+  </button>
+</p>
+
+<div class="collapse" id="unsolicited-attachment-scenario3">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/$submit-attachment
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "TrackingId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/provider",
+      "value" : "21234657"
+    }
+  },
+  {
+    "name" : "AttachTo",
+    "valueCode" : "claim"
+  },
+  {
+    "name" : "PayerId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/payer-ids",
+      "value" : "payer123"
+    }
+  },
+  {
+    "name" : "OrganizationId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1407071236"
+    }
+  },
+  {
+    "name" : "ProviderId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339108"
+    }
+  },
+  {
+    "name" : "MemberId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/member-ids",
+      "value" : "234567"
+    }
+  },
+  {
+    "name" : "ServiceDate",
+    "valueDateTime" : "2022-06-16"
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "Code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11503-0",
+          "display" : "Medical records"
+        }],
+        "text" : "Medical records"
+      }
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "Bundle",
+        "id" : "cdex-document-digital-sig-example",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
+        },
+        "type" : "document",
+        "timestamp" : "2021-10-25T20:16:29-07:00",
+        "entry" : [{
+          "fullUrl" : "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
+          "resource" : {
+            "resourceType" : "Composition",
+            "id" : "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Composition&lt;/b&gt;&lt;a name=\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;a name=\"hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Composition &amp;quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&amp;quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Medical records &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"https://loinc.org/\"&gt;LOINC&lt;/a&gt;#11503-0)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;encounter&lt;/b&gt;: See on this page: urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2021-10-25 20:16:29-0700&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Active Conditions&lt;/p&gt;&lt;h3&gt;Attesters&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Mode&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Time&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Party&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;*&lt;/td&gt;&lt;td&gt;legal&lt;/td&gt;&lt;td&gt;2021-10-25 20:16:29-0700&lt;/td&gt;&lt;td&gt;See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+            },
+            "status" : "final",
+            "type" : {
+              "coding" : [{
+                "system" : "http://loinc.org",
+                "code" : "11503-0"
+              }],
+              "text" : "Medical records"
+            },
+            "subject" : {
+              "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+              "display" : "Example Patient"
+            },
+            "encounter" : {
+              "reference" : "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
+              "display" : "Example Encounter"
+            },
+            "date" : "2021-10-25T20:16:29-07:00",
+            "author" : [{
+              "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+              "display" : "Example Practitioner"
+            }],
+            "title" : "Active Conditions",
+            "attester" : [{
+              "mode" : "legal",
+              "time" : "2021-10-25T20:16:29-07:00",
+              "party" : {
+                "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+                "display" : "Example Practitioner"
+              }
+            }],
+            "section" : [{
+              "title" : "Active Condition 1",
+              "entry" : [{
+                "reference" : "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"
+              }]
+            }]
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+          "resource" : {
+            "resourceType" : "Practitioner",
+            "id" : "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+            "meta" : {
+              "lastUpdated" : "2013-05-05T16:13:03Z"
+            },
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Practitioner&lt;/b&gt;&lt;a name=\"0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;a name=\"hc0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Practitioner &amp;quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc&amp;quot; Updated &amp;quot;2013-05-05 16:13:03+0000&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-practitioner.html\"&gt;US Core Practitioner Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\"&gt;United States National Provider Identifier&lt;/a&gt;/9941339100&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: John Hancock &lt;/p&gt;&lt;/div&gt;"
+            },
+            "identifier" : [{
+              "system" : "http://hl7.org/fhir/sid/us-npi",
+              "value" : "9941339100"
+            }],
+            "name" : [{
+              "family" : "Hancock",
+              "given" : ["John"]
+            }]
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+          "resource" : {
+            "resourceType" : "Patient",
+            "id" : "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Patient&lt;/b&gt;&lt;a name=\"970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;a name=\"hc970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Patient &amp;quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-patient.html\"&gt;US Core Patient Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: Member Number/Member123&lt;/p&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Patient&lt;/p&gt;&lt;p&gt;&lt;b&gt;gender&lt;/b&gt;: male&lt;/p&gt;&lt;/div&gt;"
+            },
+            "identifier" : [{
+              "type" : {
+                "coding" : [{
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "MB"
+                }]
+              },
+              "system" : "http://example.org/cdex/payer/member-ids",
+              "value" : "Member123"
+            }],
+            "active" : true,
+            "name" : [{
+              "text" : "CDEX Example Patient",
+              "family" : "Patient",
+              "given" : ["CDEX Example"]
+            }],
+            "gender" : "male"
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570",
+          "resource" : {
+            "resourceType" : "Condition",
+            "id" : "014a68ec-d691-49e0-b980-91b0d924e570",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Condition_014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Condition&lt;/b&gt;&lt;a name=\"014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;a name=\"hc014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Condition &amp;quot;014a68ec-d691-49e0-b980-91b0d924e570&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-condition-problems-health-concerns.html\"&gt;US Core Condition Problems and Health Concerns Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1&lt;/code&gt;/1&lt;/p&gt;&lt;p&gt;&lt;b&gt;clinicalStatus&lt;/b&gt;: Active &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html\"&gt;Condition Clinical Status Codes&lt;/a&gt;#active)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Problem List Item &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html\"&gt;Condition Category Codes&lt;/a&gt;#problem-list-item)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Type 2 Diabetes Mellitus &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"https://browser.ihtsdotools.org/\"&gt;SNOMED CT&lt;/a&gt;#44054006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: See on this page: urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&lt;/p&gt;&lt;p&gt;&lt;b&gt;onset&lt;/b&gt;: 2006&lt;/p&gt;&lt;p&gt;&lt;b&gt;asserter&lt;/b&gt;: See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&lt;/p&gt;&lt;/div&gt;"
+            },
+            "identifier" : [{
+              "system" : "urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1",
+              "value" : "1"
+            }],
+            "clinicalStatus" : {
+              "coding" : [{
+                "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code" : "active"
+              }]
+            },
+            "category" : [{
+              "coding" : [{
+                "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code" : "problem-list-item",
+                "display" : "Problem List Item"
+              }],
+              "text" : "Problem List Item"
+            }],
+            "code" : {
+              "coding" : [{
+                "system" : "http://snomed.info/sct",
+                "code" : "44054006",
+                "display" : "Type 2 Diabetes Mellitus"
+              }]
+            },
+            "subject" : {
+              "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
+            },
+            "onsetDateTime" : "2006",
+            "asserter" : {
+              "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+            }
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
+          "resource" : {
+            "resourceType" : "Encounter",
+            "id" : "5ce5c83a-000f-47d2-941c-039358cc9112",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Encounter&lt;/b&gt;&lt;a name=\"5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;a name=\"hc5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Encounter &amp;quot;5ce5c83a-000f-47d2-941c-039358cc9112&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-encounter.html\"&gt;US Core Encounter Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: finished&lt;/p&gt;&lt;p&gt;&lt;b&gt;class&lt;/b&gt;: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = 'emergency', stated as 'null')&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Unknown (qualifier value) &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"https://browser.ihtsdotools.org/\"&gt;SNOMED CT&lt;/a&gt;#261665006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: See on this page: urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient&lt;/p&gt;&lt;h3&gt;Participants&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Individual&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;*&lt;/td&gt;&lt;td&gt;See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;period&lt;/b&gt;: 2021-10-25 20:10:29-0700 --&amp;gt; 2021-10-25 20:16:29-0700&lt;/p&gt;&lt;p&gt;&lt;b&gt;serviceProvider&lt;/b&gt;: See on this page: urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization&lt;/p&gt;&lt;/div&gt;"
+            },
+            "status" : "finished",
+            "class" : {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code" : "EMER"
+            },
+            "type" : [{
+              "coding" : [{
+                "system" : "http://snomed.info/sct",
+                "code" : "261665006",
+                "display" : "Unknown (qualifier value)"
+              }],
+              "text" : "Unknown (qualifier value)"
+            }],
+            "subject" : {
+              "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+              "display" : "CDEX Example Patient"
+            },
+            "participant" : [{
+              "individual" : {
+                "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+                "display" : "John Hancock"
+              }
+            }],
+            "period" : {
+              "start" : "2021-10-25T20:10:29-07:00",
+              "end" : "2021-10-25T20:16:29-07:00"
+            },
+            "serviceProvider" : {
+              "reference" : "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
+              "display" : "CDEX Example Organization"
+            }
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
+          "resource" : {
+            "resourceType" : "Organization",
+            "id" : "e37f004b-dc10-422b-b833-cdaa10a055a3",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Organization&lt;/b&gt;&lt;a name=\"e37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;a name=\"hce37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Organization &amp;quot;e37f004b-dc10-422b-b833-cdaa10a055a3&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-organization.html\"&gt;US Core Organization Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Organization&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: ph: (+1) 555-555-5555, &lt;a href=\"mailto:customer-service@example.org\"&gt;customer-service@example.org&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 1 CDEX Lane Boston MA 01002 USA &lt;/p&gt;&lt;/div&gt;"
+            },
+            "identifier" : [{
+              "system" : "http://hl7.org/fhir/sid/us-npi",
+              "value" : "1234567893"
+            }],
+            "active" : true,
+            "name" : "CDEX Example Organization",
+            "telecom" : [{
+              "system" : "phone",
+              "value" : "(+1) 555-555-5555"
+            },
+            {
+              "system" : "email",
+              "value" : "customer-service@example.org"
+            }],
+            "address" : [{
+              "line" : ["1 CDEX Lane"],
+              "city" : "Boston",
+              "state" : "MA",
+              "postalCode" : "01002",
+              "country" : "USA"
+            }]
+          }
+        }],
+        "signature" : {
+          "type" : [{
+            "system" : "urn:iso-astm:E1762-95:2013",
+            "code" : "1.2.840.10065.1.12.1.5",
+            "display" : "Verification Signature"
+          }],
+          "when" : "2021-10-05T22:42:19-07:00",
+          "who" : {
+            "reference" : "https://example.org/Practitioner/123"
+          },
+          "onBehalfOf" : {
+            "reference" : "https://example.org/Organization/123"
+          },
+          "data" : "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWRYTmxJam9pYzJsbklpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuLm41QzBndGRrUkY5TGpDSHAyT1ZCUEl6UDI5N05oYUZyekNZUXA0QWRERWkya25aN2wtNHViRW5wbzgzZ1o5OGFOTGM5ZncwY1Y5Sm9yLUVYcUx2em44MjVjeUFvbnlKU0tteFhWcEt6SU9wV25kNUJjV3lpSUpjOXRoV2NoVkUxUHpMMUhzNjVjaTIzeWZXNlpvbjVzX3htVlN1NkZmT2N1UzNlWnlMOEFQVW9RMDAxdlB4QmR4bkRLNDg2ZFR0dGhHMExjdUl5V1c5Y0NZOTZabDRGWUJ4eDIwdjl6RkVQOW14UXE3Y2V4bGQyY210bmRhYTlxaHVUcVdoTjJsTUlCZTgybm1XZU9CSVlLVUdKaHVxd3VMQjNwSXBITWFFMy1PR1VTQldTQ3N5ZU10aXg4VUpqaG5MSS1ZelhpOTNmQnFxVk9SQkl1ZF9UeHRCS3ZISkQ4dEdvemNlb0JhVGw0MTdUOFpKLXlQejQ2azEyeWctQktNZFZ0RnZnTl90clNyMk0wVE5OZkZOVGlXNHlpQzRKa1k1Um93UjVYSEFqbFZsQlNSYnc4MXJxUDlMbmdvZGd0bWhaaFJDc2xyWVFNbkxwQktCYmtMUDNYX1NTT0F5a3d4TUxHMnRrZGUybjRRWFpqVVRlNHhTX0FRMzgwUHFuLWZTb1U1NDFRSVZV"
+        }
+      }
+    }]
+  }]
+}
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Server: nginx/1.14.0 (Ubuntu)
+Date: Fri, 23 Oct 2020 04:54:56 GMT
+Content-Type: application/fhir+json;charset=utf-8
+...(other headers)
+</code></pre></div>    </div>
+
+  </div>
+</div>
+<p><br /></p>
+
+<h4 id="example-the-signature-cannot-be-verified">Example: The Signature Cannot Be Verified</h4>
+
+<p>This example is the same as the previous one, except the digital signature cannot be verified.  However, the interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.</p>
+
+<ul>
+  <li>In this example, the Provider submits the patient's active conditions to the Payer to support a claim.</li>
+  <li>Unlike the previous example, the Payer cannot verify the signature because the certificate is expired.</li>
+  <li>An HTTP <code class="language-plaintext highlighter-rouge">400 Bad Request</code> and OperationOutcome are returned.</li>
+</ul>
+
+<p>
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#unsolicited-attachment-scenario7" aria-expanded="false" aria-controls="collapseExample">
+    Click Here To See an Example Where a Signature Cannot Be Verified
+  </button>
+</p>
+
+<div class="collapse" id="unsolicited-attachment-scenario7">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/$submit-attachment
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "TrackingId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/provider",
+      "value" : "21234657"
+    }
+  },
+  {
+    "name" : "AttachTo",
+    "valueCode" : "claim"
+  },
+  {
+    "name" : "PayerId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/payer-ids",
+      "value" : "payer123"
+    }
+  },
+  {
+    "name" : "OrganizationId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1407071236"
+    }
+  },
+  {
+    "name" : "ProviderId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339108"
+    }
+  },
+  {
+    "name" : "MemberId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/member-ids",
+      "value" : "234567"
+    }
+  },
+  {
+    "name" : "ServiceDate",
+    "valueDateTime" : "2022-06-16"
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "Code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11503-0",
+          "display" : "Medical records"
+        }],
+        "text" : "Medical records"
+      }
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "Bundle",
+        "id" : "cdex-document-digital-sig-example",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
+        },
+        "type" : "document",
+        "timestamp" : "2021-10-25T20:16:29-07:00",
+        "entry" : [{
+          "fullUrl" : "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
+          "resource" : {
+            "resourceType" : "Composition",
+            "id" : "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Composition&lt;/b&gt;&lt;a name=\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;a name=\"hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Composition &amp;quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&amp;quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Medical records &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"https://loinc.org/\"&gt;LOINC&lt;/a&gt;#11503-0)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;encounter&lt;/b&gt;: See on this page: urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2021-10-25 20:16:29-0700&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Active Conditions&lt;/p&gt;&lt;h3&gt;Attesters&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Mode&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Time&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Party&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;*&lt;/td&gt;&lt;td&gt;legal&lt;/td&gt;&lt;td&gt;2021-10-25 20:16:29-0700&lt;/td&gt;&lt;td&gt;See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+            },
+            "status" : "final",
+            "type" : {
+              "coding" : [{
+                "system" : "http://loinc.org",
+                "code" : "11503-0"
+              }],
+              "text" : "Medical records"
+            },
+            "subject" : {
+              "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+              "display" : "Example Patient"
+            },
+            "encounter" : {
+              "reference" : "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
+              "display" : "Example Encounter"
+            },
+            "date" : "2021-10-25T20:16:29-07:00",
+            "author" : [{
+              "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+              "display" : "Example Practitioner"
+            }],
+            "title" : "Active Conditions",
+            "attester" : [{
+              "mode" : "legal",
+              "time" : "2021-10-25T20:16:29-07:00",
+              "party" : {
+                "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+                "display" : "Example Practitioner"
+              }
+            }],
+            "section" : [{
+              "title" : "Active Condition 1",
+              "entry" : [{
+                "reference" : "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"
+              }]
+            }]
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+          "resource" : {
+            "resourceType" : "Practitioner",
+            "id" : "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+            "meta" : {
+              "lastUpdated" : "2013-05-05T16:13:03Z"
+            },
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Practitioner&lt;/b&gt;&lt;a name=\"0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;a name=\"hc0820c16d-91de-4dfa-a3a6-f140a516a9bc\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Practitioner &amp;quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc&amp;quot; Updated &amp;quot;2013-05-05 16:13:03+0000&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-practitioner.html\"&gt;US Core Practitioner Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\"&gt;United States National Provider Identifier&lt;/a&gt;/9941339100&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: John Hancock &lt;/p&gt;&lt;/div&gt;"
+            },
+            "identifier" : [{
+              "system" : "http://hl7.org/fhir/sid/us-npi",
+              "value" : "9941339100"
+            }],
+            "name" : [{
+              "family" : "Hancock",
+              "given" : ["John"]
+            }]
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+          "resource" : {
+            "resourceType" : "Patient",
+            "id" : "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Patient&lt;/b&gt;&lt;a name=\"970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;a name=\"hc970af6c9-5bbd-4067-b6c1-d9b2c823aece\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Patient &amp;quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-patient.html\"&gt;US Core Patient Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: Member Number/Member123&lt;/p&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Patient&lt;/p&gt;&lt;p&gt;&lt;b&gt;gender&lt;/b&gt;: male&lt;/p&gt;&lt;/div&gt;"
+            },
+            "identifier" : [{
+              "type" : {
+                "coding" : [{
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "MB"
+                }]
+              },
+              "system" : "http://example.org/cdex/payer/member-ids",
+              "value" : "Member123"
+            }],
+            "active" : true,
+            "name" : [{
+              "text" : "CDEX Example Patient",
+              "family" : "Patient",
+              "given" : ["CDEX Example"]
+            }],
+            "gender" : "male"
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570",
+          "resource" : {
+            "resourceType" : "Condition",
+            "id" : "014a68ec-d691-49e0-b980-91b0d924e570",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Condition_014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Condition&lt;/b&gt;&lt;a name=\"014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;a name=\"hc014a68ec-d691-49e0-b980-91b0d924e570\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Condition &amp;quot;014a68ec-d691-49e0-b980-91b0d924e570&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-condition-problems-health-concerns.html\"&gt;US Core Condition Problems and Health Concerns Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1&lt;/code&gt;/1&lt;/p&gt;&lt;p&gt;&lt;b&gt;clinicalStatus&lt;/b&gt;: Active &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html\"&gt;Condition Clinical Status Codes&lt;/a&gt;#active)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Problem List Item &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html\"&gt;Condition Category Codes&lt;/a&gt;#problem-list-item)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Type 2 Diabetes Mellitus &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"https://browser.ihtsdotools.org/\"&gt;SNOMED CT&lt;/a&gt;#44054006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: See on this page: urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&lt;/p&gt;&lt;p&gt;&lt;b&gt;onset&lt;/b&gt;: 2006&lt;/p&gt;&lt;p&gt;&lt;b&gt;asserter&lt;/b&gt;: See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&lt;/p&gt;&lt;/div&gt;"
+            },
+            "identifier" : [{
+              "system" : "urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1",
+              "value" : "1"
+            }],
+            "clinicalStatus" : {
+              "coding" : [{
+                "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code" : "active"
+              }]
+            },
+            "category" : [{
+              "coding" : [{
+                "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code" : "problem-list-item",
+                "display" : "Problem List Item"
+              }],
+              "text" : "Problem List Item"
+            }],
+            "code" : {
+              "coding" : [{
+                "system" : "http://snomed.info/sct",
+                "code" : "44054006",
+                "display" : "Type 2 Diabetes Mellitus"
+              }]
+            },
+            "subject" : {
+              "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
+            },
+            "onsetDateTime" : "2006",
+            "asserter" : {
+              "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+            }
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
+          "resource" : {
+            "resourceType" : "Encounter",
+            "id" : "5ce5c83a-000f-47d2-941c-039358cc9112",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Encounter&lt;/b&gt;&lt;a name=\"5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;a name=\"hc5ce5c83a-000f-47d2-941c-039358cc9112\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Encounter &amp;quot;5ce5c83a-000f-47d2-941c-039358cc9112&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-encounter.html\"&gt;US Core Encounter Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: finished&lt;/p&gt;&lt;p&gt;&lt;b&gt;class&lt;/b&gt;: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = 'emergency', stated as 'null')&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Unknown (qualifier value) &lt;span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"&gt; (&lt;a href=\"https://browser.ihtsdotools.org/\"&gt;SNOMED CT&lt;/a&gt;#261665006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: See on this page: urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient&lt;/p&gt;&lt;h3&gt;Participants&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Individual&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;*&lt;/td&gt;&lt;td&gt;See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;period&lt;/b&gt;: 2021-10-25 20:10:29-0700 --&amp;gt; 2021-10-25 20:16:29-0700&lt;/p&gt;&lt;p&gt;&lt;b&gt;serviceProvider&lt;/b&gt;: See on this page: urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization&lt;/p&gt;&lt;/div&gt;"
+            },
+            "status" : "finished",
+            "class" : {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code" : "EMER"
+            },
+            "type" : [{
+              "coding" : [{
+                "system" : "http://snomed.info/sct",
+                "code" : "261665006",
+                "display" : "Unknown (qualifier value)"
+              }],
+              "text" : "Unknown (qualifier value)"
+            }],
+            "subject" : {
+              "reference" : "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+              "display" : "CDEX Example Patient"
+            },
+            "participant" : [{
+              "individual" : {
+                "reference" : "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+                "display" : "John Hancock"
+              }
+            }],
+            "period" : {
+              "start" : "2021-10-25T20:10:29-07:00",
+              "end" : "2021-10-25T20:16:29-07:00"
+            },
+            "serviceProvider" : {
+              "reference" : "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
+              "display" : "CDEX Example Organization"
+            }
+          }
+        },
+        {
+          "fullUrl" : "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
+          "resource" : {
+            "resourceType" : "Organization",
+            "id" : "e37f004b-dc10-422b-b833-cdaa10a055a3",
+            "text" : {
+              "status" : "generated",
+              "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Organization&lt;/b&gt;&lt;a name=\"e37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;a name=\"hce37f004b-dc10-422b-b833-cdaa10a055a3\"&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Resource Organization &amp;quot;e37f004b-dc10-422b-b833-cdaa10a055a3&amp;quot; &lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-organization.html\"&gt;US Core Organization Profile (version 6.1.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Organization&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: ph: (+1) 555-555-5555, &lt;a href=\"mailto:customer-service@example.org\"&gt;customer-service@example.org&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 1 CDEX Lane Boston MA 01002 USA &lt;/p&gt;&lt;/div&gt;"
+            },
+            "identifier" : [{
+              "system" : "http://hl7.org/fhir/sid/us-npi",
+              "value" : "1234567893"
+            }],
+            "active" : true,
+            "name" : "CDEX Example Organization",
+            "telecom" : [{
+              "system" : "phone",
+              "value" : "(+1) 555-555-5555"
+            },
+            {
+              "system" : "email",
+              "value" : "customer-service@example.org"
+            }],
+            "address" : [{
+              "line" : ["1 CDEX Lane"],
+              "city" : "Boston",
+              "state" : "MA",
+              "postalCode" : "01002",
+              "country" : "USA"
+            }]
+          }
+        }],
+        "signature" : {
+          "type" : [{
+            "system" : "urn:iso-astm:E1762-95:2013",
+            "code" : "1.2.840.10065.1.12.1.5",
+            "display" : "Verification Signature"
+          }],
+          "when" : "2021-10-05T22:42:19-07:00",
+          "who" : {
+            "reference" : "https://example.org/Practitioner/123"
+          },
+          "onBehalfOf" : {
+            "reference" : "https://example.org/Organization/123"
+          },
+          "data" : "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWRYTmxJam9pYzJsbklpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuLm41QzBndGRrUkY5TGpDSHAyT1ZCUEl6UDI5N05oYUZyekNZUXA0QWRERWkya25aN2wtNHViRW5wbzgzZ1o5OGFOTGM5ZncwY1Y5Sm9yLUVYcUx2em44MjVjeUFvbnlKU0tteFhWcEt6SU9wV25kNUJjV3lpSUpjOXRoV2NoVkUxUHpMMUhzNjVjaTIzeWZXNlpvbjVzX3htVlN1NkZmT2N1UzNlWnlMOEFQVW9RMDAxdlB4QmR4bkRLNDg2ZFR0dGhHMExjdUl5V1c5Y0NZOTZabDRGWUJ4eDIwdjl6RkVQOW14UXE3Y2V4bGQyY210bmRhYTlxaHVUcVdoTjJsTUlCZTgybm1XZU9CSVlLVUdKaHVxd3VMQjNwSXBITWFFMy1PR1VTQldTQ3N5ZU10aXg4VUpqaG5MSS1ZelhpOTNmQnFxVk9SQkl1ZF9UeHRCS3ZISkQ4dEdvemNlb0JhVGw0MTdUOFpKLXlQejQ2azEyeWctQktNZFZ0RnZnTl90clNyMk0wVE5OZkZOVGlXNHlpQzRKa1k1Um93UjVYSEFqbFZsQlNSYnc4MXJxUDlMbmdvZGd0bWhaaFJDc2xyWVFNbkxwQktCYmtMUDNYX1NTT0F5a3d4TUxHMnRrZGUybjRRWFpqVVRlNHhTX0FRMzgwUHFuLWZTb1U1NDFRSVZV"
+        }
+      }
+    }]
+  }]
+}
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  HTTP/1.1 400 Bad Request
+  [other headers]
+</code></pre></div>    </div>
+
+    <p><strong>Response Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    "resourceType": "OperationOutcome",
+    "id": "submit-attachment-1672516533834,
+    "issue": [
+  {
+    "severity": "error",
+    "code": "business-rule",
+    "details": {
+      "text": "The signature cannot be verified because the certificate is expired"
+    },
+    "diagnostics": "Resubmit with valid digital signature"
+  }
+    ]
+  }
+</code></pre></div>    </div>
+
+  </div>
+</div>
+<p><br /></p>
+
+<h4 id="example-signature-missing">Example: Signature Missing</h4>
+
+<p>This example is the same as Scenario 1 above, except a digital signature is required but is absent.  The interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.</p>
+
+<ul>
+  <li>The Provider submits CCDA Documents as additional documentation for a claim.</li>
+  <li>The attachment is an <em>unsigned</em> CCDA document, and the Payer requires a digital signature in this scenario.</li>
+  <li>An HTTP <code class="language-plaintext highlighter-rouge">400 Bad Request</code> and OperationOutcome are returned.</li>
+</ul>
+
+<p>
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#unsolicited-attachment-scenario4" aria-expanded="false" aria-controls="collapseExample">
+    Click Here To See an Example Where the Signature is Missing
+  </button>
+</p>
+
+<div class="collapse" id="unsolicited-attachment-scenario4">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/$submit-attachment
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "TrackingId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/provider",
+      "value" : "11234657"
+    }
+  },
+  {
+    "name" : "AttachTo",
+    "valueCode" : "claim"
+  },
+  {
+    "name" : "PayerId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/payer-ids",
+      "value" : "payer123"
+    }
+  },
+  {
+    "name" : "OrganizationId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1407071236"
+    }
+  },
+  {
+    "name" : "ProviderId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339108"
+    }
+  },
+  {
+    "name" : "MemberId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/member-ids",
+      "value" : "234567"
+    }
+  },
+  {
+    "name" : "ServiceDate",
+    "valueDateTime" : "2022-06-16"
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "LineItem",
+      "valueString" : "2"
+    },
+    {
+      "name" : "LineItem",
+      "valueString" : "3"
+    },
+    {
+      "name" : "Code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11504-8",
+          "display" : "Surgical operation note"
+        }],
+        "text" : "Surgical operation note"
+      }
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "DocumentReference",
+        "status" : "current",
+        "type" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11504-8",
+            "display" : "Surgical operation note"
+          }],
+          "text" : "Surgical operation note"
+        },
+        "category" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+            "code" : "clinical-note",
+            "display" : "Clinical Note"
+          }],
+          "text" : "Clinical Note 1"
+        }],
+        "subject" : {
+          "identifier" : {
+            "system" : "http://example.org/cdex/member-ids",
+            "value" : "234567"
+          }
+        },
+        "date" : "2022-07-13T10:30:00-05:00",
+        "content" : [{
+          "attachment" : {
+            "contentType" : "text/xml",
+            "data" : "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUyIiA/PjxDbGluaWNhbERvY3VtZW50IHhtbG5zPSJ1cm46aGw3LW9yZzp2MyI+PHJlYWxtQ29kZSBjb2RlPSJVUyIgLz48dHlwZUlkIGV4dGVuc2lvbj0iUE9DRF9IRDAwMDA0MCIgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMS4zIiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuNzIuMS41MTY5MyIgLz48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4xLjEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS4xIiBleHRlbnNpb249IjIwMTUtMDgtMDEiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMS43IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjEuNyIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxpZCBhc3NpZ25pbmdBdXRob3JpdHlOYW1lPSJFUEMiIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMTMuNDUxLjIuNy44LjY4ODg4My4xMzE2MDAyMDciIC8+PGNvZGUgY29kZT0iMTE1MDQtOCIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4xIiBjb2RlU3lzdGVtTmFtZT0iTE9JTkMiIGRpc3BsYXlOYW1lPSJQcm92aWRlciB1bnNwZWNpZmllZCBPcGVyYXRpb24gTm90ZSIgLz48dGl0bGU+T3BlcmF0aXZlIE5vdGU8L3RpdGxlPjxlZmZlY3RpdmVUaW1lIHZhbHVlPSIyMDIwMDIyMDAxMjcxNS0wNjAwIiAvPjxjb25maWRlbnRpYWxpdHlDb2RlIGNvZGU9Ik4iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMjUiIGRpc3BsYXlOYW1lPSJOb3JtYWwiIC8+PGxhbmd1YWdlQ29kZSBjb2RlPSJlbi1VUyIgLz48c2V0SWQgYXNzaWduaW5nQXV0aG9yaXR5TmFtZT0iRVBDIiBleHRlbnNpb249IjZhZTI2M2RhLTUzYjItMTFlYS04MDk5LTAwNTA1Njg2MWJjNiIgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjEuMSIgLz48dmVyc2lvbk51bWJlciB2YWx1ZT0iMSIgLz48cmVjb3JkVGFyZ2V0PjxwYXRpZW50Um9sZT48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjMuNjg4ODg0LjEwMCIgZXh0ZW5zaW9uPSJNQVk0NjgyODMwIiAvPjxhZGRyIHVzZT0iSFAiPjxzdHJlZXRBZGRyZXNzTGluZT4xIE4gUmhvZGUgSXNsYW5kIEF2ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5DRVJSTyBHT1JEPC9jb3VudHk+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB2YWx1ZT0ibWFpbHRvOmpvaG50ZXN0MUB0ZXN0LmNvbSIgLz48cGF0aWVudD48bmFtZSB1c2U9IkwiPjxwcmVmaXggcXVhbGlmaWVyPSJUSVRMRSI+TXIuIDwvcHJlZml4PjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+VEVTVDwvZ2l2ZW4+PGZhbWlseT5URVNUPC9mYW1pbHk+PC9uYW1lPjxuYW1lIHVzZT0iUCI+PGdpdmVuPkpvaG48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48bmFtZSB1c2U9IlAiPjxnaXZlbj5Kb2huPC9naXZlbj48Z2l2ZW4+UC48L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjwvbmFtZT48YWRtaW5pc3RyYXRpdmVHZW5kZXJDb2RlIGNvZGU9Ik0iIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMSIgY29kZVN5c3RlbU5hbWU9IkFkbWluaXN0cmF0aXZlR2VuZGVyQ29kZSIgZGlzcGxheU5hbWU9Ik1hbGUiIC8+PGJpcnRoVGltZSB2YWx1ZT0iMTk1MzA5MjAiIC8+PHNkdGM6ZGVjZWFzZWRJbmQgdmFsdWU9ImZhbHNlIiB4bWxuczpzZHRjPSJ1cm46aGw3LW9yZzpzZHRjIiAvPjxtYXJpdGFsU3RhdHVzQ29kZSBjb2RlPSJNIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjIiIGNvZGVTeXN0ZW1OYW1lPSJNYXJpdGFsU3RhdHVzQ29kZSIgZGlzcGxheU5hbWU9Ik1hcnJpZWQiIC8+PHJlbGlnaW91c0FmZmlsaWF0aW9uQ29kZSBjb2RlPSIxMDI4IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My41LjEwNzYiIGNvZGVTeXN0ZW1OYW1lPSJSZWxpZ2lvdXNBZmZpbGlhdGlvbiIgLz48cmFjZUNvZGUgY29kZT0iMjEwNi0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjIzOCIgY29kZVN5c3RlbU5hbWU9IkNEQyBSYWNlIGFuZCBFdGhuaWNpdHkiIGRpc3BsYXlOYW1lPSJXaGl0ZSIgLz48ZXRobmljR3JvdXBDb2RlIGNvZGU9IjIxODYtNSIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNi4yMzgiIGNvZGVTeXN0ZW1OYW1lPSJDREMgUmFjZSBhbmQgRXRobmljaXR5IiBkaXNwbGF5TmFtZT0iTm90IEhpc3BhbmljIG9yIExhdGlubyIgLz48bGFuZ3VhZ2VDb21tdW5pY2F0aW9uPjxsYW5ndWFnZUNvZGUgY29kZT0iZW5nIiAvPjxtb2RlQ29kZSBjb2RlPSJFV1IiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuNjAiIGRpc3BsYXlOYW1lPSJFeHByZXNzZWQgV3JpdHRlbiIgLz48cHJlZmVyZW5jZUluZCB2YWx1ZT0idHJ1ZSIgLz48L2xhbmd1YWdlQ29tbXVuaWNhdGlvbj48L3BhdGllbnQ+PHByb3ZpZGVyT3JnYW5pemF0aW9uPjxpZCByb290PSIxLjIuODQwLjExNDM1MC4xLjEzLjQ1MS4yLjcuMi42ODg4NzkiIGV4dGVuc2lvbj0iMzcyMDAiIC8+PG5hbWU+UFJPVklERVIgQ2xpbmljPC9uYW1lPjx0ZWxlY29tIG51bGxGbGF2b3I9Ik5BIiAvPjxhZGRyIHVzZT0iV1AiPjxzdHJlZXRBZGRyZXNzTGluZT4yIDFzdCBTdCBTVzwvc3RyZWV0QWRkcmVzc0xpbmU+PGNvdW50eT5PTE1TVEVEPC9jb3VudHk+PGNpdHk+Uk9DSEVTVEVSPC9jaXR5PjxzdGF0ZT5NTjwvc3RhdGU+PHBvc3RhbENvZGU+NTU5MDU8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48L3Byb3ZpZGVyT3JnYW5pemF0aW9uPjwvcGF0aWVudFJvbGU+PC9yZWNvcmRUYXJnZXQ+PGF1dGhvcj48dGltZSB2YWx1ZT0iMjAyMDAyMjAwMTI3MTUtMDYwMCIgLz48YXNzaWduZWRBdXRob3I+PGlkIHJvb3Q9IjEuMi44NDAuMTE0MzUwLjEuMSIgZXh0ZW5zaW9uPSI4LjkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iTkEiIC8+PHRlbGVjb20gbnVsbEZsYXZvcj0iTkEiIC8+PGFzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxtYW51ZmFjdHVyZXJNb2RlbE5hbWU+RXBpYyAtIFZlcnNpb24gOC45PC9tYW51ZmFjdHVyZXJNb2RlbE5hbWU+PHNvZnR3YXJlTmFtZT5FcGljIC0gVmVyc2lvbiA4Ljk8L3NvZnR3YXJlTmFtZT48L2Fzc2lnbmVkQXV0aG9yaW5nRGV2aWNlPjxyZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQXV0aG9yPjwvYXV0aG9yPjxjdXN0b2RpYW4+PGFzc2lnbmVkQ3VzdG9kaWFuPjxyZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuNjg4ODc5IiBleHRlbnNpb249IjM3MjAwIiAvPjxuYW1lPlBST1ZJREVSIENsaW5pYzwvbmFtZT48dGVsZWNvbSBudWxsRmxhdm9yPSJOQSIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJPQ0hFU1RFUjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1PC9wb3N0YWxDb2RlPjxjb3VudHJ5PlVTQTwvY291bnRyeT48L2FkZHI+PC9yZXByZXNlbnRlZEN1c3RvZGlhbk9yZ2FuaXphdGlvbj48L2Fzc2lnbmVkQ3VzdG9kaWFuPjwvY3VzdG9kaWFuPjxsZWdhbEF1dGhlbnRpY2F0b3I+PHRpbWUgdmFsdWU9IjIwMjAwMjIwMDEyNzE1LTA2MDAiIC8+PHNpZ25hdHVyZUNvZGUgY29kZT0iUyIgLz48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgZXh0ZW5zaW9uPSIxMTExMTExMTExIiAvPjxjb2RlIG51bGxGbGF2b3I9IlVOSyIgLz48YWRkciB1c2U9IldQIj48c3RyZWV0QWRkcmVzc0xpbmU+MiAxc3QgU3QgU1c8L3N0cmVldEFkZHJlc3NMaW5lPjxjb3VudHk+T0xNU1RFRDwvY291bnR5PjxjaXR5PlJvY2hlc3RlcjwvY2l0eT48c3RhdGU+TU48L3N0YXRlPjxwb3N0YWxDb2RlPjU1OTA1LTAwMDE8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IldQIiB2YWx1ZT0idGVsOisxLTUwNy02NjYtNjY2NiIgLz48YXNzaWduZWRQZXJzb24+PG5hbWUgdXNlPSJMIj48Z2l2ZW4+Sm9objwvZ2l2ZW4+PGdpdmVuPkg8L2dpdmVuPjxmYW1pbHk+VEVTVDwvZmFtaWx5PjxzdWZmaXggcXVhbGlmaWVyPSJBQyI+IE0uRC48L3N1ZmZpeD48L25hbWU+PC9hc3NpZ25lZFBlcnNvbj48L2Fzc2lnbmVkRW50aXR5PjwvbGVnYWxBdXRoZW50aWNhdG9yPjxwYXJ0aWNpcGFudCB0eXBlQ29kZT0iSU5EIj48dGltZSB2YWx1ZT0iMjAxODA4MTAiIC8+PGFzc29jaWF0ZWRFbnRpdHkgY2xhc3NDb2RlPSJFQ09OIj48aWQgcm9vdD0iMS4yLjg0MC4xMTQzNTAuMS4xMy40NTEuMi43LjIuODI3NjY1IiBleHRlbnNpb249IjExMTExMTExIiAvPjxjb2RlIGNvZGU9IlNQUyIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuNS4xMTEiIGNvZGVTeXN0ZW1OYW1lPSJSb2xlQ29kZSIgZGlzcGxheU5hbWU9IlNwb3VzZSI+PG9yaWdpbmFsVGV4dD5TcG91c2U8L29yaWdpbmFsVGV4dD48L2NvZGU+PGFkZHIgdXNlPSJIUCI+PHN0cmVldEFkZHJlc3NMaW5lPjEgTm9ydGggSXNsYW5kIEF2ZW51ZTwvc3RyZWV0QWRkcmVzc0xpbmU+PGNpdHk+TWFzb24gQ2l0eTwvY2l0eT48c3RhdGU+SUE8L3N0YXRlPjxwb3N0YWxDb2RlPjUwNDAxLTE0NDY8L3Bvc3RhbENvZGU+PGNvdW50cnk+VVNBPC9jb3VudHJ5PjwvYWRkcj48dGVsZWNvbSB1c2U9IkhQIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48dGVsZWNvbSB1c2U9Ik1DIiB2YWx1ZT0idGVsOisxLTY0MS02NjYtNjY2NiIgLz48YXNzb2NpYXRlZFBlcnNvbj48bmFtZT5DYXJvbCBNZXllcjwvbmFtZT48L2Fzc29jaWF0ZWRQZXJzb24+PC9hc3NvY2lhdGVkRW50aXR5PjwvcGFydGljaXBhbnQ+PGRvY3VtZW50YXRpb25PZiB0eXBlQ29kZT0iRE9DIj48c2VydmljZUV2ZW50IGNsYXNzQ29kZT0iUFJPQyI+PGNvZGUgY29kZT0iNzc3Nzc3NzIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuOTYiIGNvZGVTeXN0ZW1OYW1lPSJTTk9NRUQgQ1QiIGRpc3BsYXlOYW1lPSJQcm9jZWR1cmUiIC8+PGVmZmVjdGl2ZVRpbWU+PGxvdyBudWxsRmxhdm9yPSJVTksiIC8+PGhpZ2ggbnVsbEZsYXZvcj0iVU5LIiAvPjwvZWZmZWN0aXZlVGltZT48cGVyZm9ybWVyIHR5cGVDb2RlPSJQUFJGIj48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjQuNiIgLz48Y29kZSBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My4zLjg4LjEyLjMyMjEuNC4yIiBjb2RlU3lzdGVtTmFtZT0iTlVDQyIgbnVsbEZsYXZvcj0iTkkiIC8+PGFkZHIgbnVsbEZsYXZvcj0iVU5LIiAvPjx0ZWxlY29tIG51bGxGbGF2b3I9IlVOSyIgLz48L2Fzc2lnbmVkRW50aXR5PjwvcGVyZm9ybWVyPjwvc2VydmljZUV2ZW50PjwvZG9jdW1lbnRhdGlvbk9mPjxjb21wb25lbnQ+PHN0cnVjdHVyZWRCb2R5Pjxjb21wb25lbnQ+PHNlY3Rpb24+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4yNyIgLz48Y29kZSBjb2RlPSIyOTU1NC0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlNVUkdFUlkgUFJPQ0VEVVJFIiAvPjx0aXRsZT5TdXJnZXJ5IERldGFpbHM8L3RpdGxlPjx0ZXh0Pjx0YWJsZT48Y29sZ3JvdXA+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjE1JSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48Y29sIHdpZHRoPSIxNSUiIC8+PGNvbCB3aWR0aD0iMTAlIiAvPjxjb2wgd2lkdGg9IjEwJSIgLz48L2NvbGdyb3VwPjx0aGVhZD48dHI+PHRoPkRhdGUvVGltZTwvdGg+PHRoPlN0YXR1czwvdGg+PHRoPkxvY2F0aW9uPC90aD48dGg+T1I8L3RoPjx0aD5TZXJ2aWNlPC90aD48dGg+UGF0aWVudCBDbGFzczwvdGg+PHRoPkNhc2UgQ2xhc3M8L3RoPjx0aD5DYXNlIFR5cGU8L3RoPjx0aD5UcmF1bWEgQ2FzZT88L3RoPjwvdHI+PC90aGVhZD48dGJvZHk+PHRyPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjx0ZCAvPjwvdHI+PC90Ym9keT48L3RhYmxlPjxiciAvPjxsaXN0PjxjYXB0aW9uPkFkZGl0b25hbCBOb3RlczwvY2FwdGlvbj48aXRlbT48Y2FwdGlvbj5URVNULCBKT0hOIEggLSAwMi8xNy8yMDIwIDExOjE1IEFNIENTVDwvY2FwdGlvbj48cGFyYWdyYXBoPiA8YnIgLz4gPGJyIC8+UFJPQ0VEVVJFKFMpPGJyIC8+T3BlbiB0YWtlZG93biBvZiBhZGhlc2lvbnMgKDEgaG91cikuIDxiciAvPlJlc2VjdGlvbiBhcHByb3hpbWF0ZWx5IDc1IGNtICBvZiB0ZXJtaW5hbCBpbGV1bSBhbmQgY2VjdW0gYW5kIHBvcnRpb24gb2YgYXNjZW5kaW5nIGNvbG9uLiA8YnIgLz5JbGVvYXNjZW5kaW5nIGNvbG9zdG9teSB3aXRoIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgcnVubmluZyBvZiB0aGUgc21hbGwgYm93ZWwuPGJyIC8+PGJyIC8+U1VSR0VPTihTKTxiciAvPkRyLiBKb2huIFRFU1QuIDxiciAvPjxiciAvPkdFTkVSQUwgU1VSR0VSWSBSRVNJREVOVDogRHIuIFRFU1QuPGJyIC8+PGJyIC8+QU5FU1RIRVNJQSBUWVBFPGJyIC8+R2VuZXJhbC48YnIgLz48YnIgLz5QUkUtT1BFUkFUSVZFIERJQUdOT1NJUzxiciAvPkNyb2huJ3MgZGlzZWFzZSwgc3RyaWN0dXJpbmcgb2YgYW4gYXJlYSBhbmQgQ1QgZW50ZXJvZ3JhcGh5IGV2aWRlbmNlIG9mIENyb2huJ3MgZGlzZWFzZSBpbiB0aGUgdGVybWluYWwgNzUgY20gb2YgaWxldW0uPGJyIC8+PGJyIC8+UE9TVC1PUEVSQVRJVkUgRElBR05PU0lTPGJyIC8+Q3JvaG4ncyBkaXNlYXNlLCBzdHJpY3R1cmluZyBvZiBhbiBhcmVhIGFuZCBDVCBlbnRlcm9ncmFwaHkgZXZpZGVuY2Ugb2YgQ3JvaG4ncyBkaXNlYXNlIGluIHRoZSB0ZXJtaW5hbCA3NSBjbSBvZiBpbGV1bS48YnIgLz48YnIgLz5GSU5ESU5HUzxiciAvPlNlZSBiZWxvdy48YnIgLz48YnIgLz5ERVNDUklQVElPTiBPRiBQUk9DRURVUkU8YnIgLz5VbmRlciBnZW5lcmFsIGFuZXN0aGVzaWEgaW4gdGhlIHN1cGluZSBwb3NpdGlvbiwgcGF0aWVudCBwcmVwcGVkIGFuZCBkcmFwZWQuIEEgbWlkLW1pZGxpbmUgaW5jaXNpb24gbWFkZSBsYXJnZSBlbm91Z2ggZm9yIHRoZSBIYW5kUG9ydCB0byBiZSBwbGFjZWQgZXhjZXB0IHdlIHJhbiBpbnRvIG1hbnkgYWRoZXNpb25zLiBXZSB0aGVuIGRlY2lkZWQgdG8gcHJvY2VlZCBvcGVuLiBXZSByZWFsbHkgZGlkIG5vdCBldmVuIGJlZ2luIHRvIGRvIHRoZSBsYXBhcm9zY29waWMgcHJvY2VkdXJlLiBUYWtlZG93biBvZiBhZGhlc2lvbnMgdG9vayBhYm91dCA0NSBtaW51dGVzIHRvIDEgaG91ci4gVGhlIGFuYXRvbXkgd2FzIG9yaWVudGVkIGNvcnJlY3RseS4gVXJldGVycyB3ZXJlIG5vdCBzZWVuLiBUaGUgdGVybWluYWwgaWxldW0gd2FzIGNhdWdodCBkb3duIGludG8gdGhlIHBlbHZpcy4gVGhpcyB3YXMgYWxsIG1vYmlsaXplZC4gQSBwb2ludCB3YXMgY2hvc2VuIG9uIHRoZSB0ZXJtaW5hbCBpbGV1bSBhYm92ZSB0aGUgZXZpZGVuY2Ugb2YgZGlzZWFzZSAoNzUgY20pIGFuZCBhIHBvaW50IGNob3NlbiBvbiB0aGUgYXNjZW5kaW5nIGNvbG9uIGp1c3QgYWJvdmUgdGhlIGNlY3VtIGFzIHRoZSBsaW5lIG9mIGRpc3RhbCB0cmFuc2VjdGlvbi4gVGhlIGludGVydmVuaW5nIG1lc2VudGVyeSB3YXMgYWx0ZXJuYXRpdmVseSBjbGFtcGVkLCB0aWVkLCBhbmQgTGlnYVN1cmVkLiBUaGUgc3BlY2ltZW4gd2FzIHJlbW92ZWQsIGFuZCBhIGRvdWJsZS1zdGFwbGVkIHNpZGUtdG8tc2lkZSBmdW5jdGlvbmFsIGVuZC10by1lbmQgaWxlb2FzY2VuZGluZyBjb2xvc3RvbXkgd2FzIHRoZW4gY29uc3RydWN0ZWQgd2l0aG91dCBkaWZmaWN1bHR5LiBQb3N0IHN0YXBsaW5nLCB2aXN1YWxpemF0aW9uIHJldmVhbGVkIGV4Y2VsbGVudCBibG9vZCBzdXBwbHksIG5vIHRlbnNpb24sIGJpZyBhbmFzdG9tb3Npcy4gVGhlIG1lc2VudGVyeSBkZWZlY3Qgd2FzIHJlbGF0aXZlbHkgc21hbGwgYW5kIGNsb3NlZCB3aXRoIHJ1bm5pbmcgMy0wIGNocm9taWMuIFRoZSBhYmRvbWVuIHdhcyB0aG9yb3VnaGx5IGlycmlnYXRlZCBudW1lcm91cyB0aW1lcyB3aXRoIG5vcm1hbCBzYWxpbmUsIGJsZWVkaW5nIGNvbnRyb2xsZWQgd2l0aCBjYXV0ZXJ5LCBhbmQgdGhlIGFiZG9tZW4gd2FzIGFnYWluIGlycmlnYXRlZCB3aXRoIG5vcm1hbCBzYWxpbmUuIFRoZSBzbWFsbCBib3dlbCB3YXMgcnVuIGJhY2sgdG8gdGhlIGxpZ2FtZW50IG9mIFRyZWl0eiwgYW5kIHRoZXJlIHdhcyBubyBvdGhlciBldmlkZW5jZSBvZiBDcm9obidzIGRpc2Vhc2UuIFRoZSBhYmRvbWVuIHdhcyB0aGVuIGNsb3NlZCBvdmVyIFNlcHJhZmlsbSB1c2luZyBhIGNvbWJpbmF0aW9uIG9mIHJ1bm5pbmcgZG91YmxlIFBEUyBpbiB0aGUgbWlkbGluZSBmYXNjaWEgYW5kIGludGVycnVwdGVkICMxIFZpY3J5bCBpbiB0aGUgYXJlYSBvZiB0aGUgb2xkIG1lc2guIFRoZSBza2luIHdhcyBjbG9zZWQgd2l0aCBhIHJ1bm5pbmcgc3ViY3V0aWN1bGFyIFZpY3J5bC48YnIgLz48YnIgLz5TUEVDSU1FTlM8YnIgLz5UZXJtaW5hbCBpbGV1bSwgY2VjdW0sIGFwcGVuZGl4LCBwb3J0aW9uIGFzY2VuZGluZyBjb2xvbjxiciAvPjxiciAvPkRSQUlOUzxiciAvPk5vIGRyYWlucy4gPGJyIC8+PGJyIC8+Tm8gc3RvbWFzLjxiciAvPjxiciAvPkVTVElNQVRFRCBCTE9PRCBMT1NTPGJyIC8+TGVzcyB0aGFuIDEwMCBjYy48YnIgLz48YnIgLz5UUFI6ICAyICAgPGJyIC8+PGJyIC8+PGJyIC8+Sm9obiBILiBURVNULCBNLkQuPGJyIC8+REQ6ICAwMi8xNy8yMDIwIDExOjAyOjQxIENUPGJyIC8+RFQ6ICAwMi8xNy8yMDIwIDExOjI4OjU4IENUPGJyIC8+Sm9iIElEOiAgODcxNjIyMDAyL3NqcDxiciAvPjxiciAvPjwvcGFyYWdyYXBoPjwvaXRlbT48L2xpc3Q+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uIG51bGxGbGF2b3I9Ik5JIj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI1IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjUiIGV4dGVuc2lvbj0iMjAxNC0wNi0wOSIgLz48Y29kZSBjb2RlPSI1OTc3NC0wIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkFuZXN0aGVzaWEgUmVjb3JkcyIgLz48dGl0bGU+QW5lc3RoZXNpYSBSZWNvcmQ8L3RpdGxlPjx0ZXh0Pjxjb250ZW50IElEPSJub2YxIj5Ob3Qgb24gZmlsZTwvY29udGVudD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjxjb21wb25lbnQ+PHNlY3Rpb24gbnVsbEZsYXZvcj0iTkkiPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzQiIC8+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNCIgZXh0ZW5zaW9uPSIyMDE1LTA4LTAxIiAvPjxjb2RlIGNvZGU9IjEwMjE5LTQiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJlb3BlcmF0aXZlIERpYWdub3NpcyIgLz48dGl0bGU+UHJlb3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjIiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbiBudWxsRmxhdm9yPSJOSSI+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMjIuMi4zNSIgLz48Y29kZSBjb2RlPSIxMDIxOC02IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlBvc3RvcGVyYXRpdmUgRGlhZ25vc2lzIiAvPjx0aXRsZT5Qb3N0b3BlcmF0aXZlIERpYWdub3NpczwvdGl0bGU+PHRleHQ+PGNvbnRlbnQgSUQ9Im5vZjMiPk5vdCBvbiBmaWxlPC9jb250ZW50PjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjM3IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMzciIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1NTEwOS0zIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IkNvbXBsaWNhdGlvbnMiIC8+PHRpdGxlPkNvbXBsaWNhdGlvbnM8L3RpdGxlPjx0ZXh0PjxwYXJhZ3JhcGg+Q2hlY2sgU3VyZ2VyeSBEZXRhaWxzIHNlY3Rpb24uPC9wYXJhZ3JhcGg+PC90ZXh0Pjwvc2VjdGlvbj48L2NvbXBvbmVudD48Y29tcG9uZW50PjxzZWN0aW9uPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjE4LjIuOSIgLz48Y29kZSBjb2RlPSI1OTc3MC04IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBFc3RpbWF0ZWQgQmxvb2QgTG9zcyIgLz48dGl0bGU+UHJvY2VkdXJlIEVzdGltYXRlZCBCbG9vZCBMb3NzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjI4IiAvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjIyLjIuMjgiIGV4dGVuc2lvbj0iMjAxNS0wOC0wMSIgLz48Y29kZSBjb2RlPSI1OTc3Ni01IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIgZGlzcGxheU5hbWU9IlByb2NlZHVyZSBGaW5kaW5ncyIgLz48dGl0bGU+UHJvY2VkdXJlIEZpbmRpbmdzPC90aXRsZT48dGV4dD48cGFyYWdyYXBoPkNoZWNrIFN1cmdlcnkgRGV0YWlscyBzZWN0aW9uLjwvcGFyYWdyYXBoPjwvdGV4dD48L3NlY3Rpb24+PC9jb21wb25lbnQ+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4yMi4yLjMxIiAvPjxjb2RlIGNvZGU9IjU5NzczLTIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIiBkaXNwbGF5TmFtZT0iUHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbiIgLz48dGl0bGU+UHJvY2VkdXJlIFNwZWNpbWVucyBUYWtlbjwvdGl0bGU+PHRleHQ+PHBhcmFncmFwaD5DaGVjayBTdXJnZXJ5IERldGFpbHMgc2VjdGlvbi48L3BhcmFncmFwaD48L3RleHQ+PC9zZWN0aW9uPjwvY29tcG9uZW50Pjwvc3RydWN0dXJlZEJvZHk+PC9jb21wb25lbnQ+PC9DbGluaWNhbERvY3VtZW50Pg0K",
+            "hash" : "026d568297832e6e083e96549041a72aa383bb23",
+            "title" : "Example CCDA"
+          }
+        }]
+      }
+    }]
+  }]
+}
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  HTTP/1.1 400 Bad Request
+  [other headers]
+</code></pre></div>    </div>
+
+    <p><strong>Response Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    "resourceType": "OperationOutcome",
+    "id": "1672516634680",
+    "issue": [
+  {
+    "severity": "error",
+    "code": "business-rule",
+    "details": {
+      "text": "This health care attachments transactions requires a digital signature"
+    },
+    "diagnostics": "Resubmit with valid digital signature"
+  }
+    ]
+  }
+</code></pre></div>    </div>
+
+  </div>
+</div>
+<p><br /></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="solicited-unsolicited-attachments.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="requesting-attachments-code.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/claims">HL7 International / Payer/Provider Information Exchange Work Group</a>.  Package hl7.fhir.us.davinci-cdex#2.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 9, 2025 20:34+0000">2025-01-09</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-cdex/history.html">Version History</a> |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

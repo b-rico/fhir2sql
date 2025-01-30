@@ -1,0 +1,60 @@
+#text for https://sequencediagram.org/
+```sequence
+title Requesting Data Using A FHIR Questionnaire
+participant Data Consumer
+participant Data Source
+participant DTR
+actor Practitioner
+#entryspacing 0.4
+entryspacing 0.7
+note over Data Source: Data Source acts as both\n EHR/HIT FHIR Server and DTR Client
+note over DTR: DTR is SMART App or native EHR app
+autonumber
+Data Consumer -> Data Consumer: Prepare Task\nincluding link to Questionnaire
+Data Consumer->Data Source: POST CDEX Task\nto complete Questionnaire
+ref over Data Source,DTR:3 Launch DTR (see section 5.4.1.1.1)
+autonumber 4
+DTR -> Data Source: GET Task
+autonumber off
+Data Source --> DTR: Return Task
+autonumber 
+DTR -> Data Consumer: GET Questionnaire
+autonumber off
+Data Consumer --> DTR: Return Questionnaire
+autonumber 
+DTR -> DTR: Extracts answers\ncreates FHIR QuestionnaireResponse
+opt Create in-progress QuestionnaireResponse
+autonumber 
+DTR -> Data Source: Create QuestionnaireResponse
+DTR -> Data Source: Update Task with link to\nQuestionnaireResponse
+end
+loop
+DTR -> Data Source:Fetch Data to Complete\n QuestionnaireResponse
+autonumber off
+Data Source --> DTR: Return Data
+autonumber 
+DTR -> DTR: Fills QuestionnaireResponse
+end
+opt
+DTR -> Practitioner: Manual Review and Completes\nQuestionnaireResponse
+autonumber off
+Practitioner-->DTR:
+end
+autonumber 
+DTR -> Data Source: Create or Update completed QuestionnaireResponse
+opt Create completed QuestionnaireResponse
+DTR -> Data Source: Update Task with link to\nQuestionnaireResponse
+end
+Data Source -> Data Source: Updates Task to "completed"
+loop Task completed
+Data Consumer->Data Source: Polling for Task updates
+break
+autonumber off
+Data Source-->Data Consumer: Return completed Task
+end
+end
+autonumber
+Data Consumer->Data Consumer: Discover \nQuestionnaireResponse \nFHIR ID in Task
+Data Consumer->Data Source: GET QuestionnaireResponse
+autonumber off
+```

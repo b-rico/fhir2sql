@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="cdex-bundle-inline-example-858p"/>
+  <type value="searchset"/>
+  <total value="1"/>
+  <link>
+    <relation value="self"/>
+    <url value="http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b&amp;clinical-status=active,recurrance,remission&amp;_revinclude=Provenance:target"/>
+  </link>
+  <entry>
+    <fullUrl value="http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f"/>
+    <resource>
+      <Condition>
+        <id value="4ac41715-fcbd-421c-8796-9b2c9706dd3f"/>
+        <meta>
+          <versionId value="10"/>
+          <lastUpdated value="2020-04-28T20:28:00.008+00:00"/>
+          <source value="#cabiJIK51sD2iz4N"/>
+        </meta>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="encounter-diagnosis"/>
+            <display value="Encounter Diagnosis"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="122481008"/>
+            <display value="Hammer toe (disorder)"/>
+          </coding>
+          <text value="Hammer Toe"/>
+        </code>
+        <subject>
+          <reference value="http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"/>
+        </subject>
+        <encounter>
+          <reference value="http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82"/>
+        </encounter>
+        <onsetDateTime value="2018-10-21T21:22:15-07:00"/>
+        <recordedDate value="2018-10-21T21:22:15-07:00"/>
+      </Condition>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf"/>
+    <resource>
+      <Provenance>
+        <id value="b2ce4584-b213-411b-bdc9-d515dc92eadf"/>
+        <target>
+          <reference value="Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f"/>
+        </target>
+        <recorded value="2020-04-28T20:28:00.008+00:00"/>
+        <agent>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+              <code value="author"/>
+              <display value="Author"/>
+            </coding>
+          </type>
+          <who>
+            <reference value="http://example.org/cdex/provider/fhir/Practitioner/Dr-Jones-12345"/>
+          </who>
+          <onBehalfOf>
+            <reference value="http://example.org/cdex/provider/fhir/Organization/good-health-54321"/>
+          </onBehalfOf>
+        </agent>
+      </Provenance>
+    </resource>
+    <search>
+      <mode value="include"/>
+    </search>
+  </entry>
+</Bundle>

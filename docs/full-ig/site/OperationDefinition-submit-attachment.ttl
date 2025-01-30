@@ -1,0 +1,179 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "submit-attachment"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition submit-attachment</b></p><a name=\"submit-attachment\"> </a><a name=\"hcsubmit-attachment\"> </a><a name=\"submit-attachment-en-US\"> </a><p>URL: [base]/$submit-attachment</p><p>Input parameters Profile:<a href=\"StructureDefinition-cdex-parameters-submit-attachment.html\">CDex Parameters Submit Attachment Profile</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>TrackingId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>An identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the &quot;tracking control number&quot;</p>\n<p>In <em>unsolicited</em> claim attachments, the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. In <em>solicited</em> claim attachments, the payer assigns the tracking control number and sends it to the provider with the request for additional information for that specific claim. Similarly, for prior authorizations, the prior-auth tracking control number is provider assigned when the attachments are sent upon prior auth generation as <em>unsolicited</em> attachments, and the prior auth tracking control number is assigned and communicated by the payer when the attachments are in response to a request for additional documentation.</p>\n</div></td></tr><tr><td>IN</td><td>AttachTo</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td><a href=\"ValueSet-cdex-claim-use.html\">CDex Claim Use Value Set</a> (Required)</td><td><div><p>A value of either &quot;claim&quot; or &quot;preauthorization&quot; to communicate what the additional information is needed for.  This is known by the provider when submitting <em>unsolicited</em> attachments and communicated to the provider through the request for <em>solicited</em> attachments.</p>\n</div></td></tr><tr><td>IN</td><td>PayerId</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>The receiving payer identifier. It may be required, because the endpoint may support multiple payers.  Currently, there is no standard way to obtain the payer identifiers and implementers will need to obtain them “out of band” when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request.</p>\n</div></td></tr><tr><td>IN</td><td>OrganizationId</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Sending organization/location identifier (e.g., Type 2 NPI). This is assumed to be known by the provider when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request. A ProviderId parameter or OrganizationId parameter or both <strong>SHALL</strong> be present.</p>\n</div></td></tr><tr><td>IN</td><td>ProviderId</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Sending provider identifier (e.g.,Type 1 NPI). This is assumed to be known by the provider when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request. A ProviderId parameter or OrganizationId parameter or both <strong>SHALL</strong> be present.</p>\n</div></td></tr><tr><td>IN</td><td>MemberId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Patient member identifier. This is assumed to be known by the provider when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request.  This identifier can be either the Payer assigned Member ID or a provider assigned &quot;Patient Account Number&quot; for an <em>unsolicited</em> attachment for prior authorization.</p>\n</div></td></tr><tr><td>IN</td><td>ServiceDate</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td/><td><div><p>Date of service or starting date of the service for the claim or prior authorization.  This parameter <strong>SHALL</strong> be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.  This is assumed to be known by the provider when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request.</p>\n</div></td></tr><tr><td>IN</td><td>Attachment</td><td/><td>1..*</td><td></td><td/><td><div><p>The attachments that are communicated for a claim or prior authorization. They are applied to the LineItem (line items) and/or Code parameters if present.  If no LineItem is present, then the attachment is applied to the entire claim or prior authorization.</p>\n</div></td></tr><tr><td>IN</td><td>Attachment.LineItem</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Claim/prior authorization line item for service in the claim or prior authorization. It may be present when submitting <em>unsolicited</em> attachments.  For a <em>solicited</em> claim or claim authorization attachment, this value is the same as the line items communicated in the request.</p>\n</div></td></tr><tr><td>IN</td><td>Attachment.Code</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td>http://loinc.org/vs/valid-hl7-attachment-requests (Extensible)</td><td><div><p>Code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments/.  PWK01 Report Type Codes may also be used.  It <strong>SHOULD</strong> be present when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments, this value is the same as the attachment code communicated when requesting attachments. When requesting attachments using Questionnaire, there is no code in the request and the code is typically not present in the response.</p>\n</div></td></tr><tr><td>IN</td><td>Attachment.Content</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a></td><td/><td><div><p>Attachment as a FHIR resource.  Non-FHIR attachment data is conveyed using the <a href=\"http://hl7.org/fhir/documentreference.html\">DocumentReference</a> or <a href=\"http://hl7.org/fhir/binary.html\">Binary</a> resource. Servers <strong>SHALL</strong> support the DocumentReference resource type and <strong>SHOULD</strong> support other types. If Servers support requesting attachments with Questionnaire, then the <a href=\"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse\">SDC Questionnaire Response Profile</a> <strong>SHALL</strong> be supported and the <a href=\"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt\">SDC Adaptive Questionnaire Response Profile</a> <strong>SHOULD</strong> be supported.</p>\n</div></td></tr><tr><td>IN</td><td>Final</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>Flag to indicate whether the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.  If Final = &quot;true&quot;, the Data Source has no more attachments to submit. This is the default meaning if this parameter is omitted. If Final = &quot;false&quot;, the Data Source expects to submit more attachments in subsequent operations.   Payers typically anticipate a single submission and may discourage multiple submissions.</p>\n</div></td></tr></table><div><p>The following rules apply when using <code>$submit-attachment</code>:</p>\n<ul>\n<li>The operation's endpoint <strong>SHALL</strong> only accept <code>POST</code> transactions - any other HTTP method <strong>SHALL</strong> result in an HTTP error.</li>\n<li>A ProviderId parameter, OrganizationId parameter, or both <strong>SHALL</strong> be present.</li>\n<li>The ServiceDate parameter <strong>SHALL</strong> be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.</li>\n<li>The <code>Attachment.LineItem</code> and <code>Attachment.Code</code> parameters are associated with the attachments in <code>Attachment.Content</code>.   If <code>Attachment.LineItem</code> is absent, the attachment is associated with the entire claim or prior authorization.</li>\n<li>For the <code>Attachment.Content</code> parameter, Servers <strong>SHALL</strong> support <a href=\"http://hl7.org/fhir/documentreference.html\">DocumentReference</a> resource type and <strong>SHOULD</strong> support other types.  If Servers support requesting attachments with <a href=\"http://hl7.org/fhir/questionnaire.html\">Questionnaire</a>, then the <a href=\"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse\">SDC Questionnaire Response Profile</a> <strong>SHALL</strong> be supported and the <a href=\"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt\">SDC Adaptive Questionnaire Response Profile</a> <strong>SHOULD</strong> be supported.\n<ul>\n<li>The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using <code>DocumentReference.attachment.url</code> or the content as inline base64 encoded data using <code>DocumentReference.attachment.data</code>.  The server system is not required to support both an address and inline base64 encoded data, but <strong>SHALL</strong> support at least one of these elements.</li>\n<li>These capabilities <strong>SHOULD</strong> be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).</li>\n</ul>\n</li>\n<li>When the <code>Final</code> parameter is omitted, the default meaning is Final=&quot;true&quot; - the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.</li>\n<li>When processing the operation, a server may return one of several status codes:\n<ul>\n<li><strong>200 OK</strong>: Indicates that the server has accepted the clinical attachments.\n<ul>\n<li>If the attachments can not be associated with an <em>existing</em> claim or member, the server <strong>SHOULD</strong> return an <a href=\"http://hl7.org/fhir/operationoutcome.html\">OperationOutcome</a> to inform the Data Source that they are being held for a subsequent association with a future claim or prior authorization.</li>\n</ul>\n</li>\n<li><strong>4xx</strong>: Indicates some error in the submission. The client <strong>SHOULD</strong> interpret a 4xx response to indicate that there is no point in resubmitting the unaltered operation,</li>\n<li><strong>5xx</strong>: Indicates some system error. The client <strong>SHOULD</strong> interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original operation.</li>\n<li>The server <strong>SHOULD</strong> return an <a href=\"http://hl7.org/fhir/operationoutcome.html\">OperationOutcome</a> with additional error information if the response code is 400 or greater. For example, if the payer does not know the claim or prior authorization, the OperationOutcome can alert the submitter to check whether they sent it to the wrong payer.</li>\n</ul>\n</li>\n</ul>\n<p>See the <a href=\"attachments.html\">Attachments</a> page for additional guidance and examples.</p>\n</div></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "claims" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "2"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.1.0"] ; # 
+  fhir:name [ fhir:v "SubmitAttachment"] ; # 
+  fhir:title [ fhir:v "Submit Attachment Operation"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2021-12-02T20:24:41-08:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Payer/Provider Information Exchange Work Group"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Payer/Provider Information Exchange Work Group" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/claims" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "pie@lists.hl7.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Providers use this [operation](http://hl7.org/fhir/operations.html) to submit *solicited* and *unsolicited* attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For *unsolicited* attachments, the Provider invokes this operation *before, concurrently, or after*  the claim or pre-authorization transaction. For *solicited* attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's *Unsolicited* Attachments **SHOULD** support the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For *Solicited Attachments*, the $submit-attachment endpoint is supplied in the [CDex Task Attachment Request Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request)\n\nThe input parameters are:\n1. One or more attachments as FHIR Resources\n    - Optionally, one or more unique line item numbers associated with the attachment\n    - Optionally, the attachment code used to request the information\n1. Data elements for the association to the claim/prior authorization\n    - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the \"re-association tracking control numbers\")\n    - What are the attachments for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique payer identifier\n    - A unique organization/location identifier (e.g., [Type 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf)) or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\n    - A unique Patient member identifier\n    - A Date of Service\n    - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.\n\nThere are no output parameters."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:code [ fhir:v "submit-attachment"] ; # 
+  fhir:comment [ fhir:v "\nThe following rules apply when using `$submit-attachment`:\n* The operation's endpoint **SHALL** only accept `POST` transactions - any other HTTP method **SHALL** result in an HTTP error.\n* A ProviderId parameter, OrganizationId parameter, or both **SHALL** be present.\n* The ServiceDate parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.\n* The `Attachment.LineItem` and `Attachment.Code` parameters are associated with the attachments in `Attachment.Content`.   If `Attachment.LineItem` is absent, the attachment is associated with the entire claim or prior authorization.\n* For the `Attachment.Content` parameter, Servers **SHALL** support [DocumentReference](http://hl7.org/fhir/documentreference.html) resource type and **SHOULD** support other types.  If Servers support requesting attachments with [Questionnaire](http://hl7.org/fhir/questionnaire.html), then the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) **SHALL** be supported and the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt) **SHOULD** be supported.\n  * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`.  The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.\n  * These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).\n* When the `Final` parameter is omitted, the default meaning is Final=\"true\" - the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.\n* When processing the operation, a server may return one of several status codes:\n  * **200 OK**: Indicates that the server has accepted the clinical attachments.\n    * If the attachments can not be associated with an *existing* claim or member, the server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) to inform the Data Source that they are being held for a subsequent association with a future claim or prior authorization.\n  * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point in resubmitting the unaltered operation,\n  * **5xx**: Indicates some system error. The client **SHOULD** interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original operation.\n  *  The server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional error information if the response code is 400 or greater. For example, if the payer does not know the claim or prior authorization, the OperationOutcome can alert the submitter to check whether they sent it to the wrong payer.\n\nSee the [Attachments](attachments.html) page for additional guidance and examples.\n"] ; # 
+  fhir:resource ( [ fhir:v "Claim"] ) ; # 
+  fhir:system [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:inputProfile [
+     fhir:v "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment>
+  ] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "TrackingId" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "An identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the \"tracking control number\"\n\n In *unsolicited* claim attachments, the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. In *solicited* claim attachments, the payer assigns the tracking control number and sends it to the provider with the request for additional information for that specific claim. Similarly, for prior authorizations, the prior-auth tracking control number is provider assigned when the attachments are sent upon prior auth generation as *unsolicited* attachments, and the prior auth tracking control number is assigned and communicated by the payer when the attachments are in response to a request for additional documentation." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "AttachTo" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "A value of either \"claim\" or \"preauthorization\" to communicate what the additional information is needed for.  This is known by the provider when submitting *unsolicited* attachments and communicated to the provider through the request for *solicited* attachments." ] ;
+     fhir:type [ fhir:v "code" ] ;
+     fhir:binding [
+       fhir:strength [ fhir:v "required" ] ;
+       fhir:valueSet [
+         fhir:v "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use>
+       ]
+     ]
+  ] [
+     fhir:name [ fhir:v "PayerId" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "The receiving payer identifier. It may be required, because the endpoint may support multiple payers.  Currently, there is no standard way to obtain the payer identifiers and implementers will need to obtain them “out of band” when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "OrganizationId" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Sending organization/location identifier (e.g., Type 2 NPI). This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request. A ProviderId parameter or OrganizationId parameter or both **SHALL** be present." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "ProviderId" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Sending provider identifier (e.g.,Type 1 NPI). This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request. A ProviderId parameter or OrganizationId parameter or both **SHALL** be present." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "MemberId" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Patient member identifier. This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.  This identifier can be either the Payer assigned Member ID or a provider assigned \"Patient Account Number\" for an *unsolicited* attachment for prior authorization." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "ServiceDate" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Date of service or starting date of the service for the claim or prior authorization.  This parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.  This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request." ] ;
+     fhir:type [ fhir:v "dateTime" ]
+  ] [
+     fhir:name [ fhir:v "Attachment" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "*" ] ;
+     fhir:documentation [ fhir:v "The attachments that are communicated for a claim or prior authorization. They are applied to the LineItem (line items) and/or Code parameters if present.  If no LineItem is present, then the attachment is applied to the entire claim or prior authorization." ] ;
+     fhir:part ( [
+       fhir:name [ fhir:v "LineItem" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:documentation [ fhir:v "Claim/prior authorization line item for service in the claim or prior authorization. It may be present when submitting *unsolicited* attachments.  For a *solicited* claim or claim authorization attachment, this value is the same as the line items communicated in the request." ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:name [ fhir:v "Code" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:documentation [ fhir:v "Code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments/.  PWK01 Report Type Codes may also be used.  It **SHOULD** be present when submitting *unsolicited* attachments. For *solicited* attachments, this value is the same as the attachment code communicated when requesting attachments. When requesting attachments using Questionnaire, there is no code in the request and the code is typically not present in the response." ] ;
+       fhir:type [ fhir:v "CodeableConcept" ] ;
+       fhir:binding [
+         fhir:strength [ fhir:v "extensible" ] ;
+         fhir:valueSet [
+           fhir:v "http://loinc.org/vs/valid-hl7-attachment-requests"^^xsd:anyURI ;
+           fhir:link <http://loinc.org/vs/valid-hl7-attachment-requests>
+         ]
+       ]
+     ] [
+       fhir:name [ fhir:v "Content" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v "1"^^xsd:integer ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:documentation [ fhir:v "Attachment as a FHIR resource.  Non-FHIR attachment data is conveyed using the [DocumentReference](http://hl7.org/fhir/documentreference.html) or [Binary](http://hl7.org/fhir/binary.html) resource. Servers **SHALL** support the DocumentReference resource type and **SHOULD** support other types. If Servers support requesting attachments with Questionnaire, then the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) **SHALL** be supported and the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt) **SHOULD** be supported." ] ;
+       fhir:type [ fhir:v "Resource" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Final" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Flag to indicate whether the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.  If Final = \"true\", the Data Source has no more attachments to submit. This is the default meaning if this parameter is omitted. If Final = \"false\", the Data Source expects to submit more attachments in subsequent operations.   Payers typically anticipate a single submission and may discourage multiple submissions." ] ;
+     fhir:type [ fhir:v "boolean" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

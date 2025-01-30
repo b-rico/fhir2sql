@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Bundle/cdex-bundle-inline-example-858p> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-bundle-inline-example-858p"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b&clinical-status=active,recurrance,remission&_revinclude=Provenance:target"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f"^^xsd:anyURI ] ;
+     fhir:resource ( <http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf"^^xsd:anyURI ] ;
+     fhir:resource ( <http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] ) . # 
+
+<http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f> a fhir:Condition ;
+  fhir:id [ fhir:v "4ac41715-fcbd-421c-8796-9b2c9706dd3f"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "10" ] ;
+     fhir:lastUpdated [ fhir:v "2020-04-28T20:28:00.008+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#cabiJIK51sD2iz4N"^^xsd:anyURI ]
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "encounter-diagnosis" ] ;
+       fhir:display [ fhir:v "Encounter Diagnosis" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:122481008 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "122481008" ] ;
+       fhir:display [ fhir:v "Hammer toe (disorder)" ]
+     ] ) ;
+     fhir:text [ fhir:v "Hammer Toe" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82" ]
+  ] ; # 
+  fhir:onset [ fhir:v "2018-10-21T21:22:15-07:00"^^xsd:dateTime] ; # 
+  fhir:recordedDate [ fhir:v "2018-10-21T21:22:15-07:00"^^xsd:dateTime] . # 
+
+<http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf> a fhir:Provenance ;
+  fhir:id [ fhir:v "b2ce4584-b213-411b-bdc9-d515dc92eadf"] ; # 
+  fhir:target ( [
+     fhir:link <http://hl7.org/fhir/us/davinci-cdex/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f> ;
+     fhir:reference [ fhir:v "Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "2020-04-28T20:28:00.008+00:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "author" ] ;
+         fhir:display [ fhir:v "Author" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:link <http://example.org/cdex/provider/fhir/Practitioner/Dr-Jones-12345> ;
+       fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Practitioner/Dr-Jones-12345" ]
+     ] ;
+     fhir:onBehalfOf [
+       fhir:link <http://example.org/cdex/provider/fhir/Organization/good-health-54321> ;
+       fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Organization/good-health-54321" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-cdex/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f> a fhir:us .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Task xmlns="http://hl7.org/fhir">
+  <status value="requested"/>
+  <intent value="order"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"/>
+      <code value="data-request-questionnaire"/>
+    </coding>
+  </code>
+  <for>
+    <identifier>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+          <code value="MB"/>
+          <display value="Member Number"/>
+        </coding>
+        <text value="Member Number"/>
+      </type>
+      <system value="http://example.org/cdex/payer/member-ids"/>
+      <value value="Member123"/>
+    </identifier>
+  </for>
+  <authoredOn value="2022-06-17T16:16:06Z"/>
+  <lastModified value="2022-06-17T16:16:06Z"/>
+  <requester>
+    <identifier>
+      <system value="http://example.org/cdex/payer/payer-ids"/>
+      <value value="Payer123"/>
+    </identifier>
+  </requester>
+  <owner>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="9941339108"/>
+    </identifier>
+  </owner>
+  <reasonReference>
+    <identifier>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+          <code value="FILL"/>
+          <display value="Filler Identifier"/>
+        </coding>
+        <text value="Payer Claim ID"/>
+      </type>
+      <system value="http://example.org/cdex/payer/claim-ids"/>
+      <value value="Claim123"/>
+    </identifier>
+  </reasonReference>
+  <input>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/temp"/>
+        <code value="questionnaire"/>
+      </coding>
+    </type>
+    <valueCanonical value="http://example.org/cdex-questionnaire-example1"/>
+  </input>
+  <input>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"/>
+        <code value="purpose-of-use"/>
+      </coding>
+    </type>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+        <code value="COVERAGE"/>
+      </coding>
+    </valueCodeableConcept>
+  </input>
+</Task>

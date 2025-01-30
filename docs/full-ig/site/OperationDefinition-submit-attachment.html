@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Submit Attachment Operation - Da Vinci Clinical Data Exchange (CDex) v2.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"20.9"}
+    h3,h4,h5,h6{--heading-prefix:"20.9"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Clinical Data Exchange (CDex)</span>
+            <br/>
+            <span style="display:inline-block;">2.1.0 - STU 2.1
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">IG Home
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="index.html">Introduction</a>
+      </li>
+      <li>
+        <a href="index.html#about-this-guide">About This Guide</a>
+      </li>
+      <li>
+        <a href="index.html#how-to-read-this-guide">How to read this Guide</a>
+      </li>
+      <li>
+        <a href="index.html#credits">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">About the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#what-do-payers-do-with-clinical-information">What Do Payers Do with Clinical Information</a>
+      </li>
+      <li>
+        <a href="background.html#provider-to-provider-data-exchange">Provider to Provider Data Exchange</a>
+      </li>
+      <li>
+        <a href="background.html#what-information-is-needed">What Information is Needed</a>
+      </li>
+      <li>
+        <a href="background.html#where-does-cdex-fit-in-the-da-vinci-project">Where Does CDEX Fit in the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#workflow-overview">Workflow Overview</a>
+      </li>
+      <li>
+        <a href="background.html#architectural-approach">Architectural Approach</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Direct Query
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="direct-query.html">Introduction</a>
+      </li>
+      <li>
+        <a href="direct-query.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="direct-query.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="direct-query.html#discovery-of-patient-fhir-ids">Discovery of Patient FHIR IDs</a>
+      </li>
+      <li>
+        <a href="direct-query.html#direct-query-transaction-scenarios">Direct Query Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="direct-query.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="direct-query.html#signatures">Signatures</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Task Based Approach
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="task-based-approach.html">Introduction</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#the-task-resource">The Task Resource</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#discovery-of-identifiers">Discovery of Identifiers</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#task-state-machine">Task State Machine</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#fetching-the-data">Fetching the Data</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#example-transactions-based-on-query-code-and-free-text-inputs">Task Based Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#using-questionnaire-as-task-input">Using Questionnaire as Task Input</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#when-the-task-cannot-be-completed">When The Task Cannot Be Completed</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#polling-vs-subscriptions">Polling vs Subscriptions</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#formal-authorization">Formal Authorization</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#signatures">Signatures</a>
+      </li>
+      <li>
+        <a href="task-based-conformance.html">Conforming to CDex Task Based Approach</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Attachments
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="solicited-unsolicited-attachments.html">Solicited and Unsolicited Attachments</a>
+      </li>
+      <li>
+        <a href="sending-attachments.html">Sending Attachments</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-questionnaire.html">Requesting Attachments Using Questionnaires</a>
+      </li>
+      <li>
+        <a href="burden-reduction.html">Using CDex Attachments with DaVinci PAS</a>
+      </li>
+      <li>
+        <a href="attachments-conformance.html">Conforming to CDex Attachments</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Signatures
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="signatures.html">About Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#the-signer">The Signer</a>
+      </li>
+      <li>
+        <a href="signatures.html#what-is-signed">What is Signed</a>
+      </li>
+      <li>
+        <a href="signatures.html#cdex-enveloped-signatures">CDex Enveloped Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#electronic-signatures">Electronic Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#digital-signatures">Digital Signatures</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="security.html">Security and Privacy</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="artifacts.html#1">CDex Capability Statements</a>
+      </li>
+      <li>
+        <a href="artifacts.html#2">Attachments Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#3">Attachments Operations</a>
+      </li>
+      <li>
+        <a href="artifacts.html#4">Attachments Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#5">Attachments Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#6">Task Based Approach Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#7">Task Based Approach Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#8">Task Based Approach Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#9">Direct Query Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Questionnaire Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#11">Questionnaire Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#12">Signature Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#13">Signature Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Signature Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#15">Common Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#16">Inline Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex">Discussion Forum</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=40738757">Project Page</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/display/DVP/CDex+Implementer+Support?src=contextnavpagetreemode">Implementer Support</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801">Specification Dashboard</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/">Propose a Change</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="changes.html">Change Log</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Submit Attachment Operation</b></li>
+
+          <span style="float:right;">
+
+            <a href="StructureDefinition-cdex-parameters-submit-attachment.profile.ttl.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="OperationDefinition-submit-attachment-testing.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Clinical Data Exchange (CDex), published by HL7 International / Payer/Provider Information Exchange Work Group. This guide is not an authorized publication; it is the continuous build for version 2.1.0 built by the FHIR (HL7® FHIR® Standard) CI Build. This version is based on the current content of <a href="https://github.com/HL7/davinci-ecdx/">https://github.com/HL7/davinci-ecdx/</a> and changes regularly. See the <a href="http://hl7.org/fhir/us/davinci-cdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="OperationDefinition-submit-attachment.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="OperationDefinition-submit-attachment.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">OperationDefinition: Submit Attachment Operation
+
+  </h2>
+
+  <table class="colstu">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment|2.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="3">
+        
+          <i>
+            
+            Standards status:
+          </i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
+          
+        
+      </td>
+
+      <td>
+        <a href="http://hl7.org/fhir/versions.html#maturity">Maturity Level</a>: 2
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">SubmitAttachment</span></td>
+    </tr>
+
+    <tr>
+      <td colspan="5">
+        <i>Other Identifiers:</i> OID:2.16.840.1.113883.4.642.40.21.33.1
+      </td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: Used by permission of HL7 International all rights reserved Creative Commons License</p>
+</td>
+    </tr>
+
+  </table>
+
+
+<p>
+<p>Providers use this <a href="http://hl7.org/fhir/operations.html">operation</a> to submit <em>solicited</em> and <em>unsolicited</em> attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For <em>unsolicited</em> attachments, the Provider invokes this operation <em>before, concurrently, or after</em>  the claim or pre-authorization transaction. For <em>solicited</em> attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's <em>Unsolicited</em> Attachments <strong>SHOULD</strong> support the <a href="https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html">Endpoint Discovery Strategy</a> defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For <em>Solicited Attachments</em>, the $submit-attachment endpoint is supplied in the <a href="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request">CDex Task Attachment Request Profile</a></p>
+
+<p>The input parameters are:</p>
+<ol>
+  <li>One or more attachments as FHIR Resources
+    <ul>
+      <li>Optionally, one or more unique line item numbers associated with the attachment</li>
+      <li>Optionally, the attachment code used to request the information</li>
+    </ul>
+  </li>
+  <li>Data elements for the association to the claim/prior authorization
+    <ul>
+      <li>A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")</li>
+      <li>What are the attachments for:
+        <ul>
+          <li>Claims</li>
+          <li>Prior Authorizations</li>
+        </ul>
+      </li>
+      <li>Optionally, a unique payer identifier</li>
+      <li>A unique organization/location identifier (e.g., <a href="https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf">Type 2 NPI</a>) or unique provider identifier (e.g., <a href="https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf">Type 1 NPI</a>)</li>
+      <li>A unique Patient member identifier</li>
+      <li>A Date of Service</li>
+      <li>A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>There are no output parameters.</p>
+
+</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="OperationDefinition-submit-attachment.xml.html">XML</a>, <a href="OperationDefinition-submit-attachment.json.html">JSON</a>, <a href="OperationDefinition-submit-attachment.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition submit-attachment</b></p><a name="submit-attachment"> </a><a name="hcsubmit-attachment"> </a><a name="submit-attachment-en-US"> </a><p>URL: [base]/$submit-attachment</p><p>Input parameters Profile:<a href="StructureDefinition-cdex-parameters-submit-attachment.html">CDex Parameters Submit Attachment Profile</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>TrackingId</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>An identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the &quot;tracking control number&quot;</p>
+<p>In <em>unsolicited</em> claim attachments, the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. In <em>solicited</em> claim attachments, the payer assigns the tracking control number and sends it to the provider with the request for additional information for that specific claim. Similarly, for prior authorizations, the prior-auth tracking control number is provider assigned when the attachments are sent upon prior auth generation as <em>unsolicited</em> attachments, and the prior auth tracking control number is assigned and communicated by the payer when the attachments are in response to a request for additional documentation.</p>
+</div></td></tr><tr><td>IN</td><td>AttachTo</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td><a href="ValueSet-cdex-claim-use.html">CDex Claim Use Value Set</a> (Required)</td><td><div><p>A value of either &quot;claim&quot; or &quot;preauthorization&quot; to communicate what the additional information is needed for.  This is known by the provider when submitting <em>unsolicited</em> attachments and communicated to the provider through the request for <em>solicited</em> attachments.</p>
+</div></td></tr><tr><td>IN</td><td>PayerId</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>The receiving payer identifier. It may be required, because the endpoint may support multiple payers.  Currently, there is no standard way to obtain the payer identifiers and implementers will need to obtain them “out of band” when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request.</p>
+</div></td></tr><tr><td>IN</td><td>OrganizationId</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Sending organization/location identifier (e.g., Type 2 NPI). This is assumed to be known by the provider when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request. A ProviderId parameter or OrganizationId parameter or both <strong>SHALL</strong> be present.</p>
+</div></td></tr><tr><td>IN</td><td>ProviderId</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Sending provider identifier (e.g.,Type 1 NPI). This is assumed to be known by the provider when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request. A ProviderId parameter or OrganizationId parameter or both <strong>SHALL</strong> be present.</p>
+</div></td></tr><tr><td>IN</td><td>MemberId</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Patient member identifier. This is assumed to be known by the provider when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request.  This identifier can be either the Payer assigned Member ID or a provider assigned &quot;Patient Account Number&quot; for an <em>unsolicited</em> attachment for prior authorization.</p>
+</div></td></tr><tr><td>IN</td><td>ServiceDate</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td/><td><div><p>Date of service or starting date of the service for the claim or prior authorization.  This parameter <strong>SHALL</strong> be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.  This is assumed to be known by the provider when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments this value is communicated to the provider through the request.</p>
+</div></td></tr><tr><td>IN</td><td>Attachment</td><td/><td>1..*</td><td></td><td/><td><div><p>The attachments that are communicated for a claim or prior authorization. They are applied to the LineItem (line items) and/or Code parameters if present.  If no LineItem is present, then the attachment is applied to the entire claim or prior authorization.</p>
+</div></td></tr><tr><td>IN</td><td>Attachment.LineItem</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Claim/prior authorization line item for service in the claim or prior authorization. It may be present when submitting <em>unsolicited</em> attachments.  For a <em>solicited</em> claim or claim authorization attachment, this value is the same as the line items communicated in the request.</p>
+</div></td></tr><tr><td>IN</td><td>Attachment.Code</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td>http://loinc.org/vs/valid-hl7-attachment-requests (Extensible)</td><td><div><p>Code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments/.  PWK01 Report Type Codes may also be used.  It <strong>SHOULD</strong> be present when submitting <em>unsolicited</em> attachments. For <em>solicited</em> attachments, this value is the same as the attachment code communicated when requesting attachments. When requesting attachments using Questionnaire, there is no code in the request and the code is typically not present in the response.</p>
+</div></td></tr><tr><td>IN</td><td>Attachment.Content</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a></td><td/><td><div><p>Attachment as a FHIR resource.  Non-FHIR attachment data is conveyed using the <a href="http://hl7.org/fhir/documentreference.html">DocumentReference</a> or <a href="http://hl7.org/fhir/binary.html">Binary</a> resource. Servers <strong>SHALL</strong> support the DocumentReference resource type and <strong>SHOULD</strong> support other types. If Servers support requesting attachments with Questionnaire, then the <a href="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse">SDC Questionnaire Response Profile</a> <strong>SHALL</strong> be supported and the <a href="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt">SDC Adaptive Questionnaire Response Profile</a> <strong>SHOULD</strong> be supported.</p>
+</div></td></tr><tr><td>IN</td><td>Final</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Flag to indicate whether the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.  If Final = &quot;true&quot;, the Data Source has no more attachments to submit. This is the default meaning if this parameter is omitted. If Final = &quot;false&quot;, the Data Source expects to submit more attachments in subsequent operations.   Payers typically anticipate a single submission and may discourage multiple submissions.</p>
+</div></td></tr></table><div><p>The following rules apply when using <code>$submit-attachment</code>:</p>
+<ul>
+<li>The operation's endpoint <strong>SHALL</strong> only accept <code>POST</code> transactions - any other HTTP method <strong>SHALL</strong> result in an HTTP error.</li>
+<li>A ProviderId parameter, OrganizationId parameter, or both <strong>SHALL</strong> be present.</li>
+<li>The ServiceDate parameter <strong>SHALL</strong> be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.</li>
+<li>The <code>Attachment.LineItem</code> and <code>Attachment.Code</code> parameters are associated with the attachments in <code>Attachment.Content</code>.   If <code>Attachment.LineItem</code> is absent, the attachment is associated with the entire claim or prior authorization.</li>
+<li>For the <code>Attachment.Content</code> parameter, Servers <strong>SHALL</strong> support <a href="http://hl7.org/fhir/documentreference.html">DocumentReference</a> resource type and <strong>SHOULD</strong> support other types.  If Servers support requesting attachments with <a href="http://hl7.org/fhir/questionnaire.html">Questionnaire</a>, then the <a href="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse">SDC Questionnaire Response Profile</a> <strong>SHALL</strong> be supported and the <a href="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt">SDC Adaptive Questionnaire Response Profile</a> <strong>SHOULD</strong> be supported.
+<ul>
+<li>The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using <code>DocumentReference.attachment.url</code> or the content as inline base64 encoded data using <code>DocumentReference.attachment.data</code>.  The server system is not required to support both an address and inline base64 encoded data, but <strong>SHALL</strong> support at least one of these elements.</li>
+<li>These capabilities <strong>SHOULD</strong> be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).</li>
+</ul>
+</li>
+<li>When the <code>Final</code> parameter is omitted, the default meaning is Final=&quot;true&quot; - the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.</li>
+<li>When processing the operation, a server may return one of several status codes:
+<ul>
+<li><strong>200 OK</strong>: Indicates that the server has accepted the clinical attachments.
+<ul>
+<li>If the attachments can not be associated with an <em>existing</em> claim or member, the server <strong>SHOULD</strong> return an <a href="http://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> to inform the Data Source that they are being held for a subsequent association with a future claim or prior authorization.</li>
+</ul>
+</li>
+<li><strong>4xx</strong>: Indicates some error in the submission. The client <strong>SHOULD</strong> interpret a 4xx response to indicate that there is no point in resubmitting the unaltered operation,</li>
+<li><strong>5xx</strong>: Indicates some system error. The client <strong>SHOULD</strong> interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original operation.</li>
+<li>The server <strong>SHOULD</strong> return an <a href="http://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> with additional error information if the response code is 400 or greater. For example, if the payer does not know the claim or prior authorization, the OperationOutcome can alert the submitter to check whether they sent it to the wrong payer.</li>
+</ul>
+</li>
+</ul>
+<p>See the <a href="attachments.html">Attachments</a> page for additional guidance and examples.</p>
+</div></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="StructureDefinition-cdex-parameters-submit-attachment.profile.ttl.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="OperationDefinition-submit-attachment-testing.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/claims">HL7 International / Payer/Provider Information Exchange Work Group</a>.  Package hl7.fhir.us.davinci-cdex#2.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 9, 2025 20:34+0000">2025-01-09</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-cdex/history.html">Version History</a> |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

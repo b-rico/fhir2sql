@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<QuestionnaireResponse xmlns="http://hl7.org/fhir">
+  <questionnaire value="http://example.org/cdex-questionnaire-example1"/>
+  <status value="completed"/>
+  <subject>
+    <identifier>
+      <use value="usual"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+          <code value="MB"/>
+          <display value="Member Number"/>
+        </coding>
+        <text value="Member Number"/>
+      </type>
+      <system value="http://example.org/cdex/payer/member-ids"/>
+      <value value="Member123"/>
+    </identifier>
+    <display value="Amy Shaw"/>
+  </subject>
+  <authored value="2022-06-17"/>
+  <author>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="9941339100"/>
+    </identifier>
+  </author>
+  <item>
+    <linkId value="1"/>
+    <text value="Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)"/>
+    <answer>
+      <valueString value="Examplitis"/>
+    </answer>
+  </item>
+  <item>
+    <linkId value="2"/>
+    <text value="Order Reason"/>
+    <answer>
+      <valueCoding>
+        <system value="http://example.org"/>
+        <code value="4"/>
+        <display value="Replacement"/>
+      </valueCoding>
+    </answer>
+  </item>
+</QuestionnaireResponse>

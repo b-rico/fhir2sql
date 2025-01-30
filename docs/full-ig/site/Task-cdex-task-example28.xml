@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Task xmlns="http://hl7.org/fhir">
+  <id value="cdex-task-example28"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Task cdex-task-example28</b></p><a name="cdex-task-example28"> </a><a name="hccdex-task-example28"> </a><a name="cdex-task-example28-en-US"> </a><p><b>identifier</b>: Re-Association Tracking Control Number/trackingid1056</p><p><b>status</b>: Requested</p><p><b>intent</b>: order</p><p><b>code</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes attachment-request-questionnaire}">Attachment Request Questionnaire</span></p><p><b>for</b>: <a href="#hccdex-task-example28/patient">Amy Shaw  (no stated gender), DoB: 1987-02-20 ( Patient Account Number: PA-123 (use: usual, ))</a></p><p><b>authoredOn</b>: 2022-06-17 16:16:06+0000</p><p><b>lastModified</b>: 2022-06-17 16:16:06+0000</p><p><b>requester</b>: Identifier: <code>http://example.org/cdex/payer/payer-ids</code>/Payer123</p><p><b>owner</b>: <a href="#hccdex-task-example28/practitionerrole">PractitionerRole</a></p><p><b>reasonCode</b>: <span title="Codes:{http://hl7.org/fhir/claim-use preauthorization}">preauthorization</span></p><p><b>reasonReference</b>: Identifier: <code>http://example.org/cdex/payer/claim-ids</code>/Preauth123</p><h3>Restrictions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Period</b></td></tr><tr><td style="display: none">*</td><td>?? --&gt; 2022-06-21</td></tr></table><blockquote><p><b>input</b></p><p><b>PALineNumber</b>: 1</p><p><b>type</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes questionnaire-context}">Questionnaire Context</span></p><p><b>value</b>: <a href="Questionnaire-cdex-questionnaire-example2.html">Home Oxygen Therapy Questionnaire</a></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes payer-url}">Payer URL</span></p><p><b>value</b>: <a href="http://example.org/cdex/payer/$submit-attachment">http://example.org/cdex/payer/$submit-attachment</a></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp purpose-of-use}">Purpose Of Use</span></p><p><b>value</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ActReason COVAUTH}">coverage authorization</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp signature-flag}">Signature Flag</span></p><p><b>value</b>: true</p></blockquote><hr/><blockquote><p class="res-header-id"><b>Generated Narrative: Patient #patient</b></p><a name="cdex-task-example28/patient"> </a><a name="hccdex-task-example28/patient"> </a><a name="cdex-task-example28/patient-en-US"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Amy Shaw  (no stated gender), DoB: 1987-02-20 ( Patient Account Number: PA-123 (use: usual, ))</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Other Id (see the one above)">Other Id:</td><td colspan="3">Member Number/Member123 (use: usual, )</td></tr></table></blockquote><hr/><blockquote><p class="res-header-id"><b>Generated Narrative: PractitionerRole #practitionerrole</b></p><a name="cdex-task-example28/practitionerrole"> </a><a name="hccdex-task-example28/practitionerrole"> </a><a name="cdex-task-example28/practitionerrole-en-US"> </a><p><b>practitioner</b>: Identifier: <a href="http://terminology.hl7.org/5.3.0/NamingSystem-npi.html" title="National Provider Identifier">United States National Provider Identifier</a>/9941339100</p><p><b>organization</b>: Identifier: <a href="http://terminology.hl7.org/5.3.0/NamingSystem-npi.html" title="National Provider Identifier">United States National Provider Identifier</a>/1234567893</p></blockquote></div>
+  </text>
+  <contained>
+    <Patient>
+      <id value="patient"/>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+            <code value="MB"/>
+            <display value="Member Number"/>
+          </coding>
+          <text value="Member Number"/>
+        </type>
+        <system value="http://example.org/cdex/payer/member-ids"/>
+        <value value="Member123"/>
+      </identifier>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType"/>
+            <code value="pat"/>
+            <display value="Patient Account Number"/>
+          </coding>
+          <text value="Patient Account Number"/>
+        </type>
+        <system value="http://example.org/cdex/provider/patient-ids"/>
+        <value value="PA-123"/>
+      </identifier>
+      <name>
+        <family value="Shaw"/>
+        <given value="Amy"/>
+      </name>
+      <birthDate value="1987-02-20"/>
+    </Patient>
+  </contained>
+  <contained>
+    <PractitionerRole>
+      <id value="practitionerrole"/>
+      <practitioner>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="9941339100"/>
+        </identifier>
+      </practitioner>
+      <organization>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="1234567893"/>
+        </identifier>
+      </organization>
+    </PractitionerRole>
+  </contained>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"/>
+        <code value="tracking-id"/>
+        <display value="Tracking Id"/>
+      </coding>
+      <text value="Re-Association Tracking Control Number"/>
+    </type>
+    <system value="http://example.org/payer"/>
+    <value value="trackingid1056"/>
+  </identifier>
+  <status value="requested"/>
+  <intent value="order"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"/>
+      <code value="attachment-request-questionnaire"/>
+    </coding>
+    <text value="Attachment Request Questionnaire"/>
+  </code>
+  <for>
+    <reference value="#patient"/>
+  </for>
+  <authoredOn value="2022-06-17T16:16:06Z"/>
+  <lastModified value="2022-06-17T16:16:06Z"/>
+  <requester>
+    <identifier>
+      <system value="http://example.org/cdex/payer/payer-ids"/>
+      <value value="Payer123"/>
+    </identifier>
+  </requester>
+  <owner>
+    <reference value="#practitionerrole"/>
+  </owner>
+  <reasonCode>
+    <coding>
+      <system value="http://hl7.org/fhir/claim-use"/>
+      <code value="preauthorization"/>
+      <display value="Preauthorization"/>
+    </coding>
+    <text value="preauthorization"/>
+  </reasonCode>
+  <reasonReference>
+    <identifier>
+      <system value="http://example.org/cdex/payer/claim-ids"/>
+      <value value="Preauth123"/>
+    </identifier>
+  </reasonReference>
+  <restriction>
+    <period>
+      <end value="2022-06-21"/>
+    </period>
+  </restriction>
+  <input>
+    <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber">
+      <valueInteger value="1"/>
+    </extension>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"/>
+        <code value="questionnaire-context"/>
+      </coding>
+    </type>
+    <valueCanonical value="http://example.org/cdex-questionnaire-example2"/>
+  </input>
+  <input>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"/>
+        <code value="payer-url"/>
+      </coding>
+    </type>
+    <valueUrl value="http://example.org/cdex/payer/$submit-attachment"/>
+  </input>
+  <input>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"/>
+        <code value="purpose-of-use"/>
+      </coding>
+    </type>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+        <code value="COVAUTH"/>
+        <display value="coverage authorization"/>
+      </coding>
+    </valueCodeableConcept>
+  </input>
+  <input>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"/>
+        <code value="signature-flag"/>
+      </coding>
+    </type>
+    <valueBoolean value="true"/>
+  </input>
+</Task>

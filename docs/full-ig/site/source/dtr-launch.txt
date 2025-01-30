@@ -1,0 +1,47 @@
+#text for https://sequencediagram.org/
+
+title Steps for DTR SMART App Launch
+
+participant DTR App
+participant DTR Client
+actor User
+participant FHIR Server
+entryspacing 1.2
+note over DTR Client: HIT with Authorization Server
+
+autonumber
+opt Precondition: Client Registration
+entryspacing 0.5
+DTR App->DTR Client: (may be out of band)
+end 
+
+group EHR Launch 
+
+note over DTR Client,User: CDex defined `Task.code` triggers launch
+User->DTR Client: User\nlaunches App
+DTR Client->DTR App: Launch request
+end
+ 
+ 
+DTR App->FHIR Server:Discovery request
+autonumber off
+FHIR Server-->DTR App: Discovery response
+autonumber 
+DTR App->DTR Client: Authorization request*
+note over DTR App: *Required scopes: "launch", "launch/patient",\n"**launch/task**", "patient/*.rs", "**patient/Task.u",\n"patient/QuestionnaireResponse.cu**"
+#opt
+#User->DTR Client: User input #incorporated\ninto authorization decision
+#end
+
+alt DTR Granted Access
+DTR Client-->DTR App:Authorization granted
+DTR App->DTR Client:Access token request
+DTR Client-->DTR App: Access token response\*\*
+note over DTR Client: \*\*launch context in "fhirContext" array\nincludes local reference to the Task
+ref over DTR App, FHIR Server: 9 Request Resources (see previous section)
+
+else DTR Denied Access
+autonumber 10
+
+DTR Client-->DTR App:Authorization error
+end

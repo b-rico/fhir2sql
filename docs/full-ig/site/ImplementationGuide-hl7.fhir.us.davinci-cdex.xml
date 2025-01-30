@@ -1,0 +1,2556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="hl7.fhir.us.davinci-cdex"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide hl7.fhir.us.davinci-cdex</b></p><a name="hl7.fhir.us.davinci-cdex"> </a><a name="hchl7.fhir.us.davinci-cdex"> </a><a name="hl7.fhir.us.davinci-cdex-en-US"> </a><h2>DaVinciCDex</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex</pre><div><p>This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).</p>
+</div></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="claims"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex"/>
+  <version value="2.1.0"/>
+  <name value="DaVinciCDex"/>
+  <title value="Da Vinci Clinical Data Exchange (CDex)"/>
+  <status value="active"/>
+  <date value="2024-11-01"/>
+  <publisher value="HL7 International / Payer/Provider Information Exchange Work Group"/>
+  <contact>
+    <name value="HL7 International / Payer/Provider Information Exchange Work Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/claims"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="pie@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <description value="This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers)."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Used by permission of HL7 International all rights reserved Creative Commons License"/>
+  <packageId value="hl7.fhir.us.davinci-cdex"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="6.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.1.0"/>
+  </dependsOn>
+  <dependsOn id="uscore7">
+    <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason">
+      <valueMarkdown value="Needed for systems supporting USCDI v4&#xA;"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="7.0.0"/>
+  </dependsOn>
+  <dependsOn id="uscore6">
+    <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason">
+      <valueMarkdown value="Needed for systems supporting USCDI v3&#xA;"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+    <packageId value="hl7.fhir.us.core.v610"/>
+    <version value="6.1.0"/>
+  </dependsOn>
+  <dependsOn id="uscore3">
+    <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason">
+      <valueMarkdown value="Needed for systems supporting USCDI v1&#xA;"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+    <packageId value="hl7.fhir.us.core.v311"/>
+    <version value="3.1.1"/>
+  </dependsOn>
+  <dependsOn id="hrex">
+    <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex"/>
+    <packageId value="hl7.fhir.us.davinci-hrex"/>
+    <version value="1.1.0"/>
+  </dependsOn>
+  <dependsOn id="pas">
+    <uri value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"/>
+    <packageId value="hl7.fhir.us.davinci-pas"/>
+    <version value="2.1.0"/>
+  </dependsOn>
+  <dependsOn id="c4bb">
+    <uri value="http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb"/>
+    <packageId value="hl7.fhir.us.carin-bb"/>
+    <version value="2.0.0"/>
+  </dependsOn>
+  <dependsOn id="dtr">
+    <uri value="http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr"/>
+    <packageId value="hl7.fhir.us.davinci-dtr"/>
+    <version value="2.1.0"/>
+  </dependsOn>
+  <dependsOn id="sdc">
+    <uri value="http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"/>
+    <packageId value="hl7.fhir.uv.sdc"/>
+    <version value="3.0.0"/>
+  </dependsOn>
+  <dependsOn id="backport">
+    <uri value="http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"/>
+    <packageId value="hl7.fhir.uv.subscriptions-backport.r4"/>
+    <version value="1.1.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency">
+      <valueCode value="hl7.fhir.us.davinci-cdex#2.0.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency">
+      <valueCode value="hl7.fhir.us.davinci-cdex#2.0.0-ballot"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency">
+      <valueCode value="hl7.fhir.us.davinci-cdex#1.1.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency">
+      <valueCode value="hl7.fhir.us.davinci-cdex#1.0.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency">
+      <valueCode value="hl7.fhir.us.davinci-cdex#0.2.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency">
+      <valueCode value="hl7.fhir.us.davinci-cdex#0.1.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2024+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="STU 2.1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-expansion-params"/>
+      </extension>
+      <extension url="value">
+        <valueString value="../../input/_resources/exp-params.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="show-inherited-invariants"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="usage-stats-opt-out"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="generate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="xml"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="generate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="version-comparison"/>
+      </extension>
+      <extension url="value">
+        <valueString value="1.0.0"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="version-comparison"/>
+      </extension>
+      <extension url="value">
+        <valueString value="1.1.0"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="version-comparison"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2.0.0"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="bundle-references-resolve"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example4"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example5"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example2"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example3"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example4"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example6"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example21"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example22"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example26"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example10"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example11"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example13"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example15"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example17"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example19"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Subscription/cdex-task-inline-scenario1-subscription-requested"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Subscription/cdex-task-inline-scenario1-subscription-active"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="QuestionnaireResponse/cdex-questionnaireresponse-inline-example1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/cdex-task-inline-scenario1-subscription-notification"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/cdex-bundle-inline-example-858p"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="suppressed-ids"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22,OperationOutcome/cdex-operationoutcome-inline-example1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="auto-oid-root"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2.16.840.1.113883.4.642.40.21"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/us/davinci-cdex/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#0.3.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2024+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="STU 2.1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-expansion-params"/>
+      </extension>
+      <extension url="value">
+        <valueString value="../../input/_resources/exp-params.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="show-inherited-invariants"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="usage-stats-opt-out"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="generate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="xml"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="generate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="version-comparison"/>
+      </extension>
+      <extension url="value">
+        <valueString value="1.0.0"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="version-comparison"/>
+      </extension>
+      <extension url="value">
+        <valueString value="1.1.0"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="version-comparison"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2.0.0"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="bundle-references-resolve"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example4"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example5"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example2"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example3"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example4"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example6"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example21"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example22"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example26"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example10"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example11"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example13"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example15"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example17"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/cdex-task-inline-example19"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Subscription/cdex-task-inline-scenario1-subscription-requested"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Subscription/cdex-task-inline-scenario1-subscription-active"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="QuestionnaireResponse/cdex-questionnaireresponse-inline-example1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/cdex-task-inline-scenario1-subscription-notification"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/cdex-bundle-inline-example-858p"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="suppressed-ids"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22,OperationOutcome/cdex-operationoutcome-inline-example1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="auto-oid-root"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2.16.840.1.113883.4.642.40.21"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/us/davinci-cdex/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <grouping id="CapabilityStatements">
+      <name value="CDex Capability Statements"/>
+      <description value="The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements."/>
+    </grouping>
+    <grouping id="AttachmentsProfiles">
+      <name value="Attachments Profiles"/>
+      <description value="Profiles Associated with CDex Attachments Transactions"/>
+    </grouping>
+    <grouping id="AttachmentsOperations">
+      <name value="Attachments Operations"/>
+      <description value="Operations Associated with CDex Attachments Transactions"/>
+    </grouping>
+    <grouping id="AttachmentsTerminology">
+      <name value="Attachments Terminology"/>
+      <description value="ValueSets Associated with CDex Attachments Transactions"/>
+    </grouping>
+    <grouping id="AttachmentsExamples">
+      <name value="Attachments Examples"/>
+      <description value="Examples Associated with CDex Attachments Transactions"/>
+    </grouping>
+    <grouping id="TaskBasedProfiles">
+      <name value="Task Based Approach Profiles"/>
+      <description value="Profiles Associated with CDex Task Based Approach Transactions"/>
+    </grouping>
+    <grouping id="TaskBasedTerminology">
+      <name value="Task Based Approach Terminology"/>
+      <description value="ValueSets Associated with CDex Task Based Approach Transactions"/>
+    </grouping>
+    <grouping id="TaskBasedExamples">
+      <name value="Task Based Approach Examples"/>
+      <description value="Examples Associated with CDex Task Based Approach Transactions"/>
+    </grouping>
+    <grouping id="DirectQueryExamples">
+      <name value="Direct Query Examples"/>
+      <description value="Examples Associated with CDex Direct Query (FHIR RESTful search) Approach Transactions"/>
+    </grouping>
+    <grouping id="QuestionnaireProfiles">
+      <name value="Questionnaire Profiles"/>
+      <description value="Questionnaire profiles used in both CDex Attachments and Task Based Approach Transactions"/>
+    </grouping>
+    <grouping id="QuestionnaireExamples">
+      <name value="Questionnaire Examples"/>
+      <description value="Questionnaire examples used in both CDex Attachments and Task Based Approach Transactions"/>
+    </grouping>
+    <grouping id="SignatureProfiles">
+      <name value="Signature Profiles"/>
+      <description value="Profiles Associated with CDex Signatures"/>
+    </grouping>
+    <grouping id="SignatureTerminology">
+      <name value="Signature Terminology"/>
+      <description value="ValueSets Associated with CDex Signatures"/>
+    </grouping>
+    <grouping id="SignatureExamples">
+      <name value="Signature Examples"/>
+      <description value="Examples Associated with CDex Signatures (Several examples are in Task Based and Attachments Examples groupings as well)"/>
+    </grouping>
+    <grouping id="CommonTerminology">
+      <name value="Common Terminology"/>
+      <description value="ValueSets and CodeSystems used in both CDex Attachments and Task Based Approach Transactions"/>
+    </grouping>
+    <grouping id="InlineExamples">
+      <name value="Inline Examples"/>
+      <description value="These examples are used in the inline example scenarios throughout the guide. They are listed here so the implementation guide's publication tooling can validate them against the CDex profile definitions.  Since they are used to illustrate &quot;over-the-wire&quot; transactions, the rendered narrative and id elements are often absent."/>
+    </grouping>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/data-consumer-client"/>
+      </reference>
+      <name value="Data Consumer Client CapabilityStatement"/>
+      <description value="This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data from the Data Source  during clinical data exchange. The capabilities include one or more of the following interactions:&#xA;&#xA;1. Requesting and Fetching Clinical Data using a FHIR RESTful query&#xA;2. Requesting and Fetching Clinical Data using a Task-based query including:&#xA;   -  Polling or Subscribing for Task update notifications&#xA;3. Requesting Attachments&#xA;   - Requesting Attachments Using Attachments Codes&#xA;   - Requesting Attachments Using Questionnaires"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="CapabilityStatements"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/data-consumer-server"/>
+      </reference>
+      <name value="Data Consumer Server CapabilityStatement"/>
+      <description value="This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Server* mode when responding to a  Data Source   or one of its proxies during clinical data exchange.   The capabilities include one or more of the following interactions:&#xA;&#xA;1. Responding to a query for authorization information represented by a CommunicationRequest or ServiceRequest&#xA;1. Responding to  the `$submit-attachment` operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="CapabilityStatements"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/data-source-client"/>
+      </reference>
+      <name value="Data Source Client CapabilityStatement"/>
+      <description value="This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange with a Data Consumer. The capabilities include one or more of the following interactions:&#xA;1. Post the `$submit-attachment` operation to a Data Consumer endpoint.&#xA;2. Launch Da Vinci DTR.&#xA;3. Query for Authorization information represented by a CommunicationRequest or ServiceRequest.&#xA;4. Post a subscription notification to a Data Consumer endpoint updating the status of a task."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="CapabilityStatements"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/data-source-server"/>
+      </reference>
+      <name value="Data Source Server CapabilityStatement"/>
+      <description value="This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer during clinical data exchange. The capabilities include one or more of the following interactions:&#xA;&#xA;1. Responding to a FHIR RestFul Query for Clinical Data &#xA;2. Responding to a Task-based query request for clinical data&#xA;including:&#xA;   -  Polling or Subscription requests for Task update notifications&#xA;1. Responding to&#xA;   - Requesting Attachments Using Attachments Codes&#xA;   - Requesting Attachments Using Questionnaires"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="CapabilityStatements"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cdex-task-attachment-request"/>
+      </reference>
+      <name value="CDex Task Attachment Request Profile"/>
+      <description value="Payers use this [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation (&quot;attachments&quot;) for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and respond in a way that is compatible with existing X12 277 RFAI and 278 response transactions to allow for association and requests for (typically PDF and CCDA) documents using LOINC and X12 standard codes. It also supports requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse, as supported by Da Vinci DTR.&#xA;&#xA;It constrains the following elements to be *mandatory* (min=1):&#xA;&#xA;- A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](StructureDefinition-cdex-patient-demographics.html) and communicating additional patient demographic data elements.&#xA;- A [contained](http://hl7.org/fhir/R4/references.html) PractitionerRole Resource defined by the [CDex PractitionerRole Profile](StructureDefinition-cdex-practitionerrole.html) to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.&#xA;- A `Task.identifier` element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)&#xA;- A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider cannot complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).&#xA;- A `Task.intent` element that is fixed to &quot;order&quot; (this element is a mandatory Task element)&#xA;- A `Task.code` of either &quot;attachment-request-code&quot; or &quot;attachment-request-questionnaire&quot;  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire.&#xA;  - If the code is &quot;attachment-request-code&quot;, the provider system returns attachment(s) identified by the attachment code(s) in the &quot;AttachmentsNeeded&quot; input parameter.&#xA;  - If the code is &quot;attachment-request-questionnaire&quot;, the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/index.html) to complete the Questionnaire(s) referenced in the &quot;QuestionnaireContext&quot; input parameter.&#xA;  - When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in the &quot;PayerUrl&quot; input parameter.    &#xA;- A `Task.requester`.identifier element representing the Payer ID&#xA;- A `Task.owner`.reference element that is fixed to &quot;\#practionerrole&quot; -  a reference to the contained PractitionerRole Resource that represents the Provider ID.&#xA;- A `Task.for`.reference element that is fixed to &quot;\#patient&quot; - a reference to the contained Patient Resource that represents patient demographic data.&#xA;- A `Task.reasonCode` to communicate whether the attachments are for a claim or prior authorization.&#xA;- A `Task.reasonReference`.reference referencing the claim or prior authorization ID (business Identifier).&#xA;- A &quot;PayerUrl&quot; `Task.input` element representing the Payer endpoint URL the provider uses when submitting attachments with the `[$submit-attachment`](OperationDefinition-submit-attachment.html) operation.&#xA;&#xA;It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):&#xA;&#xA;- A `Task.Restriction.period` element representing the due date for submitting the attachments&#xA;- A `Task.statusReason.text` to communicate the reason for the status (for example, if the Task is rejected or failed)&#xA;- A &quot;AttachmentsNeeded&quot; `Task.input` element to communicate to the provider what attachments are needed using LOINC or X12 attachment codes.*&#xA;- A &quot;AttachmentsNeeded&quot; or &quot;QuestionnaireContext&quot; `Task.input` element extension that communicates claim or prior authorization line item numbers associated with the attachment or questionnaire.&#xA;- A &quot;signature&quot; `Task.input` element. This is a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](sending-attachments.html#signatures).&#xA;- A &quot;service-date&quot; `Task.input` element representing the date of service or starting date of the service for the claim or prior authorization. It **SHALL** be present if the attachment is for a claim.&#xA;&#xA;It defines the following *optional* elements:&#xA;&#xA;- A &quot;QuestionnaireContext&quot; Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*&#xA;  - A questionnaireDisplay extension to communicate the display name of the Questionnaire&#xA;- A &quot;POU&quot; `Task.input` element that is used to indicate the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html). Refer to the [Purpose of Use section](task-based-approach.html#purpose-of-use) For more information about sending purpose POU codes.&#xA;- A &quot;multiple-submits&quot; `Task.input` element that is a flag to indicate whether the requested data can be sent in multiple submissions&#xA;- A &quot;AttachmentsNeeded&quot; `Task.output` element that references the result(s) of the data request code.&#xA;- A &quot;QuestionnaireContext&quot; `Task.output` element which references the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).&#xA;&#xA;\* Either a &quot;AttachmentsNeeded&quot; or a &quot;QuestionnaireContext&quot; `Task.input` element is required"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="AttachmentsProfiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cdex-practitionerrole"/>
+      </reference>
+      <name value="CDex PractitionerRole Profile"/>
+      <description value="This Profile is defined as a [contained](http://hl7.org/fhir/R4/references.html) resource within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner` to communicate the provider ID as a unique organization/location identifier (e.g., Type 2 NPI), or unique provider identifier (e.g., Type 1 NPI), or both. It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0).:&#xA;&#xA;- A default resource ID of &quot;practitionerrole&quot;&#xA;- A `practitioner.identifier`&#xA;- An `organization.identifier`&#xA;&#xA;At least a practitioner identifier or organization identifier **SHALL** be present."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="AttachmentsProfiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cdex-patient-demographics"/>
+      </reference>
+      <name value="CDex Patient Demographics Profile"/>
+      <description value="This Profile is defined as a [contained](http://hl7.org/fhir/R4/references.html) resource within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (such as verifying patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):&#xA;&#xA;- A default resource ID of &quot;patient&quot;&#xA;- A member ID identifier [slice](https://hl7.org/fhir/R4/profiling.html#slicing)&#xA;- A patient's name&#xA;&#xA;and the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):&#xA;&#xA;- A patient account number identifier slice  &#xA;- A date of birth"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="AttachmentsProfiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cdex-parameters-submit-attachment"/>
+      </reference>
+      <name value="CDex Parameters Submit Attachment Profile"/>
+      <description value="The Parameters profile for Da Vinci [Submit Attachment Operation](OperationDefinition-submit-attachment.html)"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="AttachmentsProfiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/submit-attachment"/>
+      </reference>
+      <name value="Submit Attachment Operation"/>
+      <description value="Providers use this [operation](http://hl7.org/fhir/operations.html) to submit *solicited* and *unsolicited* attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For *unsolicited* attachments, the Provider invokes this operation *before, concurrently, or after*  the claim or pre-authorization transaction. For *solicited* attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's *Unsolicited* Attachments **SHOULD** support the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For *Solicited Attachments*, the $submit-attachment endpoint is supplied in the [CDex Task Attachment Request Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request)&#xA;&#xA;The input parameters are:&#xA;1. One or more attachments as FHIR Resources&#xA;    - Optionally, one or more unique line item numbers associated with the attachment&#xA;    - Optionally, the attachment code used to request the information&#xA;1. Data elements for the association to the claim/prior authorization&#xA;    - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the &quot;re-association tracking control numbers&quot;)&#xA;    - What are the attachments for:&#xA;      - Claims&#xA;      - Prior Authorizations&#xA;    - Optionally, a unique payer identifier&#xA;    - A unique organization/location identifier (e.g., [Type 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf)) or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))&#xA;    - A unique Patient member identifier&#xA;    - A Date of Service&#xA;    - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.&#xA;&#xA;There are no output parameters."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="AttachmentsOperations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cdex-claim-use"/>
+      </reference>
+      <name value="CDex Claim Use Value Set"/>
+      <description value="The purpose of a Claim resource and the reason for attachments. It includes the codes &quot;preauthorization&quot; and &quot;claim&quot;."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="AttachmentsTerminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cdex-loinc-attachment-codes"/>
+      </reference>
+      <name value="CDex LOINC Attachment Codes Value Set"/>
+      <description value="This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at [LOINC Attahments](https://loinc.org/attachments/)."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="AttachmentsTerminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cdex-pwk01-attachment-report-type-code"/>
+      </reference>
+      <name value="CDex PWK01 Attachment Report Type Code Value Set"/>
+      <description value="In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.&#xA;&#xA;Note that the PWK01 codes will not be published in due to X12 IP restrictions."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="AttachmentsTerminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example19"/>
+      </reference>
+      <name value="CDex Task Example 19"/>
+      <description value="**Claim Attachment Request Example:**   Claim Attachment Request sent by payer to a provider requesting a signed Progress note (H&amp;P) note"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example20"/>
+      </reference>
+      <name value="CDex Task Example 20"/>
+      <description value="**Prior-Auth Attachment Request Example:**   Prior Authorization Attachment Request with a POU of &quot;coverage authorization&quot; sent by payer to a provider requesting a signed History and physical (H&amp;P) note."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example22"/>
+      </reference>
+      <name value="CDex Task Example 22"/>
+      <description value="**Request Additional Data using a Questionnaire:**   Prior Authorization Attachment Request with a POU of &quot;coverage authorization&quot; sent by payer to a provider requesting a data request questionnaire be completed."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example23"/>
+      </reference>
+      <name value="CDex Task Example 23"/>
+      <description value="**Request Additional Data using an Adaptive Questionnaire:**  Prior Authorization Attachment Request with a POU of &quot;coverage authorization&quot; sent by payer to a provider requesting an adaptive questionnaire be completed."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example24"/>
+      </reference>
+      <name value="CDex Task Example 24"/>
+      <description value="**Completed Request for Additional Data using a Questionnaire:**   Completed Task for CDex Task Example 22. This example has a status of &quot;completed&quot; and a &quot;lastModified&quot; date of 6/17/2022. The &quot;reasonCode&quot; is &quot;request additional data&quot; and the &quot;output&quot; is a QuestionnaireResponse."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example25"/>
+      </reference>
+      <name value="CDex Task Example 25"/>
+      <description value="**Completed Request for Additional Data Using an Adaptive Questionnaire:**  Completed Task for CDex Task Example 23. This example has a status of &quot;completed&quot; and a &quot;lastModified&quot; date of 6/17/2022. The &quot;reasonCode&quot; is &quot;request additional data&quot; and the &quot;output&quot; is a QuestionnaireResponse."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example28"/>
+      </reference>
+      <name value="CDex Task Example 28"/>
+      <description value="**Request Additional Data Requiring a Verification Signature Using a Questionnaire:** Prior Authorization Attachment Request with a POU of &quot;coverage authorization&quot; and Signature required sent by payer to a provider requesting a data request questionnaire be completed and signed."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example29"/>
+      </reference>
+      <name value="CDex Task Example 29"/>
+      <description value="**Completed Request for Additional Data Requiring a Verification Signature Using a Questionnaire:**  Completed Prior Authorization Attachment Request (CDex Task Example 28) with a status of &quot;completed&quot; and output referencing the digitally signed QuestionnaireResponse."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/cdex-parameters-example1"/>
+      </reference>
+      <name value="CDex Parameters Example 1"/>
+      <description value="**CCDA Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a CCDA attachment and the necessary information needed to associate them to the claim."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/cdex-parameters-example2"/>
+      </reference>
+      <name value="CDex Parameters Example 2"/>
+      <description value="**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a claim."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/cdex-parameters-example3"/>
+      </reference>
+      <name value="CDex Parameters Example 3"/>
+      <description value="**PDF Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a PDF attachment and the necessary information needed to associate them to the claim."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/cdex-parameters-example4"/>
+      </reference>
+      <name value="CDex Parameters Example 4"/>
+      <description value="**Laboratory Results Attachment Example:** Parameters Resource example showing how it is used to submit multiple attachments using the `$submit-attachment` operation. It contains 3 Hemoglobin A1c results as attachments and the necessary information needed to associate them to the claim."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/cdex-parameters-example5"/>
+      </reference>
+      <name value="CDex Parameters Example 5"/>
+      <description value="**Completed QuestionnaireResponse Attachment Example:** Parameters Resource example showing how it is used to submit a solicited attachment using the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse completed using DTR in response to a Questionnaire sent in the Attachments request."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0"/>
+      <groupingId value="AttachmentsExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cdex-task-data-request"/>
+      </reference>
+      <name value="CDex Task Data Request Profile"/>
+      <description value="This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned &quot;data request&quot;.  Data requests are supplied as codes, free-text, or FHIR Restful queries. It can also support requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.&#xA;&#xA;It constrains the following elements to be *mandatory* (min=1):&#xA;&#xA;- A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1.1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).&#xA;- A `Task.intent` fixed to &quot;order&quot; (this element is a mandatory Task element)&#xA;- A `Task.code` of &quot;data-request-query&quot;, &quot;data-request-code&quot;, or &quot;data-request-questionnaire&quot; communicating that the Data Consumer is requesting data using a FHIR RESTful query, a code (or free text), or a data request questionnaire.&#xA;  - If the code is &quot;data-request-query&quot;, the provider system returns data(s) identified by the FHIR RESTful query in the &quot;query&quot; input parameter.&#xA;  - If the code is &quot;data-request-code&quot;, the provider system returns data(s) identified by the LOINC code in the &quot;code&quot; input parameter.&#xA;  - If the code is &quot;data-request-questionnaire&quot;, the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2.1/index.html) to complete the Questionnaire referenced in the &quot;questionnaire&quot; input parameter.&#xA;- A `Task.for` element representing the member (i.e.,patient) for whom the data is being requested&#xA;- A `Task.authoredOn` to communicate the date and time this task was created&#xA;- A `Task.requester` element communicating who is requesting the data&#xA;- A `Task.owner` element representing the Provider who is being asked to provide the data&#xA;&#xA;It constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):&#xA;&#xA;- A `Task.identifier` element representing the unique data request identifier&#xA;- A `Task.basedOn` element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request&#xA;- A `Task.statusReason.text` to communicate the reason for the status (for example, if the Task is rejected or failed)&#xA;- A `Task.businessStatus.text` element representing the progress in retrieving the data (for example, &quot;waiting on internal review&quot;).&#xA;- A `Task.for.reference.identifier` element representing a patient business identifier like a Member ID&#xA;- A `Task.requester.reference.identifier` element representing the Data Consumer business identifier&#xA;- A `Task.owner.reference.identifier` element representing the Provider business identifier&#xA;- A `Task.reasonCode.text` to communicate why the data is being requested&#xA;- A `Task.reasonReference.reference.identifier` for the claim, pre-auth or coverage business identifier*&#xA;- A &quot;query&quot; `Task.input` element to communicate to the provider what information is needed using a FHIR RESTful query.*&#xA;- A &quot;code&quot; `Task.input` element to communicate to the provider what information is needed using a LOINC code.*&#xA;  - For the &quot;code&quot; `Task.input` element, an extensible LOINC® Document types value set to communicate the specific information being requested&#xA;- A `Task.input` element representing a flag to indicate whether the requested data requires a signature&#xA;- A &quot;data&quot; `Task.output` element referring to FHIR resource(s) representing the result(s) of the data request.&#xA;&#xA;It defines the following elements to be *optional*:&#xA;- A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section For more information about work-queue hint codes.&#xA;- A &quot;questionnaire&quot; `Task.input` element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*&#xA;  - A questionnaireDisplay extension to communicate the display name of the Questionnaire&#xA;- A `Task.input` element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)&#xA;- A &quot;response&quot; `Task.output` element which is a local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).&#xA;&#xA;It prohibits the following elements (max=0):&#xA;- `Task.focus`&#xA;&#xA;\* Either a &quot;query&quot;, &quot;code&quot;, or &quot;questionnaire&quot; `Task.input` element is required"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="TaskBasedProfiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cdex-work-queue"/>
+      </reference>
+      <name value="CDex Work Queue Value Set"/>
+      <description value="The set work queue tags that the provider may use in their workflow to process requests. This code set is composed of codes defined by this Guide."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="TaskBasedTerminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cdex-data-request-task-code"/>
+      </reference>
+      <name value="CDex Data Request Task Code Value Set"/>
+      <description value="Codes used to identify the type of data request. It includes the codes “data-request-query”, “data-request-code”, and “data-request-questionnaire”."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="TaskBasedTerminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example1"/>
+      </reference>
+      <name value="CDex Task Example 1"/>
+      <description value="**Query String Request for Condition:** Task to seek a patient's active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example2"/>
+      </reference>
+      <name value="CDex Task Example 2"/>
+      <description value="**Completed Query String Request for Condition:**   Completed Task to seek a patient active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example3"/>
+      </reference>
+      <name value="CDex Task Example 3"/>
+      <description value="**Completed Query String Request for Condition with Contained Output:**   Completed Task to seek a patient active conditions using the CDex Profile query input and using a contained resource for the output data. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example4"/>
+      </reference>
+      <name value="CDex Task Example 4"/>
+      <description value="**Free Text Request for Condition:**   Task to seek a patient active conditions using free text in the CDex Profile code input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example5"/>
+      </reference>
+      <name value="CDex Task Example 5"/>
+      <description value="**Completed Free Text Request for Condition:**   Completed Task to seek a patient active conditions using free text for the input in the CDex Profile code input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example6"/>
+      </reference>
+      <name value="CDex Task Example 6"/>
+      <description value="**Coded Request for Progress note:**   Task to seek a patient's latest Progress notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example7"/>
+      </reference>
+      <name value="CDex Task Example 7"/>
+      <description value="**Completed Coded Request for Progress note - PDF:**   Completed Task to seek a patient''''s latest Progress notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors. The output data is a contained DocumentReference with an inline base64 encoded PDF document."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example8"/>
+      </reference>
+      <name value="CDex Task Example 8"/>
+      <description value="**Completed Coded RequestOperative note -CCDA:**   Completed Task to seek a patient's Operative notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors. The output data is a contained DocumentReference with an inline base64 encoded CCDA document."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example9"/>
+      </reference>
+      <name value="CDex Task Example 9"/>
+      <description value="**Failed Coded Request for A1C Results:**  Task to seek a patient's HbA1c test results using the CDex Profile query input with a failed status. This example illustrates the use of FHIR resource references to the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example10"/>
+      </reference>
+      <name value="CDex Task Example 10"/>
+      <description value="**Coded Request for A1C Results:**   Task to seek a patient's HbA1c test results using the CDex Profile query input. This example illustrates the use of FHIR resource references to the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example11"/>
+      </reference>
+      <name value="CDex Task Example 11"/>
+      <description value="**Query String Request for Condition with Authorization:**  In this provider to provider request, a Task is used to request a patient active conditions using the CDex Profile query input.  A reference to a formal authorization is provided.  This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example12"/>
+      </reference>
+      <name value="CDex Task Example 12"/>
+      <description value="**Completed Query String Request for Condition with Authorization:** In this completed provider to provider request, a Task is used to request a patient active conditions using the CDex Profile query input.  A reference to a formal authorization is provided.  This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example13"/>
+      </reference>
+      <name value="CDex Task Example 13"/>
+      <description value="**Free Text Request for Condition with Provenance:**   Task to seek a patient active conditions and its provenance using free text in the CDex Profile code input. This example illustrates the use of  business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example14"/>
+      </reference>
+      <name value="CDex Task Example 14"/>
+      <description value="**Completed Free Text Request for Condition with Provenance:**   Completed Task to seek a patient active conditions and its provenance using free text in the CDex Profile code input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example15"/>
+      </reference>
+      <name value="CDex Task Example 15"/>
+      <description value="**Query String Request for Condition with Provenance:**  Task to seek a patient active conditions and its provenance using query string in the CDex Profile query input. This example illustrates the use of  business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example16"/>
+      </reference>
+      <name value="CDex Task Example 16"/>
+      <description value="**Completed Query String Request for Condition with Provenance:**   Completed Task to seek a patient active conditions their provenance using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example17"/>
+      </reference>
+      <name value="CDex Task Example 17"/>
+      <description value="**Query String Request for Signed Condition Data:**   Task to seek a patient active conditions using the CDex Profile query input and using the signature input to indicate a signature is required. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example18"/>
+      </reference>
+      <name value="CDex Task Example 18"/>
+      <description value="**Completed Query String Request for Signed Condition Data:**   Completed Task to seek a *signed* patient active conditions. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example21"/>
+      </reference>
+      <name value="CDex Task Example 21"/>
+      <description value="**Coded Request for Surgical Operation Note:**   Task to seek a patient's latest operative notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example26"/>
+      </reference>
+      <name value="CDex Task Example 26"/>
+      <description value="**Data Request Using a Questionnaire:** Task to seek reason for home oxygen therapy using the CDex Profile questionnaire input. This example illustrates the use of Questionnaire to request data from a data source"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example27"/>
+      </reference>
+      <name value="CDex Task Example 27"/>
+      <description value="**Completed Data Request Using a Questionnaire:** Completed Task for CDex Task Example 26. This example has a status of &quot;completed&quot; and a &quot;lastModified&quot; date of 6/19/2022. The &quot;output&quot; is a QuestionnaireResponse.Task to seek reason for home oxygen therapy."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example30"/>
+      </reference>
+      <name value="CDex Task Example 30"/>
+      <description value="**Data Request Requiring a Verification Signature Using Questionnaire:** Task to seek reason for home oxygen therapy using the CDex Profile questionnaire input. This example illustrates the use of Questionnaire to request data from a data source and requires a digitally signed QuestionnaireResponse."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-example31"/>
+      </reference>
+      <name value="CDex Task Example 31"/>
+      <description value="**Completed Data Request Requiring a Verification Signature Using Questionnaire:** Completed Task (CDex Task Example 30) with a status of &quot;completed&quot; and output referencing the digitally signed QuestionnaireResponse."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="TaskBasedExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-searchbundle-scenario1-example"/>
+      </reference>
+      <name value="Direct Query for Patient's Active Conditions"/>
+      <description value="Bundle example used in direct query transactions [scenario 1](direct-query.html#scenario-1) and in task based transactions - for example, [scenario 1a](task-based-approach.html#scenario-1)."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="DirectQueryExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-searchbundle-provenance-example"/>
+      </reference>
+      <name value="Direct Query Response Including Provenance"/>
+      <description value="Bundle example used in the [direct query scenario](direct-query.html#provenance) that includes the corresponding Provenance records. Payer Seeks Insured Person/Patient Active Conditions from Provider to support a claims audit."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="DirectQueryExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-searchbundle-scenario3-example"/>
+      </reference>
+      <name value="Direct Query for Patient's Progress Notes"/>
+      <description value="Bundle example used in direct query [scenario 3](direct-query.html#scenario-3). Payer Seeks Insured Person/Patient Progress Notes from Provider to support a claim submission."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="DirectQueryExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-searchbundle-scenario2-example"/>
+      </reference>
+      <name value="Direct Query for Patient's HbA1c Test Results"/>
+      <description value="Bundle example used in direct query [scenario 2](direct-query.html#scenario-2). Payer Seeks Insured Person/Patient HbA1c Test Results from Provider"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="DirectQueryExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cdex-sdc-questionnaireresponse"/>
+      </reference>
+      <name value="CDex SDC QuestionnaireResponse Profile"/>
+      <description value="This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following constraints:&#xA;- The signature extensions use the CDex Signature Profile"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="QuestionnaireProfiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/cdex-questionnaire-example1"/>
+      </reference>
+      <name value="CDex Questionnaire Example1"/>
+      <description value="This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It is adapted from the Da Vinci DTR IG."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire"/>
+      <groupingId value="QuestionnaireExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/cdex-questionnaireresponse-example1"/>
+      </reference>
+      <name value="CDex QuestionnaireResponse Example1"/>
+      <description value="This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It is adapted from the Da Vinci DTR IG."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse|2.1.0"/>
+      <groupingId value="QuestionnaireExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/cdex-questionnaireresponse-example2"/>
+      </reference>
+      <name value="CDex QuestionnaireResponse Example2"/>
+      <description value="This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data. The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse contains the generated Questionnaire instance.  This example is adapted from the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt"/>
+      <groupingId value="QuestionnaireExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cdex-signature"/>
+      </reference>
+      <name value="CDex Signature Profile"/>
+      <description value="This Signature DataType profile enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:&#xA;&#xA;- A `Signature.type` fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)&#xA;- A `Signature.who` for the organization or practitioner who signed the Bundle which is either:&#xA;  1. a reference to US-Core Practitioner, US-Core PractitionerRole, or US-Core Organization or&#xA;  1. an NPI or Tax ID and name of the organization or practitioner&#xA;- A `Signature.data` representing the base64 encoded Signature (JWS, image, etc)&#xA;&#xA;In addition, the following *mandatory* (min=1) element is inherited from the base standard:&#xA;- `Signature.when` - a system timestamp when the signature was created"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="SignatureProfiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cdex-signature-bundle"/>
+      </reference>
+      <name value="CDex Signature Bundle Profile"/>
+      <description value="This Bundle profile enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following *mandatory* (min=1) constraint:&#xA;&#xA;- A `Bundle.signature` element using the [CDex Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-signature.html)"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="SignatureProfiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cdex-identifier-types"/>
+      </reference>
+      <name value="CDex Identifier Types Value Set"/>
+      <description value="Identifier types for providers and organizations. It includes the codes “TAX” and “NPI”."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="SignatureTerminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-searchbundle-digital-sig-example"/>
+      </reference>
+      <name value="CDEX SearchSet Bundle with Digital Signature Example"/>
+      <description value="Digital signature example showing how it is used to sign a [search set Bundle](direct-query.html#signatures).  The CDEX use case would be a response to a Direct Query where a digital signature was required."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0"/>
+      <groupingId value="SignatureExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-document-digital-sig-example"/>
+      </reference>
+      <name value="CDEX Document with Digital Signature Example"/>
+      <description value="Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where a digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0"/>
+      <groupingId value="SignatureExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-electronic-sig-example"/>
+      </reference>
+      <name value="CDEX Document with Electronic Signature Example"/>
+      <description value="Electronic signature example showing how an image file can be used to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0"/>
+      <groupingId value="SignatureExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/cdex-questionnaire-example2"/>
+      </reference>
+      <name value="CDex Questionnaire Example2"/>
+      <description value="This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It indicates that a verification signature is needed when completing the QuestionnaireResponse.  It is adapted from the Da Vinci DTR IG."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire"/>
+      <groupingId value="SignatureExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/cdex-questionnaireresponse-example3"/>
+      </reference>
+      <name value="CDex QuestionnaireResponse Example3"/>
+      <description value="This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data when an electronic verification signature is required. It is adapted from the Da Vinci DTR IG.  The electronic signature is an image file in the QuestionnaireResponse signature extension. This example is adapted from the Da Vinci DTR IG."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse|2.1.0"/>
+      <groupingId value="SignatureExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/cdex-questionnaireresponse-example4"/>
+      </reference>
+      <name value="CDex QuestionnaireResponse Example4"/>
+      <description value="This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data and an electronic *digital* Verification signature is required. It is adapted from the Da Vinci DTR IG. The digital signature is a JSON [FHIR Signature](http://hl7.org/fhir/R4/signatures.html) in the QuestionnaireResponse signature extension. This example is adapted from the Da Vinci DTR IG."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse|2.1.0"/>
+      <groupingId value="SignatureExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cdex-POU"/>
+      </reference>
+      <name value="CDex Purpose of Use Value Set"/>
+      <description value="The set of purpose of use (POU) codes for requesting data. This code set is composed of [FHIR core Purpose of Use security labels](http://hl7.org/fhir/security-labels.html#core) and additional codes defined by this Guide."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="CommonTerminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cdex-temp"/>
+      </reference>
+      <name value="CDex Temporary Code System"/>
+      <description value="Codes temporarily defined as part of the CDex implementation guide.  These will eventually migrate into an officially maintained terminology (likely HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems)."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="CommonTerminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example1"/>
+      </reference>
+      <name value="CDex Inline Task Example 1"/>
+      <description value="Task example used to create inline scenarios for example tasked-based transactions based in scenarios [1a](task-based-approach.html#fhir-restful-query-syntax), [1c](task-based-approach.html#contained-task-outputs) and [4](task-based-approach.html#example-task-based-transaction-using-subscription)."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example4"/>
+      </reference>
+      <name value="CDex Inline Task Example 4"/>
+      <description value="Task example used to create [example task based transactions using free text inputs](task-based-approach.html#free-text)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example6"/>
+      </reference>
+      <name value="CDex Task Inline Example 6"/>
+      <description value="Task example used to create inline task based scenario for [progress note exam notes as PDF](task-based-approach.html#progress-note-exam-notes-as-pdf)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example21"/>
+      </reference>
+      <name value="CDex Inline Task Example 21"/>
+      <description value="Task example used to create inline task based scenarios for [surgical notes as ccda documents](task-based-approach.html#surgical-notes-as-ccda-documents)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example10"/>
+      </reference>
+      <name value="CDex Inline Task Example 10"/>
+      <description value="Task example used to create inline task based scenarios for and [example unsuccessful task based transaction](task-based-approach.html#example-unsuccessful-task-based-transaction)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example11"/>
+      </reference>
+      <name value="CDex Inline Task Example 11"/>
+      <description value="Task example used to create inline scenarios for [task based transaction with a formal authorization](task-based-approach.html#formal-authorization)."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example13"/>
+      </reference>
+      <name value="CDex Inline Task Example 13"/>
+      <description value="Task example used to create inline [requests for provenance using task based transaction](task-based-approach.html#example-requests-for-provenance-using-task-based-transaction)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example15"/>
+      </reference>
+      <name value="CDex Inline Task Example 15"/>
+      <description value="Task example used to create inline [requests for provenance using task based transaction](task-based-approach.html#example-requests-for-provenance-using-task-based-transaction)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example17"/>
+      </reference>
+      <name value="CDex Inline Task Example 17"/>
+      <description value="Task example used to create inline scenarios for a [signed task based transaction](task-based-approach.html#example-of-a-signed-task-based-transaction)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example19"/>
+      </reference>
+      <name value="CDex Inline Task Example 19"/>
+      <description value="Task example used to create inline scenarios for the [requesting attachments using codes transaction](requesting-attachments-code.html#complete-solicited-attachment-transaction)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example22"/>
+      </reference>
+      <name value="CDex Inline Task Example 22"/>
+      <description value="Task example used to create inline [requesting attachments using questionnaire transaction](requesting-attachments-questionnaire.html#complete-solicited-attachment-transaction)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/cdex-task-inline-example26"/>
+      </reference>
+      <name value="CDex Inline Task Example 26"/>
+      <description value="Task example used to create inline task based scenarios [using questionnaire as task input](task-based-approach.html#using-questionnaire-as-task-input)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Subscription"/>
+      </extension>
+      <reference>
+        <reference value="Subscription/cdex-task-inline-scenario1-subscription-requested"/>
+      </reference>
+      <name value="Inline Subscription Task Scenario1 Subscription Requested"/>
+      <description value="Subscription example used to create inline scenarios for the [example task based transaction using subscription](task-based-approach.html#example-task-based-transaction-using-subscription)"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Subscription"/>
+      </extension>
+      <reference>
+        <reference value="Subscription/cdex-task-inline-scenario1-subscription-active"/>
+      </reference>
+      <name value="Inline Subscription Task Scenario1 Subscription Active"/>
+      <description value="Subscription example used to create inline scenarios for the [example task based transaction using subscription](task-based-approach.html#example-task-based-transaction-using-subscription)"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-task-inline-scenario1-subscription-notification"/>
+      </reference>
+      <name value="Inline Subscription Task Scenario1 Subscription Notification"/>
+      <description value="Notification Bundle example used to create inline scenarios for the [example task based transaction using subscription](task-based-approach.html#example-task-based-transaction-using-subscription)"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/cdex-bundle-inline-example-858p"/>
+      </reference>
+      <name value="CDex Bundle Inline Example 858p"/>
+      <description value="Bundle example used to create inline [requests for provenance using task based transaction](task-based-approach.html#example-requests-for-provenance-using-task-based-transaction)"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/cdex-condition-inline-example-858"/>
+      </reference>
+      <name value="CDex Condition Inline Example 858"/>
+      <description value="Condition example used to create inline scenarios for this guide"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Provenance"/>
+      </extension>
+      <reference>
+        <reference value="Provenance/cdex-provenance-inline-example-858"/>
+      </reference>
+      <name value="CDex Provenance Inline Example 858"/>
+      <description value="Provenance example used to create inline scenarios for this guide"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CommunicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="CommunicationRequest/cdex-task-inline-communicationrequest-example1"/>
+      </reference>
+      <name value="Inline CDex Task Inline Communicationrequest Example 1"/>
+      <description value="CommunicationRequest example used to create inline scenarios for this guide."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/cdex-questionnaireresponse-inline-example1"/>
+      </reference>
+      <name value="CDex Questionnaireresponse Inline Example 1"/>
+      <description value="QuestionnaireResponse example example used to create inline task based scenarios [using questionnaire as task input](task-based-approach.html#using-questionnaire-as-task-input)"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse|2.1.0"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/cdex-operationoutcome-inline-example1"/>
+      </reference>
+      <name value="CDex Inline OperationOutcome Example 1"/>
+      <description value="OperationOutcome example used to create inline scenarios for this guide"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/cdex-capabilitystatement-inline-example"/>
+      </reference>
+      <name value="cdex-capabilitystatement-inline-example"/>
+      <description value="R4 example of a CapabilityStatement advertising support for CDex Task Update topic-based subscription"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="InlineExamples"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="informative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="IG Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="background.html"/>
+        </extension>
+        <nameUrl value="background.html"/>
+        <title value="Background"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="direct-query.html"/>
+        </extension>
+        <nameUrl value="direct-query.html"/>
+        <title value="Direct Query"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="task-based-approach.html"/>
+        </extension>
+        <nameUrl value="task-based-approach.html"/>
+        <title value="Task Based Approach"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="task-based-conformance.html"/>
+        </extension>
+        <nameUrl value="task-based-conformance.html"/>
+        <title value="Conforming to CDex Task Based Approach"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="attachments.html"/>
+        </extension>
+        <nameUrl value="attachments.html"/>
+        <title value="Attachments"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="solicited-unsolicited-attachments.html"/>
+        </extension>
+        <nameUrl value="solicited-unsolicited-attachments.html"/>
+        <title value="Solicited and Unsolicited Attachments"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="sending-attachments.html"/>
+        </extension>
+        <nameUrl value="sending-attachments.html"/>
+        <title value="Sending Attachments"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="requesting-attachments-code.html"/>
+        </extension>
+        <nameUrl value="requesting-attachments-code.html"/>
+        <title value="Requesting Attachments Using Attachments Codes"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="requesting-attachments-questionnaire.html"/>
+        </extension>
+        <nameUrl value="requesting-attachments-questionnaire.html"/>
+        <title value="Requesting Attachments Using Questionnaires"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="burden-reduction.html"/>
+        </extension>
+        <nameUrl value="burden-reduction.html"/>
+        <title value="Using CDex Attachments with DaVinci PAS"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="attachments-conformance.html"/>
+        </extension>
+        <nameUrl value="attachments-conformance.html"/>
+        <title value="Conforming to CDex Attachments"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="signatures.html"/>
+        </extension>
+        <nameUrl value="signatures.html"/>
+        <title value="Signatures"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="signed-searchset-bundle-example.html"/>
+        </extension>
+        <nameUrl value="signed-searchset-bundle-example.html"/>
+        <title value="Signed Searchset Bundle Example"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="signed-document-bundle-example.html"/>
+        </extension>
+        <nameUrl value="signed-document-bundle-example.html"/>
+        <title value="Signed Document Bundle Example"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="security.html"/>
+        </extension>
+        <nameUrl value="security.html"/>
+        <title value="Security and Privacy"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="downloads.html"/>
+        </extension>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="ImplementationGuide-hl7.fhir.us.davinci-cdex.html"/>
+        </extension>
+        <nameUrl value="ImplementationGuide-hl7.fhir.us.davinci-cdex.html"/>
+        <title value="CDex ImplementationGuide Resource"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="changes.html"/>
+        </extension>
+        <nameUrl value="changes.html"/>
+        <title value="Change Log"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/pagecontent"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/intro-notes"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="fsh-generated/includes"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

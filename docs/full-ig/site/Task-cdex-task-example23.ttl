@@ -1,0 +1,167 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Task/cdex-task-example23> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-task-example23"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task cdex-task-example23</b></p><a name=\"cdex-task-example23\"> </a><a name=\"hccdex-task-example23\"> </a><a name=\"cdex-task-example23-en-US\"> </a><p><b>identifier</b>: Re-Association Tracking Control Number/trackingid1034</p><p><b>status</b>: Requested</p><p><b>intent</b>: order</p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes attachment-request-questionnaire}\">Attachment Request Questionnaire</span></p><p><b>for</b>: <a href=\"#hccdex-task-example23/patient\">Amy Shaw  (no stated gender), DoB: 1987-02-20 ( Patient Account Number: PA-123 (use: usual, ))</a></p><p><b>authoredOn</b>: 2022-06-17 16:16:06+0000</p><p><b>lastModified</b>: 2022-06-17 16:16:06+0000</p><p><b>requester</b>: Identifier: <code>http://example.org/cdex/payer/payer-ids</code>/Payer123</p><p><b>owner</b>: <a href=\"#hccdex-task-example23/practitionerrole\">PractitionerRole</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://hl7.org/fhir/claim-use preauthorization}\">preauthorization</span></p><p><b>reasonReference</b>: Identifier: <code>http://example.org/cdex/payer/claim-ids</code>/Preauth123</p><h3>Restrictions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Period</b></td></tr><tr><td style=\"display: none\">*</td><td>?? --&gt; 2022-06-21</td></tr></table><blockquote><p><b>input</b></p><p><b>PALineNumber</b>: 1</p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes questionnaire-context}\">Questionnaire Context</span></p><p><b>value</b>: <code>http://example.org/base_adaptive_questionnaire</code></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp signature-flag}\">Signature Flag</span></p><p><b>value</b>: true</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes payer-url}\">Payer URL</span></p><p><b>value</b>: <a href=\"http://example.org/cdex/payer/$submit-attachment\">http://example.org/cdex/payer/$submit-attachment</a></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp purpose-of-use}\">Purpose Of Use</span></p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActReason COVAUTH}\">coverage authorization</span></p></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Patient #patient</b></p><a name=\"cdex-task-example23/patient\"> </a><a name=\"hccdex-task-example23/patient\"> </a><a name=\"cdex-task-example23/patient-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Amy Shaw  (no stated gender), DoB: 1987-02-20 ( Patient Account Number: PA-123 (use: usual, ))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Member Number/Member123 (use: usual, )</td></tr></table></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole #practitionerrole</b></p><a name=\"cdex-task-example23/practitionerrole\"> </a><a name=\"hccdex-task-example23/practitionerrole\"> </a><a name=\"cdex-task-example23/practitionerrole-en-US\"> </a><p><b>practitioner</b>: Identifier: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/9941339100</p><p><b>organization</b>: Identifier: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/1234567893</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Patient ;
+     fhir:id [ fhir:v "patient" ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "MB" ] ;
+           fhir:display [ fhir:v "Member Number" ]
+         ] ) ;
+         fhir:text [ fhir:v "Member Number" ]
+       ] ;
+       fhir:system [ fhir:v "http://example.org/cdex/payer/member-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Member123" ]
+     ] [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "pat" ] ;
+           fhir:display [ fhir:v "Patient Account Number" ]
+         ] ) ;
+         fhir:text [ fhir:v "Patient Account Number" ]
+       ] ;
+       fhir:system [ fhir:v "http://example.org/cdex/provider/patient-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "PA-123" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:family [ fhir:v "Shaw" ] ;
+       fhir:given ( [ fhir:v "Amy" ] )
+     ] ) ;
+     fhir:birthDate [ fhir:v "1987-02-20"^^xsd:date ]
+  ] [
+     a fhir:PractitionerRole ;
+     fhir:id [ fhir:v "practitionerrole" ] ;
+     fhir:practitioner [
+       fhir:identifier [
+         fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "9941339100" ]
+       ]
+     ] ;
+     fhir:organization [
+       fhir:identifier [
+         fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "1234567893" ]
+       ]
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "tracking-id" ] ;
+         fhir:display [ fhir:v "Tracking Id" ]
+       ] ) ;
+       fhir:text [ fhir:v "Re-Association Tracking Control Number" ]
+     ] ;
+     fhir:system [ fhir:v "http://example.org/payer"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "trackingid1034" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "requested"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "attachment-request-questionnaire" ]
+     ] ) ;
+     fhir:text [ fhir:v "Attachment Request Questionnaire" ]
+  ] ; # 
+  fhir:for [
+     fhir:reference [ fhir:v "#patient" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2022-06-17T16:16:06Z"^^xsd:dateTime] ; # 
+  fhir:lastModified [ fhir:v "2022-06-17T16:16:06Z"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://example.org/cdex/payer/payer-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Payer123" ]
+     ]
+  ] ; # 
+  fhir:owner [
+     fhir:reference [ fhir:v "#practitionerrole" ]
+  ] ; # 
+  fhir:reasonCode [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/claim-use"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "preauthorization" ] ;
+       fhir:display [ fhir:v "Preauthorization" ]
+     ] ) ;
+     fhir:text [ fhir:v "preauthorization" ]
+  ] ; # 
+  fhir:reasonReference [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://example.org/cdex/payer/claim-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Preauth123" ]
+     ]
+  ] ; # 
+  fhir:restriction [
+     fhir:period [
+       fhir:end [ fhir:v "2022-06-21"^^xsd:date ]
+     ]
+  ] ; # 
+  fhir:input ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "1"^^xsd:integer ]
+     ] ) ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "questionnaire-context" ]
+       ] )
+     ] ;
+     fhir:value [
+       fhir:v "http://example.org/base_adaptive_questionnaire"^^xsd:anyURI ;
+       fhir:link <http://example.org/base_adaptive_questionnaire>
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "signature-flag" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "true"^^xsd:boolean ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "payer-url" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "http://example.org/cdex/payer/$submit-attachment"^^xsd:anyURI ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "purpose-of-use" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "COVAUTH" ] ;
+         fhir:display [ fhir:v "coverage authorization" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

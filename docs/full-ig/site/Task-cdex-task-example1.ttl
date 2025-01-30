@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Task/cdex-task-example1> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-task-example1"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task cdex-task-example1</b></p><a name=\"cdex-task-example1\"> </a><a name=\"hccdex-task-example1\"> </a><a name=\"cdex-task-example1-en-US\"> </a><p><b>status</b>: Requested</p><p><b>intent</b>: order</p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp data-request-query}\">Data Request Query</span></p><p><b>for</b>: Identifier: Member Number/Member123</p><p><b>authoredOn</b>: 2020-10-26 02:58:55+0000</p><p><b>lastModified</b>: 2020-10-26 02:58:55+0000</p><p><b>requester</b>: Identifier: <code>http://example.org/cdex/payer/payer-ids</code>/Payer123</p><p><b>owner</b>: Identifier: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/9941339108</p><p><b>reasonReference</b>: Identifier: Payer Claim ID/Claim123</p><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp data-query}\">data query input</span></p><p><b>value</b>: Condition?patient=cdex-example-patient&amp;clinical-status=active,recurrance,remission</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp purpose-of-use}\">Purpose Of Use</span></p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActReason COVERAGE}\">coverage under policy or program</span></p></blockquote></div>"
+  ] ; # 
+  fhir:status [ fhir:v "requested"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "data-request-query" ]
+     ] )
+  ] ; # 
+  fhir:for [
+     fhir:identifier [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "MB" ] ;
+           fhir:display [ fhir:v "Member Number" ]
+         ] ) ;
+         fhir:text [ fhir:v "Member Number" ]
+       ] ;
+       fhir:system [ fhir:v "http://example.org/cdex/payer/member-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Member123" ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2020-10-26T02:58:55.179Z"^^xsd:dateTime] ; # 
+  fhir:lastModified [ fhir:v "2020-10-26T02:58:55.179Z"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://example.org/cdex/payer/payer-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Payer123" ]
+     ]
+  ] ; # 
+  fhir:owner [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "9941339108" ]
+     ]
+  ] ; # 
+  fhir:reasonReference [
+     fhir:identifier [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "FILL" ] ;
+           fhir:display [ fhir:v "Filler Identifier" ]
+         ] ) ;
+         fhir:text [ fhir:v "Payer Claim ID" ]
+       ] ;
+       fhir:system [ fhir:v "http://example.org/cdex/payer/claim-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Claim123" ]
+     ]
+  ] ; # 
+  fhir:input ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "data-query" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "Condition?patient=cdex-example-patient&clinical-status=active,recurrance,remission" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "purpose-of-use" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "COVERAGE" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

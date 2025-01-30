@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="cdex-task-inline-scenario1-subscription-notification"/>
+  <type value="history"/>
+  <timestamp value="2024-01-18T01:19:38.9929956+00:00"/>
+  <entry>
+    <fullUrl value="urn:uuid:206a4372-a348-41d1-a82e-fc9ebe8825af"/>
+    <resource>
+      <Parameters>
+        <id value="206a4372-a348-41d1-a82e-fc9ebe8825af"/>
+        <parameter>
+          <name value="subscription"/>
+          <valueReference>
+            <reference value="https://example.org/fhir/Subscription/cdex-task-inline-scenario1-subscription-active"/>
+          </valueReference>
+        </parameter>
+        <parameter>
+          <name value="topic"/>
+          <valueCanonical value="http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task"/>
+        </parameter>
+        <parameter>
+          <name value="status"/>
+          <valueCode value="active"/>
+        </parameter>
+        <parameter>
+          <name value="type"/>
+          <valueCode value="event-notification"/>
+        </parameter>
+        <parameter>
+          <name value="events-since-subscription-start"/>
+          <valueString value="17"/>
+        </parameter>
+        <parameter>
+          <name value="notification-event"/>
+          <part>
+            <name value="event-number"/>
+            <valueString value="17"/>
+          </part>
+          <part>
+            <name value="timestamp"/>
+            <valueInstant value="2024-01-18T01:19:38.837885+00:00"/>
+          </part>
+          <part>
+            <name value="focus"/>
+            <valueReference>
+              <reference value="https://cdex.ri.argo.run/fhir/provider/Task/cdex-task-example2"/>
+            </valueReference>
+          </part>
+        </parameter>
+      </Parameters>
+    </resource>
+    <request>
+      <method value="GET"/>
+      <url value="https://example.org/fhir/Subscription/admission/$status"/>
+    </request>
+    <response>
+      <status value="200"/>
+    </response>
+  </entry>
+</Bundle>

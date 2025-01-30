@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Task xmlns="http://hl7.org/fhir">
+  <id value="cdex-task-example3"/>
+  <meta>
+    <versionId value="3"/>
+    <lastUpdated value="2020-10-26T04:04:52.000+00:00"/>
+    <source value="#tgH2FoPFuCq0yjw5"/>
+    <tag>
+      <system value="http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"/>
+      <code value="claims-processing"/>
+    </tag>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Task cdex-task-example3</b></p><a name="cdex-task-example3"> </a><a name="hccdex-task-example3"> </a><a name="cdex-task-example3-en-US"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">version: 3; Last updated: 2020-10-26 04:04:52+0000; </p><p style="margin-bottom: 0px">Information Source: #tgH2FoPFuCq0yjw5</p><p style="margin-bottom: 0px">Tag: Claim Processing (Details: CDex Temporary Code System code claims-processing = 'Claim Processing')</p></div><p><b>status</b>: Completed</p><p><b>businessStatus</b>: <span title="Codes:">Results reviewed for release</span></p><p><b>intent</b>: order</p><p><b>code</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp data-request-query}">Data Request Query</span></p><p><b>for</b>: Identifier: Member Number/Member123</p><p><b>authoredOn</b>: 2020-10-26 02:58:55+0000</p><p><b>lastModified</b>: 2020-10-26 04:04:52+0000</p><p><b>requester</b>: Identifier: <code>http://example.org/cdex/payer/payer-ids</code>/Payer123</p><p><b>owner</b>: Identifier: <a href="http://terminology.hl7.org/5.3.0/NamingSystem-npi.html" title="National Provider Identifier">United States National Provider Identifier</a>/9941339108</p><p><b>reasonReference</b>: Identifier: Payer Claim ID/Claim123</p><blockquote><p><b>input</b></p><p><b>type</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp data-query}">data query input</span></p><p><b>value</b>: Condition?patient=cdex-example-patient&amp;clinical-status=active</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp purpose-of-use}">Purpose Of Use</span></p><p><b>value</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ActReason COVERAGE}">coverage under policy or program</span></p></blockquote><h3>Outputs</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Type</b></td><td><b>Value[x]</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp data-value}">data values output</span></td><td><a href="#hccdex-task-example3/results">Bundle: type = searchset; total = 1</a></td></tr></table><hr/><blockquote><p class="res-header-id"><b>Generated Narrative: Bundle #results</b></p><a name="cdex-task-example3/results"> </a><a name="hccdex-task-example3/results"> </a><a name="cdex-task-example3/results-en-US"> </a><p>Bundle results of type searchset</p><a name="http-//example.org/fhir/Condition/858"> </a><a name="Condition_858"> </a><a name="hcCondition_858"> </a><hr/><p>Entry 1 - fullUrl = http://example.org/fhir/Condition/858</p><p>Search:Mode = match</p><p>Resource Condition:</p><blockquote><p class="res-header-id"><b>Generated Narrative: Condition #858</b></p><a name="cdex-task-example3/results/858"> </a><a name="hccdex-task-example3/results/858"> </a><a name="cdex-task-example3/results/858-en-US"> </a><p><b>identifier</b>: <code>urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1</code>/1</p><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>category</b>: <span title="Codes:{http://snomed.info/sct 55607006}, {http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 44054006}">Type 2 Diabetes Mellitus</span></p><p><b>subject</b>: <a href="http://example.org/fhir/Patient/cdex-example-patient">http://example.org/fhir/Patient/cdex-example-patient</a></p><p><b>onset</b>: 2006</p><p><b>asserter</b>: <a href="http://example.org/fhir/PractitionerRole/126">http://example.org/fhir/PractitionerRole/126</a></p></blockquote></blockquote></div>
+  </text>
+  <contained>
+    <Bundle>
+      <id value="results"/>
+      <type value="searchset"/>
+      <total value="1"/>
+      <link>
+        <relation value="self"/>
+        <url value="https://example.com/base/Condition?patient=cdex-example-patient&amp;clinical-status=active"/>
+      </link>
+      <entry>
+        <fullUrl value="http://example.org/fhir/Condition/858"/>
+        <resource>
+          <Condition>
+            <id value="858"/>
+            <identifier>
+              <system value="urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1"/>
+              <value value="1"/>
+            </identifier>
+            <clinicalStatus>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+                <code value="active"/>
+              </coding>
+            </clinicalStatus>
+            <category>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="55607006"/>
+                <display value="Problem"/>
+              </coding>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+                <code value="problem-list-item"/>
+                <display value="Problem List Item"/>
+              </coding>
+            </category>
+            <code>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="44054006"/>
+                <display value="Type 2 Diabetes Mellitus"/>
+              </coding>
+            </code>
+            <subject>
+              <reference value="http://example.org/fhir/Patient/cdex-example-patient"/>
+            </subject>
+            <onsetDateTime value="2006"/>
+            <asserter>
+              <reference value="http://example.org/fhir/PractitionerRole/126"/>
+            </asserter>
+          </Condition>
+        </resource>
+        <search>
+          <mode value="match"/>
+        </search>
+      </entry>
+    </Bundle>
+  </contained>
+  <status value="completed"/>
+  <businessStatus>
+    <text value="Results reviewed for release"/>
+  </businessStatus>
+  <intent value="order"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"/>
+      <code value="data-request-query"/>
+    </coding>
+  </code>
+  <for>
+    <identifier>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+          <code value="MB"/>
+          <display value="Member Number"/>
+        </coding>
+        <text value="Member Number"/>
+      </type>
+      <system value="http://example.org/cdex/payer/member-ids"/>
+      <value value="Member123"/>
+    </identifier>
+  </for>
+  <authoredOn value="2020-10-26T02:58:55.179Z"/>
+  <lastModified value="2020-10-26T04:04:52.019Z"/>
+  <requester>
+    <identifier>
+      <system value="http://example.org/cdex/payer/payer-ids"/>
+      <value value="Payer123"/>
+    </identifier>
+  </requester>
+  <owner>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="9941339108"/>
+    </identifier>
+  </owner>
+  <reasonReference>
+    <identifier>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+          <code value="FILL"/>
+          <display value="Filler Identifier"/>
+        </coding>
+        <text value="Payer Claim ID"/>
+      </type>
+      <system value="http://example.org/cdex/payer/claim-ids"/>
+      <value value="Claim123"/>
+    </identifier>
+  </reasonReference>
+  <input>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"/>
+        <code value="data-query"/>
+      </coding>
+    </type>
+    <valueString value="Condition?patient=cdex-example-patient&amp;clinical-status=active"/>
+  </input>
+  <input>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"/>
+        <code value="purpose-of-use"/>
+      </coding>
+    </type>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+        <code value="COVERAGE"/>
+      </coding>
+    </valueCodeableConcept>
+  </input>
+  <output>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"/>
+        <code value="data-value"/>
+      </coding>
+    </type>
+    <valueReference>
+      <reference value="#results"/>
+    </valueReference>
+  </output>
+</Task>

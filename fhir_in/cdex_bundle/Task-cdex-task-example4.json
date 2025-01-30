@@ -1,0 +1,83 @@
+{
+  "resourceType" : "Task",
+  "id" : "cdex-task-example4",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task cdex-task-example4</b></p><a name=\"cdex-task-example4\"> </a><a name=\"hccdex-task-example4\"> </a><a name=\"cdex-task-example4-en-US\"> </a><p><b>status</b>: Requested</p><p><b>intent</b>: order</p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp data-request-code}\">Data Request Code</span></p><p><b>for</b>: Identifier: Member Number/Member123</p><p><b>authoredOn</b>: 2020-10-26 02:58:55+0000</p><p><b>lastModified</b>: 2020-10-26 02:58:55+0000</p><p><b>requester</b>: Identifier: <code>http://example.org/cdex/payer/payer-ids</code>/Payer123</p><p><b>owner</b>: Identifier: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/9941339108</p><p><b>reasonReference</b>: Identifier: Payer Claim ID/Claim123</p><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp data-code}\">data code input</span></p><p><b>value</b>: <span title=\"Codes:\">request for patient's active conditions</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp purpose-of-use}\">Purpose Of Use</span></p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActReason COVERAGE}\">coverage under policy or program</span></p></blockquote></div>"
+  },
+  "status" : "requested",
+  "intent" : "order",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+      "code" : "data-request-code"
+    }]
+  },
+  "for" : {
+    "identifier" : {
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code" : "MB",
+          "display" : "Member Number"
+        }],
+        "text" : "Member Number"
+      },
+      "system" : "http://example.org/cdex/payer/member-ids",
+      "value" : "Member123"
+    }
+  },
+  "authoredOn" : "2020-10-26T02:58:55.179Z",
+  "lastModified" : "2020-10-26T02:58:55.179Z",
+  "requester" : {
+    "identifier" : {
+      "system" : "http://example.org/cdex/payer/payer-ids",
+      "value" : "Payer123"
+    }
+  },
+  "owner" : {
+    "identifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339108"
+    }
+  },
+  "reasonReference" : {
+    "identifier" : {
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code" : "FILL",
+          "display" : "Filler Identifier"
+        }],
+        "text" : "Payer Claim ID"
+      },
+      "system" : "http://example.org/cdex/payer/claim-ids",
+      "value" : "Claim123"
+    }
+  },
+  "input" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+        "code" : "data-code"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "text" : "request for patient's active conditions"
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "code" : "purpose-of-use"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code" : "COVERAGE"
+      }]
+    }
+  }]
+}

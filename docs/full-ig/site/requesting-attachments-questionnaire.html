@@ -1,0 +1,2570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Requesting Attachments Using Questionnaires - Da Vinci Clinical Data Exchange (CDex) v2.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"10"}
+    h3,h4,h5,h6{--heading-prefix:"10"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Clinical Data Exchange (CDex)</span>
+            <br/>
+            <span style="display:inline-block;">2.1.0 - STU 2.1
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">IG Home
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="index.html">Introduction</a>
+      </li>
+      <li>
+        <a href="index.html#about-this-guide">About This Guide</a>
+      </li>
+      <li>
+        <a href="index.html#how-to-read-this-guide">How to read this Guide</a>
+      </li>
+      <li>
+        <a href="index.html#credits">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">About the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#what-do-payers-do-with-clinical-information">What Do Payers Do with Clinical Information</a>
+      </li>
+      <li>
+        <a href="background.html#provider-to-provider-data-exchange">Provider to Provider Data Exchange</a>
+      </li>
+      <li>
+        <a href="background.html#what-information-is-needed">What Information is Needed</a>
+      </li>
+      <li>
+        <a href="background.html#where-does-cdex-fit-in-the-da-vinci-project">Where Does CDEX Fit in the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#workflow-overview">Workflow Overview</a>
+      </li>
+      <li>
+        <a href="background.html#architectural-approach">Architectural Approach</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Direct Query
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="direct-query.html">Introduction</a>
+      </li>
+      <li>
+        <a href="direct-query.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="direct-query.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="direct-query.html#discovery-of-patient-fhir-ids">Discovery of Patient FHIR IDs</a>
+      </li>
+      <li>
+        <a href="direct-query.html#direct-query-transaction-scenarios">Direct Query Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="direct-query.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="direct-query.html#signatures">Signatures</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Task Based Approach
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="task-based-approach.html">Introduction</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#the-task-resource">The Task Resource</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#discovery-of-identifiers">Discovery of Identifiers</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#task-state-machine">Task State Machine</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#fetching-the-data">Fetching the Data</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#example-transactions-based-on-query-code-and-free-text-inputs">Task Based Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#using-questionnaire-as-task-input">Using Questionnaire as Task Input</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#when-the-task-cannot-be-completed">When The Task Cannot Be Completed</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#polling-vs-subscriptions">Polling vs Subscriptions</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#formal-authorization">Formal Authorization</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#signatures">Signatures</a>
+      </li>
+      <li>
+        <a href="task-based-conformance.html">Conforming to CDex Task Based Approach</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Attachments
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="solicited-unsolicited-attachments.html">Solicited and Unsolicited Attachments</a>
+      </li>
+      <li>
+        <a href="sending-attachments.html">Sending Attachments</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-questionnaire.html">Requesting Attachments Using Questionnaires</a>
+      </li>
+      <li>
+        <a href="burden-reduction.html">Using CDex Attachments with DaVinci PAS</a>
+      </li>
+      <li>
+        <a href="attachments-conformance.html">Conforming to CDex Attachments</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Signatures
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="signatures.html">About Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#the-signer">The Signer</a>
+      </li>
+      <li>
+        <a href="signatures.html#what-is-signed">What is Signed</a>
+      </li>
+      <li>
+        <a href="signatures.html#cdex-enveloped-signatures">CDex Enveloped Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#electronic-signatures">Electronic Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#digital-signatures">Digital Signatures</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="security.html">Security and Privacy</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="artifacts.html#1">CDex Capability Statements</a>
+      </li>
+      <li>
+        <a href="artifacts.html#2">Attachments Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#3">Attachments Operations</a>
+      </li>
+      <li>
+        <a href="artifacts.html#4">Attachments Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#5">Attachments Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#6">Task Based Approach Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#7">Task Based Approach Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#8">Task Based Approach Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#9">Direct Query Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Questionnaire Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#11">Questionnaire Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#12">Signature Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#13">Signature Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Signature Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#15">Common Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#16">Inline Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex">Discussion Forum</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=40738757">Project Page</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/display/DVP/CDex+Implementer+Support?src=contextnavpagetreemode">Implementer Support</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801">Specification Dashboard</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/">Propose a Change</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="changes.html">Change Log</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Requesting Attachments Using Questionnaires</b></li>
+
+          <span style="float:right;">
+
+            <a href="requesting-attachments-code.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="burden-reduction.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Clinical Data Exchange (CDex), published by HL7 International / Payer/Provider Information Exchange Work Group. This guide is not an authorized publication; it is the continuous build for version 2.1.0 built by the FHIR (HL7® FHIR® Standard) CI Build. This version is based on the current content of <a href="https://github.com/HL7/davinci-ecdx/">https://github.com/HL7/davinci-ecdx/</a> and changes regularly. See the <a href="http://hl7.org/fhir/us/davinci-cdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Requesting Attachments Using Questionnaires</h2>
+  
+
+
+
+
+
+  <table class="colsi">
+    <tr>
+  
+      <td>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
+        
+      </td>
+  
+  
+    </tr>
+  </table>
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#requesting-attachments-using-fhir" id="markdown-toc-requesting-attachments-using-fhir">Requesting Attachments Using FHIR</a></li>
+  <li><a href="#requesting-attachments-using-fhir-questionnaires" id="markdown-toc-requesting-attachments-using-fhir-questionnaires">Requesting Attachments Using FHIR Questionnaires</a></li>
+  <li><a href="#data-elements-for-requesting-attachments" id="markdown-toc-data-elements-for-requesting-attachments">Data Elements for Requesting Attachments</a></li>
+  <li><a href="#step-by-step-solicited-attachment-transaction" id="markdown-toc-step-by-step-solicited-attachment-transaction"><em>Step-by-Step</em> Solicited Attachment Transaction</a></li>
+  <li><a href="#complete-solicited-attachment-transaction" id="markdown-toc-complete-solicited-attachment-transaction">Complete <em>Solicited</em> Attachment Transaction</a></li>
+  <li><a href="#signatures" id="markdown-toc-signatures">Signatures</a></li>
+</ul>
+
+</div>
+
+<p>This page documents an <em>optional</em> solicited attachments transaction for requesting additional claims or prior authorization data from a Provider using FHIR <a href="http://hl7.org/fhir/R4/questionnaire.html">Questionnaire</a>.* The Payer uses the Task-based <a href="StructureDefinition-cdex-task-attachment-request.html">CDex Task Attachment Request Profile</a> to request a Provider to complete one or more questionnaires. The Provider launches <a href="http://hl7.org/fhir/us/davinci-dtr/STU2.1">Da Vinci DTR</a> to complete the questionnaires and, as documented in the <a href="sending-attachments.html">Sending Attachments</a> page, submits the completed questionnaires to the Payer using the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation. In contrast to <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a>, a HIPAA-based request model using attachment codes, it supports using FHIR Questionnaire to define in more detail what data is missing. As a result, it avoids unnecessary documents. In addition, it leverages <a href="http://hl7.org/fhir/us/davinci-dtr/STU2.1">Da Vinci DTR</a> functionality to fill out the FHIR Questionnaire, reducing the time spent reviewing documentation requirements.</p>
+
+<p>* <!-- input/includes/see-conf.md -->
+See the <a href="attachments-conformance.html">Conforming to CDex Attachments</a> page for how systems declare what they support for the various actors and roles in CDex Attachments.</p>
+
+<h3 id="requesting-attachments-using-fhir">Requesting Attachments Using FHIR</h3>
+
+<p>Payers can request attachments and additional data for claims and prior authorizations as a FHIR transaction. CDex uses <a href="http://hl7.org/fhir/R4/task.html">Task</a> to represent both the data request and the returned data and provides information such as why it needs to be completed, who is to complete it, who is asking for it, when it is due, etc. The Provider updates the Task’s status as the task is fulfilled.</p>
+
+<p>The <a href="task-based-approach.html">Task Based Approach</a> page documents the general approach to using Task to request data.  For requesting attachments using CDex Attachments, review the following sections on the Task Based Approach page:</p>
+
+<ul>
+  <li><a href="task-based-approach.html#benefits">Benefits</a></li>
+  <li><a href="task-based-approach.html#task-inputs-and-outputs">Task Inputs and Outputs</a></li>
+  <li><a href="task-based-approach.html#purpose-of-use">Purpose of Use</a></li>
+  <li><a href="task-based-approach.html#task-reason">Task Reason</a></li>
+  <li><a href="task-based-approach.html#discovery-of-identifiers">Discovery of Identifiers</a></li>
+  <li><a href="task-based-approach.html#task-state-machine">Task State Machine</a></li>
+  <li><a href="task-based-approach.html#using-questionnaire-as-task-input">Using Questionnaire as Task Input</a></li>
+</ul>
+
+<p class="bg-info">In the more general CDEX Task Based Approach, the Data Consumer polls or subscribes to Task status updates and <em>pulls</em> the data when the Task is complete. In contrast, for CDEX Attachments, The Provider <em>pushes</em> the data to the Payer-supplied endpoint using the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation, as documented on the <a href="sending-attachments.html">Sending Attachments</a> page.</p>
+
+<h4 id="cdex-attachment-request-profile">CDex Attachment Request Profile</h4>
+
+<p><strong>For CDex attachment requests transactions, the Payer SHALL use the <a href="StructureDefinition-cdex-task-attachment-request.html">CDex Task Attachment Request Profile</a> to solicit information from a Provider.</strong> 
+<!--  {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }}  -->
+For a detailed description of all the mandatory, <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/conformance.html"><em>must support</em></a>, and optional elements, as well as formal definitions and profile views, see the <a href="StructureDefinition-cdex-task-data-request.html">CDex Task Data Request Profile</a> page.</p>
+
+<h3 id="requesting-attachments-using-fhir-questionnaires">Requesting Attachments Using FHIR Questionnaires</h3>
+
+<p>In contrast to <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a>, when a Payer references one or more FHIR Questionnaires  as input parameters, the Task represents a request for the Provider to complete the questionnaires. The <a href="StructureDefinition-cdex-task-attachment-request.html">CDex Task Attachment Request Profile</a> defines a specific <code class="language-plaintext highlighter-rouge">Task.code</code> that directs the Provider to launch a [Da Vinci - Documentation Templates and Rules (DTR)] application to use the Payer provided Questionnaires and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 17 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:</p>
+
+<!-- all this Bootstrap html for getting an narrow image to fit nicely in text - 640 pix wide -->
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 17</strong></figcaption>
+  <img src="attachments-task-Q-summary.svg" class="figure-img img-responsive img-rounded center-block" alt="attachments-task-Q-summary.svg" />
+</figure>
+
+<p></p>
+</div>
+
+<p><strong>Step 1:</strong> The Payer POSTs a Task to the Provider. The Task is a request to complete a questionnaire.</p>
+
+<p><strong>Step 2:</strong> If the <code class="language-plaintext highlighter-rouge">Task.code</code> is "attachment-request-questionnaire", the Provider launches DTR and shares the Task as a launch parameter (i.e., DTR has access to read and update the Task and access to other resources to complete the QuestionnaireResponse in Step 3)</p>
+
+<p><strong>Step 3:</strong> DTR fetches the Task, which contains the link to the Questionnaire. Then, it fetches the Questionnaire (and any CQL rules defined within it) and completes the QuestionnaireResponse. Refer to the <a href="http://hl7.org/fhir/us/davinci-dtr/STU2.1">Da Vinci DTR</a> Implementation Guide for more information on how it generates a QuestionnaireResponse.</p>
+
+<p><strong>Step 4:</strong> DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates <code class="language-plaintext highlighter-rouge">Task.output</code> to reference the QuestionnaireResponse it created..</p>
+
+<p><strong>Step 5:</strong>  When the QuestionnaireResponse is completed, the Provider "pushes"  the QuestionnaireResponse directly to the Payer-defined endpoint using the $submit-attachments operation. See the <a href="sending-attachments.html">Sending Attachments</a> page for Implementation Guide for more information on this transaction.</p>
+
+<p><strong>Step 6:</strong> The Provider updates the Task to "completed" when complete - e.g., when the data has been submitted or the information gathered.</p>
+
+<h4 id="using-da-vinci-dtr-to-complete-the-questionnaire">Using <a href="http://hl7.org/fhir/us/davinci-dtr/STU2.1">Da Vinci DTR</a> to Complete the Questionnaire</h4>
+
+<p>The sequence diagram in Figure 18 below depicts the FHIR RESTful transactions and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return one or more questionnaires using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next (<a href="requesting-attachments-questionnaire.html#dtr-smart-app-launch">DTR SMART App Launch</a>) section documents the launch sequence and parameters.</p>
+
+<!-- all this Bootstrap html for getting an narrow image to fit nicely in text - 640 pix wide -->
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 18</strong></figcaption>
+  <img src="attachments-task-Q-sequencediagram.svg" class="figure-img img-responsive img-rounded center-block" alt="attachments-task-Q-sequencediagram.svg" />
+</figure>
+
+<p></p>
+</div>
+
+<h5 id="dtr-smart-app-launch">DTR SMART App Launch</h5>
+
+<p>The sequence diagram in Figure 19 below depicts the transactions between the DTR Client, FHIR Server, and DTR application needed to launch a DTR SMART App.</p>
+
+<p>Preconditions and Assumptions:</p>
+<ul>
+  <li>The DTR Client and FHIR Server are Provider (Data Source) roles.</li>
+  <li>If the DTR is a native EHR application, the launch is implementation specific and this diagram does not apply.</li>
+  <li>A User kicks off <a href="https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch">Smart Version 2.0.0 EHR launch flow</a>.</li>
+</ul>
+
+<!--  {% include img.html img= "SMART App Launch for DTR from CDEX.png" caption=" Figure 19: My Notes on SMART App Launch for DTR from CDEX" %}  -->
+
+<!-- all this Bootstrap html for getting an narrow image to fit nicely in text - 640 pix wide -->
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 19</strong></figcaption>
+  <img src="dtr-launch.svg" class="figure-img img-responsive img-rounded center-block" alt="dtr-launch.svg" />
+</figure>
+
+<p></p>
+</div>
+
+<p><strong>Step 1 (Optional):</strong> The DTR App registers with DTR Client (may be out of band)</p>
+
+<p><strong>Step 2,3:</strong> If the <code class="language-plaintext highlighter-rouge">Task.code</code> is "attachment-request-questionnaire" (or "data-request-questionnaire" for the Task Based Approach), a User initiates <a href="https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch">Smart Version 2.0.0 EHR launch flow</a> to launch DTR (for example, clicks a button to launch DTR) and DTR Client sends a launch request to the DTR App</p>
+
+<p><strong>Step 4:</strong> The DTR App retrieves the <code class="language-plaintext highlighter-rouge">.well-known/smart-configuration</code> from FHIR Server.</p>
+
+<p><strong>Step 5:</strong> The DTR App requests an authorization code with the following scopes:</p>
+<ul>
+  <li>"launch"</li>
+  <li>"launch/patient"</li>
+  <li>"launch/task"</li>
+  <li>"patient/*.rs"</li>
+  <li>"patient/Task.u"</li>
+  <li>"patient/QuestionnaireResponse.cu"</li>
+</ul>
+
+<p><strong>Step 6,7:</strong> Assuming the authorization is granted, The DTR app requests an access token</p>
+
+<p><strong>Step 8:</strong> The DTR App obtains an access token and the launch contexts in the "fhirContext" array, including a local reference to the Task in step 2.</p>
+
+<p><strong>Step 9:</strong> The DTR App uses the Task reference obtained in step 8 to fetch the Task, Questionnaire(s), and other resources it needs to fill out a QuestionnaireResponse(s). See the <a href="#using-da-vinci-dtr-to-complete-the-questionnaire">previous section</a> (or <a href="task-based-approach.html#using-da-vinci-dtr-to-complete-the-questionnaire">this section</a> on the Task Based Approach page) for more detailed transactions.</p>
+
+<h3 id="data-elements-for-requesting-attachments">Data Elements for Requesting Attachments</h3>
+
+<p>The <a href="requesting-attachments-code.html">Requesting Attachments Using Attachment Codes</a> page documents the data elements needed to associate an attachment to a claim or prior authorization.  However, there is no "Attachment Code" Data element when using Questionnaires to collect attachments-related data.</p>
+
+<h3 id="step-by-step-solicited-attachment-transaction"><em>Step-by-Step</em> Solicited Attachment Transaction</h3>
+
+<div class="bg-info">
+
+  <p>In the following sections, A detailed look at an example <em>Solicited</em> attachment transaction illustrates how:</p>
+  <ul>
+    <li>The Payer uses a FHIR Questionnaire to communicate to the Provider what additional attachments-related data is needed.</li>
+    <li>The Payer uses the CDex Task Attachment Request Profile to communicate to the Provider to complete the Questionnaire.</li>
+    <li>The Provider launches DTR to fill out the FHIR Questionnaire using QuestionnaireResponse.</li>
+    <li>The DTR completes the QuestionaireResponse and updates the Task.</li>
+    <li>The Provider uses the $submit-attachment operation to communicate the completed QuestionnaireResponse to the Payer.</li>
+  </ul>
+</div>
+<!-- bg-info -->
+
+<p>In this scenario, a Provider creates a prior authorization and sends it to the Payer. The Payer reviews the prior authorization and responds with a request to fill out a questionnaire for attachments-related data using the <em>CDex Attachment Request Profile</em>. After receiving the attachment request, the Provider launches DTR, which completes a QuestionnaireResponse. The Provider returns the QuestionnaireResponse using the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation, posting it to the endpoint supplied in the request. The flow diagram in figure 20 below illustrates the scenario.</p>
+
+<!-- all this Bootstrap html for getting an narrow image to fit nicely in text - 640 pix wide -->
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong> Figure 20: CDex Request Attachment for Prior-Auth Using Questionnaires</strong></figcaption>
+  <img src="cdex-request-questionnaire-priorauth-flow.svg" class="figure-img img-responsive img-rounded center-block" alt="cdex-request-questionnaire-priorauth-flow.svg" />
+</figure>
+
+<p></p>
+</div>
+
+<p>In addition to the information needed to submit and associate the attachments to the claim successfully, the Payer supplies the following details about what information is necessary to complete the adjudication of the claim:</p>
+
+<ul>
+  <li>A link to the Questionnaire(s)</li>
+  <li>Line numbers on the claim the requested attachment(s) are for</li>
+  <li>The specific purpose of use (POU) for the request</li>
+</ul>
+
+<p>The table below summarizes the mapping between the CDex Request Attachment Profile elements and the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> parameters:</p>
+
+<!-- q-attachments_to_requests.md
+  *****************************************************************************************************
+  *                                  WARNING: DO NOT EDIT THIS FILE                                   *
+  *                                                                                                   *
+  * This file is generated by csv_to_markdown_tabler.ipynb. Any edits you make to this file will be   *
+  * overwritten                                                                                       *
+  * To change the contents of this file, edit input/images/data-element-mapping.csv                     *
+  *****************************************************************************************************
+  -->
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data Element</th>
+      <th>CDex $submit-attachment Parameter</th>
+      <th>CDex Request Attachment Task Profile Element</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tracking ID</td>
+      <td>TrackingId</td>
+      <td>Task.identifier</td>
+    </tr>
+    <tr>
+      <td>Use</td>
+      <td>AttachTo</td>
+      <td>Task.reasonCode</td>
+    </tr>
+    <tr>
+      <td>Payer ID</td>
+      <td>PayerId</td>
+      <td>Task.requester.identifier</td>
+    </tr>
+    <tr>
+      <td>Payer URL</td>
+      <td>(operation endpoint)</td>
+      <td>"PayerUrl" Task.input</td>
+    </tr>
+    <tr>
+      <td>Organization ID</td>
+      <td>OrganizationId</td>
+      <td>PractitionerRole.practitioner.identifier</td>
+    </tr>
+    <tr>
+      <td>Provider ID</td>
+      <td>ProviderId</td>
+      <td>PractitionerRole.organization.identifier</td>
+    </tr>
+    <tr>
+      <td>Line Item(s)</td>
+      <td>Attachment.LineItem</td>
+      <td>“AttachmentsNeeded” Task.input.extension</td>
+    </tr>
+    <tr>
+      <td>Attachment Code<!-- new-content --></td>
+      <td>Attachment.Code</td>
+      <td>“AttachmentsNeeded” Task.input</td>
+    </tr>
+    <tr>
+      <td>Date of Service</td>
+      <td>ServiceDate</td>
+      <td>“service-date” Task.input</td>
+    </tr>
+    <tr>
+      <td>Member ID</td>
+      <td>MemberId</td>
+      <td>Patient.identifier</td>
+    </tr>
+    <tr>
+      <td>Questionnaire</td>
+      <td>-</td>
+      <td>“QuestionnaireContext” Task.input</td>
+    </tr>
+    <tr>
+      <td>QuestionnaireResponse</td>
+      <td>Attachment.Content</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The data element mapping table is available as a <a href="data-element-mapping.csv">CSV</a> and <a href="data-element-mapping.xlsx">Excel</a> file.</p>
+
+<h4 id="payer-requests-attachments-for-prior-authorization">Payer Requests Attachments for Prior Authorization</h4>
+
+<p>In the first FHIR transaction, the Payer POSTs the CDex Task Attachment Request Profile to the Provider endpoint.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/Task
+</code></pre></div></div>
+
+<p><strong>Request Body</strong></p>
+
+<h5 id="task-resource">Task Resource</h5>
+
+<!-- The request body's various elements are annotated to show how each data element is communicated to the Provider. -->
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0  {
+1    "resourceType" : "Task",
+
+</code></pre></div></div>
+
+<h5 id="verifying-patient-identity">Verifying Patient Identity</h5>
+
+<p>The following data elements are used to verify the patient's identity. (This guide does not cover how the Provider system verifies the patient's identity.) They are communicated in a  <em>contained</em> Patient resource using the <a href="StructureDefinition-cdex-patient-demographics.html">CDex Patient Demographics Profile</a>. The contained Patient is referenced in <code class="language-plaintext highlighter-rouge">Task.for.reference</code> using a fixed reference value of "#patient".</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>HRex Patient Demographics Profile.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Member ID or Patient Account No.*</td>
+      <td><code class="language-plaintext highlighter-rouge">Patient.identifier</code></td>
+    </tr>
+    <tr>
+      <td>Patient Name</td>
+      <td><code class="language-plaintext highlighter-rouge">Patient.name</code></td>
+    </tr>
+    <tr>
+      <td>Patient DOB (optional)</td>
+      <td><code class="language-plaintext highlighter-rouge">Patient.birthDate</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>* Patient Account Number is a Provider assigned identifier</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2    "contained" : [{
+3      "resourceType" : "Patient",
+4      "id" : "patient",
+5      "identifier" : [{
+6        "use" : "usual",
+7        "type" : {
+8          "coding" : [{
+9            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+10            "code" : "MB",
+11            "display" : "Member Number"
+12          }],
+13          "text" : "Member Number"
+14        },
+15        "system" : "http://example.org/cdex/payer/member-ids",
+16        "value" : "Member123"
+17      },
+18      {
+19        "use" : "usual",
+20        "type" : {
+21          "coding" : [{
+22            "system" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
+23            "code" : "pat",
+24            "display" : "Patient Account Number"
+25          }],
+26          "text" : "Patient Account Number"
+27        },
+28        "system" : "http://example.org/cdex/provider/patient-ids",
+29        "value" : "PA-123"
+30      }],
+31      "name" : [{
+32        "family" : "Shaw",
+33        "given" : ["Amy"]
+34      }],
+35      "birthDate" : "1987-02-20"
+36    },
+
+</code></pre></div></div>
+
+<h5 id="supplying-the-provider-ids">Supplying the Provider ID(s)</h5>
+
+<p>The Payer communicates the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI), unique provider identifier (e.g., Type 1 NPI), or both in a <em>contained</em> PractitionerRole resource using the <a href="StructureDefinition-cdex-practitionerrole.html">CDex PractitionerRole Profile</a>. This contained PractitionerRole is referenced in <code class="language-plaintext highlighter-rouge">Task.owner.reference</code> using a fixed reference value of "#practitionerrole".</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>37    {
+38      "resourceType" : "PractitionerRole",
+39      "id" : "practitionerrole",
+40      "practitioner" : {
+41        "identifier" : {
+42          "system" : "http://hl7.org/fhir/sid/us-npi",
+43          "value" : "9941339100"
+44        }
+45      },
+46      "organization" : {
+47        "identifier" : {
+48          "system" : "http://hl7.org/fhir/sid/us-npi",
+49          "value" : "1234567893"
+50        }
+51      }
+
+</code></pre></div></div>
+
+<h5 id="supplying-the-tracking-id">Supplying the Tracking ID</h5>
+
+<p>The mandatory <code class="language-plaintext highlighter-rouge">Task.identifier</code> <em>tracking-id</em> slice element represents the Payer tracking identifier. The tracking-id (the "re-association tracking control number") is an identifier that ties the attachments back to the claim or prior authorization. The Provider will echo it back to the Payer when submitting the attachments.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>53    "identifier" : [{
+54      "type" : {
+55        "coding" : [{
+56          "system" : "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+57          "code" : "tracking-id",
+58          "display" : "Tracking Id"
+59        }],
+60        "text" : "Re-Association Tracking Control Number"
+61      },
+62      "system" : "http://example.org/payer",
+63      "value" : "trackingid1012"
+64    }],
+
+</code></pre></div></div>
+
+<h5 id="task-status-and-intent-elements">Task <em>status</em> and <em>intent</em> Elements</h5>
+
+<p>These required Task infrastructure elements:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Task.status</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Task.intent</code></li>
+</ul>
+
+<p>convey the task status and the intent of the request.  The <code class="language-plaintext highlighter-rouge">Task.status</code> value of "request" is typical when POSTing the Task-based attachment request. The status will change as the Task moves through the workflow based on the <a href="task-based-approach.html#task-state-machine">Task state machine</a>. <code class="language-plaintext highlighter-rouge">Task.intent</code> is fixed to "order".</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>65    "status" : "requested",
+66    "intent" : "order",
+
+</code></pre></div></div>
+
+<h5 id="task-code-element">Task <em>code</em> Element</h5>
+
+<p>The <code class="language-plaintext highlighter-rouge">Task.code</code> communicates that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire. If the code is "attachment-request-code", the provider system returns attachment(s) identified by the attachment code(s) in the "code" input parameter. If the code is "attachment-request-questionnaire", as it is in this scenario, the provider system uses Documentation Templates and Rules (DTR) to complete the Questionnaire referenced in the "questionnaire" input parameter. The provider system uses the $submit-attachment operation to return the information to the endpoint provided in the <code class="language-plaintext highlighter-rouge">Task.input</code> "payer-url" parameter.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>67    "code" : {
+68      "coding" : [{
+69        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+70        "code" : "attachment-request-questionnaire"
+71      }],
+72      "text" : "Attachment Request Questionnaire"
+73    },
+
+</code></pre></div></div>
+
+<h5 id="identifying-the-payer-provider-and-patient">Identifying the Payer, Provider, and Patient</h5>
+
+<p>The attachment request will be directed to the same Provider who submitted the claim or prior authorization. Business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim, and these identifiers are echoed back to the Payer when submitting the attachments.</p>
+
+<p>As discussed above, the patient ID is in the contained Patient resource, referenced by the <code class="language-plaintext highlighter-rouge">Task.for</code> element, and the provider ID is in the contained PractitionerRole resource, referenced by the <code class="language-plaintext highlighter-rouge">Task.owner</code> element. The provider ID can be a Practitioner identifier (i.e., a Type1 NPI), the Practitioner's Organization identifier (i.e., a Type2 NPI), or both.</p>
+
+<p>(note the various Task dates in the request fragment below)</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Actor</th>
+      <th>CDex Request Attachment Task Profile Element</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>payer ID</td>
+      <td><code class="language-plaintext highlighter-rouge">Task.requester.identifier</code></td>
+    </tr>
+    <tr>
+      <td>provider ID</td>
+      <td>(contained)PractitionerRole.practitioner. identifier or PractitionerRole.Organization.identifier</td>
+    </tr>
+    <tr>
+      <td>patient member ID or Patient Account No</td>
+      <td>(contained)Patient.identifier</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>74    "for" : {
+75      "reference" : "#patient"
+76    },
+77    "authoredOn" : "2022-06-17T16:16:06Z",
+78    "lastModified" : "2022-06-17T16:16:06Z",
+79    "requester" : {
+80      "identifier" : {
+81        "system" : "http://example.org/cdex/payer/payer-ids",
+82        "value" : "Payer123"
+83      }
+84    },
+85    "owner" : {
+86      "reference" : "#practitionerrole"
+87    },
+
+</code></pre></div></div>
+
+<h5 id="claim-information">Claim Information</h5>
+
+<p>The Task communicates whether the attachments are for a claim or prior authorization, and the Payer identifies the claim or prior authorization with its business identifier.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>CDex Request Attachment Task Profile Element</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Claim or Prior Authorization</td>
+      <td><code class="language-plaintext highlighter-rouge">Task.reasonCode</code></td>
+    </tr>
+    <tr>
+      <td>Claim or Prior Authorization ID</td>
+      <td><code class="language-plaintext highlighter-rouge">Task.reasonReference.identifier</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>88    "reasonCode" : {
+89      "coding" : [{
+90        "system" : "http://hl7.org/fhir/claim-use",
+91        "code" : "preauthorization",
+92        "display" : "Preauthorization"
+93      }],
+94      "text" : "preauthorization"
+95    },
+96    "reasonReference" : {
+97      "identifier" : {
+98        "system" : "http://example.org/cdex/payer/claim-ids",
+99        "value" : "Preauth123"
+100      }
+101    },
+102    "restriction" : {
+103      "period" : {
+
+</code></pre></div></div>
+
+<h5 id="attachment-due-date">Attachment Due Date</h5>
+
+<p>The Payer communicates the due date for submitting the attachment in the <code class="language-plaintext highlighter-rouge">Task.restriction.period</code> element. Note that <code class="language-plaintext highlighter-rouge">Task.restriction.period.end</code> represents the time when the Provider should have submitted the attachments.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>102    "restriction" : {
+103      "period" : {
+104        "end" : "2022-06-21"
+105      }
+106    },
+
+</code></pre></div></div>
+
+<h5 id="using-questionnaire-to-communicate-what-attachments-data-is-needed">Using Questionnaire to Communicate What Attachments Data is Needed</h5>
+
+<p>In this scenario, the Payer supplies the URL of a questionnaire (FHIR Questionnaire) to communicate what attachments-related data is needed. They may also provide the <em>line item numbers</em> to match the attachment to a line item in the claim or prior authorization.  This information is represented in the "questionnaire" <code class="language-plaintext highlighter-rouge">Task.input</code> element. The Provider launches the Documentation Templates and Rules (DTR) application to complete the Questionnaire. The code snippet below contains a URL to a Home Oxygen Therapy Questionnaire.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>107    "input" : [{
+108      "extension" : [{
+109        "url" : "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
+110        "valueInteger" : 1
+111      }],
+112      "type" : {
+113        "coding" : [{
+114          "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+115          "code" : "questionnaire-context"
+116        }]
+117      },
+118      "valueCanonical" : "http://example.org/cdex-questionnaire-example1"
+119    },
+
+</code></pre></div></div>
+
+<!--  ##### Communicating the Signature Requirements
+
+This `Task.input` "signature-flag" may indicate that the Provider must sign the attachments. For more information about using signatures in CDex, see the [Signatures] and [Sending Attachments] pages.
+
+~~~
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=154 count=11 linenumber=true rel=true %}
+~~~  -->
+
+<h5 id="supplying-the-submit-attachment-operation-endpoint">Supplying the $submit-attachment Operation Endpoint</h5>
+
+<p>The Payer supplies the URL endpoint in the <code class="language-plaintext highlighter-rouge">Task.input</code> "payer-url" parameter. The Provider System uses this endpoint for the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation to send the completed QuestionnaireResponse. Note that it is not necessarily a FHIR RESTful server endpoint.</p>
+
+<!-- If no URL endpoint is supplied, the attachments are provided either as references or contained Task resources, and the requester needs to poll/subscribe to the Task to retrieve when done. -->
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>120    {
+121      "type" : {
+122        "coding" : [{
+123          "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+124          "code" : "payer-url"
+125        }]
+126      },
+127      "valueUrl" : "http://example.org/cdex/payer/$submit-attachment"
+128    },
+129    {
+130      "type" : {
+
+</code></pre></div></div>
+
+<!--  ##### Date of Service for the Claim
+
+This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization.  It is optional if the attachment is for a prior authorization.  If the attachment is for a claim, it **SHALL** be present and precise to the day. 
+
+~~~
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=174 count=13 linenumber=true rel=true %}
+~~~  -->
+
+<h5 id="purpose-of-use-for-the-request">Purpose of Use for the Request</h5>
+
+<p>This optional <code class="language-plaintext highlighter-rouge">Task.input</code> element represents the request's purpose of use (POU).  This example supports a request for prior authorization, "COVAUTH".  When requesting attachments for a claim, it would be "CLMATTCH".</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>129    {
+130      "type" : {
+131        "coding" : [{
+132          "system" : "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+133          "code" : "purpose-of-use"
+134        }]
+135      },
+136      "valueCodeableConcept" : {
+137        "coding" : [{
+138          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+139          "code" : "COVAUTH",
+140          "display" : "coverage authorization"
+141        }]
+142      }
+143    }]
+144  }
+
+</code></pre></div></div>
+
+<h4 id="provider-launches-dtr">Provider Launches DTR</h4>
+
+<p>The Payer used a Questionnaire to ask for specific attachments-related data. They indicated it with a <code class="language-plaintext highlighter-rouge">Task.code</code> "attachment-request-questionnaire" and supplied the URL of the questionnaire (FHIR Questionnaire) as an input parameter. Becasue these conditions are met, the Payer launches <a href="http://hl7.org/fhir/us/davinci-dtr/STU2.1">Da Vinci DTR</a>, a SMART on FHIR App or native EHR application. If the Provider launches a DTR within an EHR native application, skip to the step <a href="#dtr-app-updates-task">DTR App Updates Task</a> below. If the Provider Launches DTR as a SMART on FHIR Application, it follows the <a href="requesting-attachments-questionnaire.html#dtr-smart-app-launch">DTR SMART App Launch</a> with the Task as the launch content. The next several steps describe the DTR SMART App functionality.</p>
+
+<h5 id="dtr-smart-app-fetches-task">DTR SMART App Fetches Task</h5>
+
+<p>A reference to the Task is passed to the DTR App as part of the DTR launch. The DTR App fetches the Task and inspects it for the Questionnaire URL.</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Task/cdex-task-example22
+</code></pre></div></div>
+
+<p><strong>Response Body</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0  {
+1    "resourceType" : "Task",
+...
+112      "type" : {
+113        "coding" : [{
+114          "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+115          "code" : "questionnaire-context"
+116        }]
+117      },
+118      "valueCanonical" : "http://example.org/cdex-questionnaire-example1"
+119    },
+....
+</code></pre></div></div>
+
+<h5 id="dtr-smart-app-fetches-questionnaire">DTR SMART App Fetches Questionnaire</h5>
+
+<p>Upon discovery of the Questionnaire URL, the DTR App fetches the Questionnaire.</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
+</code></pre></div></div>
+
+<p><strong>Response Body</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0  {
+1    "resourceType" : "Questionnaire",
+2    "id" : "cdex-questionnaire-example1",
+3    "text" : {
+4      "status" : "extensions",
+5      "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Questionnaire cdex-questionnaire-example1&lt;/b&gt;&lt;/p&gt;&lt;a name=\"cdex-questionnaire-example1\"&gt; &lt;/a&gt;&lt;a name=\"hccdex-questionnaire-example1\"&gt; &lt;/a&gt;&lt;a name=\"cdex-questionnaire-example1-en-US\"&gt; &lt;/a&gt;&lt;b&gt;Structure&lt;/b&gt;&lt;table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"&gt;&lt;tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\"&gt;LinkID&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\"&gt;Text&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\"&gt;Cardinality&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\"&gt;Type&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Additional information about the item\"&gt;Description &amp;amp; Constraints&lt;/a&gt;&lt;span style=\"float: right\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"&gt;&lt;img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireRoot\" class=\"hierarchy\"/&gt; HomeOxygenTherapyQuestionnaire&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Questionnaire&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;http://example.org/cdex-questionnaire-example1#2.1.0&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" id=\"item.1\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/&gt; 1&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;1..1&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\"&gt;text&lt;/a&gt;&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/&gt;&lt;/tr&gt;\r\n&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" id=\"item.2\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/&gt; 2&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Order Reason&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;1..1&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\"&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Options: &lt;a href=\"#opt-item.2\"&gt;4 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr&gt;&lt;td colspan=\"5\" class=\"hierarchy\"&gt;&lt;br/&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"&gt;&lt;img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Options Sets&lt;/b&gt;&lt;/p&gt;&lt;a name=\"opt-item.2\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 2 &lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=\"font-size: 11px\"&gt;http://example.org#1 (&amp;quot;Initial or original order for certification&amp;quot;)&lt;/li&gt;&lt;li style=\"font-size: 11px\"&gt;http://example.org#2 (&amp;quot;Change in status&amp;quot;)&lt;/li&gt;&lt;li style=\"font-size: 11px\"&gt;http://example.org#3 (&amp;quot;Revision or change in equipment&amp;quot;)&lt;/li&gt;&lt;li style=\"font-size: 11px\"&gt;http://example.org#4 (&amp;quot;Replacement&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
+6    },
+7    "url" : "http://example.org/cdex-questionnaire-example1",
+8    "identifier" : [{
+9      "system" : "urn:ietf:rfc:3986",
+10      "value" : "urn:oid:2.16.840.1.113883.4.642.40.21.35.1"
+11    }],
+12    "version" : "2.1.0",
+13    "name" : "HomeOxygenTherapyQuestionnaire",
+14    "title" : "Home Oxygen Therapy Questionnaire",
+15    "status" : "active",
+16    "subjectType" : ["Patient"],
+17    "date" : "2022-01-17",
+18    "publisher" : "HL7 International / Payer/Provider Information Exchange Work Group",
+19    "contact" : [{
+20      "name" : "HL7 International / Payer/Provider Information Exchange Work Group",
+21      "telecom" : [{
+22        "system" : "url",
+23        "value" : "http://www.hl7.org/Special/committees/claims"
+24      },
+25      {
+26        "system" : "email",
+27        "value" : "pie@lists.hl7.org"
+28      }]
+29    }],
+30    "jurisdiction" : [{
+31      "coding" : [{
+32        "system" : "urn:iso:std:iso:3166",
+33        "code" : "US"
+34      }]
+35    }],
+36    "copyright" : "Used by permission of HL7 International all rights reserved Creative Commons License",
+37    "item" : [{
+38      "linkId" : "1",
+39      "text" : "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+40      "type" : "text",
+41      "required" : true
+42    },
+43    {
+44      "linkId" : "2",
+45      "text" : "Order Reason",
+46      "type" : "choice",
+47      "required" : true,
+48      "answerOption" : [{
+49        "valueCoding" : {
+50          "system" : "http://example.org",
+51          "code" : "1",
+52          "display" : "Initial or original order for certification"
+53        }
+54      },
+55      {
+56        "valueCoding" : {
+57          "system" : "http://example.org",
+58          "code" : "2",
+59          "display" : "Change in status"
+60        }
+61      },
+62      {
+63        "valueCoding" : {
+64          "system" : "http://example.org",
+65          "code" : "3",
+66          "display" : "Revision or change in equipment"
+67        }
+68      },
+69      {
+70        "valueCoding" : {
+71          "system" : "http://example.org",
+72          "code" : "4",
+73          "display" : "Replacement"
+74        }
+75      }]
+76    }]
+77  }
+
+</code></pre></div></div>
+
+<h5 id="dtr-app-fills-questionnaireresponse">DTR App Fills QuestionnaireResponse</h5>
+
+<p>To complete the Questionnaire, the DTR App retrieves FHIR resources from EHRs, runs rules (such as <a href="https://cql.hl7.org/">CQL</a>) for form population, and completes a QuestionnaireResponse.  See the <a href="http://hl7.org/fhir/us/davinci-dtr/STU2.1">Da Vinci DTR</a> Implementation Guide for more information.</p>
+
+<!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong></strong></figcaption>
+  <img src="fill-form-icon.svg" class="img-responsive img-rounded center-block" alt="fill-form-icon.svg" width="20%" />
+</figure>
+
+<p></p>
+</div>
+
+<h5 id="dtr-app-posts-questionnaireresponse-to-provider-fhir-server">DTR App POSTs QuestionnaireResponse to Provider FHIR Server</h5>
+
+<p>The completed QuestionnaireResponse is saved in the Provider's FHIR Server.</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/$QuestionnaireResponse
+</code></pre></div></div>
+
+<p><strong>Request Body</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0  {
+1    "resourceType" : "QuestionnaireResponse",
+2    "questionnaire" : "http://example.org/cdex-questionnaire-example1",
+3    "status" : "completed",
+4    "subject" : {
+5      "identifier" : {
+6        "use" : "usual",
+7        "type" : {
+8          "coding" : [{
+9            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+10            "code" : "MB",
+11            "display" : "Member Number"
+12          }],
+13          "text" : "Member Number"
+14        },
+15        "system" : "http://example.org/cdex/payer/member-ids",
+16        "value" : "Member123"
+17      },
+18      "display" : "Amy Shaw"
+19    },
+20    "authored" : "2022-06-17",
+21    "author" : {
+22      "identifier" : {
+23        "system" : "http://hl7.org/fhir/sid/us-npi",
+24        "value" : "9941339100"
+25      }
+26    },
+27    "item" : [{
+28      "linkId" : "1",
+29      "text" : "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+30      "answer" : [{
+31        "valueString" : "Examplitis"
+32      }]
+33    },
+34    {
+35      "linkId" : "2",
+36      "text" : "Order Reason",
+37      "answer" : [{
+38        "valueCoding" : {
+39          "system" : "http://example.org",
+40          "code" : "4",
+41          "display" : "Replacement"
+42        }
+43      }]
+44    }]
+45  }
+
+</code></pre></div></div>
+
+<h5 id="dtr-app-updates-task">DTR App Updates Task</h5>
+
+<p>The DTR SMART App or EHR native application Updates <code class="language-plaintext highlighter-rouge">Task.output</code> to Reference the completed QuestionnaireResponse.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PUT [base]/Task/cdex-task-example-22
+</code></pre></div></div>
+
+<p><strong>Request Body</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0  {
+1    "resourceType": "Task",
+2    "id": "cdex-task-example22",
+...
+202    "output": [
+203      {
+204        "type": {
+205          "coding": [
+206            {
+207              "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+208              "code": "questionnaire-response"
+209            }
+210          ]
+211        },
+212        "valueReference": {
+213          "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example1"
+214        }
+215      }
+216    ]
+
+</code></pre></div></div>
+
+<h4 id="provider-submits-solicited-attachments">Provider Submits Solicited Attachments</h4>
+
+<p>When the Task is completed, the Provider POSTs the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation and its payload to the Payer's endpoint communicated in the <code class="language-plaintext highlighter-rouge">Task.input</code> "payer-url" parameter. The operation payload contains the completed QuestionnaireResponse(s) and echoes many data elements sent in the request. The table in the introduction to this section summarizes the mapping between the CDex Request Attachment Profile elements and the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> parameters. The documentation below describes and demonstrates the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> parameters.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data Element</th>
+      <th>CDex Request Attachment Task Profile Element</th>
+      <th>CDex #submit-attachment Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Payer URL</td>
+      <td>"payer-url"Task.input</td>
+      <td>(operation endpoint)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Request</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/$submit-attachment
+</code></pre></div></div>
+
+<p><strong>Request Body</strong></p>
+
+<h5 id="the-submit-attachment-operation-payload">The Submit Attachment Operation Payload</h5>
+
+<p>The attachments and metadata needed to associate the attachment to the claim or prior authorization are in the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> payload, a <a href="http://hl7.org/fhir/R4/parameters.html">Parameters</a> resource.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0  {
+1    "resourceType" : "Parameters",
+2    "parameter" : [{
+
+</code></pre></div></div>
+
+<h5 id="tracking-id-and-indicating-a-claim-or-prior-authorization">Tracking ID and Indicating a Claim or Prior Authorization</h5>
+<p>The TrackingId parameter represents the identifier that ties the attachments to the claim or prior authorization. It is often referred to as the "re-association tracking control number". The operation must indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data Element</th>
+      <th>CDex Request Attachment Task Profile Element</th>
+      <th>CDex #submit-attachment Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TrackingID</td>
+      <td>Task.identifier</td>
+      <td>TrackingId</td>
+    </tr>
+    <tr>
+      <td>Use</td>
+      <td>Task.reasonCode</td>
+      <td>AttachTo</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3      "name" : "TrackingId",
+4      "valueIdentifier" : {
+5        "system" : "http://example.org/payer",
+6        "value" : "trackingid1012"
+7      }
+8    },
+9    {
+10      "name" : "AttachTo",
+11      "valueCode" : "preauthorization"
+12    },
+13    {
+
+</code></pre></div></div>
+
+<h5 id="identifying-the-payer-provider-organization-and-patient">Identifying the Payer, Provider, Organization, and Patient</h5>
+
+<p>As documented above, The Payer uses business identifiers to identify itself, the Patient, the Provider (i.e., the practitioner), and the Organization (i.e., the provider organization) who submitted the claim or prior authorization. The Provider uses these same identifiers when submitting the attachments.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data Element</th>
+      <th>CDex Request Attachment Task Profile Element</th>
+      <th>CDex #submit-attachment Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Payer ID</td>
+      <td>Task.requester.identifier</td>
+      <td>PayerId</td>
+    </tr>
+    <tr>
+      <td>Organization ID</td>
+      <td>PractitionerRole.organization.identifier</td>
+      <td>OrganizationId</td>
+    </tr>
+    <tr>
+      <td>Provider ID</td>
+      <td>PractitionerRole.practitioner.identifier</td>
+      <td>ProviderId</td>
+    </tr>
+    <tr>
+      <td>Member ID</td>
+      <td>Patient.identifier</td>
+      <td>MemberId</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>14      "name" : "PayerId",
+15      "valueIdentifier" : {
+16        "system" : "http://example.org/cdex/payer/payer-ids",
+17        "value" : "payer123"
+18      }
+19    },
+20    {
+21      "name" : "OrganizationId",
+22      "valueIdentifier" : {
+23        "system" : "http://hl7.org/fhir/sid/us-npi",
+24        "value" : "1234567893"
+25      }
+26    },
+27    {
+28      "name" : "ProviderId",
+29      "valueIdentifier" : {
+30        "system" : "http://hl7.org/fhir/sid/us-npi",
+31        "value" : "9941339100"
+32      }
+33    },
+34    {
+35      "name" : "MemberId",
+36      "valueIdentifier" : {
+37        "system" : "http://example.org/cdex/payer/member-ids",
+38        "value" : "Member123"
+39      }
+40    },
+41    {
+
+</code></pre></div></div>
+
+<!--  ##### The Service Date
+
+The service date parameter is taken from the "service-date" `Task.input` element in the CDex Attachment request.
+
+
+|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|---|---|---|
+|Date of Service|“service-date” Task.input|ServiceDate|
+{:.grid}
+
+~~~
+{% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=42 count=4 linenumber=true rel=true %}
+~~~   -->
+
+<h5 id="supply-the-questionnaireresponse">Supply the QuestionnaireResponse</h5>
+
+<p>The completed QuestionnaireResponse and line item numbers are communicated as "Attachment" parameter parts. The QuestionnaireResponse is in the <code class="language-plaintext highlighter-rouge">Attachment.Content</code> parameter part as an inline FHIR resource, and the line item numbers associated with it are sent in the <code class="language-plaintext highlighter-rouge">Attachment.LineItem</code> parameter part.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data Element</th>
+      <th>CDex Request Attachment Task Profile Element</th>
+      <th>CDex #submit-attachment Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>line item(s)</td>
+      <td>“code”Task.input.extension</td>
+      <td>Attachment.LineItem</td>
+    </tr>
+    <tr>
+      <td>QuestionnaireResponse</td>
+      <td>-</td>
+      <td>Attachment.content</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>42      "name" : "Attachment",
+43      "part" : [{
+44        "name" : "LineItem",
+45        "valueString" : "1"
+46      },
+47      {
+48        "name" : "Content",
+49        "resource" : {
+50          "resourceType" : "QuestionnaireResponse",
+51          "id" : "cdex-questionnaireresponse-example1",
+52          "questionnaire" : "http://example.org/cdex-questionnaire-example1",
+53          "status" : "completed",
+54          "subject" : {
+55            "identifier" : {
+56              "use" : "usual",
+57              "type" : {
+58                "coding" : [{
+59                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+60                  "code" : "MB",
+61                  "display" : "Member Number"
+62                }],
+63                "text" : "Member Number"
+64              },
+65              "system" : "http://example.org/cdex/payer/member-ids",
+66              "value" : "Member123"
+67            },
+68            "display" : "Amy Shaw"
+69          },
+70          "authored" : "2022-06-17",
+71          "author" : {
+72            "identifier" : {
+73              "system" : "http://hl7.org/fhir/sid/us-npi",
+74              "value" : "9941339100"
+75            }
+76          },
+77          "item" : [{
+78            "linkId" : "1",
+79            "text" : "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+80            "answer" : [{
+81              "valueString" : "Examplitis"
+82            }]
+83          },
+84          {
+85            "linkId" : "2",
+86            "text" : "Order Reason",
+87            "answer" : [{
+88              "valueCoding" : {
+89                "system" : "http://example.org",
+90                "code" : "4",
+91                "display" : "Replacement"
+92              }
+93            }]
+94          }]
+95        }
+96      }]
+97    }]
+98  }
+
+</code></pre></div></div>
+
+<h3 id="complete-solicited-attachment-transaction">Complete <em>Solicited</em> Attachment Transaction</h3>
+
+<p>The example below shows the complete <em>solicited</em> attachment transaction. A Payer uses the CDex Task Attachment Request Profile to request the attachment using an attachment code, and the Provider uses the <a href="OperationDefinition-submit-attachment.html"><code class="language-plaintext highlighter-rouge">$submit-attachment</code></a> operation to submit the attachments to the Payer:</p>
+
+<p>
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#solicited-attachment-scenario-2" aria-expanded="false" aria-controls="collapseExample">
+    Click Here To See FHIR Based Solicited Attachment Example
+  </button>
+</p>
+
+<div class="collapse" id="solicited-attachment-scenario-2">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+
+    <h4 id="step-1---post-task-to-provider-endpoint">Step 1 - POST Task to Provider endpoint</h4>
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+POST [base]/Task
+
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{
+  "resourceType" : "Task",
+  "contained" : [{
+    "resourceType" : "Patient",
+    "id" : "patient",
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code" : "MB",
+          "display" : "Member Number"
+        }],
+        "text" : "Member Number"
+      },
+      "system" : "http://example.org/cdex/payer/member-ids",
+      "value" : "Member123"
+    },
+    {
+      "use" : "usual",
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
+          "code" : "pat",
+          "display" : "Patient Account Number"
+        }],
+        "text" : "Patient Account Number"
+      },
+      "system" : "http://example.org/cdex/provider/patient-ids",
+      "value" : "PA-123"
+    }],
+    "name" : [{
+      "family" : "Shaw",
+      "given" : ["Amy"]
+    }],
+    "birthDate" : "1987-02-20"
+  },
+  {
+    "resourceType" : "PractitionerRole",
+    "id" : "practitionerrole",
+    "practitioner" : {
+      "identifier" : {
+        "system" : "http://hl7.org/fhir/sid/us-npi",
+        "value" : "9941339100"
+      }
+    },
+    "organization" : {
+      "identifier" : {
+        "system" : "http://hl7.org/fhir/sid/us-npi",
+        "value" : "1234567893"
+      }
+    }
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "code" : "tracking-id",
+        "display" : "Tracking Id"
+      }],
+      "text" : "Re-Association Tracking Control Number"
+    },
+    "system" : "http://example.org/payer",
+    "value" : "trackingid1012"
+  }],
+  "status" : "requested",
+  "intent" : "order",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+      "code" : "attachment-request-questionnaire"
+    }],
+    "text" : "Attachment Request Questionnaire"
+  },
+  "for" : {
+    "reference" : "#patient"
+  },
+  "authoredOn" : "2022-06-17T16:16:06Z",
+  "lastModified" : "2022-06-17T16:16:06Z",
+  "requester" : {
+    "identifier" : {
+      "system" : "http://example.org/cdex/payer/payer-ids",
+      "value" : "Payer123"
+    }
+  },
+  "owner" : {
+    "reference" : "#practitionerrole"
+  },
+  "reasonCode" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/claim-use",
+      "code" : "preauthorization",
+      "display" : "Preauthorization"
+    }],
+    "text" : "preauthorization"
+  },
+  "reasonReference" : {
+    "identifier" : {
+      "system" : "http://example.org/cdex/payer/claim-ids",
+      "value" : "Preauth123"
+    }
+  },
+  "restriction" : {
+    "period" : {
+      "end" : "2022-06-21"
+    }
+  },
+  "input" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
+      "valueInteger" : 1
+    }],
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "questionnaire-context"
+      }]
+    },
+    "valueCanonical" : "http://example.org/cdex-questionnaire-example1"
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "payer-url"
+      }]
+    },
+    "valueUrl" : "http://example.org/cdex/payer/$submit-attachment"
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "code" : "purpose-of-use"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code" : "COVAUTH",
+        "display" : "coverage authorization"
+      }]
+    }
+  }]
+}
+
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+HTTP/1.1 200 OK
+
+Server: CDEX Example Provider Server
+
+Location: http://example.org/FHIR/Task/cdex-task-example22/_history/1
+
+...(other headers)
+
+</code></pre></div>    </div>
+
+    <h4 id="step-2---provider-invokes-dtr-to-complete-questionnaire">Step 2 - Provider Invokes DTR To Complete Questionnaire</h4>
+
+    <p>If the Provider Launches DTR as a SMART on FHIR Application in SMART’s EHR launch flow, proceed to step 3
+If the Provider launches a DTR within an EHR native application, skip to step 7</p>
+
+    <h4 id="step-3---dtr-app-fetches-task">Step 3 - DTR App Fetches Task</h4>
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+GET [base]/Task/cdex-task-example22
+
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+HTTP/1.1 200 OK
+
+Server: CDEX Example Provider Server
+
+Location: http://example.org/FHIR/Task/cdex-task-example22/_history/1
+
+...(other headers)
+
+</code></pre></div>    </div>
+
+    <p><strong>Response Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{
+  "resourceType" : "Task",
+  "id" : "cdex-task-example22",
+  "text" : {
+    "status" : "extensions",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Task cdex-task-example22&lt;/b&gt;&lt;/p&gt;&lt;a name=\"cdex-task-example22\"&gt; &lt;/a&gt;&lt;a name=\"hccdex-task-example22\"&gt; &lt;/a&gt;&lt;a name=\"cdex-task-example22-en-US\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: Re-Association Tracking Control Number/trackingid1012&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: In Progress&lt;/p&gt;&lt;p&gt;&lt;b&gt;intent&lt;/b&gt;: order&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=\"Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes attachment-request-questionnaire}\"&gt;Attachment Request Questionnaire&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;for&lt;/b&gt;: &lt;a href=\"#hccdex-task-example22/patient\"&gt;Amy Shaw  (no stated gender), DoB: 1987-02-20 ( Patient Account Number:\u00a0PA-123\u00a0(use:\u00a0usual,\u00a0))&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;authoredOn&lt;/b&gt;: 2022-06-17 16:16:06+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;lastModified&lt;/b&gt;: 2022-06-17 16:16:06+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;requester&lt;/b&gt;: Identifier: &lt;code&gt;http://example.org/cdex/payer/payer-ids&lt;/code&gt;/Payer123&lt;/p&gt;&lt;p&gt;&lt;b&gt;owner&lt;/b&gt;: &lt;a href=\"#hccdex-task-example22/practitionerrole\"&gt;PractitionerRole&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;reasonCode&lt;/b&gt;: &lt;span title=\"Codes:{http://hl7.org/fhir/claim-use preauthorization}\"&gt;preauthorization&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;reasonReference&lt;/b&gt;: Identifier: &lt;code&gt;http://example.org/cdex/payer/claim-ids&lt;/code&gt;/Preauth123&lt;/p&gt;&lt;h3&gt;Restrictions&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Period&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"display: none\"&gt;*&lt;/td&gt;&lt;td&gt;?? --&amp;gt; 2022-06-21&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;input&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;PALineNumber&lt;/b&gt;: 1&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes questionnaire-context}\"&gt;Questionnaire Context&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;a href=\"Questionnaire-cdex-questionnaire-example1.html\"&gt;Home Oxygen Therapy Questionnaire&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;input&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes:{http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes payer-url}\"&gt;Payer URL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;a href=\"http://example.org/cdex/payer/$submit-attachment\"&gt;http://example.org/cdex/payer/$submit-attachment&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;input&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes:{http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp purpose-of-use}\"&gt;Purpose Of Use&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActReason COVAUTH}\"&gt;coverage authorization&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Patient #patient&lt;/b&gt;&lt;/p&gt;&lt;a name=\"cdex-task-example22/patient\"&gt; &lt;/a&gt;&lt;a name=\"hccdex-task-example22/patient\"&gt; &lt;/a&gt;&lt;a name=\"cdex-task-example22/patient-en-US\"&gt; &lt;/a&gt;&lt;p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"&gt;Amy Shaw  (no stated gender), DoB: 1987-02-20 ( Patient Account Number:\u00a0PA-123\u00a0(use:\u00a0usual,\u00a0))&lt;/p&gt;&lt;hr/&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\"&gt;Other Id:&lt;/td&gt;&lt;td colspan=\"3\"&gt;Member Number/Member123\u00a0(use:\u00a0usual,\u00a0)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: PractitionerRole #practitionerrole&lt;/b&gt;&lt;/p&gt;&lt;a name=\"cdex-task-example22/practitionerrole\"&gt; &lt;/a&gt;&lt;a name=\"hccdex-task-example22/practitionerrole\"&gt; &lt;/a&gt;&lt;a name=\"cdex-task-example22/practitionerrole-en-US\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;practitioner&lt;/b&gt;: Identifier: &lt;a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\"&gt;United States National Provider Identifier&lt;/a&gt;/9941339100&lt;/p&gt;&lt;p&gt;&lt;b&gt;organization&lt;/b&gt;: Identifier: &lt;a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\"&gt;United States National Provider Identifier&lt;/a&gt;/1234567893&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;"
+  },
+  "contained" : [{
+    "resourceType" : "Patient",
+    "id" : "patient",
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code" : "MB",
+          "display" : "Member Number"
+        }],
+        "text" : "Member Number"
+      },
+      "system" : "http://example.org/cdex/payer/member-ids",
+      "value" : "Member123"
+    },
+    {
+      "use" : "usual",
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
+          "code" : "pat",
+          "display" : "Patient Account Number"
+        }],
+        "text" : "Patient Account Number"
+      },
+      "system" : "http://example.org/cdex/provider/patient-ids",
+      "value" : "PA-123"
+    }],
+    "name" : [{
+      "family" : "Shaw",
+      "given" : ["Amy"]
+    }],
+    "birthDate" : "1987-02-20"
+  },
+  {
+    "resourceType" : "PractitionerRole",
+    "id" : "practitionerrole",
+    "practitioner" : {
+      "identifier" : {
+        "system" : "http://hl7.org/fhir/sid/us-npi",
+        "value" : "9941339100"
+      }
+    },
+    "organization" : {
+      "identifier" : {
+        "system" : "http://hl7.org/fhir/sid/us-npi",
+        "value" : "1234567893"
+      }
+    }
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "code" : "tracking-id",
+        "display" : "Tracking Id"
+      }],
+      "text" : "Re-Association Tracking Control Number"
+    },
+    "system" : "http://example.org/payer",
+    "value" : "trackingid1012"
+  }],
+  "status" : "in-progress",
+  "intent" : "order",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+      "code" : "attachment-request-questionnaire"
+    }],
+    "text" : "Attachment Request Questionnaire"
+  },
+  "for" : {
+    "reference" : "#patient"
+  },
+  "authoredOn" : "2022-06-17T16:16:06Z",
+  "lastModified" : "2022-06-17T16:16:06Z",
+  "requester" : {
+    "identifier" : {
+      "system" : "http://example.org/cdex/payer/payer-ids",
+      "value" : "Payer123"
+    }
+  },
+  "owner" : {
+    "reference" : "#practitionerrole"
+  },
+  "reasonCode" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/claim-use",
+      "code" : "preauthorization",
+      "display" : "Preauthorization"
+    }],
+    "text" : "preauthorization"
+  },
+  "reasonReference" : {
+    "identifier" : {
+      "system" : "http://example.org/cdex/payer/claim-ids",
+      "value" : "Preauth123"
+    }
+  },
+  "restriction" : {
+    "period" : {
+      "end" : "2022-06-21"
+    }
+  },
+  "input" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
+      "valueInteger" : 1
+    }],
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "questionnaire-context"
+      }]
+    },
+    "valueCanonical" : "http://example.org/cdex-questionnaire-example1",
+    "_valueCanonical" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/display",
+        "valueString" : "Home Oxygen Therapy Questionnaire"
+      }]
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "payer-url"
+      }]
+    },
+    "valueUrl" : "http://example.org/cdex/payer/$submit-attachment"
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "code" : "purpose-of-use"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code" : "COVAUTH",
+        "display" : "coverage authorization"
+      }]
+    }
+  }]
+}
+
+</code></pre></div>    </div>
+
+    <h4 id="step-4---dtr-app-inspects-task-for-questionnaire-canonical-url-and-fetches-the-questionnaire">Step 4 - DTR App Inspects Task for Questionnaire Canonical URL and fetches the "Questionnaire"</h4>
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+GET http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
+
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+HTTP/1.1 200 OK
+
+Server: CDEX Example Provider Server
+
+Location: http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
+
+...(other headers)
+
+</code></pre></div>    </div>
+
+    <p><strong>Response Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{
+  "resourceType" : "Questionnaire",
+  "id" : "cdex-questionnaire-example1",
+  "text" : {
+    "status" : "extensions",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Questionnaire cdex-questionnaire-example1&lt;/b&gt;&lt;/p&gt;&lt;a name=\"cdex-questionnaire-example1\"&gt; &lt;/a&gt;&lt;a name=\"hccdex-questionnaire-example1\"&gt; &lt;/a&gt;&lt;a name=\"cdex-questionnaire-example1-en-US\"&gt; &lt;/a&gt;&lt;b&gt;Structure&lt;/b&gt;&lt;table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"&gt;&lt;tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\"&gt;LinkID&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\"&gt;Text&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\"&gt;Cardinality&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\"&gt;Type&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Additional information about the item\"&gt;Description &amp;amp; Constraints&lt;/a&gt;&lt;span style=\"float: right\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"&gt;&lt;img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireRoot\" class=\"hierarchy\"/&gt; HomeOxygenTherapyQuestionnaire&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Questionnaire&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;http://example.org/cdex-questionnaire-example1#2.1.0&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" id=\"item.1\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/&gt; 1&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;1..1&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\"&gt;text&lt;/a&gt;&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/&gt;&lt;/tr&gt;\r\n&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" id=\"item.2\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/&gt; 2&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Order Reason&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;1..1&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\"&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Options: &lt;a href=\"#opt-item.2\"&gt;4 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr&gt;&lt;td colspan=\"5\" class=\"hierarchy\"&gt;&lt;br/&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"&gt;&lt;img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Options Sets&lt;/b&gt;&lt;/p&gt;&lt;a name=\"opt-item.2\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 2 &lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=\"font-size: 11px\"&gt;http://example.org#1 (&amp;quot;Initial or original order for certification&amp;quot;)&lt;/li&gt;&lt;li style=\"font-size: 11px\"&gt;http://example.org#2 (&amp;quot;Change in status&amp;quot;)&lt;/li&gt;&lt;li style=\"font-size: 11px\"&gt;http://example.org#3 (&amp;quot;Revision or change in equipment&amp;quot;)&lt;/li&gt;&lt;li style=\"font-size: 11px\"&gt;http://example.org#4 (&amp;quot;Replacement&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
+  },
+  "url" : "http://example.org/cdex-questionnaire-example1",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.40.21.35.1"
+  }],
+  "version" : "2.1.0",
+  "name" : "HomeOxygenTherapyQuestionnaire",
+  "title" : "Home Oxygen Therapy Questionnaire",
+  "status" : "active",
+  "subjectType" : ["Patient"],
+  "date" : "2022-01-17",
+  "publisher" : "HL7 International / Payer/Provider Information Exchange Work Group",
+  "contact" : [{
+    "name" : "HL7 International / Payer/Provider Information Exchange Work Group",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/claims"
+    },
+    {
+      "system" : "email",
+      "value" : "pie@lists.hl7.org"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "copyright" : "Used by permission of HL7 International all rights reserved Creative Commons License",
+  "item" : [{
+    "linkId" : "1",
+    "text" : "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+    "type" : "text",
+    "required" : true
+  },
+  {
+    "linkId" : "2",
+    "text" : "Order Reason",
+    "type" : "choice",
+    "required" : true,
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "http://example.org",
+        "code" : "1",
+        "display" : "Initial or original order for certification"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "http://example.org",
+        "code" : "2",
+        "display" : "Change in status"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "http://example.org",
+        "code" : "3",
+        "display" : "Revision or change in equipment"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "http://example.org",
+        "code" : "4",
+        "display" : "Replacement"
+      }
+    }]
+  }]
+}
+
+</code></pre></div>    </div>
+
+    <h4 id="step-5---dtr-app-fills-questionnaireresponse">Step 5 - DTR App Fills QuestionnaireResponse</h4>
+
+    <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
+
+    <div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong></strong></figcaption>
+  <img src="fill-form-icon.svg" class="img-responsive img-rounded center-block" alt="fill-form-icon.svg" width="20%" />
+</figure>
+
+<p></p>
+</div>
+
+    <h4 id="step-6---dtr-app-posts-questionnaireresponse-to-provider-fhir-server">Step 6 - DTR App POSTs QuestionnaireResponse to Provider FHIR Server</h4>
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+POST [base]/QuestionnaireResponse
+
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{
+  "resourceType" : "QuestionnaireResponse",
+  "id" : "cdex-questionnaireresponse-example1",
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: QuestionnaireResponse cdex-questionnaireresponse-example1&lt;/b&gt;&lt;/p&gt;&lt;a name=\"cdex-questionnaireresponse-example1\"&gt; &lt;/a&gt;&lt;a name=\"hccdex-questionnaireresponse-example1\"&gt; &lt;/a&gt;&lt;a name=\"cdex-questionnaireresponse-example1-en-US\"&gt; &lt;/a&gt;&lt;table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"&gt;&lt;tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\"&gt;LinkID&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\"&gt;Text&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\"&gt;Definition&lt;/a&gt;&lt;/th&gt;&lt;th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\"&gt;Answer&lt;/a&gt;&lt;span style=\"float: right\"&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"&gt;&lt;img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireResponseRoot\" class=\"hierarchy\"/&gt; cdex-questionnaireresponse-example1&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Questionnaire:&lt;a href=\"Questionnaire-cdex-questionnaire-example1.html\"&gt;Home Oxygen Therapy Questionnaire&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/&gt; 1&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Examplitis&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" class=\"hierarchy\"&gt;&lt;img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/&gt;&lt;img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/&gt; 2&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;Order Reason&lt;/td&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/&gt;&lt;td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"&gt;&lt;span&gt;&lt;span&gt;example.org 4: Replacement&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr&gt;&lt;td colspan=\"4\" class=\"hierarchy\"&gt;&lt;br/&gt;&lt;a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"&gt;&lt;img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "questionnaire" : "http://example.org/cdex-questionnaire-example1",
+  "status" : "completed",
+  "subject" : {
+    "identifier" : {
+      "use" : "usual",
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code" : "MB",
+          "display" : "Member Number"
+        }],
+        "text" : "Member Number"
+      },
+      "system" : "http://example.org/cdex/payer/member-ids",
+      "value" : "Member123"
+    },
+    "display" : "Amy Shaw"
+  },
+  "authored" : "2022-06-17",
+  "author" : {
+    "identifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339100"
+    }
+  },
+  "item" : [{
+    "linkId" : "1",
+    "text" : "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+    "answer" : [{
+      "valueString" : "Examplitis"
+    }]
+  },
+  {
+    "linkId" : "2",
+    "text" : "Order Reason",
+    "answer" : [{
+      "valueCoding" : {
+        "system" : "http://example.org",
+        "code" : "4",
+        "display" : "Replacement"
+      }
+    }]
+  }]
+}
+
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+HTTP/1.1 200 OK
+
+Server: CDEX Example Provider Server
+
+Location: http://example.org/FHIR/QuestionnaireResponse/cdex-questionnaireresponse-inline-example1/_history/1
+
+...(other headers)
+
+</code></pre></div>    </div>
+
+    <h4 id="step-7----the-dtr-smart-app-or-ehr-native-application-updates-taskoutput-to-reference-questionnaireresponse">Step 7 -  The DTR SMART App or EHR native application Updates Task.output to Reference QuestionnaireResponse</h4>
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+PUT [base]/Task/cdex-task-example-22
+
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{
+  "resourceType": "Task",
+  "id": "cdex-task-example22",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "Inline Task Example22 Updateid"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Task example used to create inline scenarios for this guide"
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "patient",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "MB",
+                "display": "Member Number"
+              }
+            ],
+            "text": "Member Number"
+          },
+          "system": "http://example.org/cdex/payer/member-ids",
+          "value": "Member123"
+        },
+        {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
+                "code": "pat",
+                "display": "Patient Account Number"
+              }
+            ],
+            "text": "Patient Account Number"
+          },
+          "system": "http://example.org/cdex/provider/patient-ids",
+          "value": "PA-123"
+        }
+      ],
+      "name": [
+        {
+          "family": "Shaw",
+          "given": [
+            "Amy"
+          ]
+        }
+      ],
+      "birthDate": "1987-02-20"
+    },
+    {
+      "resourceType": "PractitionerRole",
+      "id": "practitionerrole",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole"
+        ]
+      },
+      "practitioner": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "9941339100"
+        }
+      },
+      "organization": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "1234567893"
+        }
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+            "code": "tracking-id",
+            "display": "Tracking Id"
+          }
+        ],
+        "text": "Re-Association Tracking Control Number"
+      },
+      "system": "http://example.org/payer",
+      "value": "trackingid1012"
+    }
+  ],
+  "status": "in-progress",
+  "intent": "order",
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "code": "attachment-request-questionnaire"
+      }
+    ],
+    "text": "Attachment Request Questionnaire"
+  },
+  "for": {
+    "reference": "#patient"
+  },
+  "authoredOn": "2022-06-17T16:16:06+00:00",
+  "lastModified": "2022-06-17T16:17:06+00:00",
+  "requester": {
+    "identifier": {
+      "system": "http://example.org/cdex/payer/payer-ids",
+      "value": "Payer123"
+    }
+  },
+  "owner": {
+    "reference": "#practitionerrole"
+  },
+  "reasonCode": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/claim-use",
+        "code": "preauthorization",
+        "display": "Preauthorization"
+      }
+    ],
+    "text": "preauthorization"
+  },
+  "reasonReference": {
+    "identifier": {
+      "system": "http://example.org/cdex/payer/claim-ids",
+      "value": "Preauth123"
+    }
+  },
+  "restriction": {
+    "period": {
+      "end": "2022-06-21"
+    }
+  },
+  "input": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
+          "valueInteger": 1
+        }
+      ],
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+            "code": "questionnaire"
+          }
+        ]
+      },
+      "questionnaire" : "http://example.org/cdex-questionnaire-example1"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+            "code": "payer-url"
+          }
+        ]
+      },
+      "valueUrl": "http://example.org/cdex/payer/$submit-attachment"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+            "code": "purpose-of-use"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+            "code": "COVAUTH",
+            "display": "coverage authorization"
+          }
+        ]
+      }
+    }
+  ],
+  "output": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+            "code": "questionnaire-response"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example1"
+      }
+    }
+  ]
+}
+
+
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+HTTP/1.1 200 OK
+
+Server: CDEX Example Provider Server
+
+Location: http://example.org/FHIR/Task/cdex-task-example22/_history/2
+
+...(other headers)
+
+</code></pre></div>    </div>
+
+    <h4 id="step-8---ehr-updates-task-status-to-completed-when-questionnaire-response-status-is-completed-not-shown">Step 8 - EHR Updates Task Status To "completed" When Questionnaire Response Status Is "completed" (Not Shown).</h4>
+
+    <h4 id="step-9---ehr-posts-submit-attachment-operation-to-payer-endpoint">Step 9 - EHR POSTs <code class="language-plaintext highlighter-rouge">$submit-attachment</code> Operation to Payer endpoint</h4>
+
+    <p><strong>Request</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+POST [base]/$submit-attachment
+
+</code></pre></div>    </div>
+
+    <p><strong>Request Headers</strong></p>
+
+    <p><strong>Request Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/fhir+json
+Content-Type: application/fhir+json
+...(other headers)
+</code></pre></div>    </div>
+
+    <p><strong>Request Body</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "TrackingId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/payer",
+      "value" : "trackingid1012"
+    }
+  },
+  {
+    "name" : "AttachTo",
+    "valueCode" : "preauthorization"
+  },
+  {
+    "name" : "PayerId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/payer/payer-ids",
+      "value" : "payer123"
+    }
+  },
+  {
+    "name" : "OrganizationId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1234567893"
+    }
+  },
+  {
+    "name" : "ProviderId",
+    "valueIdentifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9941339100"
+    }
+  },
+  {
+    "name" : "MemberId",
+    "valueIdentifier" : {
+      "system" : "http://example.org/cdex/payer/member-ids",
+      "value" : "Member123"
+    }
+  },
+  {
+    "name" : "Attachment",
+    "part" : [{
+      "name" : "LineItem",
+      "valueString" : "1"
+    },
+    {
+      "name" : "Content",
+      "resource" : {
+        "resourceType" : "QuestionnaireResponse",
+        "id" : "cdex-questionnaireresponse-example1",
+        "questionnaire" : "http://example.org/cdex-questionnaire-example1",
+        "status" : "completed",
+        "subject" : {
+          "identifier" : {
+            "use" : "usual",
+            "type" : {
+              "coding" : [{
+                "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code" : "MB",
+                "display" : "Member Number"
+              }],
+              "text" : "Member Number"
+            },
+            "system" : "http://example.org/cdex/payer/member-ids",
+            "value" : "Member123"
+          },
+          "display" : "Amy Shaw"
+        },
+        "authored" : "2022-06-17",
+        "author" : {
+          "identifier" : {
+            "system" : "http://hl7.org/fhir/sid/us-npi",
+            "value" : "9941339100"
+          }
+        },
+        "item" : [{
+          "linkId" : "1",
+          "text" : "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+          "answer" : [{
+            "valueString" : "Examplitis"
+          }]
+        },
+        {
+          "linkId" : "2",
+          "text" : "Order Reason",
+          "answer" : [{
+            "valueCoding" : {
+              "system" : "http://example.org",
+              "code" : "4",
+              "display" : "Replacement"
+            }
+          }]
+        }]
+      }
+    }]
+  }]
+}
+
+</code></pre></div>    </div>
+
+    <p><strong>Response Headers</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+HTTP/1.1 200 OK
+
+Server: CDEX Example Payer Server
+
+Content-Type: application/fhir+json;charset=utf-8
+
+...(other headers)
+
+</code></pre></div>    </div>
+
+    <h4 id="rendered-questionnaireresponse"><a href="http://hl7.org/fhir/us/davinci-cdex/STU2/QuestionnaireResponse-cdex-questionnaireresponse-example1.html">Rendered QuestionnaireResponse</a></h4>
+
+  </div>
+</div>
+<p><br /></p>
+
+<h3 id="signatures">Signatures</h3>
+
+<p>Refer to the <a href="sending-attachments.html#signatures">Signatures section</a> on the Sending Attachments page.</p>
+
+<p><br /><br /></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="requesting-attachments-code.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="burden-reduction.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/claims">HL7 International / Payer/Provider Information Exchange Work Group</a>.  Package hl7.fhir.us.davinci-cdex#2.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 9, 2025 20:34+0000">2025-01-09</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-cdex/history.html">Version History</a> |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

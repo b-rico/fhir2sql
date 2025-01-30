@@ -1,0 +1,314 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Parameters/cdex-parameters-example2> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:parameter ( [
+     fhir:name [ fhir:v "TrackingId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://example.org/provider"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "21234657" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "AttachTo" ] ;
+     fhir:value [ fhir:v "claim" ]
+  ] [
+     fhir:name [ fhir:v "PayerId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://example.org/cdex/payer-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "payer123" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "OrganizationId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "1407071236" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "ProviderId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "9941339108" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "MemberId" ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://example.org/cdex/member-ids"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "234567" ]
+     ]
+  ] [
+     fhir:name [ fhir:v "ServiceDate" ] ;
+     fhir:value [ fhir:v "2022-06-16"^^xsd:date ]
+  ] [
+     fhir:name [ fhir:v "Attachment" ] ;
+     fhir:part ( [
+       fhir:name [ fhir:v "LineItem" ] ;
+       fhir:value [ fhir:v "1" ]
+     ] [
+       fhir:name [ fhir:v "Code" ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           a loinc:11503-0 ;
+           fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "11503-0" ] ;
+           fhir:display [ fhir:v "Medical records" ]
+         ] ) ;
+         fhir:text [ fhir:v "Medical records" ]
+       ]
+     ] [
+       fhir:name [ fhir:v "Content" ] ;
+       fhir:Parameters.parameter.resource ( [
+         a fhir:Bundle ;
+         fhir:id [ fhir:v "cdex-document-digital-sig-example" ] ;
+         fhir:identifier [
+           fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8" ]
+         ] ;
+         fhir:type [ fhir:v "document" ] ;
+         fhir:timestamp [ fhir:v "2021-10-25T20:16:29-07:00"^^xsd:dateTime ] ;
+         fhir:entry ( [
+           fhir:fullUrl [ fhir:v "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76"^^xsd:anyURI ] ;
+           fhir:resource ( <urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76> )
+         ] [
+           fhir:fullUrl [ fhir:v "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"^^xsd:anyURI ] ;
+           fhir:resource ( <urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc> )
+         ] [
+           fhir:fullUrl [ fhir:v "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"^^xsd:anyURI ] ;
+           fhir:resource ( <urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece> )
+         ] [
+           fhir:fullUrl [ fhir:v "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"^^xsd:anyURI ] ;
+           fhir:resource ( <urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570> )
+         ] [
+           fhir:fullUrl [ fhir:v "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112"^^xsd:anyURI ] ;
+           fhir:resource ( <urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112> )
+         ] [
+           fhir:fullUrl [ fhir:v "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3"^^xsd:anyURI ] ;
+           fhir:resource ( <urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3> )
+         ] ) ;
+         fhir:signature [
+           fhir:type ( [
+             fhir:system [ fhir:v "urn:iso-astm:E1762-95:2013"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "1.2.840.10065.1.12.1.5" ] ;
+             fhir:display [ fhir:v "Verification Signature" ]
+           ] ) ;
+           fhir:when [ fhir:v "2021-10-05T22:42:19-07:00"^^xsd:dateTime ] ;
+           fhir:who [
+             fhir:link <https://example.org/Practitioner/123> ;
+             fhir:reference [ fhir:v "https://example.org/Practitioner/123" ]
+           ] ;
+           fhir:onBehalfOf [
+             fhir:link <https://example.org/Organization/123> ;
+             fhir:reference [ fhir:v "https://example.org/Organization/123" ]
+           ] ;
+           fhir:data [ fhir:v "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWRYTmxJam9pYzJsbklpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuLm41QzBndGRrUkY5TGpDSHAyT1ZCUEl6UDI5N05oYUZyekNZUXA0QWRERWkya25aN2wtNHViRW5wbzgzZ1o5OGFOTGM5ZncwY1Y5Sm9yLUVYcUx2em44MjVjeUFvbnlKU0tteFhWcEt6SU9wV25kNUJjV3lpSUpjOXRoV2NoVkUxUHpMMUhzNjVjaTIzeWZXNlpvbjVzX3htVlN1NkZmT2N1UzNlWnlMOEFQVW9RMDAxdlB4QmR4bkRLNDg2ZFR0dGhHMExjdUl5V1c5Y0NZOTZabDRGWUJ4eDIwdjl6RkVQOW14UXE3Y2V4bGQyY210bmRhYTlxaHVUcVdoTjJsTUlCZTgybm1XZU9CSVlLVUdKaHVxd3VMQjNwSXBITWFFMy1PR1VTQldTQ3N5ZU10aXg4VUpqaG5MSS1ZelhpOTNmQnFxVk9SQkl1ZF9UeHRCS3ZISkQ4dEdvemNlb0JhVGw0MTdUOFpKLXlQejQ2azEyeWctQktNZFZ0RnZnTl90clNyMk0wVE5OZkZOVGlXNHlpQzRKa1k1Um93UjVYSEFqbFZsQlNSYnc4MXJxUDlMbmdvZGd0bWhaaFJDc2xyWVFNbkxwQktCYmtMUDNYX1NTT0F5a3d4TUxHMnRrZGUybjRRWFpqVVRlNHhTX0FRMzgwUHFuLWZTb1U1NDFRSVZV"^^xsd:base64Binary ]
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+<urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76> a fhir:Composition ;
+  fhir:id [ fhir:v "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"> </a><p><b>Generated Narrative: Composition</b><a name=\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"> </a><a name=\"hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Composition &quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&quot; </p></div><p><b>status</b>: final</p><p><b>type</b>: Medical records <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11503-0)</span></p><p><b>encounter</b>: See on this page: urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter</p><p><b>date</b>: 2021-10-25 20:16:29-0700</p><p><b>author</b>: See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner</p><p><b>title</b>: Active Conditions</p><h3>Attesters</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Mode</b></td><td><b>Time</b></td><td><b>Party</b></td></tr><tr><td style=\"display: none\">*</td><td>legal</td><td>2021-10-25 20:16:29-0700</td><td>See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner</td></tr></table></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:11503-0 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "11503-0" ]
+     ] ) ;
+     fhir:text [ fhir:v "Medical records" ]
+  ] ; # 
+  fhir:subject [
+     fhir:reference [ fhir:v "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece" ] ;
+     fhir:display [ fhir:v "Example Patient" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:reference [ fhir:v "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112" ] ;
+     fhir:display [ fhir:v "Example Encounter" ]
+  ] ; # 
+  fhir:date [ fhir:v "2021-10-25T20:16:29-07:00"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:reference [ fhir:v "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc" ] ;
+     fhir:display [ fhir:v "Example Practitioner" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Active Conditions"] ; # 
+  fhir:attester ( [
+     fhir:mode [ fhir:v "legal" ] ;
+     fhir:time [ fhir:v "2021-10-25T20:16:29-07:00"^^xsd:dateTime ] ;
+     fhir:party [
+       fhir:reference [ fhir:v "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc" ] ;
+       fhir:display [ fhir:v "Example Practitioner" ]
+     ]
+  ] ) ; # 
+  fhir:section ( [
+     fhir:title [ fhir:v "Active Condition 1" ] ;
+     fhir:entry ( [
+       fhir:reference [ fhir:v "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570" ]
+     ] )
+  ] ) . # 
+
+<urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc> a fhir:Practitioner ;
+  fhir:id [ fhir:v "0820c16d-91de-4dfa-a3a6-f140a516a9bc"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2013-05-05T16:13:03Z"^^xsd:dateTime ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a><p><b>Generated Narrative: Practitioner</b><a name=\"0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a><a name=\"hc0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot; Updated &quot;2013-05-05 16:13:03+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-practitioner.html\">US Core Practitioner Profile (version 6.1.0)</a></p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/9941339100</p><p><b>name</b>: John Hancock </p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "9941339100" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Hancock" ] ;
+     fhir:given ( [ fhir:v "John" ] )
+  ] ) . # 
+
+<urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece> a fhir:Patient ;
+  fhir:id [ fhir:v "970af6c9-5bbd-4067-b6c1-d9b2c823aece"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a><p><b>Generated Narrative: Patient</b><a name=\"970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a><a name=\"hc970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Patient &quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-patient.html\">US Core Patient Profile (version 6.1.0)</a></p></div><p><b>identifier</b>: Member Number/Member123</p><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Patient</p><p><b>gender</b>: male</p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "MB" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "http://example.org/cdex/payer/member-ids"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Member123" ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:name ( [
+     fhir:text [ fhir:v "CDEX Example Patient" ] ;
+     fhir:family [ fhir:v "Patient" ] ;
+     fhir:given ( [ fhir:v "CDEX Example" ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] . # 
+
+<urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570> a fhir:Condition ;
+  fhir:id [ fhir:v "014a68ec-d691-49e0-b980-91b0d924e570"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_014a68ec-d691-49e0-b980-91b0d924e570\"> </a><p><b>Generated Narrative: Condition</b><a name=\"014a68ec-d691-49e0-b980-91b0d924e570\"> </a><a name=\"hc014a68ec-d691-49e0-b980-91b0d924e570\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;014a68ec-d691-49e0-b980-91b0d924e570&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-condition-problems-health-concerns.html\">US Core Condition Problems and Health Concerns Profile (version 6.1.0)</a></p></div><p><b>identifier</b>: <code>urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1</code>/1</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>category</b>: Problem List Item <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Type 2 Diabetes Mellitus <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#44054006)</span></p><p><b>subject</b>: See on this page: urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece</p><p><b>onset</b>: 2006</p><p><b>asserter</b>: See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc</p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1" ]
+  ] ) ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "problem-list-item" ] ;
+       fhir:display [ fhir:v "Problem List Item" ]
+     ] ) ;
+     fhir:text [ fhir:v "Problem List Item" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:44054006 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "44054006" ] ;
+       fhir:display [ fhir:v "Type 2 Diabetes Mellitus" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:reference [ fhir:v "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece" ]
+  ] ; # 
+  fhir:onset [ fhir:v "2006"^^xsd:gYear] ; # 
+  fhir:asserter [
+     fhir:reference [ fhir:v "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc" ]
+  ] . # 
+
+<urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112> a fhir:Encounter ;
+  fhir:id [ fhir:v "5ce5c83a-000f-47d2-941c-039358cc9112"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\"> </a><p><b>Generated Narrative: Encounter</b><a name=\"5ce5c83a-000f-47d2-941c-039358cc9112\"> </a><a name=\"hc5ce5c83a-000f-47d2-941c-039358cc9112\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Encounter &quot;5ce5c83a-000f-47d2-941c-039358cc9112&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-encounter.html\">US Core Encounter Profile (version 6.1.0)</a></p></div><p><b>status</b>: finished</p><p><b>class</b>: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = 'emergency', stated as 'null')</p><p><b>type</b>: Unknown (qualifier value) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#261665006)</span></p><p><b>subject</b>: See on this page: urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient</p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Individual</b></td></tr><tr><td style=\"display: none\">*</td><td>See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock</td></tr></table><p><b>period</b>: 2021-10-25 20:10:29-0700 --&gt; 2021-10-25 20:16:29-0700</p><p><b>serviceProvider</b>: See on this page: urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization</p></div>"
+  ] ; # 
+  fhir:status [ fhir:v "finished"] ; # 
+  fhir:class [
+     fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "EMER" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       a sct:261665006 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "261665006" ] ;
+       fhir:display [ fhir:v "Unknown (qualifier value)" ]
+     ] ) ;
+     fhir:text [ fhir:v "Unknown (qualifier value)" ]
+  ] ) ; # 
+  fhir:subject [
+     fhir:reference [ fhir:v "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece" ] ;
+     fhir:display [ fhir:v "CDEX Example Patient" ]
+  ] ; # 
+  fhir:participant ( [
+     fhir:individual [
+       fhir:reference [ fhir:v "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc" ] ;
+       fhir:display [ fhir:v "John Hancock" ]
+     ]
+  ] ) ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2021-10-25T20:10:29-07:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2021-10-25T20:16:29-07:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:serviceProvider [
+     fhir:reference [ fhir:v "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3" ] ;
+     fhir:display [ fhir:v "CDEX Example Organization" ]
+  ] . # 
+
+<urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3> a fhir:Organization ;
+  fhir:id [ fhir:v "e37f004b-dc10-422b-b833-cdaa10a055a3"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\"> </a><p><b>Generated Narrative: Organization</b><a name=\"e37f004b-dc10-422b-b833-cdaa10a055a3\"> </a><a name=\"hce37f004b-dc10-422b-b833-cdaa10a055a3\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;e37f004b-dc10-422b-b833-cdaa10a055a3&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-organization.html\">US Core Organization Profile (version 6.1.0)</a></p></div><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Organization</p><p><b>telecom</b>: ph: (+1) 555-555-5555, <a href=\"mailto:customer-service@example.org\">customer-service@example.org</a></p><p><b>address</b>: 1 CDEX Lane Boston MA 01002 USA </p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1234567893" ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:name [ fhir:v "CDEX Example Organization"] ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(+1) 555-555-5555" ]
+  ] [
+     fhir:system [ fhir:v "email" ] ;
+     fhir:value [ fhir:v "customer-service@example.org" ]
+  ] ) ; # 
+  fhir:address ( [
+     fhir:line ( [ fhir:v "1 CDEX Lane" ] ) ;
+     fhir:city [ fhir:v "Boston" ] ;
+     fhir:state [ fhir:v "MA" ] ;
+     fhir:postalCode [ fhir:v "01002" ] ;
+     fhir:country [ fhir:v "USA" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

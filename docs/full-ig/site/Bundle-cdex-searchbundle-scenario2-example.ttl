@@ -1,0 +1,274 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-cdex/Bundle/cdex-searchbundle-scenario2-example> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cdex-searchbundle-scenario2-example"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2020-10-23T18:22:45.274+00:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "http://hapi.fhir.org/baseR4/Observation?code=4548-4&date=gt2020-01-01&patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "http://hapi.fhir.org/baseR4/Observation/cdex-2020-01-23-hba1c-example"^^xsd:anyURI ] ;
+     fhir:resource ( <http://hapi.fhir.org/baseR4/Observation/cdex-2020-01-23-hba1c-example> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "http://hapi.fhir.org/baseR4/Observation/cdex-2020-04-23-hba1c-example"^^xsd:anyURI ] ;
+     fhir:resource ( <http://hapi.fhir.org/baseR4/Observation/cdex-2020-04-23-hba1c-example> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "http://hapi.fhir.org/baseR4/Observation/cdex-2020-10-23-hba1c-example"^^xsd:anyURI ] ;
+     fhir:resource ( <http://hapi.fhir.org/baseR4/Observation/cdex-2020-10-23-hba1c-example> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "http://hapi.fhir.org/baseR4/Observation/cdex-2020-07-23-hba1c-example"^^xsd:anyURI ] ;
+     fhir:resource ( <http://hapi.fhir.org/baseR4/Observation/cdex-2020-07-23-hba1c-example> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] ) . # 
+
+<http://hapi.fhir.org/baseR4/Observation/cdex-2020-01-23-hba1c-example> a fhir:Observation ;
+  fhir:id [ fhir:v "cdex-2020-01-23-hba1c-example"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2020-10-23T18:18:25.154+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#ObC36PK40pQM6y5M"^^xsd:anyURI ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_cdex-2020-01-23-hba1c-example\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation cdex-2020-01-23-hba1c-example</b></p><a name=\"cdex-2020-01-23-hba1c-example\"> </a><a name=\"hccdex-2020-01-23-hba1c-example\"> </a><a name=\"cdex-2020-01-23-hba1c-example-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2020-10-23 18:18:25+0000; </p><p style=\"margin-bottom: 0px\">Information Source: #ObC36PK40pQM6y5M</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 4548-4}, {http://www.ama-assn.org/go/cpt 83036}, {http://example.org/lab-results HBA1C}\">glycated hemoglobin (HbA1c)</span></p><p><b>subject</b>: <a href=\"http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b\">Elden718 Halvorson124</a></p><p><b>effective</b>: 2020-01-23 10:21:08-0700</p><p><b>performer</b>: <a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1/Practitioner-min.html\">Dr. John Doe</a></p><p><b>value</b>: 6 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "laboratory" ] ;
+       fhir:display [ fhir:v "Laboratory" ]
+     ] ) ;
+     fhir:text [ fhir:v "Laboratory" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:4548-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "4548-4" ] ;
+       fhir:display [ fhir:v "Hemoglobin A1c/Hemoglobin.total in Blood" ]
+     ] [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "83036" ] ;
+       fhir:display [ fhir:v "Hemoglobin; glycosylated (A1c)" ]
+     ] [
+       fhir:system [ fhir:v "http://example.org/lab-results"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "HBA1C" ] ;
+       fhir:display [ fhir:v "Glycated hemoglobin (HbA1c)" ]
+     ] ) ;
+     fhir:text [ fhir:v "glycated hemoglobin (HbA1c)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b" ] ;
+     fhir:display [ fhir:v "Elden718 Halvorson124" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2020-01-23T10:21:08-07:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <http://hl7.org/fhir/us/davinci-cdex/Practitioner/min> ;
+     fhir:reference [ fhir:v "Practitioner/min" ] ;
+     fhir:display [ fhir:v "Dr. John Doe" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "6"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "%" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "%" ]
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-cdex/Practitioner/min> a fhir:us .
+
+<http://hapi.fhir.org/baseR4/Observation/cdex-2020-04-23-hba1c-example> a fhir:Observation ;
+  fhir:id [ fhir:v "cdex-2020-04-23-hba1c-example"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2020-10-23T18:17:49.885+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#n7aoEe76sAQUBlns"^^xsd:anyURI ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_cdex-2020-04-23-hba1c-example\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation cdex-2020-04-23-hba1c-example</b></p><a name=\"cdex-2020-04-23-hba1c-example\"> </a><a name=\"hccdex-2020-04-23-hba1c-example\"> </a><a name=\"cdex-2020-04-23-hba1c-example-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2020-10-23 18:17:49+0000; </p><p style=\"margin-bottom: 0px\">Information Source: #n7aoEe76sAQUBlns</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 4548-4}, {http://www.ama-assn.org/go/cpt 83036}, {http://example.org/lab-results HBA1C}\">glycated hemoglobin (HbA1c)</span></p><p><b>subject</b>: <a href=\"http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b\">Elden718 Halvorson124</a></p><p><b>effective</b>: 2020-04-23 10:21:08-0700</p><p><b>performer</b>: <a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1/Practitioner-min.html\">Dr. John Doe</a></p><p><b>value</b>: 7.2 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "laboratory" ] ;
+       fhir:display [ fhir:v "Laboratory" ]
+     ] ) ;
+     fhir:text [ fhir:v "Laboratory" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:4548-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "4548-4" ] ;
+       fhir:display [ fhir:v "Hemoglobin A1c/Hemoglobin.total in Blood" ]
+     ] [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "83036" ] ;
+       fhir:display [ fhir:v "Hemoglobin; glycosylated (A1c)" ]
+     ] [
+       fhir:system [ fhir:v "http://example.org/lab-results"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "HBA1C" ] ;
+       fhir:display [ fhir:v "Glycated hemoglobin (HbA1c)" ]
+     ] ) ;
+     fhir:text [ fhir:v "glycated hemoglobin (HbA1c)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b" ] ;
+     fhir:display [ fhir:v "Elden718 Halvorson124" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2020-04-23T10:21:08-07:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <http://hl7.org/fhir/us/davinci-cdex/Practitioner/min> ;
+     fhir:reference [ fhir:v "Practitioner/min" ] ;
+     fhir:display [ fhir:v "Dr. John Doe" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "7.2"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "%" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "%" ]
+  ] . # 
+
+<http://hapi.fhir.org/baseR4/Observation/cdex-2020-10-23-hba1c-example> a fhir:Observation ;
+  fhir:id [ fhir:v "cdex-2020-10-23-hba1c-example"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2020-10-23T18:16:54.549+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#fuIEQP7SJ9NfAlPN"^^xsd:anyURI ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_cdex-2020-10-23-hba1c-example\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation cdex-2020-10-23-hba1c-example</b></p><a name=\"cdex-2020-10-23-hba1c-example\"> </a><a name=\"hccdex-2020-10-23-hba1c-example\"> </a><a name=\"cdex-2020-10-23-hba1c-example-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2020-10-23 18:16:54+0000; </p><p style=\"margin-bottom: 0px\">Information Source: #fuIEQP7SJ9NfAlPN</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 4548-4}, {http://www.ama-assn.org/go/cpt 83036}, {http://example.org/lab-results HBA1C}\">glycated hemoglobin (HbA1c)</span></p><p><b>subject</b>: <a href=\"http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b\">Elden718 Halvorson124</a></p><p><b>effective</b>: 2020-10-23 10:21:08-0700</p><p><b>performer</b>: <a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1/Practitioner-min.html\">Dr. John Doe</a></p><p><b>value</b>: 7 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "laboratory" ] ;
+       fhir:display [ fhir:v "Laboratory" ]
+     ] ) ;
+     fhir:text [ fhir:v "Laboratory" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:4548-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "4548-4" ] ;
+       fhir:display [ fhir:v "Hemoglobin A1c/Hemoglobin.total in Blood" ]
+     ] [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "83036" ] ;
+       fhir:display [ fhir:v "Hemoglobin; glycosylated (A1c)" ]
+     ] [
+       fhir:system [ fhir:v "http://example.org/lab-results"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "HBA1C" ] ;
+       fhir:display [ fhir:v "Glycated hemoglobin (HbA1c)" ]
+     ] ) ;
+     fhir:text [ fhir:v "glycated hemoglobin (HbA1c)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b" ] ;
+     fhir:display [ fhir:v "Elden718 Halvorson124" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2020-10-23T10:21:08-07:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <http://hl7.org/fhir/us/davinci-cdex/Practitioner/min> ;
+     fhir:reference [ fhir:v "Practitioner/min" ] ;
+     fhir:display [ fhir:v "Dr. John Doe" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "7"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "%" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "%" ]
+  ] . # 
+
+<http://hapi.fhir.org/baseR4/Observation/cdex-2020-07-23-hba1c-example> a fhir:Observation ;
+  fhir:id [ fhir:v "cdex-2020-07-23-hba1c-example"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2020-10-23T18:16:17.687+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#X2hXINwPYymTmEJc"^^xsd:anyURI ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_cdex-2020-07-23-hba1c-example\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation cdex-2020-07-23-hba1c-example</b></p><a name=\"cdex-2020-07-23-hba1c-example\"> </a><a name=\"hccdex-2020-07-23-hba1c-example\"> </a><a name=\"cdex-2020-07-23-hba1c-example-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2020-10-23 18:16:17+0000; </p><p style=\"margin-bottom: 0px\">Information Source: #X2hXINwPYymTmEJc</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 4548-4}, {http://www.ama-assn.org/go/cpt 83036}, {http://example.org/lab-results HBA1C}\">glycated hemoglobin (HbA1c)</span></p><p><b>subject</b>: <a href=\"http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b\">Elden718 Halvorson124</a></p><p><b>effective</b>: 2020-07-23 10:21:08-0700</p><p><b>performer</b>: <a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1/Practitioner-min.html\">Dr. John Doe</a></p><p><b>value</b>: 7 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "laboratory" ] ;
+       fhir:display [ fhir:v "Laboratory" ]
+     ] ) ;
+     fhir:text [ fhir:v "Laboratory" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:4548-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "4548-4" ] ;
+       fhir:display [ fhir:v "Hemoglobin A1c/Hemoglobin.total in Blood" ]
+     ] [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "83036" ] ;
+       fhir:display [ fhir:v "Hemoglobin; glycosylated (A1c)" ]
+     ] [
+       fhir:system [ fhir:v "http://example.org/lab-results"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "HBA1C" ] ;
+       fhir:display [ fhir:v "Glycated hemoglobin (HbA1c)" ]
+     ] ) ;
+     fhir:text [ fhir:v "glycated hemoglobin (HbA1c)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b> ;
+     fhir:reference [ fhir:v "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b" ] ;
+     fhir:display [ fhir:v "Elden718 Halvorson124" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2020-07-23T10:21:08-07:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <http://hl7.org/fhir/us/davinci-cdex/Practitioner/min> ;
+     fhir:reference [ fhir:v "Practitioner/min" ] ;
+     fhir:display [ fhir:v "Dr. John Doe" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "7"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "%" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "%" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
