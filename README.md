@@ -174,7 +174,7 @@ Example snippet from runs.log:
 
 ## License
 
-Coopyright Berto J. Rico, 2025
+Coopyright © Berto J. Rico, 2025
 This project is licensed under [Apache v2.0 2004](LICENSE)
 
 ## Disclaimer
