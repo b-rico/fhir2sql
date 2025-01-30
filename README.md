@@ -193,9 +193,9 @@ This project is licensed under [Apache v2.0 2004](LICENSE)
 ```
 
 This repository is an MVP / reference. It does not address production concerns such as:
-**Security (e.g., encryption, secure credential management)**
-**High availability or scalability**
-**Compliance with standards like HIPAA or GDPR when handling patient data**
+- **Security (e.g., encryption, secure credential management)**
+- **High availability or scalability**
+- **Compliance with standards like HIPAA or GDPR when handling patient data**
 
 !!! Use caution and adapt to your organizational requirements before deploying in a production environment. !!!
  
